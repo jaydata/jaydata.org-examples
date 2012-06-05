@@ -1,7 +1,0 @@
-D:\_GitRepo\jaydata.org-examples\JayDataExamples.NorthwindDB\bin\Debug\JayDataExamples.NorthwindDB.dll.config
-D:\_GitRepo\jaydata.org-examples\JayDataExamples.NorthwindDB\bin\Debug\JayDataExamples.NorthwindDB.dll
-D:\_GitRepo\jaydata.org-examples\JayDataExamples.NorthwindDB\bin\Debug\JayDataExamples.NorthwindDB.pdb
-D:\_GitRepo\jaydata.org-examples\JayDataExamples.NorthwindDB\bin\Debug\EntityFramework.dll
-D:\_GitRepo\jaydata.org-examples\JayDataExamples.NorthwindDB\bin\Debug\EntityFramework.xml
-D:\_GitRepo\jaydata.org-examples\JayDataExamples.NorthwindDB\obj\Debug\JayDataExamples.NorthwindDB.dll
-D:\_GitRepo\jaydata.org-examples\JayDataExamples.NorthwindDB\obj\Debug\JayDataExamples.NorthwindDB.pdb
