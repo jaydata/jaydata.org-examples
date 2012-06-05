@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JayData examples - Todolist </title>
+    <meta name="keywords" content="JayData, HTML5, Javascript, SQlite, Odata, JayData providers">
+    <meta name="description" content="Simple todo-list usecase for Odata and SQLite provider. Listing, filtered listing with jqGrid UI component.">
+    <meta name="author" content="JayData, community@jaydata.org">
+
+    <script type="text/javascript" src="../Content/Scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jquery.jqGrid.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/grid.locale-en.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayData-standalone.js"></script>
+    <script type="text/javascript" src="ToDoList.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayDataModules/errorhandler.js"></script>
+    <link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../Styles/Bootstrap/docs.css" rel="stylesheet">
+    <link href="../Styles/mixins.css" rel="stylesheet">
+    <link href="../Styles/dd.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../Content/css/ui-lightness/jquery-ui-1.8.19.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/css/ui.jqgrid.css" />
+
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <!-- Navbar ================================================== -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li class="active"><a href="http://www.jaydata.org/examples">Examples home</a></li>
+                    <li><a href="http://www.jaydata.org">JayData.org home</a></li>
+                    <li><a href="http://www.jaydata.org/documentation">Documentation</a></li>
+                    <li><a href="http://www.jaydata.org/community">Community</a></li>
+                    <li><a href="http://www.jaydata.org/forum">Forum</a></li>
+                    <li><a href="http://www.jaydata.org/blog">Blog</a>
+                    <li><a href="http://www.jaydata.org/backlogs">Write a new userstory!</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="jumbotron masthead">
+            <div class="inner tacenter">
+                <h1>ToDo List Example</h1>
+
+                <div class="clear row iblock mauto">
+                    <div class="span6">
+                        <h3 class="marginb5">Supported browsers (OData):</h3>
+                        <ul class="browser-list">
+                            <li class="browser ie" title="Internet Explorer 9.0+"></li>
+                            <li class="browser firefox" title="Firefox 10.0+"></li>
+                            <li class="browser chrome" title="Google Chrome 12+"></li>
+                            <li class="browser safari" title="Safari 4+"></li>
+                            <li class="browser blackberry" title="Blackberry 7+"></li>
+                            <li class="browser wp" title="Windows Phone 7.5+"></li>
+                            <li class="browser ios" title="iOS 4+"></li>
+                            <li class="browser android" title="Android 2.2+"></li>
+                        </ul>
+                    </div>
+                    <div class="span4">
+                        <h3 class="marginb5">Supported browsers (SQLite):</h3>
+                        <ul class="browser-list">
+                            <li class="browser chrome" title="Google Chrome 12+"></li>
+                            <li class="browser safari" title="Safari 4+"></li>
+                            <li class="browser blackberry" title="Blackberry 7+"></li>
+                            <li class="browser ios" title="iOS 4+"></li>
+                            <li class="browser android" title="Android 2.2+"></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="soften" />
+
+                <h2>How can I get paged data and display with jqGrid?<br /><small>Two providers are supported: <u style="color: Black;">OData</u> and <u style="color: Black;">SQLite</u></small> </h2>
+<pre class="well well-white marginb10 iblock" style='color:#000000;background:#ffffff;'><span style='color:#0000E6; font-weight:bold; '>function</span> addPageConstraints<span style='color:#808030; '>(</span>query<span style='color:#808030; '>,</span> page<span style='color:#808030; '>,</span> rowsPerPage<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#0000E6; font-weight:bold; '>return</span> query
+        <span style='color:#808030; '>.</span>skip<span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>page <span style='color:#808030; '>-</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> rowsPerPage<span style='color:#808030; '>)</span>
+        <span style='color:#808030; '>.</span>take<span style='color:#808030; '>(</span>rowsPerPage<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+
+<span style='color:#696969; '>// ...</span>
+<span style='color:#0000E6; font-weight:bold; '>var</span> query <span style='color:#808030; '>=</span> $todo<span style='color:#808030; '>.</span>Context<span style='color:#808030; '>.</span>Reminders
+    <span style='color:#808030; '>.</span>where<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>m<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span> <span style='color:#0000E6; font-weight:bold; '>return</span> m<span style='color:#808030; '>.</span>ToDo<span style='color:#808030; '>.</span>Id <span style='color:#808030; '>==</span> <span style='color:#0000E6; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>rowId <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#800080; '>{</span> rowId<span style='color:#800080; '>:</span> <span style='color:#0000E6; font-weight:bold; '>parseInt</span><span style='color:#808030; '>(</span>rowId<span style='color:#808030; '>)</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+query <span style='color:#808030; '>=</span> addPageConstraints<span style='color:#808030; '>(</span>query<span style='color:#808030; '>,</span> postData<span style='color:#808030; '>.</span>page<span style='color:#808030; '>,</span> postData<span style='color:#808030; '>.</span>rows<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+query<span style='color:#808030; '>.</span><span style='color:#0000E6; font-weight:bold; '>toArray</span><span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>array<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#696969; '>// ...</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+<!--function addPageConstraints(query, page, rowsPerPage) {
+    return query
+        .skip((page - 1) * rowsPerPage)
+        .take(rowsPerPage);
+}
+
+// ...
+var query = $todo.Context.Reminders
+    .where(function (m) { return m.ToDo.Id == this.rowId }, { rowId: parseInt(rowId) });
+query = addPageConstraints(query, postData.page, postData.rows);
+query.toArray(function (array) {
+    // ...
+});-->
+            </div>
+        </header>
+        
+        <section id="wrapper" class="container iblock">
+            <button class="btn" id="btnOData">Use OData</button>
+            <button class="btn" id="btnSqlite">Use SQLite</button>
+
+            <br /> <br />
+
+            <table id="todoGrid" stlye="width: 100%;"></table>
+            <div id="todoNavGrid"></div>
+        </section>
+    </div>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30304727-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>

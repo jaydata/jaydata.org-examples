@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JayData Newsreader example</title>
+    <meta name="keywords" content="CRUD, JayData, oData example, jquery odata example, javascript data management" />
+    <meta name="description" content="JayData Example: CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way. The UI is utilizing Twitter\'s Bootstrap and JQuery\'s template engine" />
+    <meta name="author" content="JayData, community@jaydata.org">
+
+    <link rel="stylesheet" href="css/bootstrap-wysihtml5.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../Content/css/errorhandler.css">
+    <script src="../Content/Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../Content/Scripts/jquery.tmpl.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayData.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayDataModules/template.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayDataModules/errorhandler.js"></script>
+    <script src="js/wysihtml5-0.3.0_rc3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-wysihtml5.js"></script>
+    <script src="js/NewsReaderContext.js" type="text/javascript"></script>
+    <script src="js/NewsReaderApp.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">News Reader</a>
+                <ul class="nav">
+                    <li>
+                        <a href="js/NewsReaderApp.js" target="_blank">App source code</a>
+                    </li>
+                    <li>
+                        <a href="js/NewsReaderContext.js" target="_blank">Context source code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="categories" class="well sidebar-nav">
+        <h1>Categories</h1>
+        <p>
+            <input id="categoryFilter" type="text" onkeyup="$news.App.filterCategory();" />
+            <button class="btn" onclick="$news.App.clearCategoryFilter();">Clear</button>
+        </p>
+        <p><button class="btn btn-success" onclick="$news.App.newCategory();">New category</button></p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Subtitle</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div id="tags" class="well sidebar-nav">
+        <h1>Tags</h1>
+        <p>
+            <input id="tagFilter" type="text" onkeyup="$news.App.filterTags();" />
+            <button class="btn" onclick="$news.App.clearTagFilter();">Clear</button>
+        </p>
+        <p>
+            Create new tags by creating or editing articles.
+        </p>
+        <ul class="nav nav-list">
+
+        </ul>
+    </div>
+    <div id="articles" class="well sidebar-nav">
+        <h1>Articles</h1>
+        <p>
+            <input id="articleFilter" type="text" onkeyup="$news.App.filterArticle();" />
+            <button class="btn" onclick="$news.App.clearArticleFilter();">Clear</button>
+        </p>
+        <p><button class="btn btn-success" onclick="$news.App.newArticle();">New article</button></p>
+        <ul class="nav nav-list">
+
+        </ul>
+    </div>
+    <div id="article">
+        <div class="mask"></div>
+        <div id="article-content" class="content"></div>
+    </div>
+</body>
+<script type="template" id="category-tr-item">
+    <tr id="category-tr-${Id}">
+        <td><a onclick="$news.App.loadArticles(${Id}, 'Category');">${Title || '<unknown>'}</a></td>
+        <td>${Subtitle}</td>
+        <td>${Description}</td>
+        <td>
+            <button class="btn btn-success" onclick="$news.App.editCategory(${Id}, '${Title || ''}', '${Subtitle || ''}', '${Description || ''}');">Edit</button>
+            <button class="btn btn-danger" onclick="$news.App.deleteCategory(${Id}, '${Title || ''}');">Delete</button>
+        </td>
+    </tr>
+</script>
+<script type="template" id="category-tr-new-item">
+    <tr id="category-tr-edit-${Id}">
+        <td><input id="title" type="text" value="${Title}"/></td>
+        <td><input id="subtitle" type="text" value="${Subtitle}"/></td>
+        <td><input id="description" type="text" value="${Description}"/></td>
+        <td><button class="btn btn-success" onclick="$news.App.saveCategory(${Id});">Save</button></td>
+    </tr>
+</script>
+<script type="template" id="category-tr-edit-item">
+    <tr id="category-tr-edit-${Id}">
+        <td><input id="title" type="text" value="${Title || '<unknown>'}"/></td>
+        <td><input id="subtitle" type="text" value="${Subtitle}"/></td>
+        <td><input id="description" type="text" value="${Description}"/></td>
+        <td>
+            <button class="btn btn-success" onclick="$news.App.saveCategory(${Id});">Save</button>
+            <button class="btn btn-danger" onclick="$news.App.cancelEditCategory(${Id});">Cancel</button>
+        </td>
+    </tr>
+</script>
+<script type="template" id="article-list-item">
+    <li><a onclick="$news.App.showArticle(${Id});">${Title}</a><span>${FullName}</span></li>
+</script>
+<script type="template" id="tag-list-item">
+    <li><a onclick="$news.App.loadArticles(${Id}, 'Tags');">${Title}</a></li>
+</script>
+<script type="template" id="article-tag-item">
+    <li><a onclick="$news.App.backArticle(); $news.App.loadArticles(${Id}, 'Tags');">${Title}</a></li>
+</script>
+<script type="template" id="article-category-item">
+    <option value="${Id}" categoryid="${$item.CategoryId}" ${Id == $item.CategoryId ? 'selected' : ''}>${Title}</option>
+</script>
+<script type="template" id="article-content">
+    <div class="article-controls">
+        <button class="btn btn-primary" onclick="$news.App.backArticle();">Back</button>
+        <button class="btn btn-success" onclick="$news.App.editArticle(${Id});">Edit</button>
+        <button class="btn btn-danger" onclick="$news.App.deleteArticle(${Id}, '${Title || '<unknown>'}');">Delete</button>
+    </div>
+    <p>
+        <h1>${Title}</h1>
+        <h2>${Lead}</h2>
+        <span class="createdate">{{if CreateDate}}${CreateDate.getDate()}/${CreateDate.getMonth() + 1}/${CreateDate.getFullYear()}{{/if}}</span>
+    </p>
+    <p>{{html Body}}</p>
+    <ul class="tags"></ul>
+</script>
+<script type="template" id="article-edit-content">
+    <form class="form-horizontal">
+        <fieldset>
+            <legend>${$item.Action} Article</legend>
+            <div class="control-group">
+                <label class="control-label">Category</label>
+                <div class="controls">
+                    <select id="article-edit-category"></select>
+<!--                    <p class="help-block">Title of the article.</p>-->
+
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Title</label>
+                <div class="controls">
+                    <input id="article-edit-title" type="text" class="input-xlarge" value="${Title}"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Lead</label>
+                <div class="controls">
+                    <input id="article-edit-lead" type="text" class="input-xlarge" value="${Lead}"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Body</label>
+                <div class="controls">
+                    <textarea id="article-edit-body" placeholder="Empty ..." style="min-width: 517px; min-height: 200px;">${Body}</textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Tags</label>
+                <div class="controls">
+                    <input id="article-edit-tags" class="tags input-xlarge" type="text"/>
+                    <p class="help-block">Comma separated list of tags.</p>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <div class="form-actions">
+        <button class="btn btn-success" onclick="$news.App.saveArticle(${Id});">Save</button>
+        <button class="btn btn-danger" onclick="$news.App.cancelEditArticle(${Id});">Cancel</button>
+    </div>
+</script>
+</html>

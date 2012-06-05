@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>YQL GEO data (JayData example)</title>
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, YQL, YQL geo data, example">
+    <meta name="description" content="Set auto-complete source with JavaScript Language Query (JSLQ). YQL geodata autocomplete">
+    <meta name="author" content="JayData, community@jaydata.org">
+    <script type="text/javascript" src="../Content/Scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jquery-ui-1.8.19.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayData.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayDataModules/template.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
+
+    <link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../Styles/Bootstrap/docs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../Content/css/ui-lightness/jquery-ui-1.8.19.css" />
+
+    <link href="../Styles/mixins.css" rel="stylesheet">
+    <link href="../Styles/dd.css" rel="stylesheet">
+
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <!-- Navbar ================================================== -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li class="active"><a href="http://www.jaydata.org/examples">Examples home</a></li>
+                    <li><a href="http://www.jaydata.org">JayData.org home</a></li>
+                    <li><a href="http://www.jaydata.org/documentation">Documentation</a></li>
+                    <li><a href="http://www.jaydata.org/community">Community</a></li>
+                    <li><a href="http://www.jaydata.org/forum">Forum</a></li>
+                    <li><a href="http://www.jaydata.org/blog">Blog</a>
+                    <li><a href="http://www.jaydata.org/backlogs">Write a new userstory!</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="jumbotron masthead">
+            <div class="inner tacenter">
+                <h1>YQL Geo with auto-complete</h1>
+                <p>Set auto-complete source with JavaScript Language Query (JSLQ)</p>
+
+<pre class="well well-white marginb20 iblock"  style='color:#000000;background:#ffffff;'>$<span style='color:#808030; '>(</span><span style='color:#800000; '>'#Continents'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>autocomplete<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+    <span style='color:#797997; '>source</span><span style='color:#800080; '>:</span> <span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>request<span style='color:#808030; '>,</span> response<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        <span style='color:#0000E6; font-weight:bold; '>var</span> parameters <span style='color:#808030; '>=</span> <span style='color:#800080; '>{</span> term<span style='color:#800080; '>:</span> request<span style='color:#808030; '>.</span>term<span style='color:#808030; '>,</span> lang<span style='color:#800080; '>:</span> $<span style='color:#808030; '>(</span><span style='color:#800000; '>'.curr_lang'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>val<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>}</span><span style='color:#800080; '>;</span>
+        yqlContext<span style='color:#808030; '>.</span>Continents
+            <span style='color:#808030; '>.</span>filter<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>c<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span> <span style='color:#0000E6; font-weight:bold; '>return</span> c<span style='color:#808030; '>.</span>name<span style='color:#808030; '>.</span>contains<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>term<span style='color:#808030; '>)</span> <span style='color:#808030; '>&amp;&amp;</span> c<span style='color:#808030; '>.</span>lang <span style='color:#808030; '>==</span> <span style='color:#0000E6; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>lang<span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> parameters<span style='color:#808030; '>)</span>
+            <span style='color:#808030; '>.</span>orderBy<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>c<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span> <span style='color:#0000E6; font-weight:bold; '>return</span> c<span style='color:#808030; '>.</span>name<span style='color:#800080; '>;</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span>
+            <span style='color:#808030; '>.</span>map<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>c<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span> <span style='color:#0000E6; font-weight:bold; '>return</span> c<span style='color:#808030; '>.</span>name <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span>
+            <span style='color:#808030; '>.</span>take<span style='color:#808030; '>(</span><span style='color:#008c00; '>10</span><span style='color:#808030; '>)</span>
+            <span style='color:#808030; '>.</span><span style='color:#0000E6; font-weight:bold; '>toArray</span><span style='color:#808030; '>(</span>response<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+
+                <div class="wesll wells-white clear">
+                    <h2 class="marginb15">Supported browsers:</h2>
+                    <ul class="browser-list">
+                        <!--<li class="browser ie" title="Internet Explorer 9.0+"></li>-->
+                        <li class="browser firefox" title="Firefox 10.0+"></li>
+                        <li class="browser chrome" title="Google Chrome 12+"></li>
+                        <li class="browser safari" title="Safari 4+"></li>
+                        <li class="browser blackberry" title="Blackberry 7+"></li>
+                        <li class="browser wp" title="Windows Phone 7.5+"></li>
+                        <li class="browser ios" title="iOS 4+"></li>
+                        <li class="browser android" title="Android 2.2+"></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <hr class="soften" />
+
+        <section id="wrapper" class="container iblock">
+            <h3>YQL Geo based auto-complete</h3>
+            <form class="well" action="">
+                <div>
+                    <label>
+                        Select language
+                    </label>
+                    <select class="dropdown-menu1 curr_lang">
+                        <option value="en-US">en-US</option>
+                        <option value="de-DE">de-DE</option>
+                        <option value="fr-FR">fr-FR</option>
+                        <option value="hu-HU">hu-HU</option>
+                    </select>
+                </div>
+                <hr />
+                <div id="example2">
+                    <label>
+                        Select continent
+                    </label>
+                    <input type="text" id="Continents" class="autoComplete" placeholder="Type something…" />
+                    <div id="continent_contries" style="font-size: xx-small">
+                    </div>
+                    <div style="clear: both">
+                    </div>
+                </div>
+                <hr />
+                <div id="example1" style="display: none">
+                    <label>
+                        Select country
+                    </label>
+                    <input type="text" id="Countries" class="autoComplete" placeholder="Type something…" />
+                    <p class="help-block help-countries">
+                    </p>
+                </div>
+                <hr />
+                <div id="example3">
+                    <label>
+                        Select ocean
+                    </label>
+                    <input type="text" id="Oceans" class="autoComplete" placeholder="Type something…" />
+                </div>
+            </form>
+            <script type="text/javascript">
+                jQuery.support.cors = true;
+
+                $(function () {
+                    var setAutoComplete = function () {
+                        $('#Continents').autocomplete({
+                            source: function (request, response) {
+                                var parameters = { term: request.term, lang: $('.curr_lang').val() };
+                                yqlContext.Continents
+                                    .filter(function (c) { return c.name.contains(this.term) && c.lang == this.lang; }, parameters)
+                                    .orderBy(function (c) { return c.name; })
+                                    .map(function (c) { return c.name })
+                                    .take(10)
+                                    .toArray(response);
+                            },
+                            select: function (event, ui) {
+                                $('.help-countries').text("filter: " + ui.item.label);
+                                $('#example1').show();
+                                $('#Countries').val('');
+
+                                yqlContext.Countries
+                                    .filter(function (c) { return c.place == this.filter && c.lang == this.lang; }, { filter: ui.item.label, lang: $('.curr_lang').val() })
+                                    .toTemplate('contries-template', 'continent_contries');
+
+                            }
+                        });
+
+                        $('#Countries').autocomplete({
+                            source: function (request, response) {
+                                var country = $('#Continents').val();
+                                var params = { filter: country, term: request.term, lang: $('.curr_lang').val() };
+
+                                var filterFunc = function (c) { c.name.contains(this.term) && c.lang == this.lang; };
+                                if (country) filterFunc = function (c) { return c.place == this.filter && c.name.contains(this.term) && c.lang == this.lang; }
+
+                                yqlContext.Countries
+                                    .filter(filterFunc, params)
+                                    .orderBy(function (c) { return c.name; })
+                                    .map(function (c) { return c.name })
+                                    .take(10)
+                                    .toArray(response);
+                            }
+                        });
+
+
+                        $('#Oceans').autocomplete({
+                            source: function (request, response) {
+                                yqlContext.Oceans
+                                    .filter(function (c) { return c.name.contains(this.term) && c.lang == this.lang; }, { term: request.term, lang: $('.curr_lang').val() })
+                                    .orderBy(function (c) { return c.name; })
+                                    .map(function (c) { return c.name })
+                                    .take(10)
+                                    .toArray(response);
+                            }
+                        });
+
+                    };
+
+                    $('.btn').click(function (e) {
+                        e.preventDefault();
+                    });
+
+                    $('.dropdown-menu1').change(function (e) {
+                        e.preventDefault();
+
+                        $('#Continents').val('');
+                        $('#Countries').val('');
+                        $('#Oceans').val('');
+                        $('#example1').hide();
+                        $('#continent_contries').html('');
+
+                    });
+
+                    var yqlContext = new $data.Yahoo.YQLContext({ name: 'YQL' });
+                    yqlContext.onReady(function () {
+                        setAutoComplete();
+                    });
+                });
+
+            </script>
+            <div style="display: none">
+                <div id="contries-template">
+                    <div style="width: 200px; float: left">
+                        ${name} (${placeTypeName.content})
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JayData providers- Facebook friends query</title>
+    <meta name="keywords" content="JayData, HTML5, Javascript, FQL, Facebook, JayData providers">
+    <meta name="description" content="This example show you: How can You get the current user's friends list through FQL api.">
+    <meta name="author" content="JayData, community@jaydata.org">
+
+    <script type="text/javascript" src="../Content/Scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayData.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayDataModules/template.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
+    <link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../Styles/Bootstrap/docs.css" rel="stylesheet">
+    <link href="../Styles/mixins.css" rel="stylesheet">
+    <link href="../Styles/dd.css" rel="stylesheet">
+
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <!-- Navbar ================================================== -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li class="active"><a href="http://www.jaydata.org/examples">Examples home</a></li>
+                    <li><a href="http://www.jaydata.org">JayData.org home</a></li>
+                    <li><a href="http://www.jaydata.org/documentation">Documentation</a></li>
+                    <li><a href="http://www.jaydata.org/community">Community</a></li>
+                    <li><a href="http://www.jaydata.org/forum">Forum</a></li>
+                    <li><a href="http://www.jaydata.org/blog">Blog</a>
+                    <li><a href="http://www.jaydata.org/backlogs">Write a new userstory!</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="jumbotron masthead">
+            <div class="inner tacenter">
+                <h1>Facebook friends example</h1>
+
+                <div class="clear">
+                    <h2 class="marginb15">Supported browsers:</h2>
+                    <ul class="browser-list">
+                        <!--<li class="browser ie" title="Internet Explorer 9.0+"></li>-->
+                        <li class="browser firefox" title="Firefox 10.0+"></li>
+                        <li class="browser chrome" title="Google Chrome 12+"></li>
+                        <li class="browser safari" title="Safari 4+"></li>
+                        <li class="browser blackberry" title="Blackberry 7+"></li>
+                        <li class="browser wp" title="Windows Phone 7.5+"></li>
+                        <li class="browser ios" title="iOS 4+"></li>
+                        <li class="browser android" title="Android 2.2+"></li>
+                    </ul>
+                </div>
+
+                <hr class="soften" />
+
+                <div class="span5 reset-m">
+                <h2>Get the current user's friends list</h2>
+<pre class="well well-white marginb20 iblock" style='color:#000000;background:#ffffff;'><span style='color:#0000E6; font-weight:bold; '>var</span> fqlContext <span style='color:#808030; '>=</span> <span style='color:#0000E6; font-weight:bold; '>new</span> $data<span style='color:#808030; '>.</span>Facebook<span style='color:#808030; '>.</span>FQLContext<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span> 
+    name<span style='color:#800080; '>:</span> <span style='color:#800000; '>'Facebook'</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+fqlContext<span style='color:#808030; '>.</span>onReady<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>context<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    context<span style='color:#808030; '>.</span>MyFriends<span style='color:#808030; '>.</span>toTemplate<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>userTemplate</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>result</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+                </div>
+
+                <div class="span7 reset-m" style="width:  700px;">
+                <h2>Authenticate the current user</h2>
+<pre class="well well-white marginb20 iblock padding10" style='color: #000000; background: #ffffff;'>fbauth <span style='color:#808030; '>=</span> <span style='color:#0000E6; font-weight:bold; '>new</span> $data<span style='color:#808030; '>.</span>Authentication<span style='color:#808030; '>.</span>FacebookAuth<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+    Url_code<span style='color:#800080; '>:</span> <span style='color:#800000; '>'https://graph.facebook.com/oauth/device'</span><span style='color:#808030; '>,</span>
+    type_code<span style='color:#800080; '>:</span> <span style='color:#800000; '>'device_code'</span><span style='color:#808030; '>,</span>
+    scope<span style='color:#800080; '>:</span> <span style='color:#800000; '>'read_friendlists'</span><span style='color:#808030; '>,</span>
+    Url_token<span style='color:#800080; '>:</span> <span style='color:#800000; '>'https://graph.facebook.com/oauth/device'</span><span style='color:#808030; '>,</span>
+    type_token<span style='color:#800080; '>:</span> <span style='color:#800000; '>'device_token'</span><span style='color:#808030; '>,</span>
+    app_id<span style='color:#800080; '>:</span> <span style='color:#800000; '>'150792241632891'</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+context<span style='color:#808030; '>.</span>storageProvider<span style='color:#808030; '>.</span>AuthenticationProvider <span style='color:#808030; '>=</span> fbauth<span style='color:#800080; '>;</span>
+
+fbauth<span style='color:#808030; '>.</span>Login<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+    pending<span style='color:#800080; '>:</span> <span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>data<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+<span style='color:#696969; '>///&lt;field name="data" type="Object">verification data (Ex: verification_uri, user_code)&lt;/field></span>
+    $<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>#result</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>html<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>Enable to load your friends in facebook &lt;a href='</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> data<span style='color:#808030; '>.</span>verification_uri <span style='color:#808030; '>+</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>' </span><span style='color:#0000E6; '>"</span> <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>target='_blank'></span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> data<span style='color:#808030; '>.</span>verification_uri <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>&lt;/a> code: </span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> data<span style='color:#808030; '>.</span>user_code<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+    success<span style='color:#800080; '>:</span> <span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>data<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+<span style='color:#696969; '>///&lt;field name="data" type="Object">verification success data (Ex: access_token)&lt;/field></span>
+        context<span style='color:#808030; '>.</span>MyFriends<span style='color:#808030; '>.</span>toTemplate<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#800000; '>userTemplate</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>result</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+            </div>
+
+        </div>
+    </header>
+
+        <section id="wrapper" class="container iblock well" style="margin-bottom:  50px;">
+            <h2 class="show tacenter marginb5">Listing Facebook "My Friends" with device authentication</h2>
+
+            <div id="example1">
+                <input type="button" id="list" class="btn" value="List my friends" />
+            </div>
+                        
+            <hr class="clear soften" />
+
+            <div id="result"></div>
+
+            <script type="text/javascript">
+                jQuery.support.cors = true;
+
+                $(function () {
+
+                    var fqlContext = new $data.Facebook.FQLContext({ name: 'Facebook' });
+                    fqlContext.onReady(function (context) {
+                        var fbauth = null;
+
+                        $('#list').click(function (e) {
+
+                            if (fbauth && fbauth.Authenticated) {
+                                context.MyFriends.toTemplate("userTemplate", "result");
+                            } else {
+                                fbauth = new $data.Authentication.FacebookAuth({
+                                    Url_code: 'https://graph.facebook.com/oauth/device',
+                                    type_code: 'device_code',
+                                    scope: 'read_friendlists',
+                                    Url_token: 'https://graph.facebook.com/oauth/device',
+                                    type_token: 'device_token',
+                                    app_id: '150792241632891'
+                                });
+
+                                context.storageProvider.AuthenticationProvider = fbauth;
+
+                                fbauth.Login({
+                                    pending: function (data) {
+                                        ///<field name="data" type="Object">verification data (Ex: verification_uri, user_code)</field>
+                                        $("#result").html("Enable to load your friends in facebook <a href='" + data.verification_uri + "' " +
+                                            "target='_blank'>" + data.verification_uri + "</a> code: " + data.user_code);
+                                    },
+                                    success: function (data) {
+                                        ///<field name="data" type="Object">verification success data (Ex: access_token)</field>
+                                        context.MyFriends.toTemplate("userTemplate", "result");
+                                    }
+                                });
+                            }
+                        });
+                    });
+
+                });
+            </script>
+            <div id="userTemplate" style="display: none">
+                <ul>
+                    <li>Full name: ${name}</li>
+                    <li>First name: ${first_name}</li>
+                    <li>Last name: ${last_name}</li>
+                    <li>Sex: ${sex}</li>
+                    <li>User id: ${uid}</li>
+                </ul>
+                <hr />
+            </div>
+        </section>
+    </div>
+</body>
+</html>

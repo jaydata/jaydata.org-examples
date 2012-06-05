@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JayData examples: Knockout dynamic query
+    </title>
+    <meta name="keywords" content="JayData, HTML5, Javascript, example, Knockout, Dynamic Query">
+    <meta name="description" content="Knockout and JayData Dynamic Query example">
+    <meta name="author" content="JayData, community@jaydata.org">
+    <script type="text/javascript" src="../Content/Scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/knockout-2.1.0.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayData-standalone.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayDataModules/deferred.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayDataModules/knockout.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Northwind.js"></script>
+    <link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../Styles/Bootstrap/docs.css" rel="stylesheet">
+    <link href="../Styles/mixins.css" rel="stylesheet">
+    <link href="../Styles/dd.css" rel="stylesheet">
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <!-- Navbar ================================================== -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li class="active"><a href="http://www.jaydata.org/examples">Examples home</a></li>
+                    <li><a href="http://www.jaydata.org">JayData.org home</a></li>
+                    <li><a href="http://www.jaydata.org/documentation">Documentation</a></li>
+                    <li><a href="http://www.jaydata.org/community">Community</a></li>
+                    <li><a href="http://www.jaydata.org/forum">Forum</a></li>
+                    <li><a href="http://www.jaydata.org/blog">Blog</a></li>
+                    <li><a href="http://www.jaydata.org/backlogs">Write a new userstory!</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <header class="jumbotron masthead">
+            <div class="inner tacenter">
+                <h1>Knockout.js Dynamic Queries</h1>
+
+                <div class="clear">
+                    <h3 class="marginb5">Supported browsers:</h3>
+                    <ul class="browser-list">
+                        <li class="browser ie" title="Internet Explorer 9.0+"></li>
+                        <li class="browser firefox" title="Firefox 10.0+"></li>
+                        <li class="browser chrome" title="Google Chrome 12+"></li>
+                        <li class="browser safari" title="Safari 4+"></li>
+                        <li class="browser blackberry" title="Blackberry 7+"></li>
+                        <li class="browser wp" title="Windows Phone 7.5+"></li>
+                        <li class="browser ios" title="iOS 4+"></li>
+                        <li class="browser android" title="Android 2.2+"></li>
+                    </ul>
+                </div>
+
+                <hr class="soften" />
+
+                <div class="span7 reset-m">
+                <h2>Pass an observable as a query parameter</h2>
+                <pre class="well well-white marginb20 iblock"style='color:#000000;background:#ffffff;'>self<span style='color:#808030; '>.</span>selectedCategoryId <span style='color:#808030; '>=</span> ko<span style='color:#808030; '>.</span>observable<span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+self<span style='color:#808030; '>.</span>listedProducts <span style='color:#808030; '>=</span> ko<span style='color:#808030; '>.</span>observableArray<span style='color:#808030; '>(</span><span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+northwind<span style='color:#808030; '>.</span>Products
+    <span style='color:#808030; '>.</span>filter<span style='color:#808030; '>(</span><span style='color:#0000e6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>product<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span> <span style='color:#0000e6; font-weight:bold; '>return</span> product<span style='color:#808030; '>.</span>Category_ID <span style='color:#808030; '>==</span> <span style='color:#0000e6; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>Id <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> <span style='color:#800080; '>{</span> 
+            Id<span style='color:#800080; '>:</span> self<span style='color:#808030; '>.</span>selectedCategoryId 
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span>
+    <span style='color:#808030; '>.</span><span style='color:#0000e6; font-weight:bold; '>toArray</span><span style='color:#808030; '>(</span>self<span style='color:#808030; '>.</span>listedProducts<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+                </div>
+
+                <div class="span5">
+                <h2>Change the value of the observable and the query will run again</h2>
+                <pre class="well well-white marginb20 iblock" style='color:#000000;background:#ffffff;'>self<span style='color:#808030; '>.</span>loadProducts <span style='color:#808030; '>=</span> <span style='color:#0000e6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>category<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    self<span style='color:#808030; '>.</span>selectedCategoryId<span style='color:#808030; '>(</span>category<span style='color:#808030; '>.</span>Category_ID<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span><span style='color:#800080; '>;</span>
+</pre>
+                </div>
+            </div>
+        </header>
+    
+        <hr class="soften" />
+        
+        <section id="wrapper" class="container iblock" style="padding-top:  5px !important;">
+            <h2 class="marginb15 show tacenter">Knockout live data binding and Observable query results</h2>
+            
+            <br />
+
+            <table class="table span4 reset-m" style="margin:  0 20px 0 0 !important;">
+                <thead>
+                    <tr>
+                        <th>Category name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: listedCategories">
+                    <tr>
+                        <td><a href="#" data-bind="text: Category_Name, click: $root.loadProducts"></a></td>
+                        <td data-bind="text: Description"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table span5 reset-m" data-bind="visible: $root.listedProducts().length > 0">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>English Name</th>
+                        <th>Unit Price</th>
+                        <th>Units In Stock</th>
+                        <th>Discontinued</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: listedProducts">
+                    <tr>
+                        <td><a href="#" data-bind="text: Product_Name, click: $root.editProduct"></a></td>
+                        <td data-bind="text: English_Name"></td>
+                        <td data-bind="text: Unit_Price"></td>
+                        <td data-bind="text: Units_In_Stock"></td>
+                        <td data-bind="text: Discontinued"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- ko if: $root.editProduct -->
+            <div class="span3" style="margin-left:  20px;">
+                <div class="well-box">
+                    <form data-bind="submit: saveProduct" style="margin: 10px">
+                        <fieldset data-bind="with: $root.editProduct">
+                            <legend class="modal-header">Edit Product</legend>
+                        
+                            <div class="modal-body">
+                                Product name:
+                                <input type="text" data-bind="value: Product_Name" />
+                                <br />
+                                English Name:
+                                <br />
+                                <input type="text" data-bind="value: English_Name" />
+                                <br />
+                                Category:
+                                <br />
+                                <select data-bind="options: $root.listedCategories,
+                                                       optionsText: 'Category_Name',
+                                                       optionsValue: 'Category_ID',
+                                                       value: Category_ID">
+                                </select>
+                                <br />
+                                Unit Price:
+                                <br />
+                                <input type="text" data-bind="value: Unit_Price" />
+                                <br />
+                                Units In Stock:
+                                <br />
+                                <input type="text" data-bind="value: Units_In_Stock" />
+                                <br />
+                                Discontinued: <input type="checkbox" data-bind="checked: Discontinued" />
+                            </div>
+                            <div class="modal-footer">
+                                <input type="submit" value="save" class="btn btn-small btn-success tshadow" />
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div id="saveResult" class="alert alert-success hide">
+                    <strong>Success!</strong> 
+                    <br/>Product has been saved successfully.
+                </div>
+            </div>
+            <!-- /ko -->
+
+            <script>
+                var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: 'Northwind.svc' });
+                $(function () {
+                    function NorthwindViewModel() {
+                        var self = this;
+                        self.listedCategories = ko.observableArray([]);
+                        self.selectedCategoryId = ko.observable(0);
+
+                        self.listedProducts = ko.observableArray([]);
+
+                        self.editProduct = ko.observable(false);
+                        self.editProduct.subscribe(function (value) {
+                            var oldValue = self.editProduct();
+                            if (oldValue instanceof NorthwindModel.ObservableProduct)
+                                northwind.Products.detach(oldValue);
+                        }, undefined, 'beforeChange');
+                        self.editProduct.subscribe(function (value) {
+                            if (value instanceof NorthwindModel.ObservableProduct)
+                                northwind.Products.attach(value);
+                        });
+                        self.saveProduct = function () {
+                            northwind.saveChanges();
+                            var result = $('#saveResult');
+                            result.show()
+                            setTimeout(function () {
+                                result.fadeOut("slow");
+                            }, 1500);
+                        };
+
+                        self.loadProducts = function (category) {
+                            self.selectedCategoryId(category.Category_ID());
+                            self.editProduct(false);
+                        };
+
+                        northwind.Categories
+                            .toArray(self.listedCategories)
+                            .then(function (categories) {
+                                if (categories.length > 0)
+                                    self.selectedCategoryId(categories[0].Category_ID);
+                            });
+
+                        northwind.Products
+                            .filter(function (product) { return product.Category_ID == this.Id }, { Id: self.selectedCategoryId })
+                            .toArray(self.listedProducts);
+
+                    };
+
+                    ko.applyBindings(new NorthwindViewModel());
+
+                });
+            </script>
+
+        </section>
+    </div>
+</body>
+</html>

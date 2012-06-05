@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>JayData Planets HTML5 sample app </title>
+     <meta name="keywords" content="local database, WebSQL, CSS3, javascript, HTML5" />
+     <meta name="description" content="Local database management through the WebSQL provider, in a fancy representative HTML5 app. It uses new features of CSS3 like keyframe-animations, transitions and transformations." />
+     <meta name="author" content="JayData, community@jaydata.org">  
+
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="planet.css">
+        <link rel="stylesheet" href="../Content/css/errorhandler.css">
+        <script src="../Content/Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../Content/Scripts/JayData.js"></script>
+        <script type="text/javascript" src="../Content/Scripts/JayDataModules/errorhandler.js"></script>
+        <script src="iscroll.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+        <script src="context.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+        <script src="planet.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+
+        <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    </head>
+<body>
+<div class="topbar">
+    <div class="topbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="#">Planets</a>
+            <button id="toggle" class="btn primary">Planet list</button>
+            <button id="edit" class="btn success">Add new planet</button>
+            <span style="color:#fff;">Move the view with middle-button mouse scroll or with touch scrolling.</span>
+            <a href="planet.js" target="_blank" style="float: right; margin-right: 1em;">App source code</a>
+            <a href="context.js" target="_blank" style="float: right; margin-right: 1em;">Context source code</a>
+        </div>
+    </div>
+</div>
+<div id="planets" class="well">
+    <ul class="pills">
+        
+    </ul>
+</div>
+<div id="insert" class="well">
+    <table class="table table-striped">
+        <tr>
+            <td><label for="planet-name">Name</label></td>
+            <td><input id="planet-name" type="text" value="New planet" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="planet-text">Text</label></td>
+            <td><textarea id="planet-text">Description...</textarea></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="planet-shadowblur">Shadow blur</label></td>
+            <td><input id="planet-shadowblur" type="number" min="0" max="500" value="32" /></td>
+            <td>from 0 to 500</td>
+        </tr>
+        <tr>
+            <td><label for="planet-shadowstyle">Shadow style</label></td>
+            <td><input id="planet-shadowstyle" type="text" value="#fff" /></td>
+            <td>like #a1b2c3 or rgb(123, 123, 123)</td>
+        </tr>
+        <tr>
+            <td><label for="planet-bodystyle">Body style</label></td>
+            <td><input id="planet-bodystyle" type="text" value="#fff" /></td>
+            <td>like #a1b2c3 or rgb(123, 123, 123)</td>
+        </tr>
+        <tr>
+            <td><label for="planet-radius">Radius</label></td>
+            <td><input id="planet-radius" type="number" min="1" max="256" value="32"/></td>
+            <td>from 1 to 256</td>
+        </tr>
+        <tr>
+            <td><label for="planet-x">X position</label></td>
+            <td><input id="planet-x" type="number" min="0" max="10000" value="0"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="planet-y">Y position</label></td>
+            <td><input id="planet-y" type="number" min="0" max="10000" value="0"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="planet-distance">Distance from parent</label></td>
+            <td><input id="planet-distance" type="number" min="0" max="1500" value="0" disabled/></td>
+            <td>from 0 to 1500</td>
+        </tr>
+        <tr>
+            <td><label for="planet-speed">Orbital speed</label></td>
+            <td><input id="planet-speed" type="number" step="0.1" min="0" value="0"/></td>
+            <td>from 0 in seconds</td>
+        </tr>
+        <tr>
+            <td><label for="planet-parent">Sub-planet</label></td>
+            <td><input id="planet-parent" type="checkbox"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="planet-parentid">Parent planet</label></td>
+            <td>
+                <select id="planet-parentid" disabled></select>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <input id="planet-id" type="hidden"/>
+    <button id="save" class="btn success">Save</button>
+    <button id="cancel" class="btn danger">Cancel</button>
+</div>
+</body>
+</html>

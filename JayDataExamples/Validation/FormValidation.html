@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JayData examples: Form validation & model binding</title>
+    <meta name="keywords" content="JayData, HTML5, Javascript, example, Form validation, JQuery form validation">
+    <meta name="description" content="This form validator extensions will allow you to apply the constraints defined on the model to validate forms through jQuery validators.">
+    <meta name="author" content="JayData, community@jaydata.org">
+
+    <script type="text/javascript" src="../Content/Scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayData.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/JayDataModules/validate.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
+    <link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../Styles/Bootstrap/docs.css" rel="stylesheet">
+    <link href="../Styles/mixins.css" rel="stylesheet">
+    <link href="../Styles/dd.css" rel="stylesheet">
+
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style type="text/css">
+        *
+        {
+            font-family: Verdana;
+            font-size: 96%;
+        }
+
+        label
+        {
+            width: 10em;
+            float: left;
+        }
+
+            label.error
+            {
+                float: none;
+                color: red;
+                vertical-align: top;
+                display:  block; width:  100%; clear: both; margin-bottom:  10px;
+            }
+
+        p
+        {
+            clear: both;
+        }
+
+        .submit
+        {
+            float:  right;
+        }
+
+        em
+        {
+            font-weight: normal;
+            padding-right: 1em;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar ================================================== -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li class="active"><a href="http://www.jaydata.org/examples">Examples home</a></li>
+                    <li><a href="http://www.jaydata.org">JayData.org home</a></li>
+                    <li><a href="http://www.jaydata.org/documentation">Documentation</a></li>
+                    <li><a href="http://www.jaydata.org/community">Community</a></li>
+                    <li><a href="http://www.jaydata.org/forum">Forum</a></li>
+                    <li><a href="http://www.jaydata.org/blog">Blog</a>
+                    <li><a href="http://www.jaydata.org/backlogs">Write a new userstory!</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="jumbotron masthead">
+            <div class="inner tacenter">
+                <h1>Form validation</h1>
+
+                <div class="clear">
+                    <h3 class="marginb5">Supported browsers:</h3>
+                    <ul class="browser-list">
+                        <li class="browser ie" title="Internet Explorer 9.0+"></li>
+                        <li class="browser firefox" title="Firefox 10.0+"></li>
+                        <li class="browser chrome" title="Google Chrome 12+"></li>
+                        <li class="browser safari" title="Safari 4+"></li>
+                        <li class="browser blackberry" title="Blackberry 7+"></li>
+                        <li class="browser wp" title="Windows Phone 7.5+"></li>
+                        <li class="browser ios" title="iOS 4+"></li>
+                        <li class="browser android" title="Android 2.2+"></li>
+                    </ul>
+                </div>
+
+                <hr class="soften" />
+
+                <h2>Class definition with validation attributes</h2>
+                <pre class="well well-white marginb20 iblock" style='color: #000000; background: #ffffff;'>$data<span style='color:#808030; '>.</span>Entity<span style='color:#808030; '>.</span>extend<span style='color:#808030; '>(</span><span style='color:#0000E6; '>"</span><span style='color:#800000; '>UserModel</span><span style='color:#0000E6; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800080; '>{</span>
+    Id<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span> type<span style='color:#800080; '>:</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>int</span><span style='color:#0000E6; '>"</span><span style='color:#808030; '>,</span> key<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>,</span> computed<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+    UserName<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span> type<span style='color:#800080; '>:</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>string</span><span style='color:#0000E6; '>"</span><span style='color:#808030; '>,</span> required<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>,</span> minLength<span style='color:#800080; '>:</span> <span style='color:#008c00; '>6</span><span style='color:#808030; '>,</span> maxLength<span style='color:#800080; '>:</span> <span style='color:#008c00; '>15</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+    Bio<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span> type<span style='color:#800080; '>:</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>string</span><span style='color:#0000E6; '>"</span><span style='color:#808030; '>,</span> required<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+    Zip<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span> type<span style='color:#800080; '>:</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>int</span><span style='color:#0000E6; '>"</span><span style='color:#808030; '>,</span> minValue<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span> value<span style='color:#800080; '>:</span> <span style='color:#008c00; '>1000</span><span style='color:#808030; '>,</span> message<span style='color:#800080; '>:</span> <span style='color:#800000; '>'min value 1000'</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> maxValue<span style='color:#800080; '>:</span> <span style='color:#008c00; '>9999</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+    Birthday<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span> type<span style='color:#800080; '>:</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>date</span><span style='color:#0000E6; '>"</span><span style='color:#808030; '>,</span> minValue<span style='color:#800080; '>:</span> <span style='color:#0000E6; font-weight:normal; '>new</span> <span style='color:#797997; '>Date</span><span style='color:#808030; '>(</span><span style='color:#797997; '>Date</span><span style='color:#808030; '>.</span><span style='color:#0000E6; font-weight:normal; '>parse</span><span style='color:#808030; '>(</span><span style='color:#0000E6; '>"</span><span style='color:#800000; '>March 21, 2012</span><span style='color:#0000E6; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> errorMessage<span style='color:#800080; '>:</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>min date message</span><span style='color:#0000E6; '>"</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+    Regex<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span> type<span style='color:#800080; '>:</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>string</span><span style='color:#0000E6; '>"</span><span style='color:#808030; '>,</span> regex<span style='color:#800080; '>:</span> <span style='color:#800000; '>'</span><span style='color:#0f69ff; '>\\</span><span style='color:#800000; '>wb</span><span style='color:#0f69ff; '>\\</span><span style='color:#800000; '>w'</span><span style='color:#808030; '>,</span> errorMessage<span style='color:#800080; '>:</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>regex error: </span><span style='color:#0f69ff; '>\\</span><span style='color:#800000; '>wb</span><span style='color:#0f69ff; '>\\</span><span style='color:#800000; '>w (ex: abc)</span><span style='color:#0000E6; '>"</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+    CustomValid<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span> type<span style='color:#800080; '>:</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>string</span><span style='color:#0000E6; '>"</span><span style='color:#808030; '>,</span> required<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span> value<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>,</span> message<span style='color:#800080; '>:</span> <span style='color:#800000; '>'required'</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        customValidator<span style='color:#800080; '>:</span> <span style='color:#0000E6; font-weight:normal; '>function</span> <span style='color:#808030; '>(</span>v<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span> <span style='color:#0000E6; font-weight:normal; '>return</span> <span style='color:#808030; '>!</span>v <span style='color:#808030; '>||</span> v<span style='color:#808030; '>.</span>length <span style='color:#808030; '>==</span> <span style='color:#008c00; '>3</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span> errorMessage<span style='color:#800080; '>:</span> <span style='color:#0000E6; '>"</span><span style='color:#800000; '>custom error, length: 3</span><span style='color:#0000E6; '>"</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+                <h2>Validations and model binding</h2>
+                <pre class="well well-white marginb20 iblock" style='color: #000000; background: #ffffff;'><span style='color:#0000E6; font-weight:normal; '>var</span> model <span style='color:#808030; '>=</span> <span style='color:#0000E6; font-weight:normal; '>new</span> UserModel<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+$<span style='color:#808030; '>(</span><span style='color:#0000E6; '>"</span><span style='color:#800000; '>.vform</span><span style='color:#0000E6; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>validate<span style='color:#808030; '>(</span>model<span style='color:#808030; '>.</span>toJQueryValidate<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+    success<span style='color:#800080; '>:</span> <span style='color:#0000E6; font-weight:normal; '>function</span> <span style='color:#808030; '>(</span>model<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        <span style='color:#008c00; '>//if u have formBinder plugin, model filled up with form's values</span>
+        console<span style='color:#808030; '>.</span><span style='font-weight:normal; '>log</span><span style='color:#808030; '>(</span>model<span style='color:#808030; '>.</span>UserName<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        console<span style='color:#808030; '>.</span><span style='font-weight:normal; '>log</span><span style='color:#808030; '>(</span>model<span style='color:#808030; '>.</span>Bio<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+            </div>
+        </header>
+
+        <section id="wrapper" class="container tacenter">
+            <div class="iblock well span5" style="margin:  0 auto !important; float: none !important;">
+            <h2>A simple form with validations and model binding</h2>
+            
+            <br />
+
+            <form class="vform" id="Form1" method="get" action="">
+            <fieldset>
+                <legend class="noborder"></legend>
+                <p>
+                    <label for="UserName">UserName</label>
+                    <input id="UserName" name="UserName" size="25" />
+                </p>
+                <p>
+                    <label for="Bio">Bio</label>
+                    <input id="Bio" name="Bio" size="25" />
+                </p>
+                <p>
+                    <label for="Zip">Zip</label>
+                    <input id="Zip" type="number" name="Zip" size="25" />
+                </p>
+                <p>
+                    <label for="Birthday">Birthday</label>
+                    <input id="Birthday" type="date" name="Birthday" size="25" />
+                </p>
+                <p>
+                    <label for="Regex">Regex</label>
+                    <input id="Regex" name="Regex" size="25" />
+                </p>
+                <p>
+                    <label for="CustomValid">CustomValid</label>
+                    <input id="CustomValid" name="CustomValid" size="25" />
+                </p>
+                <p>
+                    <input class="submit check btn btn-large" type="submit" value="Submit" />
+                </p>
+            </fieldset>
+            </form>
+            <script type="text/javascript">
+
+                $(function () {
+                    $data.Entity.extend("UserModel", {
+                        Id: { type: "int", key: true, computed: true },
+                        UserName: { type: "string", required: true, minLength: 6, maxLength: 15 },
+                        Bio: { type: "string", required: true },
+                        Zip: { type: "int", minValue: { value: 1000, message: 'min value 1000' }, maxValue: 9999 },
+                        Birthday: { type: "date", minValue: new Date(Date.parse("March 21, 2012")), errorMessage: "min date message" },
+                        Regex: { type: "string", regex: '\\wb\\w', errorMessage: "regex error: \\wb\\w (ex: abc)" },
+                        CustomValid: {
+                            type: "string", required: { value: true, message: 'required' },
+                            customValidator: function (v) { return !v || v.length == 3 }, errorMessage: "custom error, length: 3"
+                        },
+                    });
+
+
+                    $(".check").click(function (e) {
+                        var model = new UserModel();
+                        return $(".vform").validate(model.toJQueryValidate({
+                            success: function (model) {
+                                //if u have formBinder plugin, model filled up with form's values
+                                console.log(model.UserName);
+                                console.log(model.Bio);
+                            }
+                        }));
+                    });
+                });
+
+            </script>
+                </div>
+        </section>
+    </div>
+</body>
+</html>
