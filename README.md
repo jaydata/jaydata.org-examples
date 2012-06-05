@@ -1,4 +1,5 @@
 jaydata.org-examples
 ====================
 
-The JayData Examples site
+This repository contains JayData examples published on http://jaydata.org/examples
+
