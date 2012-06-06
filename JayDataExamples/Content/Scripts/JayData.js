@@ -1,5 +1,5 @@
 
-/********* TypeSystem/initializeJayData.js ********/
+/********* CREDITS.TXT ********/
 
 // JayData 1.0.4
 // Dual licensed under MIT and GPL v2
@@ -9,11 +9,14 @@
 // practices to access and manipulate data from various online and offline sources.
 //
 // Credits:
-//     Hajnalka Battancs, D·niel JÛzsef, J·nos Roden, L·szlÛ Horv·th, PÈter Nochta
-//     PÈter Zentai, RÛbert BÛnay, Szabolcs Czinege, Viktor Borza, Viktor L·z·r,
-//     Zolt·n Gyebrovszki
+//     Hajnalka Battancs, D√°niel J√≥zsef, J√°nos Roden, L√°szl√≥ Horv√°th, P√©ter Nochta
+//     P√©ter Zentai, R√≥bert B√≥nay, Szabolcs Czinege, Viktor Borza, Viktor L√°z√°r,
+//     Zolt√°n Gyebrovszki
 //
 // More info: http://jaydata.org
+
+
+/********* TypeSystem/initializeJayData.js ********/
 
 if (typeof console === 'undefined') {
     console = {
@@ -58,6 +61,14 @@ if (!console.error) console.error = function () { };
     $data.root = {};
 
 })($data);
+
+
+// Do not remove this block, it is used by jsdoc 
+/**
+    @name $data.Base
+    @class base class
+*/
+
 
 /********* TypeSystem/utils.js ********/
 
@@ -12984,28 +12995,44 @@ $data.Class.define('$data.ModelBinder', null, null, {
 		}
 
         if (meta.$selector){
-            var type = meta.$selector.split(':');
-            switch (type[0]){
-                case 'json':
-                    var path = type[1].split('.');
-                    while (path.length) {
-                        data = data[path[0]];
-                        path = path.slice(1);
-                        if (!data) {
-                            return data;
-                        }
-                    }
-                    break;
-				case 'css':
-                case 'xml':
-					if (data.querySelector){
-						data = data[meta.$item ? 'querySelectorAll' : 'querySelector'](type[1]);
-					}else{
-						data = $(data).find(type[1]);
-						if (!meta.$item) data = data[0];
-					}
-                    break;
-            }
+			if (!(meta.$selector instanceof Array)){
+				meta.$selector = [meta.$selector];
+			}
+
+			var i = 0;
+			while (i < meta.$selector.length){
+				var selector = meta.$selector[i];
+				var type = selector.split(':');
+				switch (type[0]){
+					case 'json':
+						var path = type[1].split('.');
+						while (path.length) {
+							if (typeof data[path[0]] === 'undefined'){
+								if (i === meta.$selector.length){
+									return data;
+								}
+							}else{
+								data = data[path[0]];
+								path = path.slice(1);
+								if (!data) {
+									return data;
+								}
+							}
+						}
+						break;
+					case 'css':
+					case 'xml':
+						if (data.querySelector){
+							data = data[meta.$item ? 'querySelectorAll' : 'querySelector'](type[1]);
+						}else{
+							data = $(data).find(type[1]);
+							if (!meta.$item) data = data[0];
+						}
+						break;
+				}
+				i++;
+				if (data) break;
+			}
         }
 
 		if (meta.$value){
