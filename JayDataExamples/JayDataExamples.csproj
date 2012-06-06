@@ -63,18 +63,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\System.Json.4.0.20126.16343\lib\net40\System.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\System.Net.Http.Formatting.4.0.20126.16343\lib\net40\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.WebRequest">
-      <Private>True</Private>
-      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
-    </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Activation" />
     <Reference Include="System.ServiceModel.Web" />
@@ -676,7 +664,6 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Localhost.pubxml" />
     <Content Include="Sencha\Core\resources\sass\android.scss" />
     <Content Include="Sencha\Core\resources\sass\apple.scss" />
     <Content Include="Sencha\Core\resources\sass\bb6.scss" />
@@ -714,6 +701,7 @@
     <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\_widgets.scss" />
     <Content Include="Sencha\Core\resources\themes\templates\project\manifest.rb" />
     <Content Include="Sencha\Core\resources\themes\templates\project\sencha-touch.scss" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Styles\dd.less" />
     <None Include="Styles\mixins.less" />
     <None Include="ToDoListMobile\JayDataTodolist-debug.apk" />
