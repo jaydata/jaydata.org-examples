@@ -1,7 +1,7 @@
 
 /********* CREDITS.TXT ********/
 
-// JayData 1.0.4
+// JayData 1.0.5
 // Dual licensed under MIT and GPL v2
 // Copyright JayStack Technologies (http://jaydata.org/licensing)
 //
@@ -20223,43 +20223,53 @@ $data.Class.define('$data.ModelBinder', null, null, {
 		}
 
         if (meta.$selector){
-			if (!(meta.$selector instanceof Array)){
-				meta.$selector = [meta.$selector];
+			var metaSelector = meta.$selector;
+			if (!(metaSelector instanceof Array)){
+				metaSelector = [metaSelector];
 			}
 
 			var i = 0;
-			while (i < meta.$selector.length){
-				var selector = meta.$selector[i];
+			var part;
+			while (i < metaSelector.length){
+				part = data;
+				var selector = metaSelector[i];
 				var type = selector.split(':');
 				switch (type[0]){
 					case 'json':
 						var path = type[1].split('.');
 						while (path.length) {
-							if (typeof data[path[0]] === 'undefined'){
-								if (i === meta.$selector.length){
-									return data;
+							if (typeof part[path[0]] === 'undefined'){
+								if (i === metaSelector.length){
+									return undefined;
+								}else if (path.length){
+									i++;
+									break;
 								}
 							}else{
-								data = data[path[0]];
+								part = part[path[0]];
 								path = path.slice(1);
-								if (!data) {
-									return data;
-								}
 							}
+						}
+						if (!path.length){
+							i = metaSelector.length;
 						}
 						break;
 					case 'css':
 					case 'xml':
-						if (data.querySelector){
-							data = data[meta.$item ? 'querySelectorAll' : 'querySelector'](type[1]);
+						if (part.querySelector){
+							part = part[meta.$item ? 'querySelectorAll' : 'querySelector'](type[1]);
 						}else{
-							data = $(data).find(type[1]);
-							if (!meta.$item) data = data[0];
+							part = $(part).find(type[1]);
+							if (!meta.$item) part = part[0];
 						}
 						break;
 				}
 				i++;
-				if (data) break;
+			}
+
+			data = part;
+			if (!data){
+				return data;
 			}
         }
 
@@ -23616,7 +23626,9 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
         this.providerConfiguration = $data.typeSystem.extend({
             dbCreation: $data.storageProviders.sqLite.DbCreationType.DropTableIfChanged,
             oDataServiceHost: "/odata.svc",
-            serviceUrl: ""
+            serviceUrl: "",
+            user: null,
+            password: null
         }, cfg);
         if (this.context && this.context._buildDbType_generateConvertToFunction && this.buildDbType_generateConvertToFunction) {
             this.context._buildDbType_generateConvertToFunction = this.buildDbType_generateConvertToFunction;
@@ -23631,7 +23643,9 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
             case $data.storageProviders.sqLite.DbCreationType.DropAllExistingTables:
                 var that = this;
                 if (this.providerConfiguration.serviceUrl) {
-                    $.ajax({
+                    
+                    
+                    $.ajax(this._setAjaxAuthHeader({
                         url: that.providerConfiguration.serviceUrl + "/Delete",
                         type: 'POST',
                         success: function (d) {
@@ -23641,7 +23655,7 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
                         error: function (error) {
                             callBack.success(that.context);
                         }
-                    });
+                    }));
                 } else {
                     callBack.success(that.context);
                 }
@@ -23651,6 +23665,60 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
                 break;
         }
     },
+    _setAjaxAuthHeader: function (cfg) {
+        var encodeBase64 = function (val) {
+            var b64array = "ABCDEFGHIJKLMNOP" +
+                               "QRSTUVWXYZabcdef" +
+                               "ghijklmnopqrstuv" +
+                               "wxyz0123456789+/" +
+                               "=";
+
+            input = val;
+            var base64 = "";
+            var hex = "";
+            var chr1, chr2, chr3 = "";
+            var enc1, enc2, enc3, enc4 = "";
+            var i = 0;
+
+            do {
+                chr1 = input.charCodeAt(i++);
+                chr2 = input.charCodeAt(i++);
+                chr3 = input.charCodeAt(i++);
+
+                enc1 = chr1 >> 2;
+                enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+                enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+                enc4 = chr3 & 63;
+
+                if (isNaN(chr2)) {
+                    enc3 = enc4 = 64;
+                } else if (isNaN(chr3)) {
+                    enc4 = 64;
+                }
+
+                base64 = base64 +
+                            b64array.charAt(enc1) +
+                            b64array.charAt(enc2) +
+                            b64array.charAt(enc3) +
+                            b64array.charAt(enc4);
+                chr1 = chr2 = chr3 = "";
+                enc1 = enc2 = enc3 = enc4 = "";
+            } while (i < input.length);
+
+            return base64;
+        }
+        if (this.providerConfiguration.user) {
+            var user = this.providerConfiguration.user;
+            var password = this.providerConfiguration.password;
+            var origBeforeSend = cfg.beforeSend;
+            cfg.beforeSend = function(xhr) {
+                xhr.setRequestHeader("Authorization", "Basic " + encodeBase64(user + ":" + password || ""));
+                if (typeof origBeforeSend === "function")
+                    origBeforeSend(xhr);
+            }
+        }
+        return cfg;
+    },    
     //buildDbType_modifyInstanceDefinition: function (instanceDefinition, storageModel) {
     //    if (storageModel.Associations) {
     //        storageModel.Associations.forEach(function (association) {
@@ -23719,11 +23787,7 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
             dataType: "JSON",
             success: function (data, textStatus, jqXHR) {
                 if (callBack.success) {
-                    if ((typeof data === 'object') && (('d' in data) && ('results' in data.d))) {
-                        query.rawDataList = data.d.results;
-                    } else {
-                        query.rawDataList = data.d || [{ cnt: data }];
-                    }
+                    query.rawDataList = typeof data === 'number' ? [{ cnt: data }] : data;
                     callBack.success(query);
                 }
             },
@@ -23733,7 +23797,7 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
         };
 
         this.context.prepareRequest.call(this, requestData);
-        $.ajax(requestData);
+        $.ajax(this._setAjaxAuthHeader(requestData));
     },
     _compile: function (queryable, params) {
         var compiler = new $data.storageProviders.oData.oDataCompiler();
@@ -23815,6 +23879,12 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
         }, callBack.error, OData.batchHandler];
 
         this.context.prepareRequest.call(this, requestData);
+
+        if (this.providerConfiguration.user) {
+            requestData[0].user = this.providerConfiguration.user;
+            requestData[0].password = this.providerConfiguration.password || "";
+        }
+
         OData.request.apply(this, requestData);
     },
     save_getInitData: function (item, convertedItems) {
@@ -24021,7 +24091,7 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
     },
 
     getServiceMetadata: function () {
-        $.ajax({
+        $.ajax(this._setAjaxAuthHeader({
             url: this.providerConfiguration.oDataServiceHost + "/$metadata",
             dataType: "xml",
             success: function (d) {
@@ -24037,7 +24107,7 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
                 console.log("error:");
                 console.dir(error);
             }
-        });
+        }));
     },
     nsResolver: function (sPrefix) {
         switch (sPrefix) {
@@ -24081,7 +24151,7 @@ $C('$data.storageProviders.oData.oDataCompiler', $data.Expressions.EntityExpress
         this.Visit(query.expression, queryFragments);
 
         query.modelBinderConfig = {};
-        var modelBinder = Container.createModelBinderConfigCompiler(query, this.includes);
+        var modelBinder = Container.createModelBinderConfigCompiler(query, this.includes, true);
         modelBinder.Visit(query.expression);
 
 
@@ -24510,9 +24580,10 @@ $C('$data.modelBinder.FindProjectionVisitor', $data.Expressions.EntityExpression
 });
 
 $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpressionVisitor, null, {
-    constructor: function (query, includes) {
+    constructor: function (query, includes, oDataProvider) {
         this._query = query;
         this._includes = includes;
+        this._isoDataProvider = oDataProvider || false;
     },
     VisitSingleExpression: function (expression) {
         this._defaultModelBinder(expression);
@@ -24536,7 +24607,7 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
         builder.resetModelBinderProperty();
         this._query.modelBinderConfig = builder.modelBinderConfig;
     },
-	VisitConstantExpression: function (expression, builder) {
+    VisitConstantExpression: function (expression, builder) {
         builder.modelBinderConfig['$type'] = expression.type;
         builder.modelBinderConfig['$value'] = expression.value;
     },
@@ -24554,6 +24625,9 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
     _defaultModelBinder: function (expression) {
         var builder = Container.createqueryBuilder();
         builder.modelBinderConfig['$type'] = $data.Array;
+        if (this._isoDataProvider) {
+            builder.modelBinderConfig['$selector'] = ['json:d.results', 'json:d'];
+        }
         builder.modelBinderConfig['$item'] = {};
         builder.selectModelBinderProperty('$item');
 
@@ -24571,7 +24645,11 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
                     //complex type
                     builder.selectModelBinderProperty(prop.name);
                     builder.modelBinderConfig['$type'] = Container.resolveType(prop.dataType);
-                    builder.modelBinderConfig['$selector'] = 'json:' + prop.name;
+                    if (this._isoDataProvider) {
+                        builder.modelBinderConfig['$selector'] = ['json:' + prop.name + '.results', 'json:' + prop.name];
+                    } else {
+                        builder.modelBinderConfig['$selector'] = 'json:' + prop.name;
+                    }
                     this._addPropertyToModelBinderConfig(Container.resolveType(prop.dataType), builder);
                     builder.popModelBinderProperty();
                 } else {
@@ -24591,15 +24669,20 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
 
             builder.selectModelBinderProperty(ct.FromPropertyName);
             builder.modelBinderConfig['$type'] = ct.ToType;
-            builder.modelBinderConfig['$selector'] = 'json:'+ct.FromPropertyName;
+            if (this._isoDataProvider) {
+                builder.modelBinderConfig['$selector'] = ['json:' + ct.FromPropertyName + '.results', 'json:' + ct.FromPropertyName];
+            } else {
+                builder.modelBinderConfig['$selector'] = 'json:' + ct.FromPropertyName;
+            }
             this._addPropertyToModelBinderConfig(ct.ToType, builder);
-            
+
             builder.popModelBinderProperty();
         }, this);
     },
     DefaultSelection: function (builder) {
         //no projection, get all item from entitySet
         builder.modelBinderConfig['$type'] = this._query.entitySet.elementType;
+
         var storageModel = this._query.context._storageModel.getStorageModel(this._query.entitySet.elementType);
 
         this._addPropertyToModelBinderConfig(this._query.entitySet.elementType, builder);
@@ -24613,8 +24696,11 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
                     association = tmpStorageModel.Associations[includes[i]];
                     tmpStorageModel = this._query.context._storageModel.getStorageModel(association.ToType);
                 }
-
-                builder.modelBinderConfig['$selector'] = 'json:' + includes[includes.length-1];
+                if (this._isoDataProvider) {
+                    builder.modelBinderConfig['$selector'] = ['json:' + includes[includes.length - 1] + '.results', 'json:' + includes[includes.length - 1]];
+                } else {
+                    builder.modelBinderConfig['$selector'] = 'json:' + includes[includes.length - 1];
+                }
                 if (association.ToMultiplicity === '*') {
                     builder.modelBinderConfig['$type'] = $data.Array;
                     builder.selectModelBinderProperty('$item');
@@ -24659,7 +24745,7 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
         if (expression.memberDefinition.storageModel && expression.memberName in expression.memberDefinition.storageModel.ComplexTypes) {
             this._addPropertyToModelBinderConfig(Container.resolveType(expression.memberDefinition.type), builder);
         } else {
-            
+
             builder.modelBinderConfig['$source'] = expression.memberName;
         }
     },
@@ -24673,23 +24759,45 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
     VisitComplexTypeExpression: function (expression, builder) {
         this.Visit(expression.source, builder);
         this.Visit(expression.selector, builder);
-        if (!builder.modelBinderConfig['$selector']) {
-            builder.modelBinderConfig['$selector'] = 'json:';
+
+
+        if (('$selector' in builder.modelBinderConfig) && (builder.modelBinderConfig.$selector.length > 0)) {
+            if (builder.modelBinderConfig.$selector instanceof $data.Array) {
+                var temp = builder.modelBinderConfig.$selector[1];
+                builder.modelBinderConfig.$selector[0] = temp + '.' + expression.selector.memberName + '.results';
+                builder.modelBinderConfig.$selector[1] = temp + '.' + expression.selector.memberName;
+            } else {
+                builder.modelBinderConfig.$selector += '.' + expression.selector.memberName;
+            }
+
         } else {
-            builder.modelBinderConfig['$selector'] += '.';
+            if (this._isoDataProvider) {
+                builder.modelBinderConfig['$selector'] = ['json:' + expression.selector.memberName + '.results', 'json:' + expression.selector.memberName];
+            } else {
+                builder.modelBinderConfig['$selector'] = 'json:' + expression.selector.memberName;
+            }
         }
-        builder.modelBinderConfig['$selector'] += expression.selector.memberName;
     },
     VisitEntityExpression: function (expression, builder) {
         this.Visit(expression.source, builder);
     },
     VisitAssociationInfoExpression: function (expression, builder) {
         if (('$selector' in builder.modelBinderConfig) && (builder.modelBinderConfig.$selector.length > 0)) {
-            builder.modelBinderConfig.$selector += '.';
+            if (builder.modelBinderConfig.$selector instanceof $data.Array) {
+                var temp = builder.modelBinderConfig.$selector[1];
+                builder.modelBinderConfig.$selector[0] = temp + '.' + expression.associationInfo.FromPropertyName + '.results';
+                builder.modelBinderConfig.$selector[1] = temp + '.' + expression.associationInfo.FromPropertyName;
+            } else {
+                builder.modelBinderConfig.$selector += '.' + expression.associationInfo.FromPropertyName;
+            }
+
         } else {
-            builder.modelBinderConfig['$selector'] = 'json:';
+            if (this._isoDataProvider) {
+                builder.modelBinderConfig['$selector'] = ['json:' + expression.associationInfo.FromPropertyName + '.results', 'json:' + expression.associationInfo.FromPropertyName];
+            } else {
+                builder.modelBinderConfig['$selector'] = 'json:' + expression.associationInfo.FromPropertyName;
+            }
         }
-        builder.modelBinderConfig['$selector'] += expression.associationInfo.FromPropertyName;
     },
     VisitObjectLiteralExpression: function (expression, builder) {
         builder.modelBinderConfig['$type'] = $data.Object;
