@@ -1,8 +1,6 @@
 // only if the app runs in the browser
 Netflix.context.prepareRequest = function(cfg){
-    cfg.url += '&$format=json&$callback=callback';
-    cfg.dataType = 'jsonp';
-    cfg.jsonpCallback = "callback";
+    cfg[0].enableJsonpCallback = true;
 };
 
 var itemTpl = new Ext.XTemplate(
