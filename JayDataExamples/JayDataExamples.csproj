@@ -217,6 +217,7 @@
     <Content Include="download.html" />
     <Content Include="Facebook\Facebook_provider_example.html" />
     <Content Include="Facebook\Facebook_provider_friends_example.html" />
+    <Content Include="YQL\YQLWithRails.html" />
     <Content Include="Knockoutjs\DynamicQueryFilterNorthwind.html" />
     <Content Include="Knockoutjs\DynamicQueryNorthwind.html" />
     <Content Include="Knockoutjs\Northwind.html" />
