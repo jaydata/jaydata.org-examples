@@ -1,7 +1,7 @@
 
 /********* CREDITS.TXT ********/
 
-// JayData 1.0.5
+// JayData 1.1.0
 // Dual licensed under MIT and GPL v2
 // Copyright JayStack Technologies (http://jaydata.org/licensing)
 //
@@ -35,7 +35,7 @@ if (!console.error) console.error = function () { };
 (function (global) {
     /// <summary>NodeJS detecting, handling, and module export.</summary>
 
-    $ = typeof $ !== 'undefined' && $ || require('jquery');
+    //$ = typeof $ !== 'undefined' && $ || require('jquery');
 
     if (typeof window === "undefined") {
         window = this;
@@ -56,8 +56,8 @@ if (!console.error) console.error = function () { };
     /// Collection of JayData services
     ///</summary>
     $data.__namespace = true;
-    $data.version = "JayData 1.0.4";
-    $data.versionNumber = "1.0.4";
+    $data.version = "JayData 1.1.0";
+    $data.versionNumber = "1.1.0";
     $data.root = {};
 
 })($data);
@@ -8134,14 +8134,33 @@ $data.typeSystem = {
         ctor.prototype.constructor = ctor;
         return ctor;
     },*/
-    mix: function (type, mixin) {
-        type.prototype = $.extend(type.prototype || {}, mixin.prototype || {});
-        type.mixins = type.mixins || [];
-        type.mixins.push(mixin);
-        return type;
-    },
-    extend: function (target, obj1) {
-        return $.extend(target, obj1);
+    //mix: function (type, mixin) {
+    //    type.prototype = $.extend(type.prototype || {}, mixin.prototype || {});
+    //    type.mixins = type.mixins || [];
+    //    type.mixins.push(mixin);
+    //    return type;
+    //},
+    extend: function (target) {
+        /// <summary>
+        /// Extends an object with properties of additional parameters.
+        /// </summary>
+        /// <signature>
+        /// <param name="target" type="Object">Object that will be extended.</param>
+        /// <param name="object" type="Object">Object to extend target with.</param>
+        /// <param name="objectN" optional="true" parameterArray="true" type="Object">Object to extend target with.</param>
+        /// </signature>        
+    	/// <returns></returns>
+        if (typeof target !== 'object')
+            Guard.raise('Target must be object');
+        for (var i = 1; i < arguments.length; i++) {
+            var obj = arguments[i];
+            if (obj === null || typeof obj === 'undefined')
+                continue;
+            for (key in obj) {
+                target[key] = obj[key];
+            }
+        }        
+        return target;
     },
     createCallbackSetting: function (callBack, defaultSetting) {
         var setting = {
@@ -8335,6 +8354,7 @@ ExpressionType.Function = "Function";
 ExpressionType.Unknown = "UNKNOWN";
 
 ExpressionType.EntitySet = "EntitySet";
+ExpressionType.ServiceOperation = "ServiceOperation";
 ExpressionType.EntityField = "EntityField";
 ExpressionType.EntityContext = "EntityContext";
 ExpressionType.Entity = "Entity";
@@ -8342,11 +8362,14 @@ ExpressionType.Filter = "Filter";
 ExpressionType.First = "First";
 ExpressionType.Count = "Count";
 ExpressionType.Single = "Single";
+ExpressionType.Some = "Some";
+ExpressionType.Every = "Every";
 ExpressionType.ToArray = "ToArray";
 ExpressionType.ForEach = "ForEach";
 ExpressionType.Projection = "Projection";
 ExpressionType.EntityMember = "EntityMember";
 ExpressionType.EntityFieldOperation = "EntityFieldOperation";
+ExpressionType.FrameOperation = "FrameOperation";
 ExpressionType.EntityBinary = "EntityBinary";
 ExpressionType.Code = "Code";
 ExpressionType.ParametricQuery = "ParametricQuery";
@@ -8522,6 +8545,8 @@ $C('$data.Expressions.ExpressionNode', $data.Entity, null, {
 
     type: {},
 
+    isTerminated: { value: false },
+
     toString: function () {
         return this.value;
     }
@@ -8547,56 +8572,6 @@ $C('$data.Expressions.UnaryExpression', $data.Expressions.ExpressionNode, null, 
     operand: { value: undefined, writable: true },
     nodeType: { value: undefined, writable: true }
 });
-
-
-
-
-//$data.Expressions.ExpressionNodeTypes.NewExpressionNode = $C('NewExpressionNode', $data.Expressions.ExpressionNodeTypes.ExpressionNode, null, {
-//    values: { value: undefined },
-//    constructor: function (type, executable, values) {
-//        this.values = values;
-//    }
-//}, {
-//    create: function (executable, values) {
-//        return new $data.Expressions.ExpressionNodeTypes.NewExpressionNode(NEW, executable, values);
-//    }
-//});
-
-
-//$data.Expressions.ExpressionNodeTypes.IncDecExpressionNode = $C('IncDecExpressionNode', $data.Expressions.ExpressionNodeTypes.ExpressionNode, null, {
-//    operator: { value: undefined },
-//    operand: { value: undefined },
-//    suffix: { value: undefined },
-//    constructor: function (type, executable, operator, operand, suffix) {
-//        this.operator = operator;
-//        this.operand = operand;
-//        this.suffix = suffix;
-//    }
-//}, {
-//    create: function (executable, operator, operand, suffix) {
-//        return new $data.Expressions.ExpressionNodeTypes.IncDecExpressionNode(INCDEC, executable, operator, operand, suffix);
-//    }
-//});
-
-
-//$data.Expressions.ExpressionNodeTypes.DecisionExpressionNode = $C('DecisionExpressionNode', $data.Expressions.ExpressionNodeTypes.ExpressionNode, null, {
-//    expression: { value: undefined },
-//    left: { value: undefined },
-//    right: { value: undefined },
-//    constructor: function (type, executable, expression, left, right) {
-//        this.expression = expression;
-//        this.left = left;
-//        this.right = right;
-//    }
-//}, {
-//    create: function (executable, expression, left, right) {
-//        return new $data.Expressions.ExpressionNodeTypes.DecisionExpressionNode(DECISION, executable, expression, left, right);
-//    }
-//});
-
-
-
-
 
 /********* Types/Expressions/ArrayLiteralExpression.js ********/
 
@@ -10603,7 +10578,7 @@ $C('$data.Expressions.CodeToEntityConverter', $data.Expressions.ExpressionVisito
         var et = $data.Expressions.ExpressionType;
         switch (expression.nodeType) {
             case et.LambdaParameterReference:
-                var result = Container.createEntityExpression(context.lambdaParameters[expression.paramIndex], {});
+                var result = Container.createEntityExpression(context.lambdaParameters[expression.paramIndex], { lambda: expression.name });
                 return result;
             case et.LambdaParameter:
                 //TODO: throw descriptive exception or return a value
@@ -10631,7 +10606,9 @@ $C('$data.Expressions.CodeToEntityConverter', $data.Expressions.ExpressionVisito
         var self = this;
         var exp = this.Visit(expression.expression, context);
         var member = this.Visit(expression.member, context);
-        var args = expression.args.map(function (arg) { return self.Visit(arg, context); });
+        var args = expression.args.map(function (arg) {
+            return self.Visit(arg, context);
+        });
         var result;
 
         ///filter=>function(p) { return p.Title == this.xyz.BogusFunction('asd','basd');}
@@ -10651,6 +10628,16 @@ $C('$data.Expressions.CodeToEntityConverter', $data.Expressions.ExpressionVisito
                 member = Container.createMemberInfoExpression(operation);
                 result = Container.createEntityFieldOperationExpression(exp, member, args);
                 return result;
+
+            case exp instanceof $data.Expressions.EntitySetExpression:
+                var operation = this.scopeContext.resolveSetOperations(member.value, exp, context.frameType);
+                if (!operation) {
+                    Guard.raise("Unknown entity field operation: " + member.getJSON());
+                }
+                member = Container.createMemberInfoExpression(operation);
+                result = Container.createFrameOperationExpression(exp, member, args);
+                return result;
+                
             default:
                 Guard.raise("VisitCall: Only fields can have operations: " + expression.getType().name);
                 //TODO we must not alter the visited tree
@@ -10699,7 +10686,9 @@ $C('$data.Expressions.CodeToEntityConverter', $data.Expressions.ExpressionVisito
                         if (assocInfo.ToMultiplicity !== "*") {
                             var ee = Container.createEntityExpression(setExpression, {});
                             return ee;
-                        }
+                        }/* else {
+                            context.lambdaParameters.push(setExpression);
+                        }*/
                         return setExpression;
                     case "complexProperty":
                         memberDefinitionExp = Container.createMemberInfoExpression(memberDefinition);
@@ -10806,7 +10795,7 @@ $C('$data.Expressions.EntityExpression', $data.Expressions.ExpressionNode, null,
         ///</signature>
         Guard.requireValue("source", source);
         Guard.requireValue("selector", selector);
-        if (!(source instanceof $data.Expressions.EntitySetExpression)) {
+        if (!(source instanceof $data.Expressions.EntitySetExpression) && !(source instanceof $data.Expressions.ServiceOperationExpression)) {
             Guard.raise("Only EntitySetExpressions can be the source for an EntityExpression");
         }
 
@@ -10890,6 +10879,20 @@ $C('$data.Expressions.EntityExpressionVisitor', null, null, {
         var source = this.Visit(expression.source, context);
         if (source !== expression.source)
             return Container.createFirstExpression(source);
+        return expression;
+    },
+
+    VisitSomeExpression: function (expression, context) {
+        var source = this.Visit(expression.source, context);
+        if (source !== expression.source)
+            return Container.createSomeExpression(source);
+        return expression;
+    },
+
+    VisitEveryExpression: function (expression, context) {
+        var source = this.Visit(expression.source, context);
+        if (source !== expression.source)
+            return Container.createEveryExpression(source);
         return expression;
     },
 
@@ -11091,6 +11094,18 @@ $C('$data.Expressions.EntityFieldOperationExpression', $data.Expressions.Express
 
 });
 
+/********* Types/Expressions/EntityExpressions/FrameOperationExpression.js ********/
+
+$C('$data.Expressions.FrameOperationExpression', $data.Expressions.ExpressionNode, null, {
+    constructor: function (source, operation, parameters) {
+        this.source = source;
+        this.operation = operation;
+        this.parameters = parameters;
+    },
+    nodeType: { value: $data.Expressions.ExpressionType.FrameOperation }
+
+});
+
 /********* Types/Expressions/EntityExpressions/EntitySetExpression.js ********/
 
 $C('$data.Expressions.EntitySetExpression', $data.Expressions.ExpressionNode, null, {
@@ -11151,6 +11166,10 @@ $C('$data.Expressions.EntitySetExpression', $data.Expressions.ExpressionNode, nu
                 this.elementType = this.source.elementType;
                 this.storageModel = this.source.storageModel;
                 break;
+            case this.source instanceof $data.Expressions.ServiceOperationExpression:
+                this.elementType = this.source.elementType;//?????????
+                this.storageModel = this.source.storageModel;
+                break;
             default:
                 Guard.raise("Unknown source type for EntitySetExpression: " + this.source.getType().name);
         }
@@ -11184,6 +11203,9 @@ $C('$data.Expressions.FilterExpression', $data.Expressions.EntitySetExpression, 
 });
 
 $C('$data.Expressions.FrameOperator', $data.Expressions.ExpressionNode, null, {
+    constructor: function () {
+        this.isTerminated = true;
+    }
 });
 
 $C('$data.Expressions.CountExpression', $data.Expressions.FrameOperator, null, {
@@ -11238,6 +11260,28 @@ $C('$data.Expressions.ToArrayExpression', $data.Expressions.FrameOperator, null,
         this.resultType = $data.Array;
     },
     nodeType: { value: $data.Expressions.ExpressionType.ToArray, enumerable: true }
+});
+
+$C('$data.Expressions.SomeExpression', $data.Expressions.FrameOperator, null, {
+    constructor: function (source) {
+        ///<signature>
+        ///<param name="source" type="$data.Expressions.EntitySetExpression" />
+        ///</signature>
+        this.source = source;
+        this.resultType = $data.Object;
+    },
+    nodeType: { value: $data.Expressions.ExpressionType.Some, enumerable: true }
+});
+
+$C('$data.Expressions.EveryExpression', $data.Expressions.FrameOperator, null, {
+    constructor: function (source) {
+        ///<signature>
+        ///<param name="source" type="$data.Expressions.EntitySetExpression" />
+        ///</signature>
+        this.source = source;
+        this.resultType = $data.Object;
+    },
+    nodeType: { value: $data.Expressions.ExpressionType.Every, enumerable: true }
 });
 
 /********* Types/Expressions/EntityExpressions/IncludeExpression.js ********/
@@ -11320,6 +11364,13 @@ $C('$data.Expressions.QueryExpressionCreator', $data.Expressions.EntityExpressio
         this.scopeContext = scopeContext;
     },
     VisitEntitySetExpression: function (expression, context) {
+        if (expression.source instanceof $data.Expressions.EntityContextExpression) {
+            this.lambdaTypes.push(expression);
+        }
+        return expression;
+    },
+
+    VisitServiceOperationExpression: function (expression, context) {
         if (expression.source instanceof $data.Expressions.EntityContextExpression) {
             this.lambdaTypes.push(expression);
         }
@@ -11418,6 +11469,49 @@ $C('$data.Expressions.RepresentationExpression', $data.Expressions.ExpressionNod
 
 
 
+/********* Types/Expressions/EntityExpressions/ServiceOperationExpression.js ********/
+
+$C('$data.Expressions.ServiceOperationExpression', $data.Expressions.ExpressionNode, null, {
+    constructor: function (source, selector, params, cfg) {
+        ///<signature>
+        ///<param name="source" type="$data.Expressions.EntityContextExpression" />
+        ///<param name="selector" type="$data.Expressions.MemberInfoExpression" />
+        ///<param name="params" type="$data.Array" />
+        ///<param name="cfg" type="$data.Object" />
+        ///</signature>
+        Guard.requireType("source", source, [$data.Expressions.EntityContextExpression]);
+        Guard.requireType("selector", source, [$data.Expressions.MemberInfoExpression]);
+
+        Object.defineProperty(this, "source", { value: source, enumerable: true, writable: true });
+        Object.defineProperty(this, "selector", { value: selector, enumerable: true, writable: true });
+        Object.defineProperty(this, "params", { value: params, enumerable: true, writable: true });
+        Object.defineProperty(this, "cfg", { value: cfg, enumerable: false, writable: true });
+        
+        function findContext() {
+            //TODO: use source from function parameter and return a value at the end of the function
+            var r = source;
+            while (r) {
+                if (r instanceof $data.Expressions.EntityContextExpression) {
+                    return r;
+                }
+                r = r.source;
+            }
+        }
+
+        var c = findContext();
+        switch (true) {
+            case this.source instanceof $data.Expressions.EntityContextExpression:
+                this.elementType = cfg.elementType ? Container.resolveType(cfg.elementType) : Container.resolveType(cfg.returnType);
+                this.storageModel = cfg.elementType ? c.instance._storageModel.getStorageModel(Container.resolveType(cfg.elementType)) : null;
+                break;
+            default:
+                Guard.raise("Unknown source type for EntitySetExpression: " + this.source.getType().name);
+        }
+
+    },
+    nodeType: { value: $data.Expressions.ExpressionType.ServiceOperation, enumerable: true }
+});
+
 /********* Types/Validation/EntityValidationBase.js ********/
 
 
@@ -11481,7 +11575,7 @@ $data.Class.define('$data.Validation.EntityValidation', $data.Validation.EntityV
         var errors = [];
         var typeName = Container.resolveName(Container.resolveType(memberDefinition.dataType));
         var value = !valueNotSet ? newValue : entity[memberDefinition.name];
-        this.fieldValidate(memberDefinition, value, errors, typeName);
+        this.fieldValidate(entity, memberDefinition, value, errors, typeName);
         return errors;
     },
 
@@ -11548,17 +11642,19 @@ $data.Class.define('$data.Validation.EntityValidation', $data.Validation.EntityV
         }
     },
 
-    fieldValidate: function (memberDefinition, value, errors, validationTypeName) {
+    fieldValidate: function (entity, memberDefinition, value, errors, validationTypeName) {
         ///<param name="memberDefinition" type="$data.MemberDefinition" />
         ///<param name="value" type="Object" />
         ///<param name="errors" type="Array" />
         ///<param name="validationTypeName" type="string" />
+        if ((entity.entityState == $data.EntityState.Modified && entity[memberDefinition.name] == undefined))
+            return;
 
         var validatonGroup = this.supportedValidations[validationTypeName];
         if (validatonGroup) {
             var validations = Object.keys(validatonGroup);
             validations.forEach(function (validation) {
-                if (memberDefinition[validation] && validatonGroup[validation] && !validatonGroup[validation](value, this.getValidationValue(memberDefinition, validation)))
+                if (memberDefinition[validation] && validatonGroup[validation] && !validatonGroup[validation].call(entity, value, this.getValidationValue(memberDefinition, validation)))
                     errors.push(this.createValidationError(memberDefinition, validation, 'Validation error!'));
             }, this);
         }
@@ -11600,7 +11696,7 @@ $data.Class.define('$data.Notifications.ChangeDistributor', $data.Notifications.
         this.broadcastUrl = broadcastUrl;
     },
     distributeData: function (data) {
-        $.ajax({
+        $data.ajax({
             url: this.broadcastUrl,
             type: "POST",
             data: 'data=' + JSON.stringify(data),
@@ -12255,7 +12351,11 @@ $data.Class.define('$data.EntityContext', null, null,
                     if (memDef.inverseProperty) {
                         if (memDef.inverseProperty === '$$unbound') {
                             //member definition is navigation but not back reference
-                            //Guard.raise("NOT SUPPORTED YET");
+                            if (memDefResolvedDataType === $data.Array) {
+                                this._buildDbType_Collection_OneManyDefinition(dbEntityInstanceDefinition, storageModel, memDefResolvedDataType, memDef);
+                            } else {
+                                this._buildDbType_ElementType_OneManyDefinition(dbEntityInstanceDefinition, storageModel, memDefResolvedDataType, memDef);
+                            }
                         } else {
                             //member definition is navigation property one..one or one..many case
                             var fields = memDefResolvedDataType.memberDefinitions.getMember(memDef.inverseProperty);
@@ -12377,7 +12477,8 @@ $data.Class.define('$data.EntityContext', null, null,
         }
 
         this._addNavigationPropertyDefinition(dbEntityInstanceDefinition, memDef, memDef.name);
-        var association = this._addAssociationElement(storageModel.LogicalType, "0..1", memDef.name, refereedStorageModel.LogicalType, "*", memDef.inverseProperty);
+        var associationType = memDef.inverseProperty === '$$unbound' ? '$$unbound' : '0..1';
+        var association = this._addAssociationElement(storageModel.LogicalType, associationType, memDef.name, refereedStorageModel.LogicalType, "*", memDef.inverseProperty);
         storageModel.Associations[memDef.name] = association;
         storageModel.Associations.push(association);
     },
@@ -12396,7 +12497,8 @@ $data.Class.define('$data.EntityContext', null, null,
         }
 
         this._addNavigationPropertyDefinition(dbEntityInstanceDefinition, memDef, memDef.name);
-        var association = this._addAssociationElement(storageModel.LogicalType, "*", memDef.name, refereedStorageModel.LogicalType, "0..1", memDef.inverseProperty);
+        var associationType = memDef.inverseProperty === '$$unbound' ? '$$unbound' : '*';
+        var association = this._addAssociationElement(storageModel.LogicalType, associationType, memDef.name, refereedStorageModel.LogicalType, "0..1", memDef.inverseProperty);
         storageModel.Associations[memDef.name] = association;
         storageModel.Associations.push(association);
     },
@@ -12508,8 +12610,8 @@ $data.Class.define('$data.EntityContext', null, null,
         ///     <returns type="$data.EntitySet" />
         /// </signature>
         /// <signature>
-    	///     <summary>Gets the matching EntitySet for an element type.</summary>
-    	///     <param name="elementType" type="String" />
+        ///     <summary>Gets the matching EntitySet for an element type.</summary>
+        ///     <param name="elementType" type="String" />
         ///     <returns type="$data.EntitySet" />
         /// </signature>
         var result = this._entitySetReferences[elementType];
@@ -12521,30 +12623,32 @@ $data.Class.define('$data.EntityContext', null, null,
         return result;
     },
     executeQuery: function (queryable, callBack) {
-        var query = new $data.Query(queryable.expression, queryable.entitySet, this);
+        var query = new $data.Query(queryable.expression, queryable.defaultType, this);
         callBack = $data.typeSystem.createCallbackSetting(callBack);
         var that = this;
         var clbWrapper = {};
         clbWrapper.success = function (query) {
             query.buildResultSet(that);
             if (query.expression.nodeType === $data.Expressions.ExpressionType.Single ||
-                query.expression.nodeType === $data.Expressions.ExpressionType.Count) {
-                    if (query.result.length !== 1) {
-                        callBack.error(new Exception('result count failed'));
-                        return;
-                    }
-
-                    callBack.success(query.result[0]);
-                } else if (query.expression.nodeType === $data.Expressions.ExpressionType.First) {
-                    if (query.result.length === 0) {
-                        callBack.error(new Exception('result count failed'));
-                        return;
-                    }
-
-                    callBack.success(query.result[0]);
-                } else {
-                    callBack.success(query.result);
+                query.expression.nodeType === $data.Expressions.ExpressionType.Count ||
+                query.expression.nodeType === $data.Expressions.ExpressionType.Some ||
+                query.expression.nodeType === $data.Expressions.ExpressionType.Every) {
+                if (query.result.length !== 1) {
+                    callBack.error(new Exception('result count failed'));
+                    return;
                 }
+
+                callBack.success(query.result[0]);
+            } else if (query.expression.nodeType === $data.Expressions.ExpressionType.First) {
+                if (query.result.length === 0) {
+                    callBack.error(new Exception('result count failed'));
+                    return;
+                }
+
+                callBack.success(query.result[0]);
+            } else {
+                callBack.success(query.result);
+            }
         };
         clbWrapper.error = callBack.error;
         this.storageProvider.executeQuery(query, clbWrapper);
@@ -12615,42 +12719,58 @@ $data.Class.define('$data.EntityContext', null, null,
                         if (data) {
                             var value = data[navPropertyName];
                             var associationType = association.FromMultiplicity + association.ToMultiplicity;
-                            switch (associationType) {
-                                case "*0..1": //Array
-                                    if (value) {
-                                        if (value instanceof Array) {
-                                            if (value.indexOf(entityCachedItem.data) == -1) {
-                                                value.push(entityCachedItem.data);
-                                            }
-                                        } else {
-                                            if (typeof intellisense === 'undefined') {
-                                                Guard.raise("Item must be array or subtype of array");
-                                            }
+                            if (association.FromMultiplicity === '$$unbound') {
+                                if (data instanceof $data.Array) {
+                                    entityCachedItem.dependentOn = entityCachedItem.dependentOn || [];
+                                    data.forEach(function (dataItem) {
+                                        if ((entityCachedItem.dependentOn.indexOf(data) < 0) && (data.skipSave !== true)) {
+                                            entityCachedItem.dependentOn.push(data);
                                         }
-                                    } else {
-                                        data[navPropertyName] = [entityCachedItem.data];
-                                    }
-                                    break;
-                                default: //Item
-                                    if (value) {
-                                        if (value !== entityCachedItem.data) {
-                                            if (typeof intellisense === 'undefined') {
-                                                Guard.raise("Integrity check error! Item assigned to another entity!");
-                                            }
-                                        }
-                                    } else {
-                                        data[navPropertyName] = entityCachedItem.data; //set back reference for live object
-                                    }
-                                    break;
-                            }
-                            switch (associationType) {
-                                case "*0..1":
-                                case "0..11":
+                                    }, this);
+                                } else {
                                     entityCachedItem.dependentOn = entityCachedItem.dependentOn || [];
                                     if ((entityCachedItem.dependentOn.indexOf(data) < 0) && (data.skipSave !== true)) {
                                         entityCachedItem.dependentOn.push(data);
                                     }
-                                    break;
+                                }
+                            } else {
+                                switch (associationType) {
+                                    case "*0..1": //Array
+                                        if (value) {
+                                            if (value instanceof Array) {
+                                                if (value.indexOf(entityCachedItem.data) == -1) {
+                                                    value.push(entityCachedItem.data);
+                                                }
+                                            } else {
+                                                if (typeof intellisense === 'undefined') {
+                                                    Guard.raise("Item must be array or subtype of array");
+                                                }
+                                            }
+                                        } else {
+                                            data[navPropertyName] = [entityCachedItem.data];
+                                        }
+                                        break;
+                                    default: //Item
+                                        if (value) {
+                                            if (value !== entityCachedItem.data) {
+                                                if (typeof intellisense === 'undefined') {
+                                                    Guard.raise("Integrity check error! Item assigned to another entity!");
+                                                }
+                                            }
+                                        } else {
+                                            data[navPropertyName] = entityCachedItem.data; //set back reference for live object
+                                        }
+                                        break;
+                                }
+                                switch (associationType) {
+                                    case "*0..1":
+                                    case "0..11":
+                                        entityCachedItem.dependentOn = entityCachedItem.dependentOn || [];
+                                        if ((entityCachedItem.dependentOn.indexOf(data) < 0) && (data.skipSave !== true)) {
+                                            entityCachedItem.dependentOn.push(data);
+                                        }
+                                        break;
+                                }
                             }
                             if (!data.entityState) {
                                 data.entityState = $data.EntityState.Added;
@@ -12703,8 +12823,8 @@ $data.Class.define('$data.EntityContext', null, null,
             }
             if ((entity.data.entityState != $data.EntityState.Added || entity.data.entityState != $data.EntityState.Modified)
                 && !entity.data.isValid()) {
-                    errors.push({ item: entity.data, errors: entity.data.ValidationErrors });
-                }
+                errors.push({ item: entity.data, errors: entity.data.ValidationErrors });
+            }
         });
         if (errors.length > 0) {
             clbWrapper.error(errors);
@@ -12734,13 +12854,13 @@ $data.Class.define('$data.EntityContext', null, null,
         callBack.success(changedEntities.length);
     },
     forEachEntitySet: function (fn, ctx) {
-    	/// <summary>
-    	///     Iterates over the entity sets' of current EntityContext.
-    	/// </summary>
+        /// <summary>
+        ///     Iterates over the entity sets' of current EntityContext.
+        /// </summary>
         /// <param name="fn" type="Function">
         ///     <param name="entitySet" type="$data.EntitySet" />
         /// </param>
-    	/// <param name="ctx">'this' argument for the 'fn' function.</param>
+        /// <param name="ctx">'this' argument for the 'fn' function.</param>
         for (var entitySetName in this._entitySetReferences) {
             var actualEntitySet = this._entitySetReferences[entitySetName];
             fn.call(ctx, actualEntitySet);
@@ -12750,8 +12870,8 @@ $data.Class.define('$data.EntityContext', null, null,
     loadItemProperty: function (entity, property, callback) {
         /// <signature>
         ///     <summary>Loads a property of the entity through the storage provider.</summary>
-    	///     <param name="entity" type="$data.Entity">Entity object</param>
-    	///     <param name="property" type="String">Property name</param>
+        ///     <param name="entity" type="$data.Entity">Entity object</param>
+        ///     <param name="property" type="String">Property name</param>
         ///     <param name="callback" type="Function">
         ///         <summary>C  allback function</summary>
         ///         <param name="propertyValue" />
@@ -12794,7 +12914,7 @@ $data.Class.define('$data.EntityContext', null, null,
 
         if (entity[memberDefinition.name] != undefined) {
             var pHandler = new $data.PromiseHandler();
-            callBack = pHandler.createCallback(callback);                        
+            callBack = pHandler.createCallback(callback);
             callback.success(entity[memberDefinition.name]);
             return pHandler.getPromise();
         }
@@ -12851,12 +12971,12 @@ $data.Class.define('$data.EntityContext', null, null,
     },
 
     getTraceString: function (queryable) {
-    	/// <summary>
-    	/// Returns a trace string. Used for debugging purposes!
-    	/// </summary>
-    	/// <param name="queryable" type="$data.Queryable" />
-    	/// <returns>Trace string</returns>
-        var query = new $data.Query(queryable.expression, queryable.entitySet, this);
+        /// <summary>
+        /// Returns a trace string. Used for debugging purposes!
+        /// </summary>
+        /// <param name="queryable" type="$data.Queryable" />
+        /// <returns>Trace string</returns>
+        var query = new $data.Query(queryable.expression, queryable.defaultType, this);
         return this.storageProvider.getTraceString(query);
     },
     log: function (logInfo) {
@@ -12872,37 +12992,33 @@ $data.Class.define('$data.EntityContext', null, null,
     resolveFieldOperation: function (operation, expression, frameType) {
         return this.storageProvider.resolveFieldOperation(operation, expression, frameType);
     },
+    resolveSetOperations: function (operation, expression, frameType) {
+        return this.storageProvider.resolveSetOperations(operation, expression, frameType);
+    },
     _generateServiceOperationQueryable: function (functionName, returnEntitySet, arg, parameters) {
-        var virtualEs = Container.createEntitySet(this[returnEntitySet].elementType, this, returnEntitySet);
-        virtualEs.tableName = functionName;
+        if(typeof console !== 'undefined' && console.log)
+            console.log('Obsolate: _generateServiceOperationQueryable, $data.EntityContext');
 
-        var paramConstExpression = null;
-        if (parameters) {
-            paramConstExpression = [];
-            for (var i = 0; i < parameters.length; i++) {
-                paramConstExpression.push(Container.createConstantExpression(arg[i], null, parameters[i]));
-            }
+        var params = [];
+        for (var i = 0; i < parameters.length; i++) {
+            var obj = {};
+            obj[parameters[i]] = Container.resolveType(Container.getTypeName(arg[i]));
+            params.push(obj);
         }
-        var ec = Container.createEntityContextExpression(this);
-        var memberdef = this.getType().getMemberDefinition(returnEntitySet);
-        var es = Container.createEntitySetExpression(ec,
-                Container.createMemberInfoExpression(memberdef),
-                paramConstExpression,
-                virtualEs);
 
-        var q = Container.createQueryable(this[returnEntitySet], es);
-        return q;
+        var tempOperation = $data.EntityContext.generateServiceOperation({ serviceName: functionName, returnType: $data.Queryable, elementType: this[returnEntitySet].elementType, params: params });
+        return tempOperation.apply(this, arg);
     },
     attach: function (entity) {
-    	/// <summary>
-    	///     Attaches an entity to its matching entity set.
-    	/// </summary>
-    	/// <param name="entity" type="$data.Entity" />
+        /// <summary>
+        ///     Attaches an entity to its matching entity set.
+        /// </summary>
+        /// <param name="entity" type="$data.Entity" />
         /// <returns type="$data.Entity">Returns the attached entity.</returns>
 
         if (entity instanceof $data.EntityWrapper) {
             entity = entity.getEntity();
-        } 
+        }
         var entitySet = this.getEntitySetFromElementType(entity.getType());
         return entitySet.attach(entity);
     },
@@ -12946,6 +13062,64 @@ $data.Class.define('$data.EntityContext', null, null,
         return entitySet.remove(entity);
     }
 }, {
+    generateServiceOperation: function (cfg) {
+
+        var fn = function () {
+
+            var virtualEntitySet = cfg.elementType ? this.getEntitySetFromElementType(Container.resolveType(cfg.elementType)) : null;
+
+            var paramConstExpression = null;
+            if (cfg.params) {
+                paramConstExpression = [];
+                for (var i = 0; i < cfg.params.length; i++) {
+                    //TODO: check params type
+                    for (var name in cfg.params[i]) {
+                        paramConstExpression.push(Container.createConstantExpression(arguments[i], Container.resolveType(cfg.params[i][name]), name));
+                    }
+                }
+            }
+
+            var ec = Container.createEntityContextExpression(this);
+            var memberdef = this.getType().getMemberDefinition(cfg.serviceName);
+            var es = Container.createServiceOperationExpression(ec,
+                    Container.createMemberInfoExpression(memberdef),
+                    paramConstExpression,
+                    cfg);
+
+            //Get callback function
+            var clb = arguments[arguments.length - 1];
+            if (typeof clb !== 'function') {
+                clb = undefined;
+            }
+
+            if (virtualEntitySet) {
+                var q = Container.createQueryable(virtualEntitySet, es);
+                if (clb) {
+                    es.isTerminated = true;
+                    return q._runQuery(clb);
+                }
+                return q;
+            }
+            else {
+                var returnType = Container.resolveType(cfg.returnType);
+
+                var q = Container.createQueryable(this, es);
+                q.defaultType = returnType;
+
+                if (returnType === $data.Queryable) {
+                    q.defaultType = Container.resolveType(cfg.elementType);
+                    if (clb) {
+                        es.isTerminated = true;
+                        return q._runQuery(clb);
+                    }
+                    return q;
+                }
+                es.isTerminated = true;
+                return q._runQuery(clb);
+            }
+        };
+        return fn;
+    },
     _convertLogicalTypeNameToPhysical: function (name) {
         return name + '_$db$';
     },
@@ -13014,7 +13188,6 @@ $data.Class.define('$data.ModelBinder', null, null, {
 								if (i === metaSelector.length){
 									return undefined;
 								}else if (path.length){
-									i++;
 									break;
 								}
 							}else{
@@ -13114,7 +13287,7 @@ $data.Class.define('$data.ModelBinder', null, null, {
 
 $C('$data.Query', null, null,
 {
-    constructor: function (expression, entitySet, context) {
+    constructor: function (expression, defaultType, context) {
         ///<param name="context" type="$data.EntityContext" />
         ///<field name="expression" type="$data.Expressions.ExpressionNode" />
         ///<field name="context" type="$data.EntityContext" />
@@ -13123,20 +13296,16 @@ $C('$data.Query', null, null,
         //TODO: expressions get as JSON string?!
         
         this.expressions = expression;
-        this.entitySet = entitySet;
-        this.actionPack = [];
+        this.defaultType = defaultType;
         this.result = [];
         this.rawDataList = [];
         this.modelBinderConfig = {};
         this.context = context;
-        this.sqlConvertMetadata = undefined;
     },
         
     rawDataList: { dataType: "Array" },
-    actionPack: { dataType: "Array" },
     result: { dataType: "Array" },
     resultType: {},
-    sqlConvertMetadata: { },
     buildResultSet: function (ctx) {
         var converter = new $data.ModelBinder(this.context);
         this.result = converter.call(this.rawDataList, this.modelBinderConfig);
@@ -13149,31 +13318,24 @@ $C('$data.Query', null, null,
 $data.Class.define('$data.Queryable', null, null,
 {
     constructor: function (source, rootExpression) {
-        /// <description>
-        ///		Provides a base class for classes supporting JavaScript Language Query.
-        /// </description>
-        /// <summary>
-        ///		Provides a base class for classes supporting JavaScript Language Query.
-        /// </summary>
+        ///	<signature>
+        /// <summary>Provides a base class for classes supporting JavaScript Language Query.</summary>
+        /// <description>Provides a base class for classes supporting JavaScript Language Query.</description>
         /// <param name="source" type="$data.EntitySet" />
         /// <param name="rootExpression" type="$data.Expressions.ExpressionNode"></param>
-        var es = source.entitySet instanceof $data.EntitySet ? source.entitySet : source;
-        Object.defineProperty(this, "entitySet", { value: es, enumerable: true, writable: true });
+        ///	</signature>
+        ///	<signature>
+        /// <summary>Provides a base class for classes supporting JavaScript Language Query.</summary>
+        /// <description>Provides a base class for classes supporting JavaScript Language Query.</description>
+        /// <param name="source" type="$data.EntityContext" />
+        /// <param name="rootExpression" type="$data.Expressions.ExpressionNode"></param>
+        ///	</signature>
+
+        var context = source instanceof $data.EntityContext ? source : source.entityContext;
+        this.defaultType = source instanceof $data.EntityContext ? null : source.defaultType;
+        Object.defineProperty(this, "entityContext", { value: context, writable: false, enumerable: true });
         this.expression = rootExpression;
     },
-    _checkRootExpression: function () {
-        if (!this.expression) {
-            var ec = Container.createEntityContextExpression(this.entitySet.entityContext);
-            var name = this.entitySet.collectionName;
-            var memberdef = this.entitySet.entityContext.getType().getMemberDefinition(name);
-            var es = Container.createEntitySetExpression(ec,
-                Container.createMemberInfoExpression(memberdef), null,
-                this.entitySet);
-            this.expression = es;
-        }
-    },
-
-    entitySet: {},
 
     filter: function (predicate, thisArg) {
         ///<summary>Filters a set of entities using a boolean expression.</summary>
@@ -13215,12 +13377,13 @@ $data.Class.define('$data.Queryable', null, null,
         ///</example>
         ///</signature>
 
+        this._checkOperation('filter');
         var expression = Container.createCodeExpression(predicate, thisArg);
         var expressionSource = this.expression;
         if (this.expression instanceof $data.Expressions.FilterExpression) {
             expressionSource = this.expression.source;
 
-            var operatorResolution = this.entitySet.entityContext.storageProvider.resolveBinaryOperator("and");
+            var operatorResolution = this.entityContext.storageProvider.resolveBinaryOperator("and");
             expression = Container.createSimpleBinaryExpression(this.expression.selector, expression, "and", "filter", "boolean", operatorResolution);
         }
         var exp = Container.createFilterExpression(expressionSource, expression);
@@ -13269,6 +13432,7 @@ $data.Class.define('$data.Queryable', null, null,
         ///		</example>
         ///	</signature>
 
+        this._checkOperation('map');
         var codeExpression = Container.createCodeExpression(projection, thisArg);
         var exp = Container.createProjectionExpression(this.expression, codeExpression);
         var q = Container.createQueryable(this, exp);
@@ -13304,16 +13468,17 @@ $data.Class.define('$data.Queryable', null, null,
         ///		</example>
         ///	</signature>
 
+        this._checkOperation('length');
         var pHandler = new $data.PromiseHandler();
         var cbWrapper = pHandler.createCallback(onResult);
 
         var countExpression = Container.createCountExpression(this.expression);
-        var preparator = Container.createQueryExpressionCreator(this.entitySet.entityContext);
+        var preparator = Container.createQueryExpressionCreator(this.entityContext);
         try {
             var expression = preparator.Visit(countExpression);
-            this.entitySet.entityContext.log({ event: "EntityExpression", data: expression });
+            this.entityContext.log({ event: "EntityExpression", data: expression });
 
-            this.entitySet.executeQuery(Container.createQueryable(this, expression), cbWrapper);
+            this.entityContext.executeQuery(Container.createQueryable(this, expression), cbWrapper);
         } catch (e) {
             cbWrapper.error(e);
         }
@@ -13342,17 +13507,18 @@ $data.Class.define('$data.Queryable', null, null,
         ///		</example>
         ///	</signature>
 
+        this._checkOperation('forEach');
         var pHandler = new $data.PromiseHandler();
         function iteratorFunc(items) { items.forEach(iterator); }
         var cbWrapper = pHandler.createCallback(iteratorFunc);
 
         var forEachExpression = Container.createForEachExpression(this.expression);
-        var preparator = Container.createQueryExpressionCreator(this.entitySet.entityContext);
+        var preparator = Container.createQueryExpressionCreator(this.entityContext);
         try {
             var expression = preparator.Visit(forEachExpression);
-            this.entitySet.entityContext.log({ event: "EntityExpression", data: expression });
+            this.entityContext.log({ event: "EntityExpression", data: expression });
 
-            this.entitySet.executeQuery(Container.createQueryable(this, expression), cbWrapper);
+            this.entityContext.executeQuery(Container.createQueryable(this, expression), cbWrapper);
         } catch (e) {
             cbWrapper.error(e);
         }
@@ -13394,16 +13560,17 @@ $data.Class.define('$data.Queryable', null, null,
             });
         }
 
+        this._checkOperation('toArray');
         var pHandler = new $data.PromiseHandler();
         var cbWrapper = pHandler.createCallback(onResult_items);
 
         var toArrayExpression = Container.createToArrayExpression(this.expression);
-        var preparator = Container.createQueryExpressionCreator(this.entitySet.entityContext);
+        var preparator = Container.createQueryExpressionCreator(this.entityContext);
         try {
             var expression = preparator.Visit(toArrayExpression);
-            this.entitySet.entityContext.log({ event: "EntityExpression", data: expression });
+            this.entityContext.log({ event: "EntityExpression", data: expression });
 
-            this.entitySet.executeQuery(Container.createQueryable(this, expression), cbWrapper);
+            this.entityContext.executeQuery(Container.createQueryable(this, expression), cbWrapper);
         } catch (e) {
             cbWrapper.error(e);
         }
@@ -13443,6 +13610,7 @@ $data.Class.define('$data.Queryable', null, null,
         ///		</example>
         ///	</signature>
 
+        this._checkOperation('single');
         var q = this;
         if (filterPredicate) {
             q = this.filter(filterPredicate, thisArg);
@@ -13453,12 +13621,128 @@ $data.Class.define('$data.Queryable', null, null,
         var cbWrapper = pHandler.createCallback(onResult);
 
         var singleExpression = Container.createSingleExpression(q.expression);
-        var preparator = Container.createQueryExpressionCreator(q.entitySet.entityContext);
+        var preparator = Container.createQueryExpressionCreator(q.entityContext);
         try {
             var expression = preparator.Visit(singleExpression);
-            this.entitySet.entityContext.log({ event: "EntityExpression", data: expression });
+            this.entityContext.log({ event: "EntityExpression", data: expression });
 
-            q.entitySet.executeQuery(Container.createQueryable(q, expression), cbWrapper);
+            q.entityContext.executeQuery(Container.createQueryable(q, expression), cbWrapper);
+        } catch (e) {
+            cbWrapper.error(e);
+        }
+
+        return pHandler.getPromise();
+    },
+
+    some: function (filterPredicate, thisArg, onResult) {
+        ///	<summary>Filters a set of entities using a boolean expression and returns true if the query has any result element.</summary>
+        ///	<param name="filterPredicate" type="Function">Filter function</param>
+        ///	<param name="thisArg" type="Function">The query parameters for filter function</param>
+        ///	<param name="onResult_items" type="Function">A callback function</param>
+        ///	<returns type="$data.Promise" />
+        ///	<signature>
+        ///		<summary>Filters a set of entities using a boolean expression and returns true if the query has any result element.</summary>
+        ///		<param name="filterPredicate" type="string">
+        ///			Same as in filter.
+        ///		</param>
+        ///		<param name="onResult" type="Function">
+        ///			The callback function to handle the result, same as in toArray.
+        ///		</param>
+        ///		<returns type="$data.Promise" />
+        ///	</signature>
+        ///	<signature>
+        ///		<summary>Filters a set of entities using a boolean expression and returns true if the query has any result element.</summary>
+        ///		<param name="filterPredicate" type="Function">
+        ///			Same as in filter.
+        ///		</param>
+        ///		<param name="onResult" type="Function">
+        ///			The callback function to handle the result, same as in toArray.
+        ///		</param>
+        ///		<returns type="$data.Promise" />
+        ///		<example>
+        ///         Is there any person who's first name is "George"? &#10;
+        ///			Persons.some( function( person ) { return person.FirstName == this.name; }, { name: "George" }, {&#10;
+        ///				success: function ( result ){ ... },&#10;
+        ///				error: function () { ... }
+        ///			});
+        ///		</example>
+        ///	</signature>
+
+        this._checkOperation('some');
+        var q = this;
+        if (filterPredicate) {
+            q = this.filter(filterPredicate, thisArg);
+        }
+        q = q.take(1);
+
+        var pHandler = new $data.PromiseHandler();
+        var cbWrapper = pHandler.createCallback(onResult);
+
+        var someExpression = Container.createSomeExpression(q.expression);
+        var preparator = Container.createQueryExpressionCreator(q.entityContext);
+        try {
+            var expression = preparator.Visit(someExpression);
+            this.entityContext.log({ event: "EntityExpression", data: expression });
+
+            q.entityContext.executeQuery(Container.createQueryable(q, expression), cbWrapper);
+        } catch (e) {
+            cbWrapper.error(e);
+        }
+
+        return pHandler.getPromise();
+    },
+
+    every: function (filterPredicate, thisArg, onResult) {
+        ///	<summary>Filters a set of entities using a boolean expression and returns true if all elements of the EntitySet is in the result set.</summary>
+        ///	<param name="filterPredicate" type="Function">Filter function</param>
+        ///	<param name="thisArg" type="Function">The query parameters for filter function</param>
+        ///	<param name="onResult_items" type="Function">A callback function</param>
+        ///	<returns type="$data.Promise" />
+        ///	<signature>
+        ///		<summary>Filters a set of entities using a boolean expression and returns a </summary>
+        ///		<param name="filterPredicate" type="string">
+        ///			Same as in filter.
+        ///		</param>
+        ///		<param name="onResult" type="Function">
+        ///			The callback function to handle the result, same as in toArray.
+        ///		</param>
+        ///		<returns type="$data.Promise" />
+        ///	</signature>
+        ///	<signature>
+        ///		<summary>Filters a set of entities using a boolean expression and returns a single element or throws an error if more than one element is filtered.</summary>
+        ///		<param name="filterPredicate" type="Function">
+        ///			Same as in filter.
+        ///		</param>
+        ///		<param name="onResult" type="Function">
+        ///			The callback function to handle the result, same as in toArray.
+        ///		</param>
+        ///		<returns type="$data.Promise" />
+        ///		<example>
+        ///			Result is true when all person are married. &#10;
+        ///			Persons.every( function( person ) { return person.Married == true; }, null, {&#10;
+        ///				success: function ( result ){ ... },&#10;
+        ///				error: function () { ... }
+        ///			});
+        ///		</example>
+        ///	</signature>
+
+        this._checkOperation('every');
+        var q = this;
+        if (filterPredicate) {
+            q = this.filter(filterPredicate, thisArg);
+        }
+        q = q.take(1);
+
+        var pHandler = new $data.PromiseHandler();
+        var cbWrapper = pHandler.createCallback(onResult);
+
+        var everyExpression = Container.createEveryExpression(q.expression);
+        var preparator = Container.createQueryExpressionCreator(q.entityContext);
+        try {
+            var expression = preparator.Visit(everyExpression);
+            this.entityContext.log({ event: "EntityExpression", data: expression });
+
+            q.entityContext.executeQuery(Container.createQueryable(q, expression), cbWrapper);
         } catch (e) {
             cbWrapper.error(e);
         }
@@ -13483,6 +13767,7 @@ $data.Class.define('$data.Queryable', null, null,
         ///		</example>
         ///	</signature>
 
+        this._checkOperation('take');
         var constExp = Container.createConstantExpression(amount, "number");
         var takeExp = Container.createPagingExpression(this.expression, constExp, ExpressionType.Take);
         return Container.createQueryable(this, takeExp);
@@ -13503,6 +13788,7 @@ $data.Class.define('$data.Queryable', null, null,
         ///		</example>
         ///	</signature>
 
+        this._checkOperation('skip');
         var constExp = Container.createConstantExpression(amount, "number");
         var takeExp = Container.createPagingExpression(this.expression, constExp, ExpressionType.Skip);
         return Container.createQueryable(this, takeExp);
@@ -13537,6 +13823,7 @@ $data.Class.define('$data.Queryable', null, null,
         ///</example>
         ///</signature>
 
+        this._checkOperation('orderBy');
         var codeExpression = Container.createCodeExpression(selector, thisArg);
         var exp = Container.createOrderExpression(this.expression, codeExpression, ExpressionType.OrderBy);
         var q = Container.createQueryable(this, exp);
@@ -13571,6 +13858,7 @@ $data.Class.define('$data.Queryable', null, null,
         ///</example>
         ///</signature>
 
+        this._checkOperation('orderByDescending');
         var codeExpression = Container.createCodeExpression(selector, thisArg);
         var exp = Container.createOrderExpression(this.expression, codeExpression, ExpressionType.OrderByDescending);
         var q = Container.createQueryable(this, exp);
@@ -13606,6 +13894,7 @@ $data.Class.define('$data.Queryable', null, null,
         ///		</example>
         ///	</signature>
 
+        this._checkOperation('first');
         var q = this;
         if (filterPredicate) {
             q = this.filter(filterPredicate, thisArg);
@@ -13616,12 +13905,12 @@ $data.Class.define('$data.Queryable', null, null,
         var cbWrapper = pHandler.createCallback(onResult);
 
         var firstExpression = Container.createFirstExpression(q.expression);
-        var preparator = Container.createQueryExpressionCreator(q.entitySet.entityContext);
+        var preparator = Container.createQueryExpressionCreator(q.entityContext);
         try {
             var expression = preparator.Visit(firstExpression);
-            q.entitySet.entityContext.log({ event: "EntityExpression", data: expression });
+            q.entityContext.log({ event: "EntityExpression", data: expression });
 
-            q.entitySet.executeQuery(Container.createQueryable(q, expression), cbWrapper);
+            q.entityContext.executeQuery(Container.createQueryable(q, expression), cbWrapper);
         } catch (e) {
             cbWrapper.error(e);
         }
@@ -13646,9 +13935,27 @@ $data.Class.define('$data.Queryable', null, null,
         ///		</example>
         ///	</signature>
 
+        this._checkOperation('include');
         var constExp = Container.createConstantExpression(selector, "string");
         var takeExp = Container.createIncludeExpression(this.expression, constExp);
         return Container.createQueryable(this, takeExp);
+    },
+
+    _runQuery: function (onResult_items) {
+        var pHandler = new $data.PromiseHandler();
+        var cbWrapper = pHandler.createCallback(onResult_items);
+
+        var preparator = Container.createQueryExpressionCreator(this.entityContext);
+        try {
+            var expression = preparator.Visit(this.expression);
+            this.entityContext.log({ event: "EntityExpression", data: expression });
+
+            this.entityContext.executeQuery(Container.createQueryable(this, expression), cbWrapper);
+        } catch (e) {
+            cbWrapper.error(e);
+        }
+
+        return pHandler.getPromise();
     },
 
     toTraceString: function (name) {
@@ -13675,13 +13982,20 @@ $data.Class.define('$data.Queryable', null, null,
             expression = Container.createToArrayExpression(expression);
         }
 
-        var preparator = Container.createQueryExpressionCreator(this.entitySet.entityContext);
+        var preparator = Container.createQueryExpressionCreator(this.entityContext);
         expression = preparator.Visit(expression);
 
         //this.expression = expression;
         var q = Container.createQueryable(this, expression)
-        return q.entitySet.getTraceString(q);
-    }
+        return q.entityContext.getTraceString(q);
+    },
+
+    _checkOperation: function (name) {
+        var operation = this.entityContext.resolveSetOperations(name);
+        if (operation.invokable != undefined && !operation.invokable)
+            Guard.raise(new Exception("Operation '" + name + "' is not invokable with the provider"));
+    },
+    defaultType: {}
 
 }, null);
 
@@ -13701,7 +14015,7 @@ $data.entitySetState = { created: 0, defined: 1, active: 2 };
 
 $data.Class.defineEx('$data.EntitySet',
     [
-        { type: $data.Queryable, params: [function () { return this; }] }
+        { type: $data.Queryable, params: [new ConstructorParameter(1)] }
     ], null,
 {
     constructor: function (elementType, context, collectionName) {
@@ -13713,7 +14027,6 @@ $data.Class.defineEx('$data.EntitySet',
         /// </signature>
         this.createNew = this[elementType.name] = elementType;
         this.stateManager = new $data.EntityStateManager(this);
-        Object.defineProperty(this, "entityContext", { value: context, writable: false, enumerable: true });
         Object.defineProperty(this, "elementType", { value: elementType, enumerable: true });
         Object.defineProperty(this, "collectionName", { value: collectionName, enumerable: true });
 
@@ -14009,7 +14322,19 @@ $data.Class.defineEx('$data.EntitySet',
 
         return this.entityContext.loadItemProperty(entity, memberDefinition, callback);
     },
-    Queryable: {}
+    _checkRootExpression: function () {
+        if (!this.expression) {
+            var ec = Container.createEntityContextExpression(this.entityContext);
+            //var name = entitySet.collectionName;
+            //var entitySet = this.entityContext[entitySetName];
+            var memberdef = this.entityContext.getType().getMemberDefinition(this.collectionName);
+            var es = Container.createEntitySetExpression(ec,
+                Container.createMemberInfoExpression(memberdef), null,
+                this);
+            this.expression = es;
+            this.defaultType = this.elementType;
+        }
+    }
 }, null);
 
 
@@ -14149,6 +14474,7 @@ Exception.prototype._getStackTrace = function () {
 
 /********* Types/StorageProviderBase.js ********/
 
+$data.ConcurrencyMode = {Fixed : 'fixed', None: 'nonde'};
 $data.Class.define('$data.StorageProviderBase', null, null,
 {
     constructor: function (schemaConfiguration) {
@@ -14350,6 +14676,28 @@ $data.Class.define('$data.StorageProviderBase', null, null,
         return result;
     },
 
+    supportedSetOperations: {
+        value: {
+            toArray: { invokable: true, allowedIn: [] }
+        },
+        enumerable: true,
+        writable: true
+    },
+    resolveSetOperations: function (operation, expression, frameType) {
+        var result = this.supportedSetOperations[operation];
+        if (!result) {
+            Guard.raise(new Exception("Operation '" + operation + "' is not supported by the provider"));
+        };
+        var allowedIn = result.allowedIn || [];
+        if (frameType && allowedIn) {
+            if ((allowedIn instanceof Array && !allowedIn.some(function (type) { return frameType === Container.resolveType(type); })) ||
+                        (!(allowedIn instanceof Array) && frameType !== Container.resolveType(allowedIn))) {
+                Guard.raise(new Exception(operation + " not supported in: " + frameType.name));
+            }
+        }
+        return result;
+    },
+
 
     makePhysicalTypeDefinition: function (entityDefinition, association) {
     }
@@ -14382,6 +14730,80 @@ $data.Base.extend('$data.EntityWrapper', {
         Guard.raise("pure object");
     }
 });
+
+/********* Types/Ajax/jQueryAjaxWrapper.js ********/
+
+if (typeof jQuery !== 'undefined' && jQuery.ajax) {
+    $data.ajax = $data.ajax || jQuery.ajax;
+}
+
+/********* Types/Ajax/WinJSAjaxWrapper.js ********/
+
+if (typeof WinJS !== 'undefined' && WinJS.xhr) {
+    $data.ajax = $data.ajax || function (options) {
+        $data.typeSystem.extend(options, {
+            dataType: 'json',
+            headers: {}
+        });
+        var dataTypes = {
+            'json': {
+                accept: 'application/json, text/javascript',
+                convert: JSON.parse
+            },
+            'text': {
+                accept: 'text/plain',
+                convert: function (e) { return e; }
+            },
+            'html': {
+                accept: 'text/html',
+                convert: function (e) { return e; }
+            },
+            'xml': {
+                accept: 'application/xml, text/xml',
+                convert: function (e) {
+                    // TODO?
+                    return e;
+                }
+            }
+        }
+        var dataTypeContext = dataTypes[options.dataType.toLowerCase()];
+
+        options.headers.Accept = dataTypeContext.accept;
+
+        var successClb = options.success || $data.defaultSuccessCallback;
+        var errorClb = options.error || $data.defaultErrorCallback;
+        var progressClb = options.progress;
+
+        var success = function (r) {
+            var result = dataTypeContext.convert(r.responseText);
+            successClb(result);
+        }
+        var error = function (r) {
+            var error = dataTypeContext.convert(r.responseText);
+            errorClb(error);
+        }
+        var progress = progressClb;
+
+        WinJS.xhr(options)
+        .done(success, error, progress);
+    }
+}
+
+/********* Types/Ajax/ExtJSAjaxWrapper.js ********/
+
+if (typeof Ext !== 'undefined' && typeof Ext.Ajax) {
+    $data.ajax = $data.ajax || function (options) {
+        Ext.Ajax.request(options);
+    }
+}
+
+/********* Types/Ajax/AjaxStub.js ********/
+
+$data.ajax = $data.ajax || function () {
+    var cfg = arguments[arguments.length - 1];
+    var clb = $data.TypeSystem.createCallbackSetting(cfg);
+    clb.error("Not implemented");
+}
 
 /********* Types/DbClient/DbCommand.js ********/
 
@@ -14560,7 +14982,7 @@ $data.Class.define('$data.dbClient.jayStorageClient.JayStorageCommand', $data.db
 
 		query.forEach(function(q, i){
 			if (q){
-				$.ajax({
+				$data.ajax({
 					url: 'http' + (this.connection.connectionParams.storage.ssl ? 's' : '') + '://' + this.connection.connectionParams.storage.src.replace('http://', '').replace('https://', '') + '?db=' + this.connection.connectionParams.storage.key,
 					type: 'POST',
 					headers: {
@@ -14744,7 +15166,7 @@ $data.Class.define('$data.storageProviders.sqLite.SqLiteStorageProvider', $data.
             storage: this.providerConfiguration.storage
         };
 
-		if (this.connection) return this.connection;
+        if (this.connection) return this.connection;
 
         var connection = null;
         if (this.providerConfiguration.storage) {
@@ -14755,7 +15177,7 @@ $data.Class.define('$data.storageProviders.sqLite.SqLiteStorageProvider', $data.
             connection = new $data.dbClient.openDatabaseClient.OpenDbConnection(ctorParm);
         }
 
-		this.connection = connection;
+        this.connection = connection;
 
         return connection;
     },
@@ -14842,8 +15264,8 @@ $data.Class.define('$data.storageProviders.sqLite.SqLiteStorageProvider', $data.
         value: {
             equal: { mapTo: '=', dataType: "boolean" },
             notEqual: { mapTo: '!=', dataType: "boolean" },
-			equalTyped: { mapTo: '=', dataType: "boolean" },
-			notEqualTyped: { mapTo: '!=', dataType: "boolean" },
+            equalTyped: { mapTo: '=', dataType: "boolean" },
+            notEqualTyped: { mapTo: '!=', dataType: "boolean" },
             greaterThan: { mapTo: '>', dataType: "boolean" },
             greaterThanOrEqual: { mapTo: '>=', dataType: "boolean" },
 
@@ -14871,6 +15293,25 @@ $data.Class.define('$data.storageProviders.sqLite.SqLiteStorageProvider', $data.
             positive: { mapTo: '+' },
             negative: { maptTo: '-' }
         }
+    },
+
+    supportedSetOperations: {
+        value: {
+            filter: {},
+            map: {},
+            length: {},
+            forEach: {},
+            toArray: {},
+            single: {},
+            take: {},
+            skip: {},
+            orderBy: {},
+            orderByDescending: {},
+            first: {},
+            include: {}
+        },
+        enumerable: true,
+        writable: true
     },
 
     buildDbType_modifyInstanceDefinition: function (instanceDefinition, storageModel) {
@@ -15016,7 +15457,7 @@ $data.Class.define('$data.storageProviders.sqLite.SqLiteStorageProvider', $data.
                             }
                         }
                         that.SqlCommands = that.SqlCommands.concat(deleteCmd);
-						console.log(deleteCmd);
+                        console.log(deleteCmd);
                         break;
                     case $data.storageProviders.sqLite.DbCreationType.DropAllExistingTables:
                         for (var objName in existObjectInDB) {
@@ -15397,10 +15838,10 @@ $data.storageProviders.sqLite.DbCreationType = {
     DropAllExistingTables: 30
 };
 
-if ($data.storageProviders.sqLite.SqLiteStorageProvider.isSupported){
-	$data.StorageProviderBase.registerProvider("webSql", $data.storageProviders.sqLite.SqLiteStorageProvider);
-	$data.StorageProviderBase.registerProvider("sqLite", $data.storageProviders.sqLite.SqLiteStorageProvider);
-	$data.webSqlProvider = $data.storageProviders.sqLite.SqLiteStorageProvider;
+if ($data.storageProviders.sqLite.SqLiteStorageProvider.isSupported) {
+    $data.StorageProviderBase.registerProvider("webSql", $data.storageProviders.sqLite.SqLiteStorageProvider);
+    $data.StorageProviderBase.registerProvider("sqLite", $data.storageProviders.sqLite.SqLiteStorageProvider);
+    $data.webSqlProvider = $data.storageProviders.sqLite.SqLiteStorageProvider;
 }
 
 /********* Types/StorageProviders/SqLite/SqLiteCompiler.js ********/
@@ -15641,7 +16082,7 @@ $C('$data.storageProviders.sqLite.SQLiteCompiler', null, null, {
     compile: function (query) {
         /// <param name="query" type="$data.Query" />
         var expression = query.expression;
-        var context = { sets: [], infos: [], entityContext: query.entitySet.entityContext };
+        var context = { sets: [], infos: [], entityContext: query.context };
         var optimizedExpression = expression.monitor({
 
             MonitorEntitySetExpression: function (expression, context) {
@@ -16173,6 +16614,12 @@ $C('$data.sqLite.sqLite_ModelBinderCompiler', $data.Expressions.EntityExpression
     VisitSingleExpression: function (expression) {
         this._defaultModelBinder(expression);
     },
+    VisitSomeExpression: function (expression) {
+        this._defaultModelBinder(expression);
+    },
+    VisitEveryExpression: function (expression) {
+        this._defaultModelBinder(expression);
+    },
     VisitToArrayExpression: function (expression) {
         this._defaultModelBinder(expression);
     },
@@ -16197,8 +16644,8 @@ $C('$data.sqLite.sqLite_ModelBinderCompiler', $data.Expressions.EntityExpression
         var projVisitor = Container.createFindProjectionVisitor();
         projVisitor.Visit(expression);
 
-        if (projVisitor.projectionExpresison) {
-            this.Visit(projVisitor.projectionExpresison, builder);
+        if (projVisitor.projectionExpression) {
+            this.Visit(projVisitor.projectionExpression, builder);
         } else {
             this.DefaultSelection(builder);
         }
@@ -16258,10 +16705,10 @@ $C('$data.sqLite.sqLite_ModelBinderCompiler', $data.Expressions.EntityExpression
     },
     DefaultSelection: function (builder) {
         //no projection, get all item from entitySet
-        builder.modelBinderConfig['$type'] = this._query.entitySet.elementType;
-        var storageModel = this._query.context._storageModel.getStorageModel(this._query.entitySet.elementType);
+        builder.modelBinderConfig['$type'] = this._query.defaultType;
+        var storageModel = this._query.context._storageModel.getStorageModel(this._query.defaultType);
 
-        this._addPropertyToModelBinderConfig(this._query.entitySet.elementType, builder);
+        this._addPropertyToModelBinderConfig(this._query.defaultType, builder);
         if (this._includes) {
             this._includes.forEach(function (include) {
                 var includes = include.name.split('.');
@@ -16393,12 +16840,17 @@ $C('$data.sqLite.sqLite_ModelBinderCompiler', $data.Expressions.EntityExpression
 $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null,
 {
     constructor: function (cfg, ctx) {
+        if (typeof OData === 'undefined') {
+            Guard.raise(new Exception('datajs is required', 'Not Found!'));
+        }
+
         this.SqlCommands = [];
         this.context = ctx;
         this.providerConfiguration = $data.typeSystem.extend({
             dbCreation: $data.storageProviders.sqLite.DbCreationType.DropTableIfChanged,
             oDataServiceHost: "/odata.svc",
             serviceUrl: "",
+            maxDataServiceVersion: '2.0',
             user: null,
             password: null
         }, cfg);
@@ -16415,19 +16867,24 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
             case $data.storageProviders.sqLite.DbCreationType.DropAllExistingTables:
                 var that = this;
                 if (this.providerConfiguration.serviceUrl) {
-                    
-                    
-                    $.ajax(this._setAjaxAuthHeader({
-                        url: that.providerConfiguration.serviceUrl + "/Delete",
-                        type: 'POST',
-                        success: function (d) {
-                            console.log("RESET oData database");
-                            callBack.success(that.context);
-                        },
-                        error: function (error) {
-                            callBack.success(that.context);
-                        }
-                    }));
+
+                    var requestData = [{
+                        requestUri: that.providerConfiguration.serviceUrl + "/Delete",
+                        method: 'POST'
+                    }, function (d) {
+                        console.log("RESET oData database");
+                        callBack.success(that.context);
+                    }, function (error) {
+                        callBack.success(that.context);
+                    }];
+
+                    if (this.providerConfiguration.user) {
+                        requestData[0].user = this.providerConfiguration.user;
+                        requestData[0].password = this.providerConfiguration.password || "";
+                    }
+
+                    this.context.prepareRequest.call(this, requestData);
+                    OData.request.apply(this, requestData);
                 } else {
                     callBack.success(that.context);
                 }
@@ -16437,71 +16894,6 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
                 break;
         }
     },
-    _setAjaxAuthHeader: function (cfg) {
-        var encodeBase64 = function (val) {
-            var b64array = "ABCDEFGHIJKLMNOP" +
-                               "QRSTUVWXYZabcdef" +
-                               "ghijklmnopqrstuv" +
-                               "wxyz0123456789+/" +
-                               "=";
-
-            input = val;
-            var base64 = "";
-            var hex = "";
-            var chr1, chr2, chr3 = "";
-            var enc1, enc2, enc3, enc4 = "";
-            var i = 0;
-
-            do {
-                chr1 = input.charCodeAt(i++);
-                chr2 = input.charCodeAt(i++);
-                chr3 = input.charCodeAt(i++);
-
-                enc1 = chr1 >> 2;
-                enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
-                enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
-                enc4 = chr3 & 63;
-
-                if (isNaN(chr2)) {
-                    enc3 = enc4 = 64;
-                } else if (isNaN(chr3)) {
-                    enc4 = 64;
-                }
-
-                base64 = base64 +
-                            b64array.charAt(enc1) +
-                            b64array.charAt(enc2) +
-                            b64array.charAt(enc3) +
-                            b64array.charAt(enc4);
-                chr1 = chr2 = chr3 = "";
-                enc1 = enc2 = enc3 = enc4 = "";
-            } while (i < input.length);
-
-            return base64;
-        }
-        if (this.providerConfiguration.user) {
-            var user = this.providerConfiguration.user;
-            var password = this.providerConfiguration.password;
-            var origBeforeSend = cfg.beforeSend;
-            cfg.beforeSend = function(xhr) {
-                xhr.setRequestHeader("Authorization", "Basic " + encodeBase64(user + ":" + password || ""));
-                if (typeof origBeforeSend === "function")
-                    origBeforeSend(xhr);
-            }
-        }
-        return cfg;
-    },    
-    //buildDbType_modifyInstanceDefinition: function (instanceDefinition, storageModel) {
-    //    if (storageModel.Associations) {
-    //        storageModel.Associations.forEach(function (association) {
-    //            if ((association.FromMultiplicity == "*" && association.ToMultiplicity == "0..1") || (association.FromMultiplicity == "0..1" && association.ToMultiplicity == "1")) {
-    //                console.dir(association);
-    //            }
-
-    //        }, this);
-    //    }
-    //    console.dir(instanceDefinition);
-    //},
     buildDbType_generateConvertToFunction: function (storageModel, context) {
         return function (logicalEntity, convertedItems) {
             var dbInstance = new storageModel.PhysicalType();
@@ -16513,22 +16905,33 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
 
             if (storageModel.Associations) {
                 storageModel.Associations.forEach(function (association) {
-                    if ((association.FromMultiplicity == "*" && association.ToMultiplicity == "0..1") || (association.FromMultiplicity == "0..1" && association.ToMultiplicity == "1")) {
+                    if ((association.FromMultiplicity == "*" && association.ToMultiplicity == "0..1") ||
+                        (association.FromMultiplicity == "0..1" && association.ToMultiplicity == "1") ||
+                        (association.FromMultiplicity == '$$unbound')) {
                         var refValue = logicalEntity[association.FromPropertyName];
                         if (refValue !== null && refValue !== undefined) {
-                            if (refValue.entityState === $data.EntityState.Modified) {
-                                var tblName = context._storageModel.getStorageModel(refValue.getType()).TableName;
-                                var pk = '(';
-                                refValue.getType().memberDefinitions.getKeyProperties().forEach(function (k, index) {
-                                    if (index > 0) { pk += ','; }
-                                    pk += refValue[k.name];
+                            if (refValue instanceof $data.Array) {
+                                dbInstance[association.FromPropertyName] = dbInstance[association.FromPropertyName] || [];
+                                refValue.forEach(function (rv) {
+                                    var contentId = convertedItems.indexOf(rv);
+                                    if (contentId < 0) { Guard.raise("Dependency graph error"); }
+                                    dbInstance[association.FromPropertyName].push({ __metadata: { uri: "$" + (contentId + 1) } });
                                 }, this);
-                                pk += ')';
-                                dbInstance[association.FromPropertyName] = { __metadata: { uri: tblName + pk } };
                             } else {
-                                var contentId = convertedItems.indexOf(refValue);
-                                if (contentId < 0) { Guard.raise("Dependency graph error"); }
-                                dbInstance[association.FromPropertyName] = { __metadata: { uri: "$" + (contentId + 1) } };
+                                if (refValue.entityState === $data.EntityState.Modified) {
+                                    var tblName = context._storageModel.getStorageModel(refValue.getType()).TableName;
+                                    var pk = '(';
+                                    refValue.getType().memberDefinitions.getKeyProperties().forEach(function (k, index) {
+                                        if (index > 0) { pk += ','; }
+                                        pk += refValue[k.name];
+                                    }, this);
+                                    pk += ')';
+                                    dbInstance[association.FromPropertyName] = { __metadata: { uri: tblName + pk } };
+                                } else {
+                                    var contentId = convertedItems.indexOf(refValue);
+                                    if (contentId < 0) { Guard.raise("Dependency graph error"); }
+                                    dbInstance[association.FromPropertyName] = { __metadata: { uri: "$" + (contentId + 1) } };
+                                }
                             }
                         }
                     }
@@ -16554,22 +16957,33 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
         }
         var schema = this.context;
 
-        var requestData = {
-            url: this.providerConfiguration.oDataServiceHost + sql.queryText,
-            dataType: "JSON",
-            success: function (data, textStatus, jqXHR) {
+        var requestData = [
+            {
+                requestUri: this.providerConfiguration.oDataServiceHost + sql.queryText,
+                headers: {
+                    MaxDataServiceVersion: this.providerConfiguration.maxDataServiceVersion
+                }
+            },
+            function (data, textStatus, jqXHR) {
                 if (callBack.success) {
-                    query.rawDataList = typeof data === 'number' ? [{ cnt: data }] : data;
+                    query.rawDataList = typeof data === 'string' ? [{ cnt: data }] : data;
                     callBack.success(query);
                 }
             },
-            error: function (jqXHR, textStatus, errorThrow) {
+            function (jqXHR, textStatus, errorThrow) {
                 callBack.error(errorThrow);
             }
-        };
+        ];
+
+        if (this.providerConfiguration.user) {
+            requestData[0].user = this.providerConfiguration.user;
+            requestData[0].password = this.providerConfiguration.password || "";
+        }
 
         this.context.prepareRequest.call(this, requestData);
-        $.ajax(this._setAjaxAuthHeader(requestData));
+        //$data.ajax(requestData);
+        //OData.request(requestData, requestData.success, requestData.error);
+        OData.request.apply(this, requestData);
     },
     _compile: function (queryable, params) {
         var compiler = new $data.storageProviders.oData.oDataCompiler();
@@ -16577,10 +16991,6 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
         return compiled;
     },
     saveChanges: function (callBack, changedItems) {
-        if (typeof OData === 'undefined') {
-            Guard.raise(new Exception('datajs is required', 'Not Found!'));
-        }
-
         if (changedItems.length > 0) {
             var independentBlocks = this.buildIndependentBlocks(changedItems);
             this.saveInternal(independentBlocks, 0, callBack);
@@ -16608,6 +17018,7 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
                         request.method = "MERGE";
                         request.requestUri = independentBlocks[index][i].entitySet.name;
                         request.requestUri += "(" + this.getEntityKeysValue(independentBlocks[index][i]) + ")";
+                        this.save_addConcurrencyHeader(independentBlocks[index][i], request.headers);
                         request.data = this.save_getInitData(independentBlocks[index][i], convertedItem);
                         break;
                     case $data.EntityState.Deleted:
@@ -16633,11 +17044,24 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
                 var result = data.__batchResponses[0].__changeResponses;
                 var resultEntities = [];
                 for (var i = 0; i < result.length; i++) {
-                    if (result[i].statusCode == 204) { callBack.success(result[i]); return; }
                     var item = convertedItem[i];
+                    if (result[i].statusCode == 204) {
+                        if (result[i].headers.ETag) {
+                            var property = item.getType().memberDefinitions.getPublicMappedProperties().filter(function (memDef) { return memDef.concurrencyMode === $data.ConcurrencyMode.Fixed });
+                            if (property && property[0]) {
+                                item[property[0].name] = result[i].headers.ETag;
+                            }
+                        }
+                        continue;
+                    }
+
                     item.getType().memberDefinitions.getPublicMappedProperties().forEach(function (memDef) {
                         if (memDef.computed) {
-                            item[memDef.name] = result[i].data[memDef.name];
+                            if (memDef.concurrencyMode === $data.ConcurrencyMode.Fixed) {
+                                item[memDef.name] = result[i].headers.ETag;
+                            } else {
+                                item[memDef.name] = result[i].data[memDef.name];
+                            }
                         }
                     }, this);
                 }
@@ -16650,13 +17074,12 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
 
         }, callBack.error, OData.batchHandler];
 
-        this.context.prepareRequest.call(this, requestData);
-
         if (this.providerConfiguration.user) {
             requestData[0].user = this.providerConfiguration.user;
             requestData[0].password = this.providerConfiguration.password || "";
         }
 
+        this.context.prepareRequest.call(this, requestData);
         OData.request.apply(this, requestData);
     },
     save_getInitData: function (item, convertedItems) {
@@ -16668,6 +17091,17 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
             }
         }, this);
         return serializableObject;
+    },
+    save_addConcurrencyHeader: function (item, headers) {
+        var property = item.data.getType().memberDefinitions.getPublicMappedProperties().filter(function (memDef) { return memDef.concurrencyMode === $data.ConcurrencyMode.Fixed });
+        if (property && property[0]) {
+            headers['If-Match'] = item.data[property[0].name];
+            item.data[property[0].name] = "";
+        }
+        //if (item.data.RowVersion || item.data.RowVersion === 0) {
+        //    headers['If-Match'] = item.data.RowVersion.toString();
+        //    item.data.RowVersion = "";
+        //}
     },
     getTraceString: function (queryable) {
         var sqlText = this._compile(queryable);
@@ -16819,6 +17253,38 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
         enumerable: true,
         writable: true
     },
+    supportedSetOperations: {
+        value: {
+            filter: {},
+            map: {},
+            length: {},
+            forEach: {},
+            toArray: {},
+            single: {},
+            some: {
+                invokable: false,
+                allowedIn: [$data.Expressions.FilterExpression],
+                parameters: [{ name: "filter", dataType: "$data.Queryable" }],
+                mapTo: 'any',
+                frameType: $data.Expressions.SomeExpression
+            },
+            every: {
+                invokable: false,
+                allowedIn: [$data.Expressions.FilterExpression],
+                parameters: [{ name: "filter", dataType: "$data.Queryable" }],
+                mapTo: 'all',
+                frameType: $data.Expressions.EveryExpression
+            },
+            take: {},
+            skip: {},
+            orderBy: {},
+            orderByDescending: {},
+            first: {},
+            include: {}
+        },
+        enumerable: true,
+        writable: true
+    },
     fieldConverter: {
         value: {
             fromDb: {
@@ -16860,10 +17326,9 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
             return result.join(",");
         }
         return keyValue;
-    },
-
+    }/*,
     getServiceMetadata: function () {
-        $.ajax(this._setAjaxAuthHeader({
+        $data.ajax(this._setAjaxAuthHeader({
             url: this.providerConfiguration.oDataServiceHost + "/$metadata",
             dataType: "xml",
             success: function (d) {
@@ -16897,6 +17362,7 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
                 break;
         }
     }
+    */
 }, null);
 
 $data.StorageProviderBase.registerProvider("oData", $data.storageProviders.oData.oDataProvider);
@@ -16908,15 +17374,15 @@ $C('$data.storageProviders.oData.oDataCompiler', $data.Expressions.EntityExpress
     constructor: function () {
         this.context = {};
         this.provider = {};
-        this.logicalType = null;
+        //this.logicalType = null;
         this.includes = null;
         this.mainEntitySet = null;
     },
     compile: function (query) {
 
-        this.provider = query.entitySet.entityContext.storageProvider;
+        this.provider = query.context.storageProvider;
         this.context = query.context;
-        this.mainEntitySet = query.entitySet;
+        this.mainEntitySet = query.context.getEntitySetFromElementType(query.defaultType);
 
         var queryFragments = { urlText: "" };
         
@@ -16930,7 +17396,7 @@ $C('$data.storageProviders.oData.oDataCompiler', $data.Expressions.EntityExpress
         var queryText = queryFragments.urlText;
         var addAmp = false;
         for (var name in queryFragments) {
-            if (name != "urlText" && name != "actionPack" && name != "data" && queryFragments[name] != "") {
+            if (name != "urlText" && name != "actionPack" && name != "data" && name != "lambda" && queryFragments[name] != "") {
                 if (addAmp) { queryText += "&"; } else { queryText += "?"; }
                 addAmp = true;
                 if(name != "$urlParams"){
@@ -16996,11 +17462,24 @@ $C('$data.storageProviders.oData.oDataCompiler', $data.Expressions.EntityExpress
         this.Visit(expression.source, context);
 
         var filterCompiler = Container.createoDataWhereCompiler(this.provider);
+        context.data = "";
         filterCompiler.compile(expression.selector, context);
+        context["$filter"] = context.data;
+        context.data = "";
+
     },
     VisitEntitySetExpression: function (expression, context) {
         context.urlText += "/" + expression.instance.tableName;
-        this.logicalType = expression.instance.elementType;
+        //this.logicalType = expression.instance.elementType;
+        if (expression.params) {
+            for (var i = 0; i < expression.params.length; i++) {
+                this.Visit(expression.params[i], context);
+            }
+        }
+    },
+    VisitServiceOperationExpression: function (expression, context) {
+        context.urlText += "/" + expression.cfg.serviceName;
+        //this.logicalType = expression.returnType;
         if (expression.params) {
             for (var i = 0; i < expression.params.length; i++) {
                 this.Visit(expression.params[i], context);
@@ -17022,8 +17501,9 @@ $C('$data.storageProviders.oData.oDataCompiler', $data.Expressions.EntityExpress
 /********* Types/StorageProviders/oData/oDataWhereCompiler.js ********/
 
 $C('$data.storageProviders.oData.oDataWhereCompiler', $data.Expressions.EntityExpressionVisitor, null, {
-    constructor: function (provider) {
+    constructor: function (provider, lambdaPrefix) {
         this.provider = provider;
+        this.lambdaPrefix = lambdaPrefix;
     },
 
     compile: function (expression, context) {
@@ -17031,10 +17511,7 @@ $C('$data.storageProviders.oData.oDataWhereCompiler', $data.Expressions.EntityEx
     },
 
     VisitParametricQueryExpression: function (expression, context) {
-        context.data = "";
         this.Visit(expression.expression, context);
-        context["$filter"] = context.data;
-        context.data = "";
     },
 
     VisitUnaryExpression: function (expression, context) {
@@ -17134,6 +17611,12 @@ $C('$data.storageProviders.oData.oDataWhereCompiler', $data.Expressions.EntityEx
 
     VisitEntityExpression: function (expression, context) {
         this.Visit(expression.source, context);
+
+        if (this.lambdaPrefix && expression.selector.lambda) {
+            context.lambda = expression.selector.lambda;
+            context.data += (expression.selector.lambda + '/');
+        }
+
         //if (expression.selector instanceof $data.Expressions.EntityExpression) {
         //    this.Visit(expression.selector, context);
         //}
@@ -17145,6 +17628,44 @@ $C('$data.storageProviders.oData.oDataWhereCompiler', $data.Expressions.EntityEx
             this.Visit(expression.selector, context);
             context.data += "/";
         }
+    },
+
+    VisitFrameOperationExpression: function (expression, context) {
+        this.Visit(expression.source, context);
+
+        Guard.requireType("expression.operation", expression.operation, $data.Expressions.MemberInfoExpression);
+
+        //TODO refactor!
+        var opDef = expression.operation.memberDefinition;
+        var opName = opDef.mapTo || opDef.name;
+        context.data += opName;
+        context.data += "(";
+        var paramCounter = 0;
+        var params = opDef.parameters || [{ name: "@expression" }];
+
+        var args = params.map(function (item, index) {
+            if (item.name === "@expression") {
+                return expression.source;
+            } else {
+                return expression.parameters[paramCounter++]
+            };
+        });
+
+        for (var i = 0; i < args.length; i++) {
+            var arg = args[i];
+            if (arg.value instanceof $data.Queryable) {
+                var frameExpression = new opDef.frameType(arg.value.expression);
+                var preparator = Container.createQueryExpressionCreator(arg.value.entityContext);
+                var prep_expression = preparator.Visit(frameExpression);
+
+                var compiler = new $data.storageProviders.oData.oDataWhereCompiler(this.provider, true);
+                var frameContext = { data: "" };
+                var compiled = compiler.compile(prep_expression, frameContext);
+
+                context.data += (frameContext.lambda + ': ' + frameContext.data);
+            };
+        }
+        context.data += ")";
     }
 });
 
@@ -17347,7 +17868,7 @@ $C('$data.storageProviders.oData.oDataProjectionCompiler', $data.Expressions.Ent
 
 $C('$data.modelBinder.FindProjectionVisitor', $data.Expressions.EntityExpressionVisitor, null, {
     VisitProjectionExpression: function (expression) {
-        this.projectionExpresison = expression;
+        this.projectionExpression = expression;
     }
 });
 
@@ -17360,6 +17881,12 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
     VisitSingleExpression: function (expression) {
         this._defaultModelBinder(expression);
     },
+    VisitSomeExpression: function (expression) {
+        this._defaultModelBinder(expression);
+    },
+    VisitEveryExpression: function (expression) {
+        this._defaultModelBinder(expression);
+    },
     VisitToArrayExpression: function (expression) {
         this._defaultModelBinder(expression);
     },
@@ -17368,6 +17895,19 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
     },
     VisitForEachExpression: function (expression) {
         this._defaultModelBinder(expression);
+    },
+    VisitServiceOperationExpression: function (expression) {
+        var builder = Container.createqueryBuilder();
+        var returnType = Container.resolveType(expression.cfg.returnType);
+        builder.modelBinderConfig['$type'] = returnType;
+        if (returnType.inheritsFrom === $data.Entity) {
+            builder.modelBinderConfig['$selector'] = ['json:' + expression.cfg.serviceName];
+        } else {
+            builder.modelBinderConfig['$source'] = expression.cfg.serviceName;
+        }
+        this.VisitExpression(expression, builder);
+        builder.resetModelBinderProperty();
+        this._query.modelBinderConfig = builder.modelBinderConfig;
     },
     VisitCountExpression: function (expression) {
         var builder = Container.createqueryBuilder();
@@ -17388,8 +17928,8 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
         var projVisitor = Container.createFindProjectionVisitor();
         projVisitor.Visit(expression);
 
-        if (projVisitor.projectionExpresison) {
-            this.Visit(projVisitor.projectionExpresison, builder);
+        if (projVisitor.projectionExpression) {
+            this.Visit(projVisitor.projectionExpression, builder);
         } else {
             this.DefaultSelection(builder);
         }
@@ -17398,7 +17938,7 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
         var builder = Container.createqueryBuilder();
         builder.modelBinderConfig['$type'] = $data.Array;
         if (this._isoDataProvider) {
-            builder.modelBinderConfig['$selector'] = ['json:d.results', 'json:d'];
+            builder.modelBinderConfig['$selector'] = ['json:d.results', 'json:d', 'json:results'];
         }
         builder.modelBinderConfig['$item'] = {};
         builder.selectModelBinderProperty('$item');
@@ -17410,28 +17950,37 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
     },
     _addPropertyToModelBinderConfig: function (elementType, builder) {
         var storageModel = this._query.context._storageModel.getStorageModel(elementType);
-        elementType.memberDefinitions.getPublicMappedProperties().forEach(function (prop) {
-            if ((!storageModel) || (storageModel && !storageModel.Associations[prop.name] && !storageModel.ComplexTypes[prop.name])) {
+        if (elementType.memberDefinitions) {
+            elementType.memberDefinitions.getPublicMappedProperties().forEach(function (prop) {
+                if ((!storageModel) || (storageModel && !storageModel.Associations[prop.name] && !storageModel.ComplexTypes[prop.name])) {
 
-                if (!storageModel && this._query.context.storageProvider.supportedDataTypes.indexOf(Container.resolveType(prop.dataType)) < 0) {
-                    //complex type
-                    builder.selectModelBinderProperty(prop.name);
-                    builder.modelBinderConfig['$type'] = Container.resolveType(prop.dataType);
-                    if (this._isoDataProvider) {
-                        builder.modelBinderConfig['$selector'] = ['json:' + prop.name + '.results', 'json:' + prop.name];
+                    if (!storageModel && this._query.context.storageProvider.supportedDataTypes.indexOf(Container.resolveType(prop.dataType)) < 0) {
+                        //complex type
+                        builder.selectModelBinderProperty(prop.name);
+                        builder.modelBinderConfig['$type'] = Container.resolveType(prop.dataType);
+                        if (this._isoDataProvider) {
+                            builder.modelBinderConfig['$selector'] = ['json:' + prop.name + '.results', 'json:' + prop.name];
+                        } else {
+                            builder.modelBinderConfig['$selector'] = 'json:' + prop.name;
+                        }
+                        this._addPropertyToModelBinderConfig(Container.resolveType(prop.dataType), builder);
+                        builder.popModelBinderProperty();
                     } else {
-                        builder.modelBinderConfig['$selector'] = 'json:' + prop.name;
+                        if (prop.key) {
+                            builder.addKeyField(prop.name);
+                        }
+                        if (prop.concurrencyMode === $data.ConcurrencyMode.Fixed) {
+                            builder.modelBinderConfig[prop.name] = { $selector: 'json:__metadata', $source: 'etag' }
+                        } else {
+                            builder.modelBinderConfig[prop.name] = prop.name;
+                        }
                     }
-                    this._addPropertyToModelBinderConfig(Container.resolveType(prop.dataType), builder);
-                    builder.popModelBinderProperty();
-                } else {
-                    if (prop.key) {
-                        builder.addKeyField(prop.name);
-                    }
-                    builder.modelBinderConfig[prop.name] = prop.name;
                 }
-            }
-        }, this);
+            }, this);
+        } else {
+            builder._binderConfig.$item = {};
+            builder.modelBinderConfig = builder._binderConfig.$item;
+        }
         if (storageModel) {
             this._addComplexTypeProperties(storageModel.ComplexTypes, builder);
         }
@@ -17453,17 +18002,17 @@ $C('$data.modelBinder.ModelBinderConfigCompiler', $data.Expressions.EntityExpres
     },
     DefaultSelection: function (builder) {
         //no projection, get all item from entitySet
-        builder.modelBinderConfig['$type'] = this._query.entitySet.elementType;
+        builder.modelBinderConfig['$type'] = this._query.defaultType;
 
-        var storageModel = this._query.context._storageModel.getStorageModel(this._query.entitySet.elementType);
-
-        this._addPropertyToModelBinderConfig(this._query.entitySet.elementType, builder);
+        var storageModel = this._query.context._storageModel.getStorageModel(this._query.defaultType);
+        this._addPropertyToModelBinderConfig(this._query.defaultType, builder);
         if (this._includes) {
             this._includes.forEach(function (include) {
                 var includes = include.name.split('.');
                 var association = null;
                 var tmpStorageModel = storageModel;
                 for (var i = 0; i < includes.length; i++) {
+                    if (builder.modelBinderConfig.$item) builder.selectModelBinderProperty('$item');
                     builder.selectModelBinderProperty(includes[i]);
                     association = tmpStorageModel.Associations[includes[i]];
                     tmpStorageModel = this._query.context._storageModel.getStorageModel(association.ToType);
@@ -17626,6 +18175,15 @@ $data.Class.define('$data.storageProviders.indexedDb.IndexedDBStorageProvider', 
             and: { mapTo: ' && ', dataType: $data.Boolean }
             //'in': { mapTo: ' in ', dataType: $data.Boolean, resolvableType: [$data.Array, $data.Queryable] }
         }
+    },
+    supportedSetOperations: {
+        value: {
+            length: {},
+            toArray: {},
+            forEach: {}
+        },
+        enumerable: true,
+        writable: true
     },
     _setupExtensionMethods: function () {
         /// <summary>
@@ -17795,13 +18353,14 @@ $data.Class.define('$data.storageProviders.indexedDb.IndexedDBStorageProvider', 
         //var compiledQuery = self._compile(query);
 
         // Creating read only transaction for query. Results are passed in transaction's oncomplete event
-        var store = self.db.transaction([query.entitySet.tableName], self.IDBTransaction.READ_ONLY).setCallbacks({
+        var entitySet = query.context.getEntitySetFromElementType(query.defaultType);
+        var store = self.db.transaction([entitySet.tableName], self.IDBTransaction.READ_ONLY).setCallbacks({
             onerror: callBack.error,
             onabort: callBack.error,
             oncomplete: function (event) {
                 callBack.success(query);
             }
-        }).objectStore(query.entitySet.tableName);
+        }).objectStore(entitySet.tableName);
         var modelBinderCompiler = Container.createModelBinderConfigCompiler(query, []);
         modelBinderCompiler.Visit(query.expression);
         switch (query.expression.nodeType) {
@@ -18104,7 +18663,7 @@ $data.Class.define("$data.Authentication.Anonymous", $data.Authentication.Authen
     Logout: function () {
     },
     CreateRequest: function (cfg) {
-        $.ajax(cfg);
+        $data.ajax(cfg);
     }
 
 }, null);
@@ -18131,7 +18690,7 @@ $data.Class.define("$data.Authentication.FacebookAuth", $data.Authentication.Aut
         var provider = this;
         provider.configuration.stateCallbacks = callbacks || {};
 
-        $.ajax({
+        $data.ajax({
             url: this.configuration.Url_code,
             data: 'type=' + provider.configuration.type_code + '&client_id=' + provider.configuration.app_id + '&scope=' + provider.configuration.scope,
             type: 'POST',
@@ -18165,12 +18724,12 @@ $data.Class.define("$data.Authentication.FacebookAuth", $data.Authentication.Aut
                 cfg.url = cfg.url + andChar + 'access_token=' + this.configuration.access_token;
         }
 
-        $.ajax(cfg);
+        $data.ajax(cfg);
     },
     _processRequestToken: function (verification_data) {
         var provider = this;
 
-        $.ajax({
+        $data.ajax({
             url: provider.configuration.Url_token,
             data: 'type=' + provider.configuration.type_token + '&client_id=' + provider.configuration.app_id + '&code=' + verification_data.code,
             type: 'POST',
@@ -18261,7 +18820,7 @@ $data.Class.define('$data.storageProviders.Facebook.FacebookProvider', $data.Sto
         value: {
             equal: { mapTo: ' = ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
             notEqual: { mapTo: ' != ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
-			equalTyped: { mapTo: ' = ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
+            equalTyped: { mapTo: ' = ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
             notEqualTyped: { mapTo: ' != ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
             greaterThan: { mapTo: ' > ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
             greaterThanOrEqual: { mapTo: ' >= ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
@@ -18298,6 +18857,22 @@ $data.Class.define('$data.storageProviders.Facebook.FacebookProvider', $data.Sto
             }
         }
     },
+    supportedSetOperations: {
+        value: {
+            filter: {},
+            map: {},
+            forEach: {},
+            toArray: {},
+            single: {},
+            take: {},
+            skip: {},
+            orderBy: {},
+            orderByDescending: {},
+            first: {}
+        },
+        enumerable: true,
+        writable: true
+    },
     executeQuery: function (query, callBack) {
         callBack = $data.typeSystem.createCallbackSetting(callBack);
 
@@ -18312,7 +18887,7 @@ $data.Class.define('$data.storageProviders.Facebook.FacebookProvider', $data.Sto
             return;
         }
 
-        var schema = query.entitySet.createNew;
+        var schema = query.defaultType;
         var ctx = this.context;
 
         var includes = [];
@@ -18394,7 +18969,7 @@ $C('$data.storageProviders.Facebook.FacebookCompiler', $data.Expressions.EntityE
     },
 
     compile: function (query) {
-        this.provider = query.entitySet.entityContext.storageProvider;
+        this.provider = query.context.storageProvider;
 
         var context = {
             filterSql: { sql: '' },
@@ -18428,14 +19003,15 @@ $C('$data.storageProviders.Facebook.FacebookCompiler', $data.Expressions.EntityE
     },
 
     autoGenerateProjection: function (query) {
-        var newQueryable = new $data.Queryable(query.entitySet);
-        newQueryable._checkRootExpression();
+        var entitySet = query.context.getEntitySetFromElementType(query.defaultType);
+        var newQueryable = new $data.Queryable(query.context, entitySet.expression);
+        //newQueryable._checkRootExpression(entitySet.collectionName);
         var codeExpression = Container.createCodeExpression(this.generateProjectionFunc(query));
         var exp = Container.createProjectionExpression(newQueryable.expression, codeExpression);
         var q = Container.createQueryable(newQueryable, exp);
 
         var expression = q.expression;
-        var preparator = Container.createQueryExpressionCreator(query.entitySet.entityContext);
+        var preparator = Container.createQueryExpressionCreator(query.context);
         expression = preparator.Visit(expression);
 
         var databaseQuery = {
@@ -18447,7 +19023,7 @@ $C('$data.storageProviders.Facebook.FacebookCompiler', $data.Expressions.EntityE
     },
     generateProjectionFunc: function (query) {
         var isAuthenticated = this.provider.AuthenticationProvider.Authenticated;
-        var publicMemberDefinitions = query.entitySet.createNew.memberDefinitions.getPublicMappedProperties();
+        var publicMemberDefinitions = query.defaultType.memberDefinitions.getPublicMappedProperties();
         if (!isAuthenticated && publicMemberDefinitions.some(function (memDef) { return memDef.isPublic == true; })) {
             publicMemberDefinitions = publicMemberDefinitions.filter(function (memDef) { return memDef.isPublic == true; });
         }
@@ -18886,6 +19462,7 @@ $data.Class.define('$data.storageProviders.YQL.YQLProvider', $data.StorageProvid
         this.providerConfiguration = $data.typeSystem.extend({
             YQLFormat: "format=json",
             YQLQueryUrl: "http://query.yahooapis.com/v1/public/yql?q=",
+            YQLEnv: '',
             resultPath: ["query", "results"],
             resultSkipFirstLevel: true
         }, cfg);
@@ -18928,7 +19505,7 @@ $data.Class.define('$data.storageProviders.YQL.YQLProvider', $data.StorageProvid
         value: {
             equal: { mapTo: ' = ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
             notEqual: { mapTo: ' != ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
-			equalTyped: { mapTo: ' = ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
+            equalTyped: { mapTo: ' = ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
             notEqualTyped: { mapTo: ' != ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
             greaterThan: { mapTo: ' > ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
             greaterThanOrEqual: { mapTo: ' >= ', dataType: $data.Boolean, allowedIn: $data.Expressions.FilterExpression },
@@ -18943,6 +19520,22 @@ $data.Class.define('$data.storageProviders.YQL.YQLProvider', $data.StorageProvid
     },
     supportedUnaryOperators: {
         value: {}
+    },
+    supportedSetOperations: {
+        value: {
+            filter: {},
+            map: {},
+            forEach: {},
+            toArray: {},
+            single: {},
+            take: {},
+            skip: {},
+            orderBy: {},
+            orderByDescending: {},
+            first: {}
+        },
+        enumerable: true,
+        writable: true
     },
     fieldConverter: {
         value: {
@@ -18969,8 +19562,8 @@ $data.Class.define('$data.storageProviders.YQL.YQLProvider', $data.StorageProvid
     executeQuery: function (query, callBack) {
         var self = this;
         callBack = $data.typeSystem.createCallbackSetting(callBack);
-        var schema = query.entitySet.createNew;
-        var entitSetDefinition = query.entitySet.entityContext.getType().memberDefinitions.asArray().filter(function (m) { return m.elementType == schema })[0] || {};
+        var schema = query.defaultType;
+        var entitSetDefinition = query.context.getType().memberDefinitions.asArray().filter(function (m) { return m.elementType == schema })[0] || {};
         var ctx = this.context;
 
         if (!this.AuthenticationProvider)
@@ -18985,11 +19578,8 @@ $data.Class.define('$data.storageProviders.YQL.YQLProvider', $data.StorageProvid
         }
 
         var includes = [];
-        if (!sql.selectMapping && !entitSetDefinition.anonymousResult)
-            this._discoverType('', schema, includes);
-
         var requestData = {
-            url: this.providerConfiguration.YQLQueryUrl + encodeURIComponent(sql.queryText) + "&" + this.providerConfiguration.YQLFormat,
+            url: this.providerConfiguration.YQLQueryUrl + encodeURIComponent(sql.queryText) + "&" + this.providerConfiguration.YQLFormat + (this.providerConfiguration.YQLEnv ? ("&env=" + this.providerConfiguration.YQLEnv) : ""),
             dataType: "JSON",
             success: function (data, textStatus, jqXHR) {
                 var resultData = self._preProcessData(data, entitSetDefinition);
@@ -19001,7 +19591,6 @@ $data.Class.define('$data.storageProviders.YQL.YQLProvider', $data.StorageProvid
                 query.rawDataList = resultData;
                 if (entitSetDefinition.anonymousResult) {
                     query.rawDataList = resultData;
-                    query.actionPack.push({ op: "copyToResult" });
                     callBack.success(query);
                     return;
                 } else {
@@ -19009,8 +19598,6 @@ $data.Class.define('$data.storageProviders.YQL.YQLProvider', $data.StorageProvid
                     compiler.Visit(query.expression);
                 }
 
-                query.actionPack.push({ op: "buildType", context: ctx, logicalType: schema, tempObjectName: schema.name, includes: includes, propertyMapping: sql.selectMapping });
-                query.actionPack.push({ op: "copyToResult", tempObjectName: schema.name });
                 callBack.success(query);
             },
             error: function (jqXHR, textStatus, errorThrow) {
@@ -19026,25 +19613,6 @@ $data.Class.define('$data.storageProviders.YQL.YQLProvider', $data.StorageProvid
 
         this.context.prepareRequest.call(this, requestData);
         this.AuthenticationProvider.CreateRequest(requestData);
-    },
-    _discoverType: function (dept, type, result) {
-        type.memberDefinitions.getPublicMappedProperties().forEach(function (memDef) {
-            var type = Container.resolveType(memDef.dataType);
-
-            if (type.isAssignableTo || type == Array) {
-                var name = dept ? (dept + '.' + memDef.name) : memDef.name;
-
-                if (type == Array || type.isAssignableTo($data.EntitySet)) {
-                    if (memDef.inverseProperty)
-                        type = Container.resolveType(memDef.elementType);
-                    else
-                        return;
-                }
-
-                result.push({ name: name, type: type })
-                this._discoverType(name, type, result);
-            }
-        }, this);
     },
     _preProcessData: function (jsonResult, entityDef) {
         var resultData = jsonResult;
@@ -19103,7 +19671,7 @@ $C('$data.storageProviders.YQL.YQLCompiler', $data.Expressions.EntityExpressionV
     },
 
     compile: function (query) {
-        this.provider = query.entitySet.entityContext.storageProvider;
+        this.provider = query.context.storageProvider;
 
         var context = {
             filterSql: { sql: '' },
