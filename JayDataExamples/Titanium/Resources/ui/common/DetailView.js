@@ -3,8 +3,10 @@ function DetailView() {
 	
 	if (Ti.Platform.osname == 'android'){
 		Ti.include(Ti.Filesystem.resourcesDirectory + 'JayData-standalone.js');
+		//load the Netflix context definition
 		Ti.include(Ti.Filesystem.resourcesDirectory + 'netflix.js');	
 		
+		//inject the Titanium HTTPClient class to JayData in order to use it for requests (instead of XMLHttpRequest)
 		window.XMLHttpRequest = Ti.Network.HTTPClient;
 	}
 	
@@ -43,11 +45,16 @@ function DetailView() {
 		});
 		ind.show();
 	
-		Netflix.context.Titles
+	//This is how we retrieve the selected movie from Netflix over OData protocol, using JayData
+	//The Netflix context an Title entity is defined in the netflix.js context definition
+	//JavaScript Language Query (JSLQ) syntax can be used to define what to retrieve with JayData
+	//more details: http://jaydata.org/blog/javascript-language-query-jslq-101
+	Netflix.context.Titles
 	    .filter(function(it){ return it.Id == this.id; }, { id: movieId })
 	    .include('Cast')
-	    .toArray(function(movies){
-	    	
+	    .toArray(function(movies){ 
+	    	//end of JayData query, now we have got the result from server without explicit AJAX calls 
+	    	//begin UI code
     		var movie = movies[0];
     		
     		var tableData = [];
