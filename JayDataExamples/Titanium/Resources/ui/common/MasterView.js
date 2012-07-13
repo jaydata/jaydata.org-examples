@@ -23,7 +23,8 @@ function MasterView() {
 	ind.show();
     					
 	Netflix.context.Titles
-		.take(50)
+        .orderByDescending(function (movie) { return movie.AverageRating; })
+        .take(50)
 		.toArray(function(result) {
 			result.forEach(function (movie) {
 				var section = Ti.UI.createTableViewSection({ 
