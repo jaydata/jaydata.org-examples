@@ -8,7 +8,7 @@
     <meta name="author" content="JayData, community@jaydata.org" />
     <script type="text/javascript" src="../Content/Scripts/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../Content/Scripts/knockout-2.1.0.js"></script>
-    <script type="text/javascript" src="../Content/Scripts/JayData-standalone.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jaydata.js"></script>
     <script type="text/javascript" src="../Content/Scripts/JayDataModules/knockout.js"></script>
     <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="Northwind.js"></script>
@@ -172,45 +172,47 @@
 
             <script>
                 var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: 'Northwind.svc' });
-                $(function () {
-                    function NorthwindViewModel() {
-                        var self = this;
-                        self.listedCategories = ko.observableArray([]);
-                        self.listedProducts = ko.observableArray([]);
+                northwind.onReady(function(){
+                    $(function () {
+                        function NorthwindViewModel() {
+                            var self = this;
+                            self.listedCategories = ko.observableArray([]);
+                            self.listedProducts = ko.observableArray([]);
 
-                        self.editProduct = ko.observable(false);
-                        self.editProduct.subscribe(function (value) {
-                            var oldValue = self.editProduct();
-                            if (oldValue instanceof NorthwindModel.ObservableProduct)
-                                northwind.Products.detach(oldValue.innerInstance);
-                        }, undefined, 'beforeChange');
-                        self.editProduct.subscribe(function (value) {
-                            if (value instanceof NorthwindModel.ObservableProduct)
-                                northwind.Products.attach(value.innerInstance);
-                        });
-                        self.saveProduct = function () {
-                            northwind.saveChanges();
-                            var result = $('#saveResult');
-                            result.show()
-                            setTimeout(function () {
-                                result.fadeOut("slow");
-                            }, 1500);
+                            self.editProduct = ko.observable(false);
+                            self.editProduct.subscribe(function (value) {
+                                var oldValue = self.editProduct();
+                                if (oldValue instanceof NorthwindModel.ObservableProduct)
+                                    northwind.Products.detach(oldValue.innerInstance);
+                            }, undefined, 'beforeChange');
+                            self.editProduct.subscribe(function (value) {
+                                if (value instanceof NorthwindModel.ObservableProduct)
+                                    northwind.Products.attach(value.innerInstance);
+                            });
+                            self.saveProduct = function () {
+                                northwind.saveChanges();
+                                var result = $('#saveResult');
+                                result.show()
+                                setTimeout(function () {
+                                    result.fadeOut("slow");
+                                }, 1500);
+                            };
+
+                            self.loadProducts = function (category) {
+                                self.editProduct(false);
+                                northwind.Products
+                                    .filter(function (product) { return product.Category_ID == this.Id }, { Id: category.Category_ID() })
+                                    .toArray(self.listedProducts);
+                            };
+
+                            northwind.Categories
+                        .toArray(self.listedCategories);
+
                         };
 
-                        self.loadProducts = function (category) {
-                            self.editProduct(false);
-                            northwind.Products
-                                .filter(function (product) { return product.Category_ID == this.Id }, { Id: category.Category_ID() })
-                                .toArray(self.listedProducts);
-                        };
+                        ko.applyBindings(new NorthwindViewModel());
 
-                        northwind.Categories
-                    .toArray(self.listedCategories);
-
-                    };
-
-                    ko.applyBindings(new NorthwindViewModel());
-
+                    });
                 });
             </script>
 

@@ -8,7 +8,7 @@
     <meta name="author" content="JayData, community@jaydata.org">
     <script type="text/javascript" src="../Content/Scripts/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../Content/Scripts/knockout-2.1.0.js"></script>
-    <script type="text/javascript" src="../Content/Scripts/JayData-standalone.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jaydata.js"></script>
     <script type="text/javascript" src="../Content/Scripts/JayDataModules/deferred.js"></script>
     <script type="text/javascript" src="../Content/Scripts/JayDataModules/knockout.js"></script>
     <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
@@ -172,53 +172,55 @@ northwind<span style='color:#808030; '>.</span>Products
 
             <script>
                 var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: 'Northwind.svc' });
-                $(function () {
-                    function NorthwindViewModel() {
-                        var self = this;
-                        self.listedCategories = ko.observableArray([]);
-                        self.selectedCategoryId = ko.observable(0);
+                northwind.onReady(function(){
+                    $(function () {
+                        function NorthwindViewModel() {
+                            var self = this;
+                            self.listedCategories = ko.observableArray([]);
+                            self.selectedCategoryId = ko.observable(0);
 
-                        self.listedProducts = ko.observableArray([]);
+                            self.listedProducts = ko.observableArray([]);
 
-                        self.editProduct = ko.observable(false);
-                        self.editProduct.subscribe(function (value) {
-                            var oldValue = self.editProduct();
-                            if (oldValue instanceof NorthwindModel.ObservableProduct)
-                                northwind.Products.detach(oldValue);
-                        }, undefined, 'beforeChange');
-                        self.editProduct.subscribe(function (value) {
-                            if (value instanceof NorthwindModel.ObservableProduct)
-                                northwind.Products.attach(value);
-                        });
-                        self.saveProduct = function () {
-                            northwind.saveChanges();
-                            var result = $('#saveResult');
-                            result.show()
-                            setTimeout(function () {
-                                result.fadeOut("slow");
-                            }, 1500);
-                        };
-
-                        self.loadProducts = function (category) {
-                            self.selectedCategoryId(category.Category_ID());
-                            self.editProduct(false);
-                        };
-
-                        northwind.Categories
-                            .toArray(self.listedCategories)
-                            .then(function (categories) {
-                                if (categories.length > 0)
-                                    self.selectedCategoryId(categories[0].Category_ID);
+                            self.editProduct = ko.observable(false);
+                            self.editProduct.subscribe(function (value) {
+                                var oldValue = self.editProduct();
+                                if (oldValue instanceof NorthwindModel.ObservableProduct)
+                                    northwind.Products.detach(oldValue);
+                            }, undefined, 'beforeChange');
+                            self.editProduct.subscribe(function (value) {
+                                if (value instanceof NorthwindModel.ObservableProduct)
+                                    northwind.Products.attach(value);
                             });
+                            self.saveProduct = function () {
+                                northwind.saveChanges();
+                                var result = $('#saveResult');
+                                result.show()
+                                setTimeout(function () {
+                                    result.fadeOut("slow");
+                                }, 1500);
+                            };
 
-                        northwind.Products
-                            .filter(function (product) { return product.Category_ID == this.Id }, { Id: self.selectedCategoryId })
-                            .toArray(self.listedProducts);
+                            self.loadProducts = function (category) {
+                                self.selectedCategoryId(category.Category_ID());
+                                self.editProduct(false);
+                            };
 
-                    };
+                            northwind.Categories
+                                .toArray(self.listedCategories)
+                                .then(function (categories) {
+                                    if (categories.length > 0)
+                                        self.selectedCategoryId(categories[0].Category_ID);
+                                });
 
-                    ko.applyBindings(new NorthwindViewModel());
+                            northwind.Products
+                                .filter(function (product) { return product.Category_ID == this.Id }, { Id: self.selectedCategoryId })
+                                .toArray(self.listedProducts);
 
+                        };
+
+                        ko.applyBindings(new NorthwindViewModel());
+
+                    });
                 });
             </script>
 
