@@ -122,7 +122,7 @@ $data.Class.define('$planet.Application', null, null, {}, {
 		$planet.context = new $planet.Types.PlanetContext({
 			name: 'sqLite',
 			databaseName: 'Planets',
-			dbCreation: $data.storageProviders.sqLite.DbCreationType.Default
+			dbCreation: $data.storageProviders.DbCreationType.Default
 		});
 
 		$planet.context.onReady(function(db){

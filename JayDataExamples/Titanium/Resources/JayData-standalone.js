@@ -42,12 +42,16 @@ if (!console.error) console.error = function () { };
     }
 
     $data = window["$data"] || (window["$data"] = {});
-
+	    
     if (typeof module !== "undefined" && module.exports) {
-        sqLiteModule = require('sqlite3');
-		if (sqLiteModule) window['openDatabase'] = true;
+    	try{
+        	sqLiteModule = require('sqlite3');
+			if (sqLiteModule) window['openDatabase'] = true;
+		}
+		catch(e){}
         module.exports = $data;
     }
+    
 
 })(this);
 
@@ -1140,8 +1144,12 @@ Object.isNullOrUndefined = function (value) {
         /// <summary>Creates a XmlHttpRequest object.</summary>
         /// <returns type="XmlHttpRequest">XmlHttpRequest object.</returns>
         if (window.XMLHttpRequest) {
-            return new window.XMLHttpRequest();
-        }
+            //if (Ti.Platform.getOsname() != 'iphone'){
+            	return new window.XMLHttpRequest();
+           // }
+           // else{return Ti.Network.createHTTPClient();}
+        }//else return Ti.Network.createHTTPClient();
+        
         var exception;
         if (window.ActiveXObject) {
             try {
@@ -1287,6 +1295,7 @@ Object.isNullOrUndefined = function (value) {
 
                 xhr = createXmlHttpRequest();
                 xhr.onreadystatechange = function () {
+                	
                     if (done || xhr === null || xhr.readyState !== 4) {
                         return;
                     }
@@ -1303,11 +1312,11 @@ Object.isNullOrUndefined = function (value) {
                     readResponseHeaders(xhr, headers);
 
                     var response = { requestUri: url, statusCode: statusCode, statusText: statusText, headers: headers, body: xhr.responseText };
-
+                    
                     done = true;
                     xhr = null;
                     if (statusCode >= 200 && statusCode <= 299) {
-                        success(response);
+                    	success(response);
                     } else {
                         error({ message: "HTTP request failed", request: request, response: response });
                     }
@@ -1378,7 +1387,7 @@ Object.isNullOrUndefined = function (value) {
 
                 iframe = createIFrame(url);
             }
-
+			
             return result;
         }
     };
@@ -7486,6 +7495,7 @@ Object.isNullOrUndefined = function (value) {
 
 
 
+//})(window);
 })(this);
 
 /********* TypeSystem/JayLint.js ********/
@@ -20396,7 +20406,11 @@ $data.Class.define('$data.ModelBinder', null, null, {
         if (!Object.getOwnPropertyNames(meta).length) {
             return data;
         }
+        
+        //if (data === 'undefined') return;
+        
         var data = data;
+       
 		if (meta.$type){
 			var type = Container.resolveName(meta.$type);
 			var converter = this.context.storageProvider.fieldConverter.fromDb[type];
@@ -20418,6 +20432,7 @@ $data.Class.define('$data.ModelBinder', null, null, {
 				switch (type[0]){
 					case 'json':
 						var path = type[1].split('.');
+						//if (path[0] == "d" && path[1] == "results") return;
 						while (path.length) {
 							if (typeof part[path[0]] === 'undefined'){
 								if (i === metaSelector.length){
@@ -24200,6 +24215,7 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
                 }
             },
             function (data, textStatus, jqXHR) {
+            	if (!data) data = JSON.parse(textStatus.body);
                 if (callBack.success) {
                     query.rawDataList = typeof data === 'string' ? [{ cnt: data }] : data;
                     callBack.success(query);
@@ -24214,7 +24230,7 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
             requestData[0].user = this.providerConfiguration.user;
             requestData[0].password = this.providerConfiguration.password || "";
         }
-
+		
         this.context.prepareRequest.call(this, requestData);
         //$data.ajax(requestData);
         //OData.request(requestData, requestData.success, requestData.error);
@@ -24275,6 +24291,7 @@ $C('$data.storageProviders.oData.oDataProvider', $data.StorageProviderBase, null
                 __batchRequests: [{ __changeRequests: batchRequests }]
             }
         }, function (data, response) {
+        	
             if (response.statusCode == 202) {
                 var result = data.__batchResponses[0].__changeResponses;
                 var resultEntities = [];
@@ -26574,7 +26591,7 @@ $data.Class.define("$data.Facebook.types.FbPage", $data.Entity, null, {
     pic_square: { type: "string", isPublic: true },
     pic: { type: "string", isPublic: true },
     pic_large: { type: "string", isPublic: true },
-    pic_cover: { type: "string", isPublic: true },	//object	The JSON object containing three fields: cover_id (the ID of the cover photo), source (the URL for the cover photo), andoffset_y (indicating percentage offset from top [0-100])
+    pic_cover: { type: "string", isPublic: true },	//object	The JSON object containing three fields:ï¿½cover_idï¿½(the ID of the cover photo),ï¿½sourceï¿½(the URL for the cover photo), andoffset_yï¿½(indicating percentage offset from top [0-100])
     unread_notif_count: { type: "int", isPublic: false },
     new_like_count: { type: "int", isPublic: false },
     fan_count: { type: "int", isPublic: true },
@@ -26589,18 +26606,18 @@ $data.Class.define("$data.Facebook.types.FbPage", $data.Entity, null, {
     company_overview: { type: "string", isPublic: true },
     mission: { type: "string", isPublic: true },
     products: { type: "string", isPublic: true },
-    location: { type: "string", isPublic: true }, //	array	Applicable to all Places.
-    parking: { type: "string", isPublic: true }, //     array	Applicable to Businesses and Places. Can be one of street, lot orvalet
-    hours: { type: "string", isPublic: true }, //	array	Applicable to Businesses and Places.
+    location: { type: "string", isPublic: true }, //	array	Applicable to allï¿½Places.
+    parking: { type: "string", isPublic: true }, //     array	Applicable toï¿½Businessesï¿½andï¿½Places. Can be one ofï¿½street,ï¿½lotï¿½orvalet
+    hours: { type: "string", isPublic: true }, //	array	Applicable toï¿½Businessesï¿½andï¿½Places.
     pharma_safety_info: { type: "string", isPublic: true },
     public_transit: { type: "string", isPublic: true },
     attire: { type: "string", isPublic: true },
-    payment_options: { type: "string", isPublic: true },	//array	Applicable to Restaurants or Nightlife.
+    payment_options: { type: "string", isPublic: true },	//array	Applicable toï¿½Restaurantsï¿½orï¿½Nightlife.
     culinary_team: { type: "string", isPublic: true },
     general_manager: { type: "string", isPublic: true },
     price_range: { type: "string", isPublic: true },
-    restaurant_services: { type: "string", isPublic: true },//	array	Applicable to Restaurants.
-    restaurant_specialties: { type: "string", isPublic: true },//	array	Applicable to Restaurants.
+    restaurant_services: { type: "string", isPublic: true },//	array	Applicable toï¿½Restaurants.
+    restaurant_specialties: { type: "string", isPublic: true },//	array	Applicable toï¿½Restaurants.
     phone: { type: "string", isPublic: true },
     release_date: { type: "string", isPublic: true },
     genre: { type: "string", isPublic: true },

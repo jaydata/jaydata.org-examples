@@ -459,7 +459,7 @@ $(document).ready(function () {
         name: "oData",
         oDataServiceHost: "newsReader.svc",
         databaseName: "NewsReader",
-        dbCreation: $data.storageProviders.sqLite.DbCreationType.DropAllExistingTables
+        dbCreation: $data.storageProviders.DbCreationType.DropAllExistingTables
     });
 
     var tmpls = document.querySelectorAll('script[type="template"]');

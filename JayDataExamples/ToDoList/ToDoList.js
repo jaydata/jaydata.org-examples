@@ -189,7 +189,7 @@
     });
 
     $('#btnSqlite').click(function () {
-        var options = { name: "sqLite", databaseName: "ToDoList", dbCreation: $data.storageProviders.sqLite.DbCreationType.DropAllExistsTables };
+        var options = { name: "sqLite", databaseName: "ToDoList", dbCreation: $data.storageProviders.DbCreationType.DropAllExistsTables };
 
         createContext(options, defineGrid);
     });
