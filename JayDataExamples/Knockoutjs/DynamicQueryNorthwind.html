@@ -88,7 +88,7 @@ northwind<span style='color:#808030; '>.</span>Products
             
             <br />
 
-            <table class="table span4 reset-m" style="margin:  0 20px 0 0 !important;">
+            <table class="table span3 reset-m" style="margin:  0 10px 10px 0 !important;">
                 <thead>
                     <tr>
                         <th>Category name</th>
@@ -103,7 +103,7 @@ northwind<span style='color:#808030; '>.</span>Products
                 </tbody>
             </table>
 
-            <table class="table span5 reset-m" data-bind="visible: $root.listedProducts().length > 0">
+            <table class="table span4 reset-m" data-bind="visible: $root.listedProducts().length > 0" style="margin:  0 10px 10px 0 !important;">
                 <thead>
                     <tr>
                         <th>Product Name</th>
@@ -125,23 +125,23 @@ northwind<span style='color:#808030; '>.</span>Products
             </table>
 
             <!-- ko if: $root.editProduct -->
-            <div class="span3" style="margin-left:  20px;">
+            <div class="table span3 reset-m noborder_">
                 <div class="well-box">
                     <form data-bind="submit: saveProduct" style="margin: 10px">
                         <fieldset data-bind="with: $root.editProduct">
                             <legend class="modal-header">Edit Product</legend>
                         
-                            <div class="modal-body">
+                            <div class="modal-body" style="max-height: 600px;">
                                 Product name:
-                                <input type="text" data-bind="value: Product_Name" />
+                                <input class="span4" type="text" data-bind="value: Product_Name" />
                                 <br />
                                 English Name:
                                 <br />
-                                <input type="text" data-bind="value: English_Name" />
+                                <input class="span4" type="text" data-bind="value: English_Name" />
                                 <br />
                                 Category:
                                 <br />
-                                <select data-bind="options: $root.listedCategories,
+                                <select class="span4" data-bind="options: $root.listedCategories,
                                                        optionsText: 'Category_Name',
                                                        optionsValue: 'Category_ID',
                                                        value: Category_ID">
@@ -149,16 +149,16 @@ northwind<span style='color:#808030; '>.</span>Products
                                 <br />
                                 Unit Price:
                                 <br />
-                                <input type="text" data-bind="value: Unit_Price" />
+                                <input class="span4" type="text" data-bind="value: Unit_Price" />
                                 <br />
                                 Units In Stock:
                                 <br />
-                                <input type="text" data-bind="value: Units_In_Stock" />
+                                <input class="span4" type="text" data-bind="value: Units_In_Stock" />
                                 <br />
                                 Discontinued: <input type="checkbox" data-bind="checked: Discontinued" />
                             </div>
                             <div class="modal-footer">
-                                <input type="submit" value="save" class="btn btn-small btn-success tshadow" />
+                                <input type="submit" value="save" class="btn btn-success tshadow" />
                             </div>
                         </fieldset>
                     </form>
