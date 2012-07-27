@@ -2,13 +2,10 @@ function DetailView() {
 	
 	
 	if (Ti.Platform.osname == 'android'){
-<<<<<<< HEAD
 	    Ti.include(Ti.Filesystem.resourcesDirectory + 'jaydata.js');
 	    Ti.include(Ti.Filesystem.resourcesDirectory + 'jaydataproviders/oDataProvider.js');
-=======
 		Ti.include(Ti.Filesystem.resourcesDirectory + 'JayData-standalone.js');
 		//load the Netflix context definition
->>>>>>> 466738fee9d5e273d67936d7d1a362c53e8bc297
 		Ti.include(Ti.Filesystem.resourcesDirectory + 'netflix.js');	
 		
 		//inject the Titanium HTTPClient class to JayData in order to use it for requests (instead of XMLHttpRequest)
