@@ -2,10 +2,8 @@ function ApplicationWindow() {
 	
 
 	// Include JayData and the OData context definition
-	//Ti.include(Ti.Filesystem.resourcesDirectory + 'JayData-standalone.js');
-	//Ti.include(Ti.Filesystem.resourcesDirectory + 'netflix.js');	
-	
-	require('JayData-standalone');
+    require('jaydata');
+    require('jaydataproviders/oDataProvider');
 	require('netflix');
 	
 	//set default values for JayData OData provider

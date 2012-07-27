@@ -1,8 +1,10 @@
 //Master View Component Constructor
 function MasterView() {
 	
+    //load jaydata library, OData provider and the netflix context definition
 	if (Ti.Platform.osname == 'android'){
-		Ti.include(Ti.Filesystem.resourcesDirectory + 'JayData-standalone.js');
+	    Ti.include(Ti.Filesystem.resourcesDirectory + 'jaydata.js');
+	    Ti.include(Ti.Filesystem.resourcesDirectory + 'jaydataproviders/oDataProvider.js');
 		Ti.include(Ti.Filesystem.resourcesDirectory + 'netflix.js');	
 		
 		window.XMLHttpRequest = Ti.Network.HTTPClient;
@@ -10,7 +12,7 @@ function MasterView() {
 	
 	//create object instance, parasitic subclass of Observable
 	var self = Ti.UI.createView({
-		backgroundColor:'#ffs'
+		backgroundColor:'#ffffff'
 	});
 	
 	var tableData = [];
