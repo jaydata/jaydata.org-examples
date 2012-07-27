@@ -8,7 +8,7 @@
     <meta name="author" content="JayData, community@jaydata.org">
     <script type="text/javascript" src="../Content/Scripts/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../Content/Scripts/knockout-2.1.0.js"></script>
-    <script type="text/javascript" src="../Content/Scripts/JayData-standalone.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jaydata.js"></script>
     <script type="text/javascript" src="../Content/Scripts/JayDataModules/knockout.js"></script>
     <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="Northwind.js"></script>
@@ -135,27 +135,29 @@ $<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:b
             <script>
                 var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: 'Northwind.svc' });
                 var viewModel;
-                $(function () {
-                    function NorthwindViewModel() {
-                        var self = this;
-                        self.categoryNames = ko.observableArray([]);
-                        self.filteredProducts = ko.observableArray([]);
-                        self.filterProductName = ko.observable("");
-                        self.filterCategory = ko.observable(-1);
+                northwind.onReady(function(){
+                    $(function () {
+                        function NorthwindViewModel() {
+                            var self = this;
+                            self.categoryNames = ko.observableArray([]);
+                            self.filteredProducts = ko.observableArray([]);
+                            self.filterProductName = ko.observable("");
+                            self.filterCategory = ko.observable(-1);
 
-                        northwind.Categories.toArray(self.categoryNames);
+                            northwind.Categories.toArray(self.categoryNames);
 
-                        northwind.Products
-                            .include('Category')
-                            .filter(function (product) {
-                                return (this.Category_ID == -1 || product.Category_ID == this.Category_ID) &&
-                                       (this.Product_Name == "" || product.Product_Name.contains(this.Product_Name));
-                            }, { Category_ID: self.filterCategory, Product_Name: self.filterProductName })
-                            .toArray(self.filteredProducts);
-                    };
+                            northwind.Products
+                                .include('Category')
+                                .filter(function (product) {
+                                    return (this.Category_ID == -1 || product.Category_ID == this.Category_ID) &&
+                                           (this.Product_Name == "" || product.Product_Name.contains(this.Product_Name));
+                                }, { Category_ID: self.filterCategory, Product_Name: self.filterProductName })
+                                .toArray(self.filteredProducts);
+                        };
 
-                    viewModel = new NorthwindViewModel();
-                    ko.applyBindings(viewModel);
+                        viewModel = new NorthwindViewModel();
+                        ko.applyBindings(viewModel);
+                    });
                 });
             </script>
 

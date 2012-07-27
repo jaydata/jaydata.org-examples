@@ -8,7 +8,7 @@
     <meta name="author" content="JayData, community@jaydata.org" />
     <script type="text/javascript" src="../Content/Scripts/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../Content/Scripts/knockout-2.1.0.js"></script>
-    <script type="text/javascript" src="../Content/Scripts/JayData-standalone.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jaydata.js"></script>
     <script type="text/javascript" src="../Content/Scripts/JayDataModules/knockout.js"></script>
     <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="Northwind.js"></script>
@@ -87,7 +87,7 @@
                         
             <br />
 
-            <table class="table span4 reset-m" style="margin:  0 20px 0 0 !important;">
+            <table class="table span3 reset-m" style="margin:  0 10px 10px 0 !important;">
                 <thead>
                     <tr>
                         <th>Category name</th>
@@ -102,7 +102,7 @@
                 </tbody>
             </table>
 
-            <table class="table span5 reset-m" data-bind="visible: $root.listedProducts().length > 0">
+            <table class="table span4 reset-m" data-bind="visible: $root.listedProducts().length > 0" style="margin:  0 10px 10px 0 !important;">
                 <thead>
                     <tr>
                         <th>Product Name</th>
@@ -124,24 +124,24 @@
             </table>
 
             <!-- ko if: $root.editProduct -->
-            <div class="span3" style="margin-left:  20px;">
+            <div class="table span3 reset-m noborder_">
                 <div class="well-box">
                     <form data-bind="submit: saveProduct">
                         <fieldset data-bind="with: $root.editProduct">
                         <legend class="modal-header">Edit Product</legend>
                         
-                        <div class="modal-body">
+                        <div class="modal-body" style="max-height: 600px;">
                             Product name:
                             <br />
-                            <input type="text" data-bind="value: Product_Name" />
+                            <input class="span4" type="text" data-bind="value: Product_Name" />
                             <br />
                             English Name:
                             <br />
-                            <input type="text" data-bind="value: English_Name" />
+                            <input class="span4" type="text" data-bind="value: English_Name" />
                             <br />
                             Category:
                             <br />
-                            <select data-bind="options: $root.listedCategories,
+                            <select class="span4" data-bind="options: $root.listedCategories,
                                                    optionsText: 'Category_Name',
                                                    optionsValue: 'Category_ID',
                                                    value: Category_ID">
@@ -149,16 +149,16 @@
                             <br />
                             Unit Price:
                             <br />
-                            <input type="text" data-bind="value: Unit_Price" />
+                            <input class="span4" type="text" data-bind="value: Unit_Price" />
                             <br />
                             Units In Stock:
                             <br />
-                            <input type="text" data-bind="value: Units_In_Stock" />
+                            <input class="span4" type="text" data-bind="value: Units_In_Stock" />
                             <br />
                             Discontinued: <input type="checkbox" data-bind="checked: Discontinued" />
                         </div>
                             <div class="modal-footer">
-                                <input type="submit" value="save" class="btn btn-small btn-success tshadow" />
+                                <input type="submit" value="save" class="btn btn-success tshadow" />
                             </div>
                         </fieldset>
                     </form>
@@ -172,45 +172,47 @@
 
             <script>
                 var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: 'Northwind.svc' });
-                $(function () {
-                    function NorthwindViewModel() {
-                        var self = this;
-                        self.listedCategories = ko.observableArray([]);
-                        self.listedProducts = ko.observableArray([]);
+                northwind.onReady(function(){
+                    $(function () {
+                        function NorthwindViewModel() {
+                            var self = this;
+                            self.listedCategories = ko.observableArray([]);
+                            self.listedProducts = ko.observableArray([]);
 
-                        self.editProduct = ko.observable(false);
-                        self.editProduct.subscribe(function (value) {
-                            var oldValue = self.editProduct();
-                            if (oldValue instanceof NorthwindModel.ObservableProduct)
-                                northwind.Products.detach(oldValue.innerInstance);
-                        }, undefined, 'beforeChange');
-                        self.editProduct.subscribe(function (value) {
-                            if (value instanceof NorthwindModel.ObservableProduct)
-                                northwind.Products.attach(value.innerInstance);
-                        });
-                        self.saveProduct = function () {
-                            northwind.saveChanges();
-                            var result = $('#saveResult');
-                            result.show()
-                            setTimeout(function () {
-                                result.fadeOut("slow");
-                            }, 1500);
+                            self.editProduct = ko.observable(false);
+                            self.editProduct.subscribe(function (value) {
+                                var oldValue = self.editProduct();
+                                if (oldValue instanceof NorthwindModel.ObservableProduct)
+                                    northwind.Products.detach(oldValue.innerInstance);
+                            }, undefined, 'beforeChange');
+                            self.editProduct.subscribe(function (value) {
+                                if (value instanceof NorthwindModel.ObservableProduct)
+                                    northwind.Products.attach(value.innerInstance);
+                            });
+                            self.saveProduct = function () {
+                                northwind.saveChanges();
+                                var result = $('#saveResult');
+                                result.show()
+                                setTimeout(function () {
+                                    result.fadeOut("slow");
+                                }, 1500);
+                            };
+
+                            self.loadProducts = function (category) {
+                                self.editProduct(false);
+                                northwind.Products
+                                    .filter(function (product) { return product.Category_ID == this.Id }, { Id: category.Category_ID() })
+                                    .toArray(self.listedProducts);
+                            };
+
+                            northwind.Categories
+                        .toArray(self.listedCategories);
+
                         };
 
-                        self.loadProducts = function (category) {
-                            self.editProduct(false);
-                            northwind.Products
-                                .filter(function (product) { return product.Category_ID == this.Id }, { Id: category.Category_ID() })
-                                .toArray(self.listedProducts);
-                        };
+                        ko.applyBindings(new NorthwindViewModel());
 
-                        northwind.Categories
-                    .toArray(self.listedCategories);
-
-                    };
-
-                    ko.applyBindings(new NorthwindViewModel());
-
+                    });
                 });
             </script>
 

@@ -22,6 +22,30 @@ Math.rand = function(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+if (!Function.prototype.bind){
+  Function.prototype.bind = function (oThis){
+    if (typeof this !== "function"){
+      // closest thing possible to the ECMAScript 5 internal IsCallable function
+      throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+    }  
+  
+    var aArgs = Array.prototype.slice.call(arguments, 1),
+        fToBind = this,
+        fNOP = function(){},
+        fBound = function(){
+          return fToBind.apply(this instanceof fNOP
+                                 ? this
+                                 : oThis,
+                               aArgs.concat(Array.prototype.slice.call(arguments)));
+        };
+
+    fNOP.prototype = this.prototype;
+    fBound.prototype = new fNOP();
+  
+    return fBound;
+  };
+}
+
 $data.Class.define('$planet.System', null, null, {
     constructor: function(config){
         var container = document.createElement('DIV');
@@ -98,7 +122,7 @@ $data.Class.define('$planet.Application', null, null, {}, {
 		$planet.context = new $planet.Types.PlanetContext({
 			name: 'sqLite',
 			databaseName: 'Planets',
-			dbCreation: $data.storageProviders.sqLite.DbCreationType.Default
+			dbCreation: $data.storageProviders.DbCreationType.Default
 		});
 
 		$planet.context.onReady(function(db){
