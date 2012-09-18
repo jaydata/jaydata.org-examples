@@ -174,16 +174,57 @@
     <Content Include="Content\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\css\ui-lightness\jquery-ui-1.8.19.css" />
     <Content Include="Content\Scripts\bootstrap.min.js" />
+    <Content Include="Content\Scripts\datajs-1.0.3.js" />
+    <Content Include="Content\Scripts\datajs-1.0.3.min.js">
+      <DependentUpon>datajs-1.0.3.js</DependentUpon>
+    </Content>
     <Content Include="Content\Scripts\grid.locale-en.js" />
-    <Content Include="Content\Scripts\JayData-standalone.js" />
-    <Content Include="Content\Scripts\JayData.js" />
-    <Content Include="Content\Scripts\JayDataModules\deferred.js" />
-    <Content Include="Content\Scripts\JayDataModules\errorhandler.js" />
-    <Content Include="Content\Scripts\JayDataModules\formBinder.js" />
-    <Content Include="Content\Scripts\JayDataModules\knockout.js" />
-    <Content Include="Content\Scripts\JayDataModules\sencha.js" />
-    <Content Include="Content\Scripts\JayDataModules\template.js" />
-    <Content Include="Content\Scripts\JayDataModules\validate.js" />
+    <None Include="Content\Scripts\jaydata-vsdoc.js" />
+    <Content Include="Content\Scripts\jaydata.js" />
+    <Content Include="Content\Scripts\jaydata.min.js">
+      <DependentUpon>jaydata.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\jaydatamodules\deferred.js" />
+    <Content Include="Content\Scripts\jaydatamodules\errorhandler.js" />
+    <Content Include="Content\Scripts\jaydatamodules\formBinder.js" />
+    <Content Include="Content\Scripts\jaydatamodules\inMemory.js" />
+    <Content Include="Content\Scripts\jaydatamodules\knockout.js" />
+    <Content Include="Content\Scripts\jaydatamodules\qDeferred.js" />
+    <Content Include="Content\Scripts\jaydatamodules\sencha.js" />
+    <Content Include="Content\Scripts\jaydatamodules\template.js" />
+    <Content Include="Content\Scripts\jaydatamodules\validate.js" />
+    <Content Include="Content\Scripts\jaydataproviders\FacebookProvider.js" />
+    <Content Include="Content\Scripts\jaydataproviders\FacebookProvider.min.js">
+      <DependentUpon>FacebookProvider.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\jaydataproviders\IndexedDbProvider.js" />
+    <Content Include="Content\Scripts\jaydataproviders\IndexedDbProvider.min.js">
+      <DependentUpon>IndexedDbProvider.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\jaydataproviders\InMemoryProvider.js" />
+    <Content Include="Content\Scripts\jaydataproviders\InMemoryProvider.min.js">
+      <DependentUpon>InMemoryProvider.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\jaydataproviders\MongoDbProvider.js" />
+    <Content Include="Content\Scripts\jaydataproviders\MongoDbProvider.min.js">
+      <DependentUpon>MongoDbProvider.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\jaydataproviders\oDataProvider.js" />
+    <Content Include="Content\Scripts\jaydataproviders\oDataProvider.min.js">
+      <DependentUpon>oDataProvider.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\jaydataproviders\SqLiteProvider.js" />
+    <Content Include="Content\Scripts\jaydataproviders\SqLiteProvider.min.js">
+      <DependentUpon>SqLiteProvider.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\jaydataproviders\StormProvider.js" />
+    <Content Include="Content\Scripts\jaydataproviders\StormProvider.min.js">
+      <DependentUpon>StormProvider.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\jaydataproviders\YQLProvider.js" />
+    <Content Include="Content\Scripts\jaydataproviders\YQLProvider.min.js">
+      <DependentUpon>YQLProvider.js</DependentUpon>
+    </Content>
     <Content Include="Content\Scripts\jquery.tmpl.min.js" />
     <Content Include="Content\Scripts\jquery.validate.js" />
     <Content Include="Content\Scripts\knockout-2.1.0.js" />

@@ -87,6 +87,7 @@ $C('$data.storageProviders.Storm.StormProvider', $data.StorageProviderBase, null
             
             var convertedItems = [];
             var collections = {};
+            var entities = [];
             for (var i = 0; i < independentBlocks.length; i++){
                 for (var j = 0; j < independentBlocks[i].length; j++) {
                     convertedItems.push(independentBlocks[i][j].data);
@@ -100,16 +101,23 @@ $C('$data.storageProviders.Storm.StormProvider', $data.StorageProviderBase, null
                     switch (independentBlocks[i][j].data.entityState){
                         case $data.EntityState.Unchanged: continue; break;
                         case $data.EntityState.Added:
-                            if (!es.insertAll) es.insertAll = [];
+                            /*if (!es.insertAll) es.insertAll = [];
                             es.insertAll.push(this.save_getInitData(independentBlocks[i][j], convertedItems));
-                            break;
+                            break;*/
                         case $data.EntityState.Modified:
-                            if (!es.updateAll) es.updateAll = [];
+                            /*if (!es.updateAll) es.updateAll = [];
                             es.updateAll.push(this.save_getInitData(independentBlocks[i][j], convertedItems));
-                            break;
+                            break;*/
                         case $data.EntityState.Deleted:
-                            if (!es.removeAll) es.removeAll = [];
+                            /*if (!es.removeAll) es.removeAll = [];
                             es.removeAll.push(this.save_getInitData(independentBlocks[i][j], convertedItems));
+                            break;*/
+                            entities.push({
+                                entitySet: independentBlocks[i][j].entitySet.name,
+                                entityState: independentBlocks[i][j].data.entityState,
+                                entity: independentBlocks[i][j].data,
+                                data: this.save_getInitData(independentBlocks[i][j], convertedItems)
+                            });
                             break;
                         default: Guard.raise(new Exception("Not supported Entity state"));
                     }
@@ -120,9 +128,15 @@ $C('$data.storageProviders.Storm.StormProvider', $data.StorageProviderBase, null
                 url: this.providerConfiguration.url,
                 type: 'post',
                 dataType: 'json',
-                data: { items: JSON.stringify(collections) },
+                data: { items: JSON.stringify(entities.map(function(it){ return { entitySet: it.entitySet, entityState: it.entityState, data: it.data }; })) },
                 success: function(data, textStatus, jqXHR){
-                    callBack.success(data);
+                    for (var i = 0; i < data.items.length; i++){
+                        var item = data.items[i];
+                        for (var p in item){
+                            entities[i].entity[p] = item[p];
+                        }
+                    }
+                    callBack.success(data.__count);
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                     var errorData = {};
@@ -148,7 +162,7 @@ $C('$data.storageProviders.Storm.StormProvider', $data.StorageProviderBase, null
         }, this);
         return serializableObject;
     },
-    supportedDataTypes: { value: [$data.Integer, $data.String, $data.Number, $data.Blob, $data.Boolean, $data.Date], writable: false },
+    supportedDataTypes: { value: [$data.Integer, $data.String, $data.Number, $data.Blob, $data.Boolean, $data.Date, $data.ObjectID], writable: false },
     supportedBinaryOperators: {
         value: {
             equal: { mapTo: ' == ', dataType: "boolean", allowedIn: [$data.Expressions.FilterExpression, $data.Expressions.OrderExpression] },
@@ -163,7 +177,7 @@ $C('$data.storageProviders.Storm.StormProvider', $data.StorageProviderBase, null
             or: { mapTo: ' || ', dataType: "boolean", allowedIn: [$data.Expressions.FilterExpression, $data.Expressions.OrderExpression] },
             and: { mapTo: ' && ', dataType: "boolean", allowedIn: [$data.Expressions.FilterExpression, $data.Expressions.OrderExpression] },
 
-            "in": { mapTo: ".indexOf(", allowedIn: [$data.Expressions.FilterExpression], rightValue: ') > -1', reverse: true }
+            "in": { mapTo: " in ", allowedIn: [$data.Expressions.FilterExpression] }
         }
     },
     supportedUnaryOperators: {
@@ -213,7 +227,8 @@ $C('$data.storageProviders.Storm.StormProvider', $data.StorageProviderBase, null
                 '$data.Boolean': function (bool) { return bool; },
                 '$data.Blob': function (blob) { return blob; },
                 '$data.Object': function (o) { if (o === undefined) { return new $data.Object(); } return JSON.parse(o); },
-                '$data.Array': function (o) { if (o === undefined) { return new $data.Array(); } return JSON.parse(o); }
+                '$data.Array': function (o) { if (o === undefined) { return new $data.Array(); } return JSON.parse(o); },
+                '$data.ObjectID': function (id) { return id; }
             },
             toDb: {
                 '$data.Integer': function (number) { return number; },
@@ -223,7 +238,8 @@ $C('$data.storageProviders.Storm.StormProvider', $data.StorageProviderBase, null
                 '$data.Boolean': function (bool) { return bool; },
                 '$data.Blob': function (blob) { return blob; },
                 '$data.Object': function (o) { return JSON.stringify(o); },
-                '$data.Array': function (o) { return JSON.stringify(o); }
+                '$data.Array': function (o) { return JSON.stringify(o); },
+                '$data.ObjectID': function (id) { return '"' + id + '"'; }
             }
         }
     }

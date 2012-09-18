@@ -11,7 +11,21 @@
 //     Zoltán Gyebrovszki
 //
 // More info: http://jaydata.org
-(function (global) {
+﻿/*
+
+IMPORTANT:
+!!!  Do not reference this file to html!  !!!
+
+*/
+
+(function (window) {
+    if (typeof window.intellisense === 'undefined') {
+        window.intellisense = {
+            annotate: function () { },
+            logMessage: function () { }
+        };
+    }
+})(window);(function (global) {
     if (typeof window === "undefined") {
         window = this;
     }
