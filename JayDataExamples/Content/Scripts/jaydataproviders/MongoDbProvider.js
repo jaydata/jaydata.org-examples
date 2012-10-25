@@ -1,4 +1,4 @@
-// JayData 1.1.1
+// JayData 1.2.2
 // Dual licensed under MIT and GPL v2
 // Copyright JayStack Technologies (http://jaydata.org/licensing)
 //
@@ -254,24 +254,49 @@ $C('$data.storageProviders.mongoDB.mongoDBWhereCompiler', $data.Expressions.Enti
     },
 
     compile: function (expression, context) {
+        if (!context.cursor) {
+            context.query = {};
+            context.cursor = context.query;
+        }
         this.Visit(expression, context);
     },
 
     VisitParametricQueryExpression: function (expression, context) {
         this.Visit(expression.expression, context);
+        if (expression.expression && expression.expression.nodeType === $data.Expressions.ExpressionType.Constant){
+            context.value = expression.expression.value;
+            context.queryField = context.field = $data.Guid.NewGuid();
+            if (context.value === true) context.value = null;
+            
+            if (context.cursor instanceof Array){
+                var o = {};
+                o[context.queryField] = context.value;
+                context.cursor.push(o);
+            }else context.cursor[context.queryField] = context.value;
+        }
     },
 
     VisitUnaryExpression: function (expression, context) {
         context.unary = expression.nodeType;
         this.Visit(expression.operand, context);
     },
+    
+    _constExpressionFilter: function(expression, context){
+        if (expression.left && expression.left.nodeType === $data.Expressions.ExpressionType.Constant && expression.right && [$data.Expressions.ExpressionType.Or, $data.Expressions.ExpressionType.And].indexOf(expression.nodeType) >= 0){
+            context.value = expression.left.value;
+            context.queryField = context.field = $data.Guid.NewGuid();
+            if (context.value === true) context.value = null;
+            
+            if (context.cursor instanceof Array){
+                var o = {};
+                o[context.queryField] = context.value;
+                context.cursor.push(o);
+            }else context.cursor[context.queryField] = context.value;
+        }
+    },
 
     VisitSimpleBinaryExpression: function (expression, context) {
-        if (!context.cursor){
-            context.query = {};
-            context.cursor = context.query;
-        }
-        
+     
         var cursor = context.cursor;
         
         switch (expression.nodeType){
@@ -286,6 +311,8 @@ $C('$data.storageProviders.mongoDB.mongoDBWhereCompiler', $data.Expressions.Enti
                 }
                 this.Visit(expression.left, context);
                 this.Visit(expression.right, context);
+                this._constExpressionFilter(expression, context);
+                
                 context.cursor = cursor;
                 break;
             case $data.Expressions.ExpressionType.And:
@@ -299,6 +326,8 @@ $C('$data.storageProviders.mongoDB.mongoDBWhereCompiler', $data.Expressions.Enti
                 }
                 this.Visit(expression.left, context);
                 this.Visit(expression.right, context);
+                this._constExpressionFilter(expression, context);
+                
                 context.cursor = cursor;
                 break;
             case $data.Expressions.ExpressionType.Equal:
@@ -669,6 +698,7 @@ $C('$data.storageProviders.mongoDB.mongoDBOrderCompiler', $data.storageProviders
         this.Visit(expression.selector, context);
     },
     VisitMemberInfoExpression: function (expression, context) {
+        if (context.data) context.data += '.';
         context.data += expression.memberName;
     }
 });
@@ -790,61 +820,94 @@ $C('$data.storageProviders.mongoDB.mongoDBProvider', $data.StorageProviderBase, 
         var self = this;
         callBack = $data.typeSystem.createCallbackSetting(callBack);
         
-        switch (this.providerConfiguration.dbCreation){
-            case $data.storageProviders.DbCreationType.DropAllExistingTables:
-                var server = this._getServer();
-                new this.driver.Db(this.providerConfiguration.databaseName, server, {}).open(function(error, client){
+        var server = this._getServer();
+        new this.driver.Db(this.providerConfiguration.databaseName, server, { safe: false }).open(function(error, client){
+            if (error){
+                callBack.error(error);
+                return;
+            }
+            
+            var fn = function(error, client){
+                var cnt = 0;
+                var collectionCount = 0;
+                var readyFn = function(client){
+                    if (--cnt <= 0){
+                        callBack.success(self.context);
+                        client.close();
+                    }
+                };
+                
+                for (var i in self.context._entitySetReferences){
+                    if (self.context._entitySetReferences.hasOwnProperty(i))
+                        cnt++;
+                }
+                
+                collectionCount = cnt;
+                var sets = Object.keys(self.context._entitySetReferences);
+                if (!sets.length) return readyFn(client);
+                sets.forEach(function(i){
+                    if (self.context._entitySetReferences.hasOwnProperty(i)){
+                        client.collectionNames({ namesOnly: true }, function(error, names){
+                            names = names.map(function(it){ return it.slice(it.lastIndexOf('.') + 1); });
+                            switch (self.providerConfiguration.dbCreation){
+                                case $data.storageProviders.DbCreationType.DropAllExistingTables:
+                                    if (names.indexOf(self.context._entitySetReferences[i].tableName) >= 0){
+                                        client.dropCollection(self.context._entitySetReferences[i].tableName, function(error, result){
+                                            if (error){
+                                                callBack.error(error);
+                                                return;
+                                            }
+                                            if (self.context._entitySetReferences[i].tableOptions){
+                                                client.createCollection(self.context._entitySetReferences[i].tableName, self.context._entitySetReferences[i].tableOptions, function(error, result){
+                                                    if (error){
+                                                        callBack.error(error);
+                                                        return;
+                                                    }
+                                                    readyFn(client);
+                                                });
+                                            }else readyFn(client);
+                                        });
+                                    }else if (names.indexOf(self.context._entitySetReferences[i].tableName) < 0 && self.context._entitySetReferences[i].tableOptions){
+                                        client.createCollection(self.context._entitySetReferences[i].tableName, self.context._entitySetReferences[i].tableOptions, function(error, result){
+                                            if (error){
+                                                callBack.error(error);
+                                                return;
+                                            }
+                                            readyFn(client);
+                                        });
+                                    }else readyFn(client);
+                                    break;
+                                default:
+                                    if (names.indexOf(self.context._entitySetReferences[i].tableName) < 0 && self.context._entitySetReferences[i].tableOptions){
+                                        client.createCollection(self.context._entitySetReferences[i].tableName, self.context._entitySetReferences[i].tableOptions, function(error, result){
+                                            if (error){
+                                                callBack.error(error);
+                                                return;
+                                            }
+                                            readyFn(client);
+                                        });
+                                    }else readyFn(client);
+                                    break;
+                            }
+                        });
+                    }
+                });
+            };
+            
+            if (self.providerConfiguration.username){
+                client.authenticate(self.providerConfiguration.username, self.providerConfiguration.password || '', function(error, result){
                     if (error){
                         callBack.error(error);
                         return;
                     }
                     
-                    var fn = function(error, client){
-                        var cnt = 0;
-                        var collectionCount = 0;
-                        var readyFn = function(client){
-                            if (--cnt == 0){
-                                callBack.success(self.context);
-                                client.close();
-                            }
-                        };
-                        
-                        for (var i in self.context._entitySetReferences){
-                            if (self.context._entitySetReferences.hasOwnProperty(i))
-                                cnt++;
-                        }
-                        
-                        collectionCount = cnt;
-                        
-                        for (var i in self.context._entitySetReferences){
-                            if (self.context._entitySetReferences.hasOwnProperty(i)){
-                                
-                                client.dropCollection(self.context._entitySetReferences[i].tableName, function(error, result){
-                                    readyFn(client);
-                                });
-                            }
-                        }
-                    };
-                    
-                    if (self.providerConfiguration.username){
-                        client.authenticate(self.providerConfiguration.username, self.providerConfiguration.password || '', function(error, result){
-                            if (error){
-                                callBack.error(error);
-                                return;
-                            }
-                            
-                            if (result){
-                                fn(error, client);
-                                return;
-                            }
-                        });
-                    }else fn(error, client);
+                    if (result){
+                        fn(error, client);
+                        return;
+                    }
                 });
-                break;
-            default:
-                callBack.success(this.context);
-                break;
-        }
+            }else fn(error, client);
+        });
     },
     executeQuery: function(query, callBack){
         var self = this;
@@ -854,7 +917,7 @@ $C('$data.storageProviders.mongoDB.mongoDBProvider', $data.StorageProviderBase, 
         new $data.storageProviders.mongoDB.mongoDBCompiler().compile(query);
         
         var server = this._getServer();
-        new this.driver.Db(this.providerConfiguration.databaseName, server, {}).open(function(error, client){
+        new this.driver.Db(this.providerConfiguration.databaseName, server, { safe: false }).open(function(error, client){
             if (error){
                 callBack.error(error);
                 return;
@@ -862,6 +925,7 @@ $C('$data.storageProviders.mongoDB.mongoDBProvider', $data.StorageProviderBase, 
             
             var collection = new self.driver.Collection(client, entitySet.tableName);
             var find = query.find;
+            //console.log(JSON.stringify(find.query));
 
             var cb = function(error, results){
                 if (error){
@@ -914,7 +978,7 @@ $C('$data.storageProviders.mongoDB.mongoDBProvider', $data.StorageProviderBase, 
         
         var counterState = 0;
         var counterFn = function(callback){
-            if (--counterState == 0) callback();
+            if (--counterState <= 0) callback();
         }
         
         var insertFn = function(client, c, collection){
@@ -1062,7 +1126,7 @@ $C('$data.storageProviders.mongoDB.mongoDBProvider', $data.StorageProviderBase, 
             counterState = c.removeAll.length;
             for (var i = 0; i < c.removeAll.length; i++){
                 var r = c.removeAll[i];
-                
+
                 var keys = Container.resolveType(r.type).memberDefinitions.getKeyProperties();
                 for (var j = 0; j < keys.length; j++){
                     var k = keys[j];
@@ -1072,13 +1136,9 @@ $C('$data.storageProviders.mongoDB.mongoDBProvider', $data.StorageProviderBase, 
                 var props = Container.resolveType(r.type).memberDefinitions.getPublicMappedProperties();
                 for (var j = 0; j < props.length; j++){
                     var p = props[j];
-                    if (!p.computed) {
-                        r.data[p.name] = self.fieldConverter.toDb[Container.resolveName(Container.resolveType(p.type))](r.data[p.name]);
-                        if (typeof r.data[p.name] === 'undefined') delete r.data[p.name];
+                    if (!p.key) {
+                        delete r.data[p.name];
                     }
-
-                    //TODO:
-                    if (!(p.concurrencyMode === $data.ConcurrencyMode.Fixed)) delete r.data[p.name];
                 }
                 
                 collection.remove(r.data, { safe: true }, function(error, result){
@@ -1128,7 +1188,7 @@ $C('$data.storageProviders.mongoDB.mongoDBProvider', $data.StorageProviderBase, 
             }else readyFn(client, value);
         };
         
-        new this.driver.Db(this.providerConfiguration.databaseName, server, {}).open(function(error, client){
+        new this.driver.Db(this.providerConfiguration.databaseName, server, { safe: false }).open(function(error, client){
             if (error){
                 callBack.error(error);
                 return;
