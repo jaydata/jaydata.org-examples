@@ -9,6 +9,7 @@
     <script type="text/javascript" src="../Content/Scripts/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../Content/Scripts/jquery.tmpl.min.js"></script>
     <script type="text/javascript" src="../Content/Scripts/jaydata.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/jaydataproviders/InMemoryProvider.js"></script>
     <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="todo.js"></script>
     <script id="todoEntryTemplate" type="text/html">
@@ -71,14 +72,30 @@
                         <ul class="browser-list">
                             <li class="browser ie" title="Internet Explorer 10+"></li>
                             <li class="browser firefox" title="Firefox 10+"></li>
+                            <li class="browser chrome" title="Google Chrome 12+"></li>
                             <li class="browser wp" title="Windows Phone 8+"></li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div class="clear row iblock mauto">
+                    <div class="span5">
+                        <h3 class="marginb5">Supported browsers (HTML5 localStorage):</h3>
+                        <ul class="browser-list">
+                            <li class="browser chrome" title="Google Chrome"></li>
+                            <li class="browser opera" title="Opera"></li>
+                            <li class="browser safari" title="Safari"></li>
+                            <li class="browser blackberry" title="Blackberry 2+"></li>
+                            <li class="browser wp" title="Windows Phone"></li>
+                            <li class="browser ios" title="iOS"></li>
+                            <li class="browser android" title="Android"></li>
                         </ul>
                     </div>
                 </div>
 
                 <hr class="soften" />
 
-                <h2>Simple ToDoList example where you can create, edit or delete task items.<br /><small>Two providers are supported: <u style="color: Black;">WebSQL</u> and <u style="color: Black;">Indexed DB</u></small></h2>
+                <h2>Simple ToDoList example where you can create, edit or delete task items.<br /><small>Three providers are supported: <u style="color: Black;">WebSQL</u>,  <u style="color: Black;">Indexed DB</u> and <u style="color: Black;">HTML5 localStorage</u></small></h2>
 
 <pre class="well well-white marginb20 iblock" style='color:#000000;background:#ffffff; text-align: left;'>    $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#btnAdd'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>click<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
         <span style='color:#0000E6; font-weight:bold; '>var</span> value <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#txtNew'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>val<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
@@ -123,6 +140,7 @@
             <p id="providerSelection" class="download-info">
                 <button id="btnSql" value="sqLite" class="btn btn-large">WebSQL</button>
                 <button id="btnIdb" value="indexedDb" class="btn btn-large">IndexedDB</button>
+                <button id="btnLocalStorage" value="LocalStore" class="btn btn-large">HTML5 localStorage</button>
             </p>
 
             <div>
