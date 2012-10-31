@@ -1,0 +1,177 @@
+/* TODO: make it function with a color as param */
+#color-scheme
+{
+    /* Complementary Color Scheme */
+    #compl {
+        @base: #663333;
+        @complement1: spin(@base, 180);
+        @complement2: darken(spin(@base, 180), 5%);
+        @lighten1: lighten(@base, 15%);
+        @lighten2: lighten(@base, 30%);
+    
+        .one   { color: @base; }
+        .two   { color: @complement1; }
+        .three { color: @complement2; }
+        .four  { color: @lighten1; }
+        .five  { color: @lighten2; }
+    }
+    
+    /* Subtle Color Scheme */
+    #subtle {
+        @base: #663333;
+        @lighter1: lighten(spin(@base, 5), 10%);
+        @lighter2: lighten(spin(@base, 10), 20%);
+        @darker1: darken(spin(@base, -5), 10%);
+        @darker2: darken(spin(@base, -10), 20%);
+ 
+        .one   { color: @base; }
+        .two   { color: @lighter1; }
+        .three { color: @lighter2; }
+        .four  { color: @darker1; }
+        .five  { color: @darker2; }
+    }
+}
+
+/*#region SIZING */
+.vheight(@height: auto, @line-height: inherit) {
+    height: @height;
+    line-height: @line-height;
+}
+
+.trueheight(@height: 20px){
+	height: @height;
+	line-height: @height;
+}
+
+.size(@width: auto, @height: auto, @line-height: initial){
+    width: @width;
+    height: @height;
+    line-height: @line-height;
+}
+
+.square(@size) {
+  .size(@size, @size);
+}
+
+.maxsize(@maxwidth: auto, @maxheight: auto){
+    max-width: @maxwidth;
+    max-height: @maxheight;
+    overflow: hidden;
+}
+
+.box-sizing(@sizing: border-box){
+	-webkit-box-sizing: @sizing;
+	   -moz-box-sizing: @sizing;
+	        box-sizing: @sizing;
+}
+
+.input-block-level {
+    display: block;
+    width: 100%;
+    min-height: 30px;        // Make inputs at least the height of their button counterpart
+    .box-sizing(border-box); // Makes inputs behave like true block-level elements
+}
+
+.resizable(@direction) {
+    resize: @direction; // Options: horizontal, vertical, both
+    overflow: auto;     // Safari fix
+}
+/*#endregion SIZING */
+
+/*#region VISIBILITY / POSITIONING */
+.position(@position: static, @top: auto, @right: auto, @bottom: auto, @left: auto){
+    position: @position;
+         top: @top;
+       right: @right;
+      bottom: @bottom;
+        left: @left; 
+}
+
+.center-block() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-fixed() {
+    margin-right: auto;
+    margin-left: auto;
+    .clearfix();
+}
+
+.opacity(@opacity: 1){
+    -webkit-opacity: @opacity;
+       -moz-opacity: @opacity;
+            opacity: @opacity;
+             filter: ~"alpha(opacity=@{opacity * 100})";
+}
+
+.opacity_(@opacity: 1){
+    -webkit-opacity: @opacity !important;
+       -moz-opacity: @opacity !important;
+            opacity: @opacity !important;
+             filter: ~"alpha(opacity=@{opacity * 100})" !important;
+}
+/*#endregion VISIBILITY / POSITIONING */
+
+/*#region TEXT */
+.indent(@indent: -9999em){
+	text-indent: @indent;
+}
+
+.placeholder(@color: @inactive) {
+    &:-moz-placeholder {
+        color: @color;
+    }
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+}
+
+.text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hide-text() {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.user-select(@select) {
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+       -o-user-select: @select;
+          user-select: @select;
+}
+
+.shorthand(@fontSize: 14px, @lineHeight: 14px, @fontWeight: normal) {
+        font-size: @fontSize;
+      line-height: @lineHeight;
+      font-weight: @fontWeight;
+}
+
+.hyphens(@mode: auto) {
+        word-wrap: break-word;
+  -webkit-hyphens: @mode;
+     -moz-hyphens: @mode;
+      -ms-hyphens: @mode;
+       -o-hyphens: @mode;
+          hyphens: @mode;
+}
+/*#endregion TEXT */
+
+.bgsize(@size: 100% 100%){
+	-webkit-background-size: @size; 
+	   -moz-background-size: @size;
+	     -o-background-size: @size;
+	        background-size: @size;
+}
