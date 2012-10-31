@@ -743,6 +743,13 @@
     <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\_widgets.scss" />
     <Content Include="Sencha\Core\resources\themes\templates\project\manifest.rb" />
     <Content Include="Sencha\Core\resources\themes\templates\project\sencha-touch.scss" />
+    <Content Include="Download\JayData-Northwind-Knockoutjs.zip" />
+    <Content Include="Download\JayData-Northwind-Knockoutjs_v105.zip" />
+    <Content Include="Download\jaydata104nwind.zip" />
+    <Content Include="Download\JayDataNorthwindDemo.zip" />
+    <Content Include="Download\netflix.apk" />
+    <Content Include="Download\northwind_nodejs.zip" />
+    <Content Include="Download\YQLWithRails.zip" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Styles\dd.less" />
     <None Include="Styles\mixins.less" />
