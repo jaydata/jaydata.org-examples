@@ -19,14 +19,14 @@
     <link href="../Content/Scripts/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="Styles/mixins.css" rel="stylesheet" />
 
-    <script src="../Content/Scripts/datajs-1.0.3.js"></script>
-    <script src="../Content/Scripts/JayData.js"></script>
-    <script src="../Content/Scripts/jaydataproviders/oDataProvider.js"></script>
+    <script src="http://include.jaydata.org/datajs-1.0.3.js"></script>
+    <script src="http://include.jaydata.org/jaydata.js"></script>
+    <!--<script src="http://include.jaydata.org/jaydataproviders/oDataProvider.js"></script>-->
 
-    <script src="../Content/Scripts/knockout-2.1.0.js"></script>
-    <script src="../Content/Scripts/jaydatamodules/knockout.js"></script>
+    <script src="http://include.jaydata.org/knockout-2.1.0.js"></script>
+    <script src="http://include.jaydata.org/jaydatamodules/knockout.js"></script>
 
-    <script src="../Content/Scripts/jquery-1.7.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="../Content/Scripts/jquery.flexslider-min.js"></script>
 
     <script>
@@ -168,7 +168,10 @@
 
         $(function () {
             $data.service(svcUri, function (clientFactory) {
-                ko.applyBindings(new ShopModel(clientFactory()));
+                var context = clientFactory();
+                context.onReady(function () {
+                    ko.applyBindings(new ShopModel(context));
+                });
             });
         });
     </script>
