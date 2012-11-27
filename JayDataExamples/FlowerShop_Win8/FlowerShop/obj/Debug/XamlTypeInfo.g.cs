@@ -112,19 +112,17 @@ namespace FlowerShop.FlowerShop_XamlTypeInfo
             }
         }
 
-        private object Activate_0_StringFormatConverter() { return new global::FlowerShop.StringFormatConverter(); }
+        private object Activate_0_LayoutAwarePage() { return new global::FlowerShop.Common.LayoutAwarePage(); }
 
-        private object Activate_1_LayoutAwarePage() { return new global::FlowerShop.Common.LayoutAwarePage(); }
+        private object Activate_1_CartDetailPage() { return new global::FlowerShop.CartDetailPage(); }
 
-        private object Activate_2_CartDetailPage() { return new global::FlowerShop.CartDetailPage(); }
+        private object Activate_2_GroupedItemsPage() { return new global::FlowerShop.GroupedItemsPage(); }
 
-        private object Activate_3_GroupedItemsPage() { return new global::FlowerShop.GroupedItemsPage(); }
+        private object Activate_3_GroupDetailPage() { return new global::FlowerShop.GroupDetailPage(); }
 
-        private object Activate_4_GroupDetailPage() { return new global::FlowerShop.GroupDetailPage(); }
+        private object Activate_4_RichTextColumns() { return new global::FlowerShop.Common.RichTextColumns(); }
 
-        private object Activate_5_RichTextColumns() { return new global::FlowerShop.Common.RichTextColumns(); }
-
-        private object Activate_6_ItemDetailPage() { return new global::FlowerShop.ItemDetailPage(); }
+        private object Activate_5_ItemDetailPage() { return new global::FlowerShop.ItemDetailPage(); }
 
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(string typeName)
@@ -134,10 +132,6 @@ namespace FlowerShop.FlowerShop_XamlTypeInfo
 
             switch (typeName)
             {
-            case "Object":
-                xamlType = new global::FlowerShop.FlowerShop_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::System.Object));
-                break;
-
             case "Windows.UI.Xaml.Controls.Page":
                 xamlType = new global::FlowerShop.FlowerShop_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::Windows.UI.Xaml.Controls.Page));
                 break;
@@ -158,39 +152,33 @@ namespace FlowerShop.FlowerShop_XamlTypeInfo
                 xamlType = new global::FlowerShop.FlowerShop_XamlTypeInfo.XamlSystemBaseType(typeName, typeof(global::Windows.UI.Xaml.DataTemplate));
                 break;
 
-            case "FlowerShop.StringFormatConverter":
-                userType = new global::FlowerShop.FlowerShop_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::FlowerShop.StringFormatConverter), GetXamlTypeByName("Object"));
-                userType.Activator = Activate_0_StringFormatConverter;
-                xamlType = userType;
-                break;
-
             case "FlowerShop.Common.LayoutAwarePage":
                 userType = new global::FlowerShop.FlowerShop_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::FlowerShop.Common.LayoutAwarePage), GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_1_LayoutAwarePage;
+                userType.Activator = Activate_0_LayoutAwarePage;
                 xamlType = userType;
                 break;
 
             case "FlowerShop.CartDetailPage":
                 userType = new global::FlowerShop.FlowerShop_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::FlowerShop.CartDetailPage), GetXamlTypeByName("FlowerShop.Common.LayoutAwarePage"));
-                userType.Activator = Activate_2_CartDetailPage;
+                userType.Activator = Activate_1_CartDetailPage;
                 xamlType = userType;
                 break;
 
             case "FlowerShop.GroupedItemsPage":
                 userType = new global::FlowerShop.FlowerShop_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::FlowerShop.GroupedItemsPage), GetXamlTypeByName("FlowerShop.Common.LayoutAwarePage"));
-                userType.Activator = Activate_3_GroupedItemsPage;
+                userType.Activator = Activate_2_GroupedItemsPage;
                 xamlType = userType;
                 break;
 
             case "FlowerShop.GroupDetailPage":
                 userType = new global::FlowerShop.FlowerShop_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::FlowerShop.GroupDetailPage), GetXamlTypeByName("FlowerShop.Common.LayoutAwarePage"));
-                userType.Activator = Activate_4_GroupDetailPage;
+                userType.Activator = Activate_3_GroupDetailPage;
                 xamlType = userType;
                 break;
 
             case "FlowerShop.Common.RichTextColumns":
                 userType = new global::FlowerShop.FlowerShop_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::FlowerShop.Common.RichTextColumns), GetXamlTypeByName("Windows.UI.Xaml.Controls.Panel"));
-                userType.Activator = Activate_5_RichTextColumns;
+                userType.Activator = Activate_4_RichTextColumns;
                 userType.SetContentPropertyName("FlowerShop.Common.RichTextColumns.RichTextContent");
                 userType.AddMemberName("RichTextContent");
                 userType.AddMemberName("ColumnTemplate");
@@ -199,7 +187,7 @@ namespace FlowerShop.FlowerShop_XamlTypeInfo
 
             case "FlowerShop.ItemDetailPage":
                 userType = new global::FlowerShop.FlowerShop_XamlTypeInfo.XamlUserType(this, typeName, typeof(global::FlowerShop.ItemDetailPage), GetXamlTypeByName("FlowerShop.Common.LayoutAwarePage"));
-                userType.Activator = Activate_6_ItemDetailPage;
+                userType.Activator = Activate_5_ItemDetailPage;
                 xamlType = userType;
                 break;
 

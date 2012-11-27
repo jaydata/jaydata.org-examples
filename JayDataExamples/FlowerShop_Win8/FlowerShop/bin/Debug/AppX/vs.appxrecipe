@@ -16,17 +16,17 @@
     <AppXManifest Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-11-27T11:32:50.694</Modified>
+      <Modified>2012-11-26T17:35:00.119</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\FlowerShop.exe">
       <PackagePath>FlowerShop.exe</PackagePath>
-      <Modified>2012-11-27T11:57:15.457</Modified>
+      <Modified>2012-11-27T07:22:37.499</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\FlowerShop.pdb">
       <PackagePath>FlowerShop.pdb</PackagePath>
-      <Modified>2012-11-27T11:57:15.442</Modified>
+      <Modified>2012-11-27T07:22:37.483</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.Edm.WindowsStore.dll">
       <PackagePath>Microsoft.Data.Edm.WindowsStore.dll</PackagePath>
@@ -98,15 +98,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
-      <Modified>2012-11-27T11:32:48.903</Modified>
+      <Modified>2012-11-26T08:13:32.323</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\CartDetailPage.xaml">
       <PackagePath>CartDetailPage.xaml</PackagePath>
-      <Modified>2012-11-27T11:57:10.540</Modified>
+      <Modified>2012-11-26T15:12:52.329</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
-      <Modified>2012-11-27T11:36:41.667</Modified>
+      <Modified>2012-11-27T07:22:35.415</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\GroupedItemsPage.xaml">
       <PackagePath>GroupedItemsPage.xaml</PackagePath>
@@ -114,11 +114,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\GroupDetailPage.xaml">
       <PackagePath>GroupDetailPage.xaml</PackagePath>
-      <Modified>2012-11-27T11:53:30.952</Modified>
+      <Modified>2012-11-26T16:34:37.295</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\ItemDetailPage.xaml">
       <PackagePath>ItemDetailPage.xaml</PackagePath>
-      <Modified>2012-11-27T11:46:59.247</Modified>
+      <Modified>2012-11-26T13:42:31.703</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

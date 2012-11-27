@@ -148,12 +148,4 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
     </Grid>
-    <Page.BottomAppBar>
-        <AppBar>
-            <StackPanel Orientation="Horizontal">
-                <Button Content="Refresh"></Button>
-                <Button Content="Remove from cart"></Button>
-            </StackPanel>
-        </AppBar>
-    </Page.BottomAppBar>
 </common:LayoutAwarePage>

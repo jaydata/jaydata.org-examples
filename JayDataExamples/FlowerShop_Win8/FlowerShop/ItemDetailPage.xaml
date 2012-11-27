@@ -20,7 +20,7 @@
             d:Source="{Binding AllGroups[0].Items, Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}"/>
     </Page.Resources>
 
-        <!--
+    <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
@@ -73,7 +73,7 @@
                                         <Run FontSize="26.667" FontWeight="Light" Text="{Binding Title}"/>
                                         <LineBreak/>
                                         <LineBreak/>
-                                            <Run FontWeight="Normal" Text="{Binding Price, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}"/>
+                                        <Run FontWeight="Normal" Text="{Binding Subtitle}"/>
                                     </Paragraph>
                                     <Paragraph LineStackingStrategy="MaxHeight">
                                         <InlineUIContainer>
