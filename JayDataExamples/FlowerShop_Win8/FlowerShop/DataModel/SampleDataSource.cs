@@ -273,6 +273,16 @@ namespace FlowerShop.Data
         {
             get { return this._items; }
         }
+        public double SumValue {
+            get { 
+                var a = this._items.Select(i => i.Price * i.Count).Sum();
+                if(a==0){a=12;}
+                return a;
+            }
+        }
+        public void ChangeSumValue() {
+            this.OnPropertyChanged("SumValue");
+        }
     }
 
     /// <summary>
@@ -331,6 +341,7 @@ namespace FlowerShop.Data
             {
                 _sampleDataSource.Cart.Items.Add(item);
             }
+            _sampleDataSource.Cart.ChangeSumValue();
         }
 
         internal static void RemoveFromCart(SampleDataItem flower)
@@ -340,6 +351,7 @@ namespace FlowerShop.Data
                 _sampleDataSource.Cart.Items.Remove(item);
 
             }
+            _sampleDataSource.Cart.ChangeSumValue();
         }
 
         public static SampleCart GetCart(){
@@ -395,6 +407,7 @@ namespace FlowerShop.Data
         static void flowers_LoadCompleted(object sender, LoadCompletedEventArgs e)
         {
             var flowers = (DataServiceCollection<JayStorm.Repository.Flower>)sender;
+            if (flowers.Count() == 0) { return; }
             var grp = _sampleDataSource.AllGroups.FirstOrDefault(g => g.UniqueId == flowers[0].Category_ID);
             foreach (var flower in flowers)
             {
