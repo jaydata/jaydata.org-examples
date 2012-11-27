@@ -33,7 +33,7 @@
         </Grid.RowDefinitions>
 
         <!-- Horizontal scrolling grid used in most view states -->
-        <GridView
+        <GridView x:ConnectionId='1'
             x:Name="itemGridView"
             AutomationProperties.AutomationId="ItemGridView"
             AutomationProperties.Name="Items In Group"
@@ -42,8 +42,9 @@
             Padding="120,126,120,50"
             ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
             ItemTemplate="{StaticResource Cart500x130ItemTemplate}"
-            SelectionMode="None"
-            IsSwipeEnabled="false">
+            SelectionMode="Multiple"
+            IsSwipeEnabled="false"
+                                                            >
 
             <GridView.Header>
                 <StackPanel Width="480" Margin="0,4,14,0">
@@ -66,7 +67,7 @@
         </GridView>
 
         <!-- Vertical scrolling list only used when snapped -->
-        <ListView x:ConnectionId='1'
+        <ListView
             x:Name="itemListView"
             AutomationProperties.AutomationId="ItemListView"
             AutomationProperties.Name="Items In Group"
@@ -76,9 +77,8 @@
             Padding="10,0,0,60"
             ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
             ItemTemplate="{StaticResource Standard80ItemTemplate}"
-            SelectionMode="None"
-            IsSwipeEnabled="false"
-                                                            >
+            SelectionMode="Multiple"
+            IsSwipeEnabled="false">
 
             <ListView.Header>
                 <StackPanel Width="480" Margin="0,4,14,0">
@@ -153,7 +153,7 @@
         <AppBar x:Name="bottomAppBar">
             <StackPanel Orientation="Horizontal">
                 <Button Content="Refresh"></Button>
-                <Button Content="Remove from cart"></Button>
+                <Button x:ConnectionId='5' Content="Remove from cart"                             ></Button>
             </StackPanel>
         </AppBar>
     </Page.BottomAppBar>

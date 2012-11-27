@@ -65,11 +65,17 @@ namespace FlowerShop
             this.Frame.Navigate(typeof(CartDetailPage), null);
         }
         private void AddToCartButton_Click(object sender, RoutedEventArgs e) {
-            throw new NotSupportedException();
+            foreach (var item in itemGridView.SelectedItems)
+	        {
+                var flower = item as SampleDataItem;
+                SampleDataSource.AddToCart(new FlowerShop.Data.SampleCartItem(flower, 1, flower.Price));
+	        }
+            bottomAppBar.IsOpen = false;
         }
         
         private void itemGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            bottomAppBar.IsSticky = true;
             bottomAppBar.IsOpen = true;
         }
     }

@@ -22,11 +22,11 @@
   <ItemGroup>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\FlowerShop.exe">
       <PackagePath>FlowerShop.exe</PackagePath>
-      <Modified>2012-11-27T12:14:25.493</Modified>
+      <Modified>2012-11-27T12:44:48.366</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\FlowerShop.pdb">
       <PackagePath>FlowerShop.pdb</PackagePath>
-      <Modified>2012-11-27T12:14:25.477</Modified>
+      <Modified>2012-11-27T12:44:48.335</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.Edm.WindowsStore.dll">
       <PackagePath>Microsoft.Data.Edm.WindowsStore.dll</PackagePath>
@@ -102,7 +102,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\CartDetailPage.xaml">
       <PackagePath>CartDetailPage.xaml</PackagePath>
-      <Modified>2012-11-27T12:11:05.597</Modified>
+      <Modified>2012-11-27T12:37:21.560</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
@@ -114,7 +114,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\GroupDetailPage.xaml">
       <PackagePath>GroupDetailPage.xaml</PackagePath>
-      <Modified>2012-11-27T12:08:10.528</Modified>
+      <Modified>2012-11-27T12:29:24.142</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\ItemDetailPage.xaml">
       <PackagePath>ItemDetailPage.xaml</PackagePath>

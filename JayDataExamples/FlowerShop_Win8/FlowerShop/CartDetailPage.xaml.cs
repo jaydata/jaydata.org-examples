@@ -60,5 +60,15 @@ namespace FlowerShop
         {
             bottomAppBar.IsOpen = true;
         }
+
+        private void removeFromCart_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in itemGridView.SelectedItems)
+            {
+                var cartItem = item as SampleCartItem;
+                SampleDataSource.RemoveFromCart(cartItem.Item);
+            }
+            bottomAppBar.IsOpen = false;
+        }
     }
 }

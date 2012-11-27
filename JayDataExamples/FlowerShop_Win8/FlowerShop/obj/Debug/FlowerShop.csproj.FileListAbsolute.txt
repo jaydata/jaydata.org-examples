@@ -21,10 +21,6 @@ D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\D
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\ItemDetailPage.xaml
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\FlowerShop.exe
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\FlowerShop.pdb
-D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\priconfig.xml.intermediate
-D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\layout.resfiles.intermediate
-D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\resources.resfiles.intermediate
-D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\pri.resfiles.intermediate
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\priconfig.xml
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\layout.resfiles
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\resources.resfiles
@@ -51,3 +47,7 @@ D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\D
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\CartDetailPage.g.i.cs
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\CartDetailPage.g.cs
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\CartDetailPage.xaml
+D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\priconfig.xml.intermediate
+D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\layout.resfiles.intermediate
+D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\resources.resfiles.intermediate
+D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\pri.resfiles.intermediate

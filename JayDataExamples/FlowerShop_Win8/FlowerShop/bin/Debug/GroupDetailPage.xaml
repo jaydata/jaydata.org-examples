@@ -150,7 +150,7 @@
         <AppBar x:Name="bottomAppBar">
             <StackPanel Orientation="Horizontal">
                 <Button Content="Refresh"></Button>
-                <Button Content="Remove from cart"></Button>
+                <Button x:ConnectionId='5' Content="Add to cart"                              ></Button>
             </StackPanel>
         </AppBar>
     </Page.BottomAppBar>

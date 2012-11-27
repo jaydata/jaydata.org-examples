@@ -321,8 +321,25 @@ namespace FlowerShop.Data
             return null;
         }
 
-        public static void AddToCart(SampleCartItem item) {
-            _sampleDataSource.Cart.Items.Add(item);
+        public static void AddToCart(SampleCartItem item)
+        {
+            var checkItem = _sampleDataSource.Cart.Items.FirstOrDefault(i => i.Item.UniqueId == item.Item.UniqueId);
+            if (checkItem != null) {
+                checkItem.Count = item.Count;
+            }
+            else
+            {
+                _sampleDataSource.Cart.Items.Add(item);
+            }
+        }
+
+        internal static void RemoveFromCart(SampleDataItem flower)
+        {
+            foreach (var item in _sampleDataSource.Cart.Items.Where(i => i.Item.UniqueId == flower.UniqueId).ToArray())
+            {
+                _sampleDataSource.Cart.Items.Remove(item);
+
+            }
         }
 
         public static SampleCart GetCart(){
@@ -398,5 +415,7 @@ namespace FlowerShop.Data
             var query = SampleDataSource._context.Categories;
             data.LoadAsync(query);
         }
+
+        
     }
 }
