@@ -110,6 +110,7 @@
     <Compile Include="CartDetailPage.xaml.cs">
       <DependentUpon>CartDetailPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\StringFormatConverter.cs" />
     <Compile Include="GroupedItemsPage.xaml.cs">
       <DependentUpon>GroupedItemsPage.xaml</DependentUpon>
     </Compile>

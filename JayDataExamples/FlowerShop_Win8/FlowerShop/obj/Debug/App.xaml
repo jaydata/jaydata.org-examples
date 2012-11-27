@@ -14,8 +14,9 @@
                     Required by Visual Studio project and item templates
                  -->
                 <ResourceDictionary Source="Common/StandardStyles.xaml"/>
+                
             </ResourceDictionary.MergedDictionaries>
-
+<local:StringFormatConverter x:Key="StringFormatter"></local:StringFormatConverter>
             <!-- Application-specific resources -->
 
             <x:String x:Key="AppName">FlowerShop</x:String>
