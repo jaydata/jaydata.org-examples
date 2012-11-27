@@ -42,8 +42,9 @@
             Padding="120,126,120,50"
             ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
             ItemTemplate="{StaticResource Cart500x130ItemTemplate}"
-            SelectionMode="None"
-            IsSwipeEnabled="false">
+            SelectionMode="Multiple"
+            IsSwipeEnabled="false"
+            SelectionChanged="itemListView_SelectionChanged">
 
             <GridView.Header>
                 <StackPanel Width="480" Margin="0,4,14,0">
@@ -79,9 +80,8 @@
             Padding="10,0,0,60"
             ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
             ItemTemplate="{StaticResource Standard80ItemTemplate}"
-            SelectionMode="None"
-            IsSwipeEnabled="false"
-            SelectionChanged="itemListView_SelectionChanged">
+            SelectionMode="Multiple"
+            IsSwipeEnabled="false">
 
             <ListView.Header>
                 <StackPanel Width="480" Margin="0,4,14,0">
@@ -156,7 +156,7 @@
         <AppBar x:Name="bottomAppBar">
             <StackPanel Orientation="Horizontal">
                 <Button Content="Refresh"></Button>
-                <Button Content="Remove from cart"></Button>
+                <Button Content="Remove from cart" Click="removeFromCart_Click"></Button>
             </StackPanel>
         </AppBar>
     </Page.BottomAppBar>
