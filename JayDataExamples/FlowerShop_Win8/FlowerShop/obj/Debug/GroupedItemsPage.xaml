@@ -127,10 +127,8 @@
             <Button x:ConnectionId='3' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" IsHitTestVisible="false" Style="{StaticResource PageHeaderTextStyle}"/>
-                <Button x:ConnectionId='4' x:Name="cartButton"                          Width="95" Height="49"  Margin="0,48,0,43" Content="Cart"/>
-
+                <Button x:ConnectionId='4' x:Name="cartButton"                          Width="120" Height="52"  Margin="20,53,0,35" Content="Cart"/>
             </StackPanel>
-
         </Grid>
 
         <VisualStateManager.VisualStateGroups>

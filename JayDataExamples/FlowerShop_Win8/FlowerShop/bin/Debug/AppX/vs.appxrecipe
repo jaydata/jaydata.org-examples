@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>WIN8-NP</Machine>
-    <WindowsUser>nochtap</WindowsUser>
+    <Machine>KIMI-AVANPC</Machine>
+    <WindowsUser>kimi</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <RegisteredManifestChecksum>9424800A9036629AC1B41E2B323B8290386F6B42F9305583126CACB820C976DE</RegisteredManifestChecksum>
@@ -13,116 +13,116 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-11-27T12:14:26.598</Modified>
+      <Modified>2012-11-27T12:37:28.154</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\FlowerShop.exe">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\FlowerShop.exe">
       <PackagePath>FlowerShop.exe</PackagePath>
-      <Modified>2012-11-27T12:14:25.493</Modified>
+      <Modified>2012-11-27T13:24:38.130</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\FlowerShop.pdb">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\FlowerShop.pdb">
       <PackagePath>FlowerShop.pdb</PackagePath>
-      <Modified>2012-11-27T12:14:25.477</Modified>
+      <Modified>2012-11-27T13:24:38.115</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.Edm.WindowsStore.dll">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.Edm.WindowsStore.dll">
       <PackagePath>Microsoft.Data.Edm.WindowsStore.dll</PackagePath>
-      <Modified>2012-11-26T08:15:07.492</Modified>
+      <Modified>2012-11-27T12:32:43.108</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.OData.WindowsStore.dll">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.OData.WindowsStore.dll">
       <PackagePath>Microsoft.Data.OData.WindowsStore.dll</PackagePath>
-      <Modified>2012-11-26T08:15:07.523</Modified>
+      <Modified>2012-11-27T12:32:43.156</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.Services.Client.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.Services.Client.WindowsStore.dll">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.Services.Client.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.Services.Client.WindowsStore.dll">
       <PackagePath>Microsoft.Data.Services.Client.WindowsStore.dll</PackagePath>
-      <Modified>2012-11-26T08:15:07.812</Modified>
+      <Modified>2012-11-27T12:32:43.214</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\System.Spatial.WindowsStore.dll">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\System.Spatial.WindowsStore.dll">
       <PackagePath>System.Spatial.WindowsStore.dll</PackagePath>
-      <Modified>2012-11-26T08:15:07.538</Modified>
+      <Modified>2012-11-27T12:32:43.175</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.Edm.WindowsStore.xml">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.Edm.WindowsStore.xml">
       <PackagePath>Microsoft.Data.Edm.WindowsStore.xml</PackagePath>
-      <Modified>2012-11-26T08:15:07.502</Modified>
+      <Modified>2012-11-27T12:32:43.119</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.OData.WindowsStore.xml">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.OData.WindowsStore.xml">
       <PackagePath>Microsoft.Data.OData.WindowsStore.xml</PackagePath>
-      <Modified>2012-11-26T08:15:07.528</Modified>
+      <Modified>2012-11-27T12:32:43.161</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.Services.Client.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.Services.Client.WindowsStore.xml">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.Services.Client.WindowsStore.5.0.0\lib\.NETCore\Microsoft.Data.Services.Client.WindowsStore.xml">
       <PackagePath>Microsoft.Data.Services.Client.WindowsStore.xml</PackagePath>
-      <Modified>2012-11-26T08:15:07.817</Modified>
+      <Modified>2012-11-27T12:32:43.219</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\System.Spatial.WindowsStore.xml">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\packages\Microsoft.Data.OData.WindowsStore.5.0.0\lib\.NETCore\System.Spatial.WindowsStore.xml">
       <PackagePath>System.Spatial.WindowsStore.xml</PackagePath>
-      <Modified>2012-11-26T08:15:07.542</Modified>
+      <Modified>2012-11-27T12:32:43.178</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\glyphicons-halflings-white.png">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\glyphicons-halflings-white.png">
       <PackagePath>Assets\glyphicons-halflings-white.png</PackagePath>
-      <Modified>2012-11-26T16:41:41.979</Modified>
+      <Modified>2012-11-27T12:32:42.512</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\Logo.png">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-03-15T18:42:52.000</Modified>
+      <Modified>2012-11-27T12:32:42.509</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\SmallLogo.png">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\SmallLogo.png">
       <PackagePath>Assets\SmallLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-03-15T18:42:52.000</Modified>
+      <Modified>2012-11-27T12:32:42.510</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\SplashScreen.png">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\SplashScreen.png">
       <PackagePath>Assets\SplashScreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-03-15T18:42:52.000</Modified>
+      <Modified>2012-11-27T12:32:42.511</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-03-15T18:42:52.000</Modified>
+      <Modified>2012-11-27T12:32:42.511</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\LightGray.png">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\LightGray.png">
       <PackagePath>Assets\LightGray.png</PackagePath>
-      <Modified>2011-12-12T20:08:56.000</Modified>
+      <Modified>2012-11-27T12:32:42.509</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\MediumGray.png">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\MediumGray.png">
       <PackagePath>Assets\MediumGray.png</PackagePath>
-      <Modified>2011-12-12T20:08:56.000</Modified>
+      <Modified>2012-11-27T12:32:42.510</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\DarkGray.png">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\Assets\DarkGray.png">
       <PackagePath>Assets\DarkGray.png</PackagePath>
-      <Modified>2011-12-12T20:08:56.000</Modified>
+      <Modified>2012-11-27T12:32:42.509</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\App.xaml">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
-      <Modified>2012-11-27T12:11:40.137</Modified>
+      <Modified>2012-11-27T12:32:42.506</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\CartDetailPage.xaml">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\CartDetailPage.xaml">
       <PackagePath>CartDetailPage.xaml</PackagePath>
-      <Modified>2012-11-27T12:11:05.597</Modified>
+      <Modified>2012-11-27T13:22:39.308</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\Common\StandardStyles.xaml">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
-      <Modified>2012-11-27T12:13:53.691</Modified>
+      <Modified>2012-11-27T13:24:36.486</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\GroupedItemsPage.xaml">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\GroupedItemsPage.xaml">
       <PackagePath>GroupedItemsPage.xaml</PackagePath>
-      <Modified>2012-11-26T17:03:38.691</Modified>
+      <Modified>2012-11-27T12:54:24.785</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\GroupDetailPage.xaml">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\GroupDetailPage.xaml">
       <PackagePath>GroupDetailPage.xaml</PackagePath>
-      <Modified>2012-11-27T12:08:10.528</Modified>
+      <Modified>2012-11-27T12:44:21.592</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\ItemDetailPage.xaml">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\ItemDetailPage.xaml">
       <PackagePath>ItemDetailPage.xaml</PackagePath>
-      <Modified>2012-11-27T12:13:28.603</Modified>
+      <Modified>2012-11-27T13:16:41.891</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\development\Github\_windows8\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-11-27T12:14:25.958</Modified>
+      <Modified>2012-11-27T12:37:27.180</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

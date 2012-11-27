@@ -98,7 +98,7 @@
             <Button x:ConnectionId='3' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <TextBlock x:Name="pageTitle" Text="{Binding Title}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false"/>
-                <Button x:ConnectionId='4' x:Name="cartButton"                          Content="Cart" ></Button>
+                <Button x:ConnectionId='4' x:Name="cartButton"                          Content="Cart" Width="120" Height="52"  Margin="20,53,0,35" ></Button>
             </StackPanel>
         </Grid>
 

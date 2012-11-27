@@ -47,14 +47,17 @@
 
             <GridView.Header>
                 <StackPanel Width="480" Margin="0,4,14,0">
-                    <TextBlock Text="Customer details" Margin="0,0,18,20" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60"/>
-                    <TextBlock Text="Name" Margin="0,0,18,20" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60"/>
+                    <TextBlock Text="Customer details" Margin="0,0,0,0" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60" FontSize="40"/>
+                    <TextBlock Text="Name" Margin="0,20,0,15" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60" FontSize="26"/>
+
                     <TextBox Name="userName" Text="{Binding Name, Mode=TwoWay}" Margin="0,0,18,0"></TextBox>
-                    <TextBlock Text="Address" Margin="0,0,18,20" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60"/>
+                    <TextBlock Text="Address" Margin="0,20,0,15" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60" FontSize="26"/>
+
                     <TextBox Name="userAddress" Text="{Binding Address, Mode=TwoWay}" Margin="0,0,18,0"></TextBox>
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:ConnectionId='3' Content="Submit order"                          ></Button>
-                        <Button x:ConnectionId='4' Content="Cancel"                          ></Button>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,20,0,0">
+                        <Button x:ConnectionId='3' Content="Submit order"                           Padding="30,5,30,5" Margin="-3,0,0,0" BorderThickness="1" HorizontalAlignment="Center" Height="45" Width="233" FontStretch="ExtraCondensed"/>
+                        <Button x:ConnectionId='4' Content="Cancel"                           Padding="30,5,30,5" BorderThickness="1" HorizontalAlignment="Center" Height="45" Width="233" FontStretch="ExtraCondensed"></Button>
                     </StackPanel>
                 </StackPanel>
             </GridView.Header>
