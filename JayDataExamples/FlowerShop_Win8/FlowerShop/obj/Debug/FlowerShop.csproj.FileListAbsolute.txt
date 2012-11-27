@@ -43,7 +43,6 @@ D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\D
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\Microsoft.Data.Services.Client.WindowsStore.pri
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\System.Spatial.WindowsStore.xml
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\bin\Debug\System.Spatial.WindowsStore.pri
-D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\FlowerShop.csprojResolveAssemblyReference.cache
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\FlowerShop.csproj.GenerateResource.Cache
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\Microsoft.Data.Edm.WindowsStore.pri.xml
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\Microsoft.Data.OData.WindowsStore.pri.xml

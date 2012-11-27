@@ -67,5 +67,10 @@ namespace FlowerShop
         private void AddToCartButton_Click(object sender, RoutedEventArgs e) {
             throw new NotSupportedException();
         }
+        
+        private void itemGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            bottomAppBar.IsOpen = true;
+        }
     }
 }

@@ -17,7 +17,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <!-- Application-specific resources -->
-
+            <local:StringFormatConverter x:Key="StringFormatter"></local:StringFormatConverter>
             <x:String x:Key="AppName">FlowerShop</x:String>
         </ResourceDictionary>
     </Application.Resources>

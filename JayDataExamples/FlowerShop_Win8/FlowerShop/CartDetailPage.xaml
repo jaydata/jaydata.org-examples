@@ -77,7 +77,8 @@
             ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
             ItemTemplate="{StaticResource Standard80ItemTemplate}"
             SelectionMode="None"
-            IsSwipeEnabled="false">
+            IsSwipeEnabled="false"
+            SelectionChanged="itemListView_SelectionChanged">
 
             <ListView.Header>
                 <StackPanel Width="480" Margin="0,4,14,0">
@@ -148,4 +149,12 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar x:Name="bottomAppBar">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Refresh"></Button>
+                <Button Content="Remove from cart"></Button>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
 </common:LayoutAwarePage>

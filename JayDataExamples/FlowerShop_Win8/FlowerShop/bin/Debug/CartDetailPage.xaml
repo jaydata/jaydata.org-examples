@@ -53,8 +53,8 @@
                     <TextBlock Text="Address" Margin="0,0,18,20" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60"/>
                     <TextBox Name="userAddress" Text="{Binding Address, Mode=TwoWay}" Margin="0,0,18,0"></TextBox>
                     <StackPanel Orientation="Horizontal">
-                        <Button x:ConnectionId='2' Content="Submit order"                          ></Button>
-                        <Button x:ConnectionId='3' Content="Cancel"                          ></Button>
+                        <Button x:ConnectionId='3' Content="Submit order"                          ></Button>
+                        <Button x:ConnectionId='4' Content="Cancel"                          ></Button>
                     </StackPanel>
                 </StackPanel>
             </GridView.Header>
@@ -66,7 +66,7 @@
         </GridView>
 
         <!-- Vertical scrolling list only used when snapped -->
-        <ListView
+        <ListView x:ConnectionId='1'
             x:Name="itemListView"
             AutomationProperties.AutomationId="ItemListView"
             AutomationProperties.Name="Items In Group"
@@ -77,7 +77,8 @@
             ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
             ItemTemplate="{StaticResource Standard80ItemTemplate}"
             SelectionMode="None"
-            IsSwipeEnabled="false">
+            IsSwipeEnabled="false"
+                                                            >
 
             <ListView.Header>
                 <StackPanel Width="480" Margin="0,4,14,0">
@@ -100,7 +101,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:ConnectionId='1' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <Button x:ConnectionId='2' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Text="{Binding Title}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false" />
         </Grid>
 
@@ -148,5 +149,13 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar x:Name="bottomAppBar">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Refresh"></Button>
+                <Button Content="Remove from cart"></Button>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
 </common:LayoutAwarePage>
 

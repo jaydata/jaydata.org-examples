@@ -55,5 +55,10 @@ namespace FlowerShop
         {
 
         }
+
+        private void itemListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            bottomAppBar.IsOpen = true;
+        }
     }
 }

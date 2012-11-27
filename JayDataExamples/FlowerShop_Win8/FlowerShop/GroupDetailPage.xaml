@@ -48,7 +48,7 @@
             SelectionMode="Multiple"
             IsSwipeEnabled="false"
             IsItemClickEnabled="True"
-            ItemClick="ItemView_ItemClick">
+            ItemClick="ItemView_ItemClick" SelectionChanged="itemGridView_SelectionChanged">
 
             <GridView.Header>
                 <StackPanel Width="480" Margin="0,4,14,0">
@@ -146,4 +146,13 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
     </Grid>
+    <Page.BottomAppBar>
+        <AppBar x:Name="bottomAppBar">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Refresh"></Button>
+                <Button Content="Remove from cart"></Button>
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+
 </common:LayoutAwarePage>

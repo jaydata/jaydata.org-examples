@@ -73,7 +73,7 @@
                                         <Run FontSize="26.667" FontWeight="Light" Text="{Binding Title}"/>
                                         <LineBreak/>
                                         <LineBreak/>
-                                        <Run FontWeight="Normal" Text="{Binding Subtitle}"/>
+                                            <Run FontWeight="Normal" Text="{Binding Price, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}"/>
                                     </Paragraph>
                                     <Paragraph LineStackingStrategy="MaxHeight">
                                         <InlineUIContainer>
