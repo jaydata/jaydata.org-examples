@@ -55,7 +55,10 @@
                     <TextBlock Text="Address" Margin="0,20,0,15" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60" FontSize="26"/>
 
                     <TextBox Name="userAddress" Text="{Binding Address, Mode=TwoWay}" Margin="0,0,18,0"></TextBox>
-
+                    <StackPanel Orientation="Horizontal" Margin="0,20,0,15">
+                        <TextBlock Text="Order summary price:" Style="{StaticResource SubheaderTextStyle}" Margin="0,0,20,0" MaxHeight="60" FontSize="22"/>
+                        <TextBlock Text="{Binding SumValue, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}"  Style="{StaticResource SubheaderTextStyle}" MaxHeight="60" FontSize="22"/>
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,20,0,0">
                         <Button Content="Submit order" Click="submitOrder_Click" Padding="30,5,30,5" Margin="-3,0,0,0" BorderThickness="1" HorizontalAlignment="Center" Height="45" Width="233" FontStretch="ExtraCondensed"/>
                         <Button Content="Cancel" Click="cancelOrder_Click" Padding="30,5,30,5" BorderThickness="1" HorizontalAlignment="Center" Height="45" Width="233" FontStretch="ExtraCondensed"></Button>
@@ -68,8 +71,8 @@
                 </Style>
             </GridView.ItemContainerStyle>
         </GridView>
-
-        <!-- Vertical scrolling list only used when snapped -->
+        
+            <!-- Vertical scrolling list only used when snapped -->
         <ListView
             x:Name="itemListView"
             AutomationProperties.AutomationId="ItemListView"
@@ -79,20 +82,24 @@
             Visibility="Collapsed"
             Padding="10,0,0,60"
             ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
-            ItemTemplate="{StaticResource Standard80ItemTemplate}"
+            ItemTemplate="{StaticResource Cart80ItemTemplate}"
             SelectionMode="Multiple"
             IsSwipeEnabled="false">
 
             <ListView.Header>
-                <StackPanel Width="480" Margin="0,4,14,0">
-                    <TextBlock Text="Customer details" Margin="0,0,18,20" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60"/>
-                    <TextBlock Text="Name" Margin="0,0,18,20" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60"/>
+                <StackPanel>
+                    <TextBlock Text="Customer details" Margin="0,0,0,0" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60" FontSize="40"/>
+                    <TextBlock Text="Name" Margin="0,20,0,15" Style="{StaticResource TitleTextStyle}" MaxHeight="60"/>
                     <TextBox Name="userName2" Text="{Binding Name, Mode=TwoWay}" Margin="0,0,18,0"></TextBox>
-                    <TextBlock Text="Address" Margin="0,0,18,20" Style="{StaticResource SubheaderTextStyle}" MaxHeight="60"/>
+                    <TextBlock Text="Address" Margin="0,20,0,15" Style="{StaticResource TitleTextStyle}" MaxHeight="60"/>
                     <TextBox Name="userAddress2" Text="{Binding Address, Mode=TwoWay}" Margin="0,0,18,0"></TextBox>
-                    <StackPanel Orientation="Horizontal">
-                        <Button Content="Submit order"></Button>
-                        <Button Content="Cancel"></Button>
+                    <TextBlock Style="{StaticResource TitleTextStyle}" Margin="0,18,0,0">
+                        <Run Text="Order summary price:"></Run>
+                        <Run Text="{Binding SumValue, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}"></Run>
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,20,0,0">
+                        <Button Content="Submit order" Click="submitOrder_Click" Padding="30,5,30,5" Margin="-3,0,0,0" BorderThickness="1" HorizontalAlignment="Center" Height="45" FontStretch="ExtraCondensed"/>
+                        <Button Content="Cancel" Click="cancelOrder_Click" Padding="30,5,30,5" BorderThickness="1" HorizontalAlignment="Center" Height="45" FontStretch="ExtraCondensed"></Button>
                     </StackPanel>
                 </StackPanel>
             </ListView.Header>
@@ -105,7 +112,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Text="{Binding Title}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false" />
+            <TextBlock x:Name="pageTitle" Text="Cart summary" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false" />
         </Grid>
 
         <VisualStateManager.VisualStateGroups>

@@ -28,12 +28,12 @@ D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\D
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\ItemDetailPage.g.i.cs
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\ItemDetailPage.g.cs
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\XamlTypeInfo.g.cs
-D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\GroupedItemsPage.xaml
-D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\ItemDetailPage.xaml
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\App.xaml
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\CartDetailPage.xaml
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\Common\StandardStyles.xaml
+D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\GroupedItemsPage.xaml
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\GroupDetailPage.xaml
+D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\ItemDetailPage.xaml
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\FlowerShop.exe
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\FlowerShop.pdb
 D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\obj\Debug\FlowerShop.csproj.GenerateResource.Cache

@@ -252,6 +252,11 @@ namespace FlowerShop.Data
             get { return this._price; }
             set { this.SetProperty(ref this._price, value); }
         }
+        public double SumPrice {
+            get { 
+                return this._count*this._price;
+            }
+        }
     }
 
     public class SampleCart : FlowerShop.Common.BindableBase
@@ -335,7 +340,7 @@ namespace FlowerShop.Data
         {
             var checkItem = _sampleDataSource.Cart.Items.FirstOrDefault(i => i.Item.UniqueId == item.Item.UniqueId);
             if (checkItem != null) {
-                checkItem.Count = item.Count;
+                checkItem.Count += item.Count;
             }
             else
             {

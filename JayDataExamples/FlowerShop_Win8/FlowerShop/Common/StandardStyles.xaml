@@ -1682,7 +1682,12 @@
             </Border>
             <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="10,0,0,0">
                 <TextBlock Text="{Binding Item.Title}" Style="{StaticResource TitleTextStyle}" TextWrapping="NoWrap" FontSize="22" FontWeight="Normal" />
-                <TextBlock Text="{Binding Item.Price, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap" FontSize="20" Margin="0,5,0,0" />
+                <TextBlock >
+                    <Run Text="{Binding Count}"></Run>
+                    <Run Text="item(s) /"></Run>
+                    <Run Text="{Binding Item.Price, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}"></Run>
+                </TextBlock>
+                <TextBlock Text="{Binding SumPrice, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap" FontSize="20" Margin="0,5,0,0" />
                 <TextBlock Text="{Binding Item.Description}" Style="{StaticResource BodyTextStyle}" MaxHeight="60"/>
             </StackPanel>
         </Grid>
@@ -1720,7 +1725,27 @@
             </Border>
             <StackPanel Grid.Column="1" Margin="10,0,0,0">
                 <TextBlock Text="{Binding Title}" Style="{StaticResource ItemTextStyle}" MaxHeight="40"/>
-                <TextBlock Text="{Binding Price, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap" />
+                <TextBlock Text="{Binding Price, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}" Margin="0,5,0,0" TextWrapping="NoWrap" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="Cart80ItemTemplate">
+        <Grid Margin="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}" Width="60" Height="60">
+                <Image Source="{Binding Item.Image}" Stretch="UniformToFill"/>
+            </Border>
+            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                <TextBlock Text="{Binding Item.Title}" Style="{StaticResource ItemTextStyle}" MaxHeight="40"/>
+                <TextBlock Style="{StaticResource CaptionTextStyle}" Margin="0,0,0,0">
+                    <Run Text="{Binding Count}"></Run>
+                    <Run Text="item(s) /"></Run>
+                    <Run Text="{Binding Item.Price, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}"></Run>
+                </TextBlock>
+                <TextBlock Text="{Binding SumPrice, Converter={StaticResource StringFormatter}, ConverterParameter='{}{0:C}'}" Margin="0,5,0,0" TextWrapping="NoWrap" />
             </StackPanel>
         </Grid>
     </DataTemplate>
