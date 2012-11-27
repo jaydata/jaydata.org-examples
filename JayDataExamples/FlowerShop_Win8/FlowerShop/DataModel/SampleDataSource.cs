@@ -428,7 +428,5 @@ namespace FlowerShop.Data
             var query = SampleDataSource._context.Categories;
             data.LoadAsync(query);
         }
-
-        
     }
 }
