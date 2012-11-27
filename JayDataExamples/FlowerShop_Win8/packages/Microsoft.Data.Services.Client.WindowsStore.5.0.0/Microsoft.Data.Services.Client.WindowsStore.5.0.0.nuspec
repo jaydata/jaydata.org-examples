@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.Data.Services.Client.WindowsStore</id>
+    <version>5.0.0</version>
+    <title>WCF Data Services Client for Windows Store Apps</title>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <licenseUrl>http://go.microsoft.com/?linkid=9809688</licenseUrl>
+    <projectUrl>http://go.microsoft.com/fwlink/?LinkId=220868</projectUrl>
+    <iconUrl>http://static.tumblr.com/hgchgxz/9ualgdf98/icon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>LINQ-enabled client API for issuing OData queries and consuming OData payloads. Supports OData v3. Use this package for .NET-based Windows Store applications. Localized for CHS, CHT, DEU, ESN, FRA, ITA, JPN, KOR and RUS.</description>
+    <copyright>Copyright 2012</copyright>
+    <tags>wcf data services client odata odatalib edmlib spatial ado.net ef entity framework open protocol wcfds wcfdataservices dataservices windows store</tags>
+    <dependencies>
+      <dependency id="Microsoft.Data.OData.WindowsStore" version="[5.0.0]" />
+    </dependencies>
+  </metadata>
+</package>

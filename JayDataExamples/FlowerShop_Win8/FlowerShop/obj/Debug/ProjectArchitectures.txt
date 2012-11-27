@@ -1,0 +1,1 @@
+D:\_gitHub\jaydata.org-examples\JayDataExamples\FlowerShop_Win8\FlowerShop\FlowerShop.csproj;neutral
