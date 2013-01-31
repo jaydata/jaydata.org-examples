@@ -1,21 +1,8 @@
-/*reset*/
-
-body,h1,h2,h3,.main-nav,.kendo-nav,#banner p,.browsers,.mobileOSs,#footer ul,#footer p,#nav-pager,#examples-list,#themeChooser,.widgetGrid ul
-{
-    margin:0;
-    padding:0;
-    list-style:none;
-}
-
 body {
-    background-color: #fff;
+    background: #fff;
 }
 
-img
-{
-    border:0;
-}
-
+/*reset*/
 #header a,
 li>a,
 h2>a,
@@ -2334,7 +2321,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { background: #eee; }
 }
 
 #device-wrapper {
-    background-image: url("iphone.png");
+    background-image: url("img/iphone.png");
     background-size: cover;
     padding: 132px 72px 188px 66px;
     margin: auto;
