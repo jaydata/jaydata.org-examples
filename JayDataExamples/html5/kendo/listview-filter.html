@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Kendo ListView (JayData example)</title>
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example">
+    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example.">
+    <meta name="author" content="JayData, community@jaydata.org">
+    <link rel="stylesheet" type="text/css" href="/NewsReader/css/bootstrap.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+    <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
+    <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydata.js"></script>
+    <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydatamodules/kendo.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
+    <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+    <script type="text/javascript" src="/Content/Scripts/bootstrap.min.js"></script>
+
+    <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/Styles/Bootstrap/docs.css" rel="stylesheet">
+
+    <link href="/Styles/mixins.css" rel="stylesheet">
+    <link href="/Styles/dd.css" rel="stylesheet">
+
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <script type="text/javascript" src="/assets/codemirror/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="/assets/codemirror/lib/codemirror.css">
+    <script type="text/javascript" src="/assets/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="/assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script type="text/javascript" src="/assets/codemirror/mode/javascript/javascript.js"></script>
+
+    <style>
+        .CodeMirror {
+            height: auto !important;
+        }
+    </style>
+</head>
+<body>
+     <!-- Navbar ================================================== -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li class="active"><a href="http://www.jaydata.org/examples">Examples home</a></li>
+                    <li><a href="http://www.jaydata.org">JayData.org home</a></li>
+                    <li><a href="http://www.jaydata.org/documentation">Documentation</a></li>
+                    <li><a href="http://www.jaydata.org/community">Community</a></li>
+                    <li><a href="http://www.jaydata.org/forum">Forum</a></li>
+                    <li><a href="http://www.jaydata.org/blog">Blog</a>
+                    <li><a href="http://www.jaydata.org/backlogs">Write a new userstory!</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="jumbotron masthead">
+            <div class="inner tacenter">
+                <h1>ListView with filter and sorting</h1>
+            </div>
+        </header>
+
+        <hr class="soften" />
+
+        <div class="row">
+
+            <div class="span7">
+
+<textarea id="code">
+
+<script>
+    $(document).delegate("#filter", "click", function () {
+        var f = $("#pricefilter").val();
+        if (f != "")
+            _ds.filter({ field: "Price", operator: "lt", value: parseInt(f) });
+        else
+            _ds.filter({});
+    });
+    $(document).delegate("#sortby", "change", function () {
+        var f = $("#sortby").val();
+        if (f != "")
+            _ds.sort({ field: f, dir: "asc" });
+        else
+            _ds.sort({});
+    });
+</script>
+</textarea>
+<script>
+    setTimeout(function () {
+        CodeMirror.fromTextArea(document.getElementById('code'), {
+            mode: 'text/html',
+            lineNumbers: false
+        });
+    });
+</script>
+
+            </div>
+            <div class="span5">
+Max price: <input type="number" id="pricefilter" style="width: 80px" size="3" maxlength="3" name="pricefilter" /><a href="#" id="filter">filter</a>
+Sort by: <select style="width: 80px" id="sortby" name="sortby"><option value="" selected>---</option><option value="Name">Name</option><option value="Price">Price</option></select>
+<div id="pager" class="k-pager-wrap"></div>
+<div id="listView"></div>
+
+<script type="text/x-kendo-tmpl" id="template">
+    <span class="product" style="width:230px;float:left">
+        <img style="width:220px;height:150px" src="${ImageUrl}" />
+        <h3>${Name}</h3>
+        <b>${kendo.toString(Price, "c")}</b>
+    </span>
+</script>
+<script>
+
+    Math.ceiling = Math.ceil; // FIXME remove this
+
+    var apiKey = {
+        appId: '133e0907-f70b-4f11-92b3-dfebc9bdd6db',
+        // see https://dashboard.jaystack.com for your real application key
+        applicationKey: 'XXXX',
+        serviceName: 'mydatabase',
+        license: 'business'
+    };
+
+    $data.initService(apiKey).then(function (mydatabase, factory, type) {
+        $(function () {
+            startApplication(mydatabase);
+        });
+    });
+    function startApplication(mydatabase) {
+        var _ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
+        $("#listView").kendoListView({
+            dataSource: _ds,
+            template: kendo.template($("#template").html())
+        });
+        $("#pager").kendoPager({
+            dataSource: _ds
+        }).data("kendoPager");
+        $(document).delegate("#filter", "click", function () {
+            var f = $("#pricefilter").val();
+            if (f != "")
+                _ds.filter({ field: "Price", operator: "lt", value: parseInt(f) });
+            else
+                _ds.filter({});
+        });
+        $(document).delegate("#sortby", "change", function () {
+            var f = $("#sortby").val();
+            if (f != "")
+                _ds.sort({ field: f, dir: "asc" });
+            else
+                _ds.sort({});
+        });
+    }
+</script>
+            </div><!-- column -->
+
+        </div><!-- row -->
+        <div class="row">
+            As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
+            In this example oData is used. Check the network panel to see the requests.
+            You can create a Kendo Datasource with a simple method: asKendoDataSource() and off you go. If works everywhere where Kendo expects a DataSource, not only
+            with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
+            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc. 
+            You can play with this example on <a href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>.
+        </div>
+        <!--
+        <div class="row">
+            <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/JayData/F4Hda/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        </div>
+        -->
+    </div> <!-- container -->
+     <script type="text/javascript">
+         var _gaq = _gaq || [];
+         _gaq.push(['_setAccount', 'UA-30304727-1']);
+         _gaq.push(['_trackPageview']);
+
+         (function () {
+             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+    </script>
+</body>
+</html>
