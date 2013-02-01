@@ -5,60 +5,29 @@
     <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example">
     <meta name="description" content="How to use the JayData with Kendo! See this mobile example.">
     <meta name="author" content="JayData, community@jaydata.org">
-    <link rel="stylesheet" type="text/css" href="/NewsReader/css/bootstrap.min.css" />
+    
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="http://cdn.kendostatic.com/2012.3.1315/js/kendo.all.min.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydata.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydatamodules/kendo.js"></script>
-    <script type="text/javascript" src="north.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
+    <script type="text/javascript" src="/Content/Scripts/north.js"></script>
     <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
     <script type="text/javascript" src="/Content/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Content/Scripts/examples.js?20121115"></script>
+    <script type="text/javascript" src="/assets/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="/assets/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="/assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script type="text/javascript" src="/assets/codemirror/mode/javascript/javascript.js"></script>
+    <script type="text/javascript" src="/assets/codemirror/addon/fold/foldcode.js"></script>
 
-    <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
-    <link href="/Styles/Bootstrap/docs.css" rel="stylesheet">
-
-    <link href="/Styles/mixins.css" rel="stylesheet">
-    <link href="/Styles/dd.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
+    <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="/Styles/Bootstrap/docs.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/codemirror/lib/codemirror.css" />
+    <link href="/Styles/dd.css" rel="stylesheet" />
     <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-    <script type="text/javascript" src="/assets/codemirror-3.02/lib/codemirror.js"></script>
-    <link rel="stylesheet" href="/assets/codemirror-3.02/lib/codemirror.css">
-    <script type="text/javascript" src="/assets/codemirror-3.02/mode/xml/xml.js"></script>
-    <script type="text/javascript" src="/assets/codemirror-3.02/mode/htmlmixed/htmlmixed.js"></script>
-    <script type="text/javascript" src="/assets/codemirror-3.02/mode/javascript/javascript.js"></script>
-    <script type="text/javascript" src="/assets/codemirror-3.02/addon/fold/foldcode.js"></script>
-
-    <style>
-        .CodeMirror {
-            height: auto !important;
-        }
-        .CodeMirror-foldmarker {
-            color: blue;
-            text-shadow: #b9f 1px 1px 2px, #b9f -1px -1px 2px, #b9f 1px -1px 2px, #b9f -1px 1px 2px;
-            font-family: arial;
-            line-height: .3;
-            cursor: pointer;
-        }
-        .value {
-            float: right;
-        }
-        #mobilepart {
-            height: 460px;
-            overflow: hidden;
-            position: relative;
-            width: 320px;
-            background-image: url("iphone.png");
-            background-size: cover;
-            margin: auto;
-            padding: 132px 72px 188px 66px;
-        }
-    </style>
-    <link href="examples.css?20121115" rel="stylesheet" />
-    <script src="examples.js?20121115"></script>
-
+    <link href="/Styles/examples.css?20121115" rel="stylesheet" />
 </head>
 <body>
      <!-- Navbar ================================================== -->
@@ -87,10 +56,8 @@
 
         <hr class="soften" />
 
-        <div class="row">
-
+        <div class="row-fluid">
             <div class="span7">
-
 <textarea id="code">
 <div data-role="view" id="categories" data-layout="default" 
     data-model="viewModel" data-title="Categories">
@@ -181,9 +148,8 @@
         foldFunc_html(window.editor, { line: 32 });
     });
 </script>
-
             </div>
-            <div class="span5">
+<div class="span5">
     <div class="k-content mobileExample ">
         <div id="device-wrapper">
             <div id="mobile-application-container">
@@ -230,11 +196,9 @@
 <script id="productlist-template" type="text/x-kendo-template">
         <a href="##product" data-bind="text:Product_Name"></a>
 </script>
-
                 </div>
             </div>
         </div>
-
 <script>
     Math.ceiling = Math.ceil;
     $.when(getLocalNorthwind()).then(function (localDB) {
@@ -267,30 +231,20 @@
         }
     });
 </script>
+            </div>
+        </div>
 
-            </div><!-- column -->
+        <br />
 
-        </div><!-- row -->
-        <div class="row">
-            This Kendo mobile example uses a local Northwind database. The code on the left can be folded/unfolded.
-            The demo is written so that your local database is reinitialized on every page reload and your changes are lost!
+        <div class="row-fluid">
+            <p>This Kendo mobile example uses a local Northwind database. The code on the left can be folded/unfolded.<br />
+            The demo is written so that your local database is reinitialized on every page reload and your changes are lost!</p>
         </div>
         <!--
         <div class="row">
             <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/JayData/F4Hda/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
         </div>
         -->
-    </div> <!-- container -->
-     <script type="text/javascript">
-         var _gaq = _gaq || [];
-         _gaq.push(['_setAccount', 'UA-30304727-1']);
-         _gaq.push(['_trackPageview']);
-
-         (function () {
-             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-         })();
-    </script>
+    </div>
 </body>
 </html>

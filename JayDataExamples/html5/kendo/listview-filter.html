@@ -2,40 +2,31 @@
 <html>
 <head>
     <title>Kendo ListView (JayData example)</title>
-    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example">
-    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example.">
-    <meta name="author" content="JayData, community@jaydata.org">
-    <link rel="stylesheet" type="text/css" href="/NewsReader/css/bootstrap.min.css" />
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
+    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example." />
+    <meta name="author" content="JayData, community@jaydata.org" />
+
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
     <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydata.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydatamodules/kendo.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
     <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
     <script type="text/javascript" src="/Content/Scripts/bootstrap.min.js"></script>
-
-    <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
-    <link href="/Styles/Bootstrap/docs.css" rel="stylesheet">
-
-    <link href="/Styles/mixins.css" rel="stylesheet">
-    <link href="/Styles/dd.css" rel="stylesheet">
-
-    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
     <script type="text/javascript" src="/assets/codemirror/lib/codemirror.js"></script>
-    <link rel="stylesheet" href="/assets/codemirror/lib/codemirror.css">
     <script type="text/javascript" src="/assets/codemirror/mode/xml/xml.js"></script>
     <script type="text/javascript" src="/assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script type="text/javascript" src="/assets/codemirror/mode/javascript/javascript.js"></script>
 
-    <style>
-        .CodeMirror {
-            height: auto !important;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/Bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/Bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/Bootstrap/docs.css"  />
+    <link rel="stylesheet" type="text/css" href="/Styles/dd.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/codemirror/lib/codemirror.css" />
+
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
      <!-- Navbar ================================================== -->
@@ -67,9 +58,7 @@
         <div class="row">
 
             <div class="span7">
-
 <textarea id="code">
-
 <script>
     $(document).delegate("#filter", "click", function () {
         var f = $("#pricefilter").val();
@@ -95,8 +84,7 @@
         });
     });
 </script>
-
-            </div>
+</div>
             <div class="span5">
 Max price: <input type="number" id="pricefilter" style="width: 80px" size="3" maxlength="3" name="pricefilter" /><a href="#" id="filter">filter</a>
 Sort by: <select style="width: 80px" id="sortby" name="sortby"><option value="" selected>---</option><option value="Name">Name</option><option value="Price">Price</option></select>
@@ -111,7 +99,6 @@ Sort by: <select style="width: 80px" id="sortby" name="sortby"><option value="" 
     </span>
 </script>
 <script>
-
     Math.ceiling = Math.ceil; // FIXME remove this
 
     var apiKey = {
@@ -152,23 +139,25 @@ Sort by: <select style="width: 80px" id="sortby" name="sortby"><option value="" 
         });
     }
 </script>
-            </div><!-- column -->
+            </div>
+        </div>
 
-        </div><!-- row -->
-        <div class="row">
-            As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
+        <br />
+
+        <div class="row-fluid">
+            <p>As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
             In this example oData is used. Check the network panel to see the requests.
             You can create a Kendo Datasource with a simple method: asKendoDataSource() and off you go. If works everywhere where Kendo expects a DataSource, not only
             with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
-            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc. 
-            You can play with this example on <a href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>.
+            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc. </p>
+            <p>You can play with this example on <a href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>.</p>
         </div>
         <!--
         <div class="row">
             <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/JayData/F4Hda/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
         </div>
         -->
-    </div> <!-- container -->
+    </div>
      <script type="text/javascript">
          var _gaq = _gaq || [];
          _gaq.push(['_setAccount', 'UA-30304727-1']);

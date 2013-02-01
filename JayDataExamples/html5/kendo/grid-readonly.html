@@ -2,40 +2,32 @@
 <html>
 <head>
     <title>Kendo ListView (JayData example)</title>
-    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example">
-    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example.">
-    <meta name="author" content="JayData, community@jaydata.org">
-    <link rel="stylesheet" type="text/css" href="/NewsReader/css/bootstrap.min.css" />
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
+    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example." />
+    <meta name="author" content="JayData, community@jaydata.org" />
+
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
     <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydata.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydatamodules/kendo.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
     <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
     <script type="text/javascript" src="/Content/Scripts/bootstrap.min.js"></script>
 
-    <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
-    <link href="/Styles/Bootstrap/docs.css" rel="stylesheet">
-
-    <link href="/Styles/mixins.css" rel="stylesheet">
-    <link href="/Styles/dd.css" rel="stylesheet">
-
-    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
     <script type="text/javascript" src="/assets/codemirror/lib/codemirror.js"></script>
-    <link rel="stylesheet" href="/assets/codemirror/lib/codemirror.css">
     <script type="text/javascript" src="/assets/codemirror/mode/xml/xml.js"></script>
     <script type="text/javascript" src="/assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
     <script type="text/javascript" src="/assets/codemirror/mode/javascript/javascript.js"></script>
 
-    <style>
-        .CodeMirror {
-            height: auto !important;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/Bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/Bootstrap/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/Bootstrap/docs.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/dd.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/codemirror/lib/codemirror.css" />
+
+    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
      <!-- Navbar ================================================== -->
@@ -67,9 +59,8 @@
         <div class="row">
 
             <div class="span7">
-
 <textarea id="code">
-<div id="grid" />
+<div id="grid"></div>
 <script>
   $data.service("Northwind.svc", function (f, t) {
     var mydatabase = f();
@@ -96,13 +87,10 @@
         });
     });
 </script>
-
-            </div>
+        </div>
             <div class="span5">
-<div id="grid" />
-
+<div id="grid"></div>
 <script>
-
     Math.ceiling = Math.ceil; // FIXME remove this
 
     $data.service("Northwind.svc", function (f, t) {
@@ -123,15 +111,16 @@
             $('#grid').kendoGrid(options);
         });
     });
-
 </script>
-            </div><!-- column -->
+            </div>
+        </div>
 
-        </div><!-- row -->
-        <div class="row">
-            This Kendo Grid example uses oData to access the Northwind service. Sorting, paging and filtering works on the server side but with a simple
+        <br />
+
+        <div class="row-fluid">
+            <p>This Kendo Grid example uses oData to access the Northwind service. Sorting, paging and filtering works on the server side but with a simple
             switch they can be one the client side, too.  In this example the grid is read only and the columns are manually configured. In other
-            examples you'll see read-write grid and automatic column setup.
+            examples you'll see read-write grid and automatic column setup.</p>
         </div>
         <!--
         <div class="row">
@@ -139,16 +128,5 @@
         </div>
         -->
     </div> <!-- container -->
-     <script type="text/javascript">
-         var _gaq = _gaq || [];
-         _gaq.push(['_setAccount', 'UA-30304727-1']);
-         _gaq.push(['_trackPageview']);
-
-         (function () {
-             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-         })();
-    </script>
 </body>
 </html>

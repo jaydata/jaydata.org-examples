@@ -2,53 +2,25 @@
 <html>
 <head>
     <title>KendoUI mobile (JayData example)</title>
-    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example">
-    <meta name="description" content="How to use the JayData with Kendo! See this mobile example.">
-    <meta name="author" content="JayData, community@jaydata.org">
-    <link rel="stylesheet" type="text/css" href="/NewsReader/css/bootstrap.min.css" />
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
+    <meta name="description" content="How to use the JayData with Kendo! See this mobile example." />
+    <meta name="author" content="JayData, community@jaydata.org" />
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
     <script type="text/javascript" src="http://cdn.kendostatic.com/2012.3.1315/js/kendo.all.min.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydata.js"></script>
-    <script type="text/javascript" src="kendo.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
+    <script type="text/javascript" src="/Content/Scripts/kendo.js"></script>
+    <script src="/Content/Scripts/examples.js?20121115"></script>
     <script type="text/javascript" src="/Content/Scripts/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
     <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet">
     <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
     <link href="/Styles/Bootstrap/docs.css" rel="stylesheet">
-
-    <link href="/Styles/mixins.css" rel="stylesheet">
     <link href="/Styles/dd.css" rel="stylesheet">
+    <link href="/Styles/examples.css?20121115" rel="stylesheet" />
 
     <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-    <link href="examples.css?20121115" rel="stylesheet" />
-    <script src="examples.js?20121115"></script>
-
-    <style>
-        #tabstrip-profile h2 {
-            display: inline-block;
-            font-size: 1.1em;
-            margin: 1.5em 0 0 1em;
-        }
-        #tabstrip-profile h2 span {
-            display: block;
-            clear: both;
-            font-size: 2em;
-            margin: .2em 0 0 0;
-        }
-        #tabstrip-profile img {
-            width: 5em;
-            height: 5em;
-            float: left;
-            margin: 1em;
-            -webkit-box-shadow: 0 1px 3px #333;
-            box-shadow: 0 1px 3px #333;
-            -webkit-border-radius: 8px;
-            border-radius: 8px;
-        }
-    </style>
-
 </head>
 <body>
      <!-- Navbar ================================================== -->
@@ -77,7 +49,7 @@
 
         <hr class="soften" />
 
-        <div class="row">
+        <div class="row-fluid">
             <div class="span7">
 The source of this example can be found here: <a href="https://github.com/PeterAronZentai/kendomobiledemo">https://github.com/PeterAronZentai/kendomobiledemo</a>
             </div>
@@ -123,7 +95,6 @@ The source of this example can be found here: <a href="https://github.com/PeterA
                 </span>
             </li>
         </ul>
-        
 
         <ul id="listView"
             data-role="listview"
@@ -143,7 +114,7 @@ The source of this example can be found here: <a href="https://github.com/PeterA
             <input type="checkbox" 
                    data-role="switch" data-off-label="Active" 
                    data-on-label="Done" data-bind="checked: Completed, events: { change: save }" />
-        </script>          
+        </script>
         
         <ul data-style="inset" data-role="listview" data-bind="visible: appSettings.ShowNewItemInList">
             <li style="color: gray">
@@ -151,7 +122,7 @@ The source of this example can be found here: <a href="https://github.com/PeterA
                     <a data-role="detailbutton" href="#taskEditor" data-bind="click: newTask" 
                         data-style="rowinsert"></a>
             </li>
-        </ul>        
+        </ul>
         
         <ul data-role="actionsheet" id="categoryAction" data-popup='{"direction": "left"}'>
             <li class="km-actionsheet-title">Actions:</li>
@@ -159,7 +130,6 @@ The source of this example can be found here: <a href="https://github.com/PeterA
             <li><a href="#" data-bind="visible: showCategoryControls" data-action="viewModel.navigateToCategoryEditor">Rename</a></li>
             <li><a href="#" data-bind="visible: showCategoryControls" data-action="viewModel.removeCategory">Remove category</a></li>
         </ul>
-        
     </div>
     
     <!-- task editor view -->
@@ -185,12 +155,9 @@ The source of this example can be found here: <a href="https://github.com/PeterA
                 </li>
                 <li>Urgent: <input  type="checkbox" data-bind="checked: task.Urgent" data-role="switch" /></li>
                 <li>Completed: <input  type="checkbox" data-bind="checked: task.Completed" data-role="switch" /></li>
-
-                    
             </ul>
         </form>
-        
-    </div>    
+    </div>
     
     <!-- category picker -->
     <div data-role="view" id="categoryPicker" data-model="viewModel" data-title="Pick category">
@@ -210,7 +177,6 @@ The source of this example can be found here: <a href="https://github.com/PeterA
             <a href="\#:back">${Name}</a>
         </script>
     </div>
-    
     
     <!-- category list view -->
     <div data-role="view" id="categoryList" data-model="viewModel" data-title="Categories">
@@ -332,7 +298,6 @@ The source of this example can be found here: <a href="https://github.com/PeterA
     todoDB = new TodoDB({ name: 'local', databaseName: 'TodoDatabase' });
 
     var viewModel = {};
-
 
     todoDB.onReady().then(function () {
 
@@ -518,29 +483,18 @@ The source of this example can be found here: <a href="https://github.com/PeterA
 
     });
 </script>
-
-            </div><!-- column -->
-
-        </div><!-- row -->
-        <div class="row">
-            This Kendo mobile example uses a local database.
+            </div>
         </div>
+
+        <div class="row-fluid">
+            <p>This Kendo mobile example uses a local database.</p>
+        </div>
+        
         <!--
         <div class="row">
             <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/JayData/F4Hda/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
         </div>
         -->
-    </div> <!-- container -->
-     <script type="text/javascript">
-         var _gaq = _gaq || [];
-         _gaq.push(['_setAccount', 'UA-30304727-1']);
-         _gaq.push(['_trackPageview']);
-
-         (function () {
-             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-         })();
-    </script>
+    </div>
 </body>
 </html>
