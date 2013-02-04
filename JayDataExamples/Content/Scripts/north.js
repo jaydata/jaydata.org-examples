@@ -18,7 +18,7 @@ function getLocalNorthwind() {
             var categories = localDB.Categories.toArray();
             var products = localDB.Products.toArray();
             return $.when(suppliers, categories, products)
-                    .then(function (suppliers, categories, products, orders) {
+                    .then(function (suppliers, categories, products) {
                         suppliers.forEach(function (s) { localDB.Suppliers.remove(s); });
                         categories.forEach(function (c) { localDB.Categories.remove(c); });
                         products.forEach(function (p) { localDB.Products.remove(p); });
@@ -32,10 +32,13 @@ function getLocalNorthwind() {
             var products = remoteDB.Products.toArray();
             return $.when(suppliers, categories, products)
                     .then(function (suppliers, categories, products) {
-                        localDB.addMany(suppliers);
-                        localDB.addMany(categories);
-                        localDB.addMany(products);
+                        localDB.Suppliers.addMany(suppliers);
+                        localDB.Categories.addMany(categories);
+                        localDB.Products.addMany(products);
                         return localDB.saveChanges();
+                    })
+                    .fail(function (reason) {
+                        console.log(reason);
                     });
         }
 

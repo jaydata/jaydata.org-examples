@@ -1,16 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>KendoUI Bar Chart (JayData example)</title>
-    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
-    <meta name="description" content="How to use the JayData with Kendo! See this simple chart example." />
-    <meta name="author" content="JayData, community@jaydata.org" />
+    <title>KendoUI autocomplete (JayData example)</title>
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example">
+    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example.">
+    <meta name="author" content="JayData, community@jaydata.org">
 
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
     <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydata.js"></script>
     <script type="text/javascript" src="/Content/Scripts/kendo.js"></script>
+    <script type="text/javascript" src="/Content/Scripts/north.js"></script>
     <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
     <script type="text/javascript" src="/Content/Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="/assets/codemirror/lib/codemirror.js"></script>
@@ -20,11 +21,11 @@
 
     <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
     <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
-    <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
-    <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="/Styles/Bootstrap/docs.css" rel="stylesheet" />
-    <link href="/Styles/dd.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/codemirror/lib/codemirror.css" />
+    <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/Styles/Bootstrap/docs.css" rel="stylesheet">
+    <link href="/Styles/dd.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/codemirror/lib/codemirror.css">
 
     <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
@@ -49,36 +50,24 @@
     <div class="container">
         <header class="jumbotron masthead">
             <div class="inner tacenter">
-                <h1>Bar Chart</h1>
+                <h1>Grid read-write</h1>
             </div>
         </header>
 
         <hr class="soften" />
 
         <div class="row-fluid">
-
             <div class="span7">
-
 <textarea id="code">
 <div id="grid"></div>
 <script>
-    var _ds = mydatabase.Products.asKendoDataSource();
-    $("#chart").kendoChart({
+    var _ds = localDB.Products.asKendoDataSource();
+    $("#input").kendoAutoComplete({
         dataSource: _ds,
-        title: {
-            text: "Products in stock"
-        },
-        series: [{
-            type: "column",
-            field: "Units_In_Stock",
-            name: "Units In Stock"
-        }],
-        categoryAxis: {
-            field: "Product_Name",
-            labels: {
-                rotation: -90
-            }
-        },
+        dataTextField: 'Product_Name',
+        filter: "startswith",
+        placeholder: "Select product...",
+        separator: ", "
     });
 </script>
 </textarea>
@@ -90,41 +79,69 @@
         });
     });
 </script>
-</div>
-        <div class="span5 k-content">
-            <div class="chart-wrapper" style="margin: auto;">
-                <div id="chart"></div>
             </div>
+            <div class="span5 k-content">
+
+            <p>
+                <label for="categories">Categories:</label>
+                <input id="categories"/>
+            </p>
+            <p>
+                <label for="products">Products:</label>
+                <input id="products" disabled="disabled" />
+            </p>
+            <p>
+                <label for="orders">Orders:</label>
+                <input id="orders" disabled="disabled" />
+            </p>
+
+            <style scoped>
+                .k-readonly
+                {
+                    color: gray;
+                }
+            </style>
+
             <script>
                 Math.ceiling = Math.ceil; // FIXME remove this
 
-                $data.service("Northwind.svc", function (f, t) {
-                    var mydatabase = f();
-                    mydatabase.onReady(function () {
-                        var _ds = mydatabase.Products.asKendoDataSource();
-                        $("#chart").kendoChart({
-                            dataSource: _ds,
-                            title: {
-                                text: "Products in stock"
-                            },
-                            series: [{  type: "column", field: "Units_In_Stock", name: "Units In Stock" }],
-                            categoryAxis: {
-                                field: "Product_Name",
-                                labels: {
-                                    rotation: -90
-                                }
-                            },
-                        });
+                $.when($.ready, getRemoteNorthwind())
+                .then(function (x, localDB) {
+                    $("#categories").kendoComboBox({
+                        placeholder: "Select category...",
+                        dataTextField: "Category_Name",
+                        dataValueField: "Category_ID",
+                        dataSource: localDB.Categories.asKendoDataSource()
                     });
+
+                    var products = $("#products").kendoComboBox({
+                        autoBind: false,
+                        cascadeFrom: "categories",
+                        placeholder: "Select product...",
+                        dataTextField: "Product_Name",
+                        dataValueField: "Product_ID",
+                        dataSource: localDB.Products.asKendoDataSource()
+                    }).data("kendoComboBox");
+
+                    var orders = $("#orders").kendoComboBox({
+                        autoBind: false,
+                        cascadeFrom: "products",
+                        placeholder: "Select order...",
+                        dataTextField: "Order.Ship_City",
+                        dataValueField: "Order_ID",
+                        dataSource: localDB.Order_Details.include('Order').asKendoDataSource()
+                    }).data("kendoComboBox");
                 });
             </script>
-        </div>
+
+
+            </div>
         </div>
 
         <br />
 
         <div class="row-fluid">
-            <p>This KendoUI Dataviz bar chart example uses a remote Northwind database.</p>
+            <p>This Kendo autocomplete example uses a local Northwind database.</p>
         </div>
         <!--
         <div class="row">
