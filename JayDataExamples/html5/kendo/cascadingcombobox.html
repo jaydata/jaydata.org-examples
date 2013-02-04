@@ -59,16 +59,34 @@
         <div class="row-fluid">
             <div class="span7">
 <textarea id="code">
-<div id="grid"></div>
+JayData version of the original Kendo UI example, which can
+be found here http://demos.kendoui.com/web/combobox/cascadingcombobox.html
+
 <script>
-    var _ds = localDB.Products.asKendoDataSource();
-    $("#input").kendoAutoComplete({
-        dataSource: _ds,
-        dataTextField: 'Product_Name',
-        filter: "startswith",
-        placeholder: "Select product...",
-        separator: ", "
+    $("#categories").kendoComboBox({
+        placeholder: "Select category...",
+        dataTextField: "Category_Name",
+        dataValueField: "Category_ID",
+        dataSource: remoteDB.Categories.asKendoDataSource()
     });
+
+    var products = $("#products").kendoComboBox({
+        autoBind: false,
+        cascadeFrom: "categories",
+        placeholder: "Select product...",
+        dataTextField: "Product_Name",
+        dataValueField: "Product_ID",
+        dataSource: remoteDB.Products.asKendoDataSource()
+    }).data("kendoComboBox");
+
+    var orders = $("#orders").kendoComboBox({
+        autoBind: false,
+        cascadeFrom: "products",
+        placeholder: "Select order...",
+        dataTextField: "Order.Ship_City",
+        dataValueField: "Order_ID",
+        dataSource: remoteDB.Order_Details.include('Order').asKendoDataSource()
+    }).data("kendoComboBox");
 </script>
 </textarea>
 <script>
@@ -106,12 +124,12 @@
                 Math.ceiling = Math.ceil; // FIXME remove this
 
                 $.when($.ready, getRemoteNorthwind())
-                .then(function (x, localDB) {
+                .then(function (x, remoteDB) {
                     $("#categories").kendoComboBox({
                         placeholder: "Select category...",
                         dataTextField: "Category_Name",
                         dataValueField: "Category_ID",
-                        dataSource: localDB.Categories.asKendoDataSource()
+                        dataSource: remoteDB.Categories.asKendoDataSource()
                     });
 
                     var products = $("#products").kendoComboBox({
@@ -120,7 +138,7 @@
                         placeholder: "Select product...",
                         dataTextField: "Product_Name",
                         dataValueField: "Product_ID",
-                        dataSource: localDB.Products.asKendoDataSource()
+                        dataSource: remoteDB.Products.asKendoDataSource()
                     }).data("kendoComboBox");
 
                     var orders = $("#orders").kendoComboBox({
@@ -129,7 +147,7 @@
                         placeholder: "Select order...",
                         dataTextField: "Order.Ship_City",
                         dataValueField: "Order_ID",
-                        dataSource: localDB.Order_Details.include('Order').asKendoDataSource()
+                        dataSource: remoteDB.Order_Details.include('Order').asKendoDataSource()
                     }).data("kendoComboBox");
                 });
             </script>
@@ -141,7 +159,7 @@
         <br />
 
         <div class="row-fluid">
-            <p>This Kendo autocomplete example uses a local Northwind database.</p>
+            <p>This Kendo autocomplete example uses a remote Northwind database.</p>
         </div>
         <!--
         <div class="row">
