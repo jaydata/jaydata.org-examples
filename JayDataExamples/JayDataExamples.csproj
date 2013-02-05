@@ -117,6 +117,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="KendoUI\Northwind.svc.cs">
+      <DependentUpon>Northwind.svc</DependentUpon>
+    </Compile>
     <Compile Include="Knockoutjs\Northwind.svc.cs">
       <DependentUpon>Northwind.svc</DependentUpon>
     </Compile>
@@ -404,10 +407,19 @@
     <Content Include="Content\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\css\ui-lightness\jquery-ui-1.8.19.css" />
     <Content Include="Content\Scripts\bootstrap.min.js" />
+    <Content Include="Content\Scripts\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\Scripts\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\Scripts\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Scripts\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\Scripts\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\Scripts\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\Scripts\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Scripts\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\Scripts\datajs-1.0.3.js" />
     <Content Include="Content\Scripts\datajs-1.0.3.min.js">
       <DependentUpon>datajs-1.0.3.js</DependentUpon>
     </Content>
+    <Content Include="Content\Scripts\examples.js" />
     <Content Include="Content\Scripts\grid.locale-en.js" />
     <Content Include="assets\codemirror\.travis.yml" />
     <Content Include="assets\codemirror\bin\compress" />
@@ -468,9 +480,14 @@
     <Content Include="Content\Scripts\jaydataproviders\YQLProvider.min.js">
       <DependentUpon>YQLProvider.js</DependentUpon>
     </Content>
+    <Content Include="Content\Scripts\jquery-1.7.2.js" />
+    <Content Include="Content\Scripts\jquery.flexslider-min.js" />
     <Content Include="Content\Scripts\jquery.tmpl.min.js" />
     <Content Include="Content\Scripts\jquery.validate.js" />
+    <Content Include="Content\Scripts\kendo.js" />
     <Content Include="Content\Scripts\knockout-2.1.0.js" />
+    <Content Include="Content\Scripts\north.js" />
+    <Content Include="Content\Scripts\Northwind.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -505,6 +522,27 @@
     <Content Include="FlowerShop\Images\bg_direction_nav.png" />
     <Content Include="FlowerShop\index.html" />
     <Content Include="FlowerShop\Styles\mixins.css" />
+    <Content Include="KendoUI\autocomplete.html" />
+    <Content Include="KendoUI\cascadingcombobox.html" />
+    <Content Include="KendoUI\chart.html" />
+    <Content Include="KendoUI\grid-readonly.html" />
+    <Content Include="KendoUI\grid-readwrite.html" />
+    <Content Include="KendoUI\Index.html" />
+    <Content Include="KendoUI\listview-filter.html" />
+    <Content Include="KendoUI\listview.html" />
+    <Content Include="KendoUI\masterdetail.html" />
+    <Content Include="KendoUI\mobile-complex.html" />
+    <Content Include="KendoUI\mobile-simple.html" />
+    <Content Include="KendoUI\mvvm.html" />
+    <Content Include="KendoUI\Northwind.svc" />
+    <Content Include="KendoUI\orig.html" />
+    <Content Include="KendoUI\prefilter.html" />
+    <Content Include="Styles\examples.css" />
+    <Content Include="Styles\img\favicon_jaydata.png" />
+    <Content Include="Styles\img\iphone.png" />
+    <Content Include="Styles\img\logo_jaydata_dark.png" />
+    <Content Include="Styles\img\logo_kendoui.png" />
+    <Content Include="Styles\img\shipping.png" />
     <Content Include="YQL\YQLWithRails.html" />
     <Content Include="Knockoutjs\DynamicQueryFilterNorthwind.html" />
     <Content Include="Knockoutjs\DynamicQueryNorthwind.html" />
@@ -913,7 +951,6 @@
     <Content Include="Styles\bootstrap\bootstrap.css" />
     <Content Include="Styles\bootstrap\docs.css" />
     <Content Include="Styles\dd.css" />
-    <Content Include="Styles\mixins.css" />
     <Content Include="ToDoList2\index.html" />
     <Content Include="ToDoList2\todo.js" />
     <Content Include="ToDoListMobile\bootstrap-responsive.css" />
