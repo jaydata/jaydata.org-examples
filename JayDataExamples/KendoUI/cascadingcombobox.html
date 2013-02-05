@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>KendoUI autocomplete (JayData example)</title>
+    <title>KendoUI cascading combobox (JayData example)</title>
     <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example">
     <meta name="description" content="How to use the JayData with Kendo! See this simple listview example.">
     <meta name="author" content="JayData, community@jaydata.org">
@@ -27,10 +27,10 @@
     <link href="/Styles/dd.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/codemirror/lib/codemirror.css">
 
-    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/Styles/img/favicon_jaydata.png" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
-     <!-- Navbar ================================================== -->
+    <!-- Navbar ================================================== -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -50,7 +50,8 @@
     <div class="container">
         <header class="jumbotron masthead">
             <div class="inner tacenter">
-                <h1>Grid read-write</h1>
+                <h1>Cascading combobox</h1>
+                <p>This Kendo autocomplete example uses a remote Northwind database.</p>
             </div>
         </header>
 
@@ -58,7 +59,7 @@
 
         <div class="row-fluid">
             <div class="span7">
-<textarea id="code">
+                <textarea id="code">
 JayData version of the original Kendo UI example, which can
 be found here http://demos.kendoui.com/web/combobox/cascadingcombobox.html
 
@@ -89,78 +90,69 @@ be found here http://demos.kendoui.com/web/combobox/cascadingcombobox.html
     }).data("kendoComboBox");
 </script>
 </textarea>
-<script>
-    setTimeout(function () {
-        CodeMirror.fromTextArea(document.getElementById('code'), {
-            mode: 'text/html',
-            lineNumbers: false
-        });
-    });
-</script>
-            </div>
-            <div class="span5 k-content">
-
-            <p>
-                <label for="categories">Categories:</label>
-                <input id="categories"/>
-            </p>
-            <p>
-                <label for="products">Products:</label>
-                <input id="products" disabled="disabled" />
-            </p>
-            <p>
-                <label for="orders">Orders:</label>
-                <input id="orders" disabled="disabled" />
-            </p>
-
-            <style scoped>
-                .k-readonly
-                {
-                    color: gray;
-                }
-            </style>
-
-            <script>
-                Math.ceiling = Math.ceil; // FIXME remove this
-
-                $.when($.ready, getRemoteNorthwind())
-                .then(function (x, remoteDB) {
-                    $("#categories").kendoComboBox({
-                        placeholder: "Select category...",
-                        dataTextField: "Category_Name",
-                        dataValueField: "Category_ID",
-                        dataSource: remoteDB.Categories.asKendoDataSource()
+                <script>
+                    setTimeout(function () {
+                        CodeMirror.fromTextArea(document.getElementById('code'), {
+                            mode: 'text/html',
+                            lineNumbers: false
+                        });
                     });
+                </script>
+            </div>
+            <div class="span5 k-content bordered low-marginleft">
+                <p>
+                    <label for="categories">Categories:</label>
+                    <input id="categories" />
+                </p>
+                <p>
+                    <label for="products">Products:</label>
+                    <input id="products" disabled="disabled" />
+                </p>
+                <p>
+                    <label for="orders">Orders:</label>
+                    <input id="orders" disabled="disabled" />
+                </p>
 
-                    var products = $("#products").kendoComboBox({
-                        autoBind: false,
-                        cascadeFrom: "categories",
-                        placeholder: "Select product...",
-                        dataTextField: "Product_Name",
-                        dataValueField: "Product_ID",
-                        dataSource: remoteDB.Products.asKendoDataSource()
-                    }).data("kendoComboBox");
+                <style scoped>
+                    .k-readonly {
+                        color: gray;
+                    }
+                </style>
 
-                    var orders = $("#orders").kendoComboBox({
-                        autoBind: false,
-                        cascadeFrom: "products",
-                        placeholder: "Select order...",
-                        dataTextField: "Order.Ship_City",
-                        dataValueField: "Order_ID",
-                        dataSource: remoteDB.Order_Details.include('Order').asKendoDataSource()
-                    }).data("kendoComboBox");
-                });
-            </script>
+                <script>
+                    Math.ceiling = Math.ceil; // FIXME remove this
 
+                    $.when($.ready, getRemoteNorthwind())
+                    .then(function (x, remoteDB) {
+                        $("#categories").kendoComboBox({
+                            placeholder: "Select category...",
+                            dataTextField: "Category_Name",
+                            dataValueField: "Category_ID",
+                            dataSource: remoteDB.Categories.asKendoDataSource()
+                        });
 
+                        var products = $("#products").kendoComboBox({
+                            autoBind: false,
+                            cascadeFrom: "categories",
+                            placeholder: "Select product...",
+                            dataTextField: "Product_Name",
+                            dataValueField: "Product_ID",
+                            dataSource: remoteDB.Products.asKendoDataSource()
+                        }).data("kendoComboBox");
+
+                        var orders = $("#orders").kendoComboBox({
+                            autoBind: false,
+                            cascadeFrom: "products",
+                            placeholder: "Select order...",
+                            dataTextField: "Order.Ship_City",
+                            dataValueField: "Order_ID",
+                            dataSource: remoteDB.Order_Details.include('Order').asKendoDataSource()
+                        }).data("kendoComboBox");
+                    });
+                </script>
             </div>
         </div>
 
-        <br />
-
-        <div class="row-fluid">
-            <p>This Kendo autocomplete example uses a remote Northwind database.</p>
-        </div>
         <!--
         <div class="row">
             <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/JayData/F4Hda/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>

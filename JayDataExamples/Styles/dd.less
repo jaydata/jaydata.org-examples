@@ -1412,8 +1412,8 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 	width: 482px;
 	height: 152px;
 	padding: 110px 0 0 30px;
-	background: url('../../content/web/autocomplete/shipping.png') transparent no-repeat 0 0;
-	margin: 30px auto;
+	background: url('img/shipping.png') transparent no-repeat 0 0;
+	margin: 0 auto;
 }
 
 .CodeMirror-foldmarker {
@@ -1431,7 +1431,7 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 	overflow: hidden;
 	position: relative;
 	width: 320px;
-	background-image: url("iphone.png");
+	background-image: url("img/iphone.png");
 	background-size: cover;
 	margin: auto;
 	padding: 132px 72px 188px 66px;
@@ -1457,4 +1457,23 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 	box-shadow: 0 1px 3px #333;
 	-webkit-border-radius: 8px;
 	border-radius: 8px;
+}
+.logo-jaydata {
+	display: inline-block; width: 230px; height: 80px;
+	background: url(img/logo_jaydata_dark.png) no-repeat center center;
+}
+.logo-kendo {
+	display: inline-block; width: 230px; height: 80px;
+	background: url(img/logo_kendoui.png) no-repeat top left;
+}
+
+.k-content{
+	&.no-bg { background: none !important; }
+	&.bordered {
+		border: 1px solid rgba(0, 0, 0, 0.15);
+		padding: 10px 10px 5px;
+	}
+	&.low-marginleft {
+		margin-left: 5px;
+	}
 }

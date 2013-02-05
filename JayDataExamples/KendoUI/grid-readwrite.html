@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Kendo ListView (JayData example)</title>
+    <title>KendoUI grid CRUD (JayData example)</title>
     <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
     <meta name="description" content="How to use the JayData with Kendo! See this simple listview example." />
     <meta name="author" content="JayData, community@jaydata.org" />
@@ -11,9 +11,9 @@
     <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydata.js"></script>
     <script type="text/javascript" src="/Content/Scripts/kendo.js"></script>
+    <script type="text/javascript" src="/Content/Scripts/north.js"></script>
     <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
     <script type="text/javascript" src="/Content/Scripts/bootstrap.min.js"></script>
-
     <script type="text/javascript" src="/assets/codemirror/lib/codemirror.js"></script>
     <script type="text/javascript" src="/assets/codemirror/mode/xml/xml.js"></script>
     <script type="text/javascript" src="/assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
@@ -21,16 +21,16 @@
 
     <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
     <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
-    <link rel="stylesheet" type="text/css" href="/Styles/Bootstrap/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="/Styles/Bootstrap/bootstrap-responsive.css" />
-    <link rel="stylesheet" type="text/css" href="/Styles/Bootstrap/docs.css" />
-    <link rel="stylesheet" type="text/css" href="/Styles/dd.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/codemirror/lib/codemirror.css" />
+    <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="/Styles/Bootstrap/docs.css" rel="stylesheet" />
+    <link href="/Styles/dd.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/codemirror/lib/codemirror.css" />
 
-    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/Styles/img/favicon_jaydata.png" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
-     <!-- Navbar ================================================== -->
+    <!-- Navbar ================================================== -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -50,83 +50,81 @@
     <div class="container">
         <header class="jumbotron masthead">
             <div class="inner tacenter">
-                <h1>Grid with filter and sorting</h1>
+                <h1>Grid read-write</h1>
+                <p>
+                    This Kendo Grid example uses a local Northwind database. Sorting, paging and filtering works along
+                with full CRUD. The demo is written so that your local database is reinitialized on every page reload and your changes are lost!
+                </p>
             </div>
         </header>
 
         <hr class="soften" />
 
-        <div class="row">
+        <div class="row-fluid">
 
             <div class="span7">
-<textarea id="code">
+
+                <textarea id="code">
 <div id="grid"></div>
 <script>
-  $data.service("Northwind.svc", function (f, t) {
-    var mydatabase = f();
-    mydatabase.onReady(function () {
-      var _ds = mydatabase.Products.asKendoDataSource({pageSize: 10});
-      var options = {
+    var _ds = localDB.Products.asKendoDataSource({ pageSize: 4 });
+    var options = {
         dataSource: _ds,
         filterable: true,
         sortable: true,
         pageable: true,
         height: 500,
-        columns: ['Product_Name', 'Unit_Price', 'Units_In_Stock']
-      };
-      $('#grid').kendoGrid(options);
-    });
-  });
+        columns: [
+            { field: 'Product_Name' },
+            { field: 'Unit_Price' },
+            { field: 'Units_In_Stock' },
+            { command: ["edit", "destroy", "update"] }
+        ],
+        toolbar: ["create", "save", "cancel"],
+        editable: true
+    };
+    $('#grid').kendoGrid(options);
 </script>
 </textarea>
-<script>
-    setTimeout(function () {
-        CodeMirror.fromTextArea(document.getElementById('code'), {
-            mode: 'text/html',
-            lineNumbers: false
-        });
-    });
-</script>
-        </div>
+                <script>
+                    setTimeout(function () {
+                        CodeMirror.fromTextArea(document.getElementById('code'), {
+                            mode: 'text/html',
+                            lineNumbers: false
+                        });
+                    });
+                </script>
+            </div>
             <div class="span5">
-<div id="grid"></div>
-<script>
-    Math.ceiling = Math.ceil; // FIXME remove this
+                <div id="grid"></div>
+                <script>
+                    Math.ceiling = Math.ceil; // FIXME remove this
 
-    $data.service("Northwind.svc", function (f, t) {
-        var mydatabase = f();
-        mydatabase.onReady(function () {
-            var _ds = mydatabase.Products.asKendoDataSource({ pageSize: 10});
-            var options = {
-                dataSource: _ds,
-                filterable: true,
-                sortable: true,
-                pageable: true,
-                height: 500,
-                columns: [ 'Product_Name', 'Unit_Price', 'Units_In_Stock' ],
-                //columns: mydatabase.Categories.asKendoColumns().append({ command: "delete" }),
-                //toolbar: ["create", "save", "cancel"],
-                //editable: "popup"
-            };
-            $('#grid').kendoGrid(options);
-        });
-    });
-</script>
+                    getLocalNorthwind()
+                    .then(function (localDB) {
+                        var _ds = localDB.Products.asKendoDataSource({ pageSize: 4 });
+                        var options = {
+                            dataSource: _ds,
+                            filterable: true,
+                            sortable: true,
+                            pageable: true,
+                            height: 500,
+                            columns: [{ field: 'Product_Name' }, { field: 'Unit_Price' }, { field: 'Units_In_Stock' }, { command: ["edit", "destroy", "update"] }],
+                            //columns: localDB1.Products.asKendoColumns().append({ command: "delete" }),
+                            toolbar: ["create", "save", "cancel"],
+                            editable: true
+                        }; // use this ??? http://jsfiddle.net/cDFT8/3/
+                        $('#grid').kendoGrid(options);
+                    });
+                </script>
             </div>
         </div>
 
-        <br />
-
-        <div class="row-fluid">
-            <p>This Kendo Grid example uses oData to access the Northwind service. Sorting, paging and filtering works on the server side but with a simple
-            switch they can be one the client side, too.  In this example the grid is read only and the columns are manually configured. In other
-            examples you'll see read-write grid and automatic column setup.</p>
-        </div>
         <!--
         <div class="row">
             <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/JayData/F4Hda/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
         </div>
         -->
-    </div> <!-- container -->
+    </div>
 </body>
 </html>

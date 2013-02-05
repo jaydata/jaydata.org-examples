@@ -27,10 +27,10 @@
     <link href="/Styles/dd.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/codemirror/lib/codemirror.css">
 
-    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/Styles/img/favicon_jaydata.png" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
-     <!-- Navbar ================================================== -->
+    <!-- Navbar ================================================== -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -50,15 +50,16 @@
     <div class="container">
         <header class="jumbotron masthead">
             <div class="inner tacenter">
-                <h1>Grid read-write</h1>
+                <h1>Autocomplete</h1>
+                <p>This Kendo autocomplete example uses a local Northwind database.</p>
             </div>
         </header>
 
         <hr class="soften" />
 
         <div class="row-fluid">
-            <div class="span7">
-<textarea id="code">
+            <div class="span6">
+                <textarea id="code">
 <div id="grid"></div>
 <script>
     var _ds = localDB.Products.asKendoDataSource();
@@ -71,19 +72,19 @@
     });
 </script>
 </textarea>
-<script>
-    setTimeout(function () {
-        CodeMirror.fromTextArea(document.getElementById('code'), {
-            mode: 'text/html',
-            lineNumbers: false
-        });
-    });
-</script>
+                <script>
+                    setTimeout(function () {
+                        CodeMirror.fromTextArea(document.getElementById('code'), {
+                            mode: 'text/html',
+                            lineNumbers: false
+                        });
+                    });
+                </script>
             </div>
-            <div class="span5 k-content">
+            <div class="span6 k-content no-bg">
                 <div id="shipping">
-                <label for="input" class="info">Choose product:</label>
-                <input id="input" />
+                    <label for="input" class="info">Choose product:</label>
+                    <input id="input" />
                 </div>
                 <script>
                     Math.ceiling = Math.ceil; // FIXME remove this
@@ -103,11 +104,6 @@
             </div>
         </div>
 
-        <br />
-
-        <div class="row-fluid">
-            <p>This Kendo autocomplete example uses a local Northwind database.</p>
-        </div>
         <!--
         <div class="row">
             <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/JayData/F4Hda/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
