@@ -10,24 +10,24 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
     <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/jaydata.js"></script>
-    <script type="text/javascript" src="/Content/Scripts/kendo.js"></script>
     <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-    <script type="text/javascript" src="/Content/Scripts/bootstrap.min.js"></script>
-    
-    <script type="text/javascript" src="/assets/codemirror/lib/codemirror.js"></script>
-    <script type="text/javascript" src="/assets/codemirror/mode/xml/xml.js"></script>
-    <script type="text/javascript" src="/assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-    <script type="text/javascript" src="/assets/codemirror/mode/javascript/javascript.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/kendo.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
-    <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
-    <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="/Styles/Bootstrap/docs.css" rel="stylesheet" />
-    <link href="/Styles/dd.css" rel="stylesheet" />
-    <link href="/assets/codemirror/lib/codemirror.css" rel="stylesheet" />
+    <script type="text/javascript" src="../assets/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/mode/javascript/javascript.js"></script>
 
-    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../Styles/Bootstrap/docs.css" rel="stylesheet" />
+    <link href="../Styles/dd.css" rel="stylesheet" />
+    <link href="../assets/codemirror/lib/codemirror.css" rel="stylesheet" />
+
+    <link href="../Styles/img/favicon_jaydata.png" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
     <!-- Navbar ================================================== -->
@@ -51,6 +51,7 @@
         <header class="jumbotron masthead">
             <div class="inner tacenter">
                 <h1>ListView Example</h1>
+                <p>You can play with this example on <a target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>.</p>
             </div>
         </header>
 
@@ -134,15 +135,15 @@
         <br />
 
         <div class="row-fluid">
-            <p>As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
+            <p>
+                As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
             In this example oData is used. Check the network panel to see the requests.
             You can create a Kendo Datasource with a simple method: asKendoDataSource() and off you go. If works everywhere where Kendo expects a DataSource, not only
             with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
-            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.</p>
-
-            <p>You can play with this example on <a href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>.</p>
+            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.
+            </p>
         </div>
-        
+
         <!--
         <div class="row">
             <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/JayData/F4Hda/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>

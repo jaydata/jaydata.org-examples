@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>KendoUI mobile (JayData example)</title>
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example">
+    <meta name="description" content="How to use the JayData with Kendo! See this mobile example.">
+    <meta name="author" content="JayData, community@jaydata.org">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="http://cdn.kendostatic.com/2012.3.1315/js/kendo.all.min.js"></script>
+    <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydata.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/kendo.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/north.js"></script>
+    <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/examples.js?20121115"></script>
+    <script type="text/javascript" src="../assets/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/mode/javascript/javascript.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/addon/fold/foldcode.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
+    <link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../Styles/Bootstrap/docs.css" rel="stylesheet" />
+    <link href="../assets/codemirror/lib/codemirror.css" rel="stylesheet" />
+    <link href="../Styles/dd.css" rel="stylesheet" />
+    <link href="../Styles/examples.css?20121115" rel="stylesheet" />
+
+    <link href="../Styles/img/favicon_jaydata.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <!-- Navbar ================================================== -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li class="active"><a href="http://www.jaydata.org/examples">Examples home</a></li>
+                    <li><a href="http://www.jaydata.org">JayData.org home</a></li>
+                    <li><a href="http://www.jaydata.org/documentation">Documentation</a></li>
+                    <li><a href="http://www.jaydata.org/community">Community</a></li>
+                    <li><a href="http://www.jaydata.org/forum">Forum</a></li>
+                    <li><a href="http://www.jaydata.org/blog">Blog</a>
+                    <li><a href="http://www.jaydata.org/backlogs">Write a new userstory!</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="jumbotron masthead">
+            <div class="inner tacenter">
+                <h1>Simple Mobile App</h1>
+                <p>
+                    This Kendo mobile example uses a local Northwind database. The code on the left can be folded/unfolded.<br />
+                    The demo is written so that your local database is reinitialized on every page reload and your changes are lost!
+                </p>
+            </div>
+        </header>
+
+        <hr class="soften" />
+
+        <div class="row-fluid">
+            <div class="span7">
+                <textarea id="code">
+<div data-role="view" id="categories" data-layout="default" 
+    data-model="viewModel" data-title="Categories">
+    <ul id="listView"
+        data-role="listview"
+        data-style="inset"
+        data-template="categorylist-template"
+        data-bind="source: categoriesDataSource, events:{click:selectCategory}">
+    </ul>
+</div>
+<div data-role="view" id="products" data-layout="default" 
+    data-model="viewModel" data-title="Products">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a data-align="left" data-role="backbutton">Back</a>
+        </div>
+    </header>
+    <ul id="listView"
+        data-role="listview"
+        data-style="inset"
+        data-template="productlist-template"
+        data-bind="source: productsDataSource, events:{click:selectProduct}">
+    </ul>
+</div>
+<div data-role="view" id="product" data-layout="default" 
+    data-model="viewModel" data-title="Product">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a data-align="left" data-role="backbutton">Back</a>
+            <a data-align="right" data-role="button" href="#products" 
+                data-bind="click: remove">Delete</a>
+        </div>
+    </header>
+    <ul data-role="listview" data-style="inset">
+        <li>Name <span class="value" 
+            data-bind="text: product.Product_Name" /></li>
+        <li>Price <span class="value" 
+            data-bind="text: product.Unit_Price" /></li>
+        <li>In Stock <span class="value" 
+            data-bind="text: product.Units_In_Stock" /></li>
+        <li>On Order <span class="value" 
+            data-bind="text: product.Units_On_Order" /></li>
+    </ul>
+</div>    
+<script id="categorylist-template" type="text/x-kendo-template">
+        <a href="##products" data-bind="text:Category_Name"></a>
+</script>
+<script id="productlist-template" type="text/x-kendo-template">
+        <a href="##product" data-bind="text:Product_Name"></a>
+</script>
+<script>
+    viewModel = kendo.observable({
+        categoriesDataSource: localDB.Categories.asKendoDataSource(),
+        productsDataSource: localDB.Products.asKendoDataSource(),
+        product: null,
+        selectCategory: function (e) {
+            viewModel.productsDataSource.filter({
+                field: 'Category_ID',
+                operator: 'eq',
+                value: e.dataItem.Category_ID
+            });
+        },
+        selectProduct: function (e) {
+            viewModel.set('product', null);
+            viewModel.set('product', e.dataItem);
+        },
+        remove: function () {
+            viewModel.productsDataSource.remove(viewModel.product);
+            viewModel.productsDataSource.sync();
+        }
+    });
+    app = new kendo.mobile.Application();
+</script>
+</textarea>
+                <script>
+                    setTimeout(function () {
+                        var foldFunc_html = CodeMirror.newFoldFunction(CodeMirror.tagRangeFinder);
+                        window.editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+                            mode: 'text/html',
+                            lineNumbers: true,
+                            lineWrapping: true
+                        });
+                        window.editor.on("gutterClick", foldFunc_html);
+                        foldFunc_html(window.editor, { line: 0 });
+                        foldFunc_html(window.editor, { line: 11 });
+                        foldFunc_html(window.editor, { line: 16 });
+                        foldFunc_html(window.editor, { line: 25 });
+                        foldFunc_html(window.editor, { line: 32 });
+                    });
+                </script>
+            </div>
+            <div class="span5">
+                <div class="k-content mobileExample ">
+                    <div id="device-wrapper">
+                        <div id="mobile-application-container">
+
+
+                            <div data-role="view" id="categories" data-layout="default" data-model="viewModel" data-title="Categories">
+                                <ul id="listView"
+                                    data-role="listview"
+                                    data-style="inset"
+                                    data-template="categorylist-template"
+                                    data-bind="source: categoriesDataSource, events: { click: selectCategory }">
+                                </ul>
+                            </div>
+                            <div data-role="view" id="products" data-layout="default" data-model="viewModel" data-title="Products">
+                                <header data-role="header">
+                                    <div data-role="navbar">
+                                        <a data-align="left" data-role="backbutton">Back</a>
+                                    </div>
+                                </header>
+                                <ul id="listView"
+                                    data-role="listview"
+                                    data-style="inset"
+                                    data-template="productlist-template"
+                                    data-bind="source: productsDataSource, events: { click: selectProduct }">
+                                </ul>
+                            </div>
+                            <div data-role="view" id="product" data-layout="default" data-model="viewModel" data-title="Product">
+                                <header data-role="header">
+                                    <div data-role="navbar">
+                                        <a data-align="left" data-role="backbutton">Back</a>
+                                        <a data-align="right" data-role="button" href="#products" data-bind="click: remove">Delete</a>
+                                    </div>
+                                </header>
+                                <ul data-role="listview" data-style="inset">
+                                    <li>Name <span class="value" data-bind="text: product.Product_Name"></span></li>
+                                    <li>Price <span class="value" data-bind="text: product.Unit_Price"></span></li>
+                                    <li>In Stock <span class="value" data-bind="text: product.Units_In_Stock"></span></li>
+                                    <li>On Order <span class="value" data-bind="text: product.Units_On_Order"></span></li>
+                                </ul>
+                            </div>
+                            <script id="categorylist-template" type="text/x-kendo-template">
+        <a href="##products" data-bind="text:Category_Name"></a>
+                            </script>
+                            <script id="productlist-template" type="text/x-kendo-template">
+        <a href="##product" data-bind="text:Product_Name"></a>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    Math.ceiling = Math.ceil;
+                    $.when(getLocalNorthwind()).then(function (localDB) {
+
+                        viewModel = kendo.observable({
+                            categoriesDataSource: localDB.Categories.asKendoDataSource(),
+                            productsDataSource: localDB.Products.asKendoDataSource(),
+                            product: null,
+
+                            selectCategory: function (e) {
+                                viewModel.productsDataSource.filter({ field: 'Category_ID', operator: 'eq', value: e.dataItem.Category_ID });
+                            },
+                            selectProduct: function (e) {
+                                viewModel.set('product', null);
+                                viewModel.set('product', e.dataItem);
+                            },
+                            remove: function () {
+                                viewModel.productsDataSource.remove(viewModel.product);
+                                viewModel.productsDataSource.sync();
+                            }
+                        });
+                        applyCurrentMobileOS("#mobile-application-container");
+                        if (!kendo.support.browser.msie && !kendo.support.browser.opera) {
+                            app = new kendo.mobile.Application($("#mobile-application-container"),
+                            {
+                                layout: "examples",
+                                platform: kendoMobileOS,
+                                updateDocumentTitle: false
+                            });
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <!--
+        <div class="row">
+            <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/JayData/F4Hda/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        </div>
+        -->
+    </div>
+</body>
+</html>

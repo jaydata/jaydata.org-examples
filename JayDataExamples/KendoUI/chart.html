@@ -10,26 +10,26 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
     <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydata.js"></script>
-    <script type="text/javascript" src="/Content/Scripts/kendo.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/kendo.js"></script>
     <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-    <script type="text/javascript" src="/Content/Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/assets/codemirror/lib/codemirror.js"></script>
-    <script type="text/javascript" src="/assets/codemirror/mode/xml/xml.js"></script>
-    <script type="text/javascript" src="/assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-    <script type="text/javascript" src="/assets/codemirror/mode/javascript/javascript.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script type="text/javascript" src="../assets/codemirror/mode/javascript/javascript.js"></script>
 
     <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
     <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
-    <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
-    <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="/Styles/Bootstrap/docs.css" rel="stylesheet" />
-    <link href="/Styles/dd.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/codemirror/lib/codemirror.css" />
+    <link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../Styles/Bootstrap/docs.css" rel="stylesheet" />
+    <link href="../Styles/dd.css" rel="stylesheet" />
+    <link href="../assets/codemirror/lib/codemirror.css" rel="stylesheet"  />
 
-    <link href="/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="../Styles/img/favicon_jaydata.png" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
-     <!-- Navbar ================================================== -->
+    <!-- Navbar ================================================== -->
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -50,6 +50,7 @@
         <header class="jumbotron masthead">
             <div class="inner tacenter">
                 <h1>Bar Chart</h1>
+                <p>This KendoUI Dataviz bar chart example uses a remote Northwind database.</p>
             </div>
         </header>
 
@@ -57,9 +58,9 @@
 
         <div class="row-fluid">
 
-            <div class="span7">
+            <div class="span6">
 
-<textarea id="code">
+                <textarea id="code">
 <div id="grid"></div>
 <script>
     var _ds = mydatabase.Products.asKendoDataSource();
@@ -82,50 +83,45 @@
     });
 </script>
 </textarea>
-<script>
-    setTimeout(function () {
-        CodeMirror.fromTextArea(document.getElementById('code'), {
-            mode: 'text/html',
-            lineNumbers: false
-        });
-    });
-</script>
-</div>
-        <div class="span5 k-content">
-            <div class="chart-wrapper" style="margin: auto;">
-                <div id="chart"></div>
-            </div>
-            <script>
-                Math.ceiling = Math.ceil; // FIXME remove this
-
-                $data.service("Northwind.svc", function (f, t) {
-                    var mydatabase = f();
-                    mydatabase.onReady(function () {
-                        var _ds = mydatabase.Products.asKendoDataSource();
-                        $("#chart").kendoChart({
-                            dataSource: _ds,
-                            title: {
-                                text: "Products in stock"
-                            },
-                            series: [{  type: "column", field: "Units_In_Stock", name: "Units In Stock" }],
-                            categoryAxis: {
-                                field: "Product_Name",
-                                labels: {
-                                    rotation: -90
-                                }
-                            },
+                <script>
+                    setTimeout(function () {
+                        CodeMirror.fromTextArea(document.getElementById('code'), {
+                            mode: 'text/html',
+                            lineNumbers: false
                         });
                     });
-                });
-            </script>
-        </div>
+                </script>
+            </div>
+            <div class="span5 k-content bordered">
+                <div class="chart-wrapper" style="margin: auto;">
+                    <div id="chart"></div>
+                </div>
+                <script>
+                    Math.ceiling = Math.ceil; // FIXME remove this
+
+                    $data.service("Northwind.svc", function (f, t) {
+                        var mydatabase = f();
+                        mydatabase.onReady(function () {
+                            var _ds = mydatabase.Products.asKendoDataSource();
+                            $("#chart").kendoChart({
+                                dataSource: _ds,
+                                title: {
+                                    text: "Products in stock"
+                                },
+                                series: [{ type: "column", field: "Units_In_Stock", name: "Units In Stock" }],
+                                categoryAxis: {
+                                    field: "Product_Name",
+                                    labels: {
+                                        rotation: -90
+                                    }
+                                },
+                            });
+                        });
+                    });
+                </script>
+            </div>
         </div>
 
-        <br />
-
-        <div class="row-fluid">
-            <p>This KendoUI Dataviz bar chart example uses a remote Northwind database.</p>
-        </div>
         <!--
         <div class="row">
             <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/JayData/F4Hda/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
