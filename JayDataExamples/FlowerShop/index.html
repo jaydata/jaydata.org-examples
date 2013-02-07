@@ -80,39 +80,28 @@
 
             self.submitOrder = function () {
                 $("div.loading").show();
-
-                //add a new customer
-                var customer = mydatabase.Customers.add({
+                var orderData = {
                     Name: self.customerName(),
-                    Address: self.customerAddress()
-                });
-                mydatabase.saveChanges(function () {
-                    //when new customer is added, add a new order
-                    var order = mydatabase.Orders.add({
-                        Customer_ID: customer.id,
-                        OrderDate: new Date(),
-                        OrderState: 1 //order is in "create" state
-                    });
-                    mydatabase.saveChanges(function () {
-                        //when the new order is created add order items
-                        self.items().forEach(function (item) {
-                            mydatabase.OrderItems.add({
-                                Order_ID: order.id,
-                                Product_ID: item.product.id(),
-                                Amount: item.amount()
-                            });
-                        });
-                        mydatabase.saveChanges(function () {
-                            //when OrderItems are inserted modify OrderState to 2 ("ready")
-                            mydatabase.attach(order);
-                            order.OrderState = 2;
-                            mydatabase.saveChanges(self.reset);
-                        });
+                    Address: self.customerAddress(),
+                    OrderItems: self.items().map(function (item) {
+                        return {
+                            Product_ID: item.product.id(),
+                            Amount: item.amount()
+                        }
+                    })
+                };
 
+                $data.service("https://133e0907-f70b-4f11-92b3-dfebc9bdd6db.jaystack.net/orderapi", function (f) {
+                    var orderApi = f();
+                    orderApi.placeOrder(orderData, function (result) {
+                        console.log(result);
                         $("div.loading").fadeOut();
                         alert("Thanks for your purchase!");
+                        self.reset();
                     });
+
                 });
+                
             }
         }
 
