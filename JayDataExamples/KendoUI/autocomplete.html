@@ -62,9 +62,8 @@
                 <textarea id="code">
 <div id="grid"></div>
 <script>
-    var _ds = localDB.Products.asKendoDataSource();
     $("#input").kendoAutoComplete({
-        dataSource: _ds,
+        dataSource: localDB.Products.asKendoDataSource(),
         dataTextField: 'Product_Name',
         filter: "startswith",
         placeholder: "Select product...",
@@ -88,12 +87,10 @@
                 </div>
                 <script>
                     Math.ceiling = Math.ceil; // FIXME remove this
-
                     $.when($.ready, getLocalNorthwind())
-                    .then(function (x, localDB) {
-                        var _ds = localDB.Products.asKendoDataSource();
+                    .then(function ($, localDB) {
                         $("#input").kendoAutoComplete({
-                            dataSource: _ds,
+                            dataSource: localDB.Products.asKendoDataSource(),
                             dataTextField: 'Product_Name',
                             filter: "startswith",
                             placeholder: "Select product...",

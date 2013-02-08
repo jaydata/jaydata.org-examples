@@ -72,16 +72,14 @@
 </script>
 
 <script>
-    function startApplication(mydatabase) {
-        var _ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
-        $("#listView").kendoListView({
-            dataSource: _ds,
-            template: kendo.template($("#template").html())
-        });
-        $("#pager").kendoPager({
-            dataSource: _ds
-        }).data("kendoPager");
-    }
+    var ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
+    $("#listView").kendoListView({
+        dataSource: ds,
+        template: kendo.template($("#template").html())
+    });
+    $("#pager").kendoPager({
+        dataSource: ds
+    }).data("kendoPager");
 </script>
                 </textarea>
                 <script>
@@ -113,21 +111,17 @@
                         license: 'business'
                     };
 
-                    $data.initService(apiKey).then(function (mydatabase, factory, type) {
-                        $(function () {
-                            startApplication(mydatabase);
-                        });
-                    });
-                    function startApplication(mydatabase) {
-                        var _ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
+                    $data.initService(apiKey)
+                    .then(function (mydatabase) {
+                        var ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
                         $("#listView").kendoListView({
-                            dataSource: _ds,
+                            dataSource: ds,
                             template: kendo.template($("#template").html())
                         });
                         $("#pager").kendoPager({
-                            dataSource: _ds
+                            dataSource: ds
                         }).data("kendoPager");
-                    }
+                    });
                 </script>
             </div>
         </div>

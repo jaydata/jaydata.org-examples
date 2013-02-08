@@ -11,6 +11,7 @@
     <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
     <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydata.js"></script>
     <script type="text/javascript" src="../Content/Scripts/kendo.js"></script>
+    <script type="text/javascript" src="../Content/Scripts/north.js"></script>
     <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
     <script type="text/javascript" src="../Content/Scripts/bootstrap.min.js"></script>
 
@@ -67,20 +68,13 @@
                 <textarea id="code">
 <div id="grid"></div>
 <script>
-    $data.service("Northwind.svc", function (f, t) {
-        var mydatabase = f();
-        mydatabase.onReady(function () {
-            var _ds = mydatabase.Products.asKendoDataSource({ pageSize: 10 });
-            var options = {
-                dataSource: _ds,
-                filterable: true,
-                sortable: true,
-                pageable: true,
-                height: 500,
-                columns: ['Product_Name', 'Unit_Price', 'Units_In_Stock']
-            };
-            $('#grid').kendoGrid(options);
-        });
+    $('#grid').kendoGrid({
+        dataSource: remoteDB.Products.asKendoDataSource({ pageSize: 10 }),
+        filterable: true,
+        sortable: true,
+        pageable: true,
+        height: 500,
+        columns: ['Product_Name', 'Unit_Price', 'Units_In_Stock']
     });
 </script>
 </textarea>
@@ -97,23 +91,18 @@
                 <div id="grid"></div>
                 <script>
                     Math.ceiling = Math.ceil; // FIXME remove this
-
-                    $data.service("Northwind.svc", function (f, t) {
-                        var mydatabase = f();
-                        mydatabase.onReady(function () {
-                            var _ds = mydatabase.Products.asKendoDataSource({ pageSize: 10 });
-                            var options = {
-                                dataSource: _ds,
-                                filterable: true,
-                                sortable: true,
-                                pageable: true,
-                                height: 500,
-                                columns: ['Product_Name', 'Unit_Price', 'Units_In_Stock'],
-                                //columns: mydatabase.Categories.asKendoColumns().append({ command: "delete" }),
-                                //toolbar: ["create", "save", "cancel"],
-                                //editable: "popup"
-                            };
-                            $('#grid').kendoGrid(options);
+                    $.when($.ready, getRemoteNorthwind())
+                    .then(function ($, remoteDB) {
+                        $('#grid').kendoGrid({
+                            dataSource: remoteDB.Products.asKendoDataSource({ pageSize: 10 }),
+                            filterable: true,
+                            sortable: true,
+                            pageable: true,
+                            height: 500,
+                            columns: [{ field: 'Product_Name' }, { field: 'Unit_Price', filterable: false }, { field: 'Units_In_Stock' }],
+                            //columns: mydatabase.Categories.asKendoColumns().append({ command: "delete" }),
+                            //toolbar: ["create", "save", "cancel"],
+                            //editable: "popup"
                         });
                     });
                 </script>

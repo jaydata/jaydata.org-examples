@@ -29,6 +29,14 @@
     <link href="../Styles/examples.css?20121115" rel="stylesheet" />
 
     <link href="../Styles/img/favicon_jaydata.png" rel="shortcut icon" type="image/x-icon" />
+
+    <style>
+        * {
+            -webkit-transition:opacity 1s;
+            -moz-transition:opacity 1s;
+            transition:opacity 1s;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar ================================================== -->
@@ -154,7 +162,7 @@
                     });
                 </script>
             </div>
-            <div class="span5">
+            <div class="span5" style="opacity:0;">
                 <div class="k-content mobileExample ">
                     <div id="device-wrapper">
                         <div id="mobile-application-container">
@@ -233,6 +241,7 @@
                                 platform: kendoMobileOS,
                                 updateDocumentTitle: false
                             });
+                            $(".span5").css("opacity", 1);
                         }
                     });
                 </script>
