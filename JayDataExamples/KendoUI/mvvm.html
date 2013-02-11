@@ -67,9 +67,8 @@
 
                 <textarea id="code">
 <script>
-    var _ds = localDB.Products.asKendoDataSource({ pageSize: 100 });
     var viewModel = kendo.observable({
-        productsSource: _ds,
+        productsSource: localDB.Products.asKendoDataSource({ pageSize: 100 }),
         selectedProduct: null,
         hasChanges: false,
         save: function () {
@@ -136,9 +135,8 @@
 
                     $.when($.ready, getLocalNorthwind())
                     .then(function (x, localDB) {
-                        var _ds = localDB.Products.asKendoDataSource({ pageSize: 100 });
                         var viewModel = kendo.observable({
-                            productsSource: _ds,
+                            productsSource: localDB.Products.asKendoDataSource({ pageSize: 100 }),
                             selectedProduct: null,
                             hasChanges: false,
                             save: function () {

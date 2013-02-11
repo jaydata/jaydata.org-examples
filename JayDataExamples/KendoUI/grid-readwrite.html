@@ -67,9 +67,8 @@
                 <textarea id="code">
 <div id="grid"></div>
 <script>
-    var _ds = localDB.Products.asKendoDataSource({ pageSize: 4 });
-    var options = {
-        dataSource: _ds,
+    $('#grid').kendoGrid({
+        dataSource: localDB.Products.asKendoDataSource({ pageSize: 4 }),
         filterable: true,
         sortable: true,
         pageable: true,
@@ -81,9 +80,8 @@
             { command: ["edit", "destroy", "update"] }
         ],
         toolbar: ["create", "save", "cancel"],
-        editable: true
-    };
-    $('#grid').kendoGrid(options);
+        editable: "inline"
+    });
 </script>
 </textarea>
                 <script>
@@ -99,22 +97,19 @@
                 <div id="grid"></div>
                 <script>
                     Math.ceiling = Math.ceil; // FIXME remove this
-
-                    getLocalNorthwind()
-                    .then(function (localDB) {
-                        var _ds = localDB.Products.asKendoDataSource({ pageSize: 4 });
-                        var options = {
-                            dataSource: _ds,
+                    $.when($.ready, getLocalNorthwind())
+                    .then(function ($, localDB) {
+                        $('#grid').kendoGrid({
+                            dataSource: localDB.Products.asKendoDataSource({ pageSize: 4 }),
                             filterable: true,
                             sortable: true,
                             pageable: true,
                             height: 500,
-                            columns: [{ field: 'Product_Name' }, { field: 'Unit_Price' }, { field: 'Units_In_Stock' }, { command: ["edit", "destroy", "update"] }],
+                            columns: [{ field: 'Product_Name' }, { field: 'Unit_Price', filterable: false }, { field: 'Units_In_Stock' }, { command: ["edit", "destroy", "update"] }],
                             //columns: localDB1.Products.asKendoColumns().append({ command: "delete" }),
                             toolbar: ["create", "save", "cancel"],
-                            editable: true
-                        }; // use this ??? http://jsfiddle.net/cDFT8/3/
-                        $('#grid').kendoGrid(options);
+                            editable: "inline"
+                        });
                     });
                 </script>
             </div>

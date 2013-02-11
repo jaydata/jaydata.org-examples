@@ -121,16 +121,14 @@ be found here http://demos.kendoui.com/web/combobox/cascadingcombobox.html
 
                 <script>
                     Math.ceiling = Math.ceil; // FIXME remove this
-
                     $.when($.ready, getRemoteNorthwind())
-                    .then(function (x, remoteDB) {
+                    .then(function ($, remoteDB) {
                         $("#categories").kendoComboBox({
                             placeholder: "Select category...",
                             dataTextField: "Category_Name",
                             dataValueField: "Category_ID",
                             dataSource: remoteDB.Categories.asKendoDataSource()
                         });
-
                         var products = $("#products").kendoComboBox({
                             autoBind: false,
                             cascadeFrom: "categories",
@@ -139,7 +137,6 @@ be found here http://demos.kendoui.com/web/combobox/cascadingcombobox.html
                             dataValueField: "Product_ID",
                             dataSource: remoteDB.Products.asKendoDataSource()
                         }).data("kendoComboBox");
-
                         var orders = $("#orders").kendoComboBox({
                             autoBind: false,
                             cascadeFrom: "products",

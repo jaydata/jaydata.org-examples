@@ -88,13 +88,15 @@
             </div>
             <div class="span5">
                 Max price:
-                <input type="number" id="pricefilter" style="width: 80px" size="3" maxlength="3" name="pricefilter" /><a href="#" id="filter">filter</a>
+                <input type="number" id="pricefilter" style="width: 80px" size="3" maxlength="3" name="pricefilter" /><a class="btn btn-small iblock" href="#" id="filter" style="margin: -10px 0 0 5px">Filter</a>
+                
+                <div class="iblock fright">
                 Sort by:
                 <select style="width: 80px" id="sortby" name="sortby">
                     <option value="" selected>---</option>
                     <option value="Name">Name</option>
                     <option value="Price">Price</option>
-                </select>
+                </select></div>
                 <div id="pager" class="k-pager-wrap"></div>
                 <div id="listView"></div>
 
@@ -116,13 +118,10 @@
                         license: 'business'
                     };
 
-                    $data.initService(apiKey).then(function (mydatabase, factory, type) {
-                        $(function () {
-                            startApplication(mydatabase);
-                        });
-                    });
-                    function startApplication(mydatabase) {
+                    $data.initService(apiKey)
+                    .then(function (mydatabase, factory, type) {
                         var _ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
+
                         $("#listView").kendoListView({
                             dataSource: _ds,
                             template: kendo.template($("#template").html())
@@ -130,6 +129,7 @@
                         $("#pager").kendoPager({
                             dataSource: _ds
                         }).data("kendoPager");
+
                         $(document).delegate("#filter", "click", function () {
                             var f = $("#pricefilter").val();
                             if (f != "")
@@ -144,7 +144,7 @@
                             else
                                 _ds.sort({});
                         });
-                    }
+                    });
                 </script>
             </div>
         </div>
