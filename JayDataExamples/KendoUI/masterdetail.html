@@ -116,7 +116,6 @@
                 </script>
 
                 <script>
-                    Math.ceiling = Math.ceil; // FIXME remove this
                     $.when($.ready, getRemoteNorthwind())
                     .then(function ($, remoteDB) {
                         function detailInit(e) {

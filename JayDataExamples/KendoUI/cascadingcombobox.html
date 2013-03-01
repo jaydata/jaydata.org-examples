@@ -120,7 +120,6 @@ be found here http://demos.kendoui.com/web/combobox/cascadingcombobox.html
                 </style>
 
                 <script>
-                    Math.ceiling = Math.ceil; // FIXME remove this
                     $.when($.ready, getRemoteNorthwind())
                     .then(function ($, remoteDB) {
                         $("#categories").kendoComboBox({

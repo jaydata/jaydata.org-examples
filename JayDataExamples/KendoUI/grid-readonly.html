@@ -90,7 +90,6 @@
             <div class="span5">
                 <div id="grid"></div>
                 <script>
-                    Math.ceiling = Math.ceil; // FIXME remove this
                     $.when($.ready, getRemoteNorthwind())
                     .then(function ($, remoteDB) {
                         $('#grid').kendoGrid({

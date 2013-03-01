@@ -86,7 +86,6 @@
                     <input id="input" />
                 </div>
                 <script>
-                    Math.ceiling = Math.ceil; // FIXME remove this
                     $.when($.ready, getLocalNorthwind())
                     .then(function ($, localDB) {
                         $("#input").kendoAutoComplete({

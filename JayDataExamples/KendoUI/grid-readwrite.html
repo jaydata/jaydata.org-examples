@@ -96,7 +96,6 @@
             <div class="span5">
                 <div id="grid"></div>
                 <script>
-                    Math.ceiling = Math.ceil; // FIXME remove this
                     $.when($.ready, getLocalNorthwind())
                     .then(function ($, localDB) {
                         $('#grid').kendoGrid({
