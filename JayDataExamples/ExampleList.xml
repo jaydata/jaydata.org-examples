@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MainPage>
+  <Examples>
+    <Example>
+      <Title>Example1</Title>
+      <Description>Almafa</Description>
+      <Image>/img/test1.png</Image>
+      <Link>/General/ToDoList</Link>
+      <Tags>html5,jquery template</Tags>
+    </Example>
+    <Example>
+      <Title>Example2</Title>
+      <Description>kortefa</Description>
+      <Image>/img/test2.png</Image>
+      <Link>/KendoUI/ToDoList</Link>
+      <Tags>Kendo,jquery template</Tags>
+    </Example>
+  </Examples>
+</MainPage>
