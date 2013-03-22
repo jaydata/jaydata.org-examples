@@ -989,8 +989,17 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DisplayTemplates\Example.cshtml" />
     <Content Include="Views\Home\DisplayTemplates\ExampleDoc.cshtml" />
-    <Content Include="Views\KendoUI\ToDoList.cshtml" />
+    <Content Include="Views\KendoUI\Kendo_ToDoList.cshtml" />
     <Content Include="Views\Home\ToDoList.cshtml" />
+    <Content Include="Views\Shared\Layout_KendoUI.cshtml" />
+    <Content Include="Views\Shared\_IncludeTopMenu.cshtml" />
+    <Content Include="Views\Shared\_JayDataHeader.cshtml" />
+    <Content Include="Views\Shared\_IncludeStyles.cshtml" />
+    <Content Include="Views\Shared\_IncludeMeta.cshtml" />
+    <Content Include="Views\Shared\_IncludeIeFix.cshtml" />
+    <Content Include="Views\Shared\_IncludeFavIcon.cshtml" />
+    <Content Include="Views\Shared\Layout_Simple.cshtml" />
+    <Content Include="Views\Shared\_IncludeGoogleAnalytics.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
