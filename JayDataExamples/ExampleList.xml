@@ -2,18 +2,118 @@
 <MainPage>
   <Examples>
     <Example>
-      <Title>Example1</Title>
-      <Description>Almafa</Description>
-      <Image>/img/test1.png</Image>
-      <Link>/General/ToDoList</Link>
-      <Tags>html5,jquery template</Tags>
+      <Title>Kendo UI Examples</Title>
+      <Description><![CDATA[A collection of JayData examples with <a href="http://www.kendoui.com/" target="_blank">Kendo UI</a>.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/index.html</Link>
+      <Tags>KendoUI,tag1,tag2</Tags>
     </Example>
     <Example>
-      <Title>Example2</Title>
-      <Description>kortefa</Description>
-      <Image>/img/test2.png</Image>
-      <Link>/KendoUI/ToDoList</Link>
-      <Tags>Kendo,jquery template</Tags>
+      <Title>Sencha Touch 2</Title>
+      <Description><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>/Sencha/index.html</Link>
+      <Tags>Sencha Touch,tag1,tag2,tag3</Tags>
+    </Example>
+    <Example>
+      <Title>Flower Shop</Title>
+      <Description><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/Kendo_ToDoList</Link>
+      <Tags>Windows 8,tag1,tag2</Tags>
+    </Example>
+    <Example>
+      <Title>Knockout.js example</Title>
+      <Description><![CDATA[Demonstrating easy data binding using JayData and Knockout.js together. Properties of the requested entities will be observable through a single toArray call if ko.observableArray is passed as parameter.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>Knockoutjs/Northwind.html</Link>
+      <Tags>KnockoutJS,tag1,tag2,tag3</Tags>
+    </Example>
+    <Example>
+      <Title>Knockout Dynamic Queries</Title>
+      <Description><![CDATA[With the JayData module for Knockout.js you can achieve fully dynamic queries. Where you use an observable as a query parameter the query will be automatically executed when the observable property changes.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>Knockoutjs/DynamicQueryNorthwind.html</Link>
+      <Tags>KnockoutJS,tag1,tag2,tag3</Tags>
+    </Example>
+    <Example>
+      <Title>Knockout Dynamic Queries filter</Title>
+      <Description><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>Knockoutjs/DynamicQueryFilterNorthwind.html</Link>
+      <Tags>KnockoutJS,tag1,tag3</Tags>
+    </Example>
+    <Example>
+      <Title>Yahoo Query language</Title>
+      <Description>
+        <![CDATA[With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and RSS feeds, pure HTML content and Geo data, almost everything is queryable through the YQL provider. Here you can find some samples to see for yourself!<br /><b class="tdunder">Examples:</b> <a href="YQL/YQLhtml.html" target="_blank">Html search</a>, <a href="YQL/YQLGeo.html" target="_blank">GEO based autocomplete</a>, <a href="YQL/YQLRss.html" target="_blank">RSS example</a>, <a href="YQL/YQLRssAdvanced.html" target="_blank">RSS advanced example</a>, <a href="YQL/YQLfeed.html" target="_blank">Feed</a>]]>
+      </Description>
+      <Image>/Images/yqlnagy.png</Image>
+      <Link>YQL/YQLhtml.html</Link>
+      <Tags>Yahoo,tag2,tag3</Tags>
+    </Example>
+    <Example>
+      <Title>Newsreader</Title>
+      <Description>
+        <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way. The UI is utilizing Twitter's Bootstrap and jQuery's template engine.]]>
+      </Description>
+      <Image>/Images/newsreadernagy.png</Image>
+      <Link>NewsReader/index.html</Link>
+      <Tags>KnockoutJS,tag1,tag2</Tags>
+    </Example>
+    <Example>
+      <Title>Planets</Title>
+      <Description>
+        <![CDATA[Local database management through the WebSQL provider, in a fancy representative HTML5 app. It uses new features of CSS3 like keyframe-animations, transitions and transformations.]]>
+      </Description>
+      <Image>/Images/planetsnagy.png</Image>
+      <Link>Planets/index.html</Link>
+      <Tags>KnockoutJS,tag1,tag3</Tags>
+    </Example>
+    <Example>
+      <Title>Advanced RSS using custom provider</Title>
+      <Description>
+        <![CDATA[Implementing a custom provider to process RSS feeds and extending the context to include custom RSS fields. XML to typed JSON conversion handled by the $data.ModelBinder class.]]>
+      </Description>
+      <Image>/Images/newsreadernagy.png</Image>
+      <Link>RSS/rss.html</Link>
+      <Tags>KnockoutJS,tag2,tag3</Tags>
+    </Example>
+    <Example>
+      <Title>Form Validation</Title>
+      <Description>
+        <![CDATA[Our form validator extensions will allow you to apply the constraints defined on the model to validate forms through jQuery validators.]]>
+      </Description>
+      <Image>/Images/formvalidation.png</Image>
+      <Link>Validation/FormValidation.html</Link>
+      <Tags>KnockoutJS,tag2,tag3</Tags>
+    </Example>
+    <Example>
+      <Title>TodoList</Title>
+      <Description>
+        <![CDATA[Use the same code for multiple providers! See this simple todo-list example running with WebSQL or IndexedDB.]]>
+      </Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>/General/ToDoList</Link>
+      <Tags>KnockoutJS,tag1,tag2</Tags>
+    </Example>
+    <Example>
+      <Title>Facebook provider example</Title>
+      <Description>
+        <![CDATA[How can I get the current user's public personal data through FQL api.]]>
+      </Description>
+      <Image>/Images/facebook.png</Image>
+      <Link>Facebook/Facebook_provider_example.html</Link>
+      <Tags>Facebook,tag1,tag3</Tags>
+    </Example>
+    <Example>
+      <Title>Facebook friend list example</Title>
+      <Description>
+        <![CDATA[How can I get the current user's friends list.]]>
+      </Description>
+      <Image>/Images/facebook.png</Image>
+      <Link>Facebook/Facebook_provider_friends_example.html</Link>
+      <Tags>Facebook,tag1,tag3</Tags>
     </Example>
   </Examples>
 </MainPage>
