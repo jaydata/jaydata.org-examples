@@ -30,7 +30,7 @@
     <h1>ToDo List Example</h1>
 }
 
-@section SupportedBrowsers {
+@*@section SupportedBrowsers {
     <div class="clear row iblock mauto">
         <div class="span5">
             <h3 class="marginb5">Supported browsers (WebSQL):</h3>
@@ -69,14 +69,23 @@
             </ul>
         </div>
     </div>
+}*@
 
-    <hr class="soften" />
+@section Description {
+    <p class="header-desc">
+        Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: <u style="color: Black;">WebSQL</u>,  <u style="color: Black;">Indexed DB</u> and <u style="color: Black;">HTML5 localStorage</u>.
+        As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
+            In this example oData is used. Check the network panel to see the requests.
+            You can create a Kendo Datasource with a simple method: asKendoDataSource() and off you go. If works everywhere where Kendo expects a DataSource, not only
+            with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
+            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.
+    </p>
+    <div class="tacenter">
+        <div class="box-jsfiddle">You can play with this example on <a class="logo-jsfiddle blue" target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a></div>
+    </div>
 }
 
-@section Code {
-    <h2>Simple ToDoList example where you can create, edit or delete task items.<br />
-        <small>Three providers are supported: <u style="color: Black;">WebSQL</u>,  <u style="color: Black;">Indexed DB</u> and <u style="color: Black;">HTML5 localStorage</u></small></h2>
-
+@section CodeSource {
     <pre class="well well-white marginb20 iblock" style='color: #000000; background: #ffffff; text-align: left;'>    $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#btnAdd'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>click<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
         <span style='color:#0000E6; font-weight:bold; '>var</span> value <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#txtNew'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>val<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
         <span style='color:#0000E6; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>!</span>value<span style='color:#808030; '>)</span> <span style='color:#0000E6; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>
@@ -111,14 +120,16 @@
     <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 </pre>
 
-    <hr class="soften" />
+    
+}
 
-    <section id="wrapper" class="container iblock well">
+@section CodeRunning {
+    <section id="wrapper" class="">
         <h2 class="margin10">Choose your prefered provider:</h2>
         <p id="providerSelection" class="download-info">
-            <button id="btnSql" value="sqLite" class="btn btn-large">WebSQL</button>
-            <button id="btnIdb" value="indexedDb" class="btn btn-large">IndexedDB</button>
-            <button id="btnLocalStorage" value="LocalStore" class="btn btn-large">HTML5 localStorage</button>
+            <button id="btnSql" value="sqLite" class="btn btn-medium">WebSQL</button>
+            <button id="btnIdb" value="indexedDb" class="btn btn-medium">IndexedDB</button>
+            <button id="btnLocalStorage" value="LocalStore" class="btn btn-medium">HTML5 localStorage</button>
         </p>
 
         <div>

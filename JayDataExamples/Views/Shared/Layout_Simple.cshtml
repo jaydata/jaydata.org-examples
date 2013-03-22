@@ -5,17 +5,39 @@
     @RenderSection("Includes", true)
 }
 
+@{
+    Html.RenderPartial("_IncludeBreadcrumb");
+}
+
 @section MainBody {
     <div class="container">
         <header class="jumbotron masthead">
             <div class="inner tacenter">
                 @RenderSection("Title", false)
-                @RenderSection("SupportedBrowsers", false)
             </div>
         </header>
 
-        <div class="tacenter">
-            @RenderSection("Code", false)
+        <div class="row-fluid">
+            @RenderSection("Description", false)
+        </div>
+
+        @*@RenderSection("SupportedBrowsers", false)*@
+
+        <hr class="soften" />
+
+        <div class="row-fluid">
+            <div class="span6 code-source">
+                <div class="bg-dark-grid">
+                    <h3>Source Code</h3>
+                </div>
+                @RenderSection("CodeSource", false)
+            </div>
+            <div class="span6 code-running">
+                <div class="bg-dark-grid">
+                    <h3>Running Example</h3>
+                </div>
+                @RenderSection("CodeRunning", false)
+            </div>
         </div>
     </div>
 }

@@ -36,9 +36,9 @@ body {
 }
 
 .masthead {
-    .reset-p; .marginb10;
+   .marginb10;
     
-    h1      { font-size: 65px; }
+    h1      { font-size: 50px; }
     h2      { .marginb10; }
     p       { font-size: 20px; line-height: 30px; }
     .well   { border: 1px solid #ddd !important; }
@@ -73,7 +73,7 @@ body {
 
 hr.soften { margin: 15px 0 !important; }
 
-section#wrapper { padding-top: 25px !important; margin-bottom: 50px; }
+section#wrapper { padding: 20px; margin-bottom: 50px; }
 
 ul.detail-list {
     margin: 10px 0;
@@ -450,14 +450,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#accf69', end
 	background: #fff;
 	font-size: 13px;
 	font-weight: 600;
-}
-ul.breadcrumb {
-	margin: 0;
-	padding-bottom: 6px;	
-	padding-top: 6px;		
-}
-.breadcrumb .active {
-	color: #343434;
 }
 
 #breadcrumb .breadcrumb {
@@ -1395,9 +1387,6 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 /*#endregion DD.CSS */
 
 
-.app-container {
-	background: #fff;
-}
 .k-listview { overflow: hidden; padding: 10px 4px; }
 .CodeMirror {
 	height: auto !important; 
@@ -1486,6 +1475,24 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 .logo-kendo {
 	display: inline-block; width: 230px; height: 80px;
 	background: url(/Images/logo_kendoui.png) no-repeat top left;
+}
+.logo-jsfiddle {
+	display: inline-block; width: 116px; height: 23px;
+	background: url(/Images/logo_jsfiddle.png) no-repeat top left;
+	text-indent: 100%; overflow: hidden;
+
+	&.white { background-position: 0 0; }
+	&.blue 	{ background-position: 0 -23px; }
+}
+
+.box-jsfiddle {
+	display: inline-block; padding: 10px 15px;
+	background: white; border: 1px solid #DDD;
+	font-size: 14px;
+
+	.logo-jsfiddle {
+		margin-left: 3px;
+	}
 }
 
 .k-content{
@@ -1620,6 +1627,66 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 	.tag-label {
 		border-left: 1px solid gray;
 		padding: 0 0 0 25px;
+		color: #fff;
+	}
+}
+
+.header-desc {
+	margin: 5px 0 20px;
+}
+
+.main-content {
+	padding: 25px 0 40px;
+}
+
+.CodeMirror {
+	.relative;
+
+	&:before {
+		content: 'Source code';
+		display: block;
+		background: black;
+		position: absolute; top: -20px;
+	}
+}
+
+ .code-running {
+	background: #fff;
+	border: 1px solid #DDD;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.bg-dark-grid {
+	background: #0A001C url(/Images/mainnav.png) repeat 0 0;
+	padding: 5px 15px;
+
+	h3 {
+		color: #fff;
+	}
+}
+
+.breadcrumb li, .breadcrumb li a {
+	text-shadow: none;
+}
+
+.breadcrumb {
+	margin: 0;
+
+	 li a {
+		color: #AFAFAF;
+
+		-webkit-transition: color 0.5s;
+		-moz-transition: color 0.5s;
+		-o-transition: color 0.5s;
+		transition: color 0.5s;
+
+		&:hover { color: #fff; text-decoration: underline; }
+	}
+
+	.active {
 		color: #fff;
 	}
 }

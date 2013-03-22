@@ -3,13 +3,14 @@
     ViewBag.Title = "Index";
 }
 
-@*
-if (i % 3)
-<div class="row">items[i]</div>
-*@
+@{
+    Html.RenderPartial("_IncludeSearchBar");
+}
 
-<div class="container">
-    <div class="marketing">
-        @Html.DisplayForModel()
+@section MainBody {
+    <div class="container">
+        <div class="marketing">
+            @Html.DisplayForModel()
+        </div>
     </div>
-</div>
+}

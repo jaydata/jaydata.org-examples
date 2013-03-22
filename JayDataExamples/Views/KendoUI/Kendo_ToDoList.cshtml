@@ -26,15 +26,23 @@
 
 @section Title {
     <h1>KendoUI filter example</h1>
-    <p>You can play with this example on <a target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>.</p>
 }
 
-@section Body {
-    <hr class="soften" />
+@section Description {
+    <p class="header-desc">
+        As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
+            In this example oData is used. Check the network panel to see the requests.
+            You can create a Kendo Datasource with a simple method: asKendoDataSource() and off you go. If works everywhere where Kendo expects a DataSource, not only
+            with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
+            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.
+    </p>
+    <div class="tacenter">
+        <div class="box-jsfiddle">You can play with this example on <a class="logo-jsfiddle blue" target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a></div>
+    </div>
+}
 
-    <div class="row-fluid">
-        <div class="span7">
-            <textarea id="code">
+@section CodeSource {
+<textarea id="code">
 <div id="pager" class="k-pager-wrap"></div>
 <div id="listView"></div>
 
@@ -56,58 +64,46 @@
         dataSource: ds
     }).data("kendoPager");
 </script>
-                </textarea>
-            <script>
-                setTimeout(function () {
-                    CodeMirror.fromTextArea(document.getElementById('code'), {
-                        mode: 'text/html',
-                        lineNumbers: false
-                    });
-                });
-            </script>
-        </div>
-        <div class="span5 app-container">
-            <div id="pager" class="k-pager-wrap"></div>
-            <div id="listView"></div>
+</textarea>
+<script>
+    setTimeout(function () {
+        CodeMirror.fromTextArea(document.getElementById('code'), {
+            mode: 'text/html',
+            lineNumbers: false
+        });
+    });
+</script>
+}
 
-            <script type="text/x-kendo-tmpl" id="template">
+@section CodeRunning {
+<div id="pager" class="k-pager-wrap"></div>
+<div id="listView"></div>
+    <script type="text/x-kendo-tmpl" id="template">
                     <span class="product" style="width:230px;float:left">
                         <img style="width:220px;height:150px" src="${ImageUrl}" />
                         <h3>${Name}</h3>
                         <b>${kendo.toString(Price, "c")}</b>
                     </span>
-            </script>
-            <script>
-                var apiKey = {
-                    appId: '133e0907-f70b-4f11-92b3-dfebc9bdd6db',
-                    // see https://dashboard.jaystack.com for your real application key
-                    applicationKey: 'XXXX',
-                    serviceName: 'mydatabase',
-                    license: 'business'
-                };
-                $data.initService(apiKey)
-                .then(function (mydatabase) {
-                    delete mydatabase.storageProvider.supportedSetOperations.withInlineCount;
-                    var ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
-                    $("#listView").kendoListView({
-                        dataSource: ds,
-                        template: kendo.template($("#template").html())
-                    });
-                    $("#pager").kendoPager({
-                        dataSource: ds
-                    }).data("kendoPager");
-                });
-            </script>
-        </div>
-    </div>
-}
-
-@section Description {
-    <p>
-        As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
-            In this example oData is used. Check the network panel to see the requests.
-            You can create a Kendo Datasource with a simple method: asKendoDataSource() and off you go. If works everywhere where Kendo expects a DataSource, not only
-            with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
-            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.
-    </p>
+    </script>
+    <script>
+        var apiKey = {
+            appId: '133e0907-f70b-4f11-92b3-dfebc9bdd6db',
+            // see https://dashboard.jaystack.com for your real application key
+            applicationKey: 'XXXX',
+            serviceName: 'mydatabase',
+            license: 'business'
+        };
+        $data.initService(apiKey)
+        .then(function (mydatabase) {
+            delete mydatabase.storageProvider.supportedSetOperations.withInlineCount;
+            var ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
+            $("#listView").kendoListView({
+                dataSource: ds,
+                template: kendo.template($("#template").html())
+            });
+            $("#pager").kendoPager({
+                dataSource: ds
+            }).data("kendoPager");
+        });
+    </script>
 }

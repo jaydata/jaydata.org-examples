@@ -5,6 +5,10 @@
     @RenderSection("Includes", true)
 }
 
+@{
+    Html.RenderPartial("_IncludeBreadcrumb");
+}
+
 @section MainBody {
     <div class="container">
         <header class="jumbotron masthead">
@@ -14,12 +18,25 @@
             </div>
         </header>
 
-        @RenderSection("Body", false)
-
-        <br />
-
         <div class="row-fluid">
             @RenderSection("Description", false)
+        </div>
+
+        <hr class="soften" />
+
+        <div class="row-fluid">
+            <div class="span6 code-source">
+                <div class="bg-dark-grid">
+                    <h3>Source Code</h3>
+                </div>
+                @RenderSection("CodeSource", false)
+            </div>
+            <div class="span6 code-running">
+                <div class="bg-dark-grid">
+                    <h3>Running Example</h3>
+                </div>
+                @RenderSection("CodeRunning", false)
+            </div>
         </div>
     </div>
 }

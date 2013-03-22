@@ -8,7 +8,8 @@
         //TODO: 2 description tag lesz al-Layout használatánál
         Html.RenderPartial("_IncludeMeta");
         Html.RenderPartial("_IncludeStyles");
-        
+        Html.RenderPartial("_IncludeScripts");
+
         Html.RenderPartial("_IncludeFavIcon");
         Html.RenderPartial("_IncludeIeFix");
     }
@@ -24,13 +25,15 @@
         Html.RenderPartial("_IncludeTopMenu");
     }
 
-    @RenderSection("MainBody", false)
+    <section class="main-content">
+        @RenderSection("MainBody", false)
+    </section>
 
     @RenderBody()
 
     @{
+        Html.RenderPartial("_IncludeFooter");
         Html.RenderPartial("_IncludeGoogleAnalytics");
-        Html.RenderPartial("_IncludeScripts");
     }
 </body>
 </html>
