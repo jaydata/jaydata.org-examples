@@ -1,1 +1,131 @@
-﻿<div>General ToDo list exmplae</div>
+﻿@{ Layout = "~/Views/Shared/Layout_Simple.cshtml"; }
+
+@section Meta {
+    <meta name="description" content="How to use the JayData to implement a ToDoList example!">
+}
+
+@section Includes {
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scripts/vendor/jquery/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="http://include.jaydata.org/jaydata.js"></script>
+    <script type="text/javascript" src="http://include.jaydata.org/jaydataproviders/InMemoryProvider.js"></script>
+
+    <script type="text/javascript" src="/Scripts/example/todo.js"></script>
+
+    <script id="todoEntryTemplate" type="text/html">
+        <div class="todoEntry row clear margin10">
+            <div class="fleft iblock marginr10" style="min-width: 350px;">
+                <label>${Value }</label></div>
+            {{if Done}}
+            <button value="undone" class="btn btn-small btn-inverse tshadow">Undone</button>
+            {{else}}
+            <button value="done" class="btn btn-small btn-success tshadow">Done</button>
+            {{/if}}
+            <button value="delete" class="btn btn-small btn-danger tshadow">Delete</button>
+        </div>
+    </script>
+}
+
+@section Title {
+    <h1>ToDo List Example</h1>
+}
+
+@section SupportedBrowsers {
+    <div class="clear row iblock mauto">
+        <div class="span5">
+            <h3 class="marginb5">Supported browsers (WebSQL):</h3>
+            <ul class="browser-list">
+                <li class="browser chrome" title="Google Chrome 12+"></li>
+                <li class="browser opera" title="Opera 10+"></li>
+                <li class="browser safari" title="Safari 4+"></li>
+                <li class="browser blackberry" title="Blackberry 2+"></li>
+                <li class="browser wp" title="Windows Phone 7.5+"></li>
+                <li class="browser ios" title="iOS 4+"></li>
+                <li class="browser android" title="Android 2.2+"></li>
+            </ul>
+        </div>
+        <div class="span5">
+            <h3 class="marginb5">Supported browsers (IndexedDB):</h3>
+            <ul class="browser-list">
+                <li class="browser ie" title="Internet Explorer 10+"></li>
+                <li class="browser firefox" title="Firefox 10+"></li>
+                <li class="browser chrome" title="Google Chrome 12+"></li>
+                <li class="browser wp" title="Windows Phone 8+"></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="clear row iblock mauto">
+        <div class="span5">
+            <h3 class="marginb5">Supported browsers (HTML5 localStorage):</h3>
+            <ul class="browser-list">
+                <li class="browser chrome" title="Google Chrome"></li>
+                <li class="browser opera" title="Opera"></li>
+                <li class="browser safari" title="Safari"></li>
+                <li class="browser blackberry" title="Blackberry 2+"></li>
+                <li class="browser wp" title="Windows Phone"></li>
+                <li class="browser ios" title="iOS"></li>
+                <li class="browser android" title="Android"></li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="soften" />
+}
+
+@section Code {
+    <h2>Simple ToDoList example where you can create, edit or delete task items.<br />
+        <small>Three providers are supported: <u style="color: Black;">WebSQL</u>,  <u style="color: Black;">Indexed DB</u> and <u style="color: Black;">HTML5 localStorage</u></small></h2>
+
+    <pre class="well well-white marginb20 iblock" style='color: #000000; background: #ffffff; text-align: left;'>    $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#btnAdd'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>click<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        <span style='color:#0000E6; font-weight:bold; '>var</span> value <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#txtNew'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>val<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#0000E6; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>!</span>value<span style='color:#808030; '>)</span> <span style='color:#0000E6; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>
+        <span style='color:#0000E6; font-weight:bold; '>var</span> now <span style='color:#808030; '>=</span> <span style='color:#0000E6; font-weight:bold; '>new</span> <span style='color:#797997; '>Date</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#0000E6; font-weight:bold; '>var</span> entity <span style='color:#808030; '>=</span> <span style='color:#0000E6; font-weight:bold; '>new</span> $todo<span style='color:#808030; '>.</span>Types<span style='color:#808030; '>.</span>ToDoEntry<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span> Value<span style='color:#800080; '>:</span> value<span style='color:#808030; '>,</span> CreatedAt<span style='color:#800080; '>:</span> now<span style='color:#808030; '>,</span> ModifiedAt<span style='color:#800080; '>:</span> now <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>TodoEntries<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span>entity<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>saveChanges<span style='color:#808030; '>(</span>updateView<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+    $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#btnClear'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>click<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#todoList > div'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>each<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+            <span style='color:#0000E6; font-weight:bold; '>var</span> entity <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>data<span style='color:#808030; '>(</span><span style='color:#800000; '>'entity'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>TodoEntries<span style='color:#808030; '>.</span>remove<span style='color:#808030; '>(</span>entity<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>saveChanges<span style='color:#808030; '>(</span>updateView<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+    $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#todoList'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>on<span style='color:#808030; '>(</span><span style='color:#800000; '>'click'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>':button'</span><span style='color:#808030; '>,</span> <span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>e<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        <span style='color:#0000E6; font-weight:bold; '>var</span> cmd <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>val<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#0000E6; font-weight:bold; '>var</span> entry <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>data<span style='color:#808030; '>(</span><span style='color:#800000; '>'entity'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#0000E6; font-weight:bold; '>switch</span> <span style='color:#808030; '>(</span>cmd<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+            <span style='color:#0000E6; font-weight:bold; '>case</span> <span style='color:#800000; '>'undone'</span><span style='color:#800080; '>:</span>
+            <span style='color:#0000E6; font-weight:bold; '>case</span> <span style='color:#800000; '>'done'</span><span style='color:#800080; '>:</span>
+                $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>TodoEntries<span style='color:#808030; '>.</span>attach<span style='color:#808030; '>(</span>entry<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                entry<span style='color:#808030; '>.</span>Done <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>cmd <span style='color:#808030; '>==</span> <span style='color:#800000; '>'done'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                <span style='color:#0000E6; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
+            <span style='color:#0000E6; font-weight:bold; '>case</span> <span style='color:#800000; '>'delete'</span><span style='color:#800080; '>:</span>
+                $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>TodoEntries<span style='color:#808030; '>.</span>remove<span style='color:#808030; '>(</span>entry<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                <span style='color:#0000E6; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span>
+        $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>saveChanges<span style='color:#808030; '>(</span>updateView<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+
+    <hr class="soften" />
+
+    <section id="wrapper" class="container iblock well">
+        <h2 class="margin10">Choose your prefered provider:</h2>
+        <p id="providerSelection" class="download-info">
+            <button id="btnSql" value="sqLite" class="btn btn-large">WebSQL</button>
+            <button id="btnIdb" value="indexedDb" class="btn btn-large">IndexedDB</button>
+            <button id="btnLocalStorage" value="LocalStore" class="btn btn-large">HTML5 localStorage</button>
+        </p>
+
+        <div>
+            <input id="txtNew" type="text" class="reset-m" />
+            <button id="btnAdd" class="btn btn-small">Add</button>
+            <button id="btnClear" class="btn btn-small">Clear</button>
+        </div>
+        <div id="todoList"></div>
+    </section>
+}

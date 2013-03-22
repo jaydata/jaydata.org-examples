@@ -1,12 +1,22 @@
 ﻿@model JayDataExamples.Controllers.Example
 @{
-    ViewBag.Title = "Example";
+    ViewBag.Title = @Model.Title;
 }
 
-<div class="span4">
-    <img class="bs-icon" src="assets/img/glyphicons/indexeddb.png">
-    <a href="@Model.Link" target="_blank">
-        <h2>Kendo UI Examples</h2>
+<div class="span4 well well-white">
+    <div class="qr-code fright">
+        <img src="/Images/qr_code.png" alt="QR Code"/>
+    </div>
+    @*<img class="bs-icon" src="@Model.Image">*@
+    <a href="@Model.Link">
+        <h2>@Model.Title</h2>
     </a>
-    <p>A collection of JayData examples with <a href="http://www.kendoui.com/" target="_blank">Kendo UI</a>.</p>
+    <p>@Html.Raw(Model.Description)</p>
+
+    <ul class="tags">
+        @foreach (var tag in Model.TagList)
+        { 
+            <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i> @tag</a></li>
+        }
+    </ul>
 </div>

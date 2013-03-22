@@ -1,0 +1,26 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@section Header {
+    @RenderSection("Meta", false)
+    @RenderSection("Includes", true)
+}
+
+@section MainBody {
+    <div class="container">
+        <header class="jumbotron masthead">
+            <div class="inner tacenter">
+                @RenderSection("Title", false)
+                @*@RenderSection("SupportedBrowsers", false)*@
+            </div>
+        </header>
+
+        @RenderSection("Body", false)
+
+        <br />
+
+        <div class="row-fluid">
+            @RenderSection("Description", false)
+        </div>
+    </div>
+}
+

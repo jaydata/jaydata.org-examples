@@ -1,0 +1,113 @@
+﻿@{ Layout = "~/Views/Shared/Layout_KendoUI.cshtml"; }
+
+@section Meta {
+    <meta name="description" content="Listview Kendo UI example">
+}
+
+@section Includes {
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+    <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
+    <script type="text/javascript" src="http://include.jaydata.org/1.2.7/jaydata.js"></script>
+    <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+    <script type="text/javascript" src="http://include.jaydata.org/1.3pre/jaydatamodules/kendo.js"></script>
+    <script type="text/javascript" src="/Scripts/vendor/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/Plugins/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="/Plugins/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="/Plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script type="text/javascript" src="/Plugins/codemirror/mode/javascript/javascript.js"></script>
+
+    <link href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="/Plugins/codemirror/lib/codemirror.css" rel="stylesheet" />
+}
+
+@section Title {
+    <h1>KendoUI filter example</h1>
+    <p>You can play with this example on <a target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>.</p>
+}
+
+@section Body {
+    <hr class="soften" />
+
+    <div class="row-fluid">
+        <div class="span7">
+            <textarea id="code">
+<div id="pager" class="k-pager-wrap"></div>
+<div id="listView"></div>
+
+<script type="text/x-kendo-tmpl" id="template">
+    <div class="product" style="width:230px;float:left">
+        <img style="width:220px;height:150px" src="${ImageUrl}" />
+        <h3>${Name}</h3>
+        <b>${kendo.toString(Price, "c")}</b>
+    </div>
+</script>
+
+<script>
+    var ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
+    $("#listView").kendoListView({
+        dataSource: ds,
+        template: kendo.template($("#template").html())
+    });
+    $("#pager").kendoPager({
+        dataSource: ds
+    }).data("kendoPager");
+</script>
+                </textarea>
+            <script>
+                setTimeout(function () {
+                    CodeMirror.fromTextArea(document.getElementById('code'), {
+                        mode: 'text/html',
+                        lineNumbers: false
+                    });
+                });
+            </script>
+        </div>
+        <div class="span5 app-container">
+            <div id="pager" class="k-pager-wrap"></div>
+            <div id="listView"></div>
+
+            <script type="text/x-kendo-tmpl" id="template">
+                    <span class="product" style="width:230px;float:left">
+                        <img style="width:220px;height:150px" src="${ImageUrl}" />
+                        <h3>${Name}</h3>
+                        <b>${kendo.toString(Price, "c")}</b>
+                    </span>
+            </script>
+            <script>
+                var apiKey = {
+                    appId: '133e0907-f70b-4f11-92b3-dfebc9bdd6db',
+                    // see https://dashboard.jaystack.com for your real application key
+                    applicationKey: 'XXXX',
+                    serviceName: 'mydatabase',
+                    license: 'business'
+                };
+                $data.initService(apiKey)
+                .then(function (mydatabase) {
+                    delete mydatabase.storageProvider.supportedSetOperations.withInlineCount;
+                    var ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
+                    $("#listView").kendoListView({
+                        dataSource: ds,
+                        template: kendo.template($("#template").html())
+                    });
+                    $("#pager").kendoPager({
+                        dataSource: ds
+                    }).data("kendoPager");
+                });
+            </script>
+        </div>
+    </div>
+}
+
+@section Description {
+    <p>
+        As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
+            In this example oData is used. Check the network panel to see the requests.
+            You can create a Kendo Datasource with a simple method: asKendoDataSource() and off you go. If works everywhere where Kendo expects a DataSource, not only
+            with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
+            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.
+    </p>
+}

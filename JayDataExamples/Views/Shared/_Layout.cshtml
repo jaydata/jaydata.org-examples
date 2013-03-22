@@ -2,13 +2,35 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Example site for JayData JavaScript library to create enterprise-grade data centric, HTML5/hybrid applications</title>
+
+    @{
+        //TODO: 2 description tag lesz al-Layout használatánál
+        Html.RenderPartial("_IncludeMeta");
+        Html.RenderPartial("_IncludeStyles");
+        
+        Html.RenderPartial("_IncludeFavIcon");
+        Html.RenderPartial("_IncludeIeFix");
+    }
+
+    @RenderSection("Header", false)
+
     @*<link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
     <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />*@
     @*<script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")"></script>*@
 </head>
 <body>
+    @{
+        Html.RenderPartial("_IncludeTopMenu");
+    }
+
+    @RenderSection("MainBody", false)
+
     @RenderBody()
+
+    @{
+        Html.RenderPartial("_IncludeGoogleAnalytics");
+        Html.RenderPartial("_IncludeScripts");
+    }
 </body>
 </html>
