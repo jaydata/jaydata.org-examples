@@ -8,3 +8,12 @@ $(".well-white .tags .label").live('click', function () {
 
     $(".tags-inline .tags").append("<li><a class='label label-purple' href='javascript:void(0)'>" + this.innerHTML + "<i class='icon-remove'></i></a></li>");
 });
+
+$(".filter-icon").live('click', function (e) {
+    e.preventDefault();
+
+    $(".logo-filter").toggleClass("open");
+
+    $(this).find(".z-up").toggleClass("hidden");
+    $(this).find(".z-down").toggleClass("hidden");
+});
