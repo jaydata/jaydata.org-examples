@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "mixins.less";
+@import "less/mixins.less";
 
 body {
 	font-family: DroidSans, "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -1726,7 +1726,7 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 	100% 	{ -o-transform: translate(0, -10px); }
 }
 
-@filter-height: 200px;
+@filter-height: 500px;
 .logo-filter {
 	.border-box;
 	-webkit-transition: -webkit-transform 0.5s ease-in-out;
@@ -1788,6 +1788,42 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 		}
 	}
 
-	.z-up	{ z-index: 1500; }
+	.z-up		{ z-index: 1500; }
 	.z-down 	{ z-index: 500; }
+
+	p { margin: 0 0 10px; }
 }
+
+.logo-filter-list {
+	margin: 25px auto 0; padding: 0;
+	width: 1045px;
+
+	.logo-list-item {
+		list-style-type: none;
+		display: inline-block;
+		margin: 0 10px 20px;
+
+		-webkit-transition: opacity 0.5s;
+		-moz-transition: opacity 0.5s;
+		-o-transition: opacity 0.5s;
+		transition: opacity 0.5s;
+		opacity: 0.65;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&.big {
+			width: 185px; height: 85px;
+			background: #fff; padding-top: 10px;
+			border: 1px solid #ddd;
+			text-align: center;
+
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+	}
+}
+
+@import "less/logos.less";
