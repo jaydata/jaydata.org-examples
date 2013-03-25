@@ -72,18 +72,18 @@
       <Tags>KendoUI, Northwind, filter, projection</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI Master-detaill grid </Title>
+      <Title>Kendo UI Master-detail grid </Title>
       <Description><![CDATA[This Kendo Grid example uses OData to access the Northwind service.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/prefilter.html</Link>
-      <Tags>KendoUI, Northwind, filter, paging,</Tags>
+      <Tags>KendoUI, Northwind, filter, paging</Tags>
     </Example>
     <Example>
       <Title>Kendo UI Cascading combobox</Title>
       <Description><![CDATA[Cascading combobox with remote Northwind database.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/prefilter.html</Link>
-      <Tags>KendoUI, Northwind, </Tags>
+      <Tags>KendoUI, Northwind </Tags>
     </Example>
     <Example>
       <Title>Sencha Touch 2</Title>
@@ -97,7 +97,7 @@
       <Description><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Kendo_ToDoList</Link>
-      <Tags>jQuery, JayStorm, Knockout, OData,</Tags>
+      <Tags>jQuery, JayStorm, Knockout, OData</Tags>
     </Example>
     <Example>
       <Title>Flower Shop- Windows8 application</Title>
@@ -197,7 +197,7 @@
       </Description>
       <Image>/Images/newsreadernagy.png</Image>
       <Link>RSS/rss.html</Link>
-      <Tags>KnockoutJS,tag2,tag3</Tags>
+      <Tags>RSS</Tags>
     </Example>
     <Example>
       <Title>Form Validation</Title>
@@ -206,16 +206,16 @@
       </Description>
       <Image>/Images/formvalidation.png</Image>
       <Link>Validation/FormValidation.html</Link>
-      <Tags>KnockoutJS,tag2,tag3</Tags>
+      <Tags>jQuery</Tags>
     </Example>
     <Example>
-      <Title>TodoList</Title>
+      <Title>TodoList- multiple providers</Title>
       <Description>
         <![CDATA[Use the same code for multiple providers! See this simple todo-list example running with WebSQL or IndexedDB.]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>/General/ToDoList</Link>
-      <Tags>KnockoutJS,tag1,tag2</Tags>
+      <Tags>WebSQL, IndexedDB, local DB</Tags>
     </Example>
     <Example>
       <Title>Facebook provider example</Title>
@@ -224,16 +224,16 @@
       </Description>
       <Image>/Images/facebook.png</Image>
       <Link>Facebook/Facebook_provider_example.html</Link>
-      <Tags>Facebook,tag1,tag3</Tags>
+      <Tags>Facebook</Tags>
     </Example>
     <Example>
       <Title>Facebook friend list example</Title>
       <Description>
-        <![CDATA[How can I get the current user's friends list.]]>
+        <![CDATA[How can I get the current user's friends list through FQL api.]]>
       </Description>
       <Image>/Images/facebook.png</Image>
       <Link>Facebook/Facebook_provider_friends_example.html</Link>
-      <Tags>Facebook,tag1,tag3</Tags>
+      <Tags>Facebook</Tags>
     </Example>
   </Examples>
 </MainPage>
