@@ -29,6 +29,7 @@ namespace JayDataExamples.Controllers
         [XmlIgnore]
         public List<string> TagList {
             get {
+                if (this.Tags == null) { return new List<string>(); }
                 return this.Tags.Split(',').Select(s => s.Trim()).ToList();
             }
         }

@@ -1,2 +1,18 @@
-﻿<script src="/Scripts/vendor/jquery/jquery-1.7.2.min.js"></script>
+﻿@*<script src="/Scripts/vendor/jquery/jquery-1.7.2.min.js"></script>*@
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="/Scripts/ui.js"></script>
+ <script src="http://include.jaydata.org/jaydata.js"></script>
+<script type="text/javascript">
+    var Example = $data.define("Example", {
+        Title: String,
+        Description: String,
+        Image: String,
+        Link: String,
+        Tags: String,
+        TagList: Object
+    });
+    Example.setStore('default', {
+        provider: 'webApi',
+        dataSource: '/api/Examples'
+    });
+</script>
