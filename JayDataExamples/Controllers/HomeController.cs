@@ -29,6 +29,7 @@ namespace JayDataExamples.Controllers
         [XmlIgnore]
         public List<string> TagList {
             get {
+                if (this.Tags == null) { return new List<string>(); }
                 return this.Tags.Split(',').Select(s => s.Trim()).ToList();
             }
         }
@@ -38,6 +39,7 @@ namespace JayDataExamples.Controllers
         public ActionResult Index()
         {
             ExampleDoc configDoc = null;
+            var server = HttpServerUtility.;
             using (XmlReader reader = XmlReader.Create(Server.MapPath("~/ExampleList.xml")))
             {
                 reader.MoveToContent();
