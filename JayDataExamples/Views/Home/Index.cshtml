@@ -8,9 +8,63 @@
 }
 
 @section MainBody {
-    <div class="container">
+    @*<div class="container2">
         <div class="marketing">
             @Html.DisplayForModel()
         </div>
+    </div>*@
+
+    <div class="container">
+        <div class="marketing">
+            <div class="row-fluid">
+                <div class="span12" data-bind="foreach: $data">
+                    <!--ko template: {name:'row'}-->
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
+    <script type="text/html" id="row">
+        <div class="row-fluid" data-bind="foreach:$data">
+            <!--ko template: {name:'cell'}-->
+            <!--/ko-->
+        </div>
+    </script>
+
+    <script type="text/html" id="cell">
+        <div class="span4 well well-white">
+            <div class="qr-code fright">
+                <img src="/Images/qr_code.png" alt="QR Code" />
+            </div>
+            <a data-bind="attr:{href:Link}">
+                <h2 data-bind="text: Title"></h2>
+            </a>
+            <p data-bind="html: Description"></p>
+
+            <ul class="tags" data-bind="foreach:TagList">
+
+                <li><a class="label label-purple" href="javascript:void(0)" data-bind="text:$data"><i class="icon-tag icon-white"></i></a></li>
+
+            </ul>
+        </div>
+    </script>
+
+    <script type="text/javascript">
+        Example.readAll().then(function (items) {
+            window.Examples = new ko.observableArray([]);
+            var subItems = null;
+            for (var i = 0; i < items.length; i++) {
+                if (subItems == null || subItems != null && subItems().length > 2) {
+                    subItems = new ko.observableArray([]);
+                    Examples.push(subItems);
+                }
+                subItems.push(items[i]);
+            }
+
+            ko.applyBindings(Examples);
+        });
+    </script>
 }
