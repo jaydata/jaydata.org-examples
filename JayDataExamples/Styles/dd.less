@@ -16,7 +16,11 @@ body {
 .browser-list {
     .reset-mp;
     
-    li { list-style-type: none; .iblock; .marginr10; .size(32px, 32px); background-size: 100%; }
+    li { 
+    	list-style-type: none; .iblock; margin-right: 8px; .size(32px, 32px); background-size: 100%; 
+
+    	&:last-child { margin-right: 0; }
+    }
 }
 
 .ui-jqgrid .ui-jqgrid-bdiv { overflow: hidden !important; }
@@ -1488,13 +1492,20 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 }
 
 .box-jsfiddle {
-	display: inline-block; padding: 10px 15px;
-	background: white; border: 1px solid #DDD;
+	display: block; margin: 10px 0 0;
 	font-size: 14px;
 
 	.logo-jsfiddle {
 		margin-left: 3px;
 	}
+
+	.btn {
+		text-shadow: 1px 1px 0 #555;
+	}
+}
+
+.separator {
+	display: inline-block; margin: 0 15px;
 }
 
 .k-content{
@@ -1603,6 +1614,12 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 	}
 }
 
+.detail {
+	.tags {
+		margin: 0 0 10px;
+	}
+}
+
 .search-bar {
 	position: fixed; top: 66px; right: 0; left: 0;
 	z-index: 1500;
@@ -1634,8 +1651,18 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 	}
 }
 
+.header-mini {
+	margin: 15px 0 5px;
+
+	&.first { margin-top: 0; }
+}
+
 .header-desc {
 	margin: 5px 0 20px;
+}
+
+.main-desc {
+	margin: 5px 0 0;
 }
 
 .main-content {
@@ -1696,6 +1723,11 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 	.active {
 		color: #fff;
 	}
+}
+
+.main-title {
+	margin: 0 0 20px;
+	font-size: 40px;
 }
 
 
@@ -1824,6 +1856,32 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 		}
+	}
+}
+
+.purple-list {
+	margin: 0; padding: 0;
+
+	li {
+		list-style-type: none; line-height: 22px;
+		background: url(/Images/li_purple.png) center left no-repeat;
+		margin: 0 0 10px; padding: 0 0 0 20px;
+
+		&:last-child { margin: 0; }
+
+		a {
+			color: #555;
+
+			&:hover { text-decoration: underline; }
+		}
+	}
+}
+
+.row-fluid.new-row { margin: 20px 0 0; }
+
+.widget {
+	.well {
+		padding: 10px 15px;
 	}
 }
 

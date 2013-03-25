@@ -11,21 +11,23 @@
 
 @section MainBody {
     <div class="container">
-        <header class="jumbotron masthead">
-            <div class="inner tacenter">
+        <div class="row-fluid">
+            <div class="span8 detail well well-white">
                 @RenderSection("Title", false)
+
+                @RenderSection("Tags", false)
+
+                @RenderSection("Description", false)
+
+                @RenderSection("SourceCode", false)
             </div>
-        </header>
+            <div class="span4 widget">
+                @RenderSection("SupportedBrowsers", false)
 
-        <div class="row-fluid">
-            @RenderSection("Description", false)
+                @RenderSection("SimilarContents", false)
+            </div>
         </div>
-
-        @*@RenderSection("SupportedBrowsers", false)*@
-
-        <hr class="soften" />
-
-        <div class="row-fluid">
+        <div class="row-fluid new-row">
             <div class="span6 code-source">
                 <div class="bg-dark-grid">
                     <h3>Source Code</h3>
