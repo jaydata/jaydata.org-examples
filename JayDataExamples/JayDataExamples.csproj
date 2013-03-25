@@ -990,6 +990,10 @@
     <Content Include="Views\Shared\Layout_Simple.cshtml" />
     <Content Include="Views\Shared\_IncludeGoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_IncludeScripts.cshtml" />
+    <Content Include="Views\Shared\_IncludeFooter.cshtml" />
+    <Content Include="Views\Shared\_IncludeSearchBar.cshtml" />
+    <Content Include="Views\Shared\_IncludeBreadcrumb.cshtml" />
+    <Content Include="Views\Shared\_IncludeLogoFilter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Fonts\" />
