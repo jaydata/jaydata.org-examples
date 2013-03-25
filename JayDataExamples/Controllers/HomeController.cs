@@ -39,7 +39,6 @@ namespace JayDataExamples.Controllers
         public ActionResult Index()
         {
             ExampleDoc configDoc = null;
-            var server = HttpServerUtility.;
             using (XmlReader reader = XmlReader.Create(Server.MapPath("~/ExampleList.xml")))
             {
                 reader.MoveToContent();
