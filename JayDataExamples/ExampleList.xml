@@ -2,64 +2,184 @@
 <MainPage>
   <Examples>
     <Example>
-      <Title>Kendo UI Examples</Title>
-      <Description><![CDATA[A collection of JayData examples with <a href="http://www.kendoui.com/" target="_blank">Kendo UI</a>.]]></Description>
+      <Title>Listview with Kendo UI </Title>
+      <Description><![CDATA[The simplest way to use JayData and KendoUI is creating a listview. All you need is a JayData context, of course it works with all <a href="http://jaydata.org/providers"providers</a>! In this example OData is used. ]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/index.html</Link>
-      <Tags>KendoUI,tag1,tag2</Tags>
+      <Link>KendoUI/listview.html</Link>
+      <Tags>KendoUI, OData</Tags>
+    </Example>
+    <Example>
+      <Title>Kendo UI listview with filter and sorting </Title>
+      <Description><![CDATA[JayData and KendoUI listview with filtering and sorting. Our datasource supports everything, so paging, filtering and sorting all works.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/listview-filter.html</Link>
+      <Tags>KendoUI, OData, filter, sorting</Tags>
+    </Example>
+    <Example>
+      <Title>Kendo UI grid with filter and sorting </Title>
+      <Description><![CDATA[Simple grid with remote Northwind database using OData. Sorting, paging and filtering works on the server side but with a simple switch they can be one the client side, too.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/grid-readonly.html</Link>
+      <Tags>KendoUI, OData, Northwind, filter, sorting</Tags>
+    </Example>
+    <Example>
+      <Title>Kendo UI grid and CRUD </Title>
+      <Description><![CDATA[Grid with local Nortwind database, and full CRUD (Create Read Update Delete).]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/grid-readwrite.html</Link>
+      <Tags>KendoUI, OData, Northwind, CRUD</Tags>
+    </Example>
+    <Example>
+      <Title>Kendo UI Autocomplete </Title>
+      <Description><![CDATA[This Kendo autocomplete example uses a local Northwind database.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/autocomplete.html</Link>
+      <Tags>KendoUI, Northwind</Tags>
+    </Example>
+    <Example>
+      <Title>MVVM - Remote binding</Title>
+      <Description><![CDATA[MVVM with local Northwind database. This Kendo mvvm example is a copy of the <a href="http://demos.kendoui.com/web/mvvm/remote-binding.html">original KendoUI example</a> ]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/mvvm.html</Link>
+      <Tags>KendoUI, Northwind, CRUD</Tags>
+    </Example>
+    <Example>
+      <Title>Kendo UI simple mobile app</Title>
+      <Description><![CDATA[Mobile app with local Nortwind database.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/mobile-simple.html</Link>
+      <Tags>KendoUI, Northwind</Tags>
+    </Example>
+    <Example>
+      <Title>Kendo UI complex mobile app</Title>
+      <Description><![CDATA[This Kendo UI mobile Tasklist example uses a local database. ]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/mobile-complex.html</Link>
+      <Tags>KendoUI, filter, CRUD</Tags>
+    </Example>
+    <Example>
+      <Title>Kendo UI Bar Chart </Title>
+      <Description><![CDATA[This KendoUI Dataviz bar chart example uses a remote Northwind database.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/bar_chart.html</Link>
+      <Tags>KendoUI, Northwind</Tags>
+    </Example>
+    <Example>
+      <Title>Kendo UI mobile app </Title>
+      <Description><![CDATA[Mobile app with remote Nortwind database. Datasource with filtering, projection and sort.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/prefilter.html</Link>
+      <Tags>KendoUI, Northwind, filter, projection</Tags>
+    </Example>
+    <Example>
+      <Title>Kendo UI Master-detaill grid </Title>
+      <Description><![CDATA[This Kendo Grid example uses OData to access the Northwind service.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/prefilter.html</Link>
+      <Tags>KendoUI, Northwind, filter, paging,</Tags>
+    </Example>
+    <Example>
+      <Title>Kendo UI Cascading combobox</Title>
+      <Description><![CDATA[Cascading combobox with remote Northwind database.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/prefilter.html</Link>
+      <Tags>KendoUI, Northwind, </Tags>
     </Example>
     <Example>
       <Title>Sencha Touch 2</Title>
       <Description><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>/Sencha/index.html</Link>
-      <Tags>Sencha Touch,tag1,tag2,tag3</Tags>
+      <Tags>Sencha Touch, OData</Tags>
     </Example>
     <Example>
       <Title>Flower Shop</Title>
       <Description><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Kendo_ToDoList</Link>
-      <Tags>Windows 8,tag1,tag2</Tags>
+      <Tags>jQuery, JayStorm, Knockout, OData,</Tags>
     </Example>
     <Example>
-      <Title>Knockout.js example</Title>
+      <Title>Flower Shop- Windows8 application</Title>
+      <Description><![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>KendoUI/Kendo_ToDoList</Link>
+      <Tags>jQuery, JayStorm, Knockout, OData, Windows8</Tags>
+    </Example>
+    <Example>
+      <Title>Knockout data binding</Title>
       <Description><![CDATA[Demonstrating easy data binding using JayData and Knockout.js together. Properties of the requested entities will be observable through a single toArray call if ko.observableArray is passed as parameter.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockoutjs/Northwind.html</Link>
-      <Tags>KnockoutJS,tag1,tag2,tag3</Tags>
+      <Tags>Knockout, Northwind</Tags>
     </Example>
     <Example>
       <Title>Knockout Dynamic Queries</Title>
       <Description><![CDATA[With the JayData module for Knockout.js you can achieve fully dynamic queries. Where you use an observable as a query parameter the query will be automatically executed when the observable property changes.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockoutjs/DynamicQueryNorthwind.html</Link>
-      <Tags>KnockoutJS,tag1,tag2,tag3</Tags>
+      <Tags>Knockout, query</Tags>
     </Example>
     <Example>
       <Title>Knockout Dynamic Queries filter</Title>
       <Description><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockoutjs/DynamicQueryFilterNorthwind.html</Link>
-      <Tags>KnockoutJS,tag1,tag3</Tags>
+      <Tags>Knockout, filter, query</Tags>
     </Example>
     <Example>
-      <Title>Yahoo Query language</Title>
+      <Title>YQL- html search</Title>
       <Description>
-        <![CDATA[With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and RSS feeds, pure HTML content and Geo data, almost everything is queryable through the YQL provider. Here you can find some samples to see for yourself!<br /><b class="tdunder">Examples:</b> <a href="YQL/YQLhtml.html" target="_blank">Html search</a>, <a href="YQL/YQLGeo.html" target="_blank">GEO based autocomplete</a>, <a href="YQL/YQLRss.html" target="_blank">RSS example</a>, <a href="YQL/YQLRssAdvanced.html" target="_blank">RSS advanced example</a>, <a href="YQL/YQLfeed.html" target="_blank">Feed</a>]]>
+        <![CDATA[With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and RSS feeds. Almost everything is queryable through the YQL provider.]]>
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLhtml.html</Link>
-      <Tags>Yahoo,tag2,tag3</Tags>
+      <Tags>YQL, query </Tags>
     </Example>
     <Example>
-      <Title>Newsreader</Title>
+      <Title>YQL Geo-based autocomplete</Title>
+      <Description>
+        <![CDATA[With the Yahoo Query Language you can query Geo data. We show you how.]]>
+      </Description>
+      <Image>/Images/yqlnagy.png</Image>
+      <Link>YQL/YQLGeo.html</Link>
+      <Tags>YQL, GEO </Tags>
+    </Example>
+    <Example>
+      <Title>YQL simple RSS reader </Title>
+      <Description>
+        <![CDATA[YQL RSS reader with filter]]>
+      </Description>
+      <Image>/Images/yqlnagy.png</Image>
+      <Link>YQL/YQLRss.html</Link>
+      <Tags>YQL, RSS, filter </Tags>
+    </Example>
+    <Example>
+      <Title>YQL advanced RSS reader</Title>
+      <Description>
+        <![CDATA[Reading from RSS with Category where Title contains JavaScript]]>
+      </Description>
+      <Image>/Images/yqlnagy.png</Image>
+      <Link>YQL/YQLRssAdvanced.html</Link>
+      <Tags>YQL, RSS</Tags>
+    </Example>
+    <Example>
+      <Title>YQL feed reader </Title>
+      <Description>
+        <![CDATA[Read all contents from a given feed.]]>
+      </Description>
+      <Image>/Images/yqlnagy.png</Image>
+      <Link>YQL/YQLFeed.html</Link>
+      <Tags>YQL, </Tags>
+    </Example>
+    <Example>
+      <Title>Newsreader CRUD</Title>
       <Description>
         <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way. The UI is utilizing Twitter's Bootstrap and jQuery's template engine.]]>
       </Description>
       <Image>/Images/newsreadernagy.png</Image>
       <Link>NewsReader/index.html</Link>
-      <Tags>KnockoutJS,tag1,tag2</Tags>
+      <Tags>OData, jQuery, CRUD</Tags>
     </Example>
     <Example>
       <Title>Planets</Title>
@@ -68,7 +188,7 @@
       </Description>
       <Image>/Images/planetsnagy.png</Image>
       <Link>Planets/index.html</Link>
-      <Tags>KnockoutJS,tag1,tag3</Tags>
+      <Tags>WebSQL</Tags>
     </Example>
     <Example>
       <Title>Advanced RSS using custom provider</Title>
