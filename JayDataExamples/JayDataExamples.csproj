@@ -486,6 +486,7 @@
     <Content Include="Plugins\codemirror\theme\vibrant-ink.css" />
     <Content Include="Plugins\codemirror\theme\xq-dark.css" />
     <Content Include="Scripts\example\todo.js" />
+    <Content Include="Scripts\indexModel.js" />
     <Content Include="Scripts\ui.js" />
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="Scripts\vendor\datajs-1.0.3.js" />

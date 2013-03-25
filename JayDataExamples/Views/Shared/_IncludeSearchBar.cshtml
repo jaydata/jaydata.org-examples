@@ -3,16 +3,18 @@
         <div class="row-fluid">
             <div class="span12">
                 <div class="block-inline input-append">
-                    <input class="span2" id="q" name="q" placeholder="Search here..." type="text" value="" autofocus />
-                    <button class="btn btn-primary" type="submit"><i class="icon-search icon-white"></i></button>
+                    <input data-bind="value:qStr" class="span2" id="q" name="q" placeholder="Search here..." type="text" autofocus />
+                    <button class="btn btn-primary" type="submit" data-bind="click: function(){exampleSite.filter();}"><i class="icon-search icon-white"></i></button>
                 </div>
 
                 <div class="block-inline tags-inline">
                     <ul class="tags block-inline">
-                        <li><a class="label label-purple inactive" href="javascript:void(0)"><i class="icon-tags icon-white"></i>All</a></li>
-                        <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>KnockoutJS <i class="icon-remove"></i></a></li>
-                        <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>tag1 <i class="icon-remove"></i></a></li>
-                        <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>tag3 <i class="icon-remove"></i></a></li>
+                        <li><a data-bind="click: $root.removeTags, attr:{class:SelectedTags().length>0?'label label-purple inactive':'label label-purple'}" href="javascript:void(0)"><i class="icon-tags icon-white"></i>All</a></li>
+                        <!--ko foreach: SelectedTags-->
+                        <li><a data-bind="click: $root.removeTag" class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i><span data-bind="text:$data"></span> <i class="icon-remove"></i></a></li>
+                        <!--/ko-->
+                        @*<li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>tag1 <i class="icon-remove"></i></a></li>
+                        <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>tag3 <i class="icon-remove"></i></a></li>*@
                     </ul>
                 </div>
             </div>

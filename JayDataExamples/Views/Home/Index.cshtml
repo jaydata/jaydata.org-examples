@@ -17,7 +17,7 @@
     <div class="container">
         <div class="marketing">
             <div class="row-fluid">
-                <div class="span12" data-bind="foreach: $data">
+                <div class="span12" data-bind="foreach: $data.VisibleData">
                     <!--ko template: {name:'row'}-->
                     <!--/ko-->
                 </div>
@@ -43,28 +43,16 @@
                 <h2 data-bind="text: Title"></h2>
             </a>
             <p data-bind="html: Description"></p>
-
             <ul class="tags" data-bind="foreach:TagList">
-
-                <li><a class="label label-purple" href="javascript:void(0)" data-bind="text:$data"><i class="icon-tag icon-white"></i></a></li>
-
+                <li><a class="label label-purple" href="javascript:void(0)" data-bind="text:$data, click:$root.addTags"><i class="icon-tag icon-white"></i></a></li>
             </ul>
         </div>
     </script>
 
     <script type="text/javascript">
-        Example.readAll().then(function (items) {
-            window.Examples = new ko.observableArray([]);
-            var subItems = null;
-            for (var i = 0; i < items.length; i++) {
-                if (subItems == null || subItems != null && subItems().length > 2) {
-                    subItems = new ko.observableArray([]);
-                    Examples.push(subItems);
-                }
-                subItems.push(items[i]);
-            }
-
-            ko.applyBindings(Examples);
+        var exampleSite = new ExampleSite();
+        exampleSite.initialize().then(function () {
+            ko.applyBindings(exampleSite.Model);
         });
     </script>
 }

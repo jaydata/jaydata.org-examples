@@ -1,18 +1,6 @@
 ﻿<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="~/Scripts/vendor/knockout-2.1.0.js"></script>
 <script src="/Scripts/ui.js"></script>
- <script src="http://include.jaydata.org/jaydata.js"></script>
-<script type="text/javascript">
-    var Example = $data.define("Example", {
-        Title: String,
-        Description: String,
-        Image: String,
-        Link: String,
-        Tags: String,
-        TagList: Object
-    });
-    Example.setStore('default', {
-        provider: 'webApi',
-        dataSource: '/api/Examples'
-    });
-</script>
+<script src="http://include.jaydata.org/jaydata.js"></script>
+<script src="http://include.jaydata.org/jaydatamodules/knockout.js"></script>
+<script src="~/Scripts/indexModel.js"></script>
