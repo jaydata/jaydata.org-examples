@@ -206,6 +206,10 @@
     <Content Include="FlowerShop\Images\bg_direction_nav.png" />
     <Content Include="FlowerShop\index.html" />
     <Content Include="FlowerShop\Styles\mixins.css" />
+    <Content Include="Fonts\Droid\droidsans-bold.svg" />
+    <Content Include="Fonts\Droid\droidsans.svg" />
+    <Content Include="Fonts\Enzo\enzoot-bold.svg" />
+    <Content Include="Fonts\Enzo\enzoot-medi.svg" />
     <Content Include="Images\browsers.png" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon_jaydata.png" />
@@ -504,6 +508,18 @@
     <Content Include="Download\FlowerShop.apk" />
     <Content Include="Download\FlowerShop.zip" />
     <Content Include="Download\TypeScriptExample.zip" />
+    <Content Include="Fonts\Droid\droidsans-bold.eot" />
+    <Content Include="Fonts\Droid\droidsans-bold.ttf" />
+    <Content Include="Fonts\Droid\droidsans-bold.woff" />
+    <Content Include="Fonts\Droid\droidsans.eot" />
+    <Content Include="Fonts\Droid\droidsans.ttf" />
+    <Content Include="Fonts\Droid\droidsans.woff" />
+    <Content Include="Fonts\Enzo\enzoot-bold.eot" />
+    <Content Include="Fonts\Enzo\enzoot-bold.ttf" />
+    <Content Include="Fonts\Enzo\enzoot-bold.woff" />
+    <Content Include="Fonts\Enzo\enzoot-medi.eot" />
+    <Content Include="Fonts\Enzo\enzoot-medi.ttf" />
+    <Content Include="Fonts\Enzo\enzoot-medi.woff" />
     <None Include="Scripts\vendor\jaydata-vsdoc.js" />
     <Content Include="Scripts\vendor\jaydata.js" />
     <Content Include="Scripts\vendor\jaydata.min.js" />
@@ -554,6 +570,7 @@
     <Content Include="Styles\img\logo_jaydata_dark.png" />
     <Content Include="Styles\img\logo_kendoui.png" />
     <Content Include="Styles\img\shipping.png" />
+    <Content Include="Styles\less\logos.css" />
     <Content Include="YQL\YQLWithRails.html" />
     <Content Include="NodeJs\logger.js" />
     <Content Include="NodeJs\newsreader.js" />
@@ -995,9 +1012,7 @@
     <Content Include="Views\Shared\_IncludeBreadcrumb.cshtml" />
     <Content Include="Views\Shared\_IncludeLogoFilter.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Fonts\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Sencha\Core\resources\sass\android.scss" />
     <Content Include="Sencha\Core\resources\sass\apple.scss" />
@@ -1054,7 +1069,8 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Styles\dd.less" />
-    <None Include="Styles\mixins.less" />
+    <Content Include="Styles\less\logos.less" />
+    <Content Include="Styles\less\mixins.less" />
     <None Include="ToDoListMobile\JayDataTodolist-debug.apk" />
   </ItemGroup>
   <ItemGroup>
