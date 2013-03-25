@@ -15,7 +15,8 @@
     <script id="todoEntryTemplate" type="text/html">
         <div class="todoEntry row clear margin10">
             <div class="fleft iblock marginr10" style="min-width: 350px;">
-                <label>${Value }</label></div>
+                <label>${Value }</label>
+            </div>
             {{if Done}}
             <button value="undone" class="btn btn-small btn-inverse tshadow">Undone</button>
             {{else}}
@@ -27,61 +28,81 @@
 }
 
 @section Title {
-    <h1>ToDo List Example</h1>
+    <h1 class="main-title">ToDo List Example</h1>
 }
 
-@*@section SupportedBrowsers {
-    <div class="clear row iblock mauto">
-        <div class="span5">
-            <h3 class="marginb5">Supported browsers (WebSQL):</h3>
-            <ul class="browser-list">
-                <li class="browser chrome" title="Google Chrome 12+"></li>
-                <li class="browser opera" title="Opera 10+"></li>
-                <li class="browser safari" title="Safari 4+"></li>
-                <li class="browser blackberry" title="Blackberry 2+"></li>
-                <li class="browser wp" title="Windows Phone 7.5+"></li>
-                <li class="browser ios" title="iOS 4+"></li>
-                <li class="browser android" title="Android 2.2+"></li>
-            </ul>
-        </div>
-        <div class="span5">
-            <h3 class="marginb5">Supported browsers (IndexedDB):</h3>
-            <ul class="browser-list">
-                <li class="browser ie" title="Internet Explorer 10+"></li>
-                <li class="browser firefox" title="Firefox 10+"></li>
-                <li class="browser chrome" title="Google Chrome 12+"></li>
-                <li class="browser wp" title="Windows Phone 8+"></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="clear row iblock mauto">
-        <div class="span5">
-            <h3 class="marginb5">Supported browsers (HTML5 localStorage):</h3>
-            <ul class="browser-list">
-                <li class="browser chrome" title="Google Chrome"></li>
-                <li class="browser opera" title="Opera"></li>
-                <li class="browser safari" title="Safari"></li>
-                <li class="browser blackberry" title="Blackberry 2+"></li>
-                <li class="browser wp" title="Windows Phone"></li>
-                <li class="browser ios" title="iOS"></li>
-                <li class="browser android" title="Android"></li>
-            </ul>
-        </div>
-    </div>
-}*@
+@section Tags {
+    <ul class="tags">
+        <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>Windows 8</a></li>
+        <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>tag1</a></li>
+        <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>tag2</a></li>
+    </ul>
+}
 
 @section Description {
-    <p class="header-desc">
+    <p class="main-desc">
         Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: <u style="color: Black;">WebSQL</u>,  <u style="color: Black;">Indexed DB</u> and <u style="color: Black;">HTML5 localStorage</u>.
         As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
-            In this example oData is used. Check the network panel to see the requests.
-            You can create a Kendo Datasource with a simple method: asKendoDataSource() and off you go. If works everywhere where Kendo expects a DataSource, not only
-            with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
-            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.
     </p>
-    <div class="tacenter">
-        <div class="box-jsfiddle">You can play with this example on <a class="logo-jsfiddle blue" target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a></div>
+}
+
+@section SupportedBrowsers {
+    <div class="bg-dark-grid">
+        <h3>Supported Browsers</h3>
+    </div>
+    <div class="well well-white">
+        <h3 class="header-mini first">WebSQL:</h3>
+        <ul class="browser-list">
+            <li class="browser chrome" title="Google Chrome 12+"></li>
+            <li class="browser opera" title="Opera 10+"></li>
+            <li class="browser safari" title="Safari 4+"></li>
+            <li class="browser blackberry" title="Blackberry 2+"></li>
+            <li class="browser wp" title="Windows Phone 7.5+"></li>
+            <li class="browser ios" title="iOS 4+"></li>
+            <li class="browser android" title="Android 2.2+"></li>
+        </ul>
+        @*        <h3 class="header-mini">IndexedDB:</h3>
+        <ul class="browser-list">
+            <li class="browser ie" title="Internet Explorer 10+"></li>
+            <li class="browser firefox" title="Firefox 10+"></li>
+            <li class="browser chrome" title="Google Chrome 12+"></li>
+            <li class="browser wp" title="Windows Phone 8+"></li>
+        </ul>
+        <h3 class="header-mini">HTML5 localStorage:</h3>
+        <ul class="browser-list">
+            <li class="browser chrome" title="Google Chrome"></li>
+            <li class="browser opera" title="Opera"></li>
+            <li class="browser safari" title="Safari"></li>
+            <li class="browser blackberry" title="Blackberry 2+"></li>
+            <li class="browser wp" title="Windows Phone"></li>
+            <li class="browser ios" title="iOS"></li>
+            <li class="browser android" title="Android"></li>
+        </ul>*@
+    </div>
+}
+
+@section SourceCode {
+    <div class="box-jsfiddle fright">
+        <a class="logo-jsfiddle blue" target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>
+
+        <span class="separator">or</span>
+
+        <a href="#" class="btn btn-primary">Download</a>
+    </div>
+}
+
+@section SimilarContents {
+    <div class="bg-dark-grid">
+        <h3>Related Contents</h3>
+    </div>
+    <div class="well well-white">
+        <ul class="purple-list">
+            <li><a href="#">Understand JayData in 7 simple steps</a></li>
+            <li><a href="#">What's next in JayData?</a></li>
+            <li><a href="#">Understand JayData in 7 simple steps</a></li>
+            <li><a href="#">What's next in JayData?</a></li>
+            <li><a href="#">Understand JayData in 7 simple steps</a></li>
+        </ul>
     </div>
 }
 
@@ -120,7 +141,7 @@
     <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 </pre>
 
-    
+
 }
 
 @section CodeRunning {
