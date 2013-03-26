@@ -30,10 +30,10 @@
       <Tags>KendoUI, OData, Northwind, CRUD</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI Autocomplete </Title>
+      <Title>Kendo UI Autocomplete (moved)</Title>
       <Description><![CDATA[This Kendo autocomplete example uses a local Northwind database.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/autocomplete.html</Link>
+      <Link>KendoUI/Autocomplete</Link>
       <Tags>KendoUI, Northwind</Tags>
     </Example>
     <Example>
