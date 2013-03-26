@@ -2,10 +2,10 @@
 <MainPage>
   <Examples>
     <Example>
-      <Title>Listview with Kendo UI </Title>
+      <Title>Listview with Kendo UI (moved)</Title>
       <Description><![CDATA[The simplest way to use JayData and KendoUI is creating a listview. All you need is a JayData context, of course it works with all <a href="http://jaydata.org/providers"providers</a>! In this example OData is used. ]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/listview.html</Link>
+      <Link>KendoUI/ListView</Link>
       <Tags>KendoUI, OData</Tags>
     </Example>
     <Example>
