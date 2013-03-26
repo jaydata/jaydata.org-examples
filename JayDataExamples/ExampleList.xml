@@ -37,10 +37,10 @@
       <Tags>KendoUI, Northwind</Tags>
     </Example>
     <Example>
-      <Title>MVVM - Remote binding</Title>
+      <Title>Kendo MVVM - Remote binding (moved)</Title>
       <Description><![CDATA[MVVM with local Northwind database. This Kendo mvvm example is a copy of the <a href="http://demos.kendoui.com/web/mvvm/remote-binding.html">original KendoUI example</a> ]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/mvvm.html</Link>
+      <Link>KendoUI/MVVM</Link>
       <Tags>KendoUI, Northwind, CRUD</Tags>
     </Example>
     <Example>
