@@ -9,10 +9,10 @@
       <Tags>KendoUI, OData</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI listview with filter</Title>
+      <Title>Kendo UI listview with filter (moved)</Title>
       <Description><![CDATA[JayData and KendoUI listview with filtering and sorting. Our datasource supports everything, so paging, filtering and sorting all works.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/listview-filter.html</Link>
+      <Link>KendoUI/ListView_Filter</Link>
       <Tags>KendoUI, OData, filter, sort</Tags>
     </Example>
     <Example>

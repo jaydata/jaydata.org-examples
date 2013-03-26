@@ -16,6 +16,7 @@ namespace JayDataExamples.Controllers
         {
             get
             {
+                ExampleDoc._instance = null;
                 if (ExampleDoc._instance == null)
                 {
                     using (XmlReader reader = XmlReader.Create(HttpContext.Current.Server.MapPath("~/ExampleList.xml")))
