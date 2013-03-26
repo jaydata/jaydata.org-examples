@@ -1012,6 +1012,7 @@
     <Content Include="Views\Shared\_IncludeSearchBar.cshtml" />
     <Content Include="Views\Shared\_IncludeBreadcrumb.cshtml" />
     <Content Include="Views\Shared\_IncludeLogoFilter.cshtml" />
+    <Content Include="Views\KendoUI\BarChart.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -61,7 +61,7 @@
       <Title>Kendo UI Bar Chart </Title>
       <Description><![CDATA[This KendoUI Dataviz bar chart example uses a remote Northwind database.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/bar_chart.html</Link>
+      <Link>KendoUI/BarChart</Link>
       <Tags>KendoUI, Northwind</Tags>
     </Example>
     <Example>
