@@ -1088,6 +1088,1096 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0BBEC998-E592-4D98-A1AB-24AE9C7EDD14}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JayDataExamples</RootNamespace>
+    <AssemblyName>JayDataExamples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KendoUIController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="KendoUI\Northwind.svc.cs">
+      <DependentUpon>Northwind.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ToDoList\Models\Reminder.cs" />
+    <Compile Include="ToDoList\Models\ToDoEntry.cs" />
+    <Compile Include="ToDoList\Models\ToDoListContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToDoList\Services\ToDoListService.svc.cs">
+      <DependentUpon>ToDoListService.svc</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\newsReader.sdf" />
+    <Content Include="App_Data\Northwind.sdf" />
+    <Content Include="App_Data\ToDoList.sdf" />
+    <Content Include="Content\css\errorhandler.css" />
+    <Content Include="Content\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\css\ui-lightness\jquery-ui-1.8.19.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="download.html" />
+    <Content Include="ExampleList.xml" />
+    <Content Include="Facebook\Facebook_provider_example.html" />
+    <Content Include="Facebook\Facebook_provider_friends_example.html" />
+    <Content Include="FlowerShop\Images\ajax-loader.gif" />
+    <Content Include="FlowerShop\Images\bg_direction_nav.png" />
+    <Content Include="FlowerShop\index.html" />
+    <Content Include="FlowerShop\Styles\mixins.css" />
+    <Content Include="Fonts\Droid\droidsans-bold.svg" />
+    <Content Include="Fonts\Droid\droidsans.svg" />
+    <Content Include="Fonts\Enzo\enzoot-bold.svg" />
+    <Content Include="Fonts\Enzo\enzoot-medi.svg" />
+    <Content Include="Images\browsers.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\favicon_jaydata.png" />
+    <Content Include="Images\formvalidation.png" />
+    <Content Include="Images\glyphicons-halflings-white.png" />
+    <Content Include="Images\glyphicons-halflings.png" />
+    <Content Include="Images\glyphicons_009_magic.png" />
+    <Content Include="Images\glyphicons_042_group.png" />
+    <Content Include="Images\glyphicons_079_podium.png" />
+    <Content Include="Images\glyphicons_082_roundabout.png" />
+    <Content Include="Images\glyphicons_155_show_thumbnails.png" />
+    <Content Include="Images\glyphicons_163_iphone.png" />
+    <Content Include="Images\glyphicons_214_resize_small.png" />
+    <Content Include="Images\glyphicons_266_book_open.png" />
+    <Content Include="Images\icon-css3.png" />
+    <Content Include="Images\icon-github.png" />
+    <Content Include="Images\icon-html5.png" />
+    <Content Include="Images\icon-twitter.png" />
+    <Content Include="Images\indexeddb.png" />
+    <Content Include="Images\iphone.png" />
+    <Content Include="Images\logo_jaydata_dark.png" />
+    <Content Include="Images\logo_jaydata_light.png" />
+    <Content Include="Images\logo_kendoui.png" />
+    <Content Include="Images\mainnav.png" />
+    <Content Include="Images\newsreader.png" />
+    <Content Include="Images\newsreadernagy.png" />
+    <Content Include="Images\planetsnagy.png" />
+    <Content Include="Images\qr_code.png" />
+    <Content Include="Images\searchbar-bg.png" />
+    <Content Include="Images\shipping.png" />
+    <Content Include="Images\todolist.png" />
+    <Content Include="Images\yqlnagy.png" />
+    <Content Include="KendoUI\autocomplete.html" />
+    <Content Include="KendoUI\cascadingcombobox.html" />
+    <Content Include="KendoUI\chart.html" />
+    <Content Include="KendoUI\grid-readonly.html" />
+    <Content Include="KendoUI\grid-readwrite.html" />
+    <Content Include="KendoUI\Index.html" />
+    <Content Include="KendoUI\listview-filter.html" />
+    <Content Include="KendoUI\listview.html" />
+    <Content Include="KendoUI\masterdetail.html" />
+    <Content Include="KendoUI\mobile-complex.html" />
+    <Content Include="KendoUI\mobile-simple.html" />
+    <Content Include="KendoUI\mvvm.html" />
+    <Content Include="KendoUI\Northwind.svc" />
+    <Content Include="KendoUI\orig.html" />
+    <Content Include="KendoUI\prefilter.html" />
+    <Content Include="Plugins\codemirror\.gitattributes" />
+    <Content Include="Plugins\codemirror\.gitignore" />
+    <Content Include="Plugins\codemirror\addon\dialog\dialog.css" />
+    <Content Include="Plugins\codemirror\addon\dialog\dialog.js" />
+    <Content Include="Plugins\codemirror\addon\edit\closetag.js" />
+    <Content Include="Plugins\codemirror\addon\edit\continuecomment.js" />
+    <Content Include="Plugins\codemirror\addon\edit\continuelist.js" />
+    <Content Include="Plugins\codemirror\addon\edit\matchbrackets.js" />
+    <Content Include="Plugins\codemirror\addon\fold\collapserange.js" />
+    <Content Include="Plugins\codemirror\addon\fold\foldcode.js" />
+    <Content Include="Plugins\codemirror\addon\format\formatting.js" />
+    <Content Include="Plugins\codemirror\addon\hint\javascript-hint.js" />
+    <Content Include="Plugins\codemirror\addon\hint\pig-hint.js" />
+    <Content Include="Plugins\codemirror\addon\hint\python-hint.js" />
+    <Content Include="Plugins\codemirror\addon\hint\simple-hint.css" />
+    <Content Include="Plugins\codemirror\addon\hint\simple-hint.js" />
+    <Content Include="Plugins\codemirror\addon\hint\xml-hint.js" />
+    <Content Include="Plugins\codemirror\addon\mode\loadmode.js" />
+    <Content Include="Plugins\codemirror\addon\mode\multiplex.js" />
+    <Content Include="Plugins\codemirror\addon\mode\overlay.js" />
+    <Content Include="Plugins\codemirror\addon\runmode\colorize.js" />
+    <Content Include="Plugins\codemirror\addon\runmode\runmode-standalone.js" />
+    <Content Include="Plugins\codemirror\addon\runmode\runmode.js" />
+    <Content Include="Plugins\codemirror\addon\runmode\runmode.node.js" />
+    <Content Include="Plugins\codemirror\addon\search\match-highlighter.js" />
+    <Content Include="Plugins\codemirror\addon\search\search.js" />
+    <Content Include="Plugins\codemirror\addon\search\searchcursor.js" />
+    <Content Include="Plugins\codemirror\demo\activeline.html" />
+    <Content Include="Plugins\codemirror\demo\btree.html" />
+    <Content Include="Plugins\codemirror\demo\changemode.html" />
+    <Content Include="Plugins\codemirror\demo\closetag.html" />
+    <Content Include="Plugins\codemirror\demo\collapserange.html" />
+    <Content Include="Plugins\codemirror\demo\complete.html" />
+    <Content Include="Plugins\codemirror\demo\emacs.html" />
+    <Content Include="Plugins\codemirror\demo\folding.html" />
+    <Content Include="Plugins\codemirror\demo\formatting.html" />
+    <Content Include="Plugins\codemirror\demo\fullscreen.html" />
+    <Content Include="Plugins\codemirror\demo\loadmode.html" />
+    <Content Include="Plugins\codemirror\demo\marker.html" />
+    <Content Include="Plugins\codemirror\demo\matchhighlighter.html" />
+    <Content Include="Plugins\codemirror\demo\multiplex.html" />
+    <Content Include="Plugins\codemirror\demo\mustache.html" />
+    <Content Include="Plugins\codemirror\demo\preview.html" />
+    <Content Include="Plugins\codemirror\demo\resize.html" />
+    <Content Include="Plugins\codemirror\demo\runmode.html" />
+    <Content Include="Plugins\codemirror\demo\search.html" />
+    <Content Include="Plugins\codemirror\demo\theme.html" />
+    <Content Include="Plugins\codemirror\demo\variableheight.html" />
+    <Content Include="Plugins\codemirror\demo\vim.html" />
+    <Content Include="Plugins\codemirror\demo\visibletabs.html" />
+    <Content Include="Plugins\codemirror\demo\widget.html" />
+    <Content Include="Plugins\codemirror\demo\xmlcomplete.html" />
+    <Content Include="Plugins\codemirror\doc\baboon.png" />
+    <Content Include="Plugins\codemirror\doc\baboon_vector.svg" />
+    <Content Include="Plugins\codemirror\doc\compress.html" />
+    <Content Include="Plugins\codemirror\doc\docs.css" />
+    <Content Include="Plugins\codemirror\doc\internals.html" />
+    <Content Include="Plugins\codemirror\doc\manual.html" />
+    <Content Include="Plugins\codemirror\doc\modes.html" />
+    <Content Include="Plugins\codemirror\doc\oldrelease.html" />
+    <Content Include="Plugins\codemirror\doc\realworld.html" />
+    <Content Include="Plugins\codemirror\doc\reporting.html" />
+    <Content Include="Plugins\codemirror\doc\upgrade_v2.2.html" />
+    <Content Include="Plugins\codemirror\doc\upgrade_v3.html" />
+    <Content Include="Plugins\codemirror\index.html" />
+    <Content Include="Plugins\codemirror\keymap\emacs.js" />
+    <Content Include="Plugins\codemirror\keymap\vim.js" />
+    <Content Include="Plugins\codemirror\lib\codemirror.css" />
+    <Content Include="Plugins\codemirror\lib\codemirror.js" />
+    <Content Include="Plugins\codemirror\mode\apl\apl.js" />
+    <Content Include="Plugins\codemirror\mode\apl\index.html" />
+    <Content Include="Plugins\codemirror\mode\asterisk\asterisk.js" />
+    <Content Include="Plugins\codemirror\mode\asterisk\index.html" />
+    <Content Include="Plugins\codemirror\mode\clike\clike.js" />
+    <Content Include="Plugins\codemirror\mode\clike\index.html" />
+    <Content Include="Plugins\codemirror\mode\clike\scala.html" />
+    <Content Include="Plugins\codemirror\mode\clojure\clojure.js" />
+    <Content Include="Plugins\codemirror\mode\clojure\index.html" />
+    <Content Include="Plugins\codemirror\mode\coffeescript\coffeescript.js" />
+    <Content Include="Plugins\codemirror\mode\coffeescript\index.html" />
+    <Content Include="Plugins\codemirror\mode\commonlisp\commonlisp.js" />
+    <Content Include="Plugins\codemirror\mode\commonlisp\index.html" />
+    <Content Include="Plugins\codemirror\mode\css\css.js" />
+    <Content Include="Plugins\codemirror\mode\css\index.html" />
+    <Content Include="Plugins\codemirror\mode\css\test.js" />
+    <Content Include="Plugins\codemirror\mode\diff\diff.js" />
+    <Content Include="Plugins\codemirror\mode\diff\index.html" />
+    <Content Include="Plugins\codemirror\mode\d\d.js" />
+    <Content Include="Plugins\codemirror\mode\d\index.html" />
+    <Content Include="Plugins\codemirror\mode\ecl\ecl.js" />
+    <Content Include="Plugins\codemirror\mode\ecl\index.html" />
+    <Content Include="Plugins\codemirror\mode\erlang\erlang.js" />
+    <Content Include="Plugins\codemirror\mode\erlang\index.html" />
+    <Content Include="Plugins\codemirror\mode\gfm\gfm.js" />
+    <Content Include="Plugins\codemirror\mode\gfm\index.html" />
+    <Content Include="Plugins\codemirror\mode\gfm\test.js" />
+    <Content Include="Plugins\codemirror\mode\go\go.js" />
+    <Content Include="Plugins\codemirror\mode\go\index.html" />
+    <Content Include="Plugins\codemirror\mode\groovy\groovy.js" />
+    <Content Include="Plugins\codemirror\mode\groovy\index.html" />
+    <Content Include="Plugins\codemirror\mode\haskell\haskell.js" />
+    <Content Include="Plugins\codemirror\mode\haskell\index.html" />
+    <Content Include="Plugins\codemirror\mode\haxe\haxe.js" />
+    <Content Include="Plugins\codemirror\mode\haxe\index.html" />
+    <Content Include="Plugins\codemirror\mode\htmlembedded\htmlembedded.js" />
+    <Content Include="Plugins\codemirror\mode\htmlembedded\index.html" />
+    <Content Include="Plugins\codemirror\mode\htmlmixed\htmlmixed.js" />
+    <Content Include="Plugins\codemirror\mode\htmlmixed\index.html" />
+    <Content Include="Plugins\codemirror\mode\http\http.js" />
+    <Content Include="Plugins\codemirror\mode\http\index.html" />
+    <Content Include="Plugins\codemirror\mode\javascript\index.html" />
+    <Content Include="Plugins\codemirror\mode\javascript\javascript.js" />
+    <Content Include="Plugins\codemirror\mode\javascript\typescript.html" />
+    <Content Include="Plugins\codemirror\mode\jinja2\index.html" />
+    <Content Include="Plugins\codemirror\mode\jinja2\jinja2.js" />
+    <Content Include="Plugins\codemirror\mode\less\index.html" />
+    <Content Include="Plugins\codemirror\mode\less\less.js" />
+    <Content Include="Plugins\codemirror\mode\lua\index.html" />
+    <Content Include="Plugins\codemirror\mode\lua\lua.js" />
+    <Content Include="Plugins\codemirror\mode\markdown\index.html" />
+    <Content Include="Plugins\codemirror\mode\markdown\markdown.js" />
+    <Content Include="Plugins\codemirror\mode\markdown\test.js" />
+    <Content Include="Plugins\codemirror\mode\meta.js" />
+    <Content Include="Plugins\codemirror\mode\mysql\index.html" />
+    <Content Include="Plugins\codemirror\mode\mysql\mysql.js" />
+    <Content Include="Plugins\codemirror\mode\ntriples\index.html" />
+    <Content Include="Plugins\codemirror\mode\ntriples\ntriples.js" />
+    <Content Include="Plugins\codemirror\mode\ocaml\index.html" />
+    <Content Include="Plugins\codemirror\mode\ocaml\ocaml.js" />
+    <Content Include="Plugins\codemirror\mode\pascal\index.html" />
+    <Content Include="Plugins\codemirror\mode\pascal\pascal.js" />
+    <Content Include="Plugins\codemirror\mode\perl\index.html" />
+    <Content Include="Plugins\codemirror\mode\perl\perl.js" />
+    <Content Include="Plugins\codemirror\mode\php\index.html" />
+    <Content Include="Plugins\codemirror\mode\php\php.js" />
+    <Content Include="Plugins\codemirror\mode\pig\index.html" />
+    <Content Include="Plugins\codemirror\mode\pig\pig.js" />
+    <Content Include="Plugins\codemirror\mode\plsql\index.html" />
+    <Content Include="Plugins\codemirror\mode\plsql\plsql.js" />
+    <Content Include="Plugins\codemirror\mode\properties\index.html" />
+    <Content Include="Plugins\codemirror\mode\properties\properties.js" />
+    <Content Include="Plugins\codemirror\mode\python\index.html" />
+    <Content Include="Plugins\codemirror\mode\python\LICENSE.txt" />
+    <Content Include="Plugins\codemirror\mode\python\python.js" />
+    <Content Include="Plugins\codemirror\mode\rpm\changes\changes.js" />
+    <Content Include="Plugins\codemirror\mode\rpm\changes\index.html" />
+    <Content Include="Plugins\codemirror\mode\rpm\spec\index.html" />
+    <Content Include="Plugins\codemirror\mode\rpm\spec\spec.css" />
+    <Content Include="Plugins\codemirror\mode\rpm\spec\spec.js" />
+    <Content Include="Plugins\codemirror\mode\rst\index.html" />
+    <Content Include="Plugins\codemirror\mode\rst\rst.js" />
+    <Content Include="Plugins\codemirror\mode\ruby\index.html" />
+    <Content Include="Plugins\codemirror\mode\ruby\ruby.js" />
+    <Content Include="Plugins\codemirror\mode\rust\index.html" />
+    <Content Include="Plugins\codemirror\mode\rust\rust.js" />
+    <Content Include="Plugins\codemirror\mode\r\index.html" />
+    <Content Include="Plugins\codemirror\mode\r\r.js" />
+    <Content Include="Plugins\codemirror\mode\sass\index.html" />
+    <Content Include="Plugins\codemirror\mode\sass\sass.js" />
+    <Content Include="Plugins\codemirror\mode\scheme\index.html" />
+    <Content Include="Plugins\codemirror\mode\scheme\scheme.js" />
+    <Content Include="Plugins\codemirror\mode\shell\index.html" />
+    <Content Include="Plugins\codemirror\mode\shell\shell.js" />
+    <Content Include="Plugins\codemirror\mode\sieve\index.html" />
+    <Content Include="Plugins\codemirror\mode\sieve\sieve.js" />
+    <Content Include="Plugins\codemirror\mode\smalltalk\index.html" />
+    <Content Include="Plugins\codemirror\mode\smalltalk\smalltalk.js" />
+    <Content Include="Plugins\codemirror\mode\smarty\index.html" />
+    <Content Include="Plugins\codemirror\mode\smarty\smarty.js" />
+    <Content Include="Plugins\codemirror\mode\sparql\index.html" />
+    <Content Include="Plugins\codemirror\mode\sparql\sparql.js" />
+    <Content Include="Plugins\codemirror\mode\sql\index.html" />
+    <Content Include="Plugins\codemirror\mode\sql\sql.js" />
+    <Content Include="Plugins\codemirror\mode\stex\index.html" />
+    <Content Include="Plugins\codemirror\mode\stex\stex.js" />
+    <Content Include="Plugins\codemirror\mode\stex\test.js" />
+    <Content Include="Plugins\codemirror\mode\tiddlywiki\index.html" />
+    <Content Include="Plugins\codemirror\mode\tiddlywiki\tiddlywiki.css" />
+    <Content Include="Plugins\codemirror\mode\tiddlywiki\tiddlywiki.js" />
+    <Content Include="Plugins\codemirror\mode\tiki\index.html" />
+    <Content Include="Plugins\codemirror\mode\tiki\tiki.css" />
+    <Content Include="Plugins\codemirror\mode\tiki\tiki.js" />
+    <Content Include="Plugins\codemirror\mode\vbscript\index.html" />
+    <Content Include="Plugins\codemirror\mode\vbscript\vbscript.js" />
+    <Content Include="Plugins\codemirror\mode\vb\index.html" />
+    <Content Include="Plugins\codemirror\mode\vb\LICENSE.txt" />
+    <Content Include="Plugins\codemirror\mode\vb\vb.js" />
+    <Content Include="Plugins\codemirror\mode\velocity\index.html" />
+    <Content Include="Plugins\codemirror\mode\velocity\velocity.js" />
+    <Content Include="Plugins\codemirror\mode\verilog\index.html" />
+    <Content Include="Plugins\codemirror\mode\verilog\verilog.js" />
+    <Content Include="Plugins\codemirror\mode\xml\index.html" />
+    <Content Include="Plugins\codemirror\mode\xml\xml.js" />
+    <Content Include="Plugins\codemirror\mode\xquery\index.html" />
+    <Content Include="Plugins\codemirror\mode\xquery\test.js" />
+    <Content Include="Plugins\codemirror\mode\xquery\xquery.js" />
+    <Content Include="Plugins\codemirror\mode\yaml\index.html" />
+    <Content Include="Plugins\codemirror\mode\yaml\yaml.js" />
+    <Content Include="Plugins\codemirror\mode\z80\index.html" />
+    <Content Include="Plugins\codemirror\mode\z80\z80.js" />
+    <Content Include="Plugins\codemirror\test\driver.js" />
+    <Content Include="Plugins\codemirror\test\index.html" />
+    <Content Include="Plugins\codemirror\test\lint\acorn.js" />
+    <Content Include="Plugins\codemirror\test\lint\lint.js" />
+    <Content Include="Plugins\codemirror\test\lint\parse-js.js" />
+    <Content Include="Plugins\codemirror\test\lint\walk.js" />
+    <Content Include="Plugins\codemirror\test\mode_test.css" />
+    <Content Include="Plugins\codemirror\test\mode_test.js" />
+    <Content Include="Plugins\codemirror\test\phantom_driver.js" />
+    <Content Include="Plugins\codemirror\test\run.js" />
+    <Content Include="Plugins\codemirror\test\test.js" />
+    <Content Include="Plugins\codemirror\test\vim_test.js" />
+    <Content Include="Plugins\codemirror\theme\ambiance-mobile.css" />
+    <Content Include="Plugins\codemirror\theme\ambiance.css" />
+    <Content Include="Plugins\codemirror\theme\blackboard.css" />
+    <Content Include="Plugins\codemirror\theme\cobalt.css" />
+    <Content Include="Plugins\codemirror\theme\eclipse.css" />
+    <Content Include="Plugins\codemirror\theme\elegant.css" />
+    <Content Include="Plugins\codemirror\theme\erlang-dark.css" />
+    <Content Include="Plugins\codemirror\theme\lesser-dark.css" />
+    <Content Include="Plugins\codemirror\theme\monokai.css" />
+    <Content Include="Plugins\codemirror\theme\neat.css" />
+    <Content Include="Plugins\codemirror\theme\night.css" />
+    <Content Include="Plugins\codemirror\theme\rubyblue.css" />
+    <Content Include="Plugins\codemirror\theme\solarized.css" />
+    <Content Include="Plugins\codemirror\theme\twilight.css" />
+    <Content Include="Plugins\codemirror\theme\vibrant-ink.css" />
+    <Content Include="Plugins\codemirror\theme\xq-dark.css" />
+    <Content Include="Scripts\example\todo.js" />
+    <Content Include="Scripts\indexModel.js" />
+    <Content Include="Scripts\ui.js" />
+    <Content Include="Scripts\vendor\bootstrap.min.js" />
+    <Content Include="Scripts\vendor\datajs-1.0.3.js" />
+    <Content Include="Scripts\vendor\datajs-1.0.3.min.js" />
+    <Content Include="Scripts\vendor\examples.js" />
+    <Content Include="Scripts\vendor\grid.locale-en.js" />
+    <Content Include="Plugins\codemirror\.travis.yml" />
+    <Content Include="Plugins\codemirror\bin\compress" />
+    <Content Include="Plugins\codemirror\CONTRIBUTING.md" />
+    <Content Include="Plugins\codemirror\LICENSE" />
+    <Content Include="Plugins\codemirror\mode\coffeescript\LICENSE" />
+    <Content Include="Plugins\codemirror\mode\pascal\LICENSE" />
+    <Content Include="Plugins\codemirror\mode\perl\LICENSE" />
+    <Content Include="Plugins\codemirror\mode\ruby\LICENSE" />
+    <Content Include="Plugins\codemirror\mode\r\LICENSE" />
+    <Content Include="Plugins\codemirror\mode\sieve\LICENSE" />
+    <Content Include="Plugins\codemirror\mode\xquery\LICENSE" />
+    <Content Include="Plugins\codemirror\package.json" />
+    <Content Include="Plugins\codemirror\README.md" />
+    <Content Include="Download\FlowerShop.apk" />
+    <Content Include="Download\FlowerShop.zip" />
+    <Content Include="Download\TypeScriptExample.zip" />
+    <Content Include="Fonts\Droid\droidsans-bold.eot" />
+    <Content Include="Fonts\Droid\droidsans-bold.ttf" />
+    <Content Include="Fonts\Droid\droidsans-bold.woff" />
+    <Content Include="Fonts\Droid\droidsans.eot" />
+    <Content Include="Fonts\Droid\droidsans.ttf" />
+    <Content Include="Fonts\Droid\droidsans.woff" />
+    <Content Include="Fonts\Enzo\enzoot-bold.eot" />
+    <Content Include="Fonts\Enzo\enzoot-bold.ttf" />
+    <Content Include="Fonts\Enzo\enzoot-bold.woff" />
+    <Content Include="Fonts\Enzo\enzoot-medi.eot" />
+    <Content Include="Fonts\Enzo\enzoot-medi.ttf" />
+    <Content Include="Fonts\Enzo\enzoot-medi.woff" />
+    <None Include="Scripts\vendor\jaydata-vsdoc.js" />
+    <Content Include="Scripts\vendor\jaydata.js" />
+    <Content Include="Scripts\vendor\jaydata.min.js" />
+    <Content Include="Scripts\vendor\JayDataModules\deferred.js" />
+    <Content Include="Scripts\vendor\JayDataModules\errorhandler.js" />
+    <Content Include="Scripts\vendor\JayDataModules\formBinder.js" />
+    <Content Include="Scripts\vendor\JayDataModules\inMemory.js" />
+    <Content Include="Scripts\vendor\JayDataModules\knockout.js" />
+    <Content Include="Scripts\vendor\JayDataModules\qDeferred.js" />
+    <Content Include="Scripts\vendor\JayDataModules\sencha.js" />
+    <Content Include="Scripts\vendor\JayDataModules\template.js" />
+    <Content Include="Scripts\vendor\JayDataModules\validate.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\FacebookProvider.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\FacebookProvider.min.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\IndexedDbProvider.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\IndexedDbProvider.min.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\InMemoryProvider.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\InMemoryProvider.min.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\MongoDbProvider.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\MongoDbProvider.min.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\oDataProvider.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\oDataProvider.min.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\sqLiteProvider.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\sqLiteProvider.min.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\StormProvider.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\StormProvider.min.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\YQLProvider.js" />
+    <Content Include="Scripts\vendor\jaydataproviders\YQLProvider.min.js" />
+    <Content Include="Scripts\vendor\jquery\jquery-1.7.2.js" />
+    <Content Include="Scripts\vendor\jquery\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\vendor\jquery\jquery-ui-1.8.19.min.js" />
+    <Content Include="Scripts\vendor\jquery\jquery.flexslider-min.js" />
+    <Content Include="Scripts\vendor\jquery\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\vendor\jquery\jquery.tmpl.min.js" />
+    <Content Include="Scripts\vendor\jquery\jquery.validate.js" />
+    <Content Include="Scripts\vendor\kendo.js" />
+    <Content Include="Scripts\vendor\knockout-2.1.0.js" />
+    <Content Include="Scripts\vendor\modernizr-2.6.2.js" />
+    <Content Include="Scripts\vendor\north.js" />
+    <Content Include="Scripts\vendor\Northwind.js" />
+    <Content Include="Scripts\vendor\sencha-touch-all-compat.js" />
+    <Content Include="Scripts\vendor\_references.js" />
+    <Content Include="Styles\bootstrap\bootstrap-responsive.min.css" />
+    <Content Include="Styles\bootstrap\bootstrap.min.css" />
+    <Content Include="Styles\examples.css" />
+    <Content Include="Styles\img\favicon_jaydata.png" />
+    <Content Include="Styles\img\iphone.png" />
+    <Content Include="Styles\img\logo_jaydata_dark.png" />
+    <Content Include="Styles\img\logo_kendoui.png" />
+    <Content Include="Styles\img\shipping.png" />
+    <Content Include="Styles\less\logos.css" />
+    <Content Include="YQL\YQLWithRails.html" />
+    <Content Include="NodeJs\logger.js" />
+    <Content Include="NodeJs\newsreader.js" />
+    <Content Include="Planets\bootstrap.min.css" />
+    <Content Include="Planets\context.js" />
+    <Content Include="Planets\index.html" />
+    <Content Include="Planets\iscroll.js" />
+    <Content Include="Planets\planet.css" />
+    <Content Include="Planets\planet.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Index.html" />
+    <Content Include="Content\css\ui.jqgrid.css" />
+    <Content Include="RSS\javascript.xml" />
+    <Content Include="RSS\rss.html" />
+    <Content Include="RSS\RSSProvider.js" />
+    <Content Include="Sencha\Core\resources\css-debug\android.css" />
+    <Content Include="Sencha\Core\resources\css-debug\apple.css" />
+    <Content Include="Sencha\Core\resources\css-debug\bb6.css" />
+    <Content Include="Sencha\Core\resources\css-debug\sencha-touch.css" />
+    <Content Include="Sencha\Core\resources\css\android.css" />
+    <Content Include="Sencha\Core\resources\css\apple.css" />
+    <Content Include="Sencha\Core\resources\css\bb6.css" />
+    <Content Include="Sencha\Core\resources\css\sencha-touch.css" />
+    <Content Include="Sencha\Core\resources\css\touch-charts.css" />
+    <Content Include="Sencha\Core\resources\images\icon1.png" />
+    <Content Include="Sencha\Core\resources\images\icon2.png" />
+    <Content Include="Sencha\Core\resources\images\icon3.png" />
+    <Content Include="Sencha\Core\resources\images\icon4.png" />
+    <Content Include="Sencha\Core\resources\images\welcome.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\check.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\clear_icon.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\disclosure.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\disclosure2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\dotgrid.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\loading.gif" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\action.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\add.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\add1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\address_book.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\add_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\arrow_down.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\arrow_left.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\arrow_right.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\arrow_up.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\at.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\atom.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\attachment.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\attachment2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\attachment3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\attachment_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\backspace.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\battery_full.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\battery_low.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\battery_power.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\blank.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\bolt.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\bolt_side.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\bookmark1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\bookmark2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\bookmarks.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\bookmark_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\briefcase1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\briefcase2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\brightness1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\brightness2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\broadcast.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\bug.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\bulb.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\bullseye1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\bullseye2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\calendar.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\calendar2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\calendar_add.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\card1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\card2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\chart1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\chart2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\chart3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\chat.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\chat1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\chat2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\chat3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\chat4.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\chat_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\chat_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\check1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\check2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\check_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\check_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\check_dotted.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\circle.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\circle2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\clash.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\cloud.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\cloud_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\cloud_black_upload1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\cloud_black_upload2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\cloud_bolt.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\cloud_download.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\code1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\code2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\code3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\compass1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\compass2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\compass3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\compose.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\compose1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\compose2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\compose3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\compose_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\contract.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\cube.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\data.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\delete.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\delete1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\delete_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\delete_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\docs1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\docs2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\docs_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\docs_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_black_landscape.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_compose1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_compose2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_delete.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_down.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_drawer.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_list.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_new.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_send.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\doc_up.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\download.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\download1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\download2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\download_screen.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\eject.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\empty1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\empty2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\equalizer1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\equalizer2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\event_complete.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\expand.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\favorites.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\favorites1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\favorites_circle.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\fforward.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\find.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\flag.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\flickr2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\folder.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\folder_add.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\folder_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\folder_black_open.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\folder_delete.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\folder_delete2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\folder_lock.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\folder_open2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\font.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\forbidden.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\forward_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\globe1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\globe2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\globe_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\headphones.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\heart.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\heart_circle.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\help.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\help_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\home.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\home2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\hot.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\inbox1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\inbox2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\inbox3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\infinite.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\infinite2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\info.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\info2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\info_plain.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\info_plain2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\json.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\lab.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\layout.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\link1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\link2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\link_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\list.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\locate.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\locate1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\locate2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\locate3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\locate4.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\lock_closed.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\lock_open.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\look.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\loop.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\loop2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\loop_circle.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\magic.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\mail.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\mail1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\mail2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\mail3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\mail4.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\mail5.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\maps.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\mic.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\minus1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\minus2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\minus_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\minus_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\monitor1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\monitor2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\monitor3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\monitor4.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\more.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\mouse.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\move.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\music1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\music2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\nodes1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\nodes2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\note1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\note2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\note3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\note_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\nuclear.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\organize.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\outbox.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\pause.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\phone1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\phone2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\phone_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\phone_ring1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\phone_ring2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\photo1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\photo2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\photo3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\photos1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\photos2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\photos4.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\photo_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\photo_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\piechart.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\play1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\play2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\play_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\play_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\podcast.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\power socket.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\power_on.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\print.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\print2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\quote1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\quote2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\quote_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\quote_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\quote_black3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\refresh.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\refresh1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\refresh2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\refresh3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\refresh5.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\reply.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\replytoall.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\resize.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\resize_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\rewind.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\right.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\right2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\rss.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\rss2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\rss_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\rss_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\rss_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\screens.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\search.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\search1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\search2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\search_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\server.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\servers.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings10.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings11.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings4.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings5.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings6.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings7.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings8.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings9.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\settings_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\share.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\shield1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\shield2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\shop1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\shop2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\shuffle.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\sign_backforth.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\sign_cross.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\sign_leftright.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\sign_leftright2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\sign_split.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\sign_switch.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\sign_uturn.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\spaces1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\spaces2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\speedometer1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\speedometer2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\speedometer_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\speedometer_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\star.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\stop.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\stop1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\stop2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\sync.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\tabbed_book.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\tag.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\tags.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\tag_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\team.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\team1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\time.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\time_repeat.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\trash.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\trash2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\trash_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\tree.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\tv.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\tweak.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\twitter1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\twitter2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\up1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\up2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\upload2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\up_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\user.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\user3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\user_add.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\user_business.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\user_fave.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\user_list.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\user_list2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\user_remote1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\user_remove2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\user_send.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\video.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\video_black1.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\video_black2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\volume.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\volume_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\volume_down.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\volume_mute.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\volume_up.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\warming_dotted.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\warning_black.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\wifi.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\wifi2.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\wifi3.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\wifi4.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pictos\window.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\pullarrow.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\select_mask.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\tip.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\tip_horizontal.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\tip_right.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\togglebg.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\togglemask.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\togglethumb.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\togglethumbbg.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\togglethumbmask.png" />
+    <Content Include="Sencha\Core\resources\themes\images\default\trackmask_outer.png" />
+    <Content Include="Sencha\app.html" />
+    <Content Include="Sencha\index.html" />
+    <Content Include="Sencha\Scripts\app.js" />
+    <Content Include="Sencha\Scripts\netflix.js" />
+    <Content Include="Styles\bootstrap\bootstrap-responsive.css" />
+    <Content Include="Styles\bootstrap\bootstrap.css" />
+    <Content Include="Styles\bootstrap\docs.css" />
+    <Content Include="Styles\dd.css" />
+    <Content Include="ToDoList2\index.html" />
+    <Content Include="ToDoList2\todo.js" />
+    <Content Include="ToDoListMobile\bootstrap-responsive.css" />
+    <Content Include="ToDoListMobile\bootstrap.css" />
+    <Content Include="ToDoListMobile\bootstrap.min.css" />
+    <Content Include="ToDoListMobile\bootstrap.min.js" />
+    <Content Include="ToDoListMobile\dd.css" />
+    <Content Include="ToDoListMobile\docs.css" />
+    <Content Include="ToDoListMobile\index.html" />
+    <Content Include="ToDoListMobile\JayData.js" />
+    <Content Include="ToDoListMobile\jquery-1.7.2.min.js" />
+    <Content Include="ToDoListMobile\jquery.tmpl.min.js" />
+    <Content Include="ToDoListMobile\mixins.css" />
+    <Content Include="ToDoListMobile\Site.css" />
+    <Content Include="ToDoListMobile\todo.js" />
+    <Content Include="ToDoList\Services\ToDoListService.svc" />
+    <Content Include="ToDoList\ToDoList.html" />
+    <Content Include="ToDoList\ToDoList.js" />
+    <Content Include="Validation\FormValidation.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="YQL\YQLRssAdvanced.html" />
+    <Content Include="YQL\YQLGeo.html" />
+    <Content Include="YQL\YQLRss.html" />
+    <Content Include="YQL\YQLHtml.html" />
+    <Content Include="YQL\YQLFeed.html" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\DisplayTemplates\Example.cshtml" />
+    <Content Include="Views\Home\DisplayTemplates\ExampleDoc.cshtml" />
+    <Content Include="Views\KendoUI\Kendo_ToDoList.cshtml" />
+    <Content Include="Views\Home\ToDoList.cshtml" />
+    <Content Include="Views\Shared\Layout_KendoUI.cshtml" />
+    <Content Include="Views\Shared\_IncludeTopMenu.cshtml" />
+    <Content Include="Views\Shared\_JayDataHeader.cshtml" />
+    <Content Include="Views\Shared\_IncludeStyles.cshtml" />
+    <Content Include="Views\Shared\_IncludeMeta.cshtml" />
+    <Content Include="Views\Shared\_IncludeIeFix.cshtml" />
+    <Content Include="Views\Shared\_IncludeFavIcon.cshtml" />
+    <Content Include="Views\Shared\Layout_Simple.cshtml" />
+    <Content Include="Views\Shared\_IncludeGoogleAnalytics.cshtml" />
+    <Content Include="Views\Shared\_IncludeScripts.cshtml" />
+    <Content Include="Views\Shared\_IncludeFooter.cshtml" />
+    <Content Include="Views\Shared\_IncludeSearchBar.cshtml" />
+    <Content Include="Views\Shared\_IncludeBreadcrumb.cshtml" />
+    <Content Include="Views\Shared\_IncludeLogoFilter.cshtml" />
+    <Content Include="Views\KendoUI\Kendo_listview.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Sencha\Core\resources\sass\android.scss" />
+    <Content Include="Sencha\Core\resources\sass\apple.scss" />
+    <Content Include="Sencha\Core\resources\sass\bb6.scss" />
+    <Content Include="Sencha\Core\resources\sass\config-debug.rb" />
+    <Content Include="Sencha\Core\resources\sass\config.rb" />
+    <Content Include="Sencha\Core\resources\sass\sencha-touch.scss" />
+    <Content Include="Sencha\Core\resources\themes\compass_init.rb" />
+    <Content Include="Sencha\Core\resources\themes\lib\theme_images.rb" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\core\_core.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\core\_layout.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\core\_reset.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_buttons.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_carousel.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_form-sliders-basic.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_form-sliders.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_form.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_img.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_indexbar.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_list.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_loading-spinner.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_map.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_media.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_msgbox.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_panel.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_picker.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_sheets.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_tabs.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_toolbar-forms.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\widgets\_toolbar.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\_all.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\_core.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\_global.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\_mixins.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\_variables.scss" />
+    <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\_widgets.scss" />
+    <Content Include="Sencha\Core\resources\themes\templates\project\manifest.rb" />
+    <Content Include="Sencha\Core\resources\themes\templates\project\sencha-touch.scss" />
+    <Content Include="Download\JayData-Northwind-Knockoutjs.zip" />
+    <Content Include="Download\JayData-Northwind-Knockoutjs_v105.zip" />
+    <Content Include="Download\jaydata104nwind.zip" />
+    <Content Include="Download\JayDataNorthwindDemo.zip" />
+    <Content Include="Download\netflix.apk" />
+    <Content Include="Download\northwind_nodejs.zip" />
+    <Content Include="Download\YQLWithRails.zip" />
+    <Content Include="FlowerShop\Styles\less\css3.less" />
+    <Content Include="FlowerShop\Styles\less\flexslider.less" />
+    <Content Include="FlowerShop\Styles\less\functions.less" />
+    <Content Include="FlowerShop\Styles\less\layout.less" />
+    <Content Include="FlowerShop\Styles\less\mediaqueries.less" />
+    <Content Include="FlowerShop\Styles\less\style.less" />
+    <Content Include="FlowerShop\Styles\less\variables.less" />
+    <Content Include="FlowerShop\Styles\mixins.less" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Styles\dd.less" />
+    <Content Include="Styles\less\logos.less" />
+    <Content Include="Styles\less\mixins.less" />
+    <None Include="ToDoListMobile\JayDataTodolist-debug.apk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JayDataExamples.NorthwindDB\JayDataExamples.NorthwindDB.csproj">
+      <Project>{879d27d0-0c3a-41d3-86e0-c78f858c447f}</Project>
+      <Name>JayDataExamples.NorthwindDB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
