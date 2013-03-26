@@ -34,7 +34,7 @@
     <script type="text/html" id="cell">
         <div class="span4 well well-white">
             <div class="qr-code fright">
-                <img src="/Images/qr_code.png" alt="QR Code" />
+                <img data-bind="attr:{src:'https://chart.googleapis.com/chart?cht=qr&chl='+encodeURIComponent('http://jaydata.org/example/'+Link())+'&chs=100x100'}" alt="QR Code" />
             </div>
             <a data-bind="attr:{href:Link}">
                 <h2 data-bind="text: Title"></h2>
