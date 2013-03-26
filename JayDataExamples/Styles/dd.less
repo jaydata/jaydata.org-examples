@@ -466,7 +466,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#accf69', end
 /* FOOTER */
 footer {
 	color: #888;
-	padding-top: 35px;
 	background: #000;
 }
 footer #copyright {
@@ -488,8 +487,8 @@ footer .box-download p {
 }
 	
 footer section {
-		padding: 20px 0 20px 0;
-	}
+	padding: 40px 0 20px 0;
+}
 footer a, footer a h5 {
 	color: #888;
 }
@@ -1666,7 +1665,11 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 }
 
 .main-content {
-	padding: 25px 0 40px;
+	padding: 115px 0 40px;
+}
+
+.main-body {
+	padding: 15px 0 0;
 }
 
 .CodeMirror {
@@ -1728,6 +1731,10 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 .main-title {
 	margin: 0 0 20px;
 	font-size: 40px;
+}
+
+.main-title-container > h1 {
+	.main-title;
 }
 
 
@@ -1885,4 +1892,13 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 	}
 }
 
+.device-wrapper {
+	background-image: url("/Images/iphone.png");
+	background-size: cover;
+	padding: 132px 72px 188px 66px;
+	margin: auto;
+}
+
+
+@import "less/sticky-footer.less";
 @import "less/logos.less";

@@ -92,7 +92,7 @@
 }
 
 @section CodeRunning {
-    <table class="table span3 reset-m" style="margin: 0 10px 10px 0 !important;">
+    <table class="table span12 reset-m" style="margin: 0 10px 10px 0 !important;">
         <thead>
             <tr>
                 <th>Category name</th>
@@ -107,7 +107,7 @@
         </tbody>
     </table>
 
-    <table class="table span4 reset-m" data-bind="visible: $root.listedProducts().length > 0" style="margin: 0 10px 10px 0 !important;">
+    <table class="table span12 reset-m" data-bind="visible: $root.listedProducts().length > 0" style="margin: 0 10px 10px 0 !important;">
         <thead>
             <tr>
                 <th>Product Name</th>
@@ -129,7 +129,7 @@
     </table>
 
     <!-- ko if: $root.editProduct -->
-    <div class="table span3 reset-m noborder_">
+    <div class="table span4 reset-m noborder_">
         <div class="well-box">
             <form data-bind="submit: saveProduct" style="margin: 10px">
                 <fieldset data-bind="with: $root.editProduct">

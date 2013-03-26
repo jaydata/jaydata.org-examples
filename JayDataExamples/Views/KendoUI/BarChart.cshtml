@@ -59,26 +59,26 @@
 
 @section CodeSource {
     <textarea id="code">
-        <div id="grid"></div>
-        <script>
-            $("#chart").kendoChart({
-                dataSource: remoteDB.Products.asKendoDataSource(),
-                title: {
-                    text: "Products in stock"
-                },
-                series: [{
-                    type: "column",
-                    field: "Units_In_Stock",
-                    name: "Units In Stock"
-                }],
-                categoryAxis: {
-                    field: "Product_Name",
-                    labels: {
-                        rotation: -90
-                    }
-                },
-            });
-        </script>
+<div id="grid"></div>
+<script>
+    $("#chart").kendoChart({
+        dataSource: remoteDB.Products.asKendoDataSource(),
+        title: {
+            text: "Products in stock"
+        },
+        series: [{
+            type: "column",
+            field: "Units_In_Stock",
+            name: "Units In Stock"
+        }],
+        categoryAxis: {
+            field: "Product_Name",
+            labels: {
+                rotation: -90
+            }
+        },
+    });
+</script>
     </textarea>
 
     <script>

@@ -52,6 +52,21 @@
     </p>
 }
 
+@section SimilarContents {
+    <div class="bg-dark-grid">
+        <h3>Related Contents</h3>
+    </div>
+    <div class="well well-white">
+        <ul class="purple-list">
+            <li><a href="#">Understand JayData in 7 simple steps</a></li>
+            <li><a href="#">What's next in JayData?</a></li>
+            <li><a href="#">Understand JayData in 7 simple steps</a></li>
+            <li><a href="#">What's next in JayData?</a></li>
+            <li><a href="#">Understand JayData in 7 simple steps</a></li>
+        </ul>
+    </div>
+}
+
 @section SourceCode {
     <div class="box-jsfiddle fright">
         <a class="logo-jsfiddle blue" target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>
@@ -64,27 +79,27 @@
 
 @section CodeSource {
     <textarea id="code">
-        <div id="pager" class="k-pager-wrap"></div>
-        <div id="listView"></div>
+<div id="pager" class="k-pager-wrap"></div>
+<div id="listView"></div>
 
-        <script type="text/x-kendo-tmpl" id="template">
-            <div class="product" style="width:230px;float:left">
-                <img style="width:220px;height:150px" src="${ImageUrl}" />
-                <h3>${Name}</h3>
-                <b>${kendo.toString(Price, "c")}</b>
-            </div>
-        </script>
+<script type="text/x-kendo-tmpl" id="template">
+    <div class="product" style="width:230px;float:left">
+        <img style="width:220px;height:150px" src="${ImageUrl}" />
+        <h3>${Name}</h3>
+        <b>${kendo.toString(Price, "c")}</b>
+    </div>
+</script>
 
-        <script>
-            var ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
-            $("#listView").kendoListView({
-                dataSource: ds,
-                template: kendo.template($("#template").html())
-            });
-            $("#pager").kendoPager({
-                dataSource: ds
-            }).data("kendoPager");
-        </script>
+<script>
+    var ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
+    $("#listView").kendoListView({
+        dataSource: ds,
+        template: kendo.template($("#template").html())
+    });
+    $("#pager").kendoPager({
+        dataSource: ds
+    }).data("kendoPager");
+</script>
     </textarea>
 
     <script>

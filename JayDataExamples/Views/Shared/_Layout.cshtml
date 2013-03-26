@@ -21,16 +21,19 @@
     @*<script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")"></script>*@
 </head>
 <body>
-    @{
-        Html.RenderPartial("_IncludeTopMenu");
-    }
+    <div class="wrapper">
+        @{
+            Html.RenderPartial("_IncludeTopMenu");
+        }
 
-    <section class="main-content">
-        @RenderSection("Tags", false);
-        @RenderSection("MainBody", false)
-    </section>
+        <section class="main-content">
+            @RenderSection("Tags", false)
+            @RenderSection("MainBody", false)
+        </section>
+        @RenderBody()
 
-    @RenderBody()
+        <div class="push"></div>
+    </div>
 
     @{
         Html.RenderPartial("_IncludeFooter");

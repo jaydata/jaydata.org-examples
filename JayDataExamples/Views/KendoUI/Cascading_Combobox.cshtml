@@ -2,7 +2,7 @@
 @{ Layout = "~/Views/Shared/Layout_KendoUI.cshtml"; }
 
 @section Title {
-    <h1>KendoUI cascading combobox (JayData example)</h1>
+    <h1>KendoUI cascading combobox</h1>
 }
 
 @section Meta {
@@ -61,32 +61,32 @@
 @section CodeSource {
     <textarea id="code">
 <script>
-    $("#categories").kendoComboBox({
-        placeholder: "Select category...",
-        dataTextField: "Category_Name",
-        dataValueField: "Category_ID",
-        dataSource: remoteDB.Categories.asKendoDataSource()
-    });
+$("#categories").kendoComboBox({
+    placeholder: "Select category...",
+    dataTextField: "Category_Name",
+    dataValueField: "Category_ID",
+    dataSource: remoteDB.Categories.asKendoDataSource()
+});
 
-    var products = $("#products").kendoComboBox({
-        autoBind: false,
-        cascadeFrom: "categories",
-        placeholder: "Select product...",
-        dataTextField: "Product_Name",
-        dataValueField: "Product_ID",
-        dataSource: remoteDB.Products.asKendoDataSource()
-    }).data("kendoComboBox");
+var products = $("#products").kendoComboBox({
+    autoBind: false,
+    cascadeFrom: "categories",
+    placeholder: "Select product...",
+    dataTextField: "Product_Name",
+    dataValueField: "Product_ID",
+    dataSource: remoteDB.Products.asKendoDataSource()
+}).data("kendoComboBox");
 
-    var orders = $("#orders").kendoComboBox({
-        autoBind: false,
-        cascadeFrom: "products",
-        placeholder: "Select order...",
-        dataTextField: "Order.Ship_City",
-        dataValueField: "Order_ID",
-        dataSource: remoteDB.Order_Details.include('Order').asKendoDataSource()
-    }).data("kendoComboBox");
+var orders = $("#orders").kendoComboBox({
+    autoBind: false,
+    cascadeFrom: "products",
+    placeholder: "Select order...",
+    dataTextField: "Order.Ship_City",
+    dataValueField: "Order_ID",
+    dataSource: remoteDB.Order_Details.include('Order').asKendoDataSource()
+}).data("kendoComboBox");
 </script>
-    </textarea>
+</textarea>
 
     <script>
         setTimeout(function () {
@@ -99,6 +99,7 @@
 }
 
 @section CodeRunning {
+<div class="padding10">
     <p>
         <label for="categories">Categories:</label>
         <input id="categories" />
@@ -145,4 +146,5 @@
             }).data("kendoComboBox");
         });
     </script>
+</div>
 }

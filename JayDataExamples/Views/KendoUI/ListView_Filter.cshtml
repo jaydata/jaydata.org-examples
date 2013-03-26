@@ -52,6 +52,21 @@
     </p>
 }
 
+@section SimilarContents {
+    <div class="bg-dark-grid">
+        <h3>Related Contents</h3>
+    </div>
+    <div class="well well-white">
+        <ul class="purple-list">
+            <li><a href="#">Understand JayData in 7 simple steps</a></li>
+            <li><a href="#">What's next in JayData?</a></li>
+            <li><a href="#">Understand JayData in 7 simple steps</a></li>
+            <li><a href="#">What's next in JayData?</a></li>
+            <li><a href="#">Understand JayData in 7 simple steps</a></li>
+        </ul>
+    </div>
+}
+
 @section SourceCode {
     <div class="box-jsfiddle fright">
         <a class="logo-jsfiddle blue" target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>
@@ -64,22 +79,22 @@
 
 @section CodeSource {
     <textarea id="code">
-        <script>
-            $(document).delegate("#filter", "click", function () {
-                var f = $("#pricefilter").val();
-                if (f != "")
-                    _ds.filter({ field: "Price", operator: "lt", value: parseInt(f) });
-                else
-                    _ds.filter({});
-            });
-            $(document).delegate("#sortby", "change", function () {
-                var f = $("#sortby").val();
-                if (f != "")
-                    _ds.sort({ field: f, dir: "asc" });
-                else
-                    _ds.sort({});
-            });
-        </script>
+<script>
+    $(document).delegate("#filter", "click", function () {
+        var f = $("#pricefilter").val();
+        if (f != "")
+            _ds.filter({ field: "Price", operator: "lt", value: parseInt(f) });
+        else
+            _ds.filter({});
+    });
+    $(document).delegate("#sortby", "change", function () {
+        var f = $("#sortby").val();
+        if (f != "")
+            _ds.sort({ field: f, dir: "asc" });
+        else
+            _ds.sort({});
+    });
+</script>
     </textarea>
 
     <script>
@@ -93,17 +108,21 @@
 }
 
 @section CodeRunning {
-    Max price:
+    <div class="padding10">
+        Max price:
                 <input type="number" id="pricefilter" style="width: 80px" size="3" maxlength="3" name="pricefilter" /><a class="btn btn-small iblock" href="#" id="filter" style="margin: -10px 0 0 5px">Filter</a>
 
-    <div class="iblock fright">
-        Sort by:
+        <div class="iblock fright">
+            Sort by:
                 <select style="width: 80px" id="sortby" name="sortby">
                     <option value="" selected>---</option>
                     <option value="Name">Name</option>
                     <option value="Price">Price</option>
                 </select>
+        </div>
     </div>
+
+
     <div id="pager" class="k-pager-wrap"></div>
     <div id="listView"></div>
 
