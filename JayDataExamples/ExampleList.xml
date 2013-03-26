@@ -9,18 +9,18 @@
       <Tags>KendoUI, OData</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI listview with filter and sorting </Title>
+      <Title>Kendo UI listview with filter</Title>
       <Description><![CDATA[JayData and KendoUI listview with filtering and sorting. Our datasource supports everything, so paging, filtering and sorting all works.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/listview-filter.html</Link>
-      <Tags>KendoUI, OData, filter, sorting</Tags>
+      <Tags>KendoUI, OData, filter, sort</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI grid with filter and sorting </Title>
+      <Title>Kendo UI grid with filter</Title>
       <Description><![CDATA[Simple grid with remote Northwind database using OData. Sorting, paging and filtering works on the server side but with a simple switch they can be one the client side, too.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/grid-readonly.html</Link>
-      <Tags>KendoUI, OData, Northwind, filter, sorting</Tags>
+      <Tags>KendoUI, OData, Northwind, filter, sort</Tags>
     </Example>
     <Example>
       <Title>Kendo UI grid and CRUD </Title>
@@ -72,7 +72,7 @@
       <Tags>KendoUI, Northwind, filter, projection</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI Master-detail grid </Title>
+      <Title>Kendo UI Master-detail</Title>
       <Description><![CDATA[This Kendo Grid example uses OData to access the Northwind service.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/prefilter.html</Link>
@@ -86,14 +86,14 @@
       <Tags>KendoUI, Northwind </Tags>
     </Example>
     <Example>
-      <Title>Sencha Touch 2</Title>
+      <Title>Netflix movies-Sencha Touch 2</Title>
       <Description><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>/Sencha/index.html</Link>
-      <Tags>Sencha Touch, OData</Tags>
+      <Tags>SenchaTouch, OData</Tags>
     </Example>
     <Example>
-      <Title>Flower Shop</Title>
+      <Title>Flower Shop- HTML5</Title>
       <Description><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Kendo_ToDoList</Link>
@@ -125,7 +125,7 @@
       <Description><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockoutjs/DynamicQueryFilterNorthwind.html</Link>
-      <Tags>Knockout, filter, query</Tags>
+      <Tags>Knockout, filter</Tags>
     </Example>
     <Example>
       <Title>YQL- html search</Title>
