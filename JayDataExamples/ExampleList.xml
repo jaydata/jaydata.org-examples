@@ -51,10 +51,10 @@
       <Tags>KendoUI, Northwind</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI complex mobile app</Title>
+      <Title>Kendo UI complex mobile app (moved)</Title>
       <Description><![CDATA[This Kendo UI mobile Tasklist example uses a local database. ]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/mobile-complex.html</Link>
+      <Link>KendoUI/Mobile_Complex</Link>
       <Tags>KendoUI, filter, CRUD</Tags>
     </Example>
     <Example>
