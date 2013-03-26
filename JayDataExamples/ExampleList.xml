@@ -23,10 +23,10 @@
       <Tags>KendoUI, OData, Northwind, filter, sort</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI grid and CRUD </Title>
+      <Title>Kendo UI grid and CRUD (moved)</Title>
       <Description><![CDATA[Grid with local Nortwind database, and full CRUD (Create Read Update Delete).]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/grid-readwrite.html</Link>
+      <Link>KendoUI/Grid_CRUD</Link>
       <Tags>KendoUI, OData, Northwind, CRUD</Tags>
     </Example>
     <Example>

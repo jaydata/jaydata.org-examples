@@ -245,7 +245,6 @@
     <Content Include="Images\yqlnagy.png" />
     <Content Include="KendoUI\autocomplete.html" />
     <Content Include="KendoUI\cascadingcombobox.html" />
-    <Content Include="KendoUI\grid-readonly.html" />
     <Content Include="KendoUI\grid-readwrite.html" />
     <Content Include="KendoUI\Index.html" />
     <Content Include="KendoUI\masterdetail.html" />
@@ -1255,6 +1254,7 @@
     <Content Include="Views\KendoUI\ListView.cshtml" />
     <Content Include="Views\KendoUI\ListView_Filter.cshtml" />
     <Content Include="Views\KendoUI\Grid_ReadOnly.cshtml" />
+    <Content Include="Views\KendoUI\Grid_CRUD.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

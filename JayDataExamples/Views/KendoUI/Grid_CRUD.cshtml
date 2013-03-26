@@ -1,0 +1,112 @@
+﻿@model JayDataExamples.Controllers.Example
+@{ Layout = "~/Views/Shared/Layout_KendoUI.cshtml"; }
+
+@section Title {
+    <h1>Grid read-write</h1>
+}
+
+@section Meta {
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
+    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example." />
+}
+
+@section Includes {
+    <script type="text/javascript" src="~/Scripts/vendor/north.js"></script>
+    <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+    <link href="../Styles/dd.css" rel="stylesheet" />
+}
+
+@section SupportedBrowsers {
+    <div class="bg-dark-grid">
+        <h3>Supported Browsers</h3>
+    </div>
+    <div class="well well-white">
+        <ul class="browser-list">
+            <li class="browser chrome" title="Google Chrome 12+"></li>
+            <li class="browser opera" title="Opera 10+"></li>
+            <li class="browser safari" title="Safari 4+"></li>
+            <li class="browser blackberry" title="Blackberry 2+"></li>
+            <li class="browser wp" title="Windows Phone 7.5+"></li>
+            <li class="browser ios" title="iOS 4+"></li>
+            <li class="browser android" title="Android 2.2+"></li>
+        </ul>
+    </div>
+}
+
+@section Tags {
+    <ul class="tags">
+        @foreach (var tag in Model.TagList)
+        {
+            <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>@tag</a></li>
+        }
+    </ul>
+}
+
+@section Description {
+    <p class="main-desc">
+        This Kendo Grid example uses a local Northwind database. Sorting, paging and filtering works along
+                with full CRUD. The demo is written so that your local database is reinitialized on every page reload and your changes are lost!
+    </p>
+}
+
+@section SourceCode {
+    <div class="box-jsfiddle fright">
+        <a class="logo-jsfiddle blue" target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>
+
+        <span class="separator">or</span>
+
+        <a href="#" class="btn btn-primary">Download</a>
+    </div>
+}
+
+@section CodeSource {
+    <textarea id="code">
+<div id="grid"></div>
+<script>
+    $('#grid').kendoGrid({
+        dataSource: localDB.Products.asKendoDataSource({ pageSize: 4 }),
+        filterable: true,
+        sortable: true,
+        pageable: true,
+        height: 500,
+        columns: [
+            { field: 'Product_Name' },
+            { field: 'Unit_Price' },
+            { field: 'Units_In_Stock' },
+            { command: ["edit", "destroy", "update"] }
+        ],
+        toolbar: ["create", "save", "cancel"],
+        editable: "inline"
+    });
+</script>
+    </textarea>
+
+    <script>
+        setTimeout(function () {
+            CodeMirror.fromTextArea(document.getElementById('code'), {
+                mode: 'text/html',
+                lineNumbers: false
+            });
+        });
+    </script>
+}
+
+@section CodeRunning {
+   <div id="grid"></div>
+    <script>
+        $.when($.ready, getLocalNorthwind())
+        .then(function ($, localDB) {
+            $('#grid').kendoGrid({
+                dataSource: localDB.Products.asKendoDataSource({ pageSize: 4 }),
+                filterable: true,
+                sortable: true,
+                pageable: true,
+                height: 500,
+                columns: [{ field: 'Product_Name' }, { field: 'Unit_Price', filterable: false }, { field: 'Units_In_Stock' }, { command: ["edit", "destroy", "update"] }],
+                //columns: localDB1.Products.asKendoColumns().append({ command: "delete" }),
+                toolbar: ["create", "save", "cancel"],
+                editable: "inline"
+            });
+        });
+    </script>
+}
