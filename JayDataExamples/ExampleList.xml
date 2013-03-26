@@ -206,7 +206,7 @@
       </Description>
       <Image>/Images/formvalidation.png</Image>
       <Link>Validation/FormValidation.html</Link>
-      <Tags>jQuery</Tags>
+      <Tags>jQuery, validation</Tags>
     </Example>
     <Example>
       <Title>TodoList- multiple providers</Title>
@@ -215,7 +215,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>/General/ToDoList</Link>
-      <Tags>WebSQL, IndexedDB, local DB</Tags>
+      <Tags>WebSQL, indexedDB, localDB</Tags>
     </Example>
     <Example>
       <Title>Facebook provider example</Title>
@@ -224,7 +224,7 @@
       </Description>
       <Image>/Images/facebook.png</Image>
       <Link>Facebook/Facebook_provider_example.html</Link>
-      <Tags>Facebook</Tags>
+      <Tags>facebook</Tags>
     </Example>
     <Example>
       <Title>Facebook friend list example</Title>
@@ -233,7 +233,7 @@
       </Description>
       <Image>/Images/facebook.png</Image>
       <Link>Facebook/Facebook_provider_friends_example.html</Link>
-      <Tags>Facebook</Tags>
+      <Tags>facebook</Tags>
     </Example>
   </Examples>
 </MainPage>
