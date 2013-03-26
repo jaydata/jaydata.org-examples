@@ -1,0 +1,232 @@
+﻿@model JayDataExamples.Controllers.Example
+@{ Layout = "~/Views/Shared/Layout_Knokout.cshtml"; }
+
+@section Title {
+    <h1>JayData examples: Knockout dynamic query</h1>
+}
+
+@section Meta {
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
+    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example." />
+}
+
+@section Includes {
+    <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+    <script src="~/Scripts/example/knokout_northwind.js"></script>
+    <link href="~/Styles/bootstrap/docs.css" rel="stylesheet" />
+    <link href="~/Styles/dd.css" rel="stylesheet" />
+}
+
+@section SupportedBrowsers {
+    <div class="bg-dark-grid">
+        <h3>Supported Browsers</h3>
+    </div>
+    <div class="well well-white">
+        <ul class="browser-list">
+            <li class="browser chrome" title="Google Chrome 12+"></li>
+            <li class="browser opera" title="Opera 10+"></li>
+            <li class="browser safari" title="Safari 4+"></li>
+            <li class="browser blackberry" title="Blackberry 2+"></li>
+            <li class="browser wp" title="Windows Phone 7.5+"></li>
+            <li class="browser ios" title="iOS 4+"></li>
+            <li class="browser android" title="Android 2.2+"></li>
+        </ul>
+    </div>
+}
+
+@section Tags {
+    <ul class="tags">
+        @foreach (var tag in Model.TagList)
+        {
+            <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>@tag</a></li>
+        }
+    </ul>
+}
+
+@section Description {
+    <p class="main-desc">
+        .....
+    </p>
+}
+
+@section SourceCode {
+    <div class="box-jsfiddle fright">
+        <a class="logo-jsfiddle blue" target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>
+
+        <span class="separator">or</span>
+
+        <a href="#" class="btn btn-primary">Download</a>
+    </div>
+}
+
+@section CodeSource {
+    <textarea id="code">
+<!-- Pass an observable as a query parameter -->
+<script type="text/javascript">
+    self.selectedCategoryId = ko.observable(0);
+    self.listedProducts = ko.observableArray([]);
+
+    northwind.Products
+        .filter(function (product) { return product.Category_ID == this.Id }, {
+            Id: self.selectedCategoryId
+        })
+        .toArray(self.listedProducts);
+</script>
+
+<!-- Change the value of the observable and the query will run again -->
+<script>
+    self.loadProducts = function (category) {
+        self.selectedCategoryId(category.Category_ID());
+    };
+</script>
+    </textarea>
+
+    <script>
+        setTimeout(function () {
+            CodeMirror.fromTextArea(document.getElementById('code'), {
+                mode: 'text/html',
+                lineNumbers: false
+            });
+        });
+    </script>
+}
+
+@section CodeRunning {
+    <table class="table span3 reset-m" style="margin: 0 10px 10px 0 !important;">
+        <thead>
+            <tr>
+                <th>Category name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: listedCategories">
+            <tr>
+                <td><a href="#" data-bind="text: Category_Name, click: $root.loadProducts"></a></td>
+                <td data-bind="text: Description"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table span4 reset-m" data-bind="visible: $root.listedProducts().length > 0" style="margin: 0 10px 10px 0 !important;">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>English Name</th>
+                <th>Unit Price</th>
+                <th>Units In Stock</th>
+                <th>Discontinued</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: listedProducts">
+            <tr>
+                <td><a href="#" data-bind="text: Product_Name, click: $root.editProduct"></a></td>
+                <td data-bind="text: English_Name"></td>
+                <td data-bind="text: Unit_Price"></td>
+                <td data-bind="text: Units_In_Stock"></td>
+                <td data-bind="text: Discontinued"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- ko if: $root.editProduct -->
+    <div class="table span3 reset-m noborder_">
+        <div class="well-box">
+            <form data-bind="submit: saveProduct" style="margin: 10px">
+                <fieldset data-bind="with: $root.editProduct">
+                    <legend class="modal-header">Edit Product</legend>
+
+                    <div class="modal-body" style="max-height: 600px;">
+                        Product name:
+                                <input class="span4" type="text" data-bind="value: Product_Name" />
+                        <br />
+                        English Name:
+                                <br />
+                        <input class="span4" type="text" data-bind="value: English_Name" />
+                        <br />
+                        Category:
+                                <br />
+                        <select class="span4" data-bind="options: $root.listedCategories,
+                                                       optionsText: 'Category_Name',
+                                                       optionsValue: 'Category_ID',
+                                                       value: Category_ID">
+                        </select>
+                        <br />
+                        Unit Price:
+                                <br />
+                        <input class="span4" type="text" data-bind="value: Unit_Price" />
+                        <br />
+                        Units In Stock:
+                                <br />
+                        <input class="span4" type="text" data-bind="value: Units_In_Stock" />
+                        <br />
+                        Discontinued:
+                        <input type="checkbox" data-bind="checked: Discontinued" />
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="save" class="btn btn-success tshadow" />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="saveResult" class="alert alert-success hide">
+            <strong>Success!</strong>
+            <br />
+            Product has been saved successfully.
+        </div>
+    </div>
+    <!-- /ko -->
+
+    <script>
+        var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: '/Northwind.svc' });
+        northwind.onReady(function () {
+            $(function () {
+                function NorthwindViewModel() {
+                    var self = this;
+                    self.listedCategories = ko.observableArray([]);
+                    self.selectedCategoryId = ko.observable(0);
+
+                    self.listedProducts = ko.observableArray([]);
+
+                    self.editProduct = ko.observable(false);
+                    self.editProduct.subscribe(function (value) {
+                        var oldValue = self.editProduct();
+                        if (oldValue instanceof NorthwindModel.ObservableProduct)
+                            northwind.Products.detach(oldValue);
+                    }, undefined, 'beforeChange');
+                    self.editProduct.subscribe(function (value) {
+                        if (value instanceof NorthwindModel.ObservableProduct)
+                            northwind.Products.attach(value);
+                    });
+                    self.saveProduct = function () {
+                        northwind.saveChanges();
+                        var result = $('#saveResult');
+                        result.show()
+                        setTimeout(function () {
+                            result.fadeOut("slow");
+                        }, 1500);
+                    };
+
+                    self.loadProducts = function (category) {
+                        self.selectedCategoryId(category.Category_ID());
+                        self.editProduct(false);
+                    };
+
+                    northwind.Categories
+                        .toArray(self.listedCategories)
+                        .then(function (categories) {
+                            if (categories.length > 0)
+                                self.selectedCategoryId(categories[0].Category_ID);
+                        });
+
+                    northwind.Products
+                        .filter(function (product) { return product.Category_ID == this.Id }, { Id: self.selectedCategoryId })
+                        .toArray(self.listedProducts);
+
+                };
+
+                ko.applyBindings(new NorthwindViewModel());
+
+            });
+        });
+    </script>
+}

@@ -109,17 +109,17 @@
       <Tags>Knockout, Northwind</Tags>
     </Example>
     <Example>
-      <Title>Knockout Dynamic Queries</Title>
+      <Title>Knockout Dynamic Queries (moved)</Title>
       <Description><![CDATA[With the JayData module for Knockout.js you can achieve fully dynamic queries. Where you use an observable as a query parameter the query will be automatically executed when the observable property changes.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>Knockoutjs/DynamicQueryNorthwind.html</Link>
+      <Link>Knockout/DynamicQueryNorthwind</Link>
       <Tags>Knockout, query</Tags>
     </Example>
     <Example>
-      <Title>Knockout Dynamic Queries filter</Title>
+      <Title>Knockout Dynamic Queries filter (moved)</Title>
       <Description><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>Knockoutjs/DynamicQueryFilterNorthwind.html</Link>
+      <Link>Knockout/DynamicQueryFilterNorthwind</Link>
       <Tags>Knockout, filter</Tags>
     </Example>
     
