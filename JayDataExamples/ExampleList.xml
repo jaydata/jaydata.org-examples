@@ -44,10 +44,10 @@
       <Tags>KendoUI, Northwind, CRUD</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI simple mobile app</Title>
+      <Title>Kendo UI simple mobile app (moved)</Title>
       <Description><![CDATA[Mobile app with local Nortwind database.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/mobile-simple.html</Link>
+      <Link>KendoUI/Mobile_Simple</Link>
       <Tags>KendoUI, Northwind</Tags>
     </Example>
     <Example>

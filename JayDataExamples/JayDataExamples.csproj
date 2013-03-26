@@ -243,13 +243,11 @@
     <Content Include="Images\shipping.png" />
     <Content Include="Images\todolist.png" />
     <Content Include="Images\yqlnagy.png" />
-    <Content Include="KendoUI\autocomplete.html" />
     <Content Include="KendoUI\cascadingcombobox.html" />
     <Content Include="KendoUI\Index.html" />
     <Content Include="KendoUI\masterdetail.html" />
     <Content Include="KendoUI\mobile-complex.html" />
     <Content Include="KendoUI\mobile-simple.html" />
-    <Content Include="KendoUI\mvvm.html" />
     <Content Include="KendoUI\Northwind.svc" />
     <Content Include="KendoUI\orig.html" />
     <Content Include="KendoUI\prefilter.html" />
@@ -481,6 +479,7 @@
     <Content Include="Plugins\codemirror\theme\twilight.css" />
     <Content Include="Plugins\codemirror\theme\vibrant-ink.css" />
     <Content Include="Plugins\codemirror\theme\xq-dark.css" />
+    <Content Include="Scripts\example\kendo_mobile_simple.js" />
     <Content Include="Scripts\example\todo.js" />
     <Content Include="Scripts\indexModel.js" />
     <Content Include="Scripts\ui.js" />
@@ -1255,6 +1254,8 @@
     <Content Include="Views\KendoUI\Grid_ReadOnly.cshtml" />
     <Content Include="Views\KendoUI\Grid_CRUD.cshtml" />
     <Content Include="Views\KendoUI\Autocomplete.cshtml" />
+    <Content Include="Views\KendoUI\MVVM.cshtml" />
+    <Content Include="Views\KendoUI\Mobile_Simple.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
