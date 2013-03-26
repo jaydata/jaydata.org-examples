@@ -136,12 +136,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\KnockoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KendoUIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="KendoUI\Northwind.svc.cs">
+    <Compile Include="Northwind.svc.cs">
       <DependentUpon>Northwind.svc</DependentUpon>
     </Compile>
     <Compile Include="ToDoList\Models\Reminder.cs" />
@@ -203,10 +204,6 @@
     <Content Include="ExampleList.xml" />
     <Content Include="Facebook\Facebook_provider_example.html" />
     <Content Include="Facebook\Facebook_provider_friends_example.html" />
-    <Content Include="FlowerShop\Images\ajax-loader.gif" />
-    <Content Include="FlowerShop\Images\bg_direction_nav.png" />
-    <Content Include="FlowerShop\index.html" />
-    <Content Include="FlowerShop\Styles\mixins.css" />
     <Content Include="Fonts\Droid\droidsans-bold.svg" />
     <Content Include="Fonts\Droid\droidsans.svg" />
     <Content Include="Fonts\Enzo\enzoot-bold.svg" />
@@ -243,12 +240,7 @@
     <Content Include="Images\shipping.png" />
     <Content Include="Images\todolist.png" />
     <Content Include="Images\yqlnagy.png" />
-    <Content Include="KendoUI\cascadingcombobox.html" />
-    <Content Include="KendoUI\Index.html" />
-    <Content Include="KendoUI\masterdetail.html" />
-    <Content Include="KendoUI\Northwind.svc" />
-    <Content Include="KendoUI\orig.html" />
-    <Content Include="KendoUI\prefilter.html" />
+    <Content Include="Northwind.svc" />
     <Content Include="Plugins\codemirror\.gitattributes" />
     <Content Include="Plugins\codemirror\.gitignore" />
     <Content Include="Plugins\codemirror\addon\dialog\dialog.css" />
@@ -478,6 +470,7 @@
     <Content Include="Plugins\codemirror\theme\vibrant-ink.css" />
     <Content Include="Plugins\codemirror\theme\xq-dark.css" />
     <Content Include="Scripts\example\kendo_mobile_simple.js" />
+    <Content Include="Scripts\example\knokout_northwind.js" />
     <Content Include="Scripts\example\todo.js" />
     <Content Include="Scripts\indexModel.js" />
     <Content Include="Scripts\ui.js" />
@@ -802,6 +795,8 @@
     <Content Include="Styles\examples.css" />
     <Content Include="Styles\img\favicon_jaydata.png" />
     <Content Include="Styles\img\iphone.png" />
+    <Content Include="Styles\img\knokout_flowershop\ajax-loader.gif" />
+    <Content Include="Styles\img\knokout_flowershop\bg_direction_nav.png" />
     <Content Include="Styles\img\logo_jaydata_dark.png" />
     <Content Include="Styles\img\logo_kendoui.png" />
     <Content Include="Styles\img\shipping.png" />
@@ -1256,6 +1251,11 @@
     <Content Include="Views\KendoUI\Mobile_Simple.cshtml" />
     <Content Include="Views\KendoUI\Mobile_Complex.cshtml" />
     <Content Include="Views\KendoUI\Prefilter.cshtml" />
+    <Content Include="Views\KendoUI\MasterDetails.cshtml" />
+    <Content Include="Views\KendoUI\Cascading_Combobox.cshtml" />
+    <Content Include="Views\Knockout\FlowerShop.cshtml" />
+    <Content Include="Views\Shared\Layout_Knokout.cshtml" />
+    <Content Include="Views\Knockout\Northwind.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -1303,14 +1303,6 @@
     <Content Include="Download\netflix.apk" />
     <Content Include="Download\northwind_nodejs.zip" />
     <Content Include="Download\YQLWithRails.zip" />
-    <Content Include="FlowerShop\Styles\less\css3.less" />
-    <Content Include="FlowerShop\Styles\less\flexslider.less" />
-    <Content Include="FlowerShop\Styles\less\functions.less" />
-    <Content Include="FlowerShop\Styles\less\layout.less" />
-    <Content Include="FlowerShop\Styles\less\mediaqueries.less" />
-    <Content Include="FlowerShop\Styles\less\style.less" />
-    <Content Include="FlowerShop\Styles\less\variables.less" />
-    <Content Include="FlowerShop\Styles\mixins.less" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Styles\dd.less" />

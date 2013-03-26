@@ -1,13 +1,13 @@
 ﻿
 function getRemoteNorthwind() {
-    return $data.initService("Northwind.svc")
+    return $data.initService("/Northwind.svc")
     .then(function (m, f, t) {
         return m;
     });
 }
 
 function getLocalNorthwind() {
-    return $data.initService("Northwind.svc")
+    return $data.initService("/Northwind.svc")
     .then(function (m, f, t) {
 
         var localDB = new t({ name: 'local', databaseName: 'nw' });

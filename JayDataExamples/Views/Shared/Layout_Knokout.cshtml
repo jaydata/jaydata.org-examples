@@ -1,0 +1,57 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@section Header {
+    @RenderSection("Meta", false)
+    <script src="http://include.jaydata.org/knockout-2.1.0.js"></script>
+    <script src="http://include.jaydata.org/jaydatamodules/knockout.js"></script>
+    <script type="text/javascript" src="~/Scripts/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/vendor/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="~/Scripts/vendor/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="~/Scripts/vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script type="text/javascript" src="~/Scripts/vendor/codemirror/mode/javascript/javascript.js"></script>
+
+    <link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../Styles/Bootstrap/docs.css" rel="stylesheet" />
+    <link href="~/Scripts/vendor/codemirror/lib/codemirror.css" rel="stylesheet" />
+    @RenderSection("Includes", true)
+}
+
+@{
+    Html.RenderPartial("_IncludeBreadcrumb");
+}
+
+@section MainBody {
+    <div class="container">
+        <header class="jumbotron masthead">
+            <div class="inner tacenter">
+                @RenderSection("Title", false)
+                @RenderSection("Tags", false)
+                @RenderSection("SupportedBrowsers", false)
+            </div>
+        </header>
+
+        <div class="row-fluid">
+            @RenderSection("Description", false)
+            @RenderSection("SourceCode", false)
+        </div>
+
+        <hr class="soften" />
+
+        <div class="row-fluid">
+            <div class="span6 code-source">
+                <div class="bg-dark-grid">
+                    <h3>Source Code</h3>
+                </div>
+                @RenderSection("CodeSource", false)
+            </div>
+            <div class="span6 code-running">
+                <div class="bg-dark-grid">
+                    <h3>Running Example</h3>
+                </div>
+                @RenderSection("CodeRunning", false)
+            </div>
+        </div>
+    </div>
+}
+

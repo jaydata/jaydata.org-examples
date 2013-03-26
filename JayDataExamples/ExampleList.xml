@@ -88,10 +88,10 @@
     </Example>
     <!-- Knokout examples -->
     <Example>
-      <Title>Flower Shop- HTML5</Title>
+      <Title>Flower Shop- HTML5 (moved)</Title>
       <Description><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/Kendo_ToDoList</Link>
+      <Link>Knockout/FlowerShop</Link>
       <Tags>jQuery, JayStorm, Knockout, OData</Tags>
     </Example>
     <Example>
@@ -102,10 +102,10 @@
       <Tags>jQuery, JayStorm, Knockout, OData, Windows8</Tags>
     </Example>
     <Example>
-      <Title>Knockout data binding</Title>
+      <Title>Knockout data binding (moved)</Title>
       <Description><![CDATA[Demonstrating easy data binding using JayData and Knockout.js together. Properties of the requested entities will be observable through a single toArray call if ko.observableArray is passed as parameter.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>Knockoutjs/Northwind.html</Link>
+      <Link>Knockout/Northwind</Link>
       <Tags>Knockout, Northwind</Tags>
     </Example>
     <Example>
