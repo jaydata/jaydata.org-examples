@@ -1,19 +1,18 @@
 ﻿@model JayDataExamples.Controllers.ExampleDoc
 @{
     ViewBag.Title = "Index";
-}
-@{
     Html.RenderPartial("_IncludeLogoFilter");
     Html.RenderPartial("_IncludeSearchBar");
 }
 
-@section MainBody {
-    @*<div class="container2">
-        <div class="marketing">
-            @Html.DisplayForModel()
-        </div>
-    </div>*@
+@section Header{
+    <script src="~/Scripts/vendor/knockout-2.1.0.js"></script>
+    <script src="/Scripts/ui.js"></script>
+    <script src="http://include.jaydata.org/jaydatamodules/knockout.js"></script>
+    <script src="~/Scripts/indexModel.js"></script>
+}
 
+@section MainBody {
     <div class="container">
         <div class="marketing">
             <div class="row-fluid">
@@ -24,8 +23,6 @@
             </div>
         </div>
     </div>
-
-
 
     <script type="text/html" id="row">
         <div class="row-fluid" data-bind="foreach:$data">

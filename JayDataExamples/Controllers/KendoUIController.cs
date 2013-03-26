@@ -6,12 +6,8 @@ using System.Web.Mvc;
 
 namespace JayDataExamples.Controllers
 {
-    public class KendoUIController : Controller
+    public class KendoUIController : BaseController
     {
-        public ActionResult Index(string id)
-        {
-            return View(id);
-        }
-
+        
     }
 }

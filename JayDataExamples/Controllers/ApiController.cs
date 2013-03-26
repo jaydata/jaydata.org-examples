@@ -14,15 +14,7 @@ namespace JayDataExamples.Controllers
         [HttpGet]
         public IQueryable<Example> GetExamples()
         {
-            ExampleDoc configDoc = null;
-
-            using (XmlReader reader = XmlReader.Create(HttpContext.Current.Server.MapPath("~/ExampleList.xml")))
-            {
-                reader.MoveToContent();
-                configDoc = new XmlSerializer(typeof(ExampleDoc)).Deserialize(reader) as ExampleDoc;
-            }
-
-            return configDoc.Examples.AsQueryable();
+            return ExampleDoc.Instnace.Examples.AsQueryable();
         }
     }
 }

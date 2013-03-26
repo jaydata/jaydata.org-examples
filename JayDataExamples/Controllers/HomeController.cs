@@ -11,6 +11,22 @@ namespace JayDataExamples.Controllers
     [XmlRoot("MainPage")]
     public class ExampleDoc 
     {
+        private static ExampleDoc _instance;
+        internal static ExampleDoc Instnace
+        {
+            get
+            {
+                if (ExampleDoc._instance == null)
+                {
+                    using (XmlReader reader = XmlReader.Create(HttpContext.Current.Server.MapPath("~/ExampleList.xml")))
+                    {
+                        reader.MoveToContent();
+                        ExampleDoc._instance = new XmlSerializer(typeof(ExampleDoc)).Deserialize(reader) as ExampleDoc;
+                    }
+                }
+                return ExampleDoc._instance;
+            }
+        }
         [XmlArray("Examples")]
         [XmlArrayItem(typeof(Example))]
         public List<Example> Examples { get; set; }
@@ -38,14 +54,7 @@ namespace JayDataExamples.Controllers
     {
         public ActionResult Index()
         {
-            ExampleDoc configDoc = null;
-            using (XmlReader reader = XmlReader.Create(Server.MapPath("~/ExampleList.xml")))
-            {
-                reader.MoveToContent();
-                configDoc = new XmlSerializer(typeof(ExampleDoc)).Deserialize(reader) as ExampleDoc;
-            }
-
-            return View(configDoc);
+            return View(ExampleDoc.Instnace);
         }
         public ActionResult Example(string id) {
             return View(id);

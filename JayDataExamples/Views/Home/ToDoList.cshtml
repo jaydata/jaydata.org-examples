@@ -1,5 +1,9 @@
 ﻿@{ Layout = "~/Views/Shared/Layout_Simple.cshtml"; }
 
+@section Title {
+    <h1 class="main-title">ToDo List Example</h1>
+}
+
 @section Meta {
     <meta name="description" content="How to use the JayData to implement a ToDoList example!">
 }
@@ -25,10 +29,6 @@
             <button value="delete" class="btn btn-small btn-danger tshadow">Delete</button>
         </div>
     </script>
-}
-
-@section Title {
-    <h1 class="main-title">ToDo List Example</h1>
 }
 
 @section Tags {

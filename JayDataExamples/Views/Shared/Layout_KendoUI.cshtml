@@ -2,6 +2,20 @@
 
 @section Header {
     @RenderSection("Meta", false)
+    <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
+    <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/kendo.js"></script>
+    <script type="text/javascript" src="~/Scripts/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/vendor/codemirror/lib/codemirror.js"></script>
+    <script type="text/javascript" src="~/Scripts/vendor/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="~/Scripts/vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script type="text/javascript" src="~/Scripts/vendor/codemirror/mode/javascript/javascript.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
+    <link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../Styles/Bootstrap/docs.css" rel="stylesheet" />
+    <link href="~/Scripts/vendor/codemirror/lib/codemirror.css" rel="stylesheet" />
     @RenderSection("Includes", true)
 }
 
@@ -14,12 +28,14 @@
         <header class="jumbotron masthead">
             <div class="inner tacenter">
                 @RenderSection("Title", false)
-                @*@RenderSection("SupportedBrowsers", false)*@
+                @RenderSection("Tags", false)
+                @RenderSection("SupportedBrowsers", false)
             </div>
         </header>
 
         <div class="row-fluid">
             @RenderSection("Description", false)
+            @RenderSection("SourceCode", false)
         </div>
 
         <hr class="soften" />
