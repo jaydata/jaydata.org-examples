@@ -115,6 +115,7 @@
       <Link>Knockout/DynamicQueryNorthwind</Link>
       <Tags>Knockout, query</Tags>
     </Example>
+   
     <Example>
       <Title>Knockout Dynamic Queries filter (moved)</Title>
       <Description><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Description>
@@ -122,7 +123,6 @@
       <Link>Knockout/DynamicQueryFilterNorthwind</Link>
       <Tags>Knockout, filter</Tags>
     </Example>
-    
     <Example>
       <Title>Netflix movies-Sencha Touch 2</Title>
       <Description><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Description>
@@ -130,6 +130,7 @@
       <Link>/Sencha/index.html</Link>
       <Tags>SenchaTouch, OData</Tags>
     </Example>
+    <!-- YQL examples -->
     <Example>
       <Title>YQL- html search</Title>
       <Description>
@@ -175,6 +176,7 @@
       <Link>YQL/YQLFeed.html</Link>
       <Tags>YQL, </Tags>
     </Example>
+    
     <Example>
       <Title>Newsreader CRUD</Title>
       <Description>

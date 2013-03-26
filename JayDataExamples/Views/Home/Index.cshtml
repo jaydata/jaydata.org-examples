@@ -34,7 +34,7 @@
     <script type="text/html" id="cell">
         <div class="span4 well well-white">
             <div class="qr-code fright">
-                <img data-bind="attr:{src:'https://chart.googleapis.com/chart?cht=qr&chl='+encodeURIComponent('http://nochtap.avangrade.com/'+Link())+'&chs=100x100'}" alt="QR Code" />
+                <img data-bind="attr:{src:'https://chart.googleapis.com/chart?cht=qr&chl='+encodeURIComponent('http://nochtap.avangrade.com/'+Link())+'&chs=80x80'}" alt="QR Code" />
             </div>
             <a data-bind="attr:{href:Link}">
                 <h2 data-bind="text: Title"></h2>
@@ -47,9 +47,25 @@
     </script>
 
     <script type="text/javascript">
+        function getURLParameter(name) {
+            return decodeURIComponent(
+                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1]
+            );
+        }
         var exampleSite = new ExampleSite();
         exampleSite.initialize().then(function () {
             ko.applyBindings(exampleSite.Model);
+            var tagListStr = getURLParameter("tags");
+            if (tagListStr !== "null") {
+                var tagList = tagListStr.split(',');
+                tagList.forEach(function (tag) {
+                    exampleSite.Model.addTags(tag);
+                });
+            }
+            var qStr = getURLParameter("q");
+            if (qStr !== "null") {
+                exampleSite.Model.qStr(qStr);
+            }
         });
     </script>
 }

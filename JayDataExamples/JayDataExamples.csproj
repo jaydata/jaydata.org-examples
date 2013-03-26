@@ -1256,6 +1256,8 @@
     <Content Include="Views\Knockout\FlowerShop.cshtml" />
     <Content Include="Views\Shared\Layout_Knokout.cshtml" />
     <Content Include="Views\Knockout\Northwind.cshtml" />
+    <Content Include="Views\Knockout\DynamicQueryNorthwind.cshtml" />
+    <Content Include="Views\Knockout\DynamicQueryFilterNorthwind.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -84,7 +84,7 @@
         var qStr = "";
         var q = $('#q').val();
         if (q != null && q != undefined && q != "") {
-            qStr = "(it.Title.contains('" + q + "')==true || it.Description.contains('" + q + "')==true)";
+            qStr = "(it.Title.toLowerCase().contains('" + q + "')==true || it.Description.toLowerCase().contains('" + q + "')==true)";
         }
 
         if (self.Model.SelectedTags().length > 0) {
