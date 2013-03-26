@@ -1,0 +1,142 @@
+﻿@model JayDataExamples.Controllers.Example
+@{ Layout = "~/Views/Shared/Layout_KendoUI.cshtml"; }
+
+@section Title {
+    <h1>Kendo Master-detail grid (JayData example)</h1>
+}
+
+@section Meta {
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
+    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example." />
+}
+
+@section Includes {
+    <script type="text/javascript" src="~/Scripts/vendor/north.js"></script>
+    <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+    <link href="../Styles/dd.css" rel="stylesheet" />
+}
+
+@section SupportedBrowsers {
+    <div class="bg-dark-grid">
+        <h3>Supported Browsers</h3>
+    </div>
+    <div class="well well-white">
+        <ul class="browser-list">
+            <li class="browser chrome" title="Google Chrome 12+"></li>
+            <li class="browser opera" title="Opera 10+"></li>
+            <li class="browser safari" title="Safari 4+"></li>
+            <li class="browser blackberry" title="Blackberry 2+"></li>
+            <li class="browser wp" title="Windows Phone 7.5+"></li>
+            <li class="browser ios" title="iOS 4+"></li>
+            <li class="browser android" title="Android 2.2+"></li>
+        </ul>
+    </div>
+}
+
+@section Tags {
+    <ul class="tags">
+        @foreach (var tag in Model.TagList)
+        {
+            <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>@tag</a></li>
+        }
+    </ul>
+}
+
+@section Description {
+    <p class="main-desc">
+        This Kendo Grid example uses oData to access the Northwind service. Sorting, paging and filtering works on the server side but with a simple
+            switch they can be one the client side, too.  In this example the grid is read only and the columns are manually configured.
+    </p>
+}
+
+@section SourceCode {
+    <div class="box-jsfiddle fright">
+        <a class="logo-jsfiddle blue" target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>
+
+        <span class="separator">or</span>
+
+        <a href="#" class="btn btn-primary">Download</a>
+    </div>
+}
+
+@section CodeSource {
+    <textarea id="code">
+<div id="grid"></div>
+<script type="text/x-kendo-template" id="template">
+    <div class="container"></div>
+</script>
+<script>
+    function detailInit(e) {
+        e.detailRow.find(".container").kendoGrid({
+            dataSource: remoteDB.Products
+                .filter("it.Category_ID == catid", { catid: e.data.Category_ID })
+                .asKendoDataSource({ pageSize: 25, batch: false }),
+            filterable: true,
+            sortable: true,
+            pageable: true,
+            columns: ["Product_Name", "Units_On_Order"]
+        });
+    }
+    $('#grid').kendoGrid({
+        dataSource: remoteDB.Categories
+            .asKendoDataSource({ pageSize: 25, batch: false }),
+        filterable: true,
+        sortable: true,
+        pageable: true,
+        detailTemplate: kendo.template($("#template").html()),
+        detailInit: detailInit,
+        dataBound: function () {
+            this.expandRow(this.tbody.find("tr.k-master-row").first());
+        },
+        height: 500,
+        columns: ['Category_Name']
+    });
+</script>
+    </textarea>
+
+    <script>
+        setTimeout(function () {
+            CodeMirror.fromTextArea(document.getElementById('code'), {
+                mode: 'text/html',
+                lineNumbers: false
+            });
+        });
+    </script>
+}
+
+@section CodeRunning {
+    <div id="grid" />
+    <script type="text/x-kendo-template" id="template">
+    <div class="container">
+    </div>
+    </script>
+
+    <script>
+        $.when($.ready, getRemoteNorthwind())
+        .then(function ($, remoteDB) {
+            function detailInit(e) {
+                e.detailRow.find(".container").kendoGrid({
+                    dataSource: remoteDB.Products.filter("it.Category_ID == catid", { catid: e.data.Category_ID }).asKendoDataSource({ pageSize: 25, batch: false }),
+                    filterable: true,
+                    sortable: true,
+                    pageable: false,
+                    columns: ["Product_Name", "Units_On_Order"]
+                });
+            }
+
+            $('#grid').kendoGrid({
+                dataSource: remoteDB.Categories.asKendoDataSource({ pageSize: 25, batch: false }),
+                filterable: true,
+                sortable: true,
+                pageable: false,
+                detailTemplate: kendo.template($("#template").html()),
+                detailInit: detailInit,
+                dataBound: function () {
+                    this.expandRow(this.tbody.find("tr.k-master-row").first());
+                },
+                height: 500,
+                columns: ['Category_Name']
+            });
+        });
+    </script>
+}

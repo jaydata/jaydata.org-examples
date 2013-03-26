@@ -246,8 +246,6 @@
     <Content Include="KendoUI\cascadingcombobox.html" />
     <Content Include="KendoUI\Index.html" />
     <Content Include="KendoUI\masterdetail.html" />
-    <Content Include="KendoUI\mobile-complex.html" />
-    <Content Include="KendoUI\mobile-simple.html" />
     <Content Include="KendoUI\Northwind.svc" />
     <Content Include="KendoUI\orig.html" />
     <Content Include="KendoUI\prefilter.html" />
@@ -1256,6 +1254,8 @@
     <Content Include="Views\KendoUI\Autocomplete.cshtml" />
     <Content Include="Views\KendoUI\MVVM.cshtml" />
     <Content Include="Views\KendoUI\Mobile_Simple.cshtml" />
+    <Content Include="Views\KendoUI\Mobile_Complex.cshtml" />
+    <Content Include="Views\KendoUI\Prefilter.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

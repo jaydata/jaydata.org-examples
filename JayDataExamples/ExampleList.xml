@@ -65,24 +65,24 @@
       <Tags>KendoUI, Northwind</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI mobile app </Title>
+      <Title>Kendo UI mobile app (moved)</Title>
       <Description><![CDATA[Mobile app with remote Nortwind database. Datasource with filtering, projection and sort.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/prefilter.html</Link>
+      <Link>KendoUI/Prefilter</Link>
       <Tags>KendoUI, Northwind, filter, projection</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI Master-detail</Title>
+      <Title>Kendo UI Master-detail (moved)</Title>
       <Description><![CDATA[This Kendo Grid example uses OData to access the Northwind service.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/prefilter.html</Link>
+      <Link>KendoUI/MasterDetails</Link>
       <Tags>KendoUI, Northwind, filter, paging</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI Cascading combobox</Title>
+      <Title>Kendo UI Cascading combobox (moved)</Title>
       <Description><![CDATA[Cascading combobox with remote Northwind database.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/prefilter.html</Link>
+      <Link>KendoUI/Cascading_Combobox</Link>
       <Tags>KendoUI, Northwind </Tags>
     </Example>
     <Example>
