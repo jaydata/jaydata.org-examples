@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MainPage>
   <Examples>
+    <!-- KendoUI examples -->
     <Example>
       <Title>Listview with Kendo UI (moved)</Title>
       <Description><![CDATA[The simplest way to use JayData and KendoUI is creating a listview. All you need is a JayData context, of course it works with all <a href="http://jaydata.org/providers"providers</a>! In this example OData is used. ]]></Description>
@@ -85,13 +86,7 @@
       <Link>KendoUI/Cascading_Combobox</Link>
       <Tags>KendoUI, Northwind </Tags>
     </Example>
-    <Example>
-      <Title>Netflix movies-Sencha Touch 2</Title>
-      <Description><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Description>
-      <Image>/Images/indexeddb.png</Image>
-      <Link>/Sencha/index.html</Link>
-      <Tags>SenchaTouch, OData</Tags>
-    </Example>
+    <!-- Knokout examples -->
     <Example>
       <Title>Flower Shop- HTML5</Title>
       <Description><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Description>
@@ -126,6 +121,14 @@
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockoutjs/DynamicQueryFilterNorthwind.html</Link>
       <Tags>Knockout, filter</Tags>
+    </Example>
+    
+    <Example>
+      <Title>Netflix movies-Sencha Touch 2</Title>
+      <Description><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>/Sencha/index.html</Link>
+      <Tags>SenchaTouch, OData</Tags>
     </Example>
     <Example>
       <Title>YQL- html search</Title>
