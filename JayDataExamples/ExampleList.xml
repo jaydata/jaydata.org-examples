@@ -58,7 +58,7 @@
       <Tags>KendoUI, filter, CRUD</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI Bar Chart </Title>
+      <Title>Kendo UI Bar Chart (moved)</Title>
       <Description><![CDATA[This KendoUI Dataviz bar chart example uses a remote Northwind database.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/BarChart</Link>
