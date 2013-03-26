@@ -1254,6 +1254,7 @@
     <Content Include="Views\KendoUI\BarChart.cshtml" />
     <Content Include="Views\KendoUI\ListView.cshtml" />
     <Content Include="Views\KendoUI\ListView_Filter.cshtml" />
+    <Content Include="Views\KendoUI\Grid_ReadOnly.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

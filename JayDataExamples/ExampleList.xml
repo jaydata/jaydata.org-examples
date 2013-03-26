@@ -16,10 +16,10 @@
       <Tags>KendoUI, OData, filter, sort</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI grid with filter</Title>
+      <Title>Kendo UI grid with filter (moved)</Title>
       <Description><![CDATA[Simple grid with remote Northwind database using OData. Sorting, paging and filtering works on the server side but with a simple switch they can be one the client side, too.]]></Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/grid-readonly.html</Link>
+      <Link>KendoUI/Grid_ReadOnly</Link>
       <Tags>KendoUI, OData, Northwind, filter, sort</Tags>
     </Example>
     <Example>
