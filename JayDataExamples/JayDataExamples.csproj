@@ -797,13 +797,8 @@
     <Content Include="Styles\bootstrap\bootstrap-responsive.min.css" />
     <Content Include="Styles\bootstrap\bootstrap.min.css" />
     <Content Include="Styles\examples.css" />
-    <Content Include="Styles\img\favicon_jaydata.png" />
-    <Content Include="Styles\img\iphone.png" />
     <Content Include="Styles\img\knokout_flowershop\ajax-loader.gif" />
     <Content Include="Styles\img\knokout_flowershop\bg_direction_nav.png" />
-    <Content Include="Styles\img\logo_jaydata_dark.png" />
-    <Content Include="Styles\img\logo_kendoui.png" />
-    <Content Include="Styles\img\shipping.png" />
     <Content Include="Styles\less\logos.css" />
     <Content Include="YQL\YQLWithRails.html" />
     <Content Include="NodeJs\logger.js" />
