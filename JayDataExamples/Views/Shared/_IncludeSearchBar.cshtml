@@ -2,18 +2,17 @@
     <div class="container">
         <div class="row-fluid">
             <div class="span12">
-                <div class="block-inline input-append">
-                    <i class="icon-search"></i>
-                    <input data-bind="value:qStr" class="span2" id="q" name="q" placeholder="Search" type="text" onkeyup="exampleSite.filter();" autofocus/>
-                </div>
-
                 <div class="block-inline tags-inline">
                     <ul class="tags block-inline">
                         <li><a class="label label-purple" data-bind="click: $root.removeTags, attr:{class:SelectedTags().length>0?'label label-purple inactive':'label label-purple'}" href="javascript:void(0)"><i class="icon-tags icon-white"></i>All</a></li>
                         <!--ko foreach: SelectedTags-->
-                        <li><a data-bind="click: $root.removeTag, attr:{class:'label label-purple'}" class="label label-purple hide" href="javascript:void(0)"><i class="icon-tag icon-white"></i><span data-bind="text:$data"></span> <i class="icon-remove"></i></a></li>
+                        <li><a data-bind="click: $root.removeTag, attr:{class:'label label-purple'}" class="label label-purple hide" href="javascript:void(0)"><i class="icon-tag icon-white"></i><span data-bind="text:$data"></span><i class="icon-remove"></i></a></li>
                         <!--/ko-->
                     </ul>
+                </div>
+                <div class="block-inline input-append fright">
+                    <i class="icon-search"></i>
+                    <input data-bind="value:qStr" class="span2 input-search" id="q" name="q" placeholder="Search" type="text" onkeyup="exampleSite.filter();" />
                 </div>
             </div>
         </div>

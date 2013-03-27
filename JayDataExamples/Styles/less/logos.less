@@ -26,7 +26,7 @@
     100%    { -o-transform: translate(0, -10px); }
 }
 
-@filter-height: 500px;
+@filter-height: 585px;
 .logo-filter {
     .border-box;
     -webkit-transition: -webkit-transform 0.5s ease-in-out;
@@ -95,55 +95,65 @@
 }
 
 .logo-filter-list {
-    margin: 25px auto 0; padding: 0;
-    width: 1045px;
+    margin: 0 10px; padding: 0;
+    float: left; width: 205px;
+    text-align: center;
+
+    li { list-style-type: none; }
 
     .logo-list-item {
-        list-style-type: none;
-        display: inline-block;
-        margin: 0 10px 20px;
+        display: inline-block; margin: 0 auto 10px;
+        width: 185px; height: 85px;
+        opacity: 1;
 
-        -webkit-transition: opacity 0.5s;
+        background: #fff;
+        border: 1px solid #ddd;
+        text-align: center;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        /*-webkit-transition: opacity 0.5s;
         -moz-transition: opacity 0.5s;
         -o-transition: opacity 0.5s;
-        transition: opacity 0.5s;
-        opacity: 0.65;
+        transition: opacity 0.5s;*/
+        
 
-        &:hover, &.active {
-            opacity: 1;
+        &.inactive {
+            opacity: 0.45;
         }
 
-        &.big {
-            width: 185px; height: 85px;
-            background: #fff; padding-top: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
+        &.selected {
+            border: 3px solid #53005E;
+        }
+    }
 
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
+    .list-header {
+        h3 {
+            color: #fff;
+            margin: 0 0 10px;
         }
     }
 }
 
 .logo-medium {
-    display: inline-block; width: 149px; height: 63px;
+    display: block; width: 100%; height: 100%;
     background: url(../Images/sprite_image.jpg) no-repeat;
 
-    &.yourui        { background-position: 0 0px;       }
-    &.jqgrid        { background-position: 0 -65px;     }
-    &.jqueryui      { background-position: 0 -130px;    }
-    &.jquerymobile  { background-position: 0 -195px;    }
-    &.knockout      { background-position: 0 -260px;    }
-    &.sencha        { background-position: 0 -325px;    }
-    &.kendoui       { background-position: 0 -1027px;   }
-    &.handlebars    { background-position: 0 -1089px;   }
+    &.yourui        { background-position: 0 0px;        }
+    &.jqgrid        { background-position: 0 -65px;      }
+    &.jqueryui      { background-position: 20px -123px;  }
+    &.jquerymobile  { background-position: 0 -195px;     }
+    &.knockout      { background-position: 20px -251px;  }
+    &.sencha        { background-position: 16px -316px; height: 67px; }
+    &.kendoui       { background-position: 19px -1030px; height: 55px; position: relative; top: 14px; }
+    &.handlebars    { background-position: 18px -1080px; }
 }
 
 .logo-big {
-    display: inline-block; width: 185px; height: 85px;
-    background: url(../Images/sprite_image.jpg) #fff no-repeat;
-    border: 1px solid #ddd;
+    display: block; width: 100%; height: 100%;
+    background: url(../Images/sprite_image.jpg) no-repeat;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -158,7 +168,7 @@
     &.jayrepo           { background-position: -143px -1118px;  }
     &.amazon            { background-position: -145px -872px;   }
     &.yourstore         { background-position: -145px -436px;   }
-    &.facebook          { background-position: -145px -343px;   }
+    &.facebook          { background-position: -150px -342px;   }
     &.yahoo             { background-position: -145px -257px;   }
     &.websql            { background-position: -140px -1046px;  }
     &.localstorage      { background-position: -145px -785px;   }
