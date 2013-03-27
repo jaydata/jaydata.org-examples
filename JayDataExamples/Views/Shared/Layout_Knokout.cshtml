@@ -29,6 +29,11 @@
     <div class="container main-body">
         <div class="row-fluid">
             <div class="span8 detail well well-white main-title-container">
+                @if(IsSectionDefined("Title")){
+                    @RenderSection("Title", false)
+                }else{
+                    <h1>@ViewBag.Title</h1>
+                }
                 @RenderSection("Title", false)
                 @RenderSection("Tags", false)
                 @RenderSection("Description", false)

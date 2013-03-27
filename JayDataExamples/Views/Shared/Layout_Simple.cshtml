@@ -13,7 +13,14 @@
     <div class="container main-body">
         <div class="row-fluid">
             <div class="span8 detail well well-white">
-                @RenderSection("Title", false)
+                @if (IsSectionDefined("Title"))
+                {
+                    @RenderSection("Title", false)
+                }
+                else
+                {
+                    <h1>@ViewBag.Title</h1>
+                }
 
                 @RenderSection("Tags", false)
 
@@ -34,14 +41,14 @@
                 </div>
                 @RenderSection("CodeSource", false)
             </div>
-<!--**************************************** RUNNING CODE START HERE ****************************************-->
+            <!--**************************************** RUNNING CODE START HERE ****************************************-->
             <div class="span6 code-running">
                 <div class="bg-dark-grid">
                     <h3>Running Example</h3>
                 </div>
                 @RenderSection("CodeRunning", false)
             </div>
-<!--******************************************* RUNNING CODE END *******************************************-->
+            <!--******************************************* RUNNING CODE END *******************************************-->
         </div>
     </div>
 }

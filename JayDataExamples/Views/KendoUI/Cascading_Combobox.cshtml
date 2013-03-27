@@ -1,8 +1,7 @@
 ﻿@model JayDataExamples.App_Code.Example
-@{ Layout = "~/Views/Shared/Layout_KendoUI.cshtml"; }
-
-@section Title {
-    <h1>KendoUI cascading combobox</h1>
+@{
+    Layout = "~/Views/Shared/Layout_KendoUI.cshtml";
+    ViewBag.Title = "KendoUI cascading combobox";
 }
 
 @section Meta {
@@ -38,30 +37,30 @@
 @section CodeSource {
     <textarea id="code">
 <script>
-$("#categories").kendoComboBox({
-    placeholder: "Select category...",
-    dataTextField: "Category_Name",
-    dataValueField: "Category_ID",
-    dataSource: remoteDB.Categories.asKendoDataSource()
-});
+    $("#categories").kendoComboBox({
+        placeholder: "Select category...",
+        dataTextField: "Category_Name",
+        dataValueField: "Category_ID",
+        dataSource: remoteDB.Categories.asKendoDataSource()
+    });
 
-var products = $("#products").kendoComboBox({
-    autoBind: false,
-    cascadeFrom: "categories",
-    placeholder: "Select product...",
-    dataTextField: "Product_Name",
-    dataValueField: "Product_ID",
-    dataSource: remoteDB.Products.asKendoDataSource()
-}).data("kendoComboBox");
+    var products = $("#products").kendoComboBox({
+        autoBind: false,
+        cascadeFrom: "categories",
+        placeholder: "Select product...",
+        dataTextField: "Product_Name",
+        dataValueField: "Product_ID",
+        dataSource: remoteDB.Products.asKendoDataSource()
+    }).data("kendoComboBox");
 
-var orders = $("#orders").kendoComboBox({
-    autoBind: false,
-    cascadeFrom: "products",
-    placeholder: "Select order...",
-    dataTextField: "Order.Ship_City",
-    dataValueField: "Order_ID",
-    dataSource: remoteDB.Order_Details.include('Order').asKendoDataSource()
-}).data("kendoComboBox");
+    var orders = $("#orders").kendoComboBox({
+        autoBind: false,
+        cascadeFrom: "products",
+        placeholder: "Select order...",
+        dataTextField: "Order.Ship_City",
+        dataValueField: "Order_ID",
+        dataSource: remoteDB.Order_Details.include('Order').asKendoDataSource()
+    }).data("kendoComboBox");
 </script>
 </textarea>
 
@@ -76,52 +75,52 @@ var orders = $("#orders").kendoComboBox({
 }
 
 @section CodeRunning {
-<div class="padding10">
-    <p>
-        <label for="categories">Categories:</label>
-        <input id="categories" />
-    </p>
-    <p>
-        <label for="products">Products:</label>
-        <input id="products" disabled="disabled" />
-    </p>
-    <p>
-        <label for="orders">Orders:</label>
-        <input id="orders" disabled="disabled" />
-    </p>
+    <div class="padding10">
+        <p>
+            <label for="categories">Categories:</label>
+            <input id="categories" />
+        </p>
+        <p>
+            <label for="products">Products:</label>
+            <input id="products" disabled="disabled" />
+        </p>
+        <p>
+            <label for="orders">Orders:</label>
+            <input id="orders" disabled="disabled" />
+        </p>
 
-    <style scoped>
-        .k-readonly {
-            color: gray;
-        }
-    </style>
+        <style scoped>
+            .k-readonly {
+                color: gray;
+            }
+        </style>
 
-    <script>
-        $.when($.ready, getRemoteNorthwind())
-        .then(function ($, remoteDB) {
-            $("#categories").kendoComboBox({
-                placeholder: "Select category...",
-                dataTextField: "Category_Name",
-                dataValueField: "Category_ID",
-                dataSource: remoteDB.Categories.asKendoDataSource()
+        <script>
+            $.when($.ready, getRemoteNorthwind())
+            .then(function ($, remoteDB) {
+                $("#categories").kendoComboBox({
+                    placeholder: "Select category...",
+                    dataTextField: "Category_Name",
+                    dataValueField: "Category_ID",
+                    dataSource: remoteDB.Categories.asKendoDataSource()
+                });
+                var products = $("#products").kendoComboBox({
+                    autoBind: false,
+                    cascadeFrom: "categories",
+                    placeholder: "Select product...",
+                    dataTextField: "Product_Name",
+                    dataValueField: "Product_ID",
+                    dataSource: remoteDB.Products.asKendoDataSource()
+                }).data("kendoComboBox");
+                var orders = $("#orders").kendoComboBox({
+                    autoBind: false,
+                    cascadeFrom: "products",
+                    placeholder: "Select order...",
+                    dataTextField: "Order.Ship_City",
+                    dataValueField: "Order_ID",
+                    dataSource: remoteDB.Order_Details.include('Order').asKendoDataSource()
+                }).data("kendoComboBox");
             });
-            var products = $("#products").kendoComboBox({
-                autoBind: false,
-                cascadeFrom: "categories",
-                placeholder: "Select product...",
-                dataTextField: "Product_Name",
-                dataValueField: "Product_ID",
-                dataSource: remoteDB.Products.asKendoDataSource()
-            }).data("kendoComboBox");
-            var orders = $("#orders").kendoComboBox({
-                autoBind: false,
-                cascadeFrom: "products",
-                placeholder: "Select order...",
-                dataTextField: "Order.Ship_City",
-                dataValueField: "Order_ID",
-                dataSource: remoteDB.Order_Details.include('Order').asKendoDataSource()
-            }).data("kendoComboBox");
-        });
-    </script>
-</div>
+        </script>
+    </div>
 }
