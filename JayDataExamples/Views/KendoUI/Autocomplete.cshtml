@@ -1,8 +1,7 @@
 ﻿@model JayDataExamples.App_Code.Example
-@{ Layout = "~/Views/Shared/Layout_KendoUI.cshtml"; }
-
-@section Title {
-    <h1>Autocomplete</h1>
+@{ 
+    Layout = "~/Views/Shared/Layout_KendoUI.cshtml";
+    ViewBag.Title = "Autocomplete";
 }
 
 @section Meta {
@@ -61,7 +60,7 @@
 
 @section CodeRunning {
     <br />
-     <div id="shipping">
+    <div id="shipping">
         <label for="input" class="info">Choose product:</label>
         <input id="input" />
     </div>
