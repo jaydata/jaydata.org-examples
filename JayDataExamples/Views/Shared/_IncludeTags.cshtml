@@ -1,0 +1,7 @@
+﻿@model JayDataExamples.App_Code.Example
+<ul class="tags">
+    @foreach (var tag in Model.TagList)
+    {
+        <li><a class="label label-purple" href="/?tags=@tag"><i class="icon-tag icon-white"></i>@tag</a></li>
+    }
+</ul>

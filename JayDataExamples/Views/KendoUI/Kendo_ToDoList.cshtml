@@ -37,16 +37,20 @@
             the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.
     </p>
 }
-
-@section SourceCode {
-    <div class="box-jsfiddle fright">
-        <a class="logo-jsfiddle blue" target="_blank" href="http://jsfiddle.net/JayData/F4Hda/">jsfiddle</a>
-
-        <span class="separator">or</span>
-
-        <a href="#" class="btn btn-primary">Download</a>
-    </div>
+@section SupportedBrowsers {
+    @{Html.RenderPartial("_IncludeSupportedBrowsers");}
 }
+@section SimilarContents {
+    @{Html.RenderPartial("_IncludeRelatedContents");}
+}
+@section SourceCode {
+    @{Html.RenderPartial("_IncludeDownloadableSource");}
+}
+
+@section Tags {
+    @{Html.RenderPartial("_IncludeTags");}
+}
+
 
 @section CodeSource {
 <textarea id="code">

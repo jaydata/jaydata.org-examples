@@ -130,6 +130,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Example.cs" />
+    <Compile Include="Code\ExampleDoc.cs" />
+    <Compile Include="Code\ContentLink.cs" />
+    <Compile Include="Code\Browser.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -793,8 +797,13 @@
     <Content Include="Styles\bootstrap\bootstrap-responsive.min.css" />
     <Content Include="Styles\bootstrap\bootstrap.min.css" />
     <Content Include="Styles\examples.css" />
+    <Content Include="Styles\img\favicon_jaydata.png" />
+    <Content Include="Styles\img\iphone.png" />
     <Content Include="Styles\img\knokout_flowershop\ajax-loader.gif" />
     <Content Include="Styles\img\knokout_flowershop\bg_direction_nav.png" />
+    <Content Include="Styles\img\logo_jaydata_dark.png" />
+    <Content Include="Styles\img\logo_kendoui.png" />
+    <Content Include="Styles\img\shipping.png" />
     <Content Include="Styles\less\logos.css" />
     <Content Include="YQL\YQLWithRails.html" />
     <Content Include="NodeJs\logger.js" />
@@ -1253,6 +1262,10 @@
     <Content Include="Views\Knockout\Northwind.cshtml" />
     <Content Include="Views\Knockout\DynamicQueryNorthwind.cshtml" />
     <Content Include="Views\Knockout\DynamicQueryFilterNorthwind.cshtml" />
+    <Content Include="Views\Shared\_IncludeSupportedBrowsers.cshtml" />
+    <Content Include="Views\Shared\_IncludeRelatedContents.cshtml" />
+    <Content Include="Views\Shared\_IncludeDownloadableSource.cshtml" />
+    <Content Include="Views\Shared\_IncludeTags.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,0 +1,15 @@
+﻿@model JayDataExamples.App_Code.Example
+<div class="box-jsfiddle fright">
+    @if (!String.IsNullOrEmpty(Model.JsFiddle))
+    {
+        <a class="logo-jsfiddle blue" target="_blank" href="@Model.JsFiddle">jsfiddle</a>
+    }
+    @if (!String.IsNullOrEmpty(Model.JsFiddle) && !String.IsNullOrEmpty(Model.Download))
+    {
+        <span class="separator">or</span>
+    }
+    @if (!String.IsNullOrEmpty(Model.Download))
+    {
+        <a href="@Model.Download" class="btn btn-primary">Download</a>
+    }
+</div>

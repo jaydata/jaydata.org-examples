@@ -26,16 +26,12 @@
         <div class="row-fluid">
             <div class="span8 detail well well-white main-title-container">
                 @RenderSection("Title", false)
-
                 @RenderSection("Tags", false)
-
                 @RenderSection("Description", false)
-
                 @RenderSection("SourceCode", false)
             </div>
             <div class="span4 widget">
                 @RenderSection("SupportedBrowsers", false)
-
                 @RenderSection("SimilarContents", false)
             </div>
         </div>
@@ -46,12 +42,14 @@
                 </div>
                 @RenderSection("CodeSource", false)
             </div>
+<!--**************************************** RUNNING CODE START HERE ****************************************-->
             <div class="span6 code-running">
                 <div class="bg-dark-grid">
                     <h3>Running Example</h3>
                 </div>
                 @RenderSection("CodeRunning", false)
             </div>
+<!--******************************************* RUNNING CODE END *******************************************-->
         </div>
     </div>
 }

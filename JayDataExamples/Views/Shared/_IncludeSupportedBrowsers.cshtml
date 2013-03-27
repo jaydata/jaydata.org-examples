@@ -1,0 +1,12 @@
+﻿@model JayDataExamples.App_Code.Example
+<div class="bg-dark-grid">
+    <h3>Supported Browsers</h3>
+</div>
+<div class="well well-white">
+    <ul class="browser-list">
+        @foreach (var broser in Model.SupportedBrowsers)
+        {
+            <li class="@broser.GetClass" title="@broser.GetTitle"></li>
+        }
+    </ul>
+</div>

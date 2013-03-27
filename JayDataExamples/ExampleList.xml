@@ -8,6 +8,24 @@
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView</Link>
       <Tags>KendoUI, OData</Tags>
+      <Download>#</Download>
+      <JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="6" maxVersion="8"/>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="10"/>
+        <Browser title="Safari" name="safari" maxVersion="18"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="10"/>
+        <Browser title="Windows Phone" name="wp" minVersion="10"/>
+        <Browser title="iOS" name="ios" minVersion="10"/>
+        <Browser title="Android" name="android" minVersion="10"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="#" target="_self" css="">Understand JayData in 7 simple steps</ContentLink>
+        <ContentLink link="#" target="_self" css="">What's next in JayData?</ContentLink>
+        <ContentLink link="#" target="_self" css="">Understand JayData in 7 simple steps</ContentLink>
+        <ContentLink link="#" target="_self" css="">What's next in JayData?</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
       <Title>Kendo UI listview with filter (moved)</Title>

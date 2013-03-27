@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using JayDataExamples.App_Code;
 
 namespace JayDataExamples.Controllers
 {
@@ -10,7 +11,7 @@ namespace JayDataExamples.Controllers
     {
         public ActionResult Index(string id)
         {
-            Example ex = ExampleDoc.Instnace.Examples.Where(e => e.Link == RouteData.Values["controller"] + "/" + id).FirstOrDefault();
+            var ex = ExampleDoc.Instnace.Examples.Where(e => e.Link == RouteData.Values["controller"] + "/" + id).FirstOrDefault();
             return View(id, ex);
         }
     }
