@@ -66,11 +66,11 @@ body {
 	&:first-child { margin-left: 0; }
 
 	&.well-white {
-		min-height: 220px;
+		min-height: 235px;
 		position: relative;
 
 		.tags {
-			position: absolute; right: 20px; bottom: 20px;
+			position: absolute; right: 20px; bottom: 20px; left: 20px;
 		}	
 	}
 }
@@ -1615,8 +1615,9 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 		a {
 			font-family: Arial;
 			margin: 0; padding: 3px 5px;
+			position: relative;
 
-			i { width: 14px; height: 14px; margin: 0 4px 0 0; opacity: 0.5; }
+			&:before, i { width: 14px; height: 14px; margin: 0 4px 0 0; opacity: 0.5; }
 
 			.icon-remove {
 				margin: 2px 0 0 2px;
@@ -1672,6 +1673,22 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 
 .main-content {
 	padding: 115px 0 40px;
+}
+
+.main-page{
+	.tags {
+		li { margin-top: 5px; }
+
+		a {
+			padding: 3px 5px 3px 23px;
+
+			&:before {
+				content: ''; display: inline-block;
+				position: absolute; top: 3px; left: 6px;
+				background: url("/Images/glyphicons-halflings-white.png") 0 -48px;
+			}
+		}
+	}
 }
 
 .main-body {
