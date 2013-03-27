@@ -5,17 +5,14 @@
                 <div class="block-inline input-append">
                     <i class="icon-search"></i>
                     <input data-bind="value:qStr" class="span2" id="q" name="q" placeholder="Search" type="text" onkeyup="exampleSite.filter();" autofocus/>
-                    @*<button class="btn btn-primary" type="submit" data-bind="click: function(){exampleSite.filter();}"></button>*@
                 </div>
 
                 <div class="block-inline tags-inline">
                     <ul class="tags block-inline">
-                        <li><a data-bind="click: $root.removeTags, attr:{class:SelectedTags().length>0?'label label-purple inactive':'label label-purple'}" href="javascript:void(0)"><i class="icon-tags icon-white"></i>All</a></li>
+                        <li><a class="label label-purple" data-bind="click: $root.removeTags, attr:{class:SelectedTags().length>0?'label label-purple inactive':'label label-purple'}" href="javascript:void(0)"><i class="icon-tags icon-white"></i>All</a></li>
                         <!--ko foreach: SelectedTags-->
-                        <li><a data-bind="click: $root.removeTag" class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i><span data-bind="text:$data"></span> <i class="icon-remove"></i></a></li>
+                        <li><a data-bind="click: $root.removeTag, attr:{class:'label label-purple'}" class="label label-purple hide" href="javascript:void(0)"><i class="icon-tag icon-white"></i><span data-bind="text:$data"></span> <i class="icon-remove"></i></a></li>
                         <!--/ko-->
-                        @*<li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>tag1 <i class="icon-remove"></i></a></li>
-                        <li><a class="label label-purple" href="javascript:void(0)"><i class="icon-tag icon-white"></i>tag3 <i class="icon-remove"></i></a></li>*@
                     </ul>
                 </div>
             </div>
