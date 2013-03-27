@@ -1,3 +1,131 @@
+@keyframes toggling
+{
+    0%      { transform: translate(0, -10px); }
+    50%     { transform: translate(0, 0px); }
+    100%    { transform: translate(0, -10px); }
+}
+
+@-moz-keyframes toggling
+{
+    0%      { -moz-transform: translate(0, -10px); }
+    50%     { -moz-transform: translate(0, 0px); }
+    100%    { -moz-transform: translate(0, -10px); }
+}
+
+@-webkit-keyframes toggling
+{
+    0%      { -webkit-transform: translate(0, -10px); }
+    50%     { -webkit-transform: translate(0, 0px); }
+    100%    { -webkit-transform: translate(0, -10px); }
+}
+
+@-o-keyframes toggling
+{
+    0%      { -o-transform: translate(0, -10px); }
+    50%     { -o-transform: translate(0, 0px); }
+    100%    { -o-transform: translate(0, -10px); }
+}
+
+@filter-height: 500px;
+.logo-filter {
+    .border-box;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    -moz-transition: -moz-transform 0.5s ease-in-out;
+    -o-transition: -o-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -o-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+
+    position: fixed; top: -@filter-height; left: 50%;
+    height: @filter-height;
+    margin-left: -1170/2px; padding: 20px;
+    background: #0A001C url(/Images/mainnav.png) repeat 0 0;
+    border-bottom: 8px solid #53005e;
+    z-index: 4500;
+
+    .logo-filter-title {
+        color: #fff;
+        margin: 0 0 15px;
+    }
+
+    .logo-filter-trigger {
+        .border-box;
+        position: absolute; bottom: -38px; left: 50%; margin-left: -25px;
+        width: 50px; height: 30px;
+
+        -webkit-border-radius: 0 0 10px 10px;
+        -moz-border-radius: 0 0 10px 10px;
+        -o-border-radius: 0 0 10px 10px;
+        border-radius: 0 0 10px 10px;
+
+        -webkit-animation: toggling 1.5s infinite ease-in-out;
+        -moz-animation: toggling 1.5s infinite ease-in-out;
+        -o-animation: toggling 1.5s infinite ease-in-out;
+        animation: toggling 1.5s infinite ease-in-out;
+
+        .filter-icon {
+            display: block;
+            width: 100%; height: 100%;
+            padding-top: 5px;
+            text-align: center;
+        }
+    }
+
+    &.open {
+        -webkit-transform: translate(0, @filter-height);
+        -moz-transform: translate(0, @filter-height);
+        -o-transform: translate(0, @filter-height);
+        transform: translate(0, @filter-height);
+
+        .logo-filter-trigger {
+            -webkit-animation: none;
+            -moz-animation: none;
+            -o-animation: none;
+            animation: none;
+        }
+    }
+
+    .z-up       { z-index: 1500; }
+    .z-down     { z-index: 500; }
+
+    p { margin: 0 0 10px; }
+}
+
+.logo-filter-list {
+    margin: 25px auto 0; padding: 0;
+    width: 1045px;
+
+    .logo-list-item {
+        list-style-type: none;
+        display: inline-block;
+        margin: 0 10px 20px;
+
+        -webkit-transition: opacity 0.5s;
+        -moz-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
+        transition: opacity 0.5s;
+        opacity: 0.65;
+
+        &:hover, &.active {
+            opacity: 1;
+        }
+
+        &.big {
+            width: 185px; height: 85px;
+            background: #fff; padding-top: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    }
+}
+
 .logo-medium {
     display: inline-block; width: 149px; height: 63px;
     background: url(../Images/sprite_image.jpg) no-repeat;

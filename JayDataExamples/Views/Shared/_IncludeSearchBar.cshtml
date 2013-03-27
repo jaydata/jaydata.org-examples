@@ -3,8 +3,9 @@
         <div class="row-fluid">
             <div class="span12">
                 <div class="block-inline input-append">
-                    <input data-bind="value:qStr" class="span2" id="q" name="q" placeholder="Search here..." type="text" autofocus />
-                    <button class="btn btn-primary" type="submit" data-bind="click: function(){exampleSite.filter();}"><i class="icon-search icon-white"></i></button>
+                    <i class="icon-search"></i>
+                    <input data-bind="value:qStr" class="span2" id="q" name="q" placeholder="Search" type="text" onkeyup="exampleSite.filter();" autofocus/>
+                    @*<button class="btn btn-primary" type="submit" data-bind="click: function(){exampleSite.filter();}"></button>*@
                 </div>
 
                 <div class="block-inline tags-inline">
