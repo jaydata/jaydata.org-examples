@@ -9,7 +9,8 @@
             Suggested:String,
             Level: Number,
             ComputedLevel:Number,
-            TagList: Object
+            TagList: Object,
+            LimitedTagList: Object
         });
         this.Example.setStore('default', {
             provider: 'webApi',

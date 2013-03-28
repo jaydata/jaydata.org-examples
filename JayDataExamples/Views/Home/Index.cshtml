@@ -40,9 +40,15 @@
                 <h2 data-bind="text: Title"></h2>
             </a>
             <p data-bind="html: Description"></p>
-            <ul class="tags" data-bind="foreach:TagList">
+            <ul class="tags">
+                <!--ko foreach:LimitedTagList-->
                 <li><a class="label label-purple" href="javascript:void(0)" data-bind="text:$data, click:$root.addTags"><i class="icon-tag icon-white"></i></a></li>
+                <!--/ko-->
+                <!--ko if:LimitedTagList().length<TagList().length-->
+                <li><a class="label label-purple" href="javascript:void(0)">...</a></li>
+                <!--/ko-->
             </ul>
+
         </div>
     </script>
 

@@ -41,6 +41,15 @@ namespace JayDataExamples.App_Code
             }
         }
         [XmlIgnore]
+        public List<string> LimitedTagList
+        {
+            get
+            {
+                if (this.Tags == null) { return new List<string>(); }
+                return this.Tags.Split(',').Take(4).Select(s => s.Trim()).ToList();
+            }
+        }
+        [XmlIgnore]
         public int ComputedLevel
         {
             get
