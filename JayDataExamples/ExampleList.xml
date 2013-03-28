@@ -3,110 +3,295 @@
   <Examples>
     <!-- KendoUI examples -->
     <Example>
-      <Title>Listview with Kendo UI (moved)</Title>
+      <Title>Listview with Kendo UI D</Title>
       <Description><![CDATA[The simplest way to use JayData and KendoUI is creating a listview. All you need is a JayData context, of course it works with all <a href="http://jaydata.org/providers"providers</a>! In this example OData is used. ]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView</Link>
-      <Tags>KendoUI, OData</Tags>
+      <Tags>KendoUI, OData, list</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
-      <Download>#</Download>
       <JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>
       <SupportedBrowsers>
-        <Browser title="Internet Explorer" name="ie" minVersion="6" maxVersion="8"/>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
         <Browser title="Google Chrome" name="chrome"/>
-        <Browser title="Opera" name="opera" minVersion="10"/>
-        <Browser title="Safari" name="safari" maxVersion="18"/>
-        <Browser title="Blackberry" name="blackberry" minVersion="10"/>
-        <Browser title="Windows Phone" name="wp" minVersion="10"/>
-        <Browser title="iOS" name="ios" minVersion="10"/>
-        <Browser title="Android" name="android" minVersion="10"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="#" target="_self" css="">Understand JayData in 7 simple steps</ContentLink>
-        <ContentLink link="#" target="_self" css="">What's next in JayData?</ContentLink>
-        <ContentLink link="#" target="_self" css="">Understand JayData in 7 simple steps</ContentLink>
-        <ContentLink link="#" target="_self" css="">What's next in JayData?</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
-    </Example>
+     </Example>
     <Example>
-      <Title>Kendo UI listview with filter (moved)</Title>
+      <Title>Kendo UI listview with filter D</Title>
       <Description><![CDATA[JayData and KendoUI listview with filtering and sorting. The dataSource supports paging, filtering and sorting without writing storage or protocol-specific code]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView_Filter</Link>
       <Tags>KendoUI, OData, filter, sort</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI grid with filter (moved)</Title>
+      <Title>Kendo UI grid with filter D</Title>
       <Description><![CDATA[Simple Kendo UI grid with remote OData datasource. Sorting, paging and filtering works on the server side but with a simple switch they can be one the client side, too.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_ReadOnly</Link>
-      <Tags>KendoUI, OData, Northwind, filter, sort</Tags>
+      <Tags>KendoUI, OData, filter, sort, Northwind</Tags>
       <Level>100</Level>
-      <Suggested>suggest</Suggested>
+      <Suggested></Suggested>
+        <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI grid and CRUD (moved)</Title>
+      <Title>Kendo UI grid and CRUD D</Title>
       <Description><![CDATA[Create, read, update and delete in-browser database records in Kendo UI grid. JayData knows how to process the CRUD actions and translate it to different data storage syntaxes. ]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_CRUD</Link>
-      <Tags>KendoUI, OData, Northwind, CRUD</Tags>
+      <Tags>KendoUI, OData, CRUD, </Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI Autocomplete (moved)</Title>
+      <Title>Kendo UI Autocomplete D</Title>
       <Description><![CDATA[Populate the Kendo UI auto-complete field with in-browser database records using JayData. No manual querying, no pain, just smooth data access.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Autocomplete</Link>
-      <Tags>KendoUI, Northwind</Tags>
+      <Tags>KendoUI, autocomplete, Northwind</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo MVVM remote binding and JayData</Title>
+      <Title>Kendo MVVM remote binding and JayData D</Title>
       <Description><![CDATA[Make your code clean with Kendo UI MVVM and edit WebSQL/IndexedDB records with the help of JayData observables. Revitalized code of <a href="http://demos.kendoui.com/web/mvvm/remote-binding.html">original KendoUI example</a> ]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/MVVM</Link>
-      <Tags>KendoUI, Northwind, CRUD</Tags>
+      <Tags>KendoUI, MVVM, CRUD, Northwind</Tags>
+      <Level>200</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI mobile app with master-detail listview</Title>
+      <Title>Mobile app with master-detail listview D</Title>
       <Description><![CDATA[Master-detail listview populated with local WebSQL/IndexedDB records by JayData]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Simple</Link>
-      <Tags>KendoUI, Northwind</Tags>
+      <Tags>KendoUI, WebSQL, IndexedDB, Northwind</Tags>
+      <Level>200</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI complex mobile app (moved)</Title>
+      <Title>Kendo UI complex mobile app D</Title>
       <Description><![CDATA[Learn how to manage appication settings in local databases through an advanced task manager app using JayData]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Complex</Link>
-      <Tags>KendoUI, filter, CRUD</Tags>
+      <Tags>KendoUI, localdb, CRUD, filter</Tags>
+      <Download>https://github.com/PeterAronZentai/kendomobiledemo</Download>
+      <Level>300</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI Bar Chart (moved)</Title>
-      <Description><![CDATA[Populate KendoUI Dataviz bar chart by fetching remote records via OData. ]]></Description>
+      <Title>Kendo UI Bar Chart D</Title>
+      <Description><![CDATA[Populate Kendo UI Dataviz bar chart by fetching remote records via OData. ]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/BarChart</Link>
-      <Tags>KendoUI, Northwind</Tags>
+      <Tags>KendoUI, OData, Northwind</Tags>
+      <Level>300</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI Northwind product browser mobile app (moved)</Title>
+      <Title>Kendo UI Northwind product browser app D</Title>
       <Description><![CDATA[Populate categorized products in Kendo UI ListView from live OData service using JayData. Filter and order records with JSQL syntax and apply projection to reduce network payload. ]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Prefilter</Link>
-      <Tags>KendoUI, Northwind, filter, projection</Tags>
+      <Tags>KendoUI, OData, Northwind, filter, projection</Tags>
+      <Level>300</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI Master-detail Grid (moved)</Title>
+      <Title>Kendo UI Master-detail Grid D</Title>
       <Description><![CDATA[Render Kendo grids with live OData service using JayData and display products grouped by categories]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/MasterDetails</Link>
-      <Tags>KendoUI, Northwind, filter, paging</Tags>
+      <Tags>KendoUI, OData, Northwind, filter, paging</Tags>
+      <Level>300</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI Cascading combobox (moved)</Title>
+      <Title>Kendo UI Cascading combobox D</Title>
       <Description><![CDATA[Populate cascading Kendo comboboxes with remote live OData with typed data API.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Cascading_Combobox</Link>
-      <Tags>KendoUI, Northwind </Tags>
+      <Tags>KendoUI, OData, Northwind </Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>
     </Example>
     <!-- Knokout examples -->
     <Example>
@@ -114,14 +299,36 @@
       <Description><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/FlowerShop</Link>
-      <Tags>jQuery, JayStorm, Knockout, OData</Tags>
+      <Tags>OData, JayStorm, Knockout, jQuery </Tags>
+      <Download>http://jaydata.codeplex.com/downloads/get/507804</Download>
+      <Level>200</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="6" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="10"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_self" css="">Flower shop hands on lab (VIDEO)</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_self" css="">How to use JayData with Knockout.js?</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_self" css="">Blogs with Knockout tag</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Flower Shop- Windows8 application</Title>
+      <Title>Flower Shop- Windows8 application D</Title>
       <Description><![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Kendo_ToDoList</Link>
-      <Tags>jQuery, JayStorm, Knockout, OData, Windows8</Tags>
+      <Tags> Windows8, OData, jQuery, JayStorm, Knockout</Tags>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application-with-visual-studio-2010U" target="_self" css="">How to build a Simple OData-based AJAX application with Visual Studio 2010</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/windows-8-metro-app-tutorial-with-jaydata" target="_self" css="">Windows 8 Metro app tutorial with JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/odata" target="_self" css="">Blogs with OData tags</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
       <Title>Knockout data binding (moved)</Title>
