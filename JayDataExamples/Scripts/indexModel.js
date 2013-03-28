@@ -21,8 +21,8 @@
             collectionName: 'Example_items'
         });
         this.Model = {
-            qStr: ko.observable(""),
-
+            addHistory:false,
+            qStr: ko.observable("")
         };
     },
     initialize: function () {
@@ -91,11 +91,21 @@
         var self = exampleSite;
         var qStr = "";
         var q = $('#q').val();
+        var urlParam = null;
         if (q != null && q != undefined && q != "") {
             qStr = "(it.Title.toLowerCase().contains('" + q + "')==true || it.Description.toLowerCase().contains('" + q + "')==true)";
+            urlParam = "?q=" + q;
         }
 
         if (self.Model.SelectedTags().length > 0) {
+            if (urlParam) {
+                urlParam += "&";
+            } else {
+                urlParam = "?";
+            }
+            urlParam += "tags=" + self.Model.SelectedTags().join(',');
+
+
             if (qStr) {
                 qStr += " && ";
             }
@@ -105,6 +115,15 @@
                 qStr += "(it.Tags.contains('" + self.Model.SelectedTags()[i] + "'))";
             }
             qStr += ")";
+        }
+
+        if (urlParam) {
+            if (self.Model.addHistory) {
+                window.history.replaceState(null, "filter", urlParam);
+            } else {
+                self.Model.addHistory = true;
+                window.history.pushState(null, "filter", urlParam);
+            }
         }
         console.log("q: ", qStr);
 
