@@ -6,6 +6,9 @@
             Image: String,
             Link: String,
             Tags: String,
+            Suggested:String,
+            Level: Number,
+            ComputedLevel:Number,
             TagList: Object
         });
         this.Example.setStore('default', {
@@ -112,6 +115,7 @@
         }
 
         return query.then(function (items) {
+            items.sort(function (a, b) { return a.ComputedLevel - b.ComputedLevel; });
             var data = [];
             for (var i = 0; i < items.length; i++) {
                 data.push(items[i].asKoObservable());

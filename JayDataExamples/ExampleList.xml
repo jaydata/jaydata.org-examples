@@ -8,6 +8,8 @@
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView</Link>
       <Tags>KendoUI, OData</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
       <Download>#</Download>
       <JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>
       <SupportedBrowsers>
@@ -40,6 +42,8 @@
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_ReadOnly</Link>
       <Tags>KendoUI, OData, Northwind, filter, sort</Tags>
+      <Level>100</Level>
+      <Suggested>suggest</Suggested>
     </Example>
     <Example>
       <Title>Kendo UI grid and CRUD (moved)</Title>

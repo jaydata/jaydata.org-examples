@@ -32,7 +32,7 @@
     </script>
 
     <script type="text/html" id="cell">
-        <div class="span4 well well-white">
+        <div class="span4 well well-white" data-bind="attr:{class:Suggested()?'span4 well well-white '+Suggested():'span4 well well-white'}">
             <div class="qr-code fright">
                 <img data-bind="attr:{src:'https://chart.googleapis.com/chart?cht=qr&chl='+encodeURIComponent('http://nochtap.avangrade.com/'+Link())+'&chs=80x80'}" alt="QR Code" />
             </div>

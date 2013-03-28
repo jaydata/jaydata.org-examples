@@ -21,6 +21,10 @@ namespace JayDataExamples.App_Code
         public string Download { get; set; }
         [XmlElement("JsFiddle")]
         public string JsFiddle { get; set; }
+        [XmlElement("Suggested")]
+        public string Suggested { get; set; }
+        [XmlElement("Level")]
+        public int Level { get; set; }
         [XmlArray("SupportedBrowsers")]
         [XmlArrayItem(typeof(Browser))]
         public List<Browser> SupportedBrowsers { get; set; }
@@ -35,6 +39,19 @@ namespace JayDataExamples.App_Code
                 if (this.Tags == null) { return new List<string>(); }
                 return this.Tags.Split(',').Select(s => s.Trim()).ToList();
             }
+        }
+        [XmlIgnore]
+        public int ComputedLevel
+        {
+            get
+            {
+                var i = string.IsNullOrEmpty(this.Suggested) ? 1 : -1;
+                return Level * i;
+            }
+        }
+        public Example()
+        {
+            this.Level = 1000;
         }
     }
 }
