@@ -31,14 +31,14 @@
     </Example>
     <Example>
       <Title>Kendo UI listview with filter (moved)</Title>
-      <Description><![CDATA[JayData and KendoUI listview with filtering and sorting. Our datasource supports everything, so paging, filtering and sorting all works.]]></Description>
+      <Description><![CDATA[JayData and KendoUI listview with filtering and sorting. The dataSource supports paging, filtering and sorting without writing storage or protocol-specific code]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView_Filter</Link>
       <Tags>KendoUI, OData, filter, sort</Tags>
     </Example>
     <Example>
       <Title>Kendo UI grid with filter (moved)</Title>
-      <Description><![CDATA[Simple grid with remote Northwind database using OData. Sorting, paging and filtering works on the server side but with a simple switch they can be one the client side, too.]]></Description>
+      <Description><![CDATA[Simple Kendo UI grid with remote OData datasource. Sorting, paging and filtering works on the server side but with a simple switch they can be one the client side, too.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_ReadOnly</Link>
       <Tags>KendoUI, OData, Northwind, filter, sort</Tags>
@@ -47,63 +47,63 @@
     </Example>
     <Example>
       <Title>Kendo UI grid and CRUD (moved)</Title>
-      <Description><![CDATA[Grid with local Nortwind database, and full CRUD (Create Read Update Delete).]]></Description>
+      <Description><![CDATA[Create, read, update and delete in-browser database records in Kendo UI grid. JayData knows how to process the CRUD actions and translate it to different data storage syntaxes. ]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_CRUD</Link>
       <Tags>KendoUI, OData, Northwind, CRUD</Tags>
     </Example>
     <Example>
       <Title>Kendo UI Autocomplete (moved)</Title>
-      <Description><![CDATA[This Kendo autocomplete example uses a local Northwind database.]]></Description>
+      <Description><![CDATA[Populate the Kendo UI auto-complete field with in-browser database records using JayData. No manual querying, no pain, just smooth data access.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Autocomplete</Link>
       <Tags>KendoUI, Northwind</Tags>
     </Example>
     <Example>
-      <Title>Kendo MVVM - Remote binding (moved)</Title>
-      <Description><![CDATA[MVVM with local Northwind database. This Kendo mvvm example is a copy of the <a href="http://demos.kendoui.com/web/mvvm/remote-binding.html">original KendoUI example</a> ]]></Description>
+      <Title>Kendo MVVM remote binding and JayData</Title>
+      <Description><![CDATA[Make your code clean with Kendo UI MVVM and edit WebSQL/IndexedDB records with the help of JayData observables. Revitalized code of <a href="http://demos.kendoui.com/web/mvvm/remote-binding.html">original KendoUI example</a> ]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/MVVM</Link>
       <Tags>KendoUI, Northwind, CRUD</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI simple mobile app (moved)</Title>
-      <Description><![CDATA[Mobile app with local Nortwind database.]]></Description>
+      <Title>Kendo UI mobile app with master-detail listview</Title>
+      <Description><![CDATA[Master-detail listview populated with local WebSQL/IndexedDB records by JayData]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Simple</Link>
       <Tags>KendoUI, Northwind</Tags>
     </Example>
     <Example>
       <Title>Kendo UI complex mobile app (moved)</Title>
-      <Description><![CDATA[This Kendo UI mobile Tasklist example uses a local database. ]]></Description>
+      <Description><![CDATA[Learn how to manage appication settings in local databases through an advanced task manager app using JayData]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Complex</Link>
       <Tags>KendoUI, filter, CRUD</Tags>
     </Example>
     <Example>
       <Title>Kendo UI Bar Chart (moved)</Title>
-      <Description><![CDATA[This KendoUI Dataviz bar chart example uses a remote Northwind database.]]></Description>
+      <Description><![CDATA[Populate KendoUI Dataviz bar chart by fetching remote records via OData. ]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/BarChart</Link>
       <Tags>KendoUI, Northwind</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI mobile app (moved)</Title>
-      <Description><![CDATA[Mobile app with remote Nortwind database. Datasource with filtering, projection and sort.]]></Description>
+      <Title>Kendo UI Northwind product browser mobile app (moved)</Title>
+      <Description><![CDATA[Populate categorized products in Kendo UI ListView from live OData service using JayData. Filter and order records with JSQL syntax and apply projection to reduce network payload. ]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Prefilter</Link>
       <Tags>KendoUI, Northwind, filter, projection</Tags>
     </Example>
     <Example>
-      <Title>Kendo UI Master-detail (moved)</Title>
-      <Description><![CDATA[This Kendo Grid example uses OData to access the Northwind service.]]></Description>
+      <Title>Kendo UI Master-detail Grid (moved)</Title>
+      <Description><![CDATA[Render Kendo grids with live OData service using JayData and display products grouped by categories]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/MasterDetails</Link>
       <Tags>KendoUI, Northwind, filter, paging</Tags>
     </Example>
     <Example>
       <Title>Kendo UI Cascading combobox (moved)</Title>
-      <Description><![CDATA[Cascading combobox with remote Northwind database.]]></Description>
+      <Description><![CDATA[Populate cascading Kendo comboboxes with remote live OData with typed data API.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Cascading_Combobox</Link>
       <Tags>KendoUI, Northwind </Tags>
