@@ -2,6 +2,7 @@
     constructor: function () {
         this.Example = $data.define("Example", {
             Title: String,
+            Lead: String,
             Description: String,
             Image: String,
             Link: String,

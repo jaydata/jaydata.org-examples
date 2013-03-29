@@ -1,19 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MainPage>
-  <
+  <IncludeGroups>
+    <Group name="jquery">
+      <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+      <script  type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+      <link rel="stylesheet" href="/Styles/dd.css" />
+    </Group>
+    <Group name="codemirror">
+      <script type="text/javascript" src="/Scripts/vendor/codemirror/lib/codemirror.js"></script>
+      <script type="text/javascript" src="/Scripts/vendor/codemirror/mode/xml/xml.js"></script>
+      <script type="text/javascript" src="/Scripts/vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+      <script type="text/javascript" src="/Scripts/vendor/codemirror/mode/javascript/javascript.js"></script>
+      <link  rel="stylesheet" href="/Scripts/vendor/codemirror/lib/codemirror.css" />
+    </Group>
+    <Group name="bootstrap">
+      <script src="/Scripts/vendor/bootstrap.min.js"></script>
+      <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
+      <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+      <link href="/Styles/Bootstrap/docs.css" rel="stylesheet" />
+      <link rel="stylesheet" href="/Styles/dd.css" />
+    </Group>
+    <Group name="kendoui">
+      <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
+      <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/kendo.js"></script>
+      <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
+      <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
+    </Group>
+    <Group name="jaydata">
+      <script type="text/javascript" src="http://include.jaydata.org/jaydata.js"></script>
+    </Group>
+  </IncludeGroups>
+  <Includes>
+    <group name="jquery"></group>
+    <group name="jaydata"></group>
+    <group name="codemirror"></group>
+    <group name="bootstrap"></group>
+  </Includes>
   <Examples>
     <!-- KendoUI examples -->
     <Example>
       <Title>Listview with Kendo UI D</Title>
-      <Description><![CDATA[The simplest way to use JayData and KendoUI is creating a listview. All you need is a JayData context, of course it works with all <a href="http://jaydata.org/providers"providers</a>! In this example OData is used. ]]></Description>
+      <Lead><![CDATA[The simplest way to use JayData and KendoUI is creating a listview. All you need is a JayData context, of course it works with all <a href="http://jaydata.org/providers"providers</a>! In this example OData is used. ]]></Lead>
+      <Description>
+        <![CDATA[As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
+            In this example oData is used. Check the network panel to see the requests.
+            You can create a Kendo Datasource with a simple method: asKendoDataSource() and off you go. If works everywhere where Kendo expects a DataSource, not only
+            with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
+            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.]]>
+      </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView</Link>
       <Tags>KendoUI, OData, list</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>
-      <Meta-KeyWords></Meta-KeyWords>
-      <Meta-Description></Meta-Description>
+      <Meta-KeyWords>JayData, KendoUI, Crossplatform,  Javascript, HTML5, tutorial, example</Meta-KeyWords>
+      <Meta-Description>How to create JayData listview with Kendo UI! See this simple listview example.</Meta-Description>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <link href="../Styles/dd.css" rel="stylesheet" />
+      </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="7" />
         <Browser title="Google Chrome" name="chrome"/>
@@ -29,10 +77,10 @@
         <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
         <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
-     </Example>
+    </Example>
     <Example>
       <Title>Kendo UI listview with filter D</Title>
-      <Description><![CDATA[JayData and KendoUI listview with filtering and sorting. The dataSource supports paging, filtering and sorting without writing storage or protocol-specific code]]></Description>
+      <Lead><![CDATA[JayData and KendoUI listview with filtering and sorting. The dataSource supports paging, filtering and sorting without writing storage or protocol-specific code]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView_Filter</Link>
       <Tags>KendoUI, OData, filter, sort</Tags>
@@ -57,13 +105,13 @@
     </Example>
     <Example>
       <Title>Kendo UI grid with filter D</Title>
-      <Description><![CDATA[Simple Kendo UI grid with remote OData datasource. Sorting, paging and filtering works on the server side but with a simple switch they can be one the client side, too.]]></Description>
+      <Lead><![CDATA[Simple Kendo UI grid with remote OData datasource. Sorting, paging and filtering works on the server side but with a simple switch they can be one the client side, too.]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_ReadOnly</Link>
       <Tags>KendoUI, OData, filter, sort, Northwind</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
-        <SupportedBrowsers>
+      <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="7" />
         <Browser title="Google Chrome" name="chrome"/>
         <Browser title="Opera" name="opera" minVersion="11"/>
@@ -81,7 +129,7 @@
     </Example>
     <Example>
       <Title>Kendo UI grid and CRUD D</Title>
-      <Description><![CDATA[Create, read, update and delete in-browser database records in Kendo UI grid. JayData knows how to process the CRUD actions and translate it to different data storage syntaxes. ]]></Description>
+      <Lead><![CDATA[Create, read, update and delete in-browser database records in Kendo UI grid. JayData knows how to process the CRUD actions and translate it to different data storage syntaxes. ]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_CRUD</Link>
       <Tags>KendoUI, OData, CRUD, </Tags>
@@ -105,7 +153,7 @@
     </Example>
     <Example>
       <Title>Kendo UI Autocomplete D</Title>
-      <Description><![CDATA[Populate the Kendo UI auto-complete field with in-browser database records using JayData. No manual querying, no pain, just smooth data access.]]></Description>
+      <Lead><![CDATA[Populate the Kendo UI auto-complete field with in-browser database records using JayData. No manual querying, no pain, just smooth data access.]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Autocomplete</Link>
       <Tags>KendoUI, autocomplete, Northwind</Tags>
@@ -129,7 +177,7 @@
     </Example>
     <Example>
       <Title>Kendo MVVM remote binding and JayData D</Title>
-      <Description><![CDATA[Make your code clean with Kendo UI MVVM and edit WebSQL/IndexedDB records with the help of JayData observables. Revitalized code of <a href="http://demos.kendoui.com/web/mvvm/remote-binding.html">original KendoUI example</a> ]]></Description>
+      <Lead><![CDATA[Make your code clean with Kendo UI MVVM and edit WebSQL/IndexedDB records with the help of JayData observables. Revitalized code of <a href="http://demos.kendoui.com/web/mvvm/remote-binding.html">original KendoUI example</a> ]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/MVVM</Link>
       <Tags>KendoUI, MVVM, CRUD, Northwind</Tags>
@@ -153,7 +201,7 @@
     </Example>
     <Example>
       <Title>Mobile app with master-detail listview D</Title>
-      <Description><![CDATA[Master-detail listview populated with local WebSQL/IndexedDB records by JayData]]></Description>
+      <Lead><![CDATA[Master-detail listview populated with local WebSQL/IndexedDB records by JayData]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Simple</Link>
       <Tags>KendoUI, WebSQL, IndexedDB, Northwind</Tags>
@@ -177,7 +225,7 @@
     </Example>
     <Example>
       <Title>Kendo UI complex mobile app D</Title>
-      <Description><![CDATA[Learn how to manage appication settings in local databases through an advanced task manager app using JayData]]></Description>
+      <Lead><![CDATA[Learn how to manage appication settings in local databases through an advanced task manager app using JayData]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Complex</Link>
       <Tags>KendoUI, localdb, CRUD, filter</Tags>
@@ -202,7 +250,7 @@
     </Example>
     <Example>
       <Title>Kendo UI Bar Chart D</Title>
-      <Description><![CDATA[Populate Kendo UI Dataviz bar chart by fetching remote records via OData. ]]></Description>
+      <Lead><![CDATA[Populate Kendo UI Dataviz bar chart by fetching remote records via OData. ]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/BarChart</Link>
       <Tags>KendoUI, OData, Northwind</Tags>
@@ -226,7 +274,7 @@
     </Example>
     <Example>
       <Title>Kendo UI Northwind product browser app D</Title>
-      <Description><![CDATA[Populate categorized products in Kendo UI ListView from live OData service using JayData. Filter and order records with JSQL syntax and apply projection to reduce network payload. ]]></Description>
+      <Lead><![CDATA[Populate categorized products in Kendo UI ListView from live OData service using JayData. Filter and order records with JSQL syntax and apply projection to reduce network payload. ]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Prefilter</Link>
       <Tags>KendoUI, OData, Northwind, filter, projection</Tags>
@@ -250,7 +298,7 @@
     </Example>
     <Example>
       <Title>Kendo UI Master-detail Grid D</Title>
-      <Description><![CDATA[Render Kendo grids with live OData service using JayData and display products grouped by categories]]></Description>
+      <Lead><![CDATA[Render Kendo grids with live OData service using JayData and display products grouped by categories]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/MasterDetails</Link>
       <Tags>KendoUI, OData, Northwind, filter, paging</Tags>
@@ -274,7 +322,7 @@
     </Example>
     <Example>
       <Title>Kendo UI Cascading combobox D</Title>
-      <Description><![CDATA[Populate cascading Kendo comboboxes with remote live OData with typed data API.]]></Description>
+      <Lead><![CDATA[Populate cascading Kendo comboboxes with remote live OData with typed data API.]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Cascading_Combobox</Link>
       <Tags>KendoUI, OData, Northwind </Tags>
@@ -299,7 +347,7 @@
     <!-- Knokout examples -->
     <Example>
       <Title>Flower Shop - HTML5 D</Title>
-      <Description><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Description>
+      <Lead><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/FlowerShop</Link>
       <Tags>OData, JayStorm, Knockout, jQuery </Tags>
@@ -324,7 +372,7 @@
     </Example>
     <Example>
       <Title>Flower Shop- Windows8 application D</Title>
-      <Description><![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend.]]></Description>
+      <Lead><![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend.]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Kendo_ToDoList</Link>
       <Tags> Windows8, OData, jQuery, JayStorm, Knockout</Tags>
@@ -342,7 +390,7 @@
     </Example>
     <Example>
       <Title>Knockout data binding D</Title>
-      <Description><![CDATA[Demonstrating easy data binding using JayData and Knockout.js together. Properties of the requested entities will be observable through a single toArray call if ko.observableArray is passed as parameter.]]></Description>
+      <Lead><![CDATA[Demonstrating easy data binding using JayData and Knockout.js together. Properties of the requested entities will be observable through a single toArray call if ko.observableArray is passed as parameter.]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/Northwind</Link>
       <Tags>Knockout, Northwind</Tags>
@@ -365,21 +413,21 @@
     </Example>
     <Example>
       <Title>Knockout Dynamic Queries (moved)</Title>
-      <Description><![CDATA[With the JayData module for Knockout.js you can achieve fully dynamic queries. Where you use an observable as a query parameter the query will be automatically executed when the observable property changes.]]></Description>
+      <Lead><![CDATA[With the JayData module for Knockout.js you can achieve fully dynamic queries. Where you use an observable as a query parameter the query will be automatically executed when the observable property changes.]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/DynamicQueryNorthwind</Link>
       <Tags>Knockout, query</Tags>
     </Example>
     <Example>
       <Title>Knockout Dynamic Queries filter (moved)</Title>
-      <Description><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Description>
+      <Lead><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/DynamicQueryFilterNorthwind</Link>
       <Tags>Knockout, filter</Tags>
     </Example>
     <Example>
       <Title>Netflix movies-Sencha Touch 2</Title>
-      <Description><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Description>
+      <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>/Sencha/index.html</Link>
       <Tags>SenchaTouch, OData</Tags>
@@ -387,109 +435,109 @@
     <!-- YQL examples -->
     <Example>
       <Title>YQL- html search</Title>
-      <Description>
+      <Lead>
         <![CDATA[With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and RSS feeds. Almost everything is queryable through the YQL provider.]]>
-      </Description>
+      </Lead>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLhtml</Link>
       <Tags>YQL, query </Tags>
     </Example>
     <Example>
       <Title>YQL Geo-based autocomplete</Title>
-      <Description>
+      <Lead>
         <![CDATA[With the Yahoo Query Language you can query Geo data. We show you how.]]>
-      </Description>
+      </Lead>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLGeo.html</Link>
       <Tags>YQL, GEO </Tags>
     </Example>
     <Example>
       <Title>YQL simple RSS reader </Title>
-      <Description>
+      <Lead>
         <![CDATA[YQL RSS reader with filter]]>
-      </Description>
+      </Lead>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLRss.html</Link>
       <Tags>YQL, RSS, filter </Tags>
     </Example>
     <Example>
       <Title>YQL advanced RSS reader</Title>
-      <Description>
+      <Lead>
         <![CDATA[Reading from RSS with Category where Title contains JavaScript]]>
-      </Description>
+      </Lead>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLRssAdvanced.html</Link>
       <Tags>YQL, RSS</Tags>
     </Example>
     <Example>
       <Title>YQL feed reader </Title>
-      <Description>
+      <Lead>
         <![CDATA[Read all contents from a given feed.]]>
-      </Description>
+      </Lead>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLFeed.html</Link>
       <Tags>YQL, </Tags>
     </Example>
-    
+
     <Example>
       <Title>Newsreader CRUD</Title>
-      <Description>
+      <Lead>
         <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way. The UI is utilizing Twitter's Bootstrap and jQuery's template engine.]]>
-      </Description>
+      </Lead>
       <Image>/Images/newsreadernagy.png</Image>
       <Link>NewsReader/index.html</Link>
       <Tags>OData, jQuery, CRUD</Tags>
     </Example>
     <Example>
       <Title>Planets</Title>
-      <Description>
+      <Lead>
         <![CDATA[Local database management through the WebSQL provider, in a fancy representative HTML5 app. It uses new features of CSS3 like keyframe-animations, transitions and transformations.]]>
-      </Description>
+      </Lead>
       <Image>/Images/planetsnagy.png</Image>
       <Link>Planets/index.html</Link>
       <Tags>WebSQL</Tags>
     </Example>
     <Example>
       <Title>Advanced RSS using custom provider</Title>
-      <Description>
+      <Lead>
         <![CDATA[Implementing a custom provider to process RSS feeds and extending the context to include custom RSS fields. XML to typed JSON conversion handled by the $data.ModelBinder class.]]>
-      </Description>
+      </Lead>
       <Image>/Images/newsreadernagy.png</Image>
       <Link>RSS/rss.html</Link>
       <Tags>RSS</Tags>
     </Example>
     <Example>
       <Title>Form Validation</Title>
-      <Description>
+      <Lead>
         <![CDATA[Our form validator extensions will allow you to apply the constraints defined on the model to validate forms through jQuery validators.]]>
-      </Description>
+      </Lead>
       <Image>/Images/formvalidation.png</Image>
       <Link>Validation/FormValidation.html</Link>
       <Tags>jQuery, validation</Tags>
     </Example>
     <Example>
       <Title>TodoList- multiple providers</Title>
-      <Description>
+      <Lead>
         <![CDATA[Use the same code for multiple providers! See this simple todo-list example running with WebSQL or IndexedDB.]]>
-      </Description>
+      </Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>/General/ToDoList</Link>
       <Tags>WebSQL, indexedDB, localDB</Tags>
     </Example>
     <Example>
       <Title>Facebook provider example</Title>
-      <Description>
+      <Lead>
         <![CDATA[How can I get the current user's public personal data through FQL api.]]>
-      </Description>
+      </Lead>
       <Image>/Images/facebook.png</Image>
       <Link>Facebook/Facebook_provider_example.html</Link>
       <Tags>facebook</Tags>
     </Example>
     <Example>
       <Title>Facebook friend list example</Title>
-      <Description>
+      <Lead>
         <![CDATA[How can I get the current user's friends list through FQL api.]]>
-      </Description>
+      </Lead>
       <Image>/Images/facebook.png</Image>
       <Link>Facebook/Facebook_provider_friends_example.html</Link>
       <Tags>facebook</Tags>

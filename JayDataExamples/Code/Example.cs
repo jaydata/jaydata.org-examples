@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -9,8 +10,14 @@ namespace JayDataExamples.App_Code
     {
         [XmlElement("Title")]
         public string Title { get; set; }
+        [XmlElement("Lead")]
+        public string Lead { get; set; }
         [XmlElement("Description")]
         public string Description { get; set; }
+        [XmlElement("Meta-KeyWords")]
+        public string MetaKeyWords { get; set; }
+        [XmlElement("Meta-Description")]
+        public string MetaDescription { get; set; }
         [XmlElement("Image")]
         public string Image { get; set; }
         [XmlElement("Link")]
@@ -31,6 +38,8 @@ namespace JayDataExamples.App_Code
         [XmlArray("RelatedContents")]
         [XmlArrayItem(typeof(ContentLink))]
         public List<ContentLink> RelatedContents { get; set; }
+        [XmlAnyElement]
+        public XmlNode Includes { get; set; }
         [XmlIgnore]
         public List<string> TagList
         {
@@ -56,6 +65,48 @@ namespace JayDataExamples.App_Code
             {
                 var i = string.IsNullOrEmpty(this.Suggested) ? 1 : -1;
                 return Level * i;
+            }
+        }
+        [XmlIgnore]
+        public List<XmlNode> ResolvedIncludes
+        {
+            get
+            {
+                var list = new List<XmlNode>();
+                if (this.Includes != null)
+                {
+                    foreach (XmlNode node in this.Includes.SelectNodes("*"))
+                    {
+                        if (node.Name != "group")
+                        {
+                            list.Add(node);
+                        }
+                        else {
+                            var nodeList = ExampleDoc.Instnace.GetIncludes(node.Attributes["name"].Value);
+                            list = new List<XmlNode>( list.Concat(nodeList));
+                        }
+                    }
+                }
+                return list;
+            }
+        }
+        [XmlIgnore]
+        public string IncludesString
+        {
+            get {
+                var sb = new StringBuilder();
+                foreach (XmlNode node in this.ResolvedIncludes)
+                {
+                    sb.AppendLine(node.OuterXml);
+                }
+                return sb.ToString();
+            }
+        }
+        public string GlobalIncludesString
+        {
+            get
+            {
+                return ExampleDoc.Instnace.GlobalIncludesString;
             }
         }
         public Example()

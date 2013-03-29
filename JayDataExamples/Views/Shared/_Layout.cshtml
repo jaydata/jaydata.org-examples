@@ -7,18 +7,14 @@
     @{
         //TODO: 2 description tag lesz al-Layout használatánál
         Html.RenderPartial("_IncludeMeta");
-        Html.RenderPartial("_IncludeStyles");
-        Html.RenderPartial("_IncludeScripts");
+        //Html.RenderPartial("_IncludeStyles");
+        //Html.RenderPartial("_IncludeScripts");
 
         Html.RenderPartial("_IncludeFavIcon");
         Html.RenderPartial("_IncludeIeFix");
     }
-
+    @Html.Raw(Model.GlobalIncludesString)
     @RenderSection("Header", false)
-
-    @*<link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/css")" rel="stylesheet" type="text/css" />
-    <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />*@
-    @*<script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")"></script>*@
 </head>
 <body>
     <div class="wrapper">
