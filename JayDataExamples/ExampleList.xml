@@ -86,13 +86,7 @@
         <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
         <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
-      <GalleryImages>
-        <Image url="/Images/gallery/jayscrum/demokep.png" thumbUrl="/Images/gallery/jayscrum/thumb/demokep.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_1.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_3.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_4.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_8.png" alt=""></Image>
-      </GalleryImages>
+
     </Example>
     <Example>
       <Title>Kendo UI listview with filter D</Title>
@@ -398,6 +392,9 @@
       <Link>KendoUI/Kendo_ToDoList</Link>
       <Tags> Windows8, OData, jQuery, JayStorm, Knockout</Tags>
       <Level>300</Level>
+      <Includes>
+        <group name="gallery"></group>
+      </Includes>
       <Suggested></Suggested>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="10" />
@@ -408,6 +405,13 @@
         <ContentLink link="http://jaystack.com/blog/how-can-you-access-your-javascript-data-service-from-.net-with-c" target="_self" css="">How can you access your JavaScript Data Service from .NET with C#</ContentLink>
         <ContentLink link="http://jaydata.org/categories/odata" target="_self" css="">Blogs with OData tags</ContentLink>
       </RelatedContents>
+      <GalleryImages>
+        <Image url="/Images/gallery/jayscrum/demokep.png" thumbUrl="/Images/gallery/jayscrum/thumb/demokep.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_1.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_3.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_4.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_8.png" alt=""></Image>
+      </GalleryImages>
     </Example>
     <Example>
       <Title>Knockout data binding D</Title>
@@ -417,6 +421,11 @@
       <Tags>Knockout, Northwind</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
+      <Includes>
+        <group name="knokout"></group>
+        <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <script src="/Scripts/example/knokout_northwind.js"></script>
+      </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="10" />
         <Browser title="Google Chrome" name="chrome"/>
@@ -438,6 +447,11 @@
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/DynamicQueryNorthwind</Link>
       <Tags>Knockout, query</Tags>
+      <Includes>
+        <group name="knokout"></group>
+        <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <script src="/Scripts/example/knokout_northwind.js"></script>
+      </Includes>
     </Example>
     <Example>
       <Title>Knockout Dynamic Queries filter (moved)</Title>
@@ -445,13 +459,11 @@
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/DynamicQueryFilterNorthwind</Link>
       <Tags>Knockout, filter</Tags>
-    </Example>
-    <Example>
-      <Title>Netflix movies-Sencha Touch 2</Title>
-      <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Lead>
-      <Image>/Images/indexeddb.png</Image>
-      <Link>/Sencha/index.html</Link>
-      <Tags>SenchaTouch, OData</Tags>
+      <Includes>
+        <group name="knokout"></group>
+        <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <script src="/Scripts/example/knokout_northwind.js"></script>
+      </Includes>
     </Example>
     <!-- YQL examples -->
     <Example>
@@ -499,7 +511,13 @@
       <Link>YQL/YQLFeed.html</Link>
       <Tags>YQL, </Tags>
     </Example>
-
+ <Example>
+      <Title>Netflix movies-Sencha Touch 2</Title>
+      <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Lead>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>/Sencha/index.html</Link>
+      <Tags>SenchaTouch, OData</Tags>
+    </Example>
     <Example>
       <Title>Newsreader CRUD</Title>
       <Lead>
