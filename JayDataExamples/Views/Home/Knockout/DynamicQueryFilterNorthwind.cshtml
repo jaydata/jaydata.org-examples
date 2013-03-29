@@ -1,0 +1,152 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Knokout.cshtml";
+   ViewBag.Title = "JayData examples: Knockout.js Dynamic Queries filter";
+   }
+
+@section Meta {
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
+    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example." />
+}
+
+@section Includes {
+    <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+    <script src="~/Scripts/example/knokout_northwind.js"></script>
+    <link href="~/Styles/bootstrap/docs.css" rel="stylesheet" />
+    <link href="~/Styles/dd.css" rel="stylesheet" />
+}
+@section SupportedBrowsers {
+    @{Html.RenderPartial("_IncludeSupportedBrowsers");}
+}
+@section SimilarContents {
+    @{Html.RenderPartial("_IncludeRelatedContents");}
+}
+@section SourceCode {
+    @{Html.RenderPartial("_IncludeDownloadableSource");}
+}
+
+@section Tags {
+    @{Html.RenderPartial("_IncludeTags");}
+}
+
+@section Description {
+    <p class="main-desc">
+        .....
+    </p>
+}
+
+@section CodeSource {
+    <textarea id="code">
+<!-- Pass an observable as a query parameter
+Change the filter options and the query will run again -->
+<script type="text/javascript">
+    var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: 'Northwind.svc' });
+    var viewModel;
+    $(function () {
+        function NorthwindViewModel() {
+            var self = this;
+            self.categoryNames = ko.observableArray([]);
+            self.filteredProducts = ko.observableArray([]);
+            self.filterProductName = ko.observable("");
+            self.filterCategory = ko.observable(-1);
+
+            northwind.Categories.toArray(self.categoryNames);
+
+            northwind.Products
+                .include('Category')
+                .filter(function (product) {
+                    return (this.Category_ID == -1 || product.Category_ID == this.Category_ID) &&
+                           (this.Product_Name == "" || product.Product_Name.contains(this.Product_Name));
+                }, { Category_ID: self.filterCategory, Product_Name: self.filterProductName })
+                .toArray(self.filteredProducts);
+        };
+
+        viewModel = new NorthwindViewModel();
+        ko.applyBindings(viewModel);
+    });
+</script>
+    </textarea>
+
+    <script>
+        setTimeout(function () {
+            CodeMirror.fromTextArea(document.getElementById('code'), {
+                mode: 'text/html',
+                lineNumbers: false
+            });
+        });
+    </script>
+}
+
+@section CodeRunning {
+    <div class="row-fluid" style="overflow: auto;">
+      <table class="table span12 reset-m">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Product name</th>
+                <th>English name</th>
+                <th>Quantity per unit</th>
+                <th>Unit price</th>
+                <th>Units in stock</th>
+                <th>Units on order</th>
+                <th>Reorder level</th>
+                <th>Discontinued</th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th><select data-bind="options: $root.categoryNames, optionsCaption: '-', optionsCaptionValue: -1, optionsText: 'Category_Name', optionsValue: 'Category_ID', value: $root.filterCategory"></select></th>
+                <th><input type="text" data-bind="value: $root.filterProductName, valueUpdate: 'keyup'" /></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: filteredProducts">
+            <tr>
+                <td data-bind="text: Category().Category_Name"></td>
+                <td data-bind="text: Product_Name"></td>
+                <td data-bind="text: English_Name"></td>
+                <td data-bind="text: Quantity_Per_Unit"></td>
+                <td data-bind="text: Unit_Price"></td>
+                <td data-bind="text: Units_In_Stock"></td>
+                <td data-bind="text: Units_On_Order"></td>
+                <td data-bind="text: Reorder_Level"></td>
+                <td data-bind="text: Discontinued"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: '/Northwind.svc' });
+        var viewModel;
+        northwind.onReady(function () {
+            $(function () {
+                function NorthwindViewModel() {
+                    var self = this;
+                    self.categoryNames = ko.observableArray([]);
+                    self.filteredProducts = ko.observableArray([]);
+                    self.filterProductName = ko.observable("");
+                    self.filterCategory = ko.observable(-1);
+
+                    northwind.Categories.toArray(self.categoryNames);
+
+                    northwind.Products
+                        .include('Category')
+                        .filter(function (product) {
+                            return (this.Category_ID == -1 || product.Category_ID == this.Category_ID) &&
+                                    (this.Product_Name == "" || product.Product_Name.contains(this.Product_Name));
+                        }, { Category_ID: self.filterCategory, Product_Name: self.filterProductName })
+                        .toArray(self.filteredProducts);
+                };
+
+                viewModel = new NorthwindViewModel();
+                ko.applyBindings(viewModel);
+            });
+        });
+    </script>
+    </div>
+}

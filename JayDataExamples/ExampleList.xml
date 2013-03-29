@@ -521,7 +521,7 @@
         <![CDATA[Use the same code for multiple providers! See this simple todo-list example running with WebSQL or IndexedDB.]]>
       </Lead>
       <Image>/Images/indexeddb.png</Image>
-      <Link>/General/ToDoList</Link>
+      <Link>General/ToDoList</Link>
       <Tags>WebSQL, indexedDB, localDB</Tags>
     </Example>
     <Example>

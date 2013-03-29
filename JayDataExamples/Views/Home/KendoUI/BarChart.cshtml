@@ -1,0 +1,91 @@
+﻿@model JayDataExamples.App_Code.Example
+@{
+    Layout = "~/Views/Shared/Layout_KendoUI.cshtml";
+    ViewBag.Title = "KendoUI Bar Chart example";
+}
+
+@section Meta {
+    <meta name="keywords" content="JayData, HTML5, Javascript, Kendo UI, example" />
+    <meta name="description" content="How to use the JayData with Kendo UI? See this simple chart example." />
+}
+
+@section Includes {
+    <script type="text/javascript" src="~/Scripts/vendor/north.js"></script>
+    <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+    <link href="../Styles/dd.css" rel="stylesheet" />
+}
+@section SupportedBrowsers {
+    @{Html.RenderPartial("_IncludeSupportedBrowsers");}
+}
+@section SimilarContents {
+    @{Html.RenderPartial("_IncludeRelatedContents");}
+}
+@section SourceCode {
+    @{Html.RenderPartial("_IncludeDownloadableSource");}
+}
+
+@section Tags {
+    @{Html.RenderPartial("_IncludeTags");}
+}
+
+@section Description {
+    <p class="main-desc">
+        This KendoUI Dataviz bar chart example uses a remote Northwind database.
+    </p>
+}
+
+@section CodeSource {
+    <textarea id="code">
+<div id="grid"></div>
+<script>
+    $("#chart").kendoChart({
+        dataSource: remoteDB.Products.asKendoDataSource(),
+        title: {
+            text: "Products in stock"
+        },
+        series: [{
+            type: "column",
+            field: "Units_In_Stock",
+            name: "Units In Stock"
+        }],
+        categoryAxis: {
+            field: "Product_Name",
+            labels: {
+                rotation: -90
+            }
+        },
+    });
+</script>
+    </textarea>
+
+    <script>
+        setTimeout(function () {
+            CodeMirror.fromTextArea(document.getElementById('code'), {
+                mode: 'text/html',
+                lineNumbers: false
+            });
+        });
+    </script>
+}
+
+@section CodeRunning {
+    <div id="chart"></div>
+    <script>
+        $.when($.ready, getRemoteNorthwind())
+        .then(function ($, remoteDB) {
+            $("#chart").kendoChart({
+                dataSource: remoteDB.Products.asKendoDataSource(),
+                title: {
+                    text: "Products in stock"
+                },
+                series: [{ type: "column", field: "Units_In_Stock", name: "Units In Stock" }],
+                categoryAxis: {
+                    field: "Product_Name",
+                    labels: {
+                        rotation: -90
+                    }
+                },
+            });
+        });
+    </script>
+}

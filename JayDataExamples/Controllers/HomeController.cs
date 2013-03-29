@@ -1,5 +1,6 @@
-﻿using System.Web.Mvc;
-using JayDataExamples.App_Code;
+﻿using JayDataExamples.App_Code;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace JayDataExamples.Controllers
 {
@@ -9,9 +10,12 @@ namespace JayDataExamples.Controllers
         {
             return View(ExampleDoc.Instnace);
         }
-        public ActionResult Example(string id)
+
+        public ActionResult Example(string id, string type)
         {
-            return View(id);
-        }
+            var ex = ExampleDoc.Instnace.Examples.Where(e => e.Link == type + "/" + id).FirstOrDefault();
+            var viewPath = type.Equals("General") ? id : type + "/" + id;
+            return View(viewPath, ex);
+        } 
     }
 }

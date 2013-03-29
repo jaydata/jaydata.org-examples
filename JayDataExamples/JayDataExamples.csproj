@@ -140,10 +140,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ApiController.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\KnockoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KendoUIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1285,7 +1282,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DisplayTemplates\Example.cshtml" />
     <Content Include="Views\Home\DisplayTemplates\ExampleDoc.cshtml" />
-    <Content Include="Views\KendoUI\Kendo_ToDoList.cshtml" />
+    <Content Include="Views\Home\KendoUI\Kendo_ToDoList.cshtml" />
     <Content Include="Views\Home\ToDoList.cshtml" />
     <Content Include="Views\Shared\Layout_KendoUI.cshtml" />
     <Content Include="Views\Shared\_IncludeTopMenu.cshtml" />
@@ -1301,23 +1298,23 @@
     <Content Include="Views\Shared\_IncludeSearchBar.cshtml" />
     <Content Include="Views\Shared\_IncludeBreadcrumb.cshtml" />
     <Content Include="Views\Shared\_IncludeLogoFilter.cshtml" />
-    <Content Include="Views\KendoUI\BarChart.cshtml" />
-    <Content Include="Views\KendoUI\ListView.cshtml" />
-    <Content Include="Views\KendoUI\ListView_Filter.cshtml" />
-    <Content Include="Views\KendoUI\Grid_ReadOnly.cshtml" />
-    <Content Include="Views\KendoUI\Grid_CRUD.cshtml" />
-    <Content Include="Views\KendoUI\Autocomplete.cshtml" />
-    <Content Include="Views\KendoUI\MVVM.cshtml" />
-    <Content Include="Views\KendoUI\Mobile_Simple.cshtml" />
-    <Content Include="Views\KendoUI\Mobile_Complex.cshtml" />
-    <Content Include="Views\KendoUI\Prefilter.cshtml" />
-    <Content Include="Views\KendoUI\MasterDetails.cshtml" />
-    <Content Include="Views\KendoUI\Cascading_Combobox.cshtml" />
-    <Content Include="Views\Knockout\FlowerShop.cshtml" />
+    <Content Include="Views\Home\KendoUI\BarChart.cshtml" />
+    <Content Include="Views\Home\KendoUI\ListView.cshtml" />
+    <Content Include="Views\Home\KendoUI\ListView_Filter.cshtml" />
+    <Content Include="Views\Home\KendoUI\Grid_ReadOnly.cshtml" />
+    <Content Include="Views\Home\KendoUI\Grid_CRUD.cshtml" />
+    <Content Include="Views\Home\KendoUI\Autocomplete.cshtml" />
+    <Content Include="Views\Home\KendoUI\MVVM.cshtml" />
+    <Content Include="Views\Home\KendoUI\Mobile_Simple.cshtml" />
+    <Content Include="Views\Home\KendoUI\Mobile_Complex.cshtml" />
+    <Content Include="Views\Home\KendoUI\Prefilter.cshtml" />
+    <Content Include="Views\Home\KendoUI\MasterDetails.cshtml" />
+    <Content Include="Views\Home\KendoUI\Cascading_Combobox.cshtml" />
+    <Content Include="Views\Home\Knockout\FlowerShop.cshtml" />
     <Content Include="Views\Shared\Layout_Knokout.cshtml" />
-    <Content Include="Views\Knockout\Northwind.cshtml" />
-    <Content Include="Views\Knockout\DynamicQueryNorthwind.cshtml" />
-    <Content Include="Views\Knockout\DynamicQueryFilterNorthwind.cshtml" />
+    <Content Include="Views\Home\Knockout\Northwind.cshtml" />
+    <Content Include="Views\Home\Knockout\DynamicQueryNorthwind.cshtml" />
+    <Content Include="Views\Home\Knockout\DynamicQueryFilterNorthwind.cshtml" />
     <Content Include="Views\Shared\_IncludeSupportedBrowsers.cshtml" />
     <Content Include="Views\Shared\_IncludeRelatedContents.cshtml" />
     <Content Include="Views\Shared\_IncludeDownloadableSource.cshtml" />
@@ -1325,8 +1322,8 @@
     <Content Include="Views\Home\GalleryExample.cshtml" />
     <Content Include="Views\Shared\Layout_Gallery.cshtml" />
     <Content Include="Views\Shared\Layout_YQL.cshtml" />
-    <Content Include="Views\YQL\_template.cshtml" />
-    <Content Include="Views\YQL\YQLHtml.cshtml" />
+    <Content Include="Views\Home\YQL\_template.cshtml" />
+    <Content Include="Views\Home\YQL\YQLHtml.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

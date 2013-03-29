@@ -1,0 +1,207 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_KendoUI.cshtml";
+   ViewBag.Title = "Kendo UI mobile app with master-detail listview";
+    }
+
+@section Meta {
+    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, Kendo UI, WebSQL, IndexedDB, example" />
+    <meta name="description" content="How to use the JayData with Kendo Ui? See this simple example." />
+}
+
+@section Includes {
+    <script src="~/Scripts/example/kendo_mobile_simple.js"></script>
+    <script src="~/Scripts/vendor/north.js"></script>
+    <script src="~/Scripts/vendor/codemirror/addon/fold/foldcode.js"></script>
+    <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
+    <link href="~/Styles/examples.css" rel="stylesheet" />
+}
+@section SupportedBrowsers {
+    @{Html.RenderPartial("_IncludeSupportedBrowsers");}
+}
+@section SimilarContents {
+    @{Html.RenderPartial("_IncludeRelatedContents");}
+}
+@section SourceCode {
+    @{Html.RenderPartial("_IncludeDownloadableSource");}
+}
+
+@section Tags {
+    @{Html.RenderPartial("_IncludeTags");}
+}
+
+@section Description {
+    <p class="main-desc">
+        This Kendo mobile example uses a local Northwind database. The code on the left can be folded/unfolded.<br />
+        The demo is written so that your local database is reinitialized on every page reload and your changes are lost!
+    </p>
+}
+
+@section CodeSource {
+    <textarea id="code">
+<div data-role="view" id="categories" data-layout="default" 
+    data-model="viewModel" data-title="Categories">
+    <ul id="listView"
+        data-role="listview"
+        data-style="inset"
+        data-template="categorylist-template"
+        data-bind="source: categoriesDataSource, events:{click:selectCategory}">
+    </ul>
+</div>
+<div data-role="view" id="products" data-layout="default" 
+    data-model="viewModel" data-title="Products">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a data-align="left" data-role="backbutton">Back</a>
+        </div>
+    </header>
+    <ul id="listView"
+        data-role="listview"
+        data-style="inset"
+        data-template="productlist-template"
+        data-bind="source: productsDataSource, events:{click:selectProduct}">
+    </ul>
+</div>
+<div data-role="view" id="product" data-layout="default" 
+    data-model="viewModel" data-title="Product">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a data-align="left" data-role="backbutton">Back</a>
+            <a data-align="right" data-role="button" href="#products" 
+                data-bind="click: remove">Delete</a>
+        </div>
+    </header>
+    <ul data-role="listview" data-style="inset">
+        <li>Name <span class="value" 
+            data-bind="text: product.Product_Name" /></li>
+        <li>Price <span class="value" 
+            data-bind="text: product.Unit_Price" /></li>
+        <li>In Stock <span class="value" 
+            data-bind="text: product.Units_In_Stock" /></li>
+        <li>On Order <span class="value" 
+            data-bind="text: product.Units_On_Order" /></li>
+    </ul>
+</div>    
+<script id="categorylist-template" type="text/x-kendo-template">
+        <a href="##products" data-bind="text:Category_Name"></a>
+</script>
+<script id="productlist-template" type="text/x-kendo-template">
+        <a href="##product" data-bind="text:Product_Name"></a>
+</script>
+<script>
+    viewModel = kendo.observable({
+        categoriesDataSource: localDB.Categories.asKendoDataSource(),
+        productsDataSource: localDB.Products.asKendoDataSource(),
+        product: null,
+        selectCategory: function (e) {
+            viewModel.productsDataSource.filter({
+                field: 'Category_ID',
+                operator: 'eq',
+                value: e.dataItem.Category_ID
+            });
+        },
+        selectProduct: function (e) {
+            viewModel.set('product', null);
+            viewModel.set('product', e.dataItem);
+        },
+        remove: function () {
+            viewModel.productsDataSource.remove(viewModel.product);
+            viewModel.productsDataSource.sync();
+        }
+    });
+    app = new kendo.mobile.Application();
+</script>
+    </textarea>
+
+    <script>
+        setTimeout(function () {
+            CodeMirror.fromTextArea(document.getElementById('code'), {
+                mode: 'text/html',
+                lineNumbers: true,
+                lineWrapping: true
+            });
+        });
+    </script>
+}
+
+@section CodeRunning {
+    <div class="k-content mobileExample ">
+        <div id="device-wrapper">
+            <div id="mobile-application-container">
+                <div data-role="view" id="categories" data-layout="default" data-model="viewModel" data-title="Categories">
+                    <ul id="listView"
+                        data-role="listview"
+                        data-style="inset"
+                        data-template="categorylist-template"
+                        data-bind="source: categoriesDataSource, events: { click: selectCategory }">
+                    </ul>
+                </div>
+                <div data-role="view" id="products" data-layout="default" data-model="viewModel" data-title="Products">
+                    <header data-role="header">
+                        <div data-role="navbar">
+                            <a data-align="left" data-role="backbutton">Back</a>
+                        </div>
+                    </header>
+                    <ul id="listView"
+                        data-role="listview"
+                        data-style="inset"
+                        data-template="productlist-template"
+                        data-bind="source: productsDataSource, events: { click: selectProduct }">
+                    </ul>
+                </div>
+                <div data-role="view" id="product" data-layout="default" data-model="viewModel" data-title="Product">
+                    <header data-role="header">
+                        <div data-role="navbar">
+                            <a data-align="left" data-role="backbutton">Back</a>
+                            <a data-align="right" data-role="button" href="#products" data-bind="click: remove">Delete</a>
+                        </div>
+                    </header>
+                    <ul data-role="listview" data-style="inset">
+                        <li>Name <span class="value" data-bind="text: product.Product_Name"></span></li>
+                        <li>Price <span class="value" data-bind="text: product.Unit_Price"></span></li>
+                        <li>In Stock <span class="value" data-bind="text: product.Units_In_Stock"></span></li>
+                        <li>On Order <span class="value" data-bind="text: product.Units_On_Order"></span></li>
+                    </ul>
+                </div>
+                <script id="categorylist-template" type="text/x-kendo-template">
+        <a href="##products" data-bind="text:Category_Name"></a>
+                </script>
+                <script id="productlist-template" type="text/x-kendo-template">
+        <a href="##product" data-bind="text:Product_Name"></a>
+                </script>
+            </div>
+        </div>
+    </div>
+    <script>
+        $.when(getLocalNorthwind()).then(function (localDB) {
+
+            viewModel = kendo.observable({
+                categoriesDataSource: localDB.Categories.asKendoDataSource(),
+                productsDataSource: localDB.Products.asKendoDataSource(),
+                product: null,
+
+                selectCategory: function (e) {
+                    viewModel.productsDataSource.filter({ field: 'Category_ID', operator: 'eq', value: e.dataItem.Category_ID });
+                },
+                selectProduct: function (e) {
+                    viewModel.set('product', null);
+                    viewModel.set('product', e.dataItem);
+                },
+                remove: function () {
+                    viewModel.productsDataSource.remove(viewModel.product);
+                    viewModel.productsDataSource.sync();
+                }
+            });
+            applyCurrentMobileOS("#mobile-application-container");
+            if (!$.browser.msie && !$.browser.opera) {
+                app = new kendo.mobile.Application($("#mobile-application-container"),
+                {
+                    layout: "examples",
+                    platform: kendoMobileOS,
+                    updateDocumentTitle: false
+                });
+                $(".span5").css("opacity", 1);
+            }
+        });
+    </script>
+}

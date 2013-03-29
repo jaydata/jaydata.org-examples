@@ -1,0 +1,62 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_KendoUI.cshtml"; }
+
+@section CodeSource {
+    <textarea id="code">
+<div id="pager" class="k-pager-wrap"></div>
+<div id="listView"></div>
+
+<script type="text/x-kendo-tmpl" id="template">
+    <div class="product" style="width:230px;float:left">
+        <img style="width:220px;height:150px" src="${ImageUrl}" />
+        <h3>${Name}</h3>
+        <b>${kendo.toString(Price, "c")}</b>
+    </div>
+</script>
+
+<script>
+    var ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
+    $("#listView").kendoListView({
+        dataSource: ds,
+        template: kendo.template($("#template").html())
+    });
+    $("#pager").kendoPager({
+        dataSource: ds
+    }).data("kendoPager");
+</script>
+    </textarea>
+}
+
+@section CodeRunning {
+    <div id="pager" class="k-pager-wrap"></div>
+    <div id="listView"></div>
+
+    <script type="text/x-kendo-tmpl" id="template">
+        <span class="product" style="width:230px;float:left">
+            <img style="width:220px;height:150px" src="${ImageUrl}" />
+            <h3>${Name}</h3>
+            <b>${kendo.toString(Price, "c")}</b>
+        </span>
+    </script>
+    <script>
+        var apiKey = {
+            appId: '133e0907-f70b-4f11-92b3-dfebc9bdd6db',
+            // see https://dashboard.jaystack.com for your real application key
+            applicationKey: 'XXXX',
+            serviceName: 'mydatabase',
+            license: 'business'
+        };
+        $data.initService(apiKey)
+        .then(function (mydatabase) {
+            delete mydatabase.storageProvider.supportedSetOperations.withInlineCount;
+            var ds = mydatabase.Flowers.asKendoDataSource({ pageSize: 4 });
+            $("#listView").kendoListView({
+                dataSource: ds,
+                template: kendo.template($("#template").html())
+            });
+            $("#pager").kendoPager({
+                dataSource: ds
+            }).data("kendoPager");
+        });
+    </script>
+}

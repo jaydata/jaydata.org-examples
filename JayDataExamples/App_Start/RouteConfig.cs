@@ -12,21 +12,27 @@ namespace JayDataExamples
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            
+           // routes.MapRoute(
+           //               name: "ExampleRoute2",
+           //               url: "General/{id}",
+           //               defaults: new { controller = "Home", action = "Example", id = UrlParameter.Optional }
+           //);
             routes.MapRoute(
-                          name: "ExampleRoute2",
-                          url: "General/{id}",
-                          defaults: new { controller = "Home", action = "Example", id = UrlParameter.Optional }
-           );
+                name: "Default1",
+                url: "",
+                defaults: new { controller = "Home", action = "Index" }
+            );
             routes.MapRoute(
                            name: "ExampleRoute",
-                           url: "{controller}/{id}",
-                           defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                           url: "{type}/{id}",
+                           defaults: new { controller = "Home", action = "Example", type="General", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "Index" }
             );
 
         }
