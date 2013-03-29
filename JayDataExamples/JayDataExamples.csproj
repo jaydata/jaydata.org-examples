@@ -530,6 +530,7 @@
     <Content Include="Scripts\example\kendo_mobile_simple.js" />
     <Content Include="Scripts\example\knokout_northwind.js" />
     <Content Include="Scripts\example\todo.js" />
+    <Content Include="Scripts\galleryHandler.js" />
     <Content Include="Scripts\indexModel.js" />
     <Content Include="Scripts\ui.js" />
     <Content Include="Scripts\vendor\bootstrap.min.js" />
@@ -1292,7 +1293,6 @@
     <Content Include="Views\Shared\_IncludeMeta.cshtml" />
     <Content Include="Views\Shared\_IncludeIeFix.cshtml" />
     <Content Include="Views\Shared\_IncludeFavIcon.cshtml" />
-    <Content Include="Views\Shared\Layout_Simple.cshtml" />
     <Content Include="Views\Shared\_IncludeGoogleAnalytics.cshtml" />
     <Content Include="Views\Shared\_IncludeScripts.cshtml" />
     <Content Include="Views\Shared\_IncludeFooter.cshtml" />
@@ -1312,7 +1312,6 @@
     <Content Include="Views\Home\KendoUI\MasterDetails.cshtml" />
     <Content Include="Views\Home\KendoUI\Cascading_Combobox.cshtml" />
     <Content Include="Views\Home\Knockout\FlowerShop.cshtml" />
-    <Content Include="Views\Shared\Layout_Knokout.cshtml" />
     <Content Include="Views\Home\Knockout\Northwind.cshtml" />
     <Content Include="Views\Home\Knockout\DynamicQueryNorthwind.cshtml" />
     <Content Include="Views\Home\Knockout\DynamicQueryFilterNorthwind.cshtml" />
@@ -1321,9 +1320,7 @@
     <Content Include="Views\Shared\_IncludeDownloadableSource.cshtml" />
     <Content Include="Views\Shared\_IncludeTags.cshtml" />
     <Content Include="Views\Home\GalleryExample.cshtml" />
-    <Content Include="Views\Shared\Layout_Gallery.cshtml" />
-    <Content Include="Views\Shared\Layout_YQL.cshtml" />
-    <Content Include="Views\Home\YQL\_template.cshtml" />
+    <Content Include="Views\Home\_template.cshtml" />
     <Content Include="Views\Home\YQL\YQLHtml.cshtml" />
   </ItemGroup>
   <ItemGroup />

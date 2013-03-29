@@ -88,16 +88,30 @@
                 }
             </div>
         </div>
-        @if (IsSectionDefined("Gallery"))
-        {
-            <div class="row-fluid new-row">
-                <div class="span12">
-                    <div class="bg-dark-grid clear">
-                        <h3>Screenshots</h3>
-                    </div>
-                    @RenderSection("Gallery", false)
+        @if (Model.GalleryImages != null || IsSectionDefined("Gallery"))
+        {<div class="row-fluid new-row">
+            <div class="span12">
+                <div class="bg-dark-grid clear">
+                    <h3>Screenshots</h3>
                 </div>
+                @if (IsSectionDefined("Gallery"))
+                {
+                    @RenderSection("Gallery", false)
+                }
+                else
+                {
+                    <div class="well well-white">
+                        <div class="pretty-gallery">
+                            <ul class="pretty-gallery">
+                                @foreach(System.Xml.XmlNode node in Model.GalleryImages){
+                                    <li><a href="@node.Attributes["url"].Value" rel="prettyPhoto[pp_gal]"><img src="@node.Attributes["thumbUrl"].Value" alt="@node.Attributes["alt"].Value" /></a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
             </div>
+        </div>
         }
         <div class="row-fluid new-row">
             @if (hasCodeBlock)

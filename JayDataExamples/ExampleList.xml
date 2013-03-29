@@ -67,6 +67,7 @@
       <Meta-Description>How to create JayData listview with Kendo UI! See this simple listview example.</Meta-Description>
       <Includes>
         <group name="kendoui"></group>
+        <group name="gallery"></group>
         <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
       </Includes>
@@ -85,6 +86,13 @@
         <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
         <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
+      <GalleryImages>
+        <Image url="/Images/gallery/jayscrum/demokep.png" thumbUrl="/Images/gallery/jayscrum/thumb/demokep.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_1.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_3.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_4.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_8.png" alt=""></Image>
+      </GalleryImages>
     </Example>
     <Example>
       <Title>Kendo UI listview with filter D</Title>

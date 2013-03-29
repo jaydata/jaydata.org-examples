@@ -40,6 +40,8 @@ namespace JayDataExamples.App_Code
         public List<ContentLink> RelatedContents { get; set; }
         [XmlAnyElement]
         public XmlNode Includes { get; set; }
+        [XmlAnyElement("GalleryImages")]
+        public XmlNode GalleryImagesNode { get; set; }
         [XmlIgnore]
         public List<string> TagList
         {
@@ -107,6 +109,16 @@ namespace JayDataExamples.App_Code
             get
             {
                 return ExampleDoc.Instnace.GlobalIncludesString;
+            }
+        }
+        [XmlIgnore]
+        public XmlNodeList GalleryImages {
+            get {
+                if (this.GalleryImagesNode != null)
+                {
+                    return this.GalleryImagesNode.SelectNodes("*");
+                }
+                return null;
             }
         }
         public Example()
