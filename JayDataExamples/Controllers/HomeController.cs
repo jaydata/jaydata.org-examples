@@ -14,6 +14,7 @@ namespace JayDataExamples.Controllers
         public ActionResult Example(string id, string type)
         {
             var ex = ExampleDoc.Instnace.Examples.Where(e => e.Link == type + "/" + id).FirstOrDefault();
+            if (ex == null) { ex = new Example(); }
             var viewPath = type.Equals("General") ? id : type + "/" + id;
             return View(viewPath, ex);
         } 

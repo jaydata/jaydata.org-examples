@@ -26,8 +26,17 @@
       <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.common.min.css" />
       <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.default.min.css" />
     </Group>
+    <Group name="knokout">
+      <script type="text/javascript" src="http://include.jaydata.org/knockout-2.1.0.js"></script>
+      <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/knockout.js"></script>
+    </Group>
     <Group name="jaydata">
       <script type="text/javascript" src="http://include.jaydata.org/jaydata.js"></script>
+    </Group>
+    <Group name="gallery">
+      <link rel="stylesheet" href="/Plugins/prettyphoto/css/prettyPhoto.css" />
+      <script src="/Plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
+      <script src="/Scripts/galleryHandler.js"></script>
     </Group>
   </IncludeGroups>
   <Includes>
@@ -60,7 +69,6 @@
         <group name="kendoui"></group>
         <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-        <link href="../Styles/dd.css" rel="stylesheet" />
       </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="7" />
@@ -354,6 +362,11 @@
       <Download>http://jaydata.codeplex.com/downloads/get/507804</Download>
       <Level>200</Level>
       <Suggested></Suggested>
+      <Includes>
+        <group name="knokout"></group>
+        <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <script src="/Scripts/vendor/jquery/jquery.flexslider-min.js"></script>
+      </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="10" />
         <Browser title="Google Chrome" name="chrome"/>

@@ -203,6 +203,7 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="download.html" />
+    <Content Include="Download\JayData-Northwind-Knockoutjs.zip" />
     <Content Include="ExampleList.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -1284,7 +1285,7 @@
     <Content Include="Views\Home\DisplayTemplates\ExampleDoc.cshtml" />
     <Content Include="Views\Home\KendoUI\Kendo_ToDoList.cshtml" />
     <Content Include="Views\Home\ToDoList.cshtml" />
-    <Content Include="Views\Shared\Layout_KendoUI.cshtml" />
+    <Content Include="Views\Shared\Layout_Default.cshtml" />
     <Content Include="Views\Shared\_IncludeTopMenu.cshtml" />
     <Content Include="Views\Shared\_JayDataHeader.cshtml" />
     <Content Include="Views\Shared\_IncludeStyles.cshtml" />
@@ -1364,7 +1365,6 @@
     <Content Include="Sencha\Core\resources\themes\stylesheets\sencha-touch\default\_widgets.scss" />
     <Content Include="Sencha\Core\resources\themes\templates\project\manifest.rb" />
     <Content Include="Sencha\Core\resources\themes\templates\project\sencha-touch.scss" />
-    <Content Include="Download\JayData-Northwind-Knockoutjs.zip" />
     <Content Include="Download\JayData-Northwind-Knockoutjs_v105.zip" />
     <Content Include="Download\jaydata104nwind.zip" />
     <Content Include="Download\JayDataNorthwindDemo.zip" />

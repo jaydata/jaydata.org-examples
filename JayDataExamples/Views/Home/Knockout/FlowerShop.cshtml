@@ -1,5 +1,5 @@
 ﻿@model JayDataExamples.App_Code.Example
-@{ Layout = "~/Views/Shared/Layout_Knokout.cshtml";
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";
    ViewBag.Title = "Flower Shop with Knockout.js";
     }
 
@@ -8,23 +8,6 @@
     <meta name="description" content="How to use the JayData with Kendo! See this simple listview example." />
 }
 
-@section Includes {
-    <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-    <script src="~/Scripts/vendor/jquery/jquery.flexslider-min.js"></script>
-}
-@section SupportedBrowsers {
-    @{Html.RenderPartial("_IncludeSupportedBrowsers");}
-}
-@section SimilarContents {
-    @{Html.RenderPartial("_IncludeRelatedContents");}
-}
-@section SourceCode {
-    @{Html.RenderPartial("_IncludeDownloadableSource");}
-}
-
-@section Tags {
-    @{Html.RenderPartial("_IncludeTags");}
-}
 
 @section Description {
     <p class="main-desc">
