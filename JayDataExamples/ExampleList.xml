@@ -295,7 +295,7 @@
     </Example>
     <!-- Knokout examples -->
     <Example>
-      <Title>Flower Shop- HTML5 (moved)</Title>
+      <Title>Flower Shop - HTML5 D</Title>
       <Description><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/FlowerShop</Link>
@@ -304,7 +304,7 @@
       <Level>200</Level>
       <Suggested></Suggested>
       <SupportedBrowsers>
-        <Browser title="Internet Explorer" name="ie" minVersion="6" />
+        <Browser title="Internet Explorer" name="ie" minVersion="10" />
         <Browser title="Google Chrome" name="chrome"/>
         <Browser title="Opera" name="opera" minVersion="10"/>
         <Browser title="Safari" name="safari" minVersion="5"/>
@@ -316,6 +316,7 @@
         <ContentLink link="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_self" css="">Flower shop hands on lab (VIDEO)</ContentLink>
         <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_self" css="">How to use JayData with Knockout.js?</ContentLink>
         <ContentLink link="http://jaydata.org/categories/knockout.js" target="_self" css="">Blogs with Knockout tag</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm platform overview</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -324,18 +325,40 @@
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Kendo_ToDoList</Link>
       <Tags> Windows8, OData, jQuery, JayStorm, Knockout</Tags>
+      <Level>300</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="10" />
+      </SupportedBrowsers>
       <RelatedContents>
         <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application-with-visual-studio-2010U" target="_self" css="">How to build a Simple OData-based AJAX application with Visual Studio 2010</ContentLink>
         <ContentLink link="http://jaydata.org/blog/windows-8-metro-app-tutorial-with-jaydata" target="_self" css="">Windows 8 Metro app tutorial with JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/how-can-you-access-your-javascript-data-service-from-.net-with-c" target="_self" css="">How can you access your JavaScript Data Service from .NET with C#</ContentLink>
         <ContentLink link="http://jaydata.org/categories/odata" target="_self" css="">Blogs with OData tags</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Knockout data binding (moved)</Title>
+      <Title>Knockout data binding D</Title>
       <Description><![CDATA[Demonstrating easy data binding using JayData and Knockout.js together. Properties of the requested entities will be observable through a single toArray call if ko.observableArray is passed as parameter.]]></Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/Northwind</Link>
       <Tags>Knockout, Northwind</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="10" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="10"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_self" css="">How to use JayData with Knockout.js?</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_self" css="">Blogs with Knockout tag</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm platform overview</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
       <Title>Knockout Dynamic Queries (moved)</Title>
