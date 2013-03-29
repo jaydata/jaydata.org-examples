@@ -206,7 +206,9 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="download.html" />
-    <Content Include="ExampleList.xml" />
+    <Content Include="ExampleList.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Facebook\Facebook_provider_example.html" />
     <Content Include="Facebook\Facebook_provider_friends_example.html" />
     <Content Include="Fonts\Droid\droidsans-bold.svg" />
@@ -1322,6 +1324,9 @@
     <Content Include="Views\Shared\_IncludeTags.cshtml" />
     <Content Include="Views\Home\GalleryExample.cshtml" />
     <Content Include="Views\Shared\Layout_Gallery.cshtml" />
+    <Content Include="Views\Shared\Layout_YQL.cshtml" />
+    <Content Include="Views\YQL\_template.cshtml" />
+    <Content Include="Views\YQL\YQLHtml.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

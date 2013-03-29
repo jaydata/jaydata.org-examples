@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MainPage>
+  <
   <Examples>
     <!-- KendoUI examples -->
     <Example>
@@ -11,6 +12,8 @@
       <Level>100</Level>
       <Suggested></Suggested>
       <JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>
+      <Meta-KeyWords></Meta-KeyWords>
+      <Meta-Description></Meta-Description>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="7" />
         <Browser title="Google Chrome" name="chrome"/>
@@ -344,7 +347,6 @@
       <Link>Knockout/DynamicQueryNorthwind</Link>
       <Tags>Knockout, query</Tags>
     </Example>
-   
     <Example>
       <Title>Knockout Dynamic Queries filter (moved)</Title>
       <Description><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Description>
@@ -366,7 +368,7 @@
         <![CDATA[With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and RSS feeds. Almost everything is queryable through the YQL provider.]]>
       </Description>
       <Image>/Images/yqlnagy.png</Image>
-      <Link>YQL/YQLhtml.html</Link>
+      <Link>YQL/YQLhtml</Link>
       <Tags>YQL, query </Tags>
     </Example>
     <Example>
