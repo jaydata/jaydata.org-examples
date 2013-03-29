@@ -30,6 +30,9 @@
       <script type="text/javascript" src="http://include.jaydata.org/knockout-2.1.0.js"></script>
       <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/knockout.js"></script>
     </Group>
+    <Group name="yql">
+      <script type="text/javascript" src="http://include.jaydata.org/jaydataproviders/YQLProvider.js"></script>
+    </Group>
     <Group name="jaydata">
       <script type="text/javascript" src="http://include.jaydata.org/jaydata.js"></script>
     </Group>
@@ -467,31 +470,115 @@
     </Example>
     <!-- YQL examples -->
     <Example>
-      <Title>YQL- html search</Title>
-      <Lead>
-        <![CDATA[With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and RSS feeds. Almost everything is queryable through the YQL provider.]]>
-      </Lead>
+      <Title>YQL html search (JayData example) (moved)</Title>
+      <Lead><![CDATA[With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and RSS feeds. Almost everything is queryable through the YQL provider.]]></Lead>
+      <Description>
+        <![CDATA[How to get the top news from BBC]]>
+      </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLhtml</Link>
-      <Tags>YQL, query </Tags>
+      <Tags>YQL, query</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, YQL, YQL html search example</Meta-KeyWords>
+      <Meta-Description>How can you use the JayData YQL provider to searching simple html pages.</Meta-Description>
+      <Includes>
+        <group name="yql"></group>
+        <script type="text/javascript" src="../Content/Scripts/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/deferred.js"></script>
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <!--<RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>-->
     </Example>
     <Example>
-      <Title>YQL Geo-based autocomplete</Title>
-      <Lead>
-        <![CDATA[With the Yahoo Query Language you can query Geo data. We show you how.]]>
-      </Lead>
+      <Title>YQL Geo-based autocomplete (moved)</Title>
+      <Lead><![CDATA[With the Yahoo Query Language you can query Geo data. We show you how.]]></Lead>
+      <Description>
+        <![CDATA[YQL Geo based auto-complete]]>
+      </Description>
       <Image>/Images/yqlnagy.png</Image>
-      <Link>YQL/YQLGeo.html</Link>
-      <Tags>YQL, GEO </Tags>
+      <Link>YQL/YQLGeo</Link>
+      <Tags>YQL, GEO</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, YQL, YQL geo data, example</Meta-KeyWords>
+      <Meta-Description>Set auto-complete source with JavaScript Language Query (JSLQ). YQL geodata autocomplete</Meta-Description>
+      <Includes>
+        <group name="yql"></group>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/deferred.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/template.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <!--<RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>-->
     </Example>
     <Example>
-      <Title>YQL simple RSS reader </Title>
-      <Lead>
-        <![CDATA[YQL RSS reader with filter]]>
-      </Lead>
+      <Title>YQL simple RSS reader (moved)</Title>
+      <Lead><![CDATA[YQL RSS reader with filter.]]></Lead>
+      <Description>
+        <![CDATA[Reading from RSS where Title contains JayData]]>
+      </Description>
       <Image>/Images/yqlnagy.png</Image>
-      <Link>YQL/YQLRss.html</Link>
-      <Tags>YQL, RSS, filter </Tags>
+      <Link>YQL/YQLRss</Link>
+      <Tags>YQL, RSS, filter</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, YQL, RSS, example</Meta-KeyWords>
+      <Meta-Description>This example show you how you can querying the RSS content with JayData.</Meta-Description>
+      <Includes>
+        <group name="yql"></group>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/deferred.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/template.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <!--<RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+      </RelatedContents>-->
     </Example>
     <Example>
       <Title>YQL advanced RSS reader</Title>
@@ -511,7 +598,7 @@
       <Link>YQL/YQLFeed.html</Link>
       <Tags>YQL, </Tags>
     </Example>
- <Example>
+    <Example>
       <Title>Netflix movies-Sencha Touch 2</Title>
       <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Lead>
       <Image>/Images/indexeddb.png</Image>

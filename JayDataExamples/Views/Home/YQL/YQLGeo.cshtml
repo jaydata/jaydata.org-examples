@@ -1,0 +1,150 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea id="code">
+<script type="text/javascript">
+    $('#Continents').autocomplete({
+        source: function (request, response) {
+            var parameters = { term: request.term, lang: $('.curr_lang').val() };
+            yqlContext.Continents
+                .filter(function (c) { return c.name.contains(this.term) && c.lang == this.lang; }, parameters)
+                .orderBy(function (c) { return c.name; })
+                .map(function (c) { return c.name })
+                .take(10)
+                .toArray(response);
+        }
+    });
+</script>
+    </textarea>
+}
+
+@section CodeRunning {
+    <form class="well" action="">
+        <div>
+            <label>
+                Select language
+            </label>
+            <select class="dropdown-menu1 curr_lang">
+                <option value="en-US">en-US</option>
+                <option value="de-DE">de-DE</option>
+                <option value="fr-FR">fr-FR</option>
+                <option value="hu-HU">hu-HU</option>
+            </select>
+        </div>
+        <hr />
+        <div id="example2">
+            <label>
+                Select continent
+            </label>
+            <input type="text" id="Continents" class="autoComplete" placeholder="Type something…" />
+            <div id="continent_contries" style="font-size: xx-small">
+            </div>
+            <div style="clear: both">
+            </div>
+        </div>
+        <hr />
+        <div id="example1" style="display: none">
+            <label>
+                Select country
+            </label>
+            <input type="text" id="Countries" class="autoComplete" placeholder="Type something…" />
+            <p class="help-block help-countries">
+            </p>
+        </div>
+        <hr />
+        <div id="example3">
+            <label>
+                Select ocean
+            </label>
+            <input type="text" id="Oceans" class="autoComplete" placeholder="Type something…" />
+        </div>
+    </form>
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+
+        $(function () {
+            var setAutoComplete = function () {
+                $('#Continents').autocomplete({
+                    source: function (request, response) {
+                        var parameters = { term: request.term, lang: $('.curr_lang').val() };
+                        yqlContext.Continents
+                            .filter(function (c) { return c.name.contains(this.term) && c.lang == this.lang; }, parameters)
+                            .orderBy(function (c) { return c.name; })
+                            .map(function (c) { return c.name })
+                            .take(10)
+                            .toArray(response);
+                    },
+                    select: function (event, ui) {
+                        $('.help-countries').text("filter: " + ui.item.label);
+                        $('#example1').show();
+                        $('#Countries').val('');
+
+                        yqlContext.Countries
+                            .filter(function (c) { return c.place == this.filter && c.lang == this.lang; }, { filter: ui.item.label, lang: $('.curr_lang').val() })
+                            .toTemplate('contries-template', 'continent_contries');
+
+                    }
+                });
+
+                $('#Countries').autocomplete({
+                    source: function (request, response) {
+                        var country = $('#Continents').val();
+                        var params = { filter: country, term: request.term, lang: $('.curr_lang').val() };
+
+                        var filterFunc = function (c) { c.name.contains(this.term) && c.lang == this.lang; };
+                        if (country) filterFunc = function (c) { return c.place == this.filter && c.name.contains(this.term) && c.lang == this.lang; }
+
+                        yqlContext.Countries
+                            .filter(filterFunc, params)
+                            .orderBy(function (c) { return c.name; })
+                            .map(function (c) { return c.name })
+                            .take(10)
+                            .toArray(response);
+                    }
+                });
+
+
+                $('#Oceans').autocomplete({
+                    source: function (request, response) {
+                        yqlContext.Oceans
+                            .filter(function (c) { return c.name.contains(this.term) && c.lang == this.lang; }, { term: request.term, lang: $('.curr_lang').val() })
+                            .orderBy(function (c) { return c.name; })
+                            .map(function (c) { return c.name })
+                            .take(10)
+                            .toArray(response);
+                    }
+                });
+
+            };
+
+            $('.btn').click(function (e) {
+                e.preventDefault();
+            });
+
+            $('.dropdown-menu1').change(function (e) {
+                e.preventDefault();
+
+                $('#Continents').val('');
+                $('#Countries').val('');
+                $('#Oceans').val('');
+                $('#example1').hide();
+                $('#continent_contries').html('');
+
+            });
+
+            var yqlContext = new $data.Yahoo.YQLContext({ name: 'YQL' });
+            yqlContext.onReady(function () {
+                setAutoComplete();
+            });
+        });
+
+    </script>
+    <div style="display: none">
+        <div id="contries-template">
+            <div style="width: 200px; float: left">
+                ${name} (${placeTypeName.content})
+            </div>
+        </div>
+    </div>
+}

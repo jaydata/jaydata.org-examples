@@ -1277,9 +1277,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="YQL\YQLRssAdvanced.html" />
-    <Content Include="YQL\YQLGeo.html" />
-    <Content Include="YQL\YQLRss.html" />
-    <Content Include="YQL\YQLHtml.html" />
     <Content Include="YQL\YQLFeed.html" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DisplayTemplates\Example.cshtml" />
@@ -1322,6 +1319,8 @@
     <Content Include="Views\Home\GalleryExample.cshtml" />
     <Content Include="Views\Home\_template.cshtml" />
     <Content Include="Views\Home\YQL\YQLHtml.cshtml" />
+    <Content Include="Views\Home\YQL\YQLGeo.cshtml" />
+    <Content Include="Views\Home\YQL\YQLRss.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

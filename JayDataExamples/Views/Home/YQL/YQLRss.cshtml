@@ -1,0 +1,39 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea id="code">
+<script type="text/javascript">
+    var dataContext = new $data.Yahoo.YQLContext({ name: 'YQL' });
+    dataContext.onReady(function (context) {
+        context.Rss
+            .filter(function (r) { return r.url == 'http://coder.io/tag/javascript.rss' && r.title.contains('javascript'); })
+            .tojQueryTemplate('#rssTemplate', '#result');
+    });
+</script>
+    </textarea>
+}
+
+@section CodeRunning {
+    <p><a href="http://feeds.feedburner.com/jaystack/blog" target="_blank">http://feeds.feedburner.com/jaystack/blog</a></p>
+    <div id="result"></div>
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+
+        $(function () {
+            var dataContext = new $data.Yahoo.YQLContext({ name: 'YQL' });
+            dataContext.onReady(function (context) {
+                context.Rss
+                    .filter(function (r) { return r.url == 'http://feeds.feedburner.com/jaystack/blog?format=xml' && r.title.contains('JayData'); })
+                    .tojQueryTemplate('#rssTemplate', '#result');
+            });
+        });
+    </script>
+    <script id="rssTemplate" type="text/x-jquery-tmpl">
+        <h2><a href="${link}">${title}</a></h2>
+        <span>pubDate: ${pubDate}</span>
+        <br />
+        <span>guid: ${guid.content}</span>
+        <p>description: {{html description}}</p>
+    </script>
+}

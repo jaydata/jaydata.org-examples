@@ -3,17 +3,50 @@
 
 @section CodeSource {
     <textarea id="code">
+<script type="text/javascript">
+    var dataContext = new $data.Yahoo.YQLContext({ name: 'YQL' });
+    dataContext.onReady(function (context) {
+        context.Html
+            .filter(function (h) { return h.url == 'http://www.bbc.com/' && h.xpath == '//div[@@id="carousel_items"]/dl' })
+            .forEach();
+    });
+</script>
     </textarea>
-
-    <script>
-        setTimeout(function () {
-            CodeMirror.fromTextArea(document.getElementById('code'), {
-                mode: 'text/html',
-                lineNumbers: false
-            });
-        });
-    </script>
 }
 
 @section CodeRunning {
+    <div id="result">
+    </div>
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+
+        $(function () {
+            var dataContext = new $data.Yahoo.YQLContext({ name: 'YQL' });
+            dataContext.onReady(function (context) {
+                var result = context.Html
+                    .filter(function (h) { return h.url == 'http://www.bbc.com/' && h.xpath == '//div[@@id="promo2_carousel_items"]/dl' })
+                            .forEach(function (result) {
+                                $('#result').append(
+                                    '<dd class="fleft margin10 ' + result.dd[1].a.class + '">' +
+                                        '<a href="' + result.dd[1].a.href + '">' +
+                                            '<img src="' + result.dd[1].a.img.src +
+                                                '" alt="' + result.dd[1].a.img.alt +
+                                                '" width="' + result.dd[1].a.img.width +
+                                                '" height="' + result.dd[1].a.img.height + '" />' +
+                                        '</a>' +
+                                    '</dd>' +
+                                    '<dt class=""><h3><a href="' + result.dt.a.href + '">' + result.dt.a.content + '</a></h3></dt>' +
+                                    '<dd class="' + result.dd[0].class + '">' + result.dd[0].p + '</dd><br /><hr class="clear soften margin10" />'
+                                    );
+                            });
+
+                        result.then(function noResult(items) {
+                            if (items.length === 0)
+                                $("#result").append('YQL result error!');
+                        });
+
+                    });
+                });
+
+    </script>
 }
