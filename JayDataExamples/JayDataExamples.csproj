@@ -217,6 +217,16 @@
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon_jaydata.png" />
     <Content Include="Images\formvalidation.png" />
+    <Content Include="Images\gallery\planets\demokep.png" />
+    <Content Include="Images\gallery\planets\jayscrum_1.png" />
+    <Content Include="Images\gallery\planets\jayscrum_3.png" />
+    <Content Include="Images\gallery\planets\jayscrum_4.png" />
+    <Content Include="Images\gallery\planets\jayscrum_8.png" />
+    <Content Include="Images\gallery\planets\thumb\demokep.png" />
+    <Content Include="Images\gallery\planets\thumb\jayscrum_1.png" />
+    <Content Include="Images\gallery\planets\thumb\jayscrum_3.png" />
+    <Content Include="Images\gallery\planets\thumb\jayscrum_4.png" />
+    <Content Include="Images\gallery\planets\thumb\jayscrum_8.png" />
     <Content Include="Images\gallery\jayscrum\demokep.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_1.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_3.png" />
@@ -241,6 +251,7 @@
     <Content Include="Images\icon-github.png" />
     <Content Include="Images\icon-html5.png" />
     <Content Include="Images\icon-twitter.png" />
+    <Content Include="Images\icon_pro.png" />
     <Content Include="Images\indexeddb.png" />
     <Content Include="Images\iphone.png" />
     <Content Include="Images\li_purple.png" />
@@ -1276,8 +1287,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="YQL\YQLRssAdvanced.html" />
-    <Content Include="YQL\YQLFeed.html" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DisplayTemplates\Example.cshtml" />
     <Content Include="Views\Home\DisplayTemplates\ExampleDoc.cshtml" />
@@ -1321,6 +1330,9 @@
     <Content Include="Views\Home\YQL\YQLHtml.cshtml" />
     <Content Include="Views\Home\YQL\YQLGeo.cshtml" />
     <Content Include="Views\Home\YQL\YQLRss.cshtml" />
+    <Content Include="Views\Home\YQL\YQLRssAdvanced.cshtml" />
+    <Content Include="Views\Home\YQL\YQLFeed.cshtml" />
+    <Content Include="Views\Home\Planets.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

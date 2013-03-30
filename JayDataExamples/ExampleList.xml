@@ -654,8 +654,26 @@
         <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>-->
     </Example>
-    
-      
+    <!--Facebook examples-->
+    <Example>
+      <Title>Facebook provider example</Title>
+      <Lead>
+        <![CDATA[How can I get the current user's public personal data through FQL api.]]>
+      </Lead>
+      <Image>/Images/facebook.png</Image>
+      <Link>Facebook/Facebook_provider_example.html</Link>
+      <Tags>facebook</Tags>
+    </Example>
+    <Example>
+      <Title>Facebook friend list example</Title>
+      <Lead>
+        <![CDATA[How can I get the current user's friends list through FQL api.]]>
+      </Lead>
+      <Image>/Images/facebook.png</Image>
+      <Link>Facebook/Facebook_provider_friends_example.html</Link>
+      <Tags>facebook</Tags>
+    </Example>
+
     <Example>
       <Title>Planets (moved)</Title>
       <Lead>
@@ -664,10 +682,10 @@
       <Image>/Images/planetsnagy.png</Image>
       <Link>General/Planets</Link>
       <Tags>WebSQL</Tags>
-    <Includes>
+      <Includes>
         <group name="gallery"></group>
       </Includes>
-     <GalleryImages>
+      <GalleryImages>
         <Image url="/Images/gallery/planets/demokep.png" thumbUrl="/Images/gallery/planets/thumb/demokep.png" alt=""></Image>
         <Image url="/Images/gallery/planets/jayscrum_1.png" thumbUrl="/Images/gallery/planets/thumb/jayscrum_1.png" alt=""></Image>
         <Image url="/Images/gallery/planets/jayscrum_3.png" thumbUrl="/Images/gallery/planets/thumb/jayscrum_3.png" alt=""></Image>
@@ -675,8 +693,8 @@
         <Image url="/Images/gallery/planets/jayscrum_8.png" thumbUrl="/Images/gallery/planets/thumb/jayscrum_8.png" alt=""></Image>
       </GalleryImages>
     </Example>
-    
-      
+
+
     <Example>
       <Title>Netflix movies-Sencha Touch 2</Title>
       <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Lead>
@@ -693,7 +711,7 @@
       <Link>NewsReader/index.html</Link>
       <Tags>OData, jQuery, CRUD</Tags>
     </Example>
-    
+
     <Example>
       <Title>Advanced RSS using custom provider</Title>
       <Lead>
@@ -721,23 +739,6 @@
       <Link>General/ToDoList</Link>
       <Tags>WebSQL, indexedDB, localDB</Tags>
     </Example>
-    <Example>
-      <Title>Facebook provider example</Title>
-      <Lead>
-        <![CDATA[How can I get the current user's public personal data through FQL api.]]>
-      </Lead>
-      <Image>/Images/facebook.png</Image>
-      <Link>Facebook/Facebook_provider_example.html</Link>
-      <Tags>facebook</Tags>
-    </Example>
-    <Example>
-      <Title>Facebook friend list example</Title>
-      <Lead>
-        <![CDATA[How can I get the current user's friends list through FQL api.]]>
-      </Lead>
-      <Image>/Images/facebook.png</Image>
-      <Link>Facebook/Facebook_provider_friends_example.html</Link>
-      <Tags>facebook</Tags>
-    </Example>
+
   </Examples>
 </MainPage>
