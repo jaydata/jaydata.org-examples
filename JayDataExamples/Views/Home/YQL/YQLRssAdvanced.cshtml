@@ -1,0 +1,59 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea id="code">
+<script type="text/javascript">
+    $data.EntityContext.extend("MyYQLContext", {
+        Rss: {
+            tableName: 'rss',
+            dataType: $data.EntitySet,
+            elementType: $data.Yahoo.types.YQLRss.extend("MyYQLRss", {
+                category: { type: 'array' }
+            })
+        }
+    });
+</script>
+    </textarea>
+}
+
+@section CodeRunning {
+    <p><a href="http://feeds.feedburner.com/jaystack/blog?format=xml" target="_blank">http://feeds.feedburner.com/jaystack/blog</a></p>
+    <div id="result"></div>
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+
+        $(function () {
+
+            //if u want any other fields, u have to create your own context with extended element type
+            $data.EntityContext.extend("MyYQLContext", {
+                Rss: {
+                    tableName: 'rss',
+                    dataType: $data.EntitySet,
+                    elementType: $data.Yahoo.types.YQLRss.extend("MyYQLRss", {
+                        category: { type: 'array' },
+                    })
+                }
+            });
+
+            var myRssContext = new MyYQLContext({ name: 'YQL' });
+            myRssContext.onReady(function (context) {
+                context.Rss
+                    .filter(function (r) { return r.url == 'http://feeds.feedburner.com/jaystack/blog?format=xml' && r.title.contains('JayData'); })
+                    .tojQueryTemplate('#rssTemplate', '#result');
+            });
+
+        });
+
+    </script>
+    <script id="rssTemplate" type="text/x-jquery-tmpl">
+        <h3><a href="${link}">${title}</a></h3>
+        <span>Categories: <b>{{each category}} {{if $index > 0}}, {{else}}{{/if}} ${$value}
+                    {{/each}}</b></span>
+        <br />
+        <span>pubDate: ${pubDate}</span>
+        <br />
+        <span>guid: ${guid.content}</span>
+        <p>description: {{html description}}</p>
+    </script>
+}

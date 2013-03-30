@@ -1,0 +1,52 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea id="code">
+<script type="text/javascript">
+    var dataContext = new $data.Yahoo.YQLContext({ name: 'YQL' });
+    dataContext.onReady(function (context) {
+        context.Feed
+        .filter(function (h) { return h.url == 'http://stackoverflow.com/feeds' })
+        .tojQueryTemplate('#feedTemplate', '#result');
+    });
+</script>
+    </textarea>
+}
+
+@section CodeRunning {
+    <p>Feed source: http://stackoverflow.com/feeds </p>
+    <div id="result">
+    </div>
+
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+
+        $(function () {
+            var dataContext = new $data.Yahoo.YQLContext({ name: 'YQL' });
+            dataContext.onReady(function (context) {
+                context.Feed
+                .filter(function (h) { return h.url == 'http://stackoverflow.com/feeds' })
+                .tojQueryTemplate('#feedTemplate', '#result');
+            });
+        });
+
+    </script>
+    <script id="feedTemplate" type="text/x-jquery-tmpl">
+        <hr />
+        <h3><a href="${link.href}">${title.content}</a></h3>
+        <span>Rank: ${rank.content}</span>
+        <br />
+        <span>Categories: <b>{{each category}} {{if $index > 0}}, {{else}}{{/if}} ${$value.term}
+            {{/each}}</b></span>
+        <br />
+        <a href="${author.uri}">Author: ${author.name}</a>
+        <br />
+        <span>Published: ${published}</span>
+        <br />
+        <span>Updated: ${updated}</span>
+        <p>
+            {{html summary.content}}
+        </p>
+    </script>
+}

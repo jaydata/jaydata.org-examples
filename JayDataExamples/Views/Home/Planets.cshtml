@@ -1,0 +1,32 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea id="code">
+<script type="text/javascript">
+    $data.Class.define('$planet.Types.Planet', $data.Entity, null, {
+        Id: { dataType: 'int', key: true, computed: true },
+        Name: { dataType: 'string' },
+        Text: { dataType: 'string' },
+        ShadowBlur: { dataType: 'int' },
+        ShadowStyle: { dataType: 'string' },
+        BodyStyle: { dataType: 'string' },
+        Radius: { dataType: 'int' },
+        X: { dataType: 'int' },
+        Y: { dataType: 'int' },
+        Distance: { dataType: 'int' },
+        Speed: { dataType: 'number' },
+        Children: { dataType: 'bool' },
+        ParentId: { dataType: 'int' }
+    }, null);
+
+    $data.Class.define('$planet.Types.PlanetContext', $data.EntityContext, null, {
+        Planets: { dataType: $data.EntitySet, elementType: $planet.Types.Planet }
+    }, null);
+</script>
+    </textarea>
+}
+
+@section CodeRunning {
+    <a href="/Planets/index.html">View application</a>
+}

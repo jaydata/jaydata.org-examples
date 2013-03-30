@@ -43,7 +43,7 @@
             <div class="inner tacenter">
                 <h1>YQL Feed</h1>
 
-<pre class="well well-white marginb20 iblock" style='color:#000000;background:#ffffff;'><span style='color:#0000E6; font-weight:bold; '>var</span> dataContext <span style='color:#808030; '>=</span> <span style='color:#0000E6; font-weight:bold; '>new</span> $data<span style='color:#808030; '>.</span>Yahoo<span style='color:#808030; '>.</span>YQLContext<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span> name<span style='color:#800080; '>:</span> <span style='color:#800000; '>'YQL'</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+                <pre class="well well-white marginb20 iblock" style='color: #000000; background: #ffffff;'><span style='color:#0000E6; font-weight:bold; '>var</span> dataContext <span style='color:#808030; '>=</span> <span style='color:#0000E6; font-weight:bold; '>new</span> $data<span style='color:#808030; '>.</span>Yahoo<span style='color:#808030; '>.</span>YQLContext<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span> name<span style='color:#800080; '>:</span> <span style='color:#800000; '>'YQL'</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
 dataContext<span style='color:#808030; '>.</span>onReady<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>context<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
     context<span style='color:#808030; '>.</span>Feed
     <span style='color:#808030; '>.</span>filter<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>h<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span> <span style='color:#0000E6; font-weight:bold; '>return</span> h<span style='color:#808030; '>.</span>url <span style='color:#808030; '>==</span> <span style='color:#800000; '>'http://stackoverflow.com/feeds'</span> <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span>
@@ -75,36 +75,36 @@ dataContext<span style='color:#808030; '>.</span>onReady<span style='color:#8080
             <div id="result">
             </div>
 
-    <script type="text/javascript">
-        jQuery.support.cors = true;
+            <script type="text/javascript">
+                jQuery.support.cors = true;
 
-        $(function () {
-            var dataContext = new $data.Yahoo.YQLContext({ name: 'YQL' });
-            dataContext.onReady(function (context) {
-                context.Feed
-                .filter(function (h) { return h.url == 'http://stackoverflow.com/feeds' })
-                .tojQueryTemplate('#feedTemplate', '#result');
-            });
-        });
+                $(function () {
+                    var dataContext = new $data.Yahoo.YQLContext({ name: 'YQL' });
+                    dataContext.onReady(function (context) {
+                        context.Feed
+                        .filter(function (h) { return h.url == 'http://stackoverflow.com/feeds' })
+                        .tojQueryTemplate('#feedTemplate', '#result');
+                    });
+                });
 
-    </script>
-    <script id="feedTemplate" type="text/x-jquery-tmpl">
-        <hr />
-        <h2><a href="${link.href}">${title.content}</a></h2>
-        <span>Rank: ${rank.content}</span>
-        <br />
-        <span>Categories: <b>{{each category}} {{if $index > 0}}, {{else}}{{/if}} ${$value.term}
-            {{/each}}</b></span>
-        <br />
-        <a href="${author.uri}">Author: ${author.name}</a>
-        <br />
-        <span>Published: ${published}</span>
-        <br />
-        <span>Updated: ${updated}</span>
-        <p>
-            {{html summary.content}}
-        </p>
-    </script>
+            </script>
+            <script id="feedTemplate" type="text/x-jquery-tmpl">
+                <hr />
+                <h3><a href="${link.href}">${title.content}</a></h3>
+                <span>Rank: ${rank.content}</span>
+                <br />
+                <span>Categories: <b>{{each category}} {{if $index > 0}}, {{else}}{{/if}} ${$value.term}
+                    {{/each}}</b></span>
+                <br />
+                <a href="${author.uri}">Author: ${author.name}</a>
+                <br />
+                <span>Published: ${published}</span>
+                <br />
+                <span>Updated: ${updated}</span>
+                <p>
+                    {{html summary.content}}
+                </p>
+            </script>
         </section>
     </div>
 </body>
