@@ -1335,7 +1335,9 @@
     <Content Include="Views\Home\Planets.cshtml" />
     <Content Include="Views\Home\Facebook\Provider.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\gallery\flowershopwin8\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Sencha\Core\resources\sass\android.scss" />
     <Content Include="Sencha\Core\resources\sass\apple.scss" />
