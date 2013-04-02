@@ -1334,6 +1334,7 @@
     <Content Include="Views\Home\YQL\YQLFeed.cshtml" />
     <Content Include="Views\Home\Planets.cshtml" />
     <Content Include="Views\Home\Facebook\Provider.cshtml" />
+    <Content Include="Views\Home\TypeScript\TypeScript.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\flowershopwin8\" />

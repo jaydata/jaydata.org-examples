@@ -21,6 +21,7 @@
         @{
             Html.RenderPartial("_IncludeTopMenu");
         }
+        @RenderSection("SubHeader", false)
 
         <section class="main-content">
             @RenderSection("Tags", false)

@@ -1,19 +1,5 @@
 ﻿@model JayDataExamples.App_Code.Example
-@{ Layout = "~/Views/Shared/Layout_Default.cshtml";
-   ViewBag.Title = "JayData examples: Knockout.js Dynamic Queries filter";
-   }
-
-@section Meta {
-    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
-    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example." />
-}
-
-
-@section Description {
-    <p class="main-desc">
-        .....
-    </p>
-}
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
 
 @section CodeSource {
     <textarea id="code">
@@ -46,15 +32,6 @@ Change the filter options and the query will run again -->
     });
 </script>
     </textarea>
-
-    <script>
-        setTimeout(function () {
-            CodeMirror.fromTextArea(document.getElementById('code'), {
-                mode: 'text/html',
-                lineNumbers: false
-            });
-        });
-    </script>
 }
 
 @section CodeRunning {

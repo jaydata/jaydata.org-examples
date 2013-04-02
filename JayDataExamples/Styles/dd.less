@@ -66,12 +66,7 @@ body {
 	&:first-child { margin-left: 0; }
 
 	&.well-white {
-		min-height: 235px;
-		position: relative;
-
-		.tags {
-			position: absolute; right: 20px; bottom: 20px; left: 20px;
-		}	
+		min-height: 260px;
 	}
 }
 
@@ -579,7 +574,7 @@ footer #media ul.standard h5, footer #media ul.credits h5 {
 
 	input {
 		border: 0;
-		width: 50px; height: 24px;
+		width: 50px; height: 24px; min-width: 75px;
 		font-size: 13px;
 		margin: 0; padding: 2px 10px 2px 25px;
 		background: #E0E0E0;
@@ -1290,10 +1285,6 @@ footer#footer2 { padding-top: 0;}
 			padding-left: 10px;
 			padding-right: 10px;
 		}
-		#searchbar input.span2 {
-			width: 180px;  
-			float: left;
-		}
 		#searchbar .input-append { padding-right: 10px; }
 	}
 
@@ -1808,3 +1799,4 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 
 @import "less/sticky-footer.less";
 @import "less/logos.less";
+@import "less/mediaqueries.less";
