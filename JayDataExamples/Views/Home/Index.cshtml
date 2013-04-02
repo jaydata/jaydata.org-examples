@@ -2,14 +2,17 @@
 @{
     ViewBag.Title = "Index";
     Html.RenderPartial("_IncludeLogoFilter");
-    Html.RenderPartial("_IncludeSearchBar");
 }
 
-@section Header{
+@section Header {
     <script src="~/Scripts/vendor/knockout-2.1.0.js"></script>
     <script src="/Scripts/ui.js"></script>
     <script src="http://include.jaydata.org/jaydatamodules/knockout.js"></script>
     <script src="~/Scripts/indexModel.js"></script>
+}
+
+@section SubHeader {
+    @{ Html.RenderPartial("_IncludeSearchBar"); }
 }
 
 @section MainBody {

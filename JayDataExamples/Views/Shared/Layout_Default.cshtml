@@ -25,8 +25,8 @@
     }
 }
 
-@{
-    Html.RenderPartial("_IncludeBreadcrumb");
+@section SubHeader {
+    @{ Html.RenderPartial("_IncludeBreadcrumb"); }
 }
 
 @section MainBody {
