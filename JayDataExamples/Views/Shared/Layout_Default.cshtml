@@ -131,6 +131,8 @@
                     </script>
                 </div>
             }
+            @if (IsSectionDefined("CodeRunning"))
+            {
             <!--**************************************** RUNNING CODE START HERE ****************************************-->
             <div class="@runningCodeCss">
                 <div class="bg-dark-grid">
@@ -139,6 +141,8 @@
                 @RenderSection("CodeRunning", false)
             </div>
             <!--******************************************* RUNNING CODE END *******************************************-->
+            }
+             @RenderSection("PlaceHolder", false)
         </div>
     </div>
 }
