@@ -11,10 +11,6 @@
 body {
   position: relative;
   padding-top: 0;
-  background-color: #fff;
-  background-image: url(../img/grid-18px-masked.png);
-  background-repeat: repeat-x;
-  background-position: 0 40px;
 }
 
 
@@ -641,15 +637,9 @@ form.well {
   }
 
   /* Change up some type stuff */
-  h2 {
-    margin-top: 27px;
-  }
   h2 small {
     display: block;
     line-height: 18px;
-  }
-  h3 {
-    margin-top: 18px;
   }
 
   /* Adjust the jumbotron */

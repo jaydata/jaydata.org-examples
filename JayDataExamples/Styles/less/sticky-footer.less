@@ -12,3 +12,17 @@ html, body {
 .main-footer, .push {
 	height: @footer-height; /* .push must be the same height as .footer */
 }
+
+@media (max-width: 767px){
+	.wrapper {
+		margin: 0;
+	}
+
+	.main-footer, .push {
+		height: auto;
+
+		margin-left: -20px;
+		margin-right: -20px;
+		padding: 0 20px;
+	}
+}
