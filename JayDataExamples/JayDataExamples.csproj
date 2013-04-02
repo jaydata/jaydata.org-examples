@@ -217,6 +217,15 @@
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon_jaydata.png" />
     <Content Include="Images\formvalidation.png" />
+    <Content Include="Images\gallery\flowershopwin8\flowershop_index.png" />
+    <Content Include="Images\gallery\flowershopwin8\flowershop_win8_app_cart_desktop.png" />
+    <Content Include="Images\gallery\flowershopwin8\flowershop_win8_app_cart_minimalized.png" />
+    <Content Include="Images\gallery\flowershopwin8\flowershop_win8_app_category_max.png" />
+    <Content Include="Images\gallery\flowershopwin8\flowershop_win8_app_product.png" />
+    <Content Include="Images\gallery\flowershopwin8\flowershop_win8_app_product_list_minimalized.png" />
+    <Content Include="Images\gallery\flowershopwin8\flowershop_win8_app_product_minimalized.png" />
+    <Content Include="Images\gallery\jayscrum\jayscrum_board_tablet_2.png" />
+    <Content Include="Images\gallery\jayscrum\jayscrum_dashboard_vagott.png" />
     <Content Include="Images\gallery\planets\demokep.png" />
     <Content Include="Images\gallery\planets\jayscrum_1.png" />
     <Content Include="Images\gallery\planets\jayscrum_3.png" />
@@ -227,12 +236,10 @@
     <Content Include="Images\gallery\planets\thumb\jayscrum_3.png" />
     <Content Include="Images\gallery\planets\thumb\jayscrum_4.png" />
     <Content Include="Images\gallery\planets\thumb\jayscrum_8.png" />
-    <Content Include="Images\gallery\jayscrum\demokep.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_1.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_3.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_4.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_8.png" />
-    <Content Include="Images\gallery\jayscrum\thumb\demokep.png" />
     <Content Include="Images\gallery\jayscrum\thumb\jayscrum_1.png" />
     <Content Include="Images\gallery\jayscrum\thumb\jayscrum_3.png" />
     <Content Include="Images\gallery\jayscrum\thumb\jayscrum_4.png" />
@@ -1335,11 +1342,8 @@
     <Content Include="Views\Home\Planets.cshtml" />
     <Content Include="Views\Home\Facebook\Provider.cshtml" />
     <Content Include="Views\Home\TypeScript\TypeScript.cshtml" />
-    <Content Include="Views\Home\Facebook\Friends.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\gallery\flowershopwin8\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Sencha\Core\resources\sass\android.scss" />
     <Content Include="Sencha\Core\resources\sass\apple.scss" />
