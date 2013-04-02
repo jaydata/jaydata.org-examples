@@ -93,8 +93,22 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI listview with filter D</Title>
+      <Title>Kendo UI listview with filter and sorting D</Title>
       <Lead><![CDATA[JayData and KendoUI listview with filtering and sorting. The dataSource supports paging, filtering and sorting without writing storage or protocol-specific code]]></Lead>
+      <Description>
+        <![CDATA[As you can see in this example, to use Kendo UI with JayData is a piece of cake. All you need is a JayData context, of course it works with all providers!
+            In this example oData is used. Check the network panel to see the requests.
+            You can create a Kendo Datasource with a simple method: asKendoDataSource() and off you go. If works everywhere where Kendo expects a DataSource, not only
+            with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
+            the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo UI! See this example.</Meta-Description>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+      </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView_Filter</Link>
       <Tags>KendoUI, OData, filter, sort</Tags>
@@ -118,8 +132,20 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI grid with filter D</Title>
+      <Title>Kendo UI grid with filter and sorting D</Title>
       <Lead><![CDATA[Simple Kendo UI grid with remote OData datasource. Sorting, paging and filtering works on the server side but with a simple switch they can be one the client side, too.]]></Lead>
+      <Description>
+        <![CDATA[This Kendo Grid example uses oData to access the Northwind service. Sorting, paging and filtering works on the server side but with a simple
+            switch they can be one the client side, too.  In this example the grid is read only and the columns are manually configured. In other
+            examples you'll see read-write grid and automatic column setup.]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, Kendo UI, Crossplatform, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo UI? See this simple grid example.</Meta-Description>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+      </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_ReadOnly</Link>
       <Tags>KendoUI, OData, filter, sort, Northwind</Tags>
@@ -144,11 +170,22 @@
     <Example>
       <Title>Kendo UI grid and CRUD D</Title>
       <Lead><![CDATA[Create, read, update and delete in-browser database records in Kendo UI grid. JayData knows how to process the CRUD actions and translate it to different data storage syntaxes. ]]></Lead>
+      <Description>
+        <![CDATA[ This Kendo Grid example uses a local Northwind database. Sorting, paging and filtering works along
+                with full CRUD. The demo is written so that your local database is reinitialized on every page reload and your changes are lost!]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, Kendo UI, Crossplatform, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo UI! See this simple example.</Meta-Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_CRUD</Link>
-      <Tags>KendoUI, OData, CRUD, </Tags>
+      <Tags>KendoUI, OData, CRUD</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+      </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="7" />
         <Browser title="Google Chrome" name="chrome"/>
@@ -168,6 +205,16 @@
     <Example>
       <Title>Kendo UI Autocomplete D</Title>
       <Lead><![CDATA[Populate the Kendo UI auto-complete field with in-browser database records using JayData. No manual querying, no pain, just smooth data access.]]></Lead>
+      <Description>
+        <![CDATA[This Kendo autocomplete example uses a local Northwind database. Populate the Kendo UI auto-complete field with in-browser database records using JayData. No manual querying, no pain, just smooth data access.]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, Kendo UI, Crossplatform, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo UI! See this example.</Meta-Description>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+      </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Autocomplete</Link>
       <Tags>KendoUI, autocomplete, Northwind</Tags>
@@ -192,6 +239,18 @@
     <Example>
       <Title>Kendo MVVM remote binding and JayData D</Title>
       <Lead><![CDATA[Make your code clean with Kendo UI MVVM and edit WebSQL/IndexedDB records with the help of JayData observables. Revitalized code of <a href="http://demos.kendoui.com/web/mvvm/remote-binding.html">original KendoUI example</a> ]]></Lead>
+      <Description>
+        <![CDATA[This Kendo mvvm example is a copy of the <a href="http://demos.kendoui.com/web/mvvm/remote-binding.html">original KendoUI example</a>
+        but it uses a local Northwind database.<br />
+        The demo is written so that your local database is reinitialized on every page reload and your changes are lost!]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, MVVM, HTML5, IndexedDB, example, online</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo UI! See this simple example.</Meta-Description>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+      </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/MVVM</Link>
       <Tags>KendoUI, MVVM, CRUD, Northwind</Tags>
@@ -214,13 +273,27 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Mobile app with master-detail listview D</Title>
+      <Title>Kendo UI mobile app with master-detail listview D</Title>
       <Lead><![CDATA[Master-detail listview populated with local WebSQL/IndexedDB records by JayData]]></Lead>
+      <Description>
+        <![CDATA[This Kendo mobile example uses a local Northwind database. The code on the left can be folded/unfolded.<br />
+        The demo is written so that your local database is reinitialized on every page reload and your changes are lost!]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, Kendo UI, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo Ui? See this simple example.</Meta-Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Simple</Link>
       <Tags>KendoUI, WebSQL, IndexedDB, Northwind</Tags>
       <Level>200</Level>
       <Suggested></Suggested>
+      <Includes>
+        <group name="kendoui"></group>
+        <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <script src="/Scripts/example/kendo_mobile_simple.js"></script>
+        <script src="/Scripts/vendor/north.js"></script>
+        <link rel="stylesheet" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
+        <link href="/Styles/examples.css" rel="stylesheet" />
+      </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="7" />
         <Browser title="Google Chrome" name="chrome"/>
@@ -238,8 +311,23 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI complex mobile app D</Title>
+      <Title>Kendo UI Complex Mobile App - Taskmanager D</Title>
       <Lead><![CDATA[Learn how to manage appication settings in local databases through an advanced task manager app using JayData]]></Lead>
+      <Description>
+        <![CDATA[Learn how to manage appication settings in local databases through an advanced task manager app using JayData. <br />
+        This Kendo mobile example uses a local database. Learn how to manage appication settings in local databases through an advanced task manager app using JayData.
+        Download the source of this example.]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo! See this simple listview example.</Meta-Description>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <script src="/Scripts/example/kendo_mobile_simple.js"></script>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <link rel="stylesheet" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
+        <link href="/Styles/examples.css" rel="stylesheet" />
+      </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Complex</Link>
       <Tags>KendoUI, localdb, CRUD, filter</Tags>
@@ -265,6 +353,16 @@
     <Example>
       <Title>Kendo UI Bar Chart D</Title>
       <Lead><![CDATA[Populate Kendo UI Dataviz bar chart by fetching remote records via OData. ]]></Lead>
+      <Description>
+        <![CDATA[ This KendoUI Dataviz bar chart example uses a remote Northwind database.]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, Kendo UI, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo UI? See this simple chart example.</Meta-Description>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+      </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/BarChart</Link>
       <Tags>KendoUI, OData, Northwind</Tags>
@@ -289,6 +387,26 @@
     <Example>
       <Title>Kendo UI Northwind product browser app D</Title>
       <Lead><![CDATA[Populate categorized products in Kendo UI ListView from live OData service using JayData. Filter and order records with JSQL syntax and apply projection to reduce network payload. ]]></Lead>
+      <Description>
+        <![CDATA[This Kendo mobile example uses a remote Northwind database over oData. 
+            asKendoDataSource() is a method of Queryable, so not only an EntitySet can be specified but other JayData expressions as well.
+            The projection on the Categories set reduces the network traffic because pictures won't be downloaded (we only display the name of the category so 
+            pictures are not needed). Be sure to include the primary key into the map!
+            The filter on the Products set filters out records on the server so products that are not in stock won't be displayed.
+            It also sorts the products on the server side.
+            When KendoUI widget also filters and sorts the records (such as grid), the filtering and ordering specified at datasource definition and the filtering and ordering
+            specified by the KendoUI widget are combined.]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Kendo UI, Javascript, mobile app, Northwind, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo UI? See this simple example.</Meta-Description>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <script src="/Scripts/example/kendo_mobile_simple.js"></script>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <link rel="stylesheet" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
+        <link href="/Styles/examples.css" rel="stylesheet" />
+      </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Prefilter</Link>
       <Tags>KendoUI, OData, Northwind, filter, projection</Tags>
@@ -313,6 +431,17 @@
     <Example>
       <Title>Kendo UI Master-detail Grid D</Title>
       <Lead><![CDATA[Render Kendo grids with live OData service using JayData and display products grouped by categories]]></Lead>
+      <Description>
+        <![CDATA[This Kendo Grid example uses OData to access the Northwind service. Sorting, paging and filtering works on the server side but with a simple
+            switch they can be one the client side, too.  In this example the grid is read only and the columns are manually configured.]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, Kendo UI, oData, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo UI? See this simple example.</Meta-Description>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+      </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/MasterDetails</Link>
       <Tags>KendoUI, OData, Northwind, filter, paging</Tags>
@@ -337,6 +466,16 @@
     <Example>
       <Title>Kendo UI Cascading combobox D</Title>
       <Lead><![CDATA[Populate cascading Kendo comboboxes with remote live OData with typed data API.]]></Lead>
+      <Description>
+        <![CDATA[Populate cascading Kendo comboboxes with remote live OData with typed data API. This Kendo autocomplete example uses a remote Northwind database.]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, Kendo UI, OData, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo UI? See this simple example.</Meta-Description>
+      <Includes>
+        <group name="kendoui"></group>
+        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+      </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Cascading_Combobox</Link>
       <Tags>KendoUI, OData, Northwind </Tags>
@@ -390,7 +529,7 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Flower Shop- Windows8 application D</Title>
+      <Title>Flower Shop- Windows8 application (ezzel meg van baj url tartalom hiba)</Title>
       <Lead><![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend.]]></Lead>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Kendo_ToDoList</Link>
