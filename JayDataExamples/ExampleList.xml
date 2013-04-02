@@ -4,7 +4,6 @@
     <Group name="jquery">
       <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
       <script  type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
-      <link rel="stylesheet" href="/Styles/dd.css" />
     </Group>
     <Group name="codemirror">
       <script type="text/javascript" src="/Scripts/vendor/codemirror/lib/codemirror.js"></script>
@@ -17,8 +16,6 @@
       <script src="/Scripts/vendor/bootstrap.min.js"></script>
       <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
       <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
-      <link href="/Styles/Bootstrap/docs.css" rel="stylesheet" />
-      <link rel="stylesheet" href="/Styles/dd.css" />
     </Group>
     <Group name="kendoui">
       <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
@@ -50,6 +47,8 @@
     <group name="jaydata"></group>
     <group name="codemirror"></group>
     <group name="bootstrap"></group>
+    <link rel="stylesheet" href="/Styles/Bootstrap/docs.css"/>
+    <link rel="stylesheet" href="/Styles/dd.css" />
   </Includes>
   <Examples>
     <!-- KendoUI examples -->
