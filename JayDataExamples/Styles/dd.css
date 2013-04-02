@@ -2720,9 +2720,7 @@ body {
   -o-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
   position: fixed;
-  top: -610px;
   left: 50%;
-  height: 610px;
   margin-left: -585px;
   padding: 20px;
   background: #0a001c url(/Images/mainnav.png) repeat 0 0;
@@ -2758,12 +2756,6 @@ body {
   height: 100%;
   padding-top: 5px;
   text-align: center;
-}
-.logo-filter.open {
-  -webkit-transform: translate(0, 610px);
-  -moz-transform: translate(0, 610px);
-  -o-transform: translate(0, 610px);
-  transform: translate(0, 610px);
 }
 .logo-filter.open .logo-filter-trigger {
   -webkit-animation: none;
@@ -2954,82 +2946,71 @@ body {
   position: relative;
   top: 10px;
 }
-@media (max-width: 480px) {
-  #searchbar input {
-    min-width: 140px !important;
-  }
-  #searchbar input:hover,
-  #searchbar input:focus {
-    min-width: 140px !important;
-    width: 140px !important;
-  }
-}
-@media (max-width: 767px) {
-  body {
-    overflow-x: hidden;
-  }
-  #searchbar {
-    position: static;
-    margin-right: -20px;
-    margin-left: -20px;
-  }
-  #searchbar .breadcrumb {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .code-running {
-    margin: 20px 0 0;
-  }
+@media (min-width: 1200px) {
   .logo-filter {
-    top: -450px;
-    left: 0;
-    right: 0;
-    height: 450px;
-    margin-left: 0;
-    padding: 0 10px !important;
-    z-index: 6500;
+    top: -610px;
+    height: 610px;
   }
   .logo-filter.open {
-    -webkit-transform: translate(0, 450px);
-    -moz-transform: translate(0, 450px);
-    -o-transform: translate(0, 450px);
-    transform: translate(0, 450px);
+    -webkit-transform: translate(0, 610px);
+    -moz-transform: translate(0, 610px);
+    -o-transform: translate(0, 610px);
+    transform: translate(0, 610px);
+  }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+  .logo-filter {
+    top: -650px;
+    height: 650px;
+    margin-left: -470px;
+  }
+  .logo-filter.open {
+    -webkit-transform: translate(0, 650px);
+    -moz-transform: translate(0, 650px);
+    -o-transform: translate(0, 650px);
+    transform: translate(0, 650px);
   }
   .logo-filter-list {
     float: none;
     width: auto;
-    margin: 0 -20px;
   }
   .logo-filter-list .logo-list-item {
-    width: auto;
-    height: auto;
-    margin: 0 10px 10px 0 !important;
-    padding: 2px 5px;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-  }
-  .logo-filter-list .logo-list-item .logo-big,
-  .logo-filter-list .logo-list-item .logo-medium {
-    background: none;
-    width: auto !important;
-    height: auto !important;
-    position: static !important;
-  }
-  .logo-filter-list .logo-list-item.pro:after {
-    display: none;
-  }
-  .logo-filter-list .logo-list-item:hover {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
+    margin: 0 -10px -15px;
   }
   .logo-filter-list .list-header h3 {
     margin: 15px 0 5px;
+  }
+  .row-fluid > .span4 {
+    width: 27.6%;
+  }
+  .span4.well-white {
+    min-height: 265px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  .container,
+  .navbar-static-top .container,
+  .navbar-fixed-top .container,
+  .navbar-fixed-bottom .container {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20px !important;
+  }
+  .span4.well-white {
+    min-height: 265px;
+  }
+  .logo-filter {
+    top: -650px;
+    height: 650px;
+    margin-left: -470px;
+  }
+  .logo-filter.open {
+    -webkit-transform: translate(0, 650px);
+    -moz-transform: translate(0, 650px);
+    -o-transform: translate(0, 650px);
+    transform: translate(0, 650px);
   }
 }
 @media (max-width: 979px) {
@@ -3055,48 +3036,97 @@ body {
   .main-content {
     padding: 10px 0 40px;
   }
-}
-@media (min-width: 768px) and (max-width: 979px) {
-  .container,
-  .navbar-static-top .container,
-  .navbar-fixed-top .container,
-  .navbar-fixed-bottom .container {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0 20px !important;
-  }
-  .span4.well-white {
-    min-height: 265px;
-  }
-}
-@media (min-width: 980px) and (max-width: 1199px) {
   .logo-filter {
-    top: -650px;
-    height: 650px;
-    margin-left: -470px;
+    top: -275px;
+    left: 0;
+    right: 0;
+    height: 275px;
+    margin-left: 0;
+    padding: 5px 10px 0 !important;
+    z-index: 6500;
+  }
+  .logo-filter.open {
+    -webkit-transform: translate(0, 275px);
+    -moz-transform: translate(0, 275px);
+    -o-transform: translate(0, 275px);
+    transform: translate(0, 275px);
   }
   .logo-filter-list {
     float: none;
+    clear: both;
     width: auto;
   }
   .logo-filter-list .logo-list-item {
-    margin: 0 -10px -15px;
+    float: left;
+    width: auto;
+    height: auto;
+    margin: 0 10px 10px 0 !important;
+    padding: 2px 5px;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  .logo-filter-list .logo-list-item .logo-big,
+  .logo-filter-list .logo-list-item .logo-medium {
+    background: none;
+    width: auto !important;
+    height: auto !important;
+    position: static !important;
+  }
+  .logo-filter-list .logo-list-item.pro:after {
+    display: none;
+  }
+  .logo-filter-list .logo-list-item:hover {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  .logo-filter-list .list-header {
+    float: left;
+    margin-right: 15px;
   }
   .logo-filter-list .list-header h3 {
-    margin: 15px 0 5px;
-  }
-  .row-fluid > .span4 {
-    width: 27.6%;
-  }
-  .span4.well-white {
-    min-height: 265px;
+    margin: 0 0 5px;
   }
 }
-@media (min-width: 1200px) {
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+  #searchbar {
+    position: static;
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+  #searchbar .breadcrumb {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .code-running {
+    margin: 20px 0 0;
+  }
+}
+@media (max-width: 480px) {
+  #searchbar input {
+    min-width: 140px !important;
+  }
+  #searchbar input:hover,
+  #searchbar input:focus {
+    min-width: 140px !important;
+    width: 140px !important;
+  }
   .logo-filter {
-    top: -610px;
-    height: 610px;
+    top: -350px;
+    height: 350px;
+  }
+  .logo-filter.open {
+    -webkit-transform: translate(0, 350px);
+    -moz-transform: translate(0, 350px);
+    -o-transform: translate(0, 350px);
+    transform: translate(0, 350px);
   }
 }

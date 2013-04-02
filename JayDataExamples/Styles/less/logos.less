@@ -39,8 +39,7 @@
     -o-border-radius: 0 0 10px 10px;
     border-radius: 0 0 10px 10px;
 
-    position: fixed; top: -@filter-height; left: 50%;
-    height: @filter-height;
+    position: fixed; left: 50%;
     margin-left: -1170/2px; padding: 20px;
     background: #0A001C url(/Images/mainnav.png) repeat 0 0;
     border-bottom: 8px solid #53005e;
@@ -75,11 +74,6 @@
     }
 
     &.open {
-        -webkit-transform: translate(0, @filter-height);
-        -moz-transform: translate(0, @filter-height);
-        -o-transform: translate(0, @filter-height);
-        transform: translate(0, @filter-height);
-
         .logo-filter-trigger {
             -webkit-animation: none;
             -moz-animation: none;

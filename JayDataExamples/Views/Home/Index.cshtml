@@ -16,11 +16,18 @@
 }
 
 @section MainBody {
+
     <div class="container">
         <div class="marketing main-page">
             <div class="row-fluid">
                 <div class="span12" data-bind="foreach: $data.VisibleData">
                     <!--ko template: {name:'row'}-->
+                    <ul style="color:white;">
+                        @foreach (var example in Model.Examples)
+                        {
+                            <li><a style="color:rgb(240,240,240);" href="@example.Link">@example.Title</a></li>
+                        }
+                    </ul>
                     <!--/ko-->
                 </div>
             </div>
