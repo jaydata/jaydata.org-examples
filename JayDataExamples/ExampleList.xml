@@ -501,6 +501,11 @@
     <Example>
       <Title>Flower Shop - HTML5 D</Title>
       <Lead><![CDATA[A simple e-shop HTML5 app created with Jaydata, JayStorm, KnockoutJS and jQuery.<br />Check out the <a href="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank">hands on lab video!</a>]]></Lead>
+      <Description>
+        <![CDATA[With this Application you can buy your favorite flower as a gift or for your home, it's up to you! Check out our store by choosing a category! You can download the Flower shop hands on lap example source.]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, Knockout.js, eshop mobile app, crossplatform, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo! See this simple listview example.</Meta-Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/FlowerShop</Link>
       <Tags>OData, JayStorm, Knockout, jQuery </Tags>
@@ -559,6 +564,11 @@
     <Example>
       <Title>Knockout data binding D</Title>
       <Lead><![CDATA[Demonstrating easy data binding using JayData and Knockout.js together. Properties of the requested entities will be observable through a single toArray call if ko.observableArray is passed as parameter.]]></Lead>
+      <Description>
+        <![CDATA[JayData examples: Knockout model binding & Observable results and entities]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo! See this simple listview example.</Meta-Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/Northwind</Link>
       <Tags>Knockout, Northwind</Tags>
@@ -587,6 +597,11 @@
     <Example>
       <Title>Knockout Dynamic Queries (moved)</Title>
       <Lead><![CDATA[With the JayData module for Knockout.js you can achieve fully dynamic queries. Where you use an observable as a query parameter the query will be automatically executed when the observable property changes.]]></Lead>
+      <Description>
+        <![CDATA[JayData examples: Knockout dynamic query]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo! See this simple listview example.</Meta-Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/DynamicQueryNorthwind</Link>
       <Tags>Knockout, query</Tags>
@@ -595,10 +610,25 @@
         <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
         <script src="/Scripts/example/knokout_northwind.js"></script>
       </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
     </Example>
     <Example>
       <Title>Knockout Dynamic Queries filter (moved)</Title>
       <Lead><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Lead>
+      <Description>
+        <![CDATA[JayData examples: Knockout.js Dynamic Queries filter]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example</Meta-KeyWords>
+      <Meta-Description>How to use the JayData with Kendo! See this simple listview example.</Meta-Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/DynamicQueryFilterNorthwind</Link>
       <Tags>Knockout, filter</Tags>
@@ -607,6 +637,16 @@
         <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
         <script src="/Scripts/example/knokout_northwind.js"></script>
       </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
     </Example>
     <!-- YQL examples -->
     <Example>
