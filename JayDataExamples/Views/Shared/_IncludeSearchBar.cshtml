@@ -12,7 +12,7 @@
                 </div>
                 <div class="block-inline input-append fright">
                     <i class="icon-search"></i>
-                    <input data-bind="value:qStr" class="span2 input-search" id="q" name="q" placeholder="Search" type="text" onkeyup="exampleSite.filter();" />
+                    <input data-bind="value:qStr" class="span2 input-search" id="q" name="q" placeholder="Search" type="text" onkeyup="exampleSite.searchInput_onkeyup();" onkeydown="exampleSite.searchInput_onkeydown();" />
                 </div>
             </div>
         </div>

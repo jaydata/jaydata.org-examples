@@ -92,14 +92,15 @@
         var self = exampleSite;
         var qStr = "";
         var q = $('#q').val();
-        var urlParam = null;
+        var urlParam = '/';
         if (q != null && q != undefined && q != "") {
+            q = q.toLowerCase();
             qStr = "(it.Title.toLowerCase().contains('" + q + "')==true || it.Lead.toLowerCase().contains('" + q + "')==true)";
             urlParam = "?q=" + q;
         }
 
         if (self.Model.SelectedTags().length > 0) {
-            if (urlParam) {
+            if (urlParam && urlParam.length>3) {
                 urlParam += "&";
             } else {
                 urlParam = "?";
@@ -146,5 +147,12 @@
         .fail(function () {
             console.log(arguments);
         });
+    },
+    searchInput_onkeyup: function () {
+        clearTimeout(this.typingTimer);
+        this.typingTimer = setTimeout(this.filter, 500);
+    },
+    searchInput_onkeydown: function () {
+        clearTimeout(this.typingTimer);
     }
 });
