@@ -1,58 +1,5 @@
 ﻿@model JayDataExamples.App_Code.Example
-@{ Layout = "~/Views/Shared/Layout_Default.cshtml";
-   ViewBag.Title = "Complex Mobile App - Taskmanager";
-   }
-
-@section Meta {
-    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example" />
-    <meta name="description" content="How to use the JayData with Kendo! See this simple listview example." />
-}
-
-@section Includes {
-    <script type="text/javascript" src="~/Scripts/example/kendo_mobile_simple.js"></script>
-    <script type="text/javascript" src="~/Scripts/vendor/north.js"></script>
-    <script type="text/javascript" src="~/Scripts/vendor/codemirror/addon/fold/foldcode.js"></script>
-    <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
-    <link href="~/Styles/dd.css" rel="stylesheet" />
-    <link href="~/Styles/examples.css" rel="stylesheet" />
-}
-@section SupportedBrowsers {
-    @{Html.RenderPartial("_IncludeSupportedBrowsers");}
-}
-@section SimilarContents {
-    @{Html.RenderPartial("_IncludeRelatedContents");}
-}
-@section SourceCode {
-    @{Html.RenderPartial("_IncludeDownloadableSource");}
-}
-
-@section Tags {
-    @{Html.RenderPartial("_IncludeTags");}
-}
-
-@section Description {
-    <p class="main-desc">
-        Learn how to manage appication settings in local databases through an advanced task manager app using JayData. <br />
-        This Kendo mobile example uses a local database. Learn how to manage appication settings in local databases through an advanced task manager app using JayData.
-        Download the source of this example.</p>
-}
-
-@section CodeSource {
-    <textarea id="code">
-
-    </textarea>
-
-    <script>
-        setTimeout(function () {
-            CodeMirror.fromTextArea(document.getElementById('code'), {
-                mode: 'text/html',
-                lineNumbers: true,
-                lineWrapping: true
-            });
-        });
-    </script>
-}
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
 
 @section CodeRunning {
     <div class="k-content mobileExample ">

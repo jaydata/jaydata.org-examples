@@ -1,41 +1,5 @@
 ﻿@model JayDataExamples.App_Code.Example
-@{ Layout = "~/Views/Shared/Layout_Default.cshtml";
-   ViewBag.Title = "Kendo UI mobile app with master-detail listview";
-    }
-
-@section Meta {
-    <meta name="keywords" content="JayData, HTML5, Javascript, JayData providers, Kendo UI, WebSQL, IndexedDB, example" />
-    <meta name="description" content="How to use the JayData with Kendo Ui? See this simple example." />
-}
-
-@section Includes {
-    <script src="~/Scripts/example/kendo_mobile_simple.js"></script>
-    <script src="~/Scripts/vendor/north.js"></script>
-    <script src="~/Scripts/vendor/codemirror/addon/fold/foldcode.js"></script>
-    <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-    <link rel="stylesheet" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
-    <link href="~/Styles/examples.css" rel="stylesheet" />
-}
-@section SupportedBrowsers {
-    @{Html.RenderPartial("_IncludeSupportedBrowsers");}
-}
-@section SimilarContents {
-    @{Html.RenderPartial("_IncludeRelatedContents");}
-}
-@section SourceCode {
-    @{Html.RenderPartial("_IncludeDownloadableSource");}
-}
-
-@section Tags {
-    @{Html.RenderPartial("_IncludeTags");}
-}
-
-@section Description {
-    <p class="main-desc">
-        This Kendo mobile example uses a local Northwind database. The code on the left can be folded/unfolded.<br />
-        The demo is written so that your local database is reinitialized on every page reload and your changes are lost!
-    </p>
-}
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
 
 @section CodeSource {
     <textarea id="code">
@@ -112,16 +76,6 @@
     app = new kendo.mobile.Application();
 </script>
     </textarea>
-
-    <script>
-        setTimeout(function () {
-            CodeMirror.fromTextArea(document.getElementById('code'), {
-                mode: 'text/html',
-                lineNumbers: true,
-                lineWrapping: true
-            });
-        });
-    </script>
 }
 
 @section CodeRunning {

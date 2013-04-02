@@ -207,8 +207,6 @@
     <Content Include="ExampleList.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Facebook\Facebook_provider_example.html" />
-    <Content Include="Facebook\Facebook_provider_friends_example.html" />
     <Content Include="Fonts\Droid\droidsans-bold.svg" />
     <Content Include="Fonts\Droid\droidsans.svg" />
     <Content Include="Fonts\Enzo\enzoot-bold.svg" />
@@ -544,6 +542,7 @@
     <Content Include="Scripts\galleryHandler.js" />
     <Content Include="Scripts\indexModel.js" />
     <Content Include="Scripts\ui.js" />
+    <Content Include="Scripts\vendor\bootstrap.js" />
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="Scripts\vendor\codemirror\.gitattributes" />
     <Content Include="Scripts\vendor\codemirror\.gitignore" />
@@ -1334,6 +1333,7 @@
     <Content Include="Views\Home\YQL\YQLFeed.cshtml" />
     <Content Include="Views\Home\Planets.cshtml" />
     <Content Include="Views\Home\Facebook\Provider.cshtml" />
+    <Content Include="Views\Home\Facebook\Friends.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
