@@ -1333,6 +1333,7 @@
     <Content Include="Views\Home\YQL\YQLRssAdvanced.cshtml" />
     <Content Include="Views\Home\YQL\YQLFeed.cshtml" />
     <Content Include="Views\Home\Planets.cshtml" />
+    <Content Include="Views\Home\Facebook\Provider.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

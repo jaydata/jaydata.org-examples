@@ -7,9 +7,9 @@
             Image: String,
             Link: String,
             Tags: String,
-            Suggested:String,
+            Suggested: String,
             Level: Number,
-            ComputedLevel:Number,
+            ComputedLevel: Number,
             TagList: Object,
             LimitedTagList: Object
         });
@@ -22,7 +22,7 @@
             collectionName: 'Example_items'
         });
         this.Model = {
-            addHistory:false,
+            addHistory: false,
             qStr: ko.observable("")
         };
     },
@@ -71,7 +71,7 @@
             $(this).find(".z-up").toggleClass("hidden");
             $(this).find(".z-down").toggleClass("hidden");
         }
-        this.Model.isActiveTag = function(tag){
+        this.Model.isActiveTag = function (tag) {
             return self.Model.SelectedTags().indexOf(tag) >= 0;
         }
         return this.getExamplesFromServer();
@@ -94,7 +94,7 @@
         var q = $('#q').val();
         var urlParam = null;
         if (q != null && q != undefined && q != "") {
-            qStr = "(it.Title.toLowerCase().contains('" + q + "')==true || it.Description.toLowerCase().contains('" + q + "')==true)";
+            qStr = "(it.Title.toLowerCase().contains('" + q + "')==true || it.Lead.toLowerCase().contains('" + q + "')==true)";
             urlParam = "?q=" + q;
         }
 
@@ -142,6 +142,9 @@
                 data.push(items[i].asKoObservable());
             }
             self.Model.ExampleData(data);
+        })
+        .fail(function () {
+            console.log(arguments);
         });
     }
 });

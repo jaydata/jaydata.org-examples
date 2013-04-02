@@ -1,0 +1,100 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea id="code">
+var fqlContext = new $data.Facebook.FQLContext({ 
+    name: 'Facebook'
+});
+fqlContext.onReady(function (context) {
+    context.MyFriends.toTemplate("userTemplate", "result");
+}
+
+fbauth = new $data.Authentication.FacebookAuth({
+    Url_code: 'https://graph.facebook.com/oauth/device',
+    type_code: 'device_code',
+    scope: 'read_friendlists',
+    Url_token: 'https://graph.facebook.com/oauth/device',
+    type_token: 'device_token',
+    app_id: '150792241632891'
+});
+
+context.storageProvider.AuthenticationProvider = fbauth;
+
+fbauth.Login({
+    pending: function (data) {
+//<field name="data" type="Object">verification data (Ex: verification_uri, user_code)</field>
+    $("#result").html("Enable to load your friends in facebook <a href='" + data.verification_uri + "' " + "target='_blank'>" + data.verification_uri + "</a> code: " + data.user_code);
+    },
+    success: function (data) {
+//<field name="data" type="Object">verification success data (Ex: access_token)</field>
+        context.MyFriends.toTemplate("userTemplate", "result");
+    }
+});
+    </textarea>
+}
+
+@section CodeRunning {
+    <h2 class="show tacenter marginb5">Listing Facebook "My Friends" with device authentication</h2>
+
+            <div id="example1">
+                <input type="button" id="list" class="btn" value="List my friends" />
+            </div>
+
+    <hr class="clear soften" />
+
+    <div id="result"></div>
+
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+
+        $(function () {
+
+            var fqlContext = new $data.Facebook.FQLContext({ name: 'Facebook' });
+            fqlContext.onReady(function (context) {
+                var fbauth = null;
+
+                $('#list').click(function (e) {
+
+                    if (fbauth && fbauth.Authenticated) {
+                        context.MyFriends.toTemplate("userTemplate", "result");
+                    } else {
+                        fbauth = new $data.Authentication.FacebookAuth({
+                            Url_code: 'https://graph.facebook.com/oauth/device',
+                            type_code: 'device_code',
+                            scope: 'read_friendlists',
+                            Url_token: 'https://graph.facebook.com/oauth/device',
+                            type_token: 'device_token',
+                            app_id: '150792241632891'
+                        });
+
+                        context.storageProvider.AuthenticationProvider = fbauth;
+
+                        fbauth.Login({
+                            pending: function (data) {
+                                ///<field name="data" type="Object">verification data (Ex: verification_uri, user_code)</field>
+                                $("#result").html("Enable to load your friends in facebook <a href='" + data.verification_uri + "' " +
+                                    "target='_blank'>" + data.verification_uri + "</a> code: " + data.user_code);
+                            },
+                            success: function (data) {
+                                ///<field name="data" type="Object">verification success data (Ex: access_token)</field>
+                                context.MyFriends.toTemplate("userTemplate", "result");
+                            }
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+    <div id="userTemplate" style="display: none">
+        <ul>
+            <li>Full name: ${name}</li>
+            <li>First name: ${first_name}</li>
+            <li>Last name: ${last_name}</li>
+            <li>Sex: ${sex}</li>
+            <li>User id: ${uid}</li>
+        </ul>
+        <hr />
+    </div>
+}

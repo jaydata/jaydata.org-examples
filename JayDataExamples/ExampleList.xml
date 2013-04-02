@@ -41,6 +41,9 @@
       <script src="/Plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
       <script src="/Scripts/galleryHandler.js"></script>
     </Group>
+    <Group name="facebook">
+      <script type="text/javascript" src="http://include.jaydata.org/jaydataproviders/FacebookProvider.js"></script>
+    </Group>
   </IncludeGroups>
   <Includes>
     <group name="jquery"></group>
@@ -656,21 +659,67 @@
     </Example>
     <!--Facebook examples-->
     <Example>
-      <Title>Facebook provider example</Title>
+      <Title>Facebook provider example (moved)</Title>
       <Lead>
         <![CDATA[How can I get the current user's public personal data through FQL api.]]>
       </Lead>
+      <Description>
+        <![CDATA[How can I get the current user's public personal data through FQL API?]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, FQL, Facebook, JayData providers</Meta-KeyWords>
+      <Meta-Description>This example show you: How can You get the current user's public personal data through FQL api.</Meta-Description>
+      <Includes>
+        <group name="facebook"></group>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/deferred.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/template.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
       <Image>/Images/facebook.png</Image>
-      <Link>Facebook/Facebook_provider_example.html</Link>
+      <Link>Facebook/Provider</Link>
       <Tags>facebook</Tags>
     </Example>
     <Example>
-      <Title>Facebook friend list example</Title>
+      <Title>Facebook friend list example (moved)</Title>
       <Lead>
         <![CDATA[How can I get the current user's friends list through FQL api.]]>
       </Lead>
+      <Description>
+        <![CDATA[Facebook friends example.]]>
+      </Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, FQL, Facebook, JayData providers</Meta-KeyWords>
+      <Meta-Description>This example show you: How can You get the current user's friends list through FQL api.</Meta-Description>
+      <Includes>
+        <group name="facebook"></group>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/deferred.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/template.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="7" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
       <Image>/Images/facebook.png</Image>
-      <Link>Facebook/Facebook_provider_friends_example.html</Link>
+      <Link>Facebook/Friends</Link>
       <Tags>facebook</Tags>
     </Example>
 

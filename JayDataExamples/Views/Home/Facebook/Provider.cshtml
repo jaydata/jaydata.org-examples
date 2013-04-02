@@ -1,0 +1,56 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea id="code">
+var fqlContext = new $data.Facebook.FQLContext({ name: 'Facebook' });
+fqlContext.onReady(function (context) {
+    context.Users
+        .filter(function (f) { return f.uid == this.uid; }, { uid: $('#userid').val() })
+        .toTemplate("userTemplate", "result");
+});
+    </textarea>
+}
+
+@section CodeRunning {
+    <h2 class="marginb5 show tacenter">Find Facebook user by ID</h2>
+    <div id="example1">
+        <input type="text" id="userid" class="autoComplete" value="" placeholder="enter user id" />
+        <input type="button" id="search" class="btn btn-small" value="Search" />
+    </div>
+
+    <hr class="clear soften" />
+
+    <div id="result"></div>
+
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+
+        $(function () {
+
+            var fqlContext = new $data.Facebook.FQLContext({ name: 'Facebook' });
+            fqlContext.onReady(function (context) {
+                $('#search').click(function (e) {
+                    context.Users
+                        .filter(function (f) { return f.uid == this.uid; }, { uid: $('#userid').val() })
+                        .toTemplate("userTemplate", "result", noResult);
+                });
+            });
+
+            function noResult(items) {
+                if (items.length !== 1)
+                    $("#result").append('User not found!');
+            }
+
+        });
+    </script>
+    <div id="userTemplate" style="display: none">
+        <ul>
+            <li>Full name: ${name}</li>
+            <li>First name: ${first_name}</li>
+            <li>Last name: ${last_name}</li>
+            <li>Sex: ${sex}</li>
+            <li>User id: ${uid}</li>
+        </ul>
+    </div>
+}
