@@ -790,30 +790,6 @@ div.submenu-box ol {
     width:60%;
 }
 
-.browsers
-{
-    margin:12px 0 0;
-    font-size:1.1em;
-    line-height:32px;
-    color:#3c3c3c;
-}
-
-.browser
-{
-    display:inline-block;
-    vertical-align:top;
-    width:32px;
-    height:32px;
-    margin-right:10px;
-    background:url(sprite.misc.png);
-}
-
-.browsers .ie{background-position:-132px -76px;}
-.browsers .chrome{background-position:-198px -76px;}
-.browsers .ff{background-position:-165px -76px;}
-.browsers .safari{background-position:-231px -76px;}
-.browsers .opera{background-position:-264px -76px;}
-
 .mobileOSs li
 {
     float:left;
@@ -2630,26 +2606,3 @@ ul.keyboard-legend li {
     border-left: 1px solid #ccc;
     line-height: 1.3em;
 }
-
-/* Font-face for FF/IE10 */
-@font-face {
-    font-family: "Kendo UI Examples";
-    src: url("KendoUI.woff") format("woff"),
-         url("KendoUI.ttf") format("truetype");
-}
-
-#device-wrapper .km-icon:after,
-#device-wrapper .km-icon:before,
-#device-wrapper .km-contactadd:after,
-#device-wrapper .km-contactadd:before,
-#device-wrapper .km-rowdelete:after,
-#device-wrapper .km-rowdelete:before,
-#device-wrapper .km-rowinsert:after,
-#device-wrapper .km-rowinsert:before,
-#device-wrapper .km-detaildisclose:after,
-#device-wrapper .km-detaildisclose:before,
-#device-wrapper .km-loading:after
-{
-    font: 1em/1em "Kendo UI Examples";
-}
-
