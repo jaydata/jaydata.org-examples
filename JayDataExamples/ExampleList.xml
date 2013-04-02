@@ -930,14 +930,35 @@
       <Tags>SenchaTouch, OData</Tags>
     </Example>
     <Example>
-      <Title>Newsreader CRUD</Title>
+      <Title>Newsreader CRUD I P</Title>
       <Lead>
-        <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way. The UI is utilizing Twitter's Bootstrap and jQuery's template engine.]]>
+        <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way.]]>
       </Lead>
+      <Description>
+        <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way. The UI is utilizing Twitter's Bootstrap and jQuery's template engine.]]>
+      </Description>
       <Image>/Images/newsreadernagy.png</Image>
       <Link>NewsReader/index.html</Link>
       <Tags>OData, jQuery, CRUD</Tags>
     </Example>
+    <Level>200</Level>
+    <Suggested></Suggested>
+    <Meta-KeyWords>JayData, jQuery, Crossplatform, HTML5 CRUD, OData, Javascript, HTML5, tutorial, example</Meta-KeyWords>
+    <Meta-Description>How to create a Newsreader with JayData? See this simple CRUD example.</Meta-Description>
+    <SupportedBrowsers>
+      <Browser title="Google Chrome" name="chrome"/>
+      <Browser title="Opera" name="opera" minVersion="11"/>
+      <Browser title="Safari" name="safari" minVersion="5"/>
+      <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+      <Browser title="Windows Phone" name="wp" minVersion="8"/>
+      <Browser title="iOS" name="ios" minVersion="4"/>
+      <Browser title="Android" name="android" minVersion="2.2"/>
+    </SupportedBrowsers>
+    <RelatedContents>
+      <ContentLink link="http://jaydata.org/blog/crud-with-jaydata-in-a-content-management-like-application" target="_self" css="">CRUD with JayData in a content management like application</ContentLink>
+      <ContentLink link="http://jaystack.com/blog/create-your-first-online-api-with-javascript-api-services" target="_self" css="">Create your first Online API with JavaScript API Services</ContentLink>
+      <ContentLink link="http://jaydata.org/categories/odata" target="_self" css="">JayData blogs about OData </ContentLink>
+    </RelatedContents>
 
     <Example>
       <Title>Advanced RSS using custom provider</Title>
@@ -949,22 +970,87 @@
       <Tags>RSS</Tags>
     </Example>
     <Example>
-      <Title>Form Validation</Title>
+      <Title>Form Validation D</Title>
       <Lead>
         <![CDATA[Our form validator extensions will allow you to apply the constraints defined on the model to validate forms through jQuery validators.]]>
       </Lead>
+      <Description>
+        <![CDATA[Our form validator extensions will allow you to apply the constraints defined on the model to validate forms through jQuery validators.]]>
+      </Description>
       <Image>/Images/formvalidation.png</Image>
       <Link>Validation/FormValidation.html</Link>
       <Tags>jQuery, validation</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, Form validation, Crossplatform,  Javascript, HTML5, tutorial, example</Meta-KeyWords>
+      <Meta-Description>How to create a form validation! See this simple example.</Meta-Description>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="9+" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0+"/>
+        <Browser title="Windows Phone" name="wp" minVersion="7,5+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.2+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/tutorials/jaydata-api-features" target="_self" css="">JayData providers feature matrix</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-indices" target="_self" css="">Database indices with indexedDB and WebSQL/SQLite</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_self" css="">Database transaction handling in JayData</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>TodoList- multiple providers</Title>
+      <Title>TodoList - multiple providers D</Title>
       <Lead>
-        <![CDATA[Use the same code for multiple providers! See this simple todo-list example running with WebSQL or IndexedDB.]]>
+        <![CDATA[Use the same code for multiple providers! See this simple todo-list example running with WebSQL, IndexedDB or HTML5 localStorage provider]]>
       </Lead>
+      <Description>
+        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/>Supported browsers for IndexedDB: Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+      </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>General/ToDoList</Link>
-      <Tags>WebSQL, indexedDB, localDB</Tags>
+      <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
+      <Meta-Description>How to create a multiprovider JayData todolist! See this simple todolist example.</Meta-Description>
+      <SupportedBrowsers>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="2.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="7,5+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.2+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/tutorials/jaydata-api-features" target="_self" css="">JayData providers feature matrix</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-indices" target="_self" css="">Database indices with indexedDB and WebSQL/SQLite</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_self" css="">Database transaction handling in JayData</ContentLink>
+      </RelatedContents>
+    </Example>
+    <Example>
+      <Title>OData TypeScript Example D</Title>
+      <Lead>
+        <![CDATA[TypeScript can be fully employed to use OData from JavaScript with an attitude. All you have to do is to include the JayData library in your application, and use JaySvcUtil.exe to create a TypeScript definition. Download it now and see for yourself!]]>
+      </Lead>
+      <Description>
+        <![CDATA[TypeScript can be fully employed to use OData from JavaScript with an attitude. All you have to do is to include the JayData library in your application, and use JaySvcUtil.exe to create a TypeScript definition]]>
+      </Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Download>/Download/TypeScriptExample.zip</Download>
+      <Link>TypeScript/TypeScript</Link>
+      <Tags>OData, TypeScript, jQuery</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, OData, Cross-platform, create definition, Javascript, HTML5, tutorial, TypeScript, example</Meta-KeyWords>
+      <Meta-Description>How to user TypeScript with JayData ! See this simple example.</Meta-Description>
+      <RelatedContents>
+        <ContentLink link="http://jaystack.com/blog/typescript-meets-odata-with-the-help-of-jaydata-and-jaysvcutil" target="_self" css="">TypeScript meets OData with the help of JayData and JaySvcUtil</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application" target="_self" css="">How to build a Simple OData-based ajax application</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaysvcutil-will-automatically-expose-odata-service-metadata-to-jaydata-and-javascript" target="_self" css="">JaySvcUtil exposes your OData service metadata to JayData and JavaScript</ContentLink>
+      </RelatedContents>
     </Example>
 
   </Examples>
