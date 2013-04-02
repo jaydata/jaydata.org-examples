@@ -553,11 +553,13 @@
         <ContentLink link="http://jaydata.org/categories/odata" target="_self" css="">Blogs with OData tags</ContentLink>
       </RelatedContents>
       <GalleryImages>
-        <Image url="/Images/gallery/jayscrum/demokep.png" thumbUrl="/Images/gallery/jayscrum/thumb/demokep.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_1.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_3.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_4.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/jayscrum/thumb/jayscrum_8.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/demokep.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_index.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_desktop.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_minimalized.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_category_max.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_list_minimalized.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_minimalized.png" alt=""></Image>
       </GalleryImages>
     </Example>
     <Example>
@@ -902,13 +904,16 @@
     </Example>
 
     <Example>
-      <Title>Planets (moved)</Title>
+      <Title>Planets D</Title>
       <Lead>
         <![CDATA[Local database management through the WebSQL provider, in a fancy representative HTML5 app. It uses new features of CSS3 like keyframe-animations, transitions and transformations.]]>
       </Lead>
+      <Description>
+        <![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]>
+      </Description>
       <Image>/Images/planetsnagy.png</Image>
       <Link>General/Planets</Link>
-      <Tags>WebSQL</Tags>
+      <Tags>WebSQL, SQLite, CRUD</Tags>
       <Includes>
         <group name="gallery"></group>
       </Includes>
@@ -919,18 +924,56 @@
         <Image url="/Images/gallery/planets/jayscrum_4.png" thumbUrl="/Images/gallery/planets/thumb/jayscrum_4.png" alt=""></Image>
         <Image url="/Images/gallery/planets/jayscrum_8.png" thumbUrl="/Images/gallery/planets/thumb/jayscrum_8.png" alt=""></Image>
       </GalleryImages>
+      <Level>300</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, JayData providers, OData, Crossplatform, HTML5, WebSQL, SQLite, Javascript, HTML5, tutorial, example</Meta-KeyWords>
+      <Meta-Description>How to create a HTML5 app with JayData? See this simple example.</Meta-Description>
+      <SupportedBrowsers>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="6+"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.3+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/planets-sample-application-using-jaydata%E2%80%99s-websql-provider" target="_self" css="">Planets: sample application using JayData’s WebSQL provider</ContentLink>
+        <ContentLink link="http://jaydata.org/Tags/WebSQL" target="_self" css="">JayData blogs about WebSQL provider</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaydata-SQlite-pro-provider" target="_self" css="">JayData SQLite Pro provider</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-indices" target="_self" css="">Database indices with indexedDb and WebSQL/SQLite</ContentLink>
+      </RelatedContents>
     </Example>
 
 
     <Example>
       <Title>Netflix movies-Sencha Touch 2</Title>
       <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Lead>
+      <Description>
+        <![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]>
+      </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>/Sencha/index.html</Link>
       <Tags>SenchaTouch, OData</Tags>
+      <Level>200</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, OData, Sencha Touch, Crossplatform, HTML5, Netflix, Javascript, HTML5, tutorial, example</Meta-KeyWords>
+      <Meta-Description>How to create a movie app with JayData and Sencha Touch? See this simple example.</Meta-Description>
+      <SupportedBrowsers>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="6+"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.3+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/netflix-sencha-touch-2-app-with-jaydata" target="_self" css="">Netflix Sencha Touch 2 app with JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/odata" target="_self" css="">JayData blogs about OData</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/hybrid-application" target="_self" css="">JayData blogs about Hybrid application developement</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Newsreader CRUD I P</Title>
+      <Title>Newsreader CRUD</Title>
       <Lead>
         <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way.]]>
       </Lead>
@@ -939,9 +982,8 @@
       </Description>
       <Image>/Images/newsreadernagy.png</Image>
       <Link>NewsReader/index.html</Link>
-      <Tags>OData, jQuery, CRUD</Tags>
-    </Example>
-    <Level>200</Level>
+      <Tags>OData, jQuery, CRUD, filter</Tags>
+       <Level>200</Level>
     <Suggested></Suggested>
     <Meta-KeyWords>JayData, jQuery, Crossplatform, HTML5 CRUD, OData, Javascript, HTML5, tutorial, example</Meta-KeyWords>
     <Meta-Description>How to create a Newsreader with JayData? See this simple CRUD example.</Meta-Description>
@@ -959,6 +1001,7 @@
       <ContentLink link="http://jaystack.com/blog/create-your-first-online-api-with-javascript-api-services" target="_self" css="">Create your first Online API with JavaScript API Services</ContentLink>
       <ContentLink link="http://jaydata.org/categories/odata" target="_self" css="">JayData blogs about OData </ContentLink>
     </RelatedContents>
+    </Example>
 
     <Example>
       <Title>Advanced RSS using custom provider</Title>
@@ -994,12 +1037,7 @@
         <Browser title="iOS" name="ios" minVersion="4+"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
-      <RelatedContents>
-        <ContentLink link="http://jaydata.org/tutorials/jaydata-api-features" target="_self" css="">JayData providers feature matrix</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/database-indices" target="_self" css="">Database indices with indexedDB and WebSQL/SQLite</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_self" css="">Database transaction handling in JayData</ContentLink>
-      </RelatedContents>
-    </Example>
+      </Example>
     <Example>
       <Title>TodoList - multiple providers D</Title>
       <Lead>
