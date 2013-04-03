@@ -9,7 +9,7 @@
         <ul class="purple-list">
             @foreach (var cLink in Model.RelatedContents)
             {
-                <li class="@cLink.Css"><a href="@cLink.Link" target="@cLink.Target">@cLink.Title</a></li>
+                <li class="@cLink.Css"><a target="_blank" href="@cLink.Link" target="@cLink.Target">@cLink.Title</a></li>
             }
         </ul>
     }else{
