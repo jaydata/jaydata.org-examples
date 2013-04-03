@@ -15,7 +15,7 @@
 }
 
 @section CodeRunning {
-    <div id="result">
+    <div id="result" class="yql-html-example">
     </div>
     <script type="text/javascript">
         jQuery.support.cors = true;
@@ -28,14 +28,14 @@
                             .forEach(function (result) {
                                 $('#result').append(
                                     '<dd class="fleft margin10 ' + result.dd[1].a.class + '">' +
-                                        '<a href="' + result.dd[1].a.href + '">' +
+                                        '<a target="_blank" href="' + result.dd[1].a.href + '">' +
                                             '<img src="' + result.dd[1].a.img.src +
                                                 '" alt="' + result.dd[1].a.img.alt +
                                                 '" width="' + result.dd[1].a.img.width +
                                                 '" height="' + result.dd[1].a.img.height + '" />' +
                                         '</a>' +
                                     '</dd>' +
-                                    '<dt class=""><h3><a href="' + result.dt.a.href + '">' + result.dt.a.content + '</a></h3></dt>' +
+                                    '<dt class=""><h3><a target="_blank" href="' + result.dt.a.href + '">' + result.dt.a.content + '</a></h3></dt>' +
                                     '<dd class="' + result.dd[0].class + '">' + result.dd[0].p + '</dd><br /><hr class="clear soften margin10" />'
                                     );
                             });
