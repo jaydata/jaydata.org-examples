@@ -40,14 +40,14 @@
             <a data-bind="attr:{href:Link}">
                 <h2 data-bind="text: Title"></h2>
             </a>
-            <small class="hover-info badge label-purple"><i class="icon-signal icon-white"></i><span data-bind="text: Level" title="Level of difficulty"></span></small>
+            <small class="hover-info badge"><i class="icon-signal icon-white"></i><span data-bind="text: Level" title="Level of difficulty"></span></small>
             <p data-bind="html: Lead"></p>
             <ul class="tags">
                 <!--ko foreach:LimitedTagList-->
-                <li><a class="label" href="javascript:void(0)" data-bind="text:$data, click:$root.addTags"><i class="icon-tag icon-white"></i></a></li>
+                <li><a class="label label-purple" href="javascript:void(0)" data-bind="text:$data, click:$root.addTags"><i class="icon-tag icon-white"></i></a></li>
                 <!--/ko-->
                 <!--ko if:LimitedTagList().length<TagList().length-->
-                <li><a class="label" href="javascript:void(0)">...</a></li>
+                <li><a class="label label-purple" href="javascript:void(0)">...</a></li>
                 <!--/ko-->
             </ul>
         </div>
