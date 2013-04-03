@@ -1165,7 +1165,7 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Flower Shop - Windows8 application (P)</Title>
+      <Title>Flower Shop - Windows8 application</Title>
       <Lead><![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend.]]></Lead>
       <Description>
         <![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend. We will use the JayStorm Application Manager to setup the schema of the online data store. To create the product database we will use the JayStorm Data Manager. On the client we will use JayData and knockoutjs to implement the simple product browsing and place order use cases.]]>
@@ -1191,13 +1191,13 @@
         <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">Blogs with OData tags</ContentLink>
       </RelatedContents>
       <GalleryImages>
-        <Image url="/Images/gallery/jayscrum/demokep.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_index.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_desktop.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_minimalized.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_category_max.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_list_minimalized.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_minimalized.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershopwin8/flowershop_index.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_index.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_desktop.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_desktop.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_minimalized.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_minimalized.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_category_max.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_category_max.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_product.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_product_list_minimalized.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_list_minimalized.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_product_minimalized.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_minimalized.png" alt=""></Image>
       </GalleryImages>
     </Example>
     <Example>
