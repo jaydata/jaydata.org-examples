@@ -8,6 +8,8 @@ namespace JayDataExamples.App_Code
 {
     public class Example
     {
+        [XmlAttribute("wide")]
+        public bool IsWide { get; set; }
         [XmlElement("Title")]
         public string Title { get; set; }
         [XmlElement("Lead")]
@@ -123,6 +125,7 @@ namespace JayDataExamples.App_Code
         }
         public Example()
         {
+            this.IsWide = false;
             this.Level = 1000;
         }
     }

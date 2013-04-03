@@ -596,7 +596,7 @@
         <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_blank" css="">JayStorm platform overview</ContentLink>
       </RelatedContents>
     </Example>
-    <Example>
+    <Example wide="true">
       <Title>Knockout Dynamic Queries</Title>
       <Lead><![CDATA[With the JayData module for Knockout.js you can achieve fully dynamic queries. Where you use an observable as a query parameter the query will be automatically executed when the observable property changes.]]></Lead>
       <Description>

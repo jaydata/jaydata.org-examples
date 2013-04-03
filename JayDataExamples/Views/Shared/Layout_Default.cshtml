@@ -103,8 +103,10 @@
                     <div class="well well-white">
                         <div class="pretty-gallery">
                             <ul class="pretty-gallery">
-                                @foreach(System.Xml.XmlNode node in Model.GalleryImages){
-                                    <li><a href="@node.Attributes["url"].Value" rel="prettyPhoto[pp_gal]"><img src="@node.Attributes["thumbUrl"].Value" alt="@node.Attributes["alt"].Value" /></a></li>
+                                @foreach (System.Xml.XmlNode node in Model.GalleryImages)
+                                {
+                                    <li><a href="@node.Attributes["url"].Value" rel="prettyPhoto[pp_gal]">
+                                        <img src="@node.Attributes["thumbUrl"].Value" alt="@node.Attributes["alt"].Value" /></a></li>
                                 }
                             </ul>
                         </div>
@@ -130,23 +132,36 @@
                                     lineNumbers: false
                                 });
                             }
-                            
+
                         });
                     </script>
                 </div>
             }
-            @if (IsSectionDefined("CodeRunning"))
+            @if (!Model.IsWide && IsSectionDefined("CodeRunning"))
             {
-            <!--**************************************** RUNNING CODE START HERE ****************************************-->
-            <div class="@runningCodeCss">
-                <div class="bg-dark-grid">
-                    <h3>Running Example</h3>
+                <!--**************************************** RUNNING CODE START HERE ****************************************-->
+                <div class="@runningCodeCss">
+                    <div class="bg-dark-grid">
+                        <h3>Running Example</h3>
+                    </div>
+                    @RenderSection("CodeRunning", false)
                 </div>
-                @RenderSection("CodeRunning", false)
-            </div>
-            <!--******************************************* RUNNING CODE END *******************************************-->
+                <!--******************************************* RUNNING CODE END *******************************************-->
             }
-             @RenderSection("PlaceHolder", false)
+            @RenderSection("PlaceHolder", false)
         </div>
+        @if (Model.IsWide && IsSectionDefined("CodeRunning"))
+        {
+            <div class="row-fluid new-row">
+                <!--**************************************** RUNNING CODE START HERE ****************************************-->
+                <div class="span12 code-running">
+                    <div class="bg-dark-grid">
+                        <h3>Running Example</h3>
+                    </div>
+                    @RenderSection("CodeRunning", false)
+                </div>
+                <!--******************************************* RUNNING CODE END *******************************************-->
+            </div>
+        }
     </div>
 }
