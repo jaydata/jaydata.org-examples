@@ -273,7 +273,7 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Kendo UI mobile app with master-detail listview (P)</Title>
+      <Title>Kendo UI mobile app with master-detail listview</Title>
       <Lead><![CDATA[<br/>Master-detail listview populated with local WebSQL/IndexedDB records by JayData. This Kendo mobile example uses a local Northwind database.]]></Lead>
       <Description>
         <![CDATA[Master-detail listview populated with local WebSQL/IndexedDB records by JayData. This Kendo mobile example uses a local Northwind database. The code on the left can be folded/unfolded.<br />
@@ -509,6 +509,7 @@
       <Link>Knockout/FlowerShop</Link>
       <Tags>OData, JayStorm, Knockout, jQuery </Tags>
       <Download>http://jaydata.codeplex.com/downloads/get/507804</Download>
+      <RunApplication>/download/flowershop.apk</RunApplication>
       <Level>200</Level>
       <Suggested></Suggested>
       <Includes>
@@ -956,7 +957,7 @@
       <Tags>SenchaTouch, OData, list, query</Tags>
       <Level>200</Level>
       <Suggested></Suggested>
-      <Download>/Planets/planet.js</Download>
+      <Download>/downloads/netflix.apk</Download>
       <RunApplication>/Sencha/app.html</RunApplication>
       <Meta-KeyWords>JayData, OData, Sencha Touch, Crossplatform, HTML5, Netflix, Javascript, HTML5, tutorial, example</Meta-KeyWords>
       <Meta-Description>How to create a movie app with JayData and Sencha Touch? See this simple example.</Meta-Description>
@@ -1120,12 +1121,12 @@
     </Example>
       <!-- JayStorm examples -->
     <Example>
-      <Title>JayScrum - agile task manager app (P)</Title>
+      <Title>JayScrum - agile task manager app</Title>
       <Lead>
         <![CDATA[This application built on JayData on the JayStorm, it serves its role as a fine example for an application with provisioned database. Through this application you can manage Projects, Backlogs, Tasks, Bugs, and Impediments.]]>
       </Lead>
       <Description>
-        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/>Supported browsers for IndexedDB: Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[JayScrum is a cross-platform, cross-device application which enables agile software development teams to work utilizing the SCRUM discipline with the help of mobile or tablet devices. It handles SCRUM’s meetings, artifacts and roles. Besides being a great project management tool (which we use ourselves) built on JayData and JayStorm, it serves its role as a fine example for an application with provisioned database.]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayStorm/jayscrum</Link>
@@ -1163,6 +1164,9 @@
     <Example>
       <Title>Flower Shop - Windows8 application (P)</Title>
       <Lead><![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend.]]></Lead>
+      <Description>
+        <![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend. We will use the JayStorm Application Manager to setup the schema of the online data store. To create the product database we will use the JayStorm Data Manager. On the client we will use JayData and knockoutjs to implement the simple product browsing and place order use cases.]]>
+      </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayStorm/flowershopwin8</Link>
       <Tags> Windows8, OData, jQuery, JayStorm, Knockout</Tags>
@@ -1205,7 +1209,7 @@
       <Link>JayStorm/facebook_canvas</Link>
       <Tags>facebook, JayStorm, Handlebars</Tags>
       <Level>300</Level>
-      <Suggested>HOT</Suggested>
+      <Suggested></Suggested>
       <Download>https://github.com/jaystorm/FacebookCanvasApp</Download>
       <RunApplication>https://apps.facebook.com/jaystormdemoapp/ </RunApplication>
       <Meta-KeyWords>JayData, JayData providers, facebook, FQL api, Crossplatform,  Javascript, HTML5, tutorial, Handlebars, JayStorm platform, JayStorm Paas, example</Meta-KeyWords>
@@ -1267,5 +1271,5 @@
         <ContentLink link="http://jslq.spirit.de/" target="_self" css="">JavaScript Language Query (JSLQ) 101</ContentLink>
       </RelatedContents>
     </Example>
-  </Examples>
+    </Examples>
 </MainPage>

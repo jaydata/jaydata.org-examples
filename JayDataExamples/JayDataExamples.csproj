@@ -213,7 +213,6 @@
     <Content Include="Fonts\Droid\droidsans.svg" />
     <Content Include="Fonts\Enzo\enzoot-bold.svg" />
     <Content Include="Fonts\Enzo\enzoot-medi.svg" />
-    <Content Include="Images\bg_direction_nav.png" />
     <Content Include="Images\browsers.png" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon_jaydata.png" />
@@ -559,7 +558,6 @@
     <Content Include="Scripts\galleryHandler.js" />
     <Content Include="Scripts\indexModel.js" />
     <Content Include="Scripts\ui.js" />
-    <Content Include="Scripts\vendor\bootstrap.js" />
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="Scripts\vendor\codemirror\.gitattributes" />
     <Content Include="Scripts\vendor\codemirror\.gitignore" />
@@ -879,7 +877,6 @@
     <Content Include="Styles\bootstrap\bootstrap-responsive.min.css" />
     <Content Include="Styles\bootstrap\bootstrap.min.css" />
     <Content Include="Styles\examples.css" />
-    <Content Include="Styles\flowershop\mixins.css" />
     <Content Include="Styles\img\favicon_jaydata.png" />
     <Content Include="Styles\img\iphone.png" />
     <Content Include="Styles\img\knokout_flowershop\ajax-loader.gif" />
@@ -1312,10 +1309,12 @@
     <Content Include="Views\Shared\Layout_Default.cshtml" />
     <Content Include="Views\Shared\_IncludeTopMenu.cshtml" />
     <Content Include="Views\Shared\_JayDataHeader.cshtml" />
+    <Content Include="Views\Shared\_IncludeStyles.cshtml" />
     <Content Include="Views\Shared\_IncludeMeta.cshtml" />
     <Content Include="Views\Shared\_IncludeIeFix.cshtml" />
     <Content Include="Views\Shared\_IncludeFavIcon.cshtml" />
     <Content Include="Views\Shared\_IncludeGoogleAnalytics.cshtml" />
+    <Content Include="Views\Shared\_IncludeScripts.cshtml" />
     <Content Include="Views\Shared\_IncludeFooter.cshtml" />
     <Content Include="Views\Shared\_IncludeSearchBar.cshtml" />
     <Content Include="Views\Shared\_IncludeBreadcrumb.cshtml" />
@@ -1350,10 +1349,10 @@
     <Content Include="Views\Home\Planets.cshtml" />
     <Content Include="Views\Home\Facebook\Provider.cshtml" />
     <Content Include="Views\Home\TypeScript\TypeScript.cshtml" />
-    <Content Include="Views\Home\Facebook\Friends.cshtml" />
     <Content Include="Views\Home\JayStorm\jayscrum.cshtml" />
-    <Content Include="Views\Home\JayStorm\facebook_canvas.cshtml" />
     <Content Include="Views\Home\JayStorm\flowershopwin8.cshtml" />
+    <Content Include="Views\Home\JayStorm\sliding_puzzle.cshtml" />
+    <Content Include="Views\Home\JayStorm\facebook_canvas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />
@@ -1407,14 +1406,6 @@
     <None Include="Styles\dd.less" />
     <Content Include="Styles\less\logos.less" />
     <Content Include="Styles\less\mixins.less" />
-    <Content Include="Styles\flowershop\less\css3.less" />
-    <Content Include="Styles\flowershop\less\flexslider.less" />
-    <Content Include="Styles\flowershop\less\functions.less" />
-    <Content Include="Styles\flowershop\less\layout.less" />
-    <Content Include="Styles\flowershop\less\mediaqueries.less" />
-    <Content Include="Styles\flowershop\less\style.less" />
-    <Content Include="Styles\flowershop\less\variables.less" />
-    <Content Include="Styles\flowershop\mixins.less" />
     <None Include="ToDoListMobile\JayDataTodolist-debug.apk" />
   </ItemGroup>
   <ItemGroup>
