@@ -1087,6 +1087,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Download>/Download/TypeScriptExample.zip</Download>
+      <RunApplication>http://index.hu</RunApplication>
       <Link>TypeScript/TypeScript</Link>
       <Tags>OData, TypeScript, jQuery</Tags>
       <Level>100</Level>
