@@ -1305,12 +1305,10 @@
     <Content Include="Views\Shared\Layout_Default.cshtml" />
     <Content Include="Views\Shared\_IncludeTopMenu.cshtml" />
     <Content Include="Views\Shared\_JayDataHeader.cshtml" />
-    <Content Include="Views\Shared\_IncludeStyles.cshtml" />
     <Content Include="Views\Shared\_IncludeMeta.cshtml" />
     <Content Include="Views\Shared\_IncludeIeFix.cshtml" />
     <Content Include="Views\Shared\_IncludeFavIcon.cshtml" />
     <Content Include="Views\Shared\_IncludeGoogleAnalytics.cshtml" />
-    <Content Include="Views\Shared\_IncludeScripts.cshtml" />
     <Content Include="Views\Shared\_IncludeFooter.cshtml" />
     <Content Include="Views\Shared\_IncludeSearchBar.cshtml" />
     <Content Include="Views\Shared\_IncludeBreadcrumb.cshtml" />
@@ -1345,6 +1343,7 @@
     <Content Include="Views\Home\Planets.cshtml" />
     <Content Include="Views\Home\Facebook\Provider.cshtml" />
     <Content Include="Views\Home\TypeScript\TypeScript.cshtml" />
+    <Content Include="Views\Home\Facebook\Friends.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
