@@ -1038,7 +1038,7 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Form Validation (K) festeni kell</Title>
+      <Title>Form Validation</Title>
       <Lead>
         <![CDATA[Our form validator extensions will allow you to apply the constraints defined on the model to validate forms through jQuery validators.]]>
       </Lead>
