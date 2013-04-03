@@ -12,4 +12,8 @@
     {
         <a href="@Model.Download" target="_blank" class="btn btn-primary">Download</a>
     }
+     @if (!String.IsNullOrEmpty(Model.RunApp))
+    {
+        <a href="@Model.RunApp" target="_blank" class="btn btn-primary">Run application</a>
+    }
 </div>

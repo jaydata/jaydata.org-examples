@@ -32,6 +32,8 @@ namespace JayDataExamples.App_Code
         public string JsFiddle { get; set; }
         [XmlElement("Suggested")]
         public string Suggested { get; set; }
+        [XmlElement("RunApplication")]
+        public string RunApp { get; set; }
         [XmlElement("Level")]
         public int Level { get; set; }
         [XmlArray("SupportedBrowsers")]
