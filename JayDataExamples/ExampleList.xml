@@ -1057,8 +1057,6 @@
         <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
         <script type="text/javascript" src="/Scripts/vendor/jquery/jquery.validate.js"></script>
         <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/validate.js"></script>
-        
-        
         <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
       </Includes>
       <SupportedBrowsers>
@@ -1184,7 +1182,7 @@
       <Link>JayStorm/flowershopwin8</Link>
       <Tags> Windows8, OData, jQuery, JayStorm, Knockout</Tags>
       <Level>300</Level>
-      <Download>/download/flowershop.apk</Download>
+      <Download>https://github.com/jaystorm/FlowerShop_Win8/archive/master.zip</Download>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
       <Meta-Description>How to create a full cycle Windows8 eshop application? See this amazing example.</Meta-Description>
       <Includes>
