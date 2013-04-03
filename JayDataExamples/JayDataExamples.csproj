@@ -1353,6 +1353,7 @@
     <Content Include="Views\Home\JayStorm\flowershopwin8.cshtml" />
     <Content Include="Views\Home\JayStorm\sliding_puzzle.cshtml" />
     <Content Include="Views\Home\JayStorm\facebook_canvas.cshtml" />
+    <Content Include="Views\Home\Facebook\Friends.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />

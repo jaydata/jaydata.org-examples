@@ -25,89 +25,90 @@
 }
 
 @section CodeRunning {
-    <table class="table span12 reset-m" style="margin: 0 10px 10px 0 !important;">
-        <thead>
-            <tr>
-                <th>Category name</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach: listedCategories">
-            <tr>
-                <td><a href="#" data-bind="text: Category_Name, click: $root.loadProducts"></a></td>
-                <td data-bind="text: Description"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="padding10">
+        <table class="table span3 reset-m" style="margin: 0 10px 10px 0 !important;">
+            <thead>
+                <tr>
+                    <th>Category name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: listedCategories">
+                <tr>
+                    <td><a href="#" data-bind="text: Category_Name, click: $root.loadProducts"></a></td>
+                    <td data-bind="text: Description"></td>
+                </tr>
+            </tbody>
+        </table>
 
-    <table class="table span12 reset-m" data-bind="visible: $root.listedProducts().length > 0" style="margin: 0 10px 10px 0 !important;">
-        <thead>
-            <tr>
-                <th>Product Name</th>
-                <th>English Name</th>
-                <th>Unit Price</th>
-                <th>Units In Stock</th>
-                <th>Discontinued</th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach: listedProducts">
-            <tr>
-                <td><a href="#" data-bind="text: Product_Name, click: $root.editProduct"></a></td>
-                <td data-bind="text: English_Name"></td>
-                <td data-bind="text: Unit_Price"></td>
-                <td data-bind="text: Units_In_Stock"></td>
-                <td data-bind="text: Discontinued"></td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table span6 reset-m" data-bind="visible: $root.listedProducts().length > 0" style="margin: 0 10px 10px 0 !important;">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>English Name</th>
+                    <th>Unit Price</th>
+                    <th>Units In Stock</th>
+                    <th>Discontinued</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: listedProducts">
+                <tr>
+                    <td><a href="#" data-bind="text: Product_Name, click: $root.editProduct"></a></td>
+                    <td data-bind="text: English_Name"></td>
+                    <td data-bind="text: Unit_Price"></td>
+                    <td data-bind="text: Units_In_Stock"></td>
+                    <td data-bind="text: Discontinued"></td>
+                </tr>
+            </tbody>
+        </table>
 
-    <!-- ko if: $root.editProduct -->
-    <div class="table span4 reset-m noborder_">
-        <div class="well-box">
-            <form data-bind="submit: saveProduct" style="margin: 10px">
-                <fieldset data-bind="with: $root.editProduct">
-                    <legend class="modal-header">Edit Product</legend>
+        <!-- ko if: $root.editProduct -->
+        <div class="table span3 reset-m noborder_">
+            <div class="well-box">
+                <form data-bind="submit: saveProduct" style="margin: 10px">
+                    <fieldset data-bind="with: $root.editProduct">
+                        <legend class="modal-header">Edit Product</legend>
 
-                    <div class="modal-body" style="max-height: 600px;">
-                        Product name:
-                                <input class="span4" type="text" data-bind="value: Product_Name" />
-                        <br />
-                        English Name:
-                                <br />
-                        <input class="span4" type="text" data-bind="value: English_Name" />
-                        <br />
-                        Category:
-                                <br />
-                        <select class="span4" data-bind="options: $root.listedCategories,
+                        <div class="modal-body" style="max-height: 600px;">
+                            <div class="row-fluid">
+                                <div>Product name:</div>
+                                <input class="span12" type="text" data-bind="value: Product_Name" />
+                            </div>
+                            <div class="row-fluid">
+                                <div>English Name:</div>
+                                <input class="span12" type="text" data-bind="value: English_Name" />
+                            </div>
+                            <div class="row-fluid">
+                                <div>Category:</div>
+                                <select class="span12" data-bind="options: $root.listedCategories,
                                                        optionsText: 'Category_Name',
                                                        optionsValue: 'Category_ID',
                                                        value: Category_ID">
-                        </select>
-                        <br />
-                        Unit Price:
-                                <br />
-                        <input class="span4" type="text" data-bind="value: Unit_Price" />
-                        <br />
-                        Units In Stock:
-                                <br />
-                        <input class="span4" type="text" data-bind="value: Units_In_Stock" />
-                        <br />
-                        Discontinued:
-                        <input type="checkbox" data-bind="checked: Discontinued" />
-                    </div>
-                    <div class="modal-footer">
-                        <input type="submit" value="save" class="btn btn-success tshadow" />
-                    </div>
-                </fieldset>
-            </form>
+                                </select>
+                            </div>
+                            <div class="row-fluid">
+                                <div>Unit Price:</div>
+                                <input class="span12" type="text" data-bind="value: Unit_Price" />
+                            </div>
+                            <div class="row-fluid">
+                                <div>Units In Stock:</div>
+                                <input class="span12" type="text" data-bind="value: Units_In_Stock" />
+                            </div>
+                            <div class="row-fluid">
+                                <div>Discontinued:</div>
+                                <input type="checkbox" data-bind="checked: Discontinued" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" value="save" class="btn btn-success tshadow" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="saveResult" class="clear alert alert-success hide">Product has been saved!</div>
         </div>
-        <div id="saveResult" class="alert alert-success hide">
-            <strong>Success!</strong>
-            <br />
-            Product has been saved successfully.
-        </div>
+        <!-- /ko -->
     </div>
-    <!-- /ko -->
 
     <script>
         var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: '/Northwind.svc' });
