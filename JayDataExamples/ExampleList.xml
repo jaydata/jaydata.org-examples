@@ -810,8 +810,8 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>YQL feed reader (moved)</Title>
-      <Lead><![CDATA[How can you use JayData to reading feed data? With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and feeds, pure HTML content, almost everything is queryable through the YQL provider.]]></Lead>
+      <Title>YQL feed reader </Title>
+      <Lead><![CDATA[How can you use JayData to reading feed data? With the Yahoo Query Language (YQL) you can query the content of the world wide web.]]></Lead>
       <Description>
         <![CDATA[How can you use JayData to reading feed data? With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and feeds, pure HTML content, almost everything is queryable through the YQL provider.]]>
       </Description>
@@ -839,7 +839,7 @@
         <Browser title="Windows Phone" name="wp" minVersion="7.5+"/>
         <Browser title="iOS" name="ios" minVersion="4"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
-      </SupportedBrowsers>
+      </SupportedBrowsers> 
       <RelatedContents>
        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
         <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_blank" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
@@ -880,7 +880,7 @@
       <Tags>facebook</Tags>
     </Example>
     <Example>
-      <Title>Facebook friend list example (moved)</Title>
+      <Title>Facebook friend list example</Title>
       <Lead>
         <![CDATA[This example shows you how can you get the current user's friends list through FQL api with JayData.]]>
       </Lead>
@@ -1100,6 +1100,59 @@
         <ContentLink link="http://jaydata.org/blog/jaysvcutil-will-automatically-expose-odata-service-metadata-to-jaydata-and-javascript" target="_blank" css="">JaySvcUtil exposes your OData service metadata to JayData and JavaScript</ContentLink>
       </RelatedContents>
     </Example>
-
+    <!-- JayStorm examples -->
+    <Example>
+      <Title>JayScrum - agile task manager app</Title>
+      <Lead>
+        <![CDATA[JayScrum is an agile Project Management tool, that enables you to make your Scrum-methodology-based daily routine enjoyable. Through this application you can manage Projects, Backlogs, Tasks, Bugs, and Impediments.]]>
+      </Lead>
+      <Description>
+        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/>Supported browsers for IndexedDB: Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+      </Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>General/ToDoList</Link>
+      <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <Download>https://github.com/jaydata/JayScrum</Download>
+      <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
+      <Meta-Description>How to create a multiprovider JayData todolist! See this simple todolist example.</Meta-Description>
+      <SupportedBrowsers>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="2.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.3+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jayscrum.com" target="_self" css="">JayScrum.com offcial app website</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/how-to-achieve-your-financial-goals-with-jaystorm" target="_self" css="">How to achieve your financial goals with JayStorm?</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_self" css="">Database transaction handling in JayData</ContentLink>
+      </RelatedContents>
+    </Example>
+    <Example>
+      <Title>OData TypeScript Example D</Title>
+      <Lead>
+        <![CDATA[TypeScript can be fully employed to use OData from JavaScript with an attitude. All you have to do is to include the JayData library in your application, and use JaySvcUtil.exe to create a TypeScript definition. Download it now and see for yourself!]]>
+      </Lead>
+      <Description>
+        <![CDATA[TypeScript can be fully employed to use OData from JavaScript with an attitude. All you have to do is to include the JayData library in your application, and use JaySvcUtil.exe to create a TypeScript definition]]>
+      </Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Download>/Download/TypeScriptExample.zip</Download>
+      <Link>TypeScript/TypeScript</Link>
+      <Tags>OData, TypeScript, jQuery</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, OData, Cross-platform, create definition, Javascript, HTML5, tutorial, TypeScript, example</Meta-KeyWords>
+      <Meta-Description>How to user TypeScript with JayData ! See this simple example.</Meta-Description>
+      <RelatedContents>
+        <ContentLink link="http://jaystack.com/blog/typescript-meets-odata-with-the-help-of-jaydata-and-jaysvcutil" target="_self" css="">TypeScript meets OData with the help of JayData and JaySvcUtil</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application" target="_self" css="">How to build a Simple OData-based ajax application</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaysvcutil-will-automatically-expose-odata-service-metadata-to-jaydata-and-javascript" target="_self" css="">JaySvcUtil exposes your OData service metadata to JayData and JavaScript</ContentLink>
+      </RelatedContents>
+    </Example>
   </Examples>
 </MainPage>
