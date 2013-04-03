@@ -1137,6 +1137,9 @@
       <RunApplication>http://scrum.jaystack.net</RunApplication>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
       <Meta-Description>How to create a full cycle task manager app? See this amazing example.</Meta-Description>
+      <Includes>
+        <group name="gallery"></group>
+      </Includes>
       <GalleryImages>
         <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_1.png" alt="JayScrum task manager"></Image>
         <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_3.png" alt="JayScrum task manager"></Image>
@@ -1214,6 +1217,9 @@
       <RunApplication>https://apps.facebook.com/jaystormdemoapp/ </RunApplication>
       <Meta-KeyWords>JayData, JayData providers, facebook, FQL api, Crossplatform,  Javascript, HTML5, tutorial, Handlebars, JayStorm platform, JayStorm Paas, example</Meta-KeyWords>
       <Meta-Description>How to create a facebook canvas application? See this simple example.</Meta-Description>
+      <Includes>
+        <group name="gallery"></group>
+      </Includes>
       <GalleryImages>
         <Image url="/Images/gallery/facebook_canvas/app_validation.png" thumbUrl="/Images/gallery/facebook_canvas/app_validation.png" alt="JayScrum task manager"></Image>
         <Image url="/Images/gallery/facebook_canvas/facebook_app_desktopr.png" thumbUrl="/Images/gallery/facebook_canvas/facebook_app_desktopr.png"></Image>
@@ -1251,6 +1257,9 @@
       <RunApplication>http://jaystorm.github.com/slidingpuzzle/</RunApplication>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, JayStorm platform, JayStorm Paas, example</Meta-KeyWords>
       <Meta-Description>How to create a sliding puzzle HTML5 application? See this awesome example.</Meta-Description>
+      <Includes>
+        <group name="gallery"></group>
+      </Includes>
       <GalleryImages>
         <Image url="/Images/gallery/sliding_puzzle/silding_mobile_ingame.png" thumbUrl="/Images/gallery/sliding_puzzle/silding_mobile_ingame.png" alt="Sliding puzzle HTML5 game"></Image>
         <Image url="/Images/gallery/sliding_puzzle/sliding_desktop__home.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_desktop__home.png" alt="Sliding puzzle HTML5 game"></Image>
