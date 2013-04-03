@@ -49,6 +49,7 @@
     <group name="bootstrap"></group>
     <link rel="stylesheet" href="/Styles/Bootstrap/docs.css"/>
     <link rel="stylesheet" href="/Styles/dd.css" />
+    <script src="/Scripts/ui.js"></script>
   </Includes>
   <Examples>
     <!-- KendoUI examples -->

@@ -7,9 +7,6 @@
     @{
         //TODO: 2 description tag lesz al-Layout használatánál
         Html.RenderPartial("_IncludeMeta");
-        //Html.RenderPartial("_IncludeStyles");
-        //Html.RenderPartial("_IncludeScripts");
-
         Html.RenderPartial("_IncludeFavIcon");
         Html.RenderPartial("_IncludeIeFix");
     }
@@ -17,6 +14,10 @@
     @RenderSection("Header", false)
 </head>
 <body>
+    @{
+        Html.RenderPartial("_IncludeLogoFilter");
+    }
+
     <div class="wrapper">
         @{
             Html.RenderPartial("_IncludeTopMenu");
