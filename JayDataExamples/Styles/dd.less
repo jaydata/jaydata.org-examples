@@ -1751,8 +1751,12 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 	font-size: 40px;
 }
 
-.main-title-container > h1 {
-	.main-title;
+.main-title-container {
+	overflow: hidden;
+
+	> h1 {
+		.main-title;
+	}
 }
 
 .purple-list {
@@ -1800,6 +1804,20 @@ input:focus.input-validation-error, textarea:focus.input-validation-error { bord
 .yql-html-example {
 	img {
 		width: 150px;
+	}
+}
+
+.flowershop {
+	.span5 {
+		.btn-info {
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+		}
+	}
+
+	.dropdown.open {
+		.btn {
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);	
+		}
 	}
 }
 

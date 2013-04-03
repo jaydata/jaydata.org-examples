@@ -511,6 +511,7 @@
       <Level>200</Level>
       <Suggested></Suggested>
       <Includes>
+        <link href="/Styles/flowershop/mixins.css" rel="stylesheet" />
         <group name="knokout"></group>
         <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
         <script src="/Scripts/vendor/jquery/jquery.flexslider-min.js"></script>
