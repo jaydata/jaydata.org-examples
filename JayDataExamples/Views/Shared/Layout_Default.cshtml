@@ -123,10 +123,14 @@
                     @RenderSection("CodeSource", false)
                     <script>
                         setTimeout(function () {
-                            CodeMirror.fromTextArea(document.getElementById('code'), {
-                                mode: 'text/html',
-                                lineNumbers: false
-                            });
+                            var codeBlocks = document.getElementsByClassName('code');
+                            for (var i = 0; i < codeBlocks.length; i++) {
+                                CodeMirror.fromTextArea(codeBlocks[i], {
+                                    mode: 'text/html',
+                                    lineNumbers: false
+                                });
+                            }
+                            
                         });
                     </script>
                 </div>

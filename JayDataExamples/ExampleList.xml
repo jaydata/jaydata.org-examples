@@ -86,9 +86,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -125,9 +125,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -161,9 +161,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -196,9 +196,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -230,9 +230,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -266,9 +266,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -304,9 +304,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -343,9 +343,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -377,9 +377,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -421,9 +421,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -456,9 +456,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -490,9 +490,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_blank" css="">Introducing JayData And Kendo UI</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_blank" css="">JayData+Kendo UI =Awesomeness</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_blank" css="">JayData blogs about Kendo UI</ContentLink>
       </RelatedContents>
     </Example>
     <!-- Knokout examples -->
@@ -526,10 +526,10 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_self" css="">Flower shop hands on lab (VIDEO)</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_self" css="">How to use JayData with Knockout.js?</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_self" css="">Blogs with Knockout tag</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm platform overview</ContentLink>
+        <ContentLink link="http://www.youtube.com/watch?v=whTmPoPqHdU" target="_blank" css="">Flower shop hands on lab (VIDEO)</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_blank" css="">How to use JayData with Knockout.js?</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_blank" css="">Blogs with Knockout tag</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_blank" css="">JayStorm platform overview</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -547,10 +547,10 @@
         <Browser title="Internet Explorer" name="ie" minVersion="10" />
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application-with-visual-studio-2010U" target="_self" css="">How to build a Simple OData-based AJAX application with Visual Studio 2010</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/windows-8-metro-app-tutorial-with-jaydata" target="_self" css="">Windows 8 Metro app tutorial with JayData</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/how-can-you-access-your-javascript-data-service-from-.net-with-c" target="_self" css="">How can you access your JavaScript Data Service from .NET with C#</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/odata" target="_self" css="">Blogs with OData tags</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application-with-visual-studio-2010U" target="_blank" css="">How to build a Simple OData-based AJAX application with Visual Studio 2010</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/windows-8-metro-app-tutorial-with-jaydata" target="_blank" css="">Windows 8 Metro app tutorial with JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/how-can-you-access-your-javascript-data-service-from-.net-with-c" target="_blank" css="">How can you access your JavaScript Data Service from .NET with C#</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">Blogs with OData tags</ContentLink>
       </RelatedContents>
       <GalleryImages>
         <Image url="/Images/gallery/jayscrum/demokep.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_index.png" alt=""></Image>
@@ -591,9 +591,9 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_self" css="">How to use JayData with Knockout.js?</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_self" css="">Blogs with Knockout tag</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm platform overview</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_blank" css="">How to use JayData with Knockout.js?</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_blank" css="">Blogs with Knockout tag</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_blank" css="">JayStorm platform overview</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -625,9 +625,9 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_self" css="">How to use JayData with Knockout.js?</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_self" css="">Blogs with Knockout tag</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm platform overview</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_blank" css="">How to use JayData with Knockout.js?</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_blank" css="">Blogs with Knockout tag</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_blank" css="">JayStorm platform overview</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -659,9 +659,9 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_self" css="">How to use JayData with Knockout.js?</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_self" css="">Blogs with Knockout tag</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm platform overview</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_blank" css="">How to use JayData with Knockout.js?</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_blank" css="">Blogs with Knockout tag</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_blank" css="">JayStorm platform overview</ContentLink>
       </RelatedContents>
     </Example>
     <!-- YQL examples -->
@@ -694,9 +694,9 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_self" css="">The Beginners Guide to JayData</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_self" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_self" css="">Creating your first JavaScript Data Service</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_blank" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_blank" css="">Creating your first JavaScript Data Service</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -730,9 +730,9 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_self" css="">The Beginners Guide to JayData</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_self" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_self" css="">Creating your first JavaScript Data Service</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_blank" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_blank" css="">Creating your first JavaScript Data Service</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -767,9 +767,9 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_self" css="">The Beginners Guide to JayData</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_self" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_self" css="">Creating your first JavaScript Data Service</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_blank" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_blank" css="">Creating your first JavaScript Data Service</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -804,9 +804,9 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_self" css="">The Beginners Guide to JayData</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_self" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_self" css="">Creating your first JavaScript Data Service</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_blank" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_blank" css="">Creating your first JavaScript Data Service</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -841,9 +841,9 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-       <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_self" css="">The Beginners Guide to JayData</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_self" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_self" css="">Creating your first JavaScript Data Service</ContentLink>
+       <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_blank" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_blank" css="">Creating your first JavaScript Data Service</ContentLink>
       </RelatedContents>
     </Example>
     <!--Facebook examples-->
@@ -946,10 +946,10 @@
         <Browser title="Android" name="android" minVersion="2.3+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/planets-sample-application-using-jaydata%E2%80%99s-websql-provider" target="_self" css="">Planets: sample application using JayData’s WebSQL provider</ContentLink>
-        <ContentLink link="http://jaydata.org/Tags/WebSQL" target="_self" css="">JayData blogs about WebSQL provider</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/jaydata-SQlite-pro-provider" target="_self" css="">JayData SQLite Pro provider</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/database-indices" target="_self" css="">Database indices with indexedDb and WebSQL/SQLite</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/planets-sample-application-using-jaydata%E2%80%99s-websql-provider" target="_blank" css="">Planets: sample application using JayData’s WebSQL provider</ContentLink>
+        <ContentLink link="http://jaydata.org/Tags/WebSQL" target="_blank" css="">JayData blogs about WebSQL provider</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaydata-SQlite-pro-provider" target="_blank" css="">JayData SQLite Pro provider</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDb and WebSQL/SQLite</ContentLink>
       </RelatedContents>
     </Example>
 
@@ -976,9 +976,9 @@
         <Browser title="Android" name="android" minVersion="2.3+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/netflix-sencha-touch-2-app-with-jaydata" target="_self" css="">Netflix Sencha Touch 2 app with JayData</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/odata" target="_self" css="">JayData blogs about OData</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/hybrid-application" target="_self" css="">JayData blogs about Hybrid application developement</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/netflix-sencha-touch-2-app-with-jaydata" target="_blank" css="">Netflix Sencha Touch 2 app with JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">JayData blogs about OData</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/hybrid-application" target="_blank" css="">JayData blogs about Hybrid application developement</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -1006,9 +1006,9 @@
       <Browser title="Android" name="android" minVersion="2.2"/>
     </SupportedBrowsers>
     <RelatedContents>
-      <ContentLink link="http://jaydata.org/blog/crud-with-jaydata-in-a-content-management-like-application" target="_self" css="">CRUD with JayData in a content management like application</ContentLink>
-      <ContentLink link="http://jaystack.com/blog/create-your-first-online-api-with-javascript-api-services" target="_self" css="">Create your first Online API with JavaScript API Services</ContentLink>
-      <ContentLink link="http://jaydata.org/categories/odata" target="_self" css="">JayData blogs about OData </ContentLink>
+      <ContentLink link="http://jaydata.org/blog/crud-with-jaydata-in-a-content-management-like-application" target="_blank" css="">CRUD with JayData in a content management like application</ContentLink>
+      <ContentLink link="http://jaystack.com/blog/create-your-first-online-api-with-javascript-api-services" target="_blank" css="">Create your first Online API with JavaScript API Services</ContentLink>
+      <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">JayData blogs about OData </ContentLink>
     </RelatedContents>
     </Example>
 
@@ -1072,9 +1072,9 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/tutorials/jaydata-api-features" target="_self" css="">JayData providers feature matrix</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/database-indices" target="_self" css="">Database indices with indexedDB and WebSQL/SQLite</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_self" css="">Database transaction handling in JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/tutorials/jaydata-api-features" target="_blank" css="">JayData providers feature matrix</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDB and WebSQL/SQLite</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_blank" css="">Database transaction handling in JayData</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
@@ -1094,9 +1094,9 @@
       <Meta-KeyWords>JayData, OData, Cross-platform, create definition, Javascript, HTML5, tutorial, TypeScript, example</Meta-KeyWords>
       <Meta-Description>How to user TypeScript with JayData ! See this simple example.</Meta-Description>
       <RelatedContents>
-        <ContentLink link="http://jaystack.com/blog/typescript-meets-odata-with-the-help-of-jaydata-and-jaysvcutil" target="_self" css="">TypeScript meets OData with the help of JayData and JaySvcUtil</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application" target="_self" css="">How to build a Simple OData-based ajax application</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaysvcutil-will-automatically-expose-odata-service-metadata-to-jaydata-and-javascript" target="_self" css="">JaySvcUtil exposes your OData service metadata to JayData and JavaScript</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/typescript-meets-odata-with-the-help-of-jaydata-and-jaysvcutil" target="_blank" css="">TypeScript meets OData with the help of JayData and JaySvcUtil</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application" target="_blank" css="">How to build a Simple OData-based ajax application</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaysvcutil-will-automatically-expose-odata-service-metadata-to-jaydata-and-javascript" target="_blank" css="">JaySvcUtil exposes your OData service metadata to JayData and JavaScript</ContentLink>
       </RelatedContents>
     </Example>
 
