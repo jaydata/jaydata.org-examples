@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.Data.Services.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace JayData.NewsReader
 {

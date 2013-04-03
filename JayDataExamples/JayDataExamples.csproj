@@ -144,6 +144,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="NewsReader\newsReader.svc.cs">
+      <DependentUpon>newsReader.svc</DependentUpon>
+    </Compile>
+    <Compile Include="NewsReader\NewsReaderContext.cs" />
     <Compile Include="Northwind.svc.cs">
       <DependentUpon>Northwind.svc</DependentUpon>
     </Compile>
@@ -213,6 +217,7 @@
     <Content Include="Fonts\Droid\droidsans.svg" />
     <Content Include="Fonts\Enzo\enzoot-bold.svg" />
     <Content Include="Fonts\Enzo\enzoot-medi.svg" />
+    <Content Include="Images\bg_direction_nav.png" />
     <Content Include="Images\browsers.png" />
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon_jaydata.png" />
@@ -283,6 +288,18 @@
     <Content Include="Images\sprite_image.jpg" />
     <Content Include="Images\todolist.png" />
     <Content Include="Images\yqlnagy.png" />
+    <Content Include="NewsReader\css\bootstrap-wysihtml5.css" />
+    <Content Include="NewsReader\css\bootstrap.min.css" />
+    <Content Include="NewsReader\css\styles.css" />
+    <Content Include="NewsReader\img\glyphicons-halflings-white.png" />
+    <Content Include="NewsReader\img\glyphicons-halflings.png" />
+    <Content Include="NewsReader\index.html" />
+    <Content Include="NewsReader\js\bootstrap-wysihtml5.js" />
+    <Content Include="NewsReader\js\bootstrap.min.js" />
+    <Content Include="NewsReader\js\NewsReaderApp.js" />
+    <Content Include="NewsReader\js\NewsReaderContext.js" />
+    <Content Include="NewsReader\js\wysihtml5-0.3.0_rc3.js" />
+    <Content Include="NewsReader\newsReader.svc" />
     <Content Include="Northwind.svc" />
     <Content Include="Plugins\codemirror\.gitattributes" />
     <Content Include="Plugins\codemirror\.gitignore" />
@@ -558,6 +575,7 @@
     <Content Include="Scripts\galleryHandler.js" />
     <Content Include="Scripts\indexModel.js" />
     <Content Include="Scripts\ui.js" />
+    <Content Include="Scripts\vendor\bootstrap.js" />
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="Scripts\vendor\codemirror\.gitattributes" />
     <Content Include="Scripts\vendor\codemirror\.gitignore" />
@@ -1289,7 +1307,6 @@
     <Content Include="ToDoList\Services\ToDoListService.svc" />
     <Content Include="ToDoList\ToDoList.html" />
     <Content Include="ToDoList\ToDoList.js" />
-    <Content Include="Validation\FormValidation.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1353,6 +1370,9 @@
     <Content Include="Views\Home\JayStorm\flowershopwin8.cshtml" />
     <Content Include="Views\Home\JayStorm\sliding_puzzle.cshtml" />
     <Content Include="Views\Home\JayStorm\facebook_canvas.cshtml" />
+    <Content Include="Views\Home\Facebook\Friends.cshtml" />
+    <Content Include="Views\Home\NewsReader.cshtml" />
+    <Content Include="Views\Home\FormValidation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />

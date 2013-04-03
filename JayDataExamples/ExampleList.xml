@@ -540,7 +540,7 @@
         <Image url="/Images/gallery/flowershophtml5/flowershop_home_desktop_2.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_desktop_2.png" alt=""></Image>
         <Image url="/Images/gallery/flowershophtml5/flowershop_home_mobile.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_mobile.png" alt=""></Image>
         <Image url="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout" alt=""></Image>
-       </GalleryImages>
+      </GalleryImages>
     </Example>
     <Example>
       <Title>Knockout data binding</Title>
@@ -661,7 +661,7 @@
       <Meta-Description>How can you use the JayData YQL provider to searching simple html pages.</Meta-Description>
       <Includes>
         <group name="yql"></group>
-        <script type="text/javascript" src="../Content/Scripts/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
         <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/deferred.js"></script>
       </Includes>
       <SupportedBrowsers>
@@ -819,9 +819,9 @@
         <Browser title="Windows Phone" name="wp" minVersion="7.5+"/>
         <Browser title="iOS" name="ios" minVersion="4"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
-      </SupportedBrowsers> 
+      </SupportedBrowsers>
       <RelatedContents>
-       <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
         <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_blank" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
         <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_blank" css="">Creating your first JavaScript Data Service</ContentLink>
       </RelatedContents>
@@ -865,7 +865,7 @@
         <ContentLink link="http://jaystack.com/blog/building-a-facebook-canvas-application-using-jaystorm" target="_blank" css="">Building a Facebook Canvas application using JayStorm</ContentLink>
         <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_blank" css="">Creating your first JavaScript Data Service</ContentLink>
       </RelatedContents>
-          </Example>
+    </Example>
     <Example>
       <Title>Facebook friend list example</Title>
       <Lead>
@@ -903,7 +903,7 @@
         <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_blank" css="">Creating your first JavaScript Data Service</ContentLink>
         <ContentLink link="http://jaystack.com/blog/building-a-facebook-canvas-application-using-jaystorm" target="_blank" css="">Building a Facebook Canvas application using JayStorm</ContentLink>
       </RelatedContents>
-        </Example>
+    </Example>
 
     <!--Planets, Netflix, Newsreader, Advanced rss, etc. examples-->
     <Example>
@@ -974,7 +974,7 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Newsreader CRUD (P)</Title>
+      <Title>Newsreader CRUD</Title>
       <Lead>
         <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way.]]>
       </Lead>
@@ -982,26 +982,27 @@
         <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way. The UI is utilizing Twitter's Bootstrap and jQuery's template engine.]]>
       </Description>
       <Image>/Images/newsreadernagy.png</Image>
-      <Link>NewsReader/index.html</Link>
+      <Link>General/NewsReader</Link>
       <Tags>OData, jQuery, CRUD, filter</Tags>
-       <Level>200</Level>
-    <Suggested></Suggested>
-    <Meta-KeyWords>JayData, jQuery, Crossplatform, HTML5 CRUD, OData, Javascript, HTML5, tutorial, example</Meta-KeyWords>
-    <Meta-Description>How to create a Newsreader with JayData? See this simple CRUD example.</Meta-Description>
-    <SupportedBrowsers>
-      <Browser title="Google Chrome" name="chrome"/>
-      <Browser title="Opera" name="opera" minVersion="11"/>
-      <Browser title="Safari" name="safari" minVersion="5"/>
-      <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
-      <Browser title="Windows Phone" name="wp" minVersion="8"/>
-      <Browser title="iOS" name="ios" minVersion="4"/>
-      <Browser title="Android" name="android" minVersion="2.2"/>
-    </SupportedBrowsers>
-    <RelatedContents>
-      <ContentLink link="http://jaydata.org/blog/crud-with-jaydata-in-a-content-management-like-application" target="_blank" css="">CRUD with JayData in a content management like application</ContentLink>
-      <ContentLink link="http://jaystack.com/blog/create-your-first-online-api-with-javascript-api-services" target="_blank" css="">Create your first Online API with JavaScript API Services</ContentLink>
-      <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">JayData blogs about OData </ContentLink>
-    </RelatedContents>
+      <Level>200</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, jQuery, Crossplatform, HTML5 CRUD, OData, Javascript, HTML5, tutorial, example</Meta-KeyWords>
+      <Meta-Description>How to create a Newsreader with JayData? See this simple CRUD example.</Meta-Description>
+      <RunApplication>/NewsReader/index.html</RunApplication>
+      <SupportedBrowsers>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/crud-with-jaydata-in-a-content-management-like-application" target="_blank" css="">CRUD with JayData in a content management like application</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/create-your-first-online-api-with-javascript-api-services" target="_blank" css="">Create your first Online API with JavaScript API Services</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">JayData blogs about OData </ContentLink>
+      </RelatedContents>
     </Example>
 
     <Example>
@@ -1037,7 +1038,7 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Form Validation (P) nincs áthozva</Title>
+      <Title>Form Validation (K) festeni kell</Title>
       <Lead>
         <![CDATA[Our form validator extensions will allow you to apply the constraints defined on the model to validate forms through jQuery validators.]]>
       </Lead>
@@ -1045,12 +1046,21 @@
         <![CDATA[Our form validator extensions will allow you to apply the constraints defined on the model to validate forms through jQuery validators.]]>
       </Description>
       <Image>/Images/formvalidation.png</Image>
-      <Link>Validation/FormValidation.html</Link>
       <Tags>jQuery, validation</Tags>
       <Level>100</Level>
+      <Link>General/FormValidation</Link>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, Form validation, Crossplatform,  Javascript, HTML5, tutorial, example</Meta-KeyWords>
       <Meta-Description>How to create a form validation! See this simple example.</Meta-Description>
+      <Includes>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+        <script type="text/javascript" src="/Scripts/vendor/jquery/jquery.validate.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/validate.js"></script>
+        
+        
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+      </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="9+" />
         <Browser title="Google Chrome" name="chrome"/>
@@ -1066,7 +1076,7 @@
         <ContentLink link="http://jaydata.org/blog/the-itemstore-api-101" target="_blank" css="">The JayData ItemStore API 101</ContentLink>
         <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDb and WebSQL/SQLite</ContentLink>
       </RelatedContents>
-      </Example>
+    </Example>
     <Example>
       <Title>TodoList - multiple providers</Title>
       <Lead>
@@ -1119,7 +1129,7 @@
         <ContentLink link="http://jaydata.org/blog/jaysvcutil-will-automatically-expose-odata-service-metadata-to-jaydata-and-javascript" target="_blank" css="">JaySvcUtil exposes your OData service metadata to JayData and JavaScript</ContentLink>
       </RelatedContents>
     </Example>
-      <!-- JayStorm examples -->
+    <!-- JayStorm examples -->
     <Example>
       <Title>JayScrum - agile task manager app</Title>
       <Lead>
@@ -1280,5 +1290,5 @@
         <ContentLink link="http://jslq.spirit.de/" target="_self" css="">JavaScript Language Query (JSLQ) 101</ContentLink>
       </RelatedContents>
     </Example>
-    </Examples>
+  </Examples>
 </MainPage>

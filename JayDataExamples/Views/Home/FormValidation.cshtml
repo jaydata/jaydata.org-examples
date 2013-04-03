@@ -1,0 +1,107 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea class="code">
+<script>
+    //Class definition with validation attributes
+    $data.Entity.extend("UserModel", {
+        Id: { type: "int", key: true, computed: true },
+        UserName: { type: "string", required: true, minLength: 6, maxLength: 15 },
+        Bio: { type: "string", required: true },
+        Zip: { type: "int", minValue: { value: 1000, message: 'min value 1000' }, maxValue: 9999 },
+        Birthday: { type: "date", minValue: new Date(Date.parse("March 21, 2012")), errorMessage: "min date message" },
+        Regex: { type: "string", regex: '\\wb\\w', errorMessage: "regex error: \\wb\\w (ex: abc)" },
+        CustomValid: {
+            type: "string", required: { value: true, message: 'required' },
+            customValidator: function (v) { return !v || v.length == 3 }, errorMessage: "custom error, length: 3"
+        },
+    });
+</script>
+    </textarea>
+    <textarea class="code">
+<script>
+    //Validations and model binding
+    var model = new UserModel();
+    $(".vform").validate(model.toJQueryValidate({
+        success: function (model) {
+            //if u have formBinder plugin, model filled up with form's values
+            console.log(model.UserName);
+            console.log(model.Bio);
+        }
+    }));
+</script>
+    </textarea>
+}
+
+@section CodeRunning {
+    <div class="iblock well" style="margin: 0 auto !important; float: none !important;">
+        <h2>A simple form with validations and model binding</h2>
+
+        <br />
+
+        <form class="vform" id="Form1" method="get" action="">
+            <fieldset>
+                <legend class="noborder"></legend>
+                <p>
+                    <label for="UserName">UserName</label>
+                    <input id="UserName" name="UserName" size="25" />
+                </p>
+                <p>
+                    <label for="Bio">Bio</label>
+                    <input id="Bio" name="Bio" size="25" />
+                </p>
+                <p>
+                    <label for="Zip">Zip</label>
+                    <input id="Zip" type="number" name="Zip" size="25" />
+                </p>
+                <p>
+                    <label for="Birthday">Birthday</label>
+                    <input id="Birthday" type="date" name="Birthday" size="25" />
+                </p>
+                <p>
+                    <label for="Regex">Regex</label>
+                    <input id="Regex" name="Regex" size="25" />
+                </p>
+                <p>
+                    <label for="CustomValid">CustomValid</label>
+                    <input id="CustomValid" name="CustomValid" size="25" />
+                </p>
+                <p>
+                    <input class="submit check btn btn-large" type="submit" value="Submit" />
+                </p>
+            </fieldset>
+        </form>
+        <script type="text/javascript">
+
+            $(function () {
+                $data.Entity.extend("UserModel", {
+                    Id: { type: "int", key: true, computed: true },
+                    UserName: { type: "string", required: true, minLength: 6, maxLength: 15 },
+                    Bio: { type: "string", required: true },
+                    Zip: { type: "int", minValue: { value: 1000, message: 'min value 1000' }, maxValue: 9999 },
+                    Birthday: { type: "date", minValue: new Date(Date.parse("March 21, 2012")), errorMessage: "min date message" },
+                    Regex: { type: "string", regex: '\\wb\\w', errorMessage: "regex error: \\wb\\w (ex: abc)" },
+                    CustomValid: {
+                        type: "string", required: { value: true, message: 'required' },
+                        customValidator: function (v) { return !v || v.length == 3 }, errorMessage: "custom error, length: 3"
+                    },
+                });
+
+
+                $(".check").click(function (e) {
+                    var model = new UserModel();
+                    return $(".vform").validate(model.toJQueryValidate({
+                        success: function (model) {
+                            //if u have formBinder plugin, model filled up with form's values
+                            console.log(model.UserName);
+                            console.log(model.Bio);
+                        },
+                        error: function () { console.log(arguments);}
+                    }));
+                });
+            });
+
+        </script>
+    </div>
+}
