@@ -2478,7 +2478,7 @@ textarea:focus.input-validation-error {
   opacity: 0.5;
 }
 .tags li a .icon-remove {
-  margin: 2px 0 0 2px;
+  margin: 1px 0 0 4px;
 }
 .detail .tags {
   margin: 0 0 10px;
@@ -2632,6 +2632,9 @@ textarea:focus.input-validation-error {
   list-style-type: none;
   display: inline-block;
   margin-right: 10px;
+}
+.yql-html-example img {
+  width: 150px;
 }
 html,
 body {
