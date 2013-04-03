@@ -2,7 +2,8 @@
 @{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
 
 @section CodeSource {
-    <textarea id="code">
+<textarea class="code">
+<script>
 var fqlContext = new $data.Facebook.FQLContext({ 
     name: 'Facebook'
 });
@@ -31,25 +32,26 @@ fbauth.Login({
         context.MyFriends.toTemplate("userTemplate", "result");
     }
 });
-    </textarea>
+</script>
+</textarea>
 }
 
 @section CodeRunning {
-    <h2 class="show tacenter marginb5">Listing Facebook "My Friends" with device authentication</h2>
+    <div class="facebook-example padding10">
+        <h2 class="show tacenter marginb5">Listing Facebook "My Friends" with device authentication</h2>
+        <div id="example1">
+            <input type="button" id="list" class="btn" value="List my friends" />
+        </div>
 
-            <div id="example1">
-                <input type="button" id="list" class="btn" value="List my friends" />
-            </div>
+        <hr class="clear soften" />
 
-    <hr class="clear soften" />
-
-    <div id="result"></div>
+        <div id="result"></div>
+    </div>
 
     <script type="text/javascript">
         jQuery.support.cors = true;
 
         $(function () {
-
             var fqlContext = new $data.Facebook.FQLContext({ name: 'Facebook' });
             fqlContext.onReady(function (context) {
                 var fbauth = null;
@@ -84,7 +86,6 @@ fbauth.Login({
                     }
                 });
             });
-
         });
     </script>
     <div id="userTemplate" style="display: none">

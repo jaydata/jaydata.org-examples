@@ -66,10 +66,7 @@
         this.Model.addLogoFilter = function (tag) {
             self.Model.removeTags();
             self.Model.addTags(tag);
-            $(".logo-filter").toggleClass("open");
-
-            $(this).find(".z-up").toggleClass("hidden");
-            $(this).find(".z-down").toggleClass("hidden");
+            toggleLogoFilter();
         }
         this.Model.isActiveTag = function (tag) {
             return self.Model.SelectedTags().indexOf(tag) >= 0;

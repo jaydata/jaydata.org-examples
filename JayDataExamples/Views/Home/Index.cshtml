@@ -44,10 +44,10 @@
             <p data-bind="html: Lead"></p>
             <ul class="tags">
                 <!--ko foreach:LimitedTagList-->
-                <li><a class="label label-purple" href="javascript:void(0)" data-bind="text:$data, click:$root.addTags"><i class="icon-tag icon-white"></i></a></li>
+                <li><a class="label" href="javascript:void(0)" data-bind="text:$data, click:$root.addTags"><i class="icon-tag icon-white"></i></a></li>
                 <!--/ko-->
                 <!--ko if:LimitedTagList().length<TagList().length-->
-                <li><a class="label label-purple" href="javascript:void(0)">...</a></li>
+                <li><a class="label" href="javascript:void(0)">...</a></li>
                 <!--/ko-->
             </ul>
         </div>
