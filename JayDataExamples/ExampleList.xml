@@ -690,27 +690,26 @@
         <Browser title="Safari" name="safari" minVersion="4+"/>
         <Browser title="Blackberry" name="blackberry" minVersion="7+"/>
         <Browser title="Windows Phone" name="wp" minVersion="7.5+"/>
-        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
-      <!--<RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
-      </RelatedContents>-->
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_self" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_self" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_self" css="">Creating your first JavaScript Data Service</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>YQL Geo-based autocomplete (moved)</Title>
-      <Lead><![CDATA[YQL Geo based auto-complete example. With the Yahoo Query Language you can query Geo data. We show you how.]]></Lead>
+      <Title>YQL Geo-based autocomplete</Title>
+      <Lead><![CDATA[YQL Geo based auto-complete example. With the Yahoo Query Language you can query Geo data too. Now, we show you how.]]></Lead>
       <Description>
         <![CDATA[YQL Geo based auto-complete example. With the Yahoo Query Language (YQL) you can query the content of the world wide web.]]>
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLGeo</Link>
       <Tags>YQL, GEO</Tags>
-      <Level>100</Level>
+      <Level>170</Level>
       <Suggested></Suggested>
-      <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
       <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, YQL, YQL geo data, example</Meta-KeyWords>
       <Meta-Description>Set auto-complete source with JavaScript Language Query (JSLQ). YQL geodata autocomplete</Meta-Description>
       <Includes>
@@ -730,25 +729,25 @@
         <Browser title="iOS" name="ios" minVersion="4"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
-      <!--<RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
-      </RelatedContents>-->
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_self" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_self" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_self" css="">Creating your first JavaScript Data Service</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>YQL simple RSS reader (moved)</Title>
-      <Lead><![CDATA[YQL RSS reader with filter. This example show you how you can querying the RSS content with JayData.]]></Lead>
+      <Title>YQL simple RSS reader</Title>
+      <Lead><![CDATA[YQL RSS reader with filter. Reading from RSS where Title contains JayData. This example show you how you can querying the RSS content with JayData.]]></Lead>
       <Description>
-        <![CDATA[Reading from RSS where Title contains JayData. This example show you how you can querying the RSS content with JayData.]]>
+        <![CDATA[YQL RSS reader with filter. Reading from RSS where Title contains JayData. This example show you how you can querying the RSS content with JayData.]]>
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLRss</Link>
       <Tags>YQL, RSS, filter</Tags>
-      <Level>100</Level>
+      <Level>180</Level>
       <Suggested></Suggested>
       <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
-      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, YQL, RSS, example</Meta-KeyWords>
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, JayData YQL provider, YQL, RSS, YQL RSS, example</Meta-KeyWords>
       <Meta-Description>This example show you how you can querying the RSS content with JayData.</Meta-Description>
       <Includes>
         <group name="yql"></group>
@@ -767,25 +766,25 @@
         <Browser title="iOS" name="ios" minVersion="4"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
-      <!--<RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
-      </RelatedContents>-->
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_self" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_self" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_self" css="">Creating your first JavaScript Data Service</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>YQL advanced RSS reader (moved)</Title>
-      <Lead><![CDATA[Reading from RSS with Category where Title contains JayData]]></Lead>
+      <Title>YQL advanced RSS reader</Title>
+      <Lead><![CDATA[How to reading from RSS with Category where Title contains JayData? This example show you how you can querying the RSS content with JayData.]]></Lead>
       <Description>
-        <![CDATA[Reading from RSS with Category where Title contains JayData]]>
+        <![CDATA[How to reading from RSS with Category where Title contains JayData This example show you how you can querying the RSS content with JayData.]]>
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLRssAdvanced</Link>
       <Tags>YQL, RSS, filter</Tags>
-      <Level>100</Level>
+      <Level>180</Level>
       <Suggested></Suggested>
       <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
-      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, YQL, RSS, example</Meta-KeyWords>
+      <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, JayData YQL provider, YQL, RSS, example</Meta-KeyWords>
       <Meta-Description>JayData Example: how to reading from RSS with Category where Title contains JayData.</Meta-Description>
       <Includes>
         <group name="yql"></group>
@@ -804,17 +803,17 @@
         <Browser title="iOS" name="ios" minVersion="4"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
-      <!--<RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
-      </RelatedContents>-->
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_self" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_self" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_self" css="">Creating your first JavaScript Data Service</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
       <Title>YQL feed reader (moved)</Title>
-      <Lead><![CDATA[Read all contents from a given feed.]]></Lead>
+      <Lead><![CDATA[How can you use JayData to reading feed data? With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and feeds, pure HTML content, almost everything is queryable through the YQL provider.]]></Lead>
       <Description>
-        <![CDATA[Read all contents from a given feed]]>
+        <![CDATA[How can you use JayData to reading feed data? With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and feeds, pure HTML content, almost everything is queryable through the YQL provider.]]>
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLFeed</Link>
@@ -823,7 +822,7 @@
       <Suggested></Suggested>
       <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
       <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, RSS, YQL, Yahoo Query Language, example</Meta-KeyWords>
-      <Meta-Description>How can you use JayData to reading feed data. With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and feeds, pure HTML content, almost everything is queryable through the YQL provider.</Meta-Description>
+      <Meta-Description>How can you use JayData to reading feed data. With the Yahoo Query Language (YQL) you can query the content of the world wide web.</Meta-Description>
       <Includes>
         <group name="yql"></group>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
@@ -841,23 +840,23 @@
         <Browser title="iOS" name="ios" minVersion="4"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
-      <!--<RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/introducing-jaydata-and-kendo-ui-kendo-ui-blog" target="_self" css="">Introducing JayData And Kendo UI</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaydata-kendo-ui-awesomeness" target="_self" css="">JayData+Kendo UI =Awesomeness</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/kendo-ui" target="_self" css="">JayData blogs about Kendo UI</ContentLink>
-      </RelatedContents>-->
+      <RelatedContents>
+       <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_self" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-create-a-synchronized-online-offline-data-application-with-javascript-and-jaydata" target="_self" css="">How to create a synchronized Online/Offline data application with EntityFramework, JavaScript and JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_self" css="">Creating your first JavaScript Data Service</ContentLink>
+      </RelatedContents>
     </Example>
     <!--Facebook examples-->
     <Example>
-      <Title>Facebook provider example (moved)</Title>
+      <Title>Facebook provider example</Title>
       <Lead>
-        <![CDATA[How can I get the current user's public personal data through FQL api.]]>
+        <![CDATA[This example shows you how can you get the current user's public personal data through FQL api with JayData?]]>
       </Lead>
       <Description>
-        <![CDATA[How can I get the current user's public personal data through FQL API?]]>
+        <![CDATA[This example show you how can you get the current user's public personal data through FQL api with JayData?]]>
       </Description>
-      <Meta-KeyWords>JayData, HTML5, Javascript, FQL, Facebook, JayData providers</Meta-KeyWords>
-      <Meta-Description>This example show you: How can You get the current user's public personal data through FQL api.</Meta-Description>
+      <Meta-KeyWords>JayData, HTML5, Javascript, FQL, Facebook, JayData providers, facebook provider, FQL api</Meta-KeyWords>
+      <Meta-Description>This example shows you: How can You get the current user's public personal data through FQL api.</Meta-Description>
       <Includes>
         <group name="facebook"></group>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
@@ -867,14 +866,14 @@
         <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
       </Includes>
       <SupportedBrowsers>
-        <Browser title="Internet Explorer" name="ie" minVersion="7" />
-        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Google Chrome" name="chrome" minVersion="12+"/>
         <Browser title="Opera" name="opera" minVersion="11"/>
-        <Browser title="Safari" name="safari" minVersion="5"/>
-        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
-        <Browser title="Windows Phone" name="wp" minVersion="8"/>
-        <Browser title="iOS" name="ios" minVersion="4"/>
-        <Browser title="Android" name="android" minVersion="2.2"/>
+        <Browser title="Firefox" name="firefox" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0+"/>
+        <Browser title="Windows Phone" name="wp" minVersion="7.5+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <Image>/Images/facebook.png</Image>
       <Link>Facebook/Provider</Link>
@@ -883,12 +882,12 @@
     <Example>
       <Title>Facebook friend list example (moved)</Title>
       <Lead>
-        <![CDATA[How can I get the current user's friends list through FQL api.]]>
+        <![CDATA[This example shows you how can you get the current user's friends list through FQL api with JayData.]]>
       </Lead>
       <Description>
-        <![CDATA[Facebook friends example.]]>
+        <![CDATA[This example shows you how can you get the current user's friends list through FQL api with JayData.]]>
       </Description>
-      <Meta-KeyWords>JayData, HTML5, Javascript, FQL, Facebook, JayData providers</Meta-KeyWords>
+      <Meta-KeyWords>JayData, HTML5, Javascript, FQL, Facebook, JayData providers, FQL api, Facebook provider</Meta-KeyWords>
       <Meta-Description>This example show you: How can You get the current user's friends list through FQL api.</Meta-Description>
       <Includes>
         <group name="facebook"></group>
@@ -899,14 +898,14 @@
         <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
       </Includes>
       <SupportedBrowsers>
-        <Browser title="Internet Explorer" name="ie" minVersion="7" />
-        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Google Chrome" name="chrome" minVersion="12+"/>
         <Browser title="Opera" name="opera" minVersion="11"/>
-        <Browser title="Safari" name="safari" minVersion="5"/>
-        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
-        <Browser title="Windows Phone" name="wp" minVersion="8"/>
-        <Browser title="iOS" name="ios" minVersion="4"/>
-        <Browser title="Android" name="android" minVersion="2.2"/>
+        <Browser title="Firefox" name="firefox" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0+"/>
+        <Browser title="Windows Phone" name="wp" minVersion="7.5+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <Image>/Images/facebook.png</Image>
       <Link>Facebook/Friends</Link>
