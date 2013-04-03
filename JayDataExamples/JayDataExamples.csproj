@@ -218,6 +218,14 @@
     <Content Include="Images\facebook.png" />
     <Content Include="Images\favicon_jaydata.png" />
     <Content Include="Images\formvalidation.png" />
+    <Content Include="Images\gallery\facebook_canvas\app_validation.png" />
+    <Content Include="Images\gallery\facebook_canvas\facebook_app_desktopr.png" />
+    <Content Include="Images\gallery\facebook_canvas\facebook_index.jpg" />
+    <Content Include="Images\gallery\flowershophtml5\flowershop_desktop_teljes.png" />
+    <Content Include="Images\gallery\flowershophtml5\flowershop_home_desktop.png" />
+    <Content Include="Images\gallery\flowershophtml5\flowershop_home_desktop_2.png" />
+    <Content Include="Images\gallery\flowershophtml5\flowershop_home_mobile.png" />
+    <Content Include="Images\gallery\flowershophtml5\flowershop_home_mobile_checkout.png" />
     <Content Include="Images\gallery\flowershopwin8\flowershop_index.png" />
     <Content Include="Images\gallery\flowershopwin8\flowershop_win8_app_cart_desktop.png" />
     <Content Include="Images\gallery\flowershopwin8\flowershop_win8_app_cart_minimalized.png" />
@@ -227,16 +235,9 @@
     <Content Include="Images\gallery\flowershopwin8\flowershop_win8_app_product_minimalized.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_board_tablet_2.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_dashboard_vagott.png" />
-    <Content Include="Images\gallery\planets\demokep.png" />
-    <Content Include="Images\gallery\planets\jayscrum_1.png" />
-    <Content Include="Images\gallery\planets\jayscrum_3.png" />
-    <Content Include="Images\gallery\planets\jayscrum_4.png" />
-    <Content Include="Images\gallery\planets\jayscrum_8.png" />
-    <Content Include="Images\gallery\planets\thumb\demokep.png" />
-    <Content Include="Images\gallery\planets\thumb\jayscrum_1.png" />
-    <Content Include="Images\gallery\planets\thumb\jayscrum_3.png" />
-    <Content Include="Images\gallery\planets\thumb\jayscrum_4.png" />
-    <Content Include="Images\gallery\planets\thumb\jayscrum_8.png" />
+    <Content Include="Images\gallery\planets\edit_planet_list.png" />
+    <Content Include="Images\gallery\planets\planets_animation.png" />
+    <Content Include="Images\gallery\planets\planets_list.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_1.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_3.png" />
     <Content Include="Images\gallery\jayscrum\jayscrum_4.png" />
@@ -245,6 +246,12 @@
     <Content Include="Images\gallery\jayscrum\thumb\jayscrum_3.png" />
     <Content Include="Images\gallery\jayscrum\thumb\jayscrum_4.png" />
     <Content Include="Images\gallery\jayscrum\thumb\jayscrum_8.png" />
+    <Content Include="Images\gallery\sliding_puzzle\silding_mobile_ingame.png" />
+    <Content Include="Images\gallery\sliding_puzzle\sliding_desktop__home.png" />
+    <Content Include="Images\gallery\sliding_puzzle\sliding_gamemode_mobile.png" />
+    <Content Include="Images\gallery\sliding_puzzle\sliding_hardmode_mobil.png" />
+    <Content Include="Images\gallery\sliding_puzzle\sliding_img_upload.png" />
+    <Content Include="Images\gallery\sliding_puzzle\sliding_index.png" />
     <Content Include="Images\glyphicons-halflings-white.png" />
     <Content Include="Images\glyphicons-halflings.png" />
     <Content Include="Images\glyphicons_009_magic.png" />
@@ -1344,8 +1351,13 @@
     <Content Include="Views\Home\Facebook\Provider.cshtml" />
     <Content Include="Views\Home\TypeScript\TypeScript.cshtml" />
     <Content Include="Views\Home\Facebook\Friends.cshtml" />
+    <Content Include="Views\Home\JayStorm\jayscrum.cshtml" />
+    <Content Include="Views\Home\JayStorm\facebook_canvas.cshtml" />
+    <Content Include="Views\Home\JayStorm\flowershopwin8.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Images\gallery\planets\thumb\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Sencha\Core\resources\sass\android.scss" />
     <Content Include="Sencha\Core\resources\sass\apple.scss" />

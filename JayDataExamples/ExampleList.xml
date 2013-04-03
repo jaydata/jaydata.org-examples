@@ -533,36 +533,13 @@
         <ContentLink link="http://jaydata.org/categories/knockout.js" target="_blank" css="">Blogs with Knockout tag</ContentLink>
         <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_blank" css="">JayStorm platform overview</ContentLink>
       </RelatedContents>
-    </Example>
-    <Example>
-      <Title>Flower Shop - Windows8 application (P)</Title>
-      <Lead><![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend.]]></Lead>
-      <Image>/Images/indexeddb.png</Image>
-      <Link>KendoUI/Kendo_ToDoList</Link>
-      <Tags> Windows8, OData, jQuery, JayStorm, Knockout</Tags>
-      <Level>300</Level>
-      <Includes>
-        <group name="gallery"></group>
-      </Includes>
-      <Suggested></Suggested>
-      <SupportedBrowsers>
-        <Browser title="Internet Explorer" name="ie" minVersion="10" />
-      </SupportedBrowsers>
-      <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application-with-visual-studio-2010U" target="_blank" css="">How to build a Simple OData-based AJAX application with Visual Studio 2010</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/windows-8-metro-app-tutorial-with-jaydata" target="_blank" css="">Windows 8 Metro app tutorial with JayData</ContentLink>
-        <ContentLink link="http://jaystack.com/blog/how-can-you-access-your-javascript-data-service-from-.net-with-c" target="_blank" css="">How can you access your JavaScript Data Service from .NET with C#</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">Blogs with OData tags</ContentLink>
-      </RelatedContents>
       <GalleryImages>
-        <Image url="/Images/gallery/jayscrum/demokep.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_index.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_desktop.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_minimalized.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_category_max.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_list_minimalized.png" alt=""></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_minimalized.png" alt=""></Image>
-      </GalleryImages>
+        <Image url="/Images/gallery/flowershophtml5/flowershop_desktop_teljes.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_desktop_teljes.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershophtml5/flowershop_home_desktop.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_desktop.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershophtml5/flowershop_home_desktop_2.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_desktop_2.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershophtml5/flowershop_home_mobile.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_mobile.png" alt=""></Image>
+        <Image url="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout" alt=""></Image>
+       </GalleryImages>
     </Example>
     <Example>
       <Title>Knockout data binding</Title>
@@ -709,7 +686,7 @@
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLGeo</Link>
-      <Tags>YQL, GEO</Tags>
+      <Tags>YQL, GEO, query</Tags>
       <Level>170</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, YQL, YQL geo data, example</Meta-KeyWords>
@@ -745,7 +722,7 @@
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLRss</Link>
-      <Tags>YQL, RSS, filter</Tags>
+      <Tags>YQL, filter, query, RSS</Tags>
       <Level>180</Level>
       <Suggested></Suggested>
       <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
@@ -782,7 +759,7 @@
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLRssAdvanced</Link>
-      <Tags>YQL, RSS, filter</Tags>
+      <Tags>YQL, query, filter, RSS</Tags>
       <Level>180</Level>
       <Suggested></Suggested>
       <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
@@ -819,7 +796,7 @@
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLFeed</Link>
-      <Tags>YQL</Tags>
+      <Tags>YQL, query, RSS</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
@@ -857,8 +834,13 @@
       <Description>
         <![CDATA[This example show you how can you get the current user's public personal data through FQL api with JayData?]]>
       </Description>
+      <Image>/Images/facebook.png</Image>
+      <Link>Facebook/Provider</Link>
+      <Tags>facebook, query</Tags>
+      <Level>120</Level>
+      <Suggested></Suggested>
       <Meta-KeyWords>JayData, HTML5, Javascript, FQL, Facebook, JayData providers, facebook provider, FQL api</Meta-KeyWords>
-      <Meta-Description>This example shows you: How can You get the current user's public personal data through FQL api.</Meta-Description>
+      <Meta-Description>This example shows you: How can you get the current user's public personal data through FQL api.</Meta-Description>
       <Includes>
         <group name="facebook"></group>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
@@ -877,10 +859,12 @@
         <Browser title="iOS" name="ios" minVersion="4+"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
-      <Image>/Images/facebook.png</Image>
-      <Link>Facebook/Provider</Link>
-      <Tags>facebook</Tags>
-    </Example>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/building-a-facebook-canvas-application-using-jaystorm" target="_blank" css="">Building a Facebook Canvas application using JayStorm</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_blank" css="">Creating your first JavaScript Data Service</ContentLink>
+      </RelatedContents>
+          </Example>
     <Example>
       <Title>Facebook friend list example</Title>
       <Lead>
@@ -891,6 +875,10 @@
       </Description>
       <Meta-KeyWords>JayData, HTML5, Javascript, FQL, Facebook, JayData providers, FQL api, Facebook provider</Meta-KeyWords>
       <Meta-Description>This example show you: How can You get the current user's friends list through FQL api.</Meta-Description>
+      <Image>/Images/facebook.png</Image>
+      <Link>Facebook/Friends</Link>
+      <Tags>facebook, query</Tags>
+      <Level>120</Level>
       <Includes>
         <group name="facebook"></group>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
@@ -909,31 +897,34 @@
         <Browser title="iOS" name="ios" minVersion="4+"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
-      <Image>/Images/facebook.png</Image>
-      <Link>Facebook/Friends</Link>
-      <Tags>facebook</Tags>
-    </Example>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/creating-your-first-javascript-data-service" target="_blank" css="">Creating your first JavaScript Data Service</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/building-a-facebook-canvas-application-using-jaystorm" target="_blank" css="">Building a Facebook Canvas application using JayStorm</ContentLink>
+      </RelatedContents>
+        </Example>
 
+    <!--Planets, Netflix, Newsreader, Advanced rss, etc. examples-->
     <Example>
-      <Title>Planets D</Title>
+      <Title>Planets - HTML5 app</Title>
       <Lead>
         <![CDATA[Local database management through the WebSQL provider, in a fancy representative HTML5 app. It uses new features of CSS3 like keyframe-animations, transitions and transformations.]]>
       </Lead>
       <Description>
-        <![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]>
+        <![CDATA[In this sample application, the planets are just plain DIV elements, with tricky, but simple CSS3 styling on them. A circle can be easily made by using the border-radius property and some fancy looking colorized box-shadow style applied, just to be more than plain filled circles. <br/>The rotating animation of the planets is simple with the use of the native keyframe-animation CSS3 feature of modern browser engines like WebKit. <br/>Stacking the DIVs together, we can create a simple representation of complex solar systems.]]>
       </Description>
       <Image>/Images/planetsnagy.png</Image>
       <Link>General/Planets</Link>
-      <Tags>WebSQL, SQLite, CRUD</Tags>
+      <Tags>WebSQL, SQLite, CRUD, HTML5 localStorage</Tags>
+      <Download>/Planets/planet.js</Download>
+      <RunApplication>/Planets/index.html</RunApplication>
       <Includes>
         <group name="gallery"></group>
       </Includes>
       <GalleryImages>
-        <Image url="/Images/gallery/planets/demokep.png" thumbUrl="/Images/gallery/planets/thumb/demokep.png" alt=""></Image>
-        <Image url="/Images/gallery/planets/jayscrum_1.png" thumbUrl="/Images/gallery/planets/thumb/jayscrum_1.png" alt=""></Image>
-        <Image url="/Images/gallery/planets/jayscrum_3.png" thumbUrl="/Images/gallery/planets/thumb/jayscrum_3.png" alt=""></Image>
-        <Image url="/Images/gallery/planets/jayscrum_4.png" thumbUrl="/Images/gallery/planets/thumb/jayscrum_4.png" alt=""></Image>
-        <Image url="/Images/gallery/planets/jayscrum_8.png" thumbUrl="/Images/gallery/planets/thumb/jayscrum_8.png" alt=""></Image>
+        <Image url="/Images/gallery/planets/planets_animation.png" thumbUrl="/Images/gallery/planets/planets_animation.png" alt="Planets app"></Image>
+        <Image url="/Images/gallery/planets/planets_list.png" thumbUrl="/Images/gallery/planets/planets_list.png" alt="Planets list"></Image>
+        <Image url="/Images/gallery/edit_planet_list.png" thumbUrl="/Images/gallery/edit_planet_list.png" alt="Planets app - create new planet"></Image>
       </GalleryImages>
       <Level>300</Level>
       <Suggested></Suggested>
@@ -954,37 +945,35 @@
         <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDb and WebSQL/SQLite</ContentLink>
       </RelatedContents>
     </Example>
-
-
     <Example>
-      <Title>Netflix movies-Sencha Touch 2</Title>
-      <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]></Lead>
+      <Title>Netflix movies-Sencha Touch 2 (P) nincs áthozva</Title>
+      <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. Query the Netflix OData service using JayData and use Sencha Touch 2 for the UI.]]></Lead>
       <Description>
-        <![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.]]>
+        <![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI. Query the <a href="http://odata.netflix.com/v2/Catalog/">Netflix OData service </a> using JayData and use Sencha Touch 2 for the UI.]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>/Sencha/index.html</Link>
-      <Tags>SenchaTouch, OData</Tags>
+      <Tags>SenchaTouch, OData, list, query</Tags>
       <Level>200</Level>
       <Suggested></Suggested>
+      <Download>/Planets/planet.js</Download>
+      <RunApplication>/Sencha/app.html</RunApplication>
       <Meta-KeyWords>JayData, OData, Sencha Touch, Crossplatform, HTML5, Netflix, Javascript, HTML5, tutorial, example</Meta-KeyWords>
       <Meta-Description>How to create a movie app with JayData and Sencha Touch? See this simple example.</Meta-Description>
       <SupportedBrowsers>
-        <Browser title="Google Chrome" name="chrome"/>
-        <Browser title="Safari" name="safari" minVersion="5"/>
-        <Browser title="Blackberry" name="blackberry" minVersion="6+"/>
-        <Browser title="Windows Phone" name="wp" minVersion="8+"/>
+        <Browser title="Google Chrome" name="chrome" minVersion="12+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
         <Browser title="iOS" name="ios" minVersion="4+"/>
         <Browser title="Android" name="android" minVersion="2.3+"/>
       </SupportedBrowsers>
       <RelatedContents>
         <ContentLink link="http://jaydata.org/blog/netflix-sencha-touch-2-app-with-jaydata" target="_blank" css="">Netflix Sencha Touch 2 app with JayData</ContentLink>
         <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">JayData blogs about OData</ContentLink>
-        <ContentLink link="http://jaydata.org/categories/hybrid-application" target="_blank" css="">JayData blogs about Hybrid application developement</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/install-your-own-odata-server-with-nodejs-and-mongodb" target="_blank" css="">Install your own oData server with nodejs and MongoDB</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Newsreader CRUD</Title>
+      <Title>Newsreader CRUD (P)</Title>
       <Lead>
         <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way.]]>
       </Lead>
@@ -1015,16 +1004,39 @@
     </Example>
 
     <Example>
-      <Title>Advanced RSS using custom provider</Title>
+      <Title>Advanced RSS using custom provider (P) nincs áthozva</Title>
       <Lead>
         <![CDATA[Implementing a custom provider to process RSS feeds and extending the context to include custom RSS fields. XML to typed JSON conversion handled by the $data.ModelBinder class.]]>
       </Lead>
+      <Description>
+        <![CDATA[Implementing a custom provider to process RSS feeds and extending the context to include custom RSS fields. XML to typed JSON conversion handled by the $data.ModelBinder class.]]>
+      </Description>
       <Image>/Images/newsreadernagy.png</Image>
       <Link>RSS/rss.html</Link>
       <Tags>RSS</Tags>
+      <Level>200</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, RSS, Crossplatform,  Javascript, JayData providers, RSS provider, HTML5, tutorial, example</Meta-KeyWords>
+      <Meta-Description>How to create a custom JayData provider? See this simple example.</Meta-Description>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="9+" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Firefox" name="firefox" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0+"/>
+        <Browser title="Windows Phone" name="wp" minVersion="7,5+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.2+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/products/jaydata-provider-matrix" target="_blank" css="">JayData PRO providers and feature matrix </ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaydata-SQlite-pro-provider" target="_blank" css="">JayData SQLite Pro provider</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDb and WebSQL/SQLite providers</ContentLink>
+      </RelatedContents>
     </Example>
     <Example>
-      <Title>Form Validation D</Title>
+      <Title>Form Validation (P) nincs áthozva</Title>
       <Lead>
         <![CDATA[Our form validator extensions will allow you to apply the constraints defined on the model to validate forms through jQuery validators.]]>
       </Lead>
@@ -1041,25 +1053,30 @@
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="9+" />
         <Browser title="Google Chrome" name="chrome"/>
-        <Browser title="Opera" name="opera" minVersion="10+"/>
+        <Browser title="Firefox" name="firefox" minVersion="10+"/>
         <Browser title="Safari" name="safari" minVersion="4+"/>
         <Browser title="Blackberry" name="blackberry" minVersion="7.0+"/>
         <Browser title="Windows Phone" name="wp" minVersion="7,5+"/>
         <Browser title="iOS" name="ios" minVersion="4+"/>
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/the-beginners-guide-to-jaydata" target="_blank" css="">The Beginners Guide to JayData</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/the-itemstore-api-101" target="_blank" css="">The JayData ItemStore API 101</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDb and WebSQL/SQLite</ContentLink>
+      </RelatedContents>
       </Example>
     <Example>
-      <Title>TodoList - multiple providers D</Title>
+      <Title>TodoList - multiple providers</Title>
       <Lead>
         <![CDATA[Use the same code for multiple providers! See this simple todo-list example running with WebSQL, IndexedDB or HTML5 localStorage provider]]>
       </Lead>
       <Description>
-        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/>Supported browsers for IndexedDB: Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>General/ToDoList</Link>
-      <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD</Tags>
+      <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD, WebSQL pro, SQLite</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
@@ -1074,13 +1091,13 @@
         <Browser title="Android" name="android" minVersion="2.2+"/>
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/tutorials/jaydata-api-features" target="_blank" css="">JayData providers feature matrix</ContentLink>
+        <ContentLink link="http://jaystack.com/products/jaydata-provider-matrix" target="_blank" css="">JayData PRO providers and feature matrix </ContentLink>
         <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDB and WebSQL/SQLite</ContentLink>
         <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_blank" css="">Database transaction handling in JayData</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
-      <Title>OData TypeScript Example D</Title>
+      <Title>OData TypeScript Example</Title>
       <Lead>
         <![CDATA[TypeScript can be fully employed to use OData from JavaScript with an attitude. All you have to do is to include the JayData library in your application, and use JaySvcUtil.exe to create a TypeScript definition. Download it now and see for yourself!]]>
       </Lead>
@@ -1089,7 +1106,6 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Download>/Download/TypeScriptExample.zip</Download>
-      <RunApplication>http://index.hu</RunApplication>
       <Link>TypeScript/TypeScript</Link>
       <Tags>OData, TypeScript, jQuery</Tags>
       <Level>100</Level>
@@ -1102,23 +1118,32 @@
         <ContentLink link="http://jaydata.org/blog/jaysvcutil-will-automatically-expose-odata-service-metadata-to-jaydata-and-javascript" target="_blank" css="">JaySvcUtil exposes your OData service metadata to JayData and JavaScript</ContentLink>
       </RelatedContents>
     </Example>
-    <!-- JayStorm examples -->
+      <!-- JayStorm examples -->
     <Example>
-      <Title>JayScrum - agile task manager app</Title>
+      <Title>JayScrum - agile task manager app (P)</Title>
       <Lead>
-        <![CDATA[JayScrum is an agile Project Management tool, that enables you to make your Scrum-methodology-based daily routine enjoyable. Through this application you can manage Projects, Backlogs, Tasks, Bugs, and Impediments.]]>
+        <![CDATA[This application built on JayData on the JayStorm, it serves its role as a fine example for an application with provisioned database. Through this application you can manage Projects, Backlogs, Tasks, Bugs, and Impediments.]]>
       </Lead>
       <Description>
         <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/>Supported browsers for IndexedDB: Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>General/ToDoList</Link>
-      <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD</Tags>
+      <Link>JayStorm/jayscrum</Link>
+      <Tags>WebSQL, indexedDB, JayStorm, Knockout, OData, CRUD</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
-      <Download>https://github.com/jaydata/JayScrum</Download>
+      <Download>https://github.com/jaydata/JayScrum/tree/development</Download>
+      <RunApplication>http://scrum.jaystack.net</RunApplication>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
-      <Meta-Description>How to create a multiprovider JayData todolist! See this simple todolist example.</Meta-Description>
+      <Meta-Description>How to create a full cycle task manager app? See this amazing example.</Meta-Description>
+      <GalleryImages>
+        <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_1.png" alt="JayScrum task manager"></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_3.png" alt="JayScrum task manager"></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_4.png" alt="JayScrum task manager"></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_8.png" alt="JayScrum task manager"></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_board_tablet_2.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_board_tablet_2.png" alt="JayScrum task manager"></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_dashboard_vagott.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_dashboard_vagott.png" alt="JayScrum task manager"></Image>
+      </GalleryImages>
       <SupportedBrowsers>
         <Browser title="Google Chrome" name="chrome"/>
         <Browser title="Opera" name="opera" minVersion="10+"/>
@@ -1131,29 +1156,115 @@
       <RelatedContents>
         <ContentLink link="http://jayscrum.com" target="_self" css="">JayScrum.com offcial app website</ContentLink>
         <ContentLink link="http://jaystack.com/blog/how-to-achieve-your-financial-goals-with-jaystorm" target="_self" css="">How to achieve your financial goals with JayStorm?</ContentLink>
+        <ContentLink link="http://www.youtube.com/watch?v=NcGVJ0RGN4Q" target="_self" css="">JayScrum crossplatform demo - VIDEO</ContentLink>
         <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_self" css="">Database transaction handling in JayData</ContentLink>
       </RelatedContents>
     </Example>
     <Example>
-      <Title>OData TypeScript Example D</Title>
+      <Title>Flower Shop - Windows8 application (P)</Title>
+      <Lead><![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend.]]></Lead>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>JayStorm/flowershopwin8</Link>
+      <Tags> Windows8, OData, jQuery, JayStorm, Knockout</Tags>
+      <Level>300</Level>
+      <Download>/download/flowershop.apk</Download>
+      <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
+      <Meta-Description>How to create a full cycle Windows8 eshop application? See this amazing example.</Meta-Description>
+      <Includes>
+        <group name="gallery"></group>
+      </Includes>
+      <Suggested></Suggested>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="10" />
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application-with-visual-studio-2010U" target="_blank" css="">How to build a Simple OData-based AJAX application with Visual Studio 2010</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/windows-8-metro-app-tutorial-with-jaydata" target="_blank" css="">Windows 8 Metro app tutorial with JayData</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/how-can-you-access-your-javascript-data-service-from-.net-with-c" target="_blank" css="">How can you access your JavaScript Data Service from .NET with C#</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">Blogs with OData tags</ContentLink>
+      </RelatedContents>
+      <GalleryImages>
+        <Image url="/Images/gallery/jayscrum/demokep.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_index.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_desktop.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_minimalized.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_category_max.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_list_minimalized.png" alt=""></Image>
+        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_minimalized.png" alt=""></Image>
+      </GalleryImages>
+    </Example>
+    <Example>
+      <Title>Facebook canvas demo app</Title>
       <Lead>
-        <![CDATA[TypeScript can be fully employed to use OData from JavaScript with an attitude. All you have to do is to include the JayData library in your application, and use JaySvcUtil.exe to create a TypeScript definition. Download it now and see for yourself!]]>
+        <![CDATA[This example shows you how to create a full cycle Facebook application with cloudbased data backend.]]>
       </Lead>
       <Description>
-        <![CDATA[TypeScript can be fully employed to use OData from JavaScript with an attitude. All you have to do is to include the JayData library in your application, and use JaySvcUtil.exe to create a TypeScript definition]]>
+        <![CDATA[This example shows you how to create a full cycle Facebook application with cloudbased data backend. <br/>Our example application is already available on Facebook as an App that allows one to review his friend list, and assemble a favorites list of friends.]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
-      <Download>/Download/TypeScriptExample.zip</Download>
-      <Link>TypeScript/TypeScript</Link>
-      <Tags>OData, TypeScript, jQuery</Tags>
-      <Level>100</Level>
-      <Suggested></Suggested>
-      <Meta-KeyWords>JayData, OData, Cross-platform, create definition, Javascript, HTML5, tutorial, TypeScript, example</Meta-KeyWords>
-      <Meta-Description>How to user TypeScript with JayData ! See this simple example.</Meta-Description>
+      <Link>JayStorm/facebook_canvas</Link>
+      <Tags>facebook, JayStorm, Handlebars</Tags>
+      <Level>300</Level>
+      <Suggested>HOT</Suggested>
+      <Download>https://github.com/jaystorm/FacebookCanvasApp</Download>
+      <RunApplication>https://apps.facebook.com/jaystormdemoapp/ </RunApplication>
+      <Meta-KeyWords>JayData, JayData providers, facebook, FQL api, Crossplatform,  Javascript, HTML5, tutorial, Handlebars, JayStorm platform, JayStorm Paas, example</Meta-KeyWords>
+      <Meta-Description>How to create a facebook canvas application? See this simple example.</Meta-Description>
+      <GalleryImages>
+        <Image url="/Images/gallery/facebook_canvas/app_validation.png" thumbUrl="/Images/gallery/facebook_canvas/app_validation.png" alt="JayScrum task manager"></Image>
+        <Image url="/Images/gallery/facebook_canvas/facebook_app_desktopr.png" thumbUrl="/Images/gallery/facebook_canvas/facebook_app_desktopr.png"></Image>
+        <Image url="/Images/gallery/facebook_canvas/app_validation.png" thumbUrl="/Images/gallery/facebook_canvas/app_validation.png" alt="JayScrum task manager"></Image>
+      </GalleryImages>
+      <SupportedBrowsers>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="2.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.3+"/>
+      </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaystack.com/blog/typescript-meets-odata-with-the-help-of-jaydata-and-jaysvcutil" target="_self" css="">TypeScript meets OData with the help of JayData and JaySvcUtil</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application" target="_self" css="">How to build a Simple OData-based ajax application</ContentLink>
-        <ContentLink link="http://jaydata.org/blog/jaysvcutil-will-automatically-expose-odata-service-metadata-to-jaydata-and-javascript" target="_self" css="">JaySvcUtil exposes your OData service metadata to JayData and JavaScript</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/building-a-facebook-canvas-application-using-jaystorm" target="_self" css="">Building a Facebook Canvas application using JayStorm</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/step-by-step-how-to-and-why-access-your-jaystorm-data-with-excel" target="_self" css="">Step-by-step: How to (and why) access your JayStorm data with Excel?</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm Platform overview</ContentLink>
+      </RelatedContents>
+    </Example>
+    <Example>
+      <Title>Sliding puzzle - HTML5 game</Title>
+      <Lead>
+        <![CDATA[Sliding Puzzle is a tiny little HTML5 game powered by JayStorm in the cloud. Have fun playing the game and analyzing the source code.]]>
+      </Lead>
+      <Description>
+        <![CDATA[The game is so simple to implement in HTML5 and the features we want to make will be powered by the awesome JayStorm engine. All in the cloud. Have fun playing the game and analyzing the source code.]]>
+      </Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>JayStorm/sliding_puzzle</Link>
+      <Tags>JayStorm, Knockout, jQuery, OData</Tags>
+      <Level>300</Level>
+      <Suggested></Suggested>
+      <Download>https://github.com/jaystorm/slidingpuzzle</Download>
+      <RunApplication>http://jaystorm.github.com/slidingpuzzle/</RunApplication>
+      <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, JayStorm platform, JayStorm Paas, example</Meta-KeyWords>
+      <Meta-Description>How to create a sliding puzzle HTML5 application? See this awesome example.</Meta-Description>
+      <GalleryImages>
+        <Image url="/Images/gallery/sliding_puzzle/silding_mobile_ingame.png" thumbUrl="/Images/gallery/sliding_puzzle/silding_mobile_ingame.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/Images/gallery/sliding_puzzle/sliding_desktop__home.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_desktop__home.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/Images/gallery/sliding_puzzle/sliding_gamemode_mobile.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_gamemode_mobile.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/Images/gallery/sliding_puzzle/sliding_hardmode_mobil.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_hardmode_mobil.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/Images/gallery/sliding_puzzle/sliding_img_upload.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_img_upload.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/Images/gallery/sliding_puzzle/sliding_index.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_index.png" alt="Sliding puzzle HTML5 game"></Image>
+      </GalleryImages>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="10+"/>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Firefox" name="Firefox" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaystack.com/blog/sliding-puzzle-html5-game-powered-by-jaystorm" target="_self" css="">Sliding Puzzle HTML5 game powered by JayStorm</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm Platform overview</ContentLink>
+        <ContentLink link="http://jslq.spirit.de/" target="_self" css="">JavaScript Language Query (JSLQ) 101</ContentLink>
       </RelatedContents>
     </Example>
   </Examples>
