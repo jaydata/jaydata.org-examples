@@ -14,18 +14,11 @@
 }
 
 @section MainBody {
-
     <div class="container">
         <div class="marketing main-page">
             <div class="row-fluid">
                 <div class="span12" data-bind="foreach: $data.VisibleData">
                     <!--ko template: {name:'row'}-->
-                    <ul style="color:white;">
-                        @foreach (var example in Model.Examples)
-                        {
-                            <li><a style="color:rgb(240,240,240);" href="@example.Link">@example.Title</a></li>
-                        }
-                    </ul>
                     <!--/ko-->
                 </div>
             </div>
@@ -42,11 +35,12 @@
     <script type="text/html" id="cell">
         <div class="span4 well well-white" data-bind="attr:{class:Suggested()?'span4 well well-white '+Suggested():'span4 well well-white'}">
             <div class="qr-code fright">
-                <img data-bind="attr:{src:'https://chart.googleapis.com/chart?cht=qr&chl='+encodeURIComponent('http://nochtap.avangrade.com/'+Link())+'&chs=80x80'}" alt="QR Code" />
+                <img src="" data-bind="attr:{src:'https://chart.googleapis.com/chart?cht=qr&chl='+encodeURIComponent('http://nochtap.avangrade.com/'+Link())+'&chs=80x80'}" alt="QR Code" />
             </div>
             <a data-bind="attr:{href:Link}">
                 <h2 data-bind="text: Title"></h2>
             </a>
+            <small class="hover-info badge label-purple"><i class="icon-signal icon-white"></i><span data-bind="text: Level" title="Level of difficulty"></span></small>
             <p data-bind="html: Lead"></p>
             <ul class="tags">
                 <!--ko foreach:LimitedTagList-->
@@ -56,7 +50,6 @@
                 <li><a class="label label-purple" href="javascript:void(0)">...</a></li>
                 <!--/ko-->
             </ul>
-
         </div>
     </script>
 
