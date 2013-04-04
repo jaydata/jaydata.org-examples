@@ -250,6 +250,12 @@
     <Content Include="Images\gallery\jayscrum\thumb\jayscrum_3.png" />
     <Content Include="Images\gallery\jayscrum\thumb\jayscrum_4.png" />
     <Content Include="Images\gallery\jayscrum\thumb\jayscrum_8.png" />
+    <Content Include="Images\gallery\sencha\sencha_examp_1_full.jpg" />
+    <Content Include="Images\gallery\sencha\sencha_examp_1_thumb.jpg" />
+    <Content Include="Images\gallery\sencha\sencha_examp_2_full.jpg" />
+    <Content Include="Images\gallery\sencha\sencha_examp_2_thumb.jpg" />
+    <Content Include="Images\gallery\sencha\sencha_examp_3_full.jpg" />
+    <Content Include="Images\gallery\sencha\sencha_examp_3_thumb.jpg" />
     <Content Include="Images\gallery\sliding_puzzle\silding_mobile_ingame.png" />
     <Content Include="Images\gallery\sliding_puzzle\sliding_desktop__home.png" />
     <Content Include="Images\gallery\sliding_puzzle\sliding_gamemode_mobile.png" />

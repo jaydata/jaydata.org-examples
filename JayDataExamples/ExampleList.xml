@@ -946,8 +946,8 @@
         <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDb and WebSQL/SQLite</ContentLink>
       </RelatedContents>
     </Example>
-    <Example>
-      <Title>Netflix movies-Sencha Touch 2 (gallery kell hozzá)</Title>
+    <Example wide="true">
+      <Title>Netflix movies-Sencha Touch 2</Title>
       <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. Query the Netflix OData service using JayData and use Sencha Touch 2 for the UI.]]></Lead>
       <Description>
         <![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI. Query the <a href="http://odata.netflix.com/v2/Catalog/">Netflix OData service </a> using JayData and use Sencha Touch 2 for the UI.]]>
@@ -955,6 +955,14 @@
       <Image>/Images/indexeddb.png</Image>
       <Link>SenchaUI/Netflix</Link>
       <Tags>SenchaTouch, OData, list, query</Tags>
+      <Includes>
+        <group name="gallery"></group>
+      </Includes>
+      <GalleryImages>
+        <Image url="/Images/gallery/sencha/sencha_examp_1_full.jpg" thumbUrl="/Images/gallery/sencha/sencha_examp_1_thumb.jpg" alt="NetFlix movie list"></Image>
+        <Image url="/Images/gallery/sencha/sencha_examp_2_full.jpg" thumbUrl="/Images/gallery/sencha/sencha_examp_2_thumb.jpg" alt="NetFlix movie list - Mobile view"></Image>
+        <Image url="/Images/gallery/sencha/sencha_examp_3_full.jpg" thumbUrl="/Images/gallery/sencha/sencha_examp_3_thumb.jpg" alt="NetFlix movie detail"></Image>
+      </GalleryImages>
       <Level>200</Level>
       <Suggested></Suggested>
       <Download>/downloads/netflix.apk</Download>
