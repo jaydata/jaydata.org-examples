@@ -1007,7 +1007,7 @@
       </RelatedContents>
     </Example>
 
-    <Example>
+    <!--<Example>
       <Title>Advanced RSS using custom provider (bugos)</Title>
       <Lead>
         <![CDATA[Implementing a custom provider to process RSS feeds and extending the context to include custom RSS fields. XML to typed JSON conversion handled by the $data.ModelBinder class.]]>
@@ -1043,7 +1043,7 @@
         <ContentLink link="http://jaystack.com/blog/jaydata-SQlite-pro-provider" target="_blank" css="">JayData SQLite Pro provider</ContentLink>
         <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDb and WebSQL/SQLite providers</ContentLink>
       </RelatedContents>
-    </Example>
+    </Example>-->
     <Example>
       <Title>Form Validation</Title>
       <Lead>
@@ -1296,7 +1296,7 @@
       </RelatedContents>
     </Example>
     <!--JayDataPro-->
-    <Example>
+    <Example wide="true">
       <Title>TodoList - multiple pro-providers (new)</Title>
       <Lead>
         <![CDATA[Use the same code for multiple providers! See this simple todo-list example running with WebSQL, IndexedDB or HTML5 localStorage provider]]>
