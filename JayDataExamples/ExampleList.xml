@@ -947,18 +947,21 @@
       </RelatedContents>
     </Example>
     <Example>
-      <Title>Netflix movies-Sencha Touch 2 (P) nincs áthozva</Title>
+      <Title>Netflix movies-Sencha Touch 2 (gallery kell hozzá)</Title>
       <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. Query the Netflix OData service using JayData and use Sencha Touch 2 for the UI.]]></Lead>
       <Description>
         <![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI. Query the <a href="http://odata.netflix.com/v2/Catalog/">Netflix OData service </a> using JayData and use Sencha Touch 2 for the UI.]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>/Sencha/index.html</Link>
+      <Link>SenchaUI/Netflix</Link>
       <Tags>SenchaTouch, OData, list, query</Tags>
       <Level>200</Level>
       <Suggested></Suggested>
       <Download>/downloads/netflix.apk</Download>
       <RunApplication>/Sencha/app.html</RunApplication>
+      <Includes>
+        <group name="gallery"></group>
+      </Includes>
       <Meta-KeyWords>JayData, OData, Sencha Touch, Crossplatform, HTML5, Netflix, Javascript, HTML5, tutorial, example</Meta-KeyWords>
       <Meta-Description>How to create a movie app with JayData and Sencha Touch? See this simple example.</Meta-Description>
       <SupportedBrowsers>
@@ -1006,7 +1009,7 @@
     </Example>
 
     <Example>
-      <Title>Advanced RSS using custom provider (P) nincs áthozva</Title>
+      <Title>Advanced RSS using custom provider (bugos)</Title>
       <Lead>
         <![CDATA[Implementing a custom provider to process RSS feeds and extending the context to include custom RSS fields. XML to typed JSON conversion handled by the $data.ModelBinder class.]]>
       </Lead>
@@ -1014,12 +1017,17 @@
         <![CDATA[Implementing a custom provider to process RSS feeds and extending the context to include custom RSS fields. XML to typed JSON conversion handled by the $data.ModelBinder class.]]>
       </Description>
       <Image>/Images/newsreadernagy.png</Image>
-      <Link>RSS/rss.html</Link>
+      <Link>General/rss</Link>
       <Tags>RSS</Tags>
       <Level>200</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, RSS, Crossplatform,  Javascript, JayData providers, RSS provider, HTML5, tutorial, example</Meta-KeyWords>
       <Meta-Description>How to create a custom JayData provider? See this simple example.</Meta-Description>
+      <Includes>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/template.js"></script>
+        <script type="text/javascript" src="/Scripts/example/RSSProvider.js"></script>
+      </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="9+" />
         <Browser title="Google Chrome" name="chrome"/>

@@ -3,8 +3,101 @@
 
 @section CodeSource {
     <textarea class="code">
+<script>
+    //Extend the original RSS context with extended RSS Item element type
+    $data.EntityContext.extend('$data.RSS.RSSExtendedContext', {
+        Items: {
+            type: $data.EntitySet, elementType:
+                $data.RSS.RSSItem.extend('$data.RSS.RSSExtendedItem', {
+                    Category: { type: '$data.Array', elementType: 'string' }
+                })
+        }
+    });
+</script>
+    </textarea>
+
+    <textarea class="code">
+<script>
+    //Use the model binder to map RSS fields to typed JSON data
+    var context = new $data.RSS.RSSExtendedContext({
+        name: 'RSS', url: 'javascript.xml', binder: {
+            $type: $data.Array,
+            $selector: 'xml:rss channel item',
+            $item: {
+                $type: $data.RSS.RSSExtendedItem,
+                Title: { $selector: 'xml:title', $source: 'textContent' },
+                Description: { $selector: 'xml:description', $source: 'textContent' },
+                Link: { $selector: 'xml:link', $source: 'textContent' },
+                Guid: { $selector: 'xml:guid', $source: 'textContent' },
+                PubDate: { $selector: 'xml:pubDate', $source: 'textContent' },
+                Category: {
+                    $type: $data.Array,
+                    $selector: 'xml:category',
+                    $item: {
+                        $type: $data.String,
+                        $source: 'textContent'
+                    }
+                }
+            }
+        }
+    });
+</script>
     </textarea>
 }
 
 @section CodeRunning {
+    <div id="result"></div>
+    <script type="text/javascript">
+
+        $(function () {
+
+            $data.EntityContext.extend('$data.RSS.RSSExtendedContext', {
+                Items: {
+                    type: $data.EntitySet, elementType: $data.RSS.RSSItem.extend('$data.RSS.RSSExtendedItem', {
+                        Category: { type: '$data.Array', elementType: 'string' }
+                    })
+                }
+            });
+
+            var context = new $data.RSS.RSSExtendedContext({
+                name: 'RSS', url: '/RssExampleFeed.xml', binder: {
+                    $type: $data.Array,
+                    $selector: 'xml:rss channel item',
+                    $item: {
+                        $type: $data.RSS.RSSExtendedItem,
+                        Title: { $selector: 'xml:title', $source: 'textContent' },
+                        Description: { $selector: 'xml:description', $source: 'textContent' },
+                        Link: { $selector: 'xml:link', $source: 'textContent' },
+                        Guid: { $selector: 'xml:guid', $source: 'textContent' },
+                        PubDate: { $selector: 'xml:pubDate', $source: 'textContent' },
+                        Category: {
+                            $type: $data.Array,
+                            $selector: 'xml:category',
+                            $item: {
+                                $type: $data.String,
+                                $source: 'textContent'
+                            }
+                        }
+                    }
+                }
+            });
+            context.onReady(function (rss) {
+                rss.Items.tojQueryTemplate('#rssTemplate', '#result');
+            });
+
+        });
+
+    </script>
+    <script id="rssTemplate" type="text/x-jquery-tmpl">
+        <div class="rss-content-item">
+            <h2><a href="${Link}">${Title}</a></h2>
+            <span>Categories: <b>{{each Category}} {{if $index > 0}}, {{else}}{{/if}} ${$value}
+                        {{/each}}</b></span>
+            <br />
+            <span>pubDate: ${PubDate}</span>
+            <br />
+            <span>guid: ${Guid}</span>
+            <p>description: {{html Description}}</p>
+        </div>
+    </script>
 }

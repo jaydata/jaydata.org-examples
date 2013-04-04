@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Netflix movies app using JayData and Sencha Touch 2</title>
-<meta name="keywords" content="JayData, Sencha example, Sencha Touch, javascript library, html5, Netflix" />
-<meta name="description" content="Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.." />
-<meta name="author" content="JayData, community@jaydata.org">
+    <title>Netflix movies app using JayData and Sencha Touch 2</title>
+    <meta name="keywords" content="JayData, Sencha example, Sencha Touch, javascript library, html5, Netflix" />
+    <meta name="description" content="Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI.." />
+    <meta name="author" content="JayData, community@jaydata.org">
 
-
-<link href="../Styles/Bootstrap/bootstrap.css" rel="stylesheet">
-<link href="../Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet">
-<link href="../Styles/Bootstrap/docs.css" rel="stylesheet">
-
-<link href="../Styles/dd.css" rel="stylesheet">
+    <link href="../Styles/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../Styles/bootstrap/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="../Styles/bootstrap/docs.css" rel="stylesheet" />
+    <link href="../Styles/dd.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Navbar ================================================== -->
@@ -19,35 +17,35 @@
         <div class="navbar-inner">
             <div class="container">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </a>
                 <a class="brand" href="./index.html">Bootstrap</a>
                 <div class="nav-collapse">
-                <ul class="nav">
-                    <li class="active">
-                    <a href="/index.html">Examples home</a>
-                    </li>
-                    <li class="">
-                    <a href="http://www.jaydata.org">JayData.org home</a>
-                    </li>
-                    <li class="">
-                    <a href="http://www.jaydata.org/documentation">Documentation</a>
-                    </li>
-                    <li class="">
-                    <a href="http://www.jaydata.org/community">Community</a>
-                    </li>
-                    <li class="">
-                    <a href="http://www.jaydata.org/forum">Forum</a>
-                    </li>
-                    <li class="">
-                    <a href="http://www.jaydata.org/blog">Blog</a>
-                    </li>
-                    <li class="">
-                    <a href="http://www.jaydata.org/backlogs">Write a new userstory!</a>
-                    </li>
-                </ul>
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="/index.html">Examples home</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.jaydata.org">JayData.org home</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.jaydata.org/documentation">Documentation</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.jaydata.org/community">Community</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.jaydata.org/forum">Forum</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.jaydata.org/blog">Blog</a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.jaydata.org/backlogs">Write a new userstory!</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -70,12 +68,13 @@
 
                 <hr class="soften" />
 
-                    <h2>Query the <a class="tdunder" href="http://odata.netflix.com" title="http://odata.netflix.com" target="_blank">Netflix OData service</a> using JayData and use Sencha Touch 2 for the UI</h2>
+                <h2>Query the <a class="tdunder" href="http://odata.netflix.com" title="http://odata.netflix.com" target="_blank">Netflix OData service</a> using JayData and use Sencha Touch 2 for the UI</h2>
 
-                    <br />
+                <br />
 
-                <h3>Define a store<br /> with a JayData proxy</h3>
-                <pre class="well well-white marginb20 iblock" style='color:#000000;background:#ffffff;'>store<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+                <h3>Define a store<br />
+                    with a JayData proxy</h3>
+                <pre class="well well-white marginb20 iblock" style='color: #000000; background: #ffffff;'>store<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
     fields<span style='color:#800080; '>:</span> $data<span style='color:#808030; '>.</span>Entity<span style='color:#808030; '>.</span>buildExtFields<span style='color:#808030; '>(</span>Netflix<span style='color:#808030; '>.</span>Catalog<span style='color:#808030; '>.</span>v2<span style='color:#808030; '>.</span>Title<span style='color:#808030; '>)</span><span style='color:#808030; '>,</span>
     remoteFilter<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>,</span>
     remoteSort<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span><span style='color:#808030; '>,</span>
@@ -101,7 +100,8 @@
     <span style='color:#800080; '>}</span>
 <span style='color:#800080; '>}</span>
 </pre>
-                <h3>Use remoteFilter, remoteSort and pageSize<br /> to execute the query on the server side</h3>
+                <h3>Use remoteFilter, remoteSort and pageSize<br />
+                    to execute the query on the server side</h3>
             </div>
         </header>
 
@@ -109,7 +109,8 @@
 
         <section id="wrapper" class="container iblock">
             <div class="inner tacenter">
-                <a href="app.html" target="_blank"><button class="btn">Run application</button></a>
+                <a href="app.html" target="_blank">
+                    <button class="btn">Run application</button></a>
             </div>
         </section>
     </div>

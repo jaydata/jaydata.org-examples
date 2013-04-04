@@ -1,5 +1,5 @@
 ﻿@model JayDataExamples.App_Code.Example
-@if (Model.SupportedBrowsers.Count > 0)
+@if (Model.SupportedBrowsers != null && Model.SupportedBrowsers.Count > 0)
 {
     <div class="bg-dark-grid">
         <h3>Supported Browsers</h3>

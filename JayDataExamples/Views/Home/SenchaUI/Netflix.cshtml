@@ -1,0 +1,35 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea class="code">
+<script>
+    //Define a store with a JayData proxy
+    store: {
+            fields: $data.Entity.buildExtFields(Netflix.Catalog.v2.Title),
+            remoteFilter: true,
+            remoteSort: true,
+            pageSize: 5,
+            sorters: [{
+                property: 'ReleaseYear',
+                direction: 'DESC'
+            }, {
+                property: 'DateModified',
+                direction: 'DESC'
+            }, {
+                property: 'ShortName',
+                direction: 'ASC'
+            }],
+            grouper: {
+            groupFn: function(record) {
+                return record.get('ReleaseYear');
+            }
+            },
+        proxy: {
+                type: 'JayData',
+                queryable: Netflix.context.Titles
+        }
+    }
+</script>
+    </textarea>
+}

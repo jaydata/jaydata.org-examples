@@ -288,6 +288,7 @@
     <Content Include="Images\sprite_image.jpg" />
     <Content Include="Images\todolist.png" />
     <Content Include="Images\yqlnagy.png" />
+    <Content Include="RssExampleFeed.xml" />
     <Content Include="NewsReader\css\bootstrap-wysihtml5.css" />
     <Content Include="NewsReader\css\bootstrap.min.css" />
     <Content Include="NewsReader\css\styles.css" />
@@ -914,11 +915,8 @@
     <Content Include="Planets\planet.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Index.html" />
     <Content Include="Content\css\ui.jqgrid.css" />
-    <Content Include="RSS\javascript.xml" />
-    <Content Include="RSS\rss.html" />
-    <Content Include="RSS\RSSProvider.js" />
+    <Content Include="Scripts\example\RSSProvider.js" />
     <Content Include="Sencha\Core\resources\css-debug\android.css" />
     <Content Include="Sencha\Core\resources\css-debug\apple.css" />
     <Content Include="Sencha\Core\resources\css-debug\bb6.css" />
@@ -1373,6 +1371,8 @@
     <Content Include="Views\Home\Facebook\Friends.cshtml" />
     <Content Include="Views\Home\NewsReader.cshtml" />
     <Content Include="Views\Home\FormValidation.cshtml" />
+    <Content Include="Views\Home\Rss.cshtml" />
+    <Content Include="Views\Home\SenchaUI\Netflix.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />
