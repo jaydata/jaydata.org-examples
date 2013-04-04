@@ -570,6 +570,10 @@
     <Content Include="Plugins\prettyphoto\images\prettyPhoto\light_square\loader.gif" />
     <Content Include="Plugins\prettyphoto\images\prettyPhoto\light_square\sprite.png" />
     <Content Include="Plugins\prettyphoto\js\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\example\pro\IndexedDbProProvider.min.js" />
+    <Content Include="Scripts\example\pro\jaydata.min.js" />
+    <Content Include="Scripts\example\pro\SqLiteProProvider.min.js" />
+    <Content Include="Scripts\example\pro\todo-pro.js" />
     <Content Include="Scripts\example\kendo_mobile_simple.js" />
     <Content Include="Scripts\example\knokout_northwind.js" />
     <Content Include="Scripts\example\todo.js" />
@@ -1287,8 +1291,6 @@
     <Content Include="Styles\bootstrap\bootstrap.css" />
     <Content Include="Styles\bootstrap\docs.css" />
     <Content Include="Styles\dd.css" />
-    <Content Include="ToDoList2\index.html" />
-    <Content Include="ToDoList2\todo.js" />
     <Content Include="ToDoListMobile\bootstrap-responsive.css" />
     <Content Include="ToDoListMobile\bootstrap.css" />
     <Content Include="ToDoListMobile\bootstrap.min.css" />
@@ -1373,6 +1375,7 @@
     <Content Include="Views\Home\FormValidation.cshtml" />
     <Content Include="Views\Home\Rss.cshtml" />
     <Content Include="Views\Home\SenchaUI\Netflix.cshtml" />
+    <Content Include="Views\Home\JayDataPro\ToDoList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />
