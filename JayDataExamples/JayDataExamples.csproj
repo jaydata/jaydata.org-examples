@@ -896,6 +896,7 @@
     <Content Include="Styles\bootstrap\bootstrap-responsive.min.css" />
     <Content Include="Styles\bootstrap\bootstrap.min.css" />
     <Content Include="Styles\examples.css" />
+    <Content Include="Styles\flowershop\mixins.css" />
     <Content Include="Styles\img\favicon_jaydata.png" />
     <Content Include="Styles\img\iphone.png" />
     <Content Include="Styles\img\knokout_flowershop\ajax-loader.gif" />
@@ -1280,7 +1281,6 @@
     <Content Include="Sencha\Core\resources\themes\images\default\togglethumbmask.png" />
     <Content Include="Sencha\Core\resources\themes\images\default\trackmask_outer.png" />
     <Content Include="Sencha\app.html" />
-    <Content Include="Sencha\index.html" />
     <Content Include="Sencha\Scripts\app.js" />
     <Content Include="Sencha\Scripts\netflix.js" />
     <Content Include="Styles\bootstrap\bootstrap-responsive.css" />
@@ -1426,6 +1426,14 @@
     <None Include="Styles\dd.less" />
     <Content Include="Styles\less\logos.less" />
     <Content Include="Styles\less\mixins.less" />
+    <Content Include="Styles\flowershop\less\css3.less" />
+    <Content Include="Styles\flowershop\less\flexslider.less" />
+    <Content Include="Styles\flowershop\less\functions.less" />
+    <Content Include="Styles\flowershop\less\layout.less" />
+    <Content Include="Styles\flowershop\less\mediaqueries.less" />
+    <Content Include="Styles\flowershop\less\style.less" />
+    <Content Include="Styles\flowershop\less\variables.less" />
+    <Content Include="Styles\flowershop\mixins.less" />
     <None Include="ToDoListMobile\JayDataTodolist-debug.apk" />
   </ItemGroup>
   <ItemGroup>

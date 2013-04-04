@@ -1238,7 +1238,7 @@
       </Includes>
       <GalleryImages>
         <Image url="/Images/gallery/facebook_canvas/app_validation.png" thumbUrl="/Images/gallery/facebook_canvas/app_validation.png" alt="JayScrum task manager"></Image>
-        <Image url="/Images/gallery/facebook_canvas/facebook_app_desktopr.png" thumbUrl="/Images/gallery/facebook_canvas/facebook_app_desktopr.png"></Image>
+        <Image url="/Images/gallery/facebook_canvas/facebook_app_desktopr.png" thumbUrl="/Images/gallery/facebook_canvas/facebook_app_desktopr.png" alt=""></Image>
         <Image url="/Images/gallery/facebook_canvas/app_validation.png" thumbUrl="/Images/gallery/facebook_canvas/app_validation.png" alt="JayScrum task manager"></Image>
       </GalleryImages>
       <SupportedBrowsers>
