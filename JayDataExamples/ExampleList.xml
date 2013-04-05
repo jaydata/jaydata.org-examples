@@ -1294,7 +1294,7 @@
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="10+"/>
         <Browser title="Google Chrome" name="chrome"/>
-        <Browser title="Firefox" name="Firefox" minVersion="10+"/>
+        <Browser title="Firefox" name="firefox" minVersion="10+"/>
         <Browser title="Safari" name="safari" minVersion="4+"/>
       </SupportedBrowsers>
       <RelatedContents>
