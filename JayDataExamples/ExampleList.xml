@@ -1377,5 +1377,41 @@
         <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_blank" css="">Database transaction handling in JayData</ContentLink>
       </RelatedContents>
     </Example>
+    <Example wide="true">
+      <Title>TodoList complex - multiple pro-providers (new)</Title>
+      <Lead>
+        <![CDATA[Todo list simple write transacton]]>
+      </Lead>
+      <Description>
+        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+      </Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>JayDataPro/ToDoList_complex</Link>
+      <Tags>WebSQL, indexedDB, HTML5, CRUD, WebSQL pro</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
+      <Meta-Description>How to create a multiprovider JayData todolist! See this simple todolist example.</Meta-Description>
+      <Includes>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script src="/Scripts/example/pro/IndexedDbProProvider.min.js"></script>
+        <script src="/Scripts/example/pro/SqLiteProProvider.min.js"></script>
+        <script src="/Scripts/example/pro/todo-complex.js"></script>
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="2.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="7,5+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.2+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaystack.com/products/jaydata-provider-matrix" target="_blank" css="">JayData PRO providers and feature matrix </ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDB and WebSQL/SQLite</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_blank" css="">Database transaction handling in JayData</ContentLink>
+      </RelatedContents>
+    </Example>
   </Examples>
 </MainPage>

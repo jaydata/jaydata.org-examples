@@ -576,6 +576,7 @@
     <Content Include="Plugins\prettyphoto\images\prettyPhoto\light_square\loader.gif" />
     <Content Include="Plugins\prettyphoto\images\prettyPhoto\light_square\sprite.png" />
     <Content Include="Plugins\prettyphoto\js\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\example\pro\todo-complex.js" />
     <Content Include="Scripts\example\pro\todo-indices.js" />
     <Content Include="Scripts\example\pro\IndexedDbProProvider.min.js" />
     <Content Include="Scripts\example\pro\jaydata.min.js" />
@@ -1384,6 +1385,7 @@
     <Content Include="Views\Home\SenchaUI\Netflix.cshtml" />
     <Content Include="Views\Home\JayDataPro\ToDoList_tran.cshtml" />
     <Content Include="Views\Home\JayDataPro\ToDoList_indices.cshtml" />
+    <Content Include="Views\Home\JayDataPro\ToDoList_complex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />
