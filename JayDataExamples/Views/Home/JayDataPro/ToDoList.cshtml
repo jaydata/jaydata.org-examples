@@ -2,90 +2,86 @@
 
 
 @section CodeSource {
-    <pre class="well well-white marginb20 iblock" style='color: #000000; background: #ffffff; text-align: left;'>    $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#btnAdd'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>click<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-        <span style='color:#0000E6; font-weight:bold; '>var</span> value <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#txtNew'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>val<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-        <span style='color:#0000E6; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>!</span>value<span style='color:#808030; '>)</span> <span style='color:#0000E6; font-weight:bold; '>return</span><span style='color:#800080; '>;</span>
-        <span style='color:#0000E6; font-weight:bold; '>var</span> now <span style='color:#808030; '>=</span> <span style='color:#0000E6; font-weight:bold; '>new</span> <span style='color:#797997; '>Date</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-        <span style='color:#0000E6; font-weight:bold; '>var</span> entity <span style='color:#808030; '>=</span> <span style='color:#0000E6; font-weight:bold; '>new</span> $todo<span style='color:#808030; '>.</span>Types<span style='color:#808030; '>.</span>ToDoEntry<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span> Value<span style='color:#800080; '>:</span> value<span style='color:#808030; '>,</span> CreatedAt<span style='color:#800080; '>:</span> now<span style='color:#808030; '>,</span> ModifiedAt<span style='color:#800080; '>:</span> now <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-        $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>TodoEntries<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span>entity<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-        $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>saveChanges<span style='color:#808030; '>(</span>updateView<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <textarea class="code">
+<script>
+    $('#btnAdd').click(function () {
+        var value = $('#txtNew').val();
+        if (!value) return;
+        var now = new Date();
+        //Begin a write transaction, so blocking other write operation
+        $todo.context.beginTransaction(true, function (tran) {
+            $todo.context.TodoEntries.filter("it.Value == this.txt", { txt: value }).toArray({
+                success: function (items, innerTran) {
+                    if (items.length == 0) {
+                        var entity = new $todo.Types.ToDoEntry({ Value: value, CreatedAt: now, ModifiedAt: now });
+                        $todo.context.TodoEntries.add(entity);
+                        $todo.context.saveChanges(tran)
+                            .then(function (cnt, saveTran) { updateView(); })
+                            .fail(function () { alert("Save error all!"); updateView(); });
+                    } else {
+                        alert("Item is in the DB");
+                        updateView();
+                    }
+                },
+                error: function () { console.log("General error"); }
+            },
+            tran);
+        });
+    });
 
-    $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#btnClear'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>click<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-        $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#todoList > div'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>each<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-            <span style='color:#0000E6; font-weight:bold; '>var</span> entity <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>data<span style='color:#808030; '>(</span><span style='color:#800000; '>'entity'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-            $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>TodoEntries<span style='color:#808030; '>.</span>remove<span style='color:#808030; '>(</span>entity<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-        <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-        $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>saveChanges<span style='color:#808030; '>(</span>updateView<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    $('#btnClear').click(function () {
+        $('#todoList > div').each(function () {
+            var entity = $(this).data('entity');
+            $todo.context.TodoEntries.remove(entity);
+        });
+        $todo.context.saveChanges(updateView);
+    });
 
-    $<span style='color:#808030; '>(</span><span style='color:#800000; '>'#todoList'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>on<span style='color:#808030; '>(</span><span style='color:#800000; '>'click'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>':button'</span><span style='color:#808030; '>,</span> <span style='color:#0000E6; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>e<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-        <span style='color:#0000E6; font-weight:bold; '>var</span> cmd <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>val<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-        <span style='color:#0000E6; font-weight:bold; '>var</span> entry <span style='color:#808030; '>=</span> $<span style='color:#808030; '>(</span><span style='color:#0000E6; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>parent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>data<span style='color:#808030; '>(</span><span style='color:#800000; '>'entity'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-        <span style='color:#0000E6; font-weight:bold; '>switch</span> <span style='color:#808030; '>(</span>cmd<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
-            <span style='color:#0000E6; font-weight:bold; '>case</span> <span style='color:#800000; '>'undone'</span><span style='color:#800080; '>:</span>
-            <span style='color:#0000E6; font-weight:bold; '>case</span> <span style='color:#800000; '>'done'</span><span style='color:#800080; '>:</span>
-                $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>TodoEntries<span style='color:#808030; '>.</span>attach<span style='color:#808030; '>(</span>entry<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-                entry<span style='color:#808030; '>.</span>Done <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>cmd <span style='color:#808030; '>==</span> <span style='color:#800000; '>'done'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-                <span style='color:#0000E6; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
-            <span style='color:#0000E6; font-weight:bold; '>case</span> <span style='color:#800000; '>'delete'</span><span style='color:#800080; '>:</span>
-                $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>TodoEntries<span style='color:#808030; '>.</span>remove<span style='color:#808030; '>(</span>entry<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-                <span style='color:#0000E6; font-weight:bold; '>break</span><span style='color:#800080; '>;</span>
-        <span style='color:#800080; '>}</span>
-        $todo<span style='color:#808030; '>.</span>context<span style='color:#808030; '>.</span>saveChanges<span style='color:#808030; '>(</span>updateView<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
-</pre>
+    $('#todoList').on('click', ':button', function (e) {
+        var cmd = $(this).val();
+        var entry = $(this).parent().data('entity');
+        switch (cmd) {
+            case 'undone':
+            case 'done':
+                $todo.context.TodoEntries.attach(entry);
+                entry.Done = (cmd == 'done');
+                break;
+            case 'delete':
+                $todo.context.TodoEntries.remove(entry);
+                break;
+        }
+        $todo.context.saveChanges(updateView);
+    });
+</script>
+    </textarea>
 }
 
 @section CodeRunning {
     <section id="wrapper" class="">
         <h2 class="margin10">Choose your prefered provider:</h2>
         <p id="providerSelection" class="download-info">
-            <button id="btnSql" value="sqLite" class="btn btn-medium">WebSQL Pro</button>
-            <button id="btnIdb" value="indexedDb" class="btn btn-medium">IndexedDB Pro</button>
+            <button id="btnSql" value="sqLite" class="btn btn-medium">WebSQL</button>
+            <button id="btnIdb" value="indexedDb" class="btn btn-medium">IndexedDB</button>
         </p>
-        <p id="error" class="download-info">
-            Save failed, error occured!
-        </p>
+
         <div>
-            <input id="txtId" type="number" style="width: 75px; vertical-align:top;" class="reset-m" />
-            <input id="txtNew" type="text" style="vertical-align:top;" class="reset-m" />
-            <div style="display:inline-block;width:180px;">
-                <button id="btnAdd" class="btn btn-small" style="width:65px; margin-bottom:7px;">Add</button>
-                <button id="btnCommit" class="btn btn-small" title="Commit" style="width:105px; margin-bottom:7px;">Commit</button>
-                <button id="btnClear" class="btn btn-small" style="width:65px;">Clear</button>
-                <button id="btnCommitTran" class="btn btn-small" title="Commit using transaction" style="width:105px;">CommitTran</button>
-            </div>
+            <input id="txtNew" type="text" class="reset-m" />
+            <button id="btnAdd" class="btn btn-small">Add</button>
+            <button id="btnClear" class="btn btn-small">Clear</button>
         </div>
         <div id="todoList"></div>
     </section>
     <script id="todoEntryTemplate" type="text/html">
         <div class="todoEntry row clear margin10">
-            <div class="fleft iblock marginr10" style="width: 75px;">
-                <label>${Id}</label></div>
-            <div class="fleft iblock marginr10" style="min-width: 215px;">
+            <div class="fleft iblock marginr10" style="min-width: 350px;">
                 <label>${Value }</label>
             </div>
-            {{if _entityState == 20 || _entityState == 30}}
-            <div><span>Need commit to save data</span></div>
-            {{else}}
             {{if Done}}
             <button value="undone" class="btn btn-small btn-inverse tshadow">Undone</button>
             {{else}}
             <button value="done" class="btn btn-small btn-success tshadow">Done</button>
             {{/if}}
             <button value="delete" class="btn btn-small btn-danger tshadow">Delete</button>
-            {{/if}}
-        </div>
-    </script>
-    <script id="todoTempEntryTemplate" type="text/html">
-        <div class="todoEntry row clear margin10">
-            <div class="fleft iblock marginr10" style="width: 75px;">
-                <label>${Id}</label></div>
-            <div class="fleft iblock marginr10" style="min-width: 215px;">
-                <label>${Value }</label>
-            </div>
-            <div><span>Need commit to save data</span></div>
         </div>
     </script>
 }

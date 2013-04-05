@@ -1305,16 +1305,16 @@
     </Example>
     <!--JayDataPro-->
     <Example wide="true">
-      <Title>TodoList - multiple pro-providers (new)</Title>
+      <Title>TodoList with transaction - multiple pro-providers (new)</Title>
       <Lead>
-        <![CDATA[Use the same code for multiple providers! See this simple todo-list example running with WebSQL, IndexedDB or HTML5 localStorage provider]]>
+        <![CDATA[Todo list simple write transacton]]>
       </Lead>
       <Description>
         <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList</Link>
-      <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD, WebSQL pro, SQLite</Tags>
+      <Tags>WebSQL, indexedDB, HTML5, CRUD, WebSQL pro</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
