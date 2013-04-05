@@ -8,12 +8,12 @@ $(function () {
         Done: { type: 'bool' }
     });
     $data.EntityContext.extend('$todo.Types.ToDoContext', {
-        TodoEntries: { type: $data.EntitySet, elementType: $todo.Types.ToDoEntry }
+        TodoEntries: { type: $data.EntitySet, elementType: $todo.Types.ToDoEntry, indices: [{ name: 'idx_Value', unique: true, keys: ['Value'] }] }
     });
 
     $('#providerSelection > :button').click(function (e) {
         var provider = e.target.value;
-        var options = { name: provider, databaseName: 'todo_tran' }
+        var options = { name: provider, databaseName: 'todo_indices' }
         loadContext(options);
     });
 
@@ -21,24 +21,11 @@ $(function () {
         var value = $('#txtNew').val();
         if (!value) return;
         var now = new Date();
-        $todo.context.beginTransaction(true, function (tran) {
-            $todo.context.TodoEntries.filter("it.Value == this.txt", { txt: value }).toArray({
-                success: function (items, innerTran) {
-                    if (items.length == 0) {
-                        var entity = new $todo.Types.ToDoEntry({ Value: value, CreatedAt: now, ModifiedAt: now });
-                        $todo.context.TodoEntries.add(entity);
-                        $todo.context.saveChanges(tran)
-                            .then(function (cnt, saveTran) { updateView(); })
-                            .fail(function () { alert("Save error all!"); updateView(); });
-                    } else {
-                        alert("Item is in the DB");
-                        updateView();
-                    }
-                },
-                error: function () { console.log("General error"); }
-            },
-            tran);
-        });
+        var entity = new $todo.Types.ToDoEntry({ Value: value, CreatedAt: now, ModifiedAt: now });
+        $todo.context.TodoEntries.add(entity);
+        $todo.context.saveChanges()
+            .then(function (cnt) { updateView(); })
+            .fail(function () { $todo.context.stateManager.reset(); alert("Error! Todo value is not unique!"); updateView(); });
     });
 
     $('#btnClear').click(function () {

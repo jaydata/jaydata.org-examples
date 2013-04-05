@@ -1,0 +1,62 @@
+﻿@{ Layout = "~/Views/Shared/Layout_Default.cshtml"; }
+
+
+@section CodeSource {
+    <textarea class="code">
+<script>
+    $data.Entity.extend('$todo.Types.ToDoEntry', {
+        Id: { type: 'int', key: true, computed: true },
+        Value: { type: 'string' },
+        CreatedAt: { type: 'datetime' },
+        ModifiedAt: { type: 'datetime' },
+        Done: { type: 'bool' }
+    });
+
+    //Create context and define index on ToDoEntries EntitySet
+    $data.EntityContext.extend('$todo.Types.ToDoContext', {
+        TodoEntries: { type: $data.EntitySet, elementType: $todo.Types.ToDoEntry, indices: [{ name: 'idx_Value', unique: true, keys: ['Value'] }] }
+    });
+
+    $('#btnAdd').click(function () {
+        var value = $('#txtNew').val();
+        if (!value) return;
+        var now = new Date();
+        var entity = new $todo.Types.ToDoEntry({ Value: value, CreatedAt: now, ModifiedAt: now });
+        $todo.context.TodoEntries.add(entity);
+        $todo.context.saveChanges(tran)
+            .then(function (cnt, saveTran) { updateView(); })
+            .fail(function () { alert("Error! Todo value is not unique!"); updateView(); });
+    });
+</script>
+    </textarea>
+}
+
+@section CodeRunning {
+    <section id="wrapper" class="">
+        <h2 class="margin10">Choose your prefered provider:</h2>
+        <p id="providerSelection" class="download-info">
+            <button id="btnSql" value="sqLite" class="btn btn-medium">WebSQL</button>
+            <button id="btnIdb" value="indexedDb" class="btn btn-medium">IndexedDB</button>
+        </p>
+
+        <div>
+            <input id="txtNew" type="text" class="reset-m" />
+            <button id="btnAdd" class="btn btn-small">Add</button>
+            <button id="btnClear" class="btn btn-small">Clear</button>
+        </div>
+        <div id="todoList"></div>
+    </section>
+    <script id="todoEntryTemplate" type="text/html">
+        <div class="todoEntry row clear margin10">
+            <div class="fleft iblock marginr10" style="min-width: 350px;">
+                <label>${Value }</label>
+            </div>
+            {{if Done}}
+            <button value="undone" class="btn btn-small btn-inverse tshadow">Undone</button>
+            {{else}}
+            <button value="done" class="btn btn-small btn-success tshadow">Done</button>
+            {{/if}}
+            <button value="delete" class="btn btn-small btn-danger tshadow">Delete</button>
+        </div>
+    </script>
+}
