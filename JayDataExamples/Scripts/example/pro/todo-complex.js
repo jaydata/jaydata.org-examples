@@ -115,6 +115,12 @@ $(function () {
                     $('#todoEntryTemplate').tmpl(entity).data('entity', entity).appendTo('#todoList');
                 });
             });
+            $todo.context.CategoryEntries.toArray(function (items) {
+                $('#categoryList').empty();
+                items.forEach(function (entity) {
+                    $('#categoryEntryTemplate').tmpl(entity).data('entity', entity).appendTo('#categoryList');
+                });
+            });
         } else {
             $('#wrapper>div:not(#providerSelection)').hide();
         }

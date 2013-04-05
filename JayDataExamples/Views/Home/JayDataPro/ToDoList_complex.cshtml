@@ -56,7 +56,7 @@
                     } else {
                         var cat = items[0];
                         //begin write transaction only TodoEntries so don't block reading from CategoryEntries
-                        $todo.context.beginTransaction( ['TodoEntries'],true,  function (writeTran) {
+                        $todo.context.beginTransaction(['TodoEntries'], true, function (writeTran) {
                             var entity = new $todo.Types.ToDoEntry({ Value: value, CategoryId: cat.Id, CreatedAt: now, ModifiedAt: now });
                             $todo.context.TodoEntries.add(entity);
                             $todo.context.saveChanges({
@@ -84,12 +84,17 @@
         </p>
 
         <div>
-            text: <input id="txtNew" type="text" class="reset-m" />
-            cat: <input id="txtCat" type="text" class="reset-m" />
+            text:
+            <input id="txtNew" type="text" class="reset-m" />
+            cat:
+            <input id="txtCat" type="text" class="reset-m" />
             <button id="btnAdd" class="btn btn-small">Add</button>
             <button id="btnClear" class="btn btn-small">Clear</button>
         </div>
-        <div id="todoList"></div>
+        <div>
+            <div class="span6" id="todoList"></div>
+            <div class="span6" id="categoryList"></div>
+        </div>
     </section>
     <script id="todoEntryTemplate" type="text/html">
         <div class="todoEntry row clear margin10">
@@ -102,6 +107,13 @@
             <button value="done" class="btn btn-small btn-success tshadow">Done</button>
             {{/if}}
             <button value="delete" class="btn btn-small btn-danger tshadow">Delete</button>
+        </div>
+    </script>
+    <script id="categoryEntryTemplate" type="text/html">
+        <div class="todoEntry row clear margin10">
+            <div class="fleft iblock marginr10" style="min-width: 350px;">
+                <label>${Value }</label>
+            </div>
         </div>
     </script>
 }
