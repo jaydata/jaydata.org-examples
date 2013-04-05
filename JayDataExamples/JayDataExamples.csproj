@@ -579,7 +579,7 @@
     <Content Include="Scripts\example\pro\IndexedDbProProvider.min.js" />
     <Content Include="Scripts\example\pro\jaydata.min.js" />
     <Content Include="Scripts\example\pro\SqLiteProProvider.min.js" />
-    <Content Include="Scripts\example\pro\todo-pro.js" />
+    <Content Include="Scripts\example\pro\todo-tran.js" />
     <Content Include="Scripts\example\kendo_mobile_simple.js" />
     <Content Include="Scripts\example\knokout_northwind.js" />
     <Content Include="Scripts\example\todo.js" />
@@ -1381,7 +1381,7 @@
     <Content Include="Views\Home\FormValidation.cshtml" />
     <Content Include="Views\Home\Rss.cshtml" />
     <Content Include="Views\Home\SenchaUI\Netflix.cshtml" />
-    <Content Include="Views\Home\JayDataPro\ToDoList.cshtml" />
+    <Content Include="Views\Home\JayDataPro\ToDoList_tran.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />

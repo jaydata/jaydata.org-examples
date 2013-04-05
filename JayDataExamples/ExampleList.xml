@@ -1313,7 +1313,7 @@
         <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>JayDataPro/ToDoList</Link>
+      <Link>JayDataPro/ToDoList_tran</Link>
       <Tags>WebSQL, indexedDB, HTML5, CRUD, WebSQL pro</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
@@ -1323,7 +1323,7 @@
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
         <script src="/Scripts/example/pro/IndexedDbProProvider.min.js"></script>
         <script src="/Scripts/example/pro/SqLiteProProvider.min.js"></script>
-        <script src="/Scripts/example/pro/todo-pro.js"></script>
+        <script src="/Scripts/example/pro/todo-tran.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Google Chrome" name="chrome"/>
