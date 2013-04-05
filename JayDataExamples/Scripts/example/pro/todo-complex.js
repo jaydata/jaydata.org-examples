@@ -20,6 +20,10 @@ $(function () {
     $('#providerSelection > :button').click(function (e) {
         var provider = e.target.value;
         var options = { name: provider, databaseName: 'todo_complex' }
+
+        $("#providerSelection .btn").removeClass("btn-info");
+        $(e.target).addClass("btn-info");
+
         loadContext(options);
     });
 

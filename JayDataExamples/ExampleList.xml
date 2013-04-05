@@ -1305,13 +1305,13 @@
       </RelatedContents>
     </Example>
     <!--JayDataPro-->
-    <Example wide="true">
+    <Example wide="false">
       <Title>TodoList with transaction - multiple pro-providers (new)</Title>
       <Lead>
         <![CDATA[Todo list simple write transacton]]>
       </Lead>
       <Description>
-        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[TodoList with transaction example where you can create, edit or delete task items, but value of task item is unique. Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_tran</Link>
@@ -1341,7 +1341,7 @@
         <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_blank" css="">Database transaction handling in JayData</ContentLink>
       </RelatedContents>
     </Example>
-    <Example wide="true">
+    <Example wide="false">
       <Title>TodoList with indices - multiple pro-providers (new)</Title>
       <Lead>
         <![CDATA[Todo list simple write transacton]]>
