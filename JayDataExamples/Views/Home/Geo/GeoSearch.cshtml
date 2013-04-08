@@ -70,6 +70,7 @@ $data.initService(svc).then(function (mydatabase) {
             lmap.on('click', function (e) {
                 refresh(e.latlng, $('#r').val());
             });
+            refresh({ lat: 47.498333, lng: 19.040833 }, 7777);
         });
     </script>
 }
