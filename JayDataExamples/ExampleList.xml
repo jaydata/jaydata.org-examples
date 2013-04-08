@@ -111,7 +111,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView_Filter</Link>
-      <Tags>KendoUI, OData, query, JayStorm,sort, list</Tags>
+      <Tags>KendoUI, OData, query, JayStorm, sort, list</Tags>
       <Level>110</Level>
       <Suggested></Suggested>
       <JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>
@@ -148,7 +148,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_ReadOnly</Link>
-      <Tags>KendoUI, OData, filter, sort, Northwind, grid</Tags>
+      <Tags>KendoUI, OData, query, sort, Northwind, grid</Tags>
       <Level>130</Level>
       <Suggested></Suggested>
       <SupportedBrowsers>
@@ -329,7 +329,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Complex</Link>
-      <Tags>KendoUI, CRUD, filter</Tags>
+      <Tags>KendoUI, CRUD, filter, query</Tags>
       <Download>https://github.com/PeterAronZentai/kendomobiledemo</Download>
       <Level>300</Level>
       <Suggested></Suggested>
@@ -408,7 +408,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Prefilter</Link>
-      <Tags>KendoUI, OData, filter, projection</Tags>
+      <Tags>KendoUI, OData, filter, query, projection</Tags>
       <Level>300</Level>
       <Suggested></Suggested>
       <SupportedBrowsers>
@@ -443,7 +443,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/MasterDetails</Link>
-      <Tags>KendoUI, OData, filter, paging, sorting</Tags>
+      <Tags>KendoUI, OData, filter, query, paging, sorting</Tags>
       <Level>150</Level>
       <Suggested></Suggested>
       <SupportedBrowsers>
@@ -507,7 +507,7 @@
       <Meta-Description>How to use the JayData with Kendo UI? See this mobile app example.</Meta-Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/FlowerShop</Link>
-      <Tags>OData, JayStorm, Knockout, jQuery </Tags>
+      <Tags>OData, JayStorm, Knockout, jQuery, query</Tags>
       <Download>http://jaydata.codeplex.com/downloads/get/507804</Download>
       <RunApplication>/download/flowershop.apk</RunApplication>
       <Level>200</Level>
@@ -621,7 +621,7 @@
       <Meta-Description>How to use the JayData with Knockout.js? See this simple listview example.</Meta-Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/DynamicQueryFilterNorthwind</Link>
-      <Tags>Knockout, filter</Tags>
+      <Tags>Knockout, filter, query</Tags>
       <Level>160</Level>
       <Suggested></Suggested>
       <Includes>
@@ -688,7 +688,7 @@
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLGeo</Link>
-      <Tags>YQL, GEO, query</Tags>
+      <Tags>YQL, Geo, query</Tags>
       <Level>170</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, YQL, YQL geo data, example</Meta-KeyWords>
@@ -916,7 +916,7 @@
       </Description>
       <Image>/Images/planetsnagy.png</Image>
       <Link>General/Planets</Link>
-      <Tags>WebSQL, SQLite, CRUD, HTML5 localStorage</Tags>
+      <Tags>WebSQL, SQLite, CRUD, HTML5 localStorage, query</Tags>
       <Download>/Planets/planet.js</Download>
       <RunApplication>/Planets/index.html</RunApplication>
       <Includes>
@@ -994,7 +994,7 @@
       </Description>
       <Image>/Images/newsreadernagy.png</Image>
       <Link>General/NewsReader</Link>
-      <Tags>OData, jQuery, CRUD, filter</Tags>
+      <Tags>OData, jQuery, CRUD, filter, query</Tags>
       <Level>200</Level>
       <Suggested>HOT</Suggested>
       <Download>http://jaydata.org/examples/NewsReader/js/NewsReaderApp.js</Download>
@@ -1155,7 +1155,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayStorm/jayscrum</Link>
-      <Tags>WebSQL, indexedDB, JayStorm, Knockout, OData, CRUD</Tags>
+      <Tags>WebSQL, indexedDB, JayStorm, Knockout, OData, CRUD, query</Tags>
       <Level>300</Level>
       <Suggested></Suggested>
       <Download>https://github.com/jaydata/JayScrum/tree/development</Download>
@@ -1197,7 +1197,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayStorm/flowershopwin8</Link>
-      <Tags> Windows8, OData, jQuery, JayStorm, Knockout</Tags>
+      <Tags> Windows8, OData, jQuery, JayStorm, Knockout, query</Tags>
       <Level>300</Level>
       <Download>https://github.com/jaystorm/FlowerShop_Win8/archive/master.zip</Download>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
@@ -1235,7 +1235,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayStorm/facebook_canvas</Link>
-      <Tags>facebook, JayStorm, Handlebars</Tags>
+      <Tags>facebook, JayStorm, Handlebars, query</Tags>
       <Level>300</Level>
       <Suggested></Suggested>
       <Download>https://github.com/jaystorm/FacebookCanvasApp</Download>
@@ -1307,12 +1307,12 @@
     </Example>
     <!--JayDataPro-->
     <Example wide="false">
-      <Title>TodoList with transaction - multiple pro-providers (new)</Title>
+      <Title>TodoList with transaction - multiple pro-providers</Title>
       <Lead>
-        <![CDATA[Use JayData Pro providers if you need transactionality. See this todo-list example with basic transactiona handling.]]>
+        <![CDATA[Use JayData Pro providers if you need transactionality. See this todo-list example with basic transaction handling.]]>
       </Lead>
       <Description>
-        <![CDATA[TodoList with transaction example where you can create, edit or delete task items, but value of task item is unique. A validation and a save processes use the same transaction so that assured the atomic running.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[TodoList with transaction example where you can create, edit or delete task items, but the value of task item is unique. The validation and a save processes use the same transaction so this assures the atomic running.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_tran</Link>
@@ -1343,12 +1343,12 @@
       </RelatedContents>
     </Example>
     <Example wide="false">
-      <Title>TodoList with indices - multiple pro-providers (new)</Title>
+      <Title>TodoList with indices - multiple pro-providers</Title>
       <Lead>
         <![CDATA[Use JayData Pro providers if you need database indices. See this todo-list example with basic indices handling.]]>
       </Lead>
       <Description>
-        <![CDATA[TodoList with indices example where you can create, edit or delete task items, but value of task item is unique. The task items uniqueness are supported by the database index.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[TodoList with indices example where you can create, edit or delete task items, but the value of task item is unique. The task item's uniqueness is supported by the database index.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_indices</Link>
@@ -1379,12 +1379,12 @@
       </RelatedContents>
     </Example>
     <Example wide="true">
-      <Title>TodoList complex - multiple pro-providers (new)</Title>
+      <Title>TodoList complex - multiple pro-providers</Title>
       <Lead>
-        <![CDATA[Use JayData Pro providers if you create robust application. See this todo-list example which is present advanced indices and transaction handling.]]>
+        <![CDATA[Use JayData Pro providers if you create robust application. See this todo-list example which introduces advanced indices and transaction handling.]]>
       </Lead>
       <Description>
-        <![CDATA[ToDoList with categories example where you can create, edit or delete task items and those category. We use readonly/write transactions and database index to make a performance and robust app. In this usecase we save task items with category. Categories is unique in database, and each categories has at least one task. Two providers are supported: WebSQL and IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[ToDoList with categories example where you can create, edit or delete task items and there categories. We use readonly/write transactions and database index to make a performance and robust app. In this usecase we save task items with category. Categories are unique in the database, and each category has at least one task. Two providers are supported: WebSQL and IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_complex</Link>
@@ -1417,7 +1417,7 @@
     <Example wide="false">
       <Title>Geography example with Google Maps</Title>
       <Lead>
-        <![CDATA[Show geography points on Google Maps.]]>
+        <![CDATA[Show geography points on Google Maps. JayData supports GeoJSON compliant geography and geometry types.]]>
       </Lead>
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
@@ -1426,9 +1426,9 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Geo/GMaps</Link>
-      <Tags>HTML5, Geo</Tags>
+      <Tags>Geo, map</Tags>
       <Level>100</Level>
-      <Suggested></Suggested>
+      <Suggested>NEW</Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Google Maps! See this simple example.</Meta-Description>
       <Includes>
@@ -1453,7 +1453,7 @@
     <Example wide="false">
       <Title>Geography example with Leaflet.js</Title>
       <Lead>
-        <![CDATA[Show geography points using leaflet.js.]]>
+        <![CDATA[Show geography points using leaflet.js. JayData supports GeoJSON compliant geography and geometry types.]]>
       </Lead>
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
@@ -1462,9 +1462,9 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Geo/Leaflet</Link>
-      <Tags>HTML5, Geo</Tags>
+      <Tags>Geo, map. leaflet.js</Tags>
       <Level>100</Level>
-      <Suggested></Suggested>
+      <Suggested>NEW</Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, leaflet, leafletjs</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Leaflet.js! See this simple example.</Meta-Description>
       <Includes>
@@ -1489,7 +1489,7 @@
     <Example wide="false">
       <Title>Geography example with Bing</Title>
       <Lead>
-        <![CDATA[Show geography points using Bing.]]>
+        <![CDATA[Show geography points using Bing. JayData supports GeoJSON compliant geography and geometry types.]]>
       </Lead>
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
@@ -1498,9 +1498,9 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Geo/Bing</Link>
-      <Tags>HTML5, Geo</Tags>
+      <Tags>Geo, map, bing</Tags>
       <Level>100</Level>
-      <Suggested></Suggested>
+      <Suggested>NEW</Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, Bing</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Bing! See this simple example.</Meta-Description>
       <Includes>
