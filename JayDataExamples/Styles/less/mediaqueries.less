@@ -14,7 +14,7 @@
 }
 
 @media (min-width: 980px) and (max-width: 1199px){
-	@filter-height: 650px;
+	@filter-height: 730px;
 	.logo-filter {
 		top: -@filter-height;
 		height: @filter-height;
@@ -33,7 +33,12 @@
 		width: auto;
 
 		.logo-list-item {
-			margin: 0 -10px -15px;
+			margin: 0 -25px -15px;
+
+			-webkit-transform: scale(0.7);
+			-moz-transform: scale(0.7);
+			-o-transform: scale(0.7);
+			transform: scale(0.7);
 		}
 
 		.list-header h3 {
@@ -153,9 +158,13 @@
 
 		.list-header {
 			float: left; margin-right: 15px;
+			display: block;
 
 			h3 {
+				display: block;
 				margin: 0 0 5px;
+				text-align: left;
+				white-space: nowrap;
 			}
 		}
 	}
@@ -193,7 +202,7 @@
 		}
 	}
 
-	@filter-height: 350px; 
+	@filter-height: 450px; 
 	.logo-filter {
 		top: -@filter-height;
 		height: @filter-height;
@@ -203,6 +212,18 @@
 			-moz-transform: translate(0, @filter-height);
 			-o-transform: translate(0, @filter-height);
 			transform: translate(0, @filter-height);
+		}
+	}
+
+	.search-bar {
+		.tags {
+			li {
+				display: none;
+
+				&:first-child {
+					display: block;
+				}
+			}
 		}
 	}
 }
