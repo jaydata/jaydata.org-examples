@@ -151,68 +151,16 @@
     <Compile Include="Northwind.svc.cs">
       <DependentUpon>Northwind.svc</DependentUpon>
     </Compile>
-    <Compile Include="ToDoList\Models\Reminder.cs" />
-    <Compile Include="ToDoList\Models\ToDoEntry.cs" />
-    <Compile Include="ToDoList\Models\ToDoListContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ToDoList\Services\ToDoListService.svc.cs">
-      <DependentUpon>ToDoListService.svc</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\newsReader.sdf" />
     <Content Include="App_Data\Northwind.sdf" />
     <Content Include="App_Data\ToDoList.sdf" />
-    <Content Include="Content\css\errorhandler.css" />
-    <Content Include="Content\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
-    <Content Include="Content\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
-    <Content Include="Content\css\ui-lightness\jquery-ui-1.8.19.css" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
-    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
-    <Content Include="Content\themes\base\jquery.ui.all.css" />
-    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
-    <Content Include="Content\themes\base\jquery.ui.base.css" />
-    <Content Include="Content\themes\base\jquery.ui.button.css" />
-    <Content Include="Content\themes\base\jquery.ui.core.css" />
-    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
-    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
-    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
-    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
-    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
-    <Content Include="Content\themes\base\jquery.ui.slider.css" />
-    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
-    <Content Include="Content\themes\base\jquery.ui.theme.css" />
-    <Content Include="download.html" />
     <Content Include="Download\JayData-Northwind-Knockoutjs.zip" />
     <Content Include="ExampleList.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Facebook\Facebook_provider_example.html" />
-    <Content Include="Facebook\Facebook_provider_friends_example.html" />
     <Content Include="Fonts\Droid\droidsans-bold.svg" />
     <Content Include="Fonts\Droid\droidsans.svg" />
     <Content Include="Fonts\Enzo\enzoot-bold.svg" />
@@ -905,6 +853,7 @@
     <Content Include="Scripts\vendor\Northwind.js" />
     <Content Include="Scripts\vendor\sencha-touch-all-compat.js" />
     <Content Include="Scripts\vendor\_references.js" />
+    <Content Include="Sencha\index.html" />
     <Content Include="sitemap.xml" />
     <Content Include="Styles\bootstrap\bootstrap-responsive.min.css" />
     <Content Include="Styles\bootstrap\bootstrap.min.css" />
@@ -919,9 +868,6 @@
     <Content Include="Styles\img\shipping.png" />
     <Content Include="Styles\less\logos.css" />
     <Content Include="UrlRewrite.xml" />
-    <Content Include="YQL\YQLWithRails.html" />
-    <Content Include="NodeJs\logger.js" />
-    <Content Include="NodeJs\newsreader.js" />
     <Content Include="Planets\bootstrap.min.css" />
     <Content Include="Planets\context.js" />
     <Content Include="Planets\index.html" />
@@ -929,8 +875,6 @@
     <Content Include="Planets\planet.css" />
     <Content Include="Planets\planet.js" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Content\css\ui.jqgrid.css" />
     <Content Include="Scripts\example\RSSProvider.js" />
     <Content Include="Sencha\Core\resources\css-debug\android.css" />
     <Content Include="Sencha\Core\resources\css-debug\apple.css" />
@@ -1301,22 +1245,6 @@
     <Content Include="Styles\bootstrap\bootstrap.css" />
     <Content Include="Styles\bootstrap\docs.css" />
     <Content Include="Styles\dd.css" />
-    <Content Include="ToDoListMobile\bootstrap-responsive.css" />
-    <Content Include="ToDoListMobile\bootstrap.css" />
-    <Content Include="ToDoListMobile\bootstrap.min.css" />
-    <Content Include="ToDoListMobile\bootstrap.min.js" />
-    <Content Include="ToDoListMobile\dd.css" />
-    <Content Include="ToDoListMobile\docs.css" />
-    <Content Include="ToDoListMobile\index.html" />
-    <Content Include="ToDoListMobile\JayData.js" />
-    <Content Include="ToDoListMobile\jquery-1.7.2.min.js" />
-    <Content Include="ToDoListMobile\jquery.tmpl.min.js" />
-    <Content Include="ToDoListMobile\mixins.css" />
-    <Content Include="ToDoListMobile\Site.css" />
-    <Content Include="ToDoListMobile\todo.js" />
-    <Content Include="ToDoList\Services\ToDoListService.svc" />
-    <Content Include="ToDoList\ToDoList.html" />
-    <Content Include="ToDoList\ToDoList.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1388,6 +1316,10 @@
     <Content Include="Views\Home\JayDataPro\ToDoList_tran.cshtml" />
     <Content Include="Views\Home\JayDataPro\ToDoList_indices.cshtml" />
     <Content Include="Views\Home\JayDataPro\ToDoList_complex.cshtml" />
+    <Content Include="Views\Home\Geo\Bing.cshtml" />
+    <Content Include="Views\Home\Geo\GeoSearch.cshtml" />
+    <Content Include="Views\Home\Geo\GMaps.cshtml" />
+    <Content Include="Views\Home\Geo\Leaflet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />
@@ -1449,7 +1381,6 @@
     <Content Include="Styles\flowershop\less\style.less" />
     <Content Include="Styles\flowershop\less\variables.less" />
     <Content Include="Styles\flowershop\mixins.less" />
-    <None Include="ToDoListMobile\JayDataTodolist-debug.apk" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JayDataExamples.NorthwindDB\JayDataExamples.NorthwindDB.csproj">

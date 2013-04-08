@@ -26,17 +26,19 @@
                 var result = context.Html
                     .filter(function (h) { return h.url == 'http://www.bbc.com/' && h.xpath == '//div[@@id="promo2_carousel_items"]/dl' })
                             .forEach(function (result) {
+                                console.log(result);
+
                                 $('#result').append(
-                                    '<dd class="fleft margin10 ' + result.dd[1].a.class + '">' +
-                                        '<a target="_blank" href="' + result.dd[1].a.href + '">' +
-                                            '<img src="' + result.dd[1].a.img.src +
-                                                '" alt="' + result.dd[1].a.img.alt +
-                                                '" width="' + result.dd[1].a.img.width +
-                                                '" height="' + result.dd[1].a.img.height + '" />' +
+                                    '<dd class="fleft margin10 ' + result.dd.a.class + '">' +
+                                        '<a target="_blank" href="' + result.dd.a.href + '">' +
+                                            '<img src="' + result.dd.a.img.src +
+                                                '" alt="' + result.dd.a.img.alt +
+                                                '" width="' + result.dd.a.img.width +
+                                                '" height="' + result.dd.a.img.height + '" />' +
                                         '</a>' +
                                     '</dd>' +
-                                    '<dt class=""><h3><a target="_blank" href="' + result.dt.a.href + '">' + result.dt.a.content + '</a></h3></dt>' +
-                                    '<dd class="' + result.dd[0].class + '">' + result.dd[0].p + '</dd><br /><hr class="clear soften margin10" />'
+                                    '<dt class=""><h3><a target="_blank" href="' + result.dd.a.href + '">' + result.dd.a.content + '</a></h3></dt>' +
+                                    '<dd class="' + result.dd.class + '">' + result.dd.p + '</dd><br /><hr class="clear soften margin10" />'
                                     );
                             });
 

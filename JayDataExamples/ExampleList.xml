@@ -925,7 +925,7 @@
       <GalleryImages>
         <Image url="/Images/gallery/planets/planets_animation.png" thumbUrl="/Images/gallery/planets/planets_animation.png" alt="Planets app"></Image>
         <Image url="/Images/gallery/planets/planets_list.png" thumbUrl="/Images/gallery/planets/planets_list.png" alt="Planets list"></Image>
-        <Image url="/Images/gallery/edit_planet_list.png" thumbUrl="/Images/gallery/edit_planet_list.png" alt="Planets app - create new planet"></Image>
+        <Image url="/Images/gallery/planets/edit_planet_list.png" thumbUrl="/Images/gallery/planets/edit_planet_list.png" alt="Planets app - create new planet"></Image>
       </GalleryImages>
       <Level>300</Level>
       <Suggested></Suggested>

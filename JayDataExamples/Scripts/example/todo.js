@@ -1,5 +1,4 @@
-﻿/// <reference path="../Content/Scripts/JayData.js" />
-$(function () {
+﻿$(function () {
     $data.Entity.extend('$todo.Types.ToDoEntry', {
         Id: { type: 'int', key: true, computed: true },
         Value: { type: 'string' },

@@ -27,7 +27,7 @@
 }
 
 @section CodeRunning {
-    <table class="table span12 reset-m" style="margin: 0 10px 10px 0 !important;">
+    <table class="table span3 reset-m" style="margin: 0 10px 10px 0 !important;">
         <thead>
             <tr>
                 <th>Category name</th>
@@ -42,7 +42,7 @@
         </tbody>
     </table>
 
-    <table class="table span12 reset-m" data-bind="visible: $root.listedProducts().length > 0" style="margin: 0 10px 10px 0 !important;">
+    <table class="table span6 reset-m" data-bind="visible: $root.listedProducts().length > 0" style="margin: 0 10px 10px 0 !important;">
         <thead>
             <tr>
                 <th>Product Name</th>
@@ -64,39 +64,48 @@
     </table>
 
     <!-- ko if: $root.editProduct -->
-    <div class="table span4 reset-m noborder_">
+    <div class="table span3 reset-m noborder_">
         <div class="well-box">
             <form data-bind="submit: saveProduct">
                 <fieldset data-bind="with: $root.editProduct">
                     <legend class="modal-header">Edit Product</legend>
 
                     <div class="modal-body" style="max-height: 600px;">
-                        Product name:
+                        <div class="row-fluid">
+                            <div class="span12">
+                                Product name:
                             <br />
-                        <input class="span4" type="text" data-bind="value: Product_Name" />
-                        <br />
-                        English Name:
+                                <input type="text" data-bind="value: Product_Name" />
+                            </div>
+                            <div class="span12">
+                                English Name:
                             <br />
-                        <input class="span4" type="text" data-bind="value: English_Name" />
-                        <br />
-                        Category:
+                                <input type="text" data-bind="value: English_Name" />
+                            </div>
+                            <div class="span12">
+                                Category:
                             <br />
-                        <select class="span4" data-bind="options: $root.listedCategories,
+                                <select data-bind="options: $root.listedCategories,
                                                    optionsText: 'Category_Name',
                                                    optionsValue: 'Category_ID',
                                                    value: Category_ID">
-                        </select>
-                        <br />
-                        Unit Price:
+                                </select>
+                            </div>
+                            <div class="span12">
+                                Unit Price:
                             <br />
-                        <input class="span4" type="text" data-bind="value: Unit_Price" />
-                        <br />
-                        Units In Stock:
+                                <input type="text" data-bind="value: Unit_Price" />
+                            </div>
+                            <div class="span12">
+                                Units In Stock:
                             <br />
-                        <input class="span4" type="text" data-bind="value: Units_In_Stock" />
-                        <br />
-                        Discontinued:
-                        <input type="checkbox" data-bind="checked: Discontinued" />
+                                <input type="text" data-bind="value: Units_In_Stock" />
+                            </div>
+                            <div class="span12">
+                                Discontinued:
+                                <input type="checkbox" data-bind="checked: Discontinued" />
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <input type="submit" value="save" class="btn btn-success tshadow" />
