@@ -1307,12 +1307,12 @@
     </Example>
     <!--JayDataPro-->
     <Example wide="false">
-      <Title>TodoList with transaction - multiple pro-providers (new)</Title>
+      <Title>TodoList with transaction - multiple pro-providers</Title>
       <Lead>
-        <![CDATA[Use JayData Pro providers if you need transactionality. See this todo-list example with basic transactiona handling.]]>
+        <![CDATA[Use JayData Pro providers if you need transactionality. See this todo-list example with basic transaction handling.]]>
       </Lead>
       <Description>
-        <![CDATA[TodoList with transaction example where you can create, edit or delete task items, but value of task item is unique. A validation and a save processes use the same transaction so that assured the atomic running.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[TodoList with transaction example where you can create, edit or delete task items, but the value of task item is unique. The validation and a save processes use the same transaction so this assures the atomic running.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_tran</Link>
@@ -1343,12 +1343,12 @@
       </RelatedContents>
     </Example>
     <Example wide="false">
-      <Title>TodoList with indices - multiple pro-providers (new)</Title>
+      <Title>TodoList with indices - multiple pro-providers</Title>
       <Lead>
         <![CDATA[Use JayData Pro providers if you need database indices. See this todo-list example with basic indices handling.]]>
       </Lead>
       <Description>
-        <![CDATA[TodoList with indices example where you can create, edit or delete task items, but value of task item is unique. The task items uniqueness are supported by the database index.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[TodoList with indices example where you can create, edit or delete task items, but the value of task item is unique. The task item's uniqueness is supported by the database index.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_indices</Link>
@@ -1379,12 +1379,12 @@
       </RelatedContents>
     </Example>
     <Example wide="true">
-      <Title>TodoList complex - multiple pro-providers (new)</Title>
+      <Title>TodoList complex - multiple pro-providers</Title>
       <Lead>
-        <![CDATA[Use JayData Pro providers if you create robust application. See this todo-list example which is present advanced indices and transaction handling.]]>
+        <![CDATA[Use JayData Pro providers if you create robust application. See this todo-list example which introduces advanced indices and transaction handling.]]>
       </Lead>
       <Description>
-        <![CDATA[ToDoList with categories example where you can create, edit or delete task items and those category. We use readonly/write transactions and database index to make a performance and robust app. In this usecase we save task items with category. Categories is unique in database, and each categories has at least one task. Two providers are supported: WebSQL and IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[ToDoList with categories example where you can create, edit or delete task items and there categories. We use readonly/write transactions and database index to make a performance and robust app. In this usecase we save task items with category. Categories are unique in the database, and each category has at least one task. Two providers are supported: WebSQL and IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_complex</Link>
