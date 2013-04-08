@@ -111,7 +111,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView_Filter</Link>
-      <Tags>KendoUI, OData, query, JayStorm,sort, list</Tags>
+      <Tags>KendoUI, OData, query, JayStorm, sort, list</Tags>
       <Level>110</Level>
       <Suggested></Suggested>
       <JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>
@@ -148,7 +148,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_ReadOnly</Link>
-      <Tags>KendoUI, OData, filter, sort, Northwind, grid</Tags>
+      <Tags>KendoUI, OData, query, sort, Northwind, grid</Tags>
       <Level>130</Level>
       <Suggested></Suggested>
       <SupportedBrowsers>
@@ -329,7 +329,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Complex</Link>
-      <Tags>KendoUI, CRUD, filter</Tags>
+      <Tags>KendoUI, CRUD, filter, query</Tags>
       <Download>https://github.com/PeterAronZentai/kendomobiledemo</Download>
       <Level>300</Level>
       <Suggested></Suggested>
@@ -408,7 +408,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/Prefilter</Link>
-      <Tags>KendoUI, OData, filter, projection</Tags>
+      <Tags>KendoUI, OData, filter, query, projection</Tags>
       <Level>300</Level>
       <Suggested></Suggested>
       <SupportedBrowsers>
@@ -443,7 +443,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/MasterDetails</Link>
-      <Tags>KendoUI, OData, filter, paging, sorting</Tags>
+      <Tags>KendoUI, OData, filter, query, paging, sorting</Tags>
       <Level>150</Level>
       <Suggested></Suggested>
       <SupportedBrowsers>
@@ -507,7 +507,7 @@
       <Meta-Description>How to use the JayData with Kendo UI? See this mobile app example.</Meta-Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/FlowerShop</Link>
-      <Tags>OData, JayStorm, Knockout, jQuery </Tags>
+      <Tags>OData, JayStorm, Knockout, jQuery, query</Tags>
       <Download>http://jaydata.codeplex.com/downloads/get/507804</Download>
       <RunApplication>/download/flowershop.apk</RunApplication>
       <Level>200</Level>
@@ -621,7 +621,7 @@
       <Meta-Description>How to use the JayData with Knockout.js? See this simple listview example.</Meta-Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Knockout/DynamicQueryFilterNorthwind</Link>
-      <Tags>Knockout, filter</Tags>
+      <Tags>Knockout, filter, query</Tags>
       <Level>160</Level>
       <Suggested></Suggested>
       <Includes>
@@ -688,7 +688,7 @@
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLGeo</Link>
-      <Tags>YQL, GEO, query</Tags>
+      <Tags>YQL, Geo, query</Tags>
       <Level>170</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, YQL, YQL geo data, example</Meta-KeyWords>
@@ -916,7 +916,7 @@
       </Description>
       <Image>/Images/planetsnagy.png</Image>
       <Link>General/Planets</Link>
-      <Tags>WebSQL, SQLite, CRUD, HTML5 localStorage</Tags>
+      <Tags>WebSQL, SQLite, CRUD, HTML5 localStorage, query</Tags>
       <Download>/Planets/planet.js</Download>
       <RunApplication>/Planets/index.html</RunApplication>
       <Includes>
@@ -994,7 +994,7 @@
       </Description>
       <Image>/Images/newsreadernagy.png</Image>
       <Link>General/NewsReader</Link>
-      <Tags>OData, jQuery, CRUD, filter</Tags>
+      <Tags>OData, jQuery, CRUD, filter, query</Tags>
       <Level>200</Level>
       <Suggested>HOT</Suggested>
       <Download>http://jaydata.org/examples/NewsReader/js/NewsReaderApp.js</Download>
@@ -1155,7 +1155,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayStorm/jayscrum</Link>
-      <Tags>WebSQL, indexedDB, JayStorm, Knockout, OData, CRUD</Tags>
+      <Tags>WebSQL, indexedDB, JayStorm, Knockout, OData, CRUD, query</Tags>
       <Level>300</Level>
       <Suggested></Suggested>
       <Download>https://github.com/jaydata/JayScrum/tree/development</Download>
@@ -1197,7 +1197,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayStorm/flowershopwin8</Link>
-      <Tags> Windows8, OData, jQuery, JayStorm, Knockout</Tags>
+      <Tags> Windows8, OData, jQuery, JayStorm, Knockout, query</Tags>
       <Level>300</Level>
       <Download>https://github.com/jaystorm/FlowerShop_Win8/archive/master.zip</Download>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
@@ -1235,7 +1235,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayStorm/facebook_canvas</Link>
-      <Tags>facebook, JayStorm, Handlebars</Tags>
+      <Tags>facebook, JayStorm, Handlebars, query</Tags>
       <Level>300</Level>
       <Suggested></Suggested>
       <Download>https://github.com/jaystorm/FacebookCanvasApp</Download>
