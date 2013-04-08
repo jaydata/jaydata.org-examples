@@ -1532,7 +1532,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Geo/GeoSearch</Link>
-      <Tags>HTML5, Geo</Tags>
+      <Tags>Geo, query, map</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, geo search, GeoJSON</Meta-KeyWords>
