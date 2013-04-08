@@ -905,6 +905,7 @@
     <Content Include="Scripts\vendor\Northwind.js" />
     <Content Include="Scripts\vendor\sencha-touch-all-compat.js" />
     <Content Include="Scripts\vendor\_references.js" />
+    <Content Include="sitemap.xml" />
     <Content Include="Styles\bootstrap\bootstrap-responsive.min.css" />
     <Content Include="Styles\bootstrap\bootstrap.min.css" />
     <Content Include="Styles\examples.css" />
@@ -917,6 +918,7 @@
     <Content Include="Styles\img\logo_kendoui.png" />
     <Content Include="Styles\img\shipping.png" />
     <Content Include="Styles\less\logos.css" />
+    <Content Include="UrlRewrite.xml" />
     <Content Include="YQL\YQLWithRails.html" />
     <Content Include="NodeJs\logger.js" />
     <Content Include="NodeJs\newsreader.js" />

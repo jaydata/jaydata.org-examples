@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<urlset>
+
+  <add key="http://jaydata.org/examples/index.html" value=""/>
+  <add key="http://jaydata.org/examples/download.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/index.html" value=""/>
+  <add key="http://jaydata.org/examples/Sencha/index.html" value=""/>
+  <add key="http://jaydata.org/examples/FlowerShop/index.html" value=""/>
+  <add key="http://jaydata.org/examples/Knockoutjs/Northwind.html" value=""/>
+  <add key="http://jaydata.org/examples/Knockoutjs/DynamicQueryNorthwind.html" value=""/>
+  <add key="http://jaydata.org/examples/Knockoutjs/DynamicQueryFilterNorthwind.html" value=""/>
+  <add key="http://jaydata.org/examples/YQL/YQLhtml.html" value=""/>
+  <add key="http://jaydata.org/examples/YQL/YQLGeo.html" value=""/>
+  <add key="http://jaydata.org/examples/YQL/YQLRss.html" value=""/>
+  <add key="http://jaydata.org/examples/YQL/YQLRssAdvanced.html" value=""/>
+  <add key="http://jaydata.org/examples/YQL/YQLfeed.html" value=""/>
+  <add key="http://jaydata.org/examples/NewsReader/index.html" value=""/>
+  <add key="http://jaydata.org/examples/Planets/index.html" value=""/>
+  <add key="http://jaydata.org/examples/RSS/rss.html" value=""/>
+  <add key="http://jaydata.org/examples/Validation/FormValidation.html" value=""/>
+  <add key="http://jaydata.org/examples/Todolist2/index.html" value=""/>
+  <add key="http://jaydata.org/examples/Facebook/Facebook_provider_example.html" value=""/>
+  <add key="http://jaydata.org/examples/Facebook/Facebook_provider_friends_example.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/listview.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/listview-filter.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/grid-readonly.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/grid-readwrite.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/autocomplete.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/mvvm.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/mobile-simple.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/mobile-complex.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/chart.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/prefilter.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/masterdetail.html" value=""/>
+  <add key="http://jaydata.org/examples/KendoUI/cascadingcombobox.html" value=""/>
+  <add key="http://jaydata.org/examples/Sencha/app.html" value=""/>
+
+
+</urlset>
