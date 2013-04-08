@@ -41,7 +41,7 @@
     <script type="text/html" id="cell">
         <div class="span4 well well-white" data-bind="attr:{class:Suggested()?'span4 well well-white '+Suggested():'span4 well well-white'}">
             <div class="qr-code fright">
-                <img src="" data-bind="attr:{src:'https://chart.googleapis.com/chart?cht=qr&chl='+encodeURIComponent('http://nochtap.avangrade.com/'+Link())+'&chs=80x80'}" alt="QR Code" />
+                <img src="" data-bind="attr:{src:'https://chart.googleapis.com/chart?cht=qr&chl='+encodeURIComponent('http://nochtap.avangrade.com/'+Link())+'&chs=90x90'}" alt="QR Code" />
             </div>
             <a data-bind="attr:{href:Link}">
                 <h2 data-bind="text: Title"></h2>
@@ -49,7 +49,7 @@
             <small class="hover-info badge"><i class="icon-signal icon-white"></i><span data-bind="text: Level" title="Level of difficulty"></span></small>
             <p data-bind="html: Lead"></p>
             <ul class="tags">
-                <!--ko foreach:TagList-->
+                <!--ko foreach:LimitedTagList-->
                 <li><a class="label label-purple" href="javascript:void(0)" data-bind="text:$data, click:$root.addTags"><i class="icon-tag icon-white"></i></a></li>
                 <!--/ko-->
                 @*<!--ko if:LimitedTagList().length<TagList().length-->

@@ -1305,13 +1305,13 @@
       </RelatedContents>
     </Example>
     <!--JayDataPro-->
-    <Example wide="true">
+    <Example wide="false">
       <Title>TodoList with transaction - multiple pro-providers (new)</Title>
       <Lead>
-        <![CDATA[Todo list simple write transacton]]>
+        <![CDATA[Use JayData Pro providers if you need transactionality. See this todo-list example with basic transactiona handling.]]>
       </Lead>
       <Description>
-        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[TodoList with transaction example where you can create, edit or delete task items, but value of task item is unique. A validation and a save processes use the same transaction so that assured the atomic running.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_tran</Link>
@@ -1341,13 +1341,13 @@
         <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_blank" css="">Database transaction handling in JayData</ContentLink>
       </RelatedContents>
     </Example>
-    <Example wide="true">
+    <Example wide="false">
       <Title>TodoList with indices - multiple pro-providers (new)</Title>
       <Lead>
-        <![CDATA[Todo list simple write transacton]]>
+        <![CDATA[Use JayData Pro providers if you need database indices. See this todo-list example with basic indices handling.]]>
       </Lead>
       <Description>
-        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[TodoList with indices example where you can create, edit or delete task items, but value of task item is unique. The task items uniqueness are supported by the database index.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_indices</Link>
@@ -1380,15 +1380,15 @@
     <Example wide="true">
       <Title>TodoList complex - multiple pro-providers (new)</Title>
       <Lead>
-        <![CDATA[Todo list simple write transacton]]>
+        <![CDATA[Use JayData Pro providers if you create robust application. See this todo-list example which is present advanced indices and transaction handling.]]>
       </Lead>
       <Description>
-        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[ToDoList with categories example where you can create, edit or delete task items and those category. We use readonly/write transactions and database index to make a performance and robust app. In this usecase we save task items with category. Categories is unique in database, and each categories has at least one task. Two providers are supported: WebSQL and IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_complex</Link>
       <Tags>WebSQL, indexedDB, HTML5, CRUD, WebSQL pro</Tags>
-      <Level>100</Level>
+      <Level>200</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
       <Meta-Description>How to create a multiprovider JayData todolist! See this simple todolist example.</Meta-Description>

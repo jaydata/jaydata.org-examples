@@ -14,7 +14,11 @@
 
     //Create context and define index on ToDoEntries EntitySet
     $data.EntityContext.extend('$todo.Types.ToDoContext', {
-        TodoEntries: { type: $data.EntitySet, elementType: $todo.Types.ToDoEntry, indices: [{ name: 'idx_Value', unique: true, keys: ['Value'] }] }
+        TodoEntries: {
+            type: $data.EntitySet,
+            elementType: $todo.Types.ToDoEntry,
+            indices: [{ name: 'idx_Value', unique: true, keys: ['Value'] }]
+        }
     });
 
     $('#btnAdd').click(function () {
@@ -35,8 +39,8 @@
     <section id="wrapper" class="">
         <h2 class="margin10">Choose your prefered provider:</h2>
         <p id="providerSelection" class="download-info">
-            <button id="btnSql" value="sqLite" class="btn btn-medium">WebSQL</button>
-            <button id="btnIdb" value="indexedDb" class="btn btn-medium">IndexedDB</button>
+            <button id="btnSql" value="sqLite" class="btn btn-medium tshadow">WebSQL Pro</button>
+            <button id="btnIdb" value="indexedDb" class="btn btn-medium tshadow">IndexedDB Pro</button>
         </p>
 
         <div>

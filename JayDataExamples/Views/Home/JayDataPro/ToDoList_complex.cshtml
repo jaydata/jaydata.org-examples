@@ -79,21 +79,32 @@
     <section id="wrapper" class="">
         <h2 class="margin10">Choose your prefered provider:</h2>
         <p id="providerSelection" class="download-info">
-            <button id="btnSql" value="sqLite" class="btn btn-medium">WebSQL</button>
-            <button id="btnIdb" value="indexedDb" class="btn btn-medium">IndexedDB</button>
+            <button id="btnSql" value="sqLite" class="btn btn-medium tshadow">WebSQL Pro</button>
+            <button id="btnIdb" value="indexedDb" class="btn btn-medium tshadow">IndexedDB Pro</button>
         </p>
 
         <div>
-            text:
+            <label class="iblock required">Todo item: <sup style="color: red;">*</sup></label>
             <input id="txtNew" type="text" class="reset-m" />
-            cat:
+
+            <label class="iblock">Category: <sup style="color: red;">*</sup></label>
             <input id="txtCat" type="text" class="reset-m" />
+
             <button id="btnAdd" class="btn btn-small">Add</button>
             <button id="btnClear" class="btn btn-small">Clear</button>
         </div>
-        <div>
-            <div class="span6" id="todoList"></div>
-            <div class="span6" id="categoryList"></div>
+
+        <br />
+
+        <div class="margint10">
+            <div class="span6">
+                <h3>Todo items</h3>
+                <div id="todoList"></div>
+            </div>
+            <div class="span6">
+                <h3>Category list</h3>
+                <div id="categoryList"></div>
+            </div>
         </div>
     </section>
     <script id="todoEntryTemplate" type="text/html">
