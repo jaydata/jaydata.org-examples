@@ -111,7 +111,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView_Filter</Link>
-      <Tags>KendoUI, OData, filter, sort, list</Tags>
+      <Tags>KendoUI, OData, query, JayStorm,sort, list</Tags>
       <Level>110</Level>
       <Suggested></Suggested>
       <JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>
@@ -543,7 +543,7 @@
         <Image url="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout.png" alt=""></Image>
       </GalleryImages>
     </Example>
-    <Example>
+    <Example wide="true">
       <Title>Knockout data binding</Title>
       <Lead><![CDATA[Demonstrating easy data binding using JayData and Knockout.js together. Properties of the requested entities will be observable through a single toArray call if ko.observableArray is passed as parameter.]]></Lead>
       <Description>
@@ -757,12 +757,12 @@
       <Title>YQL advanced RSS reader</Title>
       <Lead><![CDATA[How to reading from RSS with Category where Title contains JayData? This example show you how you can querying the RSS content with JayData.]]></Lead>
       <Description>
-        <![CDATA[How to reading from RSS with Category where Title contains JayData This example show you how you can querying the RSS content with JayData.]]>
+        <![CDATA[How to reading from RSS with Category where Title contains JayData? This example show you how you can querying the RSS content with JayData.]]>
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLRssAdvanced</Link>
       <Tags>YQL, query, filter, RSS</Tags>
-      <Level>180</Level>
+      <Level>200</Level>
       <Suggested></Suggested>
       <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
       <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, JayData YQL provider, YQL, RSS, example</Meta-KeyWords>
@@ -996,7 +996,8 @@
       <Link>General/NewsReader</Link>
       <Tags>OData, jQuery, CRUD, filter</Tags>
       <Level>200</Level>
-      <Suggested></Suggested>
+      <Suggested>HOT</Suggested>
+      <Download>http://jaydata.org/examples/NewsReader/js/NewsReaderApp.js</Download>
       <Meta-KeyWords>JayData, jQuery, Crossplatform, HTML5 CRUD, OData, Javascript, HTML5, tutorial, example</Meta-KeyWords>
       <Meta-Description>How to create a Newsreader with JayData? See this simple CRUD example.</Meta-Description>
       <RunApplication>/NewsReader/index.html</RunApplication>
@@ -1101,7 +1102,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>General/ToDoList</Link>
-      <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD, WebSQL pro, SQLite</Tags>
+      <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD, SQLite</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
@@ -1155,7 +1156,7 @@
       <Image>/Images/indexeddb.png</Image>
       <Link>JayStorm/jayscrum</Link>
       <Tags>WebSQL, indexedDB, JayStorm, Knockout, OData, CRUD</Tags>
-      <Level>100</Level>
+      <Level>300</Level>
       <Suggested></Suggested>
       <Download>https://github.com/jaydata/JayScrum/tree/development</Download>
       <RunApplication>http://scrum.jaystack.net</RunApplication>
@@ -1315,7 +1316,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_tran</Link>
-      <Tags>WebSQL, indexedDB, HTML5, CRUD, WebSQL pro</Tags>
+      <Tags>indexedDB pro, WebSQL pro, Transactions, CRUD, WebSQL, indexedDB</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
@@ -1351,7 +1352,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_indices</Link>
-      <Tags>WebSQL, indexedDB, HTML5, CRUD, WebSQL pro</Tags>
+      <Tags>WebSQL pro, indexedDB pro, Indicies, WebSQL, indexedDB, CRUD</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
@@ -1387,7 +1388,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_complex</Link>
-      <Tags>WebSQL, indexedDB, HTML5, CRUD, WebSQL pro</Tags>
+      <Tags>WebSQL pro, indexedDB pro, CRUD, WebSQL, indexedDB</Tags>
       <Level>200</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
