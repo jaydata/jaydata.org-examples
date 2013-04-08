@@ -1417,7 +1417,7 @@
     <Example wide="false">
       <Title>Geography example with Google Maps</Title>
       <Lead>
-        <![CDATA[Show geography points on Google Maps.]]>
+        <![CDATA[Show geography points on Google Maps. JayData supports GeoJSON compliant geography and geometry types.]]>
       </Lead>
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
@@ -1426,9 +1426,9 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Geo/GMaps</Link>
-      <Tags>HTML5, Geo</Tags>
+      <Tags>Geo, map</Tags>
       <Level>100</Level>
-      <Suggested></Suggested>
+      <Suggested>NEW</Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Google Maps! See this simple example.</Meta-Description>
       <Includes>
@@ -1453,7 +1453,7 @@
     <Example wide="false">
       <Title>Geography example with Leaflet.js</Title>
       <Lead>
-        <![CDATA[Show geography points using leaflet.js.]]>
+        <![CDATA[Show geography points using leaflet.js. JayData supports GeoJSON compliant geography and geometry types.]]>
       </Lead>
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
@@ -1462,9 +1462,9 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Geo/Leaflet</Link>
-      <Tags>HTML5, Geo</Tags>
+      <Tags>Geo, map. leaflet.js</Tags>
       <Level>100</Level>
-      <Suggested></Suggested>
+      <Suggested>NEW</Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, leaflet, leafletjs</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Leaflet.js! See this simple example.</Meta-Description>
       <Includes>
@@ -1489,7 +1489,7 @@
     <Example wide="false">
       <Title>Geography example with Bing</Title>
       <Lead>
-        <![CDATA[Show geography points using Bing.]]>
+        <![CDATA[Show geography points using Bing. JayData supports GeoJSON compliant geography and geometry types.]]>
       </Lead>
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
@@ -1498,15 +1498,50 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>Geo/Bing</Link>
-      <Tags>HTML5, Geo</Tags>
+      <Tags>Geo, map, bing</Tags>
       <Level>100</Level>
-      <Suggested></Suggested>
+      <Suggested>NEW</Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, Bing</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Bing! See this simple example.</Meta-Description>
       <Includes>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
         <script charset="UTF-8" type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="10" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+      </RelatedContents>
+    </Example>
+    <Example wide="false">
+      <Title>Geographical search over oData</Title>
+      <Lead>
+        <![CDATA[Show geography points within a circle using leafletjs.]]>
+      </Lead>
+      <Description>
+        <![CDATA[Click onto the map. POIs within the radius set in the input box in meters are shown. Watch the network to see oData geo queries,
+         the distance is sent in radians over oData.]]>
+      </Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>Geo/GeoSearch</Link>
+      <Tags>HTML5, Geo</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, geo search, GeoJSON</Meta-KeyWords>
+      <Meta-Description>Use GeoJSON compliant oData service for geo search with leaflet.js! See this simple example.</Meta-Description>
+      <Includes>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="10" />
