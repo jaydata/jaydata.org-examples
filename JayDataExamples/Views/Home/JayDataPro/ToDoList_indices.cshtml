@@ -14,7 +14,11 @@
 
     //Create context and define index on ToDoEntries EntitySet
     $data.EntityContext.extend('$todo.Types.ToDoContext', {
-        TodoEntries: { type: $data.EntitySet, elementType: $todo.Types.ToDoEntry, indices: [{ name: 'idx_Value', unique: true, keys: ['Value'] }] }
+        TodoEntries: {
+            type: $data.EntitySet,
+            elementType: $todo.Types.ToDoEntry,
+            indices: [{ name: 'idx_Value', unique: true, keys: ['Value'] }]
+        }
     });
 
     $('#btnAdd').click(function () {
