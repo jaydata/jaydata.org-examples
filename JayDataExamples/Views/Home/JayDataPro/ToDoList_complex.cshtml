@@ -1,0 +1,130 @@
+﻿@{ Layout = "~/Views/Shared/Layout_Default.cshtml"; }
+
+
+@section CodeSource {
+    <textarea class="code">
+<script>
+    $data.Entity.extend('$todo.Types.ToDoEntry', {
+        Id: { type: 'int', key: true, computed: true },
+        Value: { type: 'string' },
+        CreatedAt: { type: 'datetime' },
+        ModifiedAt: { type: 'datetime' },
+        Done: { type: 'bool' },
+        CategoryId: { type: 'int' }
+    });
+
+    $data.Entity.extend('$todo.Types.CategoryEntry', {
+        Id: { type: 'int', key: true, computed: true },
+        Value: { type: 'string' }
+    });
+
+    //Create context and define index on ToDoEntries EntitySet
+    $data.EntityContext.extend('$todo.Types.ToDoContext', {
+        TodoEntries: { type: $data.EntitySet, elementType: $todo.Types.ToDoEntry, indices: [{ name: 'idx_Value', unique: true, keys: ['Value'] }] },
+        CategoryEntries: { type: $data.EntitySet, elementType: $todo.Types.CategoryEntry }
+    });
+
+    $('#btnAdd').click(function () {
+        var value = $('#txtNew').val();
+        var catText = $('#txtCat').val();
+        if (!value) return;
+        var now = new Date();
+        //begin readonly transaction for check category
+        $todo.context.beginTransaction(false, function (readTran) {
+            $todo.context.CategoryEntries.filter("it.Value == this.txt", { txt: catText }).toArray({
+                success: function (items) {
+                    if (items.length == 0) {
+                        //begin write transaction both EntitySet
+                        $todo.context.beginTransaction(true, function (globalWriteTran) {
+                            var category = new $todo.Types.CategoryEntry({ Value: catText });
+                            $todo.context.CategoryEntries.add(category);
+                            $todo.context.saveChanges({
+                                success: function (cnt, innerTran) {
+                                    console.log("New category id: ", category.Id);
+                                    var entity = new $todo.Types.ToDoEntry({ Value: value, CategoryId: category.Id, CreatedAt: now, ModifiedAt: now });
+                                    $todo.context.TodoEntries.add(entity);
+                                    //now save ToDo entity with the same transaction which we used to save category
+                                    $todo.context.saveChanges({
+                                        success: function (cnt) { updateView(); },
+                                        error: function () { $todo.context.stateManager.reset(); alert("ToDo save error! New category entry is rollback!") }
+                                    },
+                                    innerTran);
+                                },
+                                error: function () { $todo.context.stateManager.reset(); alert('Category save error!'); updateView(); }
+                            }, globalWriteTran);
+                        });
+                    } else {
+                        var cat = items[0];
+                        //begin write transaction only TodoEntries so don't block reading from CategoryEntries
+                        $todo.context.beginTransaction(['TodoEntries'], true, function (writeTran) {
+                            var entity = new $todo.Types.ToDoEntry({ Value: value, CategoryId: cat.Id, CreatedAt: now, ModifiedAt: now });
+                            $todo.context.TodoEntries.add(entity);
+                            $todo.context.saveChanges({
+                                success: function (cnt, saveTran) { updateView(); },
+                                error: function () { $todo.context.stateManager.reset(); alert("ToDo save error!"); updateView(); }
+                            }, writeTran);
+                        });
+
+                    }
+                },
+                error: function () { alert('General error!'); }
+            }, readTran);
+        });
+    });
+</script>
+    </textarea>
+}
+
+@section CodeRunning {
+    <section id="wrapper" class="">
+        <h2 class="margin10">Choose your prefered provider:</h2>
+        <p id="providerSelection" class="download-info">
+            <button id="btnSql" value="sqLite" class="btn btn-medium tshadow">WebSQL Pro</button>
+            <button id="btnIdb" value="indexedDb" class="btn btn-medium tshadow">IndexedDB Pro</button>
+        </p>
+
+        <div>
+            <label class="iblock required">Todo item: <sup style="color: red;">*</sup></label>
+            <input id="txtNew" type="text" class="reset-m" />
+
+            <label class="iblock">Category: <sup style="color: red;">*</sup></label>
+            <input id="txtCat" type="text" class="reset-m" />
+
+            <button id="btnAdd" class="btn btn-small">Add</button>
+            <button id="btnClear" class="btn btn-small">Clear</button>
+        </div>
+
+        <br />
+
+        <div class="margint10">
+            <div class="span6">
+                <h3>Todo items</h3>
+                <div id="todoList"></div>
+            </div>
+            <div class="span6">
+                <h3>Category list</h3>
+                <div id="categoryList"></div>
+            </div>
+        </div>
+    </section>
+    <script id="todoEntryTemplate" type="text/html">
+        <div class="todoEntry row clear margin10">
+            <div class="fleft iblock marginr10" style="min-width: 350px;">
+                <label>${Value }</label>
+            </div>
+            {{if Done}}
+            <button value="undone" class="btn btn-small btn-inverse tshadow">Undone</button>
+            {{else}}
+            <button value="done" class="btn btn-small btn-success tshadow">Done</button>
+            {{/if}}
+            <button value="delete" class="btn btn-small btn-danger tshadow">Delete</button>
+        </div>
+    </script>
+    <script id="categoryEntryTemplate" type="text/html">
+        <div class="todoEntry row clear margin10">
+            <div class="fleft iblock marginr10" style="min-width: 350px;">
+                <label>${Value }</label>
+            </div>
+        </div>
+    </script>
+}

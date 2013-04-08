@@ -13,7 +13,11 @@ $(function () {
 
     $('#providerSelection > :button').click(function (e) {
         var provider = e.target.value;
-        var options = { name: provider, databaseName: 'todo' }
+        var options = { name: provider, databaseName: 'todo_tran' }
+
+        $("#providerSelection .btn").removeClass("btn-info");
+        $(e.target).addClass("btn-info");
+
         loadContext(options);
     });
 

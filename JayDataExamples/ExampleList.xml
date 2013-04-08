@@ -111,7 +111,7 @@
       </Includes>
       <Image>/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView_Filter</Link>
-      <Tags>KendoUI, OData, filter, sort, list</Tags>
+      <Tags>KendoUI, OData, query, JayStorm,sort, list</Tags>
       <Level>110</Level>
       <Suggested></Suggested>
       <JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>
@@ -513,6 +513,7 @@
       <Level>200</Level>
       <Suggested></Suggested>
       <Includes>
+        <group name="gallery"></group>
         <link href="/Styles/flowershop/mixins.css" rel="stylesheet" />
         <group name="knokout"></group>
         <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
@@ -539,10 +540,10 @@
         <Image url="/Images/gallery/flowershophtml5/flowershop_home_desktop.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_desktop.png" alt=""></Image>
         <Image url="/Images/gallery/flowershophtml5/flowershop_home_desktop_2.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_desktop_2.png" alt=""></Image>
         <Image url="/Images/gallery/flowershophtml5/flowershop_home_mobile.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_mobile.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout" alt=""></Image>
+        <Image url="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout.png" alt=""></Image>
       </GalleryImages>
     </Example>
-    <Example>
+    <Example wide="true">
       <Title>Knockout data binding</Title>
       <Lead><![CDATA[Demonstrating easy data binding using JayData and Knockout.js together. Properties of the requested entities will be observable through a single toArray call if ko.observableArray is passed as parameter.]]></Lead>
       <Description>
@@ -610,7 +611,7 @@
         <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_blank" css="">JayStorm platform overview</ContentLink>
       </RelatedContents>
     </Example>
-    <Example>
+    <Example wide="true">
       <Title>Knockout Dynamic Queries filter</Title>
       <Lead><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Lead>
       <Description>
@@ -756,12 +757,12 @@
       <Title>YQL advanced RSS reader</Title>
       <Lead><![CDATA[How to reading from RSS with Category where Title contains JayData? This example show you how you can querying the RSS content with JayData.]]></Lead>
       <Description>
-        <![CDATA[How to reading from RSS with Category where Title contains JayData This example show you how you can querying the RSS content with JayData.]]>
+        <![CDATA[How to reading from RSS with Category where Title contains JayData? This example show you how you can querying the RSS content with JayData.]]>
       </Description>
       <Image>/Images/yqlnagy.png</Image>
       <Link>YQL/YQLRssAdvanced</Link>
       <Tags>YQL, query, filter, RSS</Tags>
-      <Level>180</Level>
+      <Level>200</Level>
       <Suggested></Suggested>
       <!--<JsFiddle>http://jsfiddle.net/JayData/F4Hda/</JsFiddle>-->
       <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, JayData YQL provider, YQL, RSS, example</Meta-KeyWords>
@@ -995,7 +996,8 @@
       <Link>General/NewsReader</Link>
       <Tags>OData, jQuery, CRUD, filter</Tags>
       <Level>200</Level>
-      <Suggested></Suggested>
+      <Suggested>HOT</Suggested>
+      <Download>http://jaydata.org/examples/NewsReader/js/NewsReaderApp.js</Download>
       <Meta-KeyWords>JayData, jQuery, Crossplatform, HTML5 CRUD, OData, Javascript, HTML5, tutorial, example</Meta-KeyWords>
       <Meta-Description>How to create a Newsreader with JayData? See this simple CRUD example.</Meta-Description>
       <RunApplication>/NewsReader/index.html</RunApplication>
@@ -1100,7 +1102,7 @@
       </Description>
       <Image>/Images/indexeddb.png</Image>
       <Link>General/ToDoList</Link>
-      <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD, WebSQL pro, SQLite</Tags>
+      <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD, SQLite</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
@@ -1154,7 +1156,7 @@
       <Image>/Images/indexeddb.png</Image>
       <Link>JayStorm/jayscrum</Link>
       <Tags>WebSQL, indexedDB, JayStorm, Knockout, OData, CRUD</Tags>
-      <Level>100</Level>
+      <Level>300</Level>
       <Suggested></Suggested>
       <Download>https://github.com/jaydata/JayScrum/tree/development</Download>
       <RunApplication>http://scrum.jaystack.net</RunApplication>
@@ -1294,7 +1296,7 @@
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="10+"/>
         <Browser title="Google Chrome" name="chrome"/>
-        <Browser title="Firefox" name="Firefox" minVersion="10+"/>
+        <Browser title="Firefox" name="firefox" minVersion="10+"/>
         <Browser title="Safari" name="safari" minVersion="4+"/>
       </SupportedBrowsers>
       <RelatedContents>
@@ -1304,17 +1306,17 @@
       </RelatedContents>
     </Example>
     <!--JayDataPro-->
-    <Example wide="true">
+    <Example wide="false">
       <Title>TodoList with transaction - multiple pro-providers (new)</Title>
       <Lead>
-        <![CDATA[Todo list simple write transacton]]>
+        <![CDATA[Use JayData Pro providers if you need transactionality. See this todo-list example with basic transactiona handling.]]>
       </Lead>
       <Description>
-        <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+        <![CDATA[TodoList with transaction example where you can create, edit or delete task items, but value of task item is unique. A validation and a save processes use the same transaction so that assured the atomic running.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
       <Image>/Images/indexeddb.png</Image>
-      <Link>JayDataPro/ToDoList</Link>
-      <Tags>WebSQL, indexedDB, HTML5, CRUD, WebSQL pro</Tags>
+      <Link>JayDataPro/ToDoList_tran</Link>
+      <Tags>indexedDB pro, WebSQL pro, Transactions, CRUD, WebSQL, indexedDB</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
@@ -1323,7 +1325,79 @@
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
         <script src="/Scripts/example/pro/IndexedDbProProvider.min.js"></script>
         <script src="/Scripts/example/pro/SqLiteProProvider.min.js"></script>
-        <script src="/Scripts/example/pro/todo-pro.js"></script>
+        <script src="/Scripts/example/pro/todo-tran.js"></script>
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="2.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="7,5+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.2+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaystack.com/products/jaydata-provider-matrix" target="_blank" css="">JayData PRO providers and feature matrix </ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDB and WebSQL/SQLite</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_blank" css="">Database transaction handling in JayData</ContentLink>
+      </RelatedContents>
+    </Example>
+    <Example wide="false">
+      <Title>TodoList with indices - multiple pro-providers (new)</Title>
+      <Lead>
+        <![CDATA[Use JayData Pro providers if you need database indices. See this todo-list example with basic indices handling.]]>
+      </Lead>
+      <Description>
+        <![CDATA[TodoList with indices example where you can create, edit or delete task items, but value of task item is unique. The task items uniqueness are supported by the database index.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+      </Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>JayDataPro/ToDoList_indices</Link>
+      <Tags>WebSQL pro, indexedDB pro, Indicies, WebSQL, indexedDB, CRUD</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
+      <Meta-Description>How to create a multiprovider JayData todolist! See this simple todolist example.</Meta-Description>
+      <Includes>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script src="/Scripts/example/pro/IndexedDbProProvider.min.js"></script>
+        <script src="/Scripts/example/pro/SqLiteProProvider.min.js"></script>
+        <script src="/Scripts/example/pro/todo-indices.js"></script>
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="2.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="7,5+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.2+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaystack.com/products/jaydata-provider-matrix" target="_blank" css="">JayData PRO providers and feature matrix </ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-indices" target="_blank" css="">Database indices with indexedDB and WebSQL/SQLite</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/database-transaction-handling-in-jaydata" target="_blank" css="">Database transaction handling in JayData</ContentLink>
+      </RelatedContents>
+    </Example>
+    <Example wide="true">
+      <Title>TodoList complex - multiple pro-providers (new)</Title>
+      <Lead>
+        <![CDATA[Use JayData Pro providers if you create robust application. See this todo-list example which is present advanced indices and transaction handling.]]>
+      </Lead>
+      <Description>
+        <![CDATA[ToDoList with categories example where you can create, edit or delete task items and those category. We use readonly/write transactions and database index to make a performance and robust app. In this usecase we save task items with category. Categories is unique in database, and each categories has at least one task. Two providers are supported: WebSQL and IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
+      </Description>
+      <Image>/Images/indexeddb.png</Image>
+      <Link>JayDataPro/ToDoList_complex</Link>
+      <Tags>WebSQL pro, indexedDB pro, CRUD, WebSQL, indexedDB</Tags>
+      <Level>200</Level>
+      <Suggested></Suggested>
+      <Meta-KeyWords>JayData, JayData providers, indexedDb, Crossplatform,  Javascript, HTML5, tutorial, WebSQL, HTML5 localStorage provider, example</Meta-KeyWords>
+      <Meta-Description>How to create a multiprovider JayData todolist! See this simple todolist example.</Meta-Description>
+      <Includes>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script src="/Scripts/example/pro/IndexedDbProProvider.min.js"></script>
+        <script src="/Scripts/example/pro/SqLiteProProvider.min.js"></script>
+        <script src="/Scripts/example/pro/todo-complex.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Google Chrome" name="chrome"/>
