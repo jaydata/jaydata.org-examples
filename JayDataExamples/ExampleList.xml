@@ -611,7 +611,7 @@
         <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_blank" css="">JayStorm platform overview</ContentLink>
       </RelatedContents>
     </Example>
-    <Example>
+    <Example wide="true">
       <Title>Knockout Dynamic Queries filter</Title>
       <Lead><![CDATA[A Northwind example demonstrating filter features using the dynmaic queries of the JayData Knockout module. The application still remains only a few lines of code.]]></Lead>
       <Description>
