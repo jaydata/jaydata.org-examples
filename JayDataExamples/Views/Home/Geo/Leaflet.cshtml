@@ -1,0 +1,42 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea class="code">
+<script>
+var lmap = L.map('map').setView([47.498333, 19.040833], 12);
+var lgroup = new L.LayerGroup().addTo(lmap);
+L.tileLayer('...', {
+    attribution: '...',
+    maxZoom: 18
+}).addTo(lmap);
+$data.initService(svc).then(function (mydatabase, factory, type) {
+    mydatabase.POI.toArray(function (result) {
+        result.forEach(function (poi) {
+            var l = L.geoJson(poi.coord).bindPopup(poi.name);
+            lgroup.addLayer(l);
+        });
+    });
+});
+</script></textarea>
+}
+
+@section CodeRunning {
+    <div id="map" style="overflow: hidden; width:100%; height:300px"></div>
+    <script>
+        var lmap = L.map('map').setView([47.498333, 19.040833], 12);
+        var lgroup = new L.LayerGroup().addTo(lmap);
+        L.tileLayer('http://{s}.tile.cloudmade.com/003d6e8d9af14e7582b462c10e572a1a/997/256/{z}/{x}/{y}.png', {
+		    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+		    maxZoom: 18
+	    }).addTo(lmap);
+        $data.initService('https://dev-open.jaystack.net/06b63652-9ec1-4c42-82ad-ed6875efacfb/7b261639-c46e-4913-b14f-ea3d3f899fcb/api/mydatabase').then(function (mydatabase, factory, type) {
+            mydatabase.POI.toArray(function (result) {
+                result.forEach(function (g) {
+                    var x = L.geoJson(g.coord).bindPopup(g.name);
+                    lgroup.addLayer(x);
+                });
+            });
+        });
+    </script>
+}

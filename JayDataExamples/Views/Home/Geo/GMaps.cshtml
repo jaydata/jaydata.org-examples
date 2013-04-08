@@ -1,0 +1,61 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+<textarea class="code">
+<script>
+var myLatlng = new google.maps.LatLng(47.498333, 19.040833);
+var o = {
+    zoom: 13,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+};
+var gmaps = new google.maps.Map(document.getElementById("map"),o);
+var infowindow = new google.maps.InfoWindow({});
+$data.initService(svc).then(function (mydatabase) {
+  mydatabase.POI.toArray(function (result) {
+      result.forEach(function (g) {
+        var marker = new GeoJSON(g.coord);
+        marker.setMap(gmaps);
+        google.maps.event.addListener(marker,'click',function (){
+          infowindow.setContent(g.name);
+          infowindow.open(gmaps, marker);
+        });
+      });
+  });
+});
+</script></textarea>
+}
+
+@section CodeRunning {
+    <div id="map" style="overflow: hidden; width:100%; height:300px"></div>
+    <script>
+        var myLatlng = new google.maps.LatLng(47.498333, 19.040833);
+        var mapOptions = {
+            zoom: 13,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+        };
+        var gmaps = new google.maps.Map(document.getElementById("map"), mapOptions);
+        var infowindow = new google.maps.InfoWindow({});
+        var infowindowTimer = null;
+        $data.initService('https://dev-open.jaystack.net/06b63652-9ec1-4c42-82ad-ed6875efacfb/7b261639-c46e-4913-b14f-ea3d3f899fcb/api/mydatabase').then(function (mydatabase, factory, type) {
+            mydatabase.POI.toArray(function (result) {
+                result.forEach(function (g) {
+                    var marker = new GeoJSON(g.coord);
+                    marker.setMap(gmaps);
+                    google.maps.event.addListener(marker, 'click', function () {
+                        if (infowindowTimer) { window.clearTimeout(infowindowTimer); }
+                        infowindow.close();
+                        infowindow.setContent(g.name);
+                        infowindow.open(gmaps, marker);
+                        infowindowTimer = setTimeout(function () {
+                            infowindowTimer = null;
+                            infowindow.close();
+                        }, 2000);
+                    });
+                });
+            });
+        });
+    </script>
+}
