@@ -2293,7 +2293,7 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { background: #eee; }
 }
 
 #device-wrapper {
-    background-image: url("/Images/iphone.png");
+    background-image: url("/examples/Images/iphone.png");
     background-size: cover;
     padding: 132px 72px 188px 66px;
     margin: auto;
