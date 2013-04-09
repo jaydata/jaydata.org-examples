@@ -509,7 +509,7 @@
       <Link>Knockout/FlowerShop</Link>
       <Tags>OData, JayStorm, Knockout, jQuery, query</Tags>
       <Download>http://jaydata.codeplex.com/downloads/get/507804</Download>
-      <RunApplication>/download/flowershop.apk</RunApplication>
+      <RunApplication>/examples/download/flowershop.apk</RunApplication>
       <Level>200</Level>
       <Suggested></Suggested>
       <Includes>
@@ -917,8 +917,8 @@
       <Image>/examples/Images/planetsnagy.png</Image>
       <Link>General/Planets</Link>
       <Tags>WebSQL, SQLite, CRUD, HTML5 localStorage, query</Tags>
-      <Download>/Planets/planet.js</Download>
-      <RunApplication>/Planets/index.html</RunApplication>
+      <Download>/examples/Planets/planet.js</Download>
+      <RunApplication>/examples/Planets/index.html</RunApplication>
       <Includes>
         <group name="gallery"></group>
       </Includes>
@@ -965,8 +965,8 @@
       </GalleryImages>
       <Level>200</Level>
       <Suggested></Suggested>
-      <Download>/downloads/netflix.apk</Download>
-      <RunApplication>/Sencha/app.html</RunApplication>
+      <Download>/examples/downloads/netflix.apk</Download>
+      <RunApplication>/examples/Sencha/app.html</RunApplication>
       <Includes>
         <group name="gallery"></group>
       </Includes>
@@ -1000,7 +1000,7 @@
       <Download>http://jaydata.org/examples/NewsReader/js/NewsReaderApp.js</Download>
       <Meta-KeyWords>JayData, jQuery, Crossplatform, HTML5 CRUD, OData, Javascript, HTML5, tutorial, example</Meta-KeyWords>
       <Meta-Description>How to create a Newsreader with JayData? See this simple CRUD example.</Meta-Description>
-      <RunApplication>/NewsReader/index.html</RunApplication>
+      <RunApplication>/examples/NewsReader/index.html</RunApplication>
       <SupportedBrowsers>
         <Browser title="Google Chrome" name="chrome"/>
         <Browser title="Opera" name="opera" minVersion="11"/>
@@ -1131,7 +1131,7 @@
         <![CDATA[TypeScript can be fully employed to use OData from JavaScript with an attitude. All you have to do is to include the JayData library in your application, and use JaySvcUtil.exe to create a TypeScript definition]]>
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
-      <Download>/Download/TypeScriptExample.zip</Download>
+      <Download>/examples/Download/TypeScriptExample.zip</Download>
       <Link>TypeScript/TypeScript</Link>
       <Tags>OData, TypeScript, jQuery</Tags>
       <Level>100</Level>
