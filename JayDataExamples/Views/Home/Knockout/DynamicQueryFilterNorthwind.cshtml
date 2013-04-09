@@ -6,7 +6,7 @@
 <!-- Pass an observable as a query parameter
 Change the filter options and the query will run again -->
 <script type="text/javascript">
-    var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: 'Northwind.svc' });
+    var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: '/examples/Northwind.svc' });
     var viewModel;
     $(function () {
         function NorthwindViewModel() {
@@ -79,7 +79,7 @@ Change the filter options and the query will run again -->
     </table>
 
     <script>
-        var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: '/Northwind.svc' });
+        var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: '/examples/Northwind.svc' });
         var viewModel;
         northwind.onReady(function () {
             $(function () {

@@ -6,16 +6,16 @@
       <script  type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
     </Group>
     <Group name="codemirror">
-      <script type="text/javascript" src="/Scripts/vendor/codemirror/lib/codemirror.js"></script>
-      <script type="text/javascript" src="/Scripts/vendor/codemirror/mode/xml/xml.js"></script>
-      <script type="text/javascript" src="/Scripts/vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-      <script type="text/javascript" src="/Scripts/vendor/codemirror/mode/javascript/javascript.js"></script>
-      <link  rel="stylesheet" href="/Scripts/vendor/codemirror/lib/codemirror.css" />
+      <script type="text/javascript" src="/examples/scripts/vendor/codemirror/lib/codemirror.js"></script>
+      <script type="text/javascript" src="/examples/scripts/vendor/codemirror/mode/xml/xml.js"></script>
+      <script type="text/javascript" src="/examples/scripts/vendor/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+      <script type="text/javascript" src="/examples/scripts/vendor/codemirror/mode/javascript/javascript.js"></script>
+      <link  rel="stylesheet" href="/examples/scripts/vendor/codemirror/lib/codemirror.css" />
     </Group>
     <Group name="bootstrap">
-      <script src="/Scripts/vendor/bootstrap.min.js"></script>
-      <link href="/Styles/Bootstrap/bootstrap.css" rel="stylesheet" />
-      <link href="/Styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+      <script src="/examples/scripts/vendor/bootstrap.min.js"></script>
+      <link href="/examples/styles/Bootstrap/bootstrap.css" rel="stylesheet" />
+      <link href="/examples/styles/Bootstrap/bootstrap-responsive.css" rel="stylesheet" />
     </Group>
     <Group name="kendoui">
       <script type="text/javascript" src="http://cdn.kendostatic.com/2012.2.710/js/kendo.all.min.js"></script>
@@ -34,9 +34,9 @@
       <script type="text/javascript" src="http://include.jaydata.org/jaydata.js"></script>
     </Group>
     <Group name="gallery">
-      <link rel="stylesheet" href="/Plugins/prettyphoto/css/prettyPhoto.css" />
-      <script src="/Plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
-      <script src="/Scripts/galleryHandler.js"></script>
+      <link rel="stylesheet" href="/examples/Plugins/prettyphoto/css/prettyPhoto.css" />
+      <script src="/examples/Plugins/prettyphoto/js/jquery.prettyPhoto.js"></script>
+      <script src="/examples/scripts/galleryHandler.js"></script>
     </Group>
     <Group name="facebook">
       <script type="text/javascript" src="http://include.jaydata.org/jaydataproviders/FacebookProvider.js"></script>
@@ -47,9 +47,9 @@
     <group name="jaydata"></group>
     <group name="codemirror"></group>
     <group name="bootstrap"></group>
-    <link rel="stylesheet" href="/Styles/Bootstrap/docs.css"/>
-    <link rel="stylesheet" href="/Styles/dd.css" />
-    <script src="/Scripts/ui.js"></script>
+    <link rel="stylesheet" href="/examples/styles/Bootstrap/docs.css"/>
+    <link rel="stylesheet" href="/examples/styles/dd.css" />
+    <script src="/examples/scripts/ui.js"></script>
   </Includes>
   <Examples>
     <!-- KendoUI examples -->
@@ -63,7 +63,7 @@
             with ListView. Our datasource supports everything, so paging, filtering and sorting all works. If you use oData, then paging, filtering and sorting happens on
             the server side! asKendoDataSource() is a method of Queryable so you can use all features of JayData, filtering, projection, etc.]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView</Link>
       <Tags>KendoUI, OData, list</Tags>
       <Level>100</Level>
@@ -73,7 +73,7 @@
       <Meta-Description>How to create JayData listview with Kendo UI? See this simple listview example.</Meta-Description>
       <Includes>
         <group name="kendoui"></group>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
       </Includes>
       <SupportedBrowsers>
@@ -106,10 +106,10 @@
       <Meta-Description>How to use the JayData with Kendo UI? See this listview example.</Meta-Description>
       <Includes>
         <group name="kendoui"></group>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
       </Includes>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/ListView_Filter</Link>
       <Tags>KendoUI, OData, query, JayStorm, sort, list</Tags>
       <Level>110</Level>
@@ -143,10 +143,10 @@
       <Meta-Description>How to use the JayData with Kendo UI? See this simple grid example.</Meta-Description>
       <Includes>
         <group name="kendoui"></group>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
       </Includes>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_ReadOnly</Link>
       <Tags>KendoUI, OData, query, sort, Northwind, grid</Tags>
       <Level>130</Level>
@@ -176,14 +176,14 @@
       </Description>
       <Meta-KeyWords>JayData, HTML5, Javascript, Kendo UI, Crossplatform, example</Meta-KeyWords>
       <Meta-Description>How to use the JayData with Kendo UI! See this simple example.</Meta-Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/Grid_CRUD</Link>
       <Tags>KendoUI, CRUD, grid, Northwind</Tags>
       <Level>140</Level>
       <Suggested>NEW</Suggested>
       <Includes>
         <group name="kendoui"></group>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
       </Includes>
       <SupportedBrowsers>
@@ -212,10 +212,10 @@
       <Meta-Description>How to use the JayData with Kendo UI! See this example.</Meta-Description>
       <Includes>
         <group name="kendoui"></group>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
       </Includes>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/Autocomplete</Link>
       <Tags>KendoUI, autocomplete, Northwind</Tags>
       <Level>200</Level>
@@ -248,10 +248,10 @@
       <Meta-Description>How to use the JayData with Kendo UI! See this simple example.</Meta-Description>
       <Includes>
         <group name="kendoui"></group>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
       </Includes>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/MVVM</Link>
       <Tags>KendoUI, MVVM, CRUD, Northwind</Tags>
       <Level>200</Level>
@@ -281,7 +281,7 @@
       </Description>
       <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, Kendo UI, WebSQL, IndexedDB, example</Meta-KeyWords>
       <Meta-Description>How to use the JayData with Kendo Ui? See this simple example.</Meta-Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Simple</Link>
       <Tags>KendoUI, WebSQL, IndexedDB</Tags>
       <Level>200</Level>
@@ -289,10 +289,10 @@
       <Includes>
         <group name="kendoui"></group>
         <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-        <script src="/Scripts/example/kendo_mobile_simple.js"></script>
-        <script src="/Scripts/vendor/north.js"></script>
+        <script src="/examples/scripts/example/kendo_mobile_simple.js"></script>
+        <script src="/examples/scripts/vendor/north.js"></script>
         <link rel="stylesheet" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
-        <link href="/Styles/examples.css" rel="stylesheet" />
+        <link href="/examples/styles/examples.css" rel="stylesheet" />
       </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="7" />
@@ -322,12 +322,12 @@
       <Includes>
         <group name="kendoui"></group>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-        <script src="/Scripts/example/kendo_mobile_simple.js"></script>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script src="/examples/scripts/example/kendo_mobile_simple.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <link rel="stylesheet" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
-        <link href="/Styles/examples.css" rel="stylesheet" />
+        <link href="/examples/styles/examples.css" rel="stylesheet" />
       </Includes>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/Mobile_Complex</Link>
       <Tags>KendoUI, CRUD, filter, query</Tags>
       <Download>https://github.com/PeterAronZentai/kendomobiledemo</Download>
@@ -359,10 +359,10 @@
       <Meta-Description>How to use the JayData with Kendo UI? See this simple chart example.</Meta-Description>
       <Includes>
         <group name="kendoui"></group>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
       </Includes>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/BarChart</Link>
       <Tags>KendoUI, OData, Northwind</Tags>
       <Level>300</Level>
@@ -401,12 +401,12 @@
       <Includes>
         <group name="kendoui"></group>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-        <script src="/Scripts/example/kendo_mobile_simple.js"></script>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script src="/examples/scripts/example/kendo_mobile_simple.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <link rel="stylesheet" href="http://cdn.kendostatic.com/2012.2.710/styles/kendo.mobile.all.min.css" />
-        <link href="/Styles/examples.css" rel="stylesheet" />
+        <link href="/examples/styles/examples.css" rel="stylesheet" />
       </Includes>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/Prefilter</Link>
       <Tags>KendoUI, OData, filter, query, projection</Tags>
       <Level>300</Level>
@@ -438,10 +438,10 @@
       <Meta-Description>How to use the JayData with Kendo UI? See this simple example.</Meta-Description>
       <Includes>
         <group name="kendoui"></group>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
       </Includes>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/MasterDetails</Link>
       <Tags>KendoUI, OData, filter, query, paging, sorting</Tags>
       <Level>150</Level>
@@ -472,10 +472,10 @@
       <Meta-Description>How to use the JayData with Kendo UI? See this simple example.</Meta-Description>
       <Includes>
         <group name="kendoui"></group>
-        <script type="text/javascript" src="/Scripts/vendor/north.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
       </Includes>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>KendoUI/Cascading_Combobox</Link>
       <Tags>KendoUI, OData, Northwind</Tags>
       <Level>100</Level>
@@ -505,7 +505,7 @@
       </Description>
       <Meta-KeyWords>JayData, HTML5, Javascript, Knockout.js, eshop mobile app, crossplatform, jQuery, example</Meta-KeyWords>
       <Meta-Description>How to use the JayData with Kendo UI? See this mobile app example.</Meta-Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>Knockout/FlowerShop</Link>
       <Tags>OData, JayStorm, Knockout, jQuery, query</Tags>
       <Download>http://jaydata.codeplex.com/downloads/get/507804</Download>
@@ -514,10 +514,10 @@
       <Suggested></Suggested>
       <Includes>
         <group name="gallery"></group>
-        <link href="/Styles/flowershop/mixins.css" rel="stylesheet" />
+        <link href="/examples/styles/flowershop/mixins.css" rel="stylesheet" />
         <group name="knokout"></group>
         <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-        <script src="/Scripts/vendor/jquery/jquery.flexslider-min.js"></script>
+        <script src="/examples/scripts/vendor/jquery/jquery.flexslider-min.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="9+" />
@@ -536,11 +536,11 @@
         <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_blank" css="">JayStorm platform overview</ContentLink>
       </RelatedContents>
       <GalleryImages>
-        <Image url="/Images/gallery/flowershophtml5/flowershop_desktop_teljes.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_desktop_teljes.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershophtml5/flowershop_home_desktop.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_desktop.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershophtml5/flowershop_home_desktop_2.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_desktop_2.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershophtml5/flowershop_home_mobile.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_mobile.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout.png" thumbUrl="/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershophtml5/flowershop_desktop_teljes.png" thumbUrl="/examples/Images/gallery/flowershophtml5/flowershop_desktop_teljes.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershophtml5/flowershop_home_desktop.png" thumbUrl="/examples/Images/gallery/flowershophtml5/flowershop_home_desktop.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershophtml5/flowershop_home_desktop_2.png" thumbUrl="/examples/Images/gallery/flowershophtml5/flowershop_home_desktop_2.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershophtml5/flowershop_home_mobile.png" thumbUrl="/examples/Images/gallery/flowershophtml5/flowershop_home_mobile.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout.png" thumbUrl="/examples/Images/gallery/flowershophtml5/flowershop_home_mobile_checkout.png" alt=""></Image>
       </GalleryImages>
     </Example>
     <Example wide="true">
@@ -551,7 +551,7 @@
       </Description>
       <Meta-KeyWords>JayData, HTML5, Javascript, JayData providers, WebSQL, IndexedDB, example</Meta-KeyWords>
       <Meta-Description>How to use the JayData with Kendo! See this simple listview example.</Meta-Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>Knockout/Northwind</Link>
       <Tags>Knockout, Northwind</Tags>
       <Level>100</Level>
@@ -559,7 +559,7 @@
       <Includes>
         <group name="knokout"></group>
         <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-        <script src="/Scripts/example/knokout_northwind.js"></script>
+        <script src="/examples/scripts/example/knokout_northwind.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="9+" />
@@ -585,7 +585,7 @@
       </Description>
       <Meta-KeyWords>JayData, JayData modules, HTML5, Javascript, JayData providers, Knockout.js support, example</Meta-KeyWords>
       <Meta-Description>How to use the JayData with Knockout.js? See this simple listview example.</Meta-Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>Knockout/DynamicQueryNorthwind</Link>
       <Tags>Knockout, list, query</Tags>
       <Level>100</Level>
@@ -593,7 +593,7 @@
       <Includes>
         <group name="knokout"></group>
         <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-        <script src="/Scripts/example/knokout_northwind.js"></script>
+        <script src="/examples/scripts/example/knokout_northwind.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="9+" />
@@ -619,7 +619,7 @@
       </Description>
       <Meta-KeyWords>JayData, JayData modules, HTML5, Javascript, JayData providers, Knockout.js support, example</Meta-KeyWords>
       <Meta-Description>How to use the JayData with Knockout.js? See this simple listview example.</Meta-Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>Knockout/DynamicQueryFilterNorthwind</Link>
       <Tags>Knockout, filter, query</Tags>
       <Level>160</Level>
@@ -627,7 +627,7 @@
       <Includes>
         <group name="knokout"></group>
         <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
-        <script src="/Scripts/example/knokout_northwind.js"></script>
+        <script src="/examples/scripts/example/knokout_northwind.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="9+" />
@@ -652,7 +652,7 @@
       <Description>
         <![CDATA[How to get the top news from BBC ? With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and RSS feeds. Almost everything is queryable through the YQL provider.]]>
       </Description>
-      <Image>/Images/yqlnagy.png</Image>
+      <Image>/examples/Images/yqlnagy.png</Image>
       <Link>YQL/YQLhtml</Link>
       <Tags>YQL, query</Tags>
       <Level>100</Level>
@@ -686,7 +686,7 @@
       <Description>
         <![CDATA[YQL Geo based auto-complete example. With the Yahoo Query Language (YQL) you can query the content of the world wide web.]]>
       </Description>
-      <Image>/Images/yqlnagy.png</Image>
+      <Image>/examples/Images/yqlnagy.png</Image>
       <Link>YQL/YQLGeo</Link>
       <Tags>YQL, Geo, query</Tags>
       <Level>170</Level>
@@ -722,7 +722,7 @@
       <Description>
         <![CDATA[YQL RSS reader with filter. Reading from RSS where Title contains JayData. This example show you how you can querying the RSS content with JayData.]]>
       </Description>
-      <Image>/Images/yqlnagy.png</Image>
+      <Image>/examples/Images/yqlnagy.png</Image>
       <Link>YQL/YQLRss</Link>
       <Tags>YQL, filter, query, RSS</Tags>
       <Level>180</Level>
@@ -759,7 +759,7 @@
       <Description>
         <![CDATA[How to reading from RSS with Category where Title contains JayData? This example show you how you can querying the RSS content with JayData.]]>
       </Description>
-      <Image>/Images/yqlnagy.png</Image>
+      <Image>/examples/Images/yqlnagy.png</Image>
       <Link>YQL/YQLRssAdvanced</Link>
       <Tags>YQL, query, filter, RSS</Tags>
       <Level>200</Level>
@@ -796,7 +796,7 @@
       <Description>
         <![CDATA[How can you use JayData to reading feed data? With the Yahoo Query Language (YQL) you can query the content of the world wide web. News and feeds, pure HTML content, almost everything is queryable through the YQL provider.]]>
       </Description>
-      <Image>/Images/yqlnagy.png</Image>
+      <Image>/examples/Images/yqlnagy.png</Image>
       <Link>YQL/YQLFeed</Link>
       <Tags>YQL, query, RSS</Tags>
       <Level>100</Level>
@@ -836,7 +836,7 @@
       <Description>
         <![CDATA[This example show you how can you get the current user's public personal data through FQL api with JayData?]]>
       </Description>
-      <Image>/Images/facebook.png</Image>
+      <Image>/examples/Images/facebook.png</Image>
       <Link>Facebook/Provider</Link>
       <Tags>facebook, query</Tags>
       <Level>120</Level>
@@ -877,7 +877,7 @@
       </Description>
       <Meta-KeyWords>JayData, HTML5, Javascript, FQL, Facebook, JayData providers, FQL api, Facebook provider</Meta-KeyWords>
       <Meta-Description>This example show you: How can You get the current user's friends list through FQL api.</Meta-Description>
-      <Image>/Images/facebook.png</Image>
+      <Image>/examples/Images/facebook.png</Image>
       <Link>Facebook/Friends</Link>
       <Tags>facebook, query</Tags>
       <Level>120</Level>
@@ -914,7 +914,7 @@
       <Description>
         <![CDATA[In this sample application, the planets are just plain DIV elements, with tricky, but simple CSS3 styling on them. A circle can be easily made by using the border-radius property and some fancy looking colorized box-shadow style applied, just to be more than plain filled circles. <br/>The rotating animation of the planets is simple with the use of the native keyframe-animation CSS3 feature of modern browser engines like WebKit. <br/>Stacking the DIVs together, we can create a simple representation of complex solar systems.]]>
       </Description>
-      <Image>/Images/planetsnagy.png</Image>
+      <Image>/examples/Images/planetsnagy.png</Image>
       <Link>General/Planets</Link>
       <Tags>WebSQL, SQLite, CRUD, HTML5 localStorage, query</Tags>
       <Download>/Planets/planet.js</Download>
@@ -923,9 +923,9 @@
         <group name="gallery"></group>
       </Includes>
       <GalleryImages>
-        <Image url="/Images/gallery/planets/planets_animation.png" thumbUrl="/Images/gallery/planets/planets_animation.png" alt="Planets app"></Image>
-        <Image url="/Images/gallery/planets/planets_list.png" thumbUrl="/Images/gallery/planets/planets_list.png" alt="Planets list"></Image>
-        <Image url="/Images/gallery/planets/edit_planet_list.png" thumbUrl="/Images/gallery/planets/edit_planet_list.png" alt="Planets app - create new planet"></Image>
+        <Image url="/examples/Images/gallery/planets/planets_animation.png" thumbUrl="/examples/Images/gallery/planets/planets_animation.png" alt="Planets app"></Image>
+        <Image url="/examples/Images/gallery/planets/planets_list.png" thumbUrl="/examples/Images/gallery/planets/planets_list.png" alt="Planets list"></Image>
+        <Image url="/examples/Images/gallery/planets/edit_planet_list.png" thumbUrl="/examples/Images/gallery/planets/edit_planet_list.png" alt="Planets app - create new planet"></Image>
       </GalleryImages>
       <Level>300</Level>
       <Suggested></Suggested>
@@ -952,16 +952,16 @@
       <Description>
         <![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI. Query the <a href="http://odata.netflix.com/v2/Catalog/">Netflix OData service </a> using JayData and use Sencha Touch 2 for the UI.]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>SenchaUI/Netflix</Link>
       <Tags>SenchaTouch, OData, list, query</Tags>
       <Includes>
         <group name="gallery"></group>
       </Includes>
       <GalleryImages>
-        <Image url="/Images/gallery/sencha/sencha_examp_1_full.jpg" thumbUrl="/Images/gallery/sencha/sencha_examp_1_thumb.jpg" alt="NetFlix movie list"></Image>
-        <Image url="/Images/gallery/sencha/sencha_examp_2_full.jpg" thumbUrl="/Images/gallery/sencha/sencha_examp_2_thumb.jpg" alt="NetFlix movie list - Mobile view"></Image>
-        <Image url="/Images/gallery/sencha/sencha_examp_3_full.jpg" thumbUrl="/Images/gallery/sencha/sencha_examp_3_thumb.jpg" alt="NetFlix movie detail"></Image>
+        <Image url="/examples/Images/gallery/sencha/sencha_examp_1_full.jpg" thumbUrl="/examples/Images/gallery/sencha/sencha_examp_1_thumb.jpg" alt="NetFlix movie list"></Image>
+        <Image url="/examples/Images/gallery/sencha/sencha_examp_2_full.jpg" thumbUrl="/examples/Images/gallery/sencha/sencha_examp_2_thumb.jpg" alt="NetFlix movie list - Mobile view"></Image>
+        <Image url="/examples/Images/gallery/sencha/sencha_examp_3_full.jpg" thumbUrl="/examples/Images/gallery/sencha/sencha_examp_3_thumb.jpg" alt="NetFlix movie detail"></Image>
       </GalleryImages>
       <Level>200</Level>
       <Suggested></Suggested>
@@ -992,7 +992,7 @@
       <Description>
         <![CDATA[CRUD (Create-Read-Update-Delete) example using OData provider. Managing categories, articles, tags newsreader like way. The UI is utilizing Twitter's Bootstrap and jQuery's template engine.]]>
       </Description>
-      <Image>/Images/newsreadernagy.png</Image>
+      <Image>/examples/Images/newsreadernagy.png</Image>
       <Link>General/NewsReader</Link>
       <Tags>OData, jQuery, CRUD, filter, query</Tags>
       <Level>200</Level>
@@ -1025,7 +1025,7 @@
       <Description>
         <![CDATA[Implementing a custom provider to process RSS feeds and extending the context to include custom RSS fields. XML to typed JSON conversion handled by the $data.ModelBinder class.]]>
       </Description>
-      <Image>/Images/newsreadernagy.png</Image>
+      <Image>/examples/Images/newsreadernagy.png</Image>
       <Link>General/rss</Link>
       <Tags>RSS</Tags>
       <Level>200</Level>
@@ -1035,7 +1035,7 @@
       <Includes>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
         <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/template.js"></script>
-        <script type="text/javascript" src="/Scripts/example/RSSProvider.js"></script>
+        <script type="text/javascript" src="/examples/scripts/example/RSSProvider.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="9+" />
@@ -1062,7 +1062,7 @@
       <Description>
         <![CDATA[Our form validator extensions will allow you to apply the constraints defined on the model to validate forms through jQuery validators.]]>
       </Description>
-      <Image>/Images/formvalidation.png</Image>
+      <Image>/examples/Images/formvalidation.png</Image>
       <Tags>jQuery, validation</Tags>
       <Level>100</Level>
       <Link>General/FormValidation</Link>
@@ -1072,7 +1072,7 @@
       <Includes>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-        <script type="text/javascript" src="/Scripts/vendor/jquery/jquery.validate.js"></script>
+        <script type="text/javascript" src="/examples/scripts/vendor/jquery/jquery.validate.js"></script>
         <script type="text/javascript" src="http://include.jaydata.org/jaydatamodules/validate.js"></script>
         <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
       </Includes>
@@ -1100,7 +1100,7 @@
       <Description>
         <![CDATA[Simple ToDoList example where you can create, edit or delete task items. Three providers are supported: WebSQL, IndexedDB and HTML5 localStorage. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>General/ToDoList</Link>
       <Tags>WebSQL, indexedDB, HTML5 localStorage, CRUD, SQLite</Tags>
       <Level>100</Level>
@@ -1130,7 +1130,7 @@
       <Description>
         <![CDATA[TypeScript can be fully employed to use OData from JavaScript with an attitude. All you have to do is to include the JayData library in your application, and use JaySvcUtil.exe to create a TypeScript definition]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Download>/Download/TypeScriptExample.zip</Download>
       <Link>TypeScript/TypeScript</Link>
       <Tags>OData, TypeScript, jQuery</Tags>
@@ -1153,7 +1153,7 @@
       <Description>
         <![CDATA[JayScrum is a cross-platform, cross-device application which enables agile software development teams to work utilizing the SCRUM discipline with the help of mobile or tablet devices. It handles SCRUM’s meetings, artifacts and roles. Besides being a great project management tool (which we use ourselves) built on JayData and JayStorm, it serves its role as a fine example for an application with provisioned database.]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>JayStorm/jayscrum</Link>
       <Tags>WebSQL, indexedDB, JayStorm, Knockout, OData, CRUD, query</Tags>
       <Level>300</Level>
@@ -1166,12 +1166,12 @@
         <group name="gallery"></group>
       </Includes>
       <GalleryImages>
-        <Image url="/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_1.png" alt="JayScrum task manager"></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_3.png" alt="JayScrum task manager"></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_4.png" alt="JayScrum task manager"></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_8.png" alt="JayScrum task manager"></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_board_tablet_2.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_board_tablet_2.png" alt="JayScrum task manager"></Image>
-        <Image url="/Images/gallery/jayscrum/jayscrum_dashboard_vagott.png" thumbUrl="/Images/gallery/jayscrum/jayscrum_dashboard_vagott.png" alt="JayScrum task manager"></Image>
+        <Image url="/examples/Images/gallery/jayscrum/jayscrum_1.png" thumbUrl="/examples/Images/gallery/jayscrum/jayscrum_1.png" alt="JayScrum task manager"></Image>
+        <Image url="/examples/Images/gallery/jayscrum/jayscrum_3.png" thumbUrl="/examples/Images/gallery/jayscrum/jayscrum_3.png" alt="JayScrum task manager"></Image>
+        <Image url="/examples/Images/gallery/jayscrum/jayscrum_4.png" thumbUrl="/examples/Images/gallery/jayscrum/jayscrum_4.png" alt="JayScrum task manager"></Image>
+        <Image url="/examples/Images/gallery/jayscrum/jayscrum_8.png" thumbUrl="/examples/Images/gallery/jayscrum/jayscrum_8.png" alt="JayScrum task manager"></Image>
+        <Image url="/examples/Images/gallery/jayscrum/jayscrum_board_tablet_2.png" thumbUrl="/examples/Images/gallery/jayscrum/jayscrum_board_tablet_2.png" alt="JayScrum task manager"></Image>
+        <Image url="/examples/Images/gallery/jayscrum/jayscrum_dashboard_vagott.png" thumbUrl="/examples/Images/gallery/jayscrum/jayscrum_dashboard_vagott.png" alt="JayScrum task manager"></Image>
       </GalleryImages>
       <SupportedBrowsers>
         <Browser title="Google Chrome" name="chrome"/>
@@ -1195,7 +1195,7 @@
       <Description>
         <![CDATA[This example shows you how to create a simple, full cycle Windows8 Eshop application with cloudbased data backend. We will use the JayStorm Application Manager to setup the schema of the online data store. To create the product database we will use the JayStorm Data Manager. On the client we will use JayData and knockoutjs to implement the simple product browsing and place order use cases.]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>JayStorm/flowershopwin8</Link>
       <Tags> Windows8, OData, jQuery, JayStorm, Knockout, query</Tags>
       <Level>300</Level>
@@ -1216,13 +1216,13 @@
         <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">Blogs with OData tags</ContentLink>
       </RelatedContents>
       <GalleryImages>
-        <Image url="/Images/gallery/flowershopwin8/flowershop_index.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_index.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_desktop.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_desktop.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_minimalized.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_cart_minimalized.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_category_max.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_category_max.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_product.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_product_list_minimalized.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_list_minimalized.png" alt=""></Image>
-        <Image url="/Images/gallery/flowershopwin8/flowershop_win8_app_product_minimalized.png" thumbUrl="/Images/gallery/flowershopwin8/flowershop_win8_app_product_minimalized.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershopwin8/flowershop_index.png" thumbUrl="/examples/Images/gallery/flowershopwin8/flowershop_index.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_cart_desktop.png" thumbUrl="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_cart_desktop.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_cart_minimalized.png" thumbUrl="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_cart_minimalized.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_category_max.png" thumbUrl="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_category_max.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_product.png" thumbUrl="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_product.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_product_list_minimalized.png" thumbUrl="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_product_list_minimalized.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_product_minimalized.png" thumbUrl="/examples/Images/gallery/flowershopwin8/flowershop_win8_app_product_minimalized.png" alt=""></Image>
       </GalleryImages>
     </Example>
     <Example>
@@ -1233,7 +1233,7 @@
       <Description>
         <![CDATA[This example shows you how to create a full cycle Facebook application with cloudbased data backend. <br/>Our example application is already available on Facebook as an App that allows one to review his friend list, and assemble a favorites list of friends.]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>JayStorm/facebook_canvas</Link>
       <Tags>facebook, JayStorm, Handlebars, query</Tags>
       <Level>300</Level>
@@ -1246,9 +1246,9 @@
         <group name="gallery"></group>
       </Includes>
       <GalleryImages>
-        <Image url="/Images/gallery/facebook_canvas/app_validation.png" thumbUrl="/Images/gallery/facebook_canvas/app_validation.png" alt="JayScrum task manager"></Image>
-        <Image url="/Images/gallery/facebook_canvas/facebook_app_desktopr.png" thumbUrl="/Images/gallery/facebook_canvas/facebook_app_desktopr.png" alt=""></Image>
-        <Image url="/Images/gallery/facebook_canvas/app_validation.png" thumbUrl="/Images/gallery/facebook_canvas/app_validation.png" alt="JayScrum task manager"></Image>
+        <Image url="/examples/Images/gallery/facebook_canvas/app_validation.png" thumbUrl="/examples/Images/gallery/facebook_canvas/app_validation.png" alt="JayScrum task manager"></Image>
+        <Image url="/examples/Images/gallery/facebook_canvas/facebook_app_desktopr.png" thumbUrl="/examples/Images/gallery/facebook_canvas/facebook_app_desktopr.png" alt=""></Image>
+        <Image url="/examples/Images/gallery/facebook_canvas/app_validation.png" thumbUrl="/examples/Images/gallery/facebook_canvas/app_validation.png" alt="JayScrum task manager"></Image>
       </GalleryImages>
       <SupportedBrowsers>
         <Browser title="Google Chrome" name="chrome"/>
@@ -1273,7 +1273,7 @@
       <Description>
         <![CDATA[The game is so simple to implement in HTML5 and the features we want to make will be powered by the awesome JayStorm engine. All in the cloud. Have fun playing the game and analyzing the source code.]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>JayStorm/sliding_puzzle</Link>
       <Tags>JayStorm, Knockout, jQuery, OData</Tags>
       <Level>300</Level>
@@ -1286,12 +1286,12 @@
         <group name="gallery"></group>
       </Includes>
       <GalleryImages>
-        <Image url="/Images/gallery/sliding_puzzle/silding_mobile_ingame.png" thumbUrl="/Images/gallery/sliding_puzzle/silding_mobile_ingame.png" alt="Sliding puzzle HTML5 game"></Image>
-        <Image url="/Images/gallery/sliding_puzzle/sliding_desktop__home.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_desktop__home.png" alt="Sliding puzzle HTML5 game"></Image>
-        <Image url="/Images/gallery/sliding_puzzle/sliding_gamemode_mobile.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_gamemode_mobile.png" alt="Sliding puzzle HTML5 game"></Image>
-        <Image url="/Images/gallery/sliding_puzzle/sliding_hardmode_mobil.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_hardmode_mobil.png" alt="Sliding puzzle HTML5 game"></Image>
-        <Image url="/Images/gallery/sliding_puzzle/sliding_img_upload.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_img_upload.png" alt="Sliding puzzle HTML5 game"></Image>
-        <Image url="/Images/gallery/sliding_puzzle/sliding_index.png" thumbUrl="/Images/gallery/sliding_puzzle/sliding_index.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/examples/Images/gallery/sliding_puzzle/silding_mobile_ingame.png" thumbUrl="/examples/Images/gallery/sliding_puzzle/silding_mobile_ingame.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/examples/Images/gallery/sliding_puzzle/sliding_desktop__home.png" thumbUrl="/examples/Images/gallery/sliding_puzzle/sliding_desktop__home.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/examples/Images/gallery/sliding_puzzle/sliding_gamemode_mobile.png" thumbUrl="/examples/Images/gallery/sliding_puzzle/sliding_gamemode_mobile.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/examples/Images/gallery/sliding_puzzle/sliding_hardmode_mobil.png" thumbUrl="/examples/Images/gallery/sliding_puzzle/sliding_hardmode_mobil.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/examples/Images/gallery/sliding_puzzle/sliding_img_upload.png" thumbUrl="/examples/Images/gallery/sliding_puzzle/sliding_img_upload.png" alt="Sliding puzzle HTML5 game"></Image>
+        <Image url="/examples/Images/gallery/sliding_puzzle/sliding_index.png" thumbUrl="/examples/Images/gallery/sliding_puzzle/sliding_index.png" alt="Sliding puzzle HTML5 game"></Image>
       </GalleryImages>
       <SupportedBrowsers>
         <Browser title="Internet Explorer" name="ie" minVersion="10+"/>
@@ -1314,7 +1314,7 @@
       <Description>
         <![CDATA[TodoList with transaction example where you can create, edit or delete task items, but the value of task item is unique. The validation and a save processes use the same transaction so this assures the atomic running.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_tran</Link>
       <Tags>indexedDB pro, WebSQL pro, Transactions, CRUD, WebSQL, indexedDB</Tags>
       <Level>100</Level>
@@ -1323,9 +1323,9 @@
       <Meta-Description>How to create a multiprovider JayData todolist! See this simple todolist example.</Meta-Description>
       <Includes>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-        <script src="/Scripts/example/pro/IndexedDbProProvider.min.js"></script>
-        <script src="/Scripts/example/pro/SqLiteProProvider.min.js"></script>
-        <script src="/Scripts/example/pro/todo-tran.js"></script>
+        <script src="/examples/scripts/example/pro/IndexedDbProProvider.min.js"></script>
+        <script src="/examples/scripts/example/pro/SqLiteProProvider.min.js"></script>
+        <script src="/examples/scripts/example/pro/todo-tran.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Google Chrome" name="chrome"/>
@@ -1350,7 +1350,7 @@
       <Description>
         <![CDATA[TodoList with indices example where you can create, edit or delete task items, but the value of task item is unique. The task item's uniqueness is supported by the database index.<br/>Two providers are supported: WebSQL, IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_indices</Link>
       <Tags>WebSQL pro, indexedDB pro, Indicies, WebSQL, indexedDB, CRUD</Tags>
       <Level>100</Level>
@@ -1359,9 +1359,9 @@
       <Meta-Description>How to create a multiprovider JayData todolist! See this simple todolist example.</Meta-Description>
       <Includes>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-        <script src="/Scripts/example/pro/IndexedDbProProvider.min.js"></script>
-        <script src="/Scripts/example/pro/SqLiteProProvider.min.js"></script>
-        <script src="/Scripts/example/pro/todo-indices.js"></script>
+        <script src="/examples/scripts/example/pro/IndexedDbProProvider.min.js"></script>
+        <script src="/examples/scripts/example/pro/SqLiteProProvider.min.js"></script>
+        <script src="/examples/scripts/example/pro/todo-indices.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Google Chrome" name="chrome"/>
@@ -1386,7 +1386,7 @@
       <Description>
         <![CDATA[ToDoList with categories example where you can create, edit or delete task items and there categories. We use readonly/write transactions and database index to make a performance and robust app. In this usecase we save task items with category. Categories are unique in the database, and each category has at least one task. Two providers are supported: WebSQL and IndexedDB. <br/><b>Supported browsers for IndexedDB:</b> Internet Explorer:10+ Mozilla Firefox:10+ Google Chrome:12+ Windows phone:8+]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>JayDataPro/ToDoList_complex</Link>
       <Tags>WebSQL pro, indexedDB pro, CRUD, WebSQL, indexedDB</Tags>
       <Level>200</Level>
@@ -1395,9 +1395,9 @@
       <Meta-Description>How to create a multiprovider JayData todolist! See this simple todolist example.</Meta-Description>
       <Includes>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-        <script src="/Scripts/example/pro/IndexedDbProProvider.min.js"></script>
-        <script src="/Scripts/example/pro/SqLiteProProvider.min.js"></script>
-        <script src="/Scripts/example/pro/todo-complex.js"></script>
+        <script src="/examples/scripts/example/pro/IndexedDbProProvider.min.js"></script>
+        <script src="/examples/scripts/example/pro/SqLiteProProvider.min.js"></script>
+        <script src="/examples/scripts/example/pro/todo-complex.js"></script>
       </Includes>
       <SupportedBrowsers>
         <Browser title="Google Chrome" name="chrome"/>
@@ -1424,7 +1424,7 @@
         oData provider also supports geo querying if the backend supports it. JayStorm 1.1+ and JayService 1.3+ with MongoDB Pro as oData backend supports
         geo querying. The received data is of GeoJSON type, unfortunatelly Google Maps does not supports it natively so we have to use a converter.]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/GMaps</Link>
       <Tags>Geo, map</Tags>
       <Level>100</Level>
@@ -1460,7 +1460,7 @@
         oData provider also supports geo querying if the backend supports it. JayStorm 1.1+ and JayService 1.3+ with MongoDB Pro as oData backend supports
         geo querying. The received data is of GeoJSON type so we can use it with leafletjs directly.]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/Leaflet</Link>
       <Tags>Geo, map. leaflet.js</Tags>
       <Level>100</Level>
@@ -1496,7 +1496,7 @@
         oData provider also supports geo querying if the backend supports it. JayStorm 1.1+ and JayService 1.3+ with MongoDB Pro as oData backend supports
         geo querying.]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/Bing</Link>
       <Tags>Geo, map, bing</Tags>
       <Level>100</Level>
@@ -1530,7 +1530,7 @@
         <![CDATA[Click onto the map. POIs within the radius set in the input box in meters are shown. Watch the network to see oData geo queries,
          the distance is sent in radians over oData.]]>
       </Description>
-      <Image>/Images/indexeddb.png</Image>
+      <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/GeoSearch</Link>
       <Tags>Geo, query, map</Tags>
       <Level>100</Level>

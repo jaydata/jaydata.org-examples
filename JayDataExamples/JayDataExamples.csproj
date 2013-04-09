@@ -811,6 +811,7 @@
     <Content Include="Scripts\vendor\codemirror\mode\xquery\LICENSE" />
     <Content Include="Scripts\vendor\codemirror\package.json" />
     <Content Include="Scripts\vendor\codemirror\README.md" />
+    <None Include="Properties\PublishProfiles\a.pubxml" />
     <None Include="Scripts\vendor\jaydata-vsdoc.js" />
     <Content Include="Scripts\vendor\jaydata.js" />
     <Content Include="Scripts\vendor\jaydata.min.js" />
@@ -859,14 +860,8 @@
     <Content Include="Styles\bootstrap\bootstrap.min.css" />
     <Content Include="Styles\examples.css" />
     <Content Include="Styles\flowershop\mixins.css" />
-    <Content Include="Styles\img\favicon_jaydata.png" />
-    <Content Include="Styles\img\iphone.png" />
     <Content Include="Styles\img\knokout_flowershop\ajax-loader.gif" />
     <Content Include="Styles\img\knokout_flowershop\bg_direction_nav.png" />
-    <Content Include="Styles\img\logo_jaydata_dark.png" />
-    <Content Include="Styles\img\logo_kendoui.png" />
-    <Content Include="Styles\img\shipping.png" />
-    <Content Include="Styles\less\logos.css" />
     <Content Include="UrlRewrite.xml" />
     <Content Include="Planets\bootstrap.min.css" />
     <Content Include="Planets\context.js" />
@@ -1264,12 +1259,10 @@
     <Content Include="Views\Shared\Layout_Default.cshtml" />
     <Content Include="Views\Shared\_IncludeTopMenu.cshtml" />
     <Content Include="Views\Shared\_JayDataHeader.cshtml" />
-    <Content Include="Views\Shared\_IncludeStyles.cshtml" />
     <Content Include="Views\Shared\_IncludeMeta.cshtml" />
     <Content Include="Views\Shared\_IncludeIeFix.cshtml" />
     <Content Include="Views\Shared\_IncludeFavIcon.cshtml" />
     <Content Include="Views\Shared\_IncludeGoogleAnalytics.cshtml" />
-    <Content Include="Views\Shared\_IncludeScripts.cshtml" />
     <Content Include="Views\Shared\_IncludeFooter.cshtml" />
     <Content Include="Views\Shared\_IncludeSearchBar.cshtml" />
     <Content Include="Views\Shared\_IncludeBreadcrumb.cshtml" />
@@ -1320,6 +1313,8 @@
     <Content Include="Views\Home\Geo\GeoSearch.cshtml" />
     <Content Include="Views\Home\Geo\GMaps.cshtml" />
     <Content Include="Views\Home\Geo\Leaflet.cshtml" />
+    <Content Include="Styles\less\mediaqueries.less" />
+    <Content Include="Styles\less\sticky-footer.less" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />
@@ -1411,7 +1406,7 @@
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50538</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <DevelopmentServerVPath>/examples</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

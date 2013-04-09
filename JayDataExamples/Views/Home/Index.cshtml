@@ -4,9 +4,9 @@
     Html.RenderPartial("_IncludeLogoFilter");
 }
 @section Header {
-    <script src="~/Scripts/vendor/knockout-2.1.0.js"></script>
+    <script src="/examples/Scripts/vendor/knockout-2.1.0.js"></script>
     <script src="http://include.jaydata.org/jaydatamodules/knockout.js"></script>
-    <script src="~/Scripts/indexModel.js"></script>
+    <script src="/examples/Scripts/indexModel.js"></script>
 }
 
 @section SubHeader {
@@ -41,9 +41,9 @@
     <script type="text/html" id="cell">
         <div class="span4 well well-white" data-bind="attr:{class:Suggested()?'span4 well well-white '+Suggested():'span4 well well-white'}">
             <div class="qr-code fright">
-                <img src="" data-bind="attr:{src:'https://chart.googleapis.com/chart?cht=qr&chl='+encodeURIComponent('http://nochtap.avangrade.com/'+Link())+'&chs=90x90'}" alt="QR Code" />
+                <img src="" data-bind="attr:{src:'https://chart.googleapis.com/chart?cht=qr&chl='+encodeURIComponent('http://jaydata.org/examples/'+Link())+'&chs=90x90'}" alt="QR Code" />
             </div>
-            <a data-bind="attr:{href:Link}">
+            <a data-bind="attr:{href:'/examples/'+Link()}">
                 <h2 data-bind="text: Title"></h2>
             </a>
             <small class="hover-info badge"><i class="icon-signal icon-white"></i><span data-bind="text: Level" title="Level of difficulty"></span></small>

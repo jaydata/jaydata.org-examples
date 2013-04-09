@@ -15,7 +15,7 @@
         });
         this.Example.setStore('default', {
             provider: 'webApi',
-            dataSource: '/api/Examples'
+            dataSource: '/examples/api/Examples'
         });
         this.Example.setStore('local', {
             provider: 'LocalStore',
@@ -89,7 +89,7 @@
         var self = exampleSite;
         var qStr = "";
         var q = $('#q').val();
-        var urlParam = '/';
+        var urlParam = '/examples';
         if (q != null && q != undefined && q != "") {
             q = q.toLowerCase();
             qStr = "(it.Title.toLowerCase().contains('" + q + "')==true || it.Lead.toLowerCase().contains('" + q + "')==true)";
@@ -97,7 +97,7 @@
         }
 
         if (self.Model.SelectedTags().length > 0) {
-            if (urlParam && urlParam.length>3) {
+            if (urlParam && urlParam.length>9) {
                 urlParam += "&";
             } else {
                 urlParam = "?";
@@ -116,7 +116,8 @@
             qStr += ")";
         }
 
-        if (urlParam) {
+        if (urlParam && urlParam.length>9) {
+            console.log("url param", urlParam);
             if (self.Model.addHistory) {
                 window.history.replaceState(null, "filter", urlParam);
             } else {

@@ -183,7 +183,7 @@
         Suppliers: { type: $data.EntitySet, elementType: NorthwindModel.Supplier }
     });
 
-    JayDataExamples.NorthwindDB.context = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: 'http://localhost:50538/Northwind.svc' });
+    JayDataExamples.NorthwindDB.context = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: '/examples/Northwind.svc' });
 
 
 })(window, $data);
