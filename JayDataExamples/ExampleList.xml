@@ -1533,7 +1533,7 @@
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/Here</Link>
-      <Tags>Geo, map, Nokia Here</Tags>
+      <Tags>Geo, map, Nokia Here, MongoDB, MongoDB pro, oData</Tags>
       <Level>100</Level>
       <Suggested>NEW</Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, Nokia Here</Meta-KeyWords>
@@ -1567,7 +1567,7 @@
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/GeoSearch</Link>
-      <Tags>Geo, query, map</Tags>
+      <Tags>Geo, query, oData, map</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, geo search, GeoJSON</Meta-KeyWords>
@@ -1594,7 +1594,7 @@
     <Example wide="false">
       <Title>Maintain POI database</Title>
       <Lead>
-        <![CDATA[Maintain POI database using leafletjs.]]>
+        <![CDATA[Maintain POI database using leafletjs. You can add/move/delete POIs as well as change the POI metadata. To show the form we use Twitter Bootstrap.]]>
       </Lead>
       <Description>
         <![CDATA[POIs from local database are shown. You can add/move/delete POIs as well as change the POI metadata. To show the form we use 
@@ -1602,9 +1602,10 @@
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/POI</Link>
-      <Tags>HTML5, Geo</Tags>
+      <Tags>local, Geo, JayStorm</Tags>
       <Level>300</Level>
-      <Suggested></Suggested>
+      <Suggested>HOT</Suggested>
+      <JsFiddle>http://jsfiddle.net/JayData/xK7bY/</JsFiddle>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, geo search, GeoJSON, POI</Meta-KeyWords>
       <Meta-Description>Maintain POI database with JayData and leaflet.js! See this simple example.</Meta-Description>
       <Includes>
@@ -1626,6 +1627,8 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm Platform overview</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-release-notes" target="_self" css="">JayStorm 1.1 beta features</ContentLink>
       </RelatedContents>
     </Example>
   </Examples>
