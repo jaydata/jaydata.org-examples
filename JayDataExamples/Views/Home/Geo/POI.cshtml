@@ -1,0 +1,309 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea class="code">
+// for simplicity some code has been removed, if you're interested
+// in the real code then see the page actual code (ctrl + u)
+<script>
+    var lmap = L.map('map').setView([47.498333, 19.040833], 12);
+    var lgroup = new L.LayerGroup().addTo(lmap);
+    L.tileLayer('http://{s}.tile.cloudmade.com/...', {
+        attribution: '...',
+        maxZoom: 18
+    }).addTo(lmap);
+
+    $data.define('POI', {
+        id: { type: $data.Guid, key: true, required: true },
+        name: String,
+        coord: $data.GeographyPoint
+    });
+
+    var points = {};
+    var popup;
+
+    function cancel() {
+        popup.closePopup();
+    }
+
+    function removePOI() {
+        var id = $("#id").val();
+        popup.closePopup();
+        var g = points[id];
+        g.remove()
+        .then(function () {
+            toastr.success('Removed');
+            g.removeMapObject();
+            delete points[g.id];
+        });
+    }
+
+    function savePOI() {
+        var id = $("#id").val();
+        var name = $("#name").val();
+        popup.closePopup();
+        var g = points[id];
+        g.name = name;
+        g.save()
+        .then(toastr.success('Saved'));
+    }
+
+    function add2map(g) {
+        points[g.id] = g;
+        var c = g.coord.coordinates;
+        var marker = L.marker([c[1], c[0]], { draggable: true });
+        marker.on('dragend', function (e) {
+            var l = e.target._latlng;
+            g.coord = new $data.GeographyPoint(l.lng, l.lat);
+            g.save()
+            .then(toastr.success('Moved'));
+        });
+        marker.on('click', function () {
+            var form = ' ... html form ... ';
+            popup = marker.bindPopup(form).openPopup();
+        });
+        lgroup.addLayer(marker);
+        g.removeMapObject = function () {
+            lgroup.removeLayer(marker);
+        }
+    }
+
+    POI.readAll()
+    .then(function (result) {
+        result.forEach(function (g) {
+            add2map(g);
+        });
+    });
+
+    var timer;
+    lmap.on('click', function (e) {
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+            var g = new POI();
+            g.id = $data.createGuid();
+            g.name = '';
+            g.coord = new $data.GeographyPoint();
+            var l = e.latlng;
+            g.coord.coordinates = [l.lng, l.lat];
+            add2map(g);
+        }, 300);
+    });
+    lmap.on('dblclick', function (e) {
+        window.clearTimeout(timer);
+    });
+</script></textarea>
+}
+
+@section CodeRunning {
+    <style>
+        #toast-container {
+            position: absolute;
+        }
+
+            #toast-container > div {
+                width: 100px;
+            }
+    </style>
+    <div id="map" style="overflow: hidden; width: 100%; height: 400px"></div>
+
+    <script>
+
+        toastr.options = {
+            "fadeOut": 500,
+            "timeOut": 800,
+            "target": $("#map")[0]
+        };
+
+        var lmap = L.map('map').setView([47.498333, 19.040833], 12);
+        var lgroup = new L.LayerGroup().addTo(lmap);
+        L.tileLayer('http://{s}.tile.cloudmade.com/003d6e8d9af14e7582b462c10e572a1a/997/256/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+            maxZoom: 18
+        }).addTo(lmap);
+
+
+        $data.define('POI', {
+            id: { type: $data.Guid, key: true, required: true },
+            name: String,
+            coord: $data.GeographyPoint
+        })
+        .setStore('default', { name: 'local', databaseName: 'pois' })
+        .setStore('remote', { name: 'oData', dataSource: 'https://dev-open.jaystack.net/06b63652-9ec1-4c42-82ad-ed6875efacfb/7b261639-c46e-4913-b14f-ea3d3f899fcb/api/mydatabase/POI' });
+
+        var points = {};
+        var popup;
+
+        function cancel() {
+            popup.closePopup();
+            return false;
+        }
+
+        function cancelNew() {
+            var id = $("#id").val();
+            popup.closePopup();
+            var g = points[id];
+            g.removeMapObject();
+            delete points[g.id];
+            return false;
+        }
+
+        function removePOI() {
+            var id = $("#id").val();
+            popup.closePopup();
+            var g = points[id];
+            g.remove()
+            .then(function () {
+                toastr.success('Removed');
+                g.removeMapObject();
+                delete points[g.id];
+            });
+            return false;
+        }
+
+        function savePOI() {
+            var id = $("#id").val();
+            var name = $("#name").val().trim();
+            var g = points[id];
+            if (!name) {
+                $("#row").addClass('error');
+            }
+            else {
+                g.name = name;
+                g.save()
+                .then(toastr.success('Saved'));
+                popup.closePopup();
+            }
+            return false;
+        }
+
+        function add2map(g) {
+
+            points[g.id] = g;
+
+            var marker = L.marker([g.coord.coordinates[1], g.coord.coordinates[0]], { draggable: true });
+
+            marker.on('dragend', function (e) {
+                g.coord = new $data.GeographyPoint(e.target._latlng.lng, e.target._latlng.lat);
+                g.save()
+                .then(toastr.success('Moved'));
+            });
+
+            marker.edit = function () {
+                var form = '<form id="inputform" onSubmit="return savePOI();" class="well" style="height: 60px; width: 200px;">' +
+                            '<input type="hidden" id="id" name="id" value="' + g.id + '">' +
+                            '<div id="row" class="control-group">' +
+                             '<label class="control-label span4" style="padding-top: 4px" for="name">Name:</label>' +
+                             '<span class="controls span8">' +
+                              '<input style="width: 120px" type="text" length="20" maxlength="20" placeholder="Required" id="name" name="name" value="' + g.name + '"/>' +
+                             '</span>' +
+                            '</div>' +
+                            '<div class="row-fluid">' +
+                        '<div class="span4" style="text-align:center;"><button type="button" class="btn-mini" onclick="return cancel();">Cancel</button></div>' +
+                        '<div class="span4" style="text-align:center;"><button type="button" class="btn-mini btn-danger" onclick="return removePOI();">Remove</button></div>' +
+                        '<div class="span4" style="text-align:center;"><button type="button" class="btn-mini btn-primary" onclick="return savePOI();">Submit</button></div>' +
+                            '</div>' +
+                            '</form>';
+                popup = marker.bindPopup(form).openPopup();
+                setTimeout(function () { $("#name").focus(); }, 0);
+            };
+
+            marker.editNew = function () {
+                var form = '<form id="inputform" onSubmit="return savePOI();" class="well" style="height: 60px; width: 200px;">' +
+                            '<input type="hidden" id="id" name="id" value="' + g.id + '">' +
+                            '<div id="row" class="control-group">' +
+                             '<label class="control-label span4" style="padding-top: 4px" for="name">Name:</label>' +
+                             '<span class="controls span8">'+
+                              '<input style="width: 120px" type="text" length="20" maxlength="20" placeholder="Required" id="name" name="name" value="' + g.name + '"/>'+
+                             '</span>' +
+                            '</div>' +
+                            '<div class="row-fluid">' +
+                        '<div class="span6" style="text-align:center;"><button type="button" class="btn-mini" onclick="return cancelNew();">Cancel</button></div>' +
+                        '<div class="span6" style="text-align:center;"><button type="button" class="btn-mini btn-primary" onclick="return savePOI();">Submit</button></div>' +
+                            '</div>' +
+                            '</form>';
+                popup = marker.bindPopup(form).openPopup();
+                setTimeout(function () { $("#name").focus(); }, 0);
+            };
+
+            marker.on('click', function () {
+                marker.edit();
+            });
+
+            lgroup.addLayer(marker);
+
+            g.mapObject = function () {
+                return marker;
+            }
+            g.removeMapObject = function () {
+                lgroup.removeLayer(marker);
+            }
+        }
+
+        function init() {
+            POI.itemCount()
+            .then(function (l) {
+                if (l > 0) return;
+                return POI.query('it.coord.distance(p) < r/R', { p: new $data.GeographyPoint(19.040833, 47.498333), r: 750, R: 6371000 }, 'remote')
+                    .then(function (pois) {
+                        return POI.addMany(pois);
+                    });
+            })
+            .then(function () {
+                POI.readAll()
+                .then(function (result) {
+                    result.forEach(function (g) {
+                        add2map(g);
+                    });
+                });
+            });
+        }
+
+        function resetLocalDb() {
+            lgroup.clearLayers();
+            POI.removeAll()
+            .then(init);
+            return false;
+        }
+
+        var ResetButton = L.Control.extend({
+            options: {
+                position: 'topright',
+                autoZIndex: true
+            },
+            initialize: function (options) {
+                L.setOptions(this, options);
+            },
+            onAdd: function (map) {
+                var container = L.DomUtil.create('div', 'leaflet-control-options');
+                $(container).html('<button type="button" class="btn-mini btn-primary" onclick="return resetLocalDb();">Reset</button>');
+                L.DomEvent
+                    .addListener(container, 'click', L.DomEvent.stopPropagation)
+                    .addListener(container, 'click', L.DomEvent.preventDefault);
+                return container;
+            }
+        });
+        lmap.addControl(new ResetButton());
+
+        init();
+
+        var timer;
+
+        lmap.on('click', function (e) {
+            window.clearTimeout(timer);
+            timer = window.setTimeout(function () {
+                var g = new POI();
+                g.id = $data.createGuid();
+                g.name = '';
+                g.coord = new $data.GeographyPoint(); // $data.Point(e.latlng);
+                g.coord.coordinates = [e.latlng.lng, e.latlng.lat];
+                add2map(g);
+                g.mapObject().editNew();
+            }, 300);
+        });
+
+        lmap.on('dblclick', function (e) {
+            window.clearTimeout(timer);
+        });
+
+    </script>
+}

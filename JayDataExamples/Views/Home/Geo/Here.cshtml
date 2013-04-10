@@ -1,0 +1,62 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea class="code">
+<script>
+nokia.Settings.set("appId", "...");
+nokia.Settings.set("authenticationToken", "...");
+var div = document.getElementById("map");
+var map = new nokia.maps.map.Display(div, {
+    components: [new nokia.maps.map.component.zoom.DoubleClick(),
+      new nokia.maps.map.component.Behavior(),
+      new nokia.maps.map.component.ZoomBar(),
+      new nokia.maps.map.component.ScaleBar()],
+    'zoomLevel': 12,
+    'center': [47.498333, 19.040833]
+});
+var info = new nokia.maps.map.component.InfoBubbles();
+map.addComponent(info);
+$data.initService(svc).then(function (mydatabase) {
+    mydatabase.POI.toArray(function (result) {
+        result.forEach(function (g) {
+            var c = g.coord.coordinates;
+            var m = new nokia.maps.map.StandardMarker([c[1],c[0]]);
+            m.addListener("click", function (e) {
+                info.addBubble(g.name, e.target.coordinate);
+            }, false);
+            map.objects.add(m);
+        });
+    });
+});
+</script></textarea>
+}
+
+@section CodeRunning {
+    <div id="map" style="overflow: hidden; width:100%; height:400px"></div>
+    <script>
+        nokia.Settings.set("appId", "wFdmCNif0TVO2bN5eqrU");
+        nokia.Settings.set("authenticationToken", "AQ2QkBCKMgGTznyG2c2HPw");
+        var map = new nokia.maps.map.Display(document.getElementById("map"), {
+            components: [new nokia.maps.map.component.zoom.DoubleClick(),
+                new nokia.maps.map.component.Behavior(),
+                new nokia.maps.map.component.ZoomBar(),
+                new nokia.maps.map.component.ScaleBar()],
+            'zoomLevel': 12,
+            'center': [47.498333, 19.040833]
+        });
+        var infoBubbles = new nokia.maps.map.component.InfoBubbles();
+        map.addComponent(infoBubbles);
+        $data.initService('https://dev-open.jaystack.net/06b63652-9ec1-4c42-82ad-ed6875efacfb/7b261639-c46e-4913-b14f-ea3d3f899fcb/api/mydatabase').then(function (mydatabase, factory, type) {
+            mydatabase.POI.toArray(function (result) {
+                result.forEach(function (g) {
+                    var marker = new nokia.maps.map.StandardMarker([g.coord.coordinates[1], g.coord.coordinates[0]]);
+                    marker.addListener("click", function (e) {
+                        infoBubbles.addBubble(g.name, e.target.coordinate);
+                    }, false);
+                    map.objects.add(marker);
+                });
+            });
+        });
+    </script>
+}

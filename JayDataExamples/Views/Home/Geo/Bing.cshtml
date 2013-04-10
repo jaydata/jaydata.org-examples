@@ -17,8 +17,8 @@
   $data.initService(svc).then(function (mydatabase) {
     mydatabase.POI.toArray(function (result) {
       result.forEach(function (g) {
-          var loc = new Microsoft.Maps.Location(
-              g.coord.coordinates[1], g.coord.coordinates[0]);
+        var c = g.coord.coordinates;
+        var loc = new Microsoft.Maps.Location(c[1],c[0]);
         var pin = new Microsoft.Maps.Pushpin(loc);
         Microsoft.Maps.Events.addHandler(pin,'click',function(e){
           var pin = e.target;
