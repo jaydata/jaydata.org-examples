@@ -853,6 +853,8 @@
     <Content Include="Scripts\vendor\north.js" />
     <Content Include="Scripts\vendor\Northwind.js" />
     <Content Include="Scripts\vendor\sencha-touch-all-compat.js" />
+    <Content Include="Scripts\vendor\toastr.js" />
+    <Content Include="Scripts\vendor\toastr.min.js" />
     <Content Include="Scripts\vendor\_references.js" />
     <Content Include="Sencha\index.html" />
     <Content Include="sitemap.xml" />
@@ -862,6 +864,8 @@
     <Content Include="Styles\flowershop\mixins.css" />
     <Content Include="Styles\img\knokout_flowershop\ajax-loader.gif" />
     <Content Include="Styles\img\knokout_flowershop\bg_direction_nav.png" />
+    <Content Include="Styles\toastr.css" />
+    <Content Include="Styles\toastr.min.css" />
     <Content Include="UrlRewrite.xml" />
     <Content Include="Planets\bootstrap.min.css" />
     <Content Include="Planets\context.js" />
@@ -1315,6 +1319,8 @@
     <Content Include="Views\Home\Geo\Leaflet.cshtml" />
     <Content Include="Styles\less\mediaqueries.less" />
     <Content Include="Styles\less\sticky-footer.less" />
+    <Content Include="Views\Home\Geo\Here.cshtml" />
+    <Content Include="Views\Home\Geo\POI.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />
