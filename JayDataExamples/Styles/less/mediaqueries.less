@@ -11,6 +11,18 @@
 			transform: translate(0, @filter-height);
 		}
 	}
+
+	.logo-filter-list {
+	    .logo-list-item {
+	    	&:hover {
+	    		-webkit-transform: scale(0.9);
+	    		-moz-transform: scale(0.9);
+	    		-o-transform: scale(0.9);
+	    		transform: scale(0.9);
+	    	}
+        }
+    }
+
 }
 
 @media (min-width: 980px) and (max-width: 1199px){
@@ -195,10 +207,14 @@
 
 @media (max-width: 480px){
 	#searchbar {
-		input {
-			min-width: 140px !important;
+		.input-append {
+			width: 100%; clear: both; float: none;
+		}
 
-			&:hover, &:focus { min-width: 140px !important; width: 140px !important; }
+		input {
+			width: 100%;
+
+			&:hover, &:focus { width: 100% !important; }
 		}
 	}
 
@@ -213,17 +229,15 @@
 			-o-transform: translate(0, @filter-height);
 			transform: translate(0, @filter-height);
 		}
+
+		.logo-filter-trigger {
+			left: auto; right: 10px;
+		}
 	}
 
 	.search-bar {
-		.tags {
-			li {
-				display: none;
-
-				&:first-child {
-					display: block;
-				}
-			}
+		.tags-inline {
+			margin: 0 0 10px;
 		}
 	}
 }

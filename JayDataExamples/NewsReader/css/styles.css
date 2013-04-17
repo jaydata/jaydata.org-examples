@@ -96,3 +96,19 @@ table tr td.active a{
     margin: 5px;
     cursor: pointer;
 }
+
+#article .main-article-content {
+    height: 80%; width: 65%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    top: 55px;
+    padding: 5px 10px;
+}
+
+#article .main-article-content legend, #article .main-article-content .form-actions {
+    margin: 0;
+}
+
+#article .main-article-content iframe {
+    max-height: 75px;
+}
