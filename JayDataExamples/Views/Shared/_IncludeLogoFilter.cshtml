@@ -11,7 +11,7 @@
 
     <ul class="logo-filter-list">
         <li class="list-header"><h3>JayData Features</h3></li>
-        <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('Type Definition')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('Type Definition');}" href="#" class="logo-big type-def"><span class="hidden-desktop">Type Definition</span></a></li>
+        @*<li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('Type Definition')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('Type Definition');}" href="#" class="logo-big type-def"><span class="hidden-desktop">Type Definition</span></a></li>*@
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('CRUD')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('CRUD');}" href="#" class="logo-big crud"><span class="hidden-desktop">CRUD</span></a></li>
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('query')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('query');}" href="#" class="logo-big query-and-paging"><span class="hidden-desktop">Query and Paging</span></a></li>
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('Indicies')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('Indicies');}" href="#" class="logo-big using-indicies"><span class="hidden-desktop">Using Indicies</span></a></li>
@@ -21,7 +21,7 @@
     
     <ul class="logo-filter-list">
         <li class="list-header"><h3>JayData Pro</h3></li>
-        <li class="logo-list-item pro"><a href="#" class="logo-big jaydata"><span class="hidden-desktop">JayData</span></a></li>
+        @*<li class="logo-list-item pro"><a href="#" class="logo-big jaydata"><span class="hidden-desktop">JayData</span></a></li>*@
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('indexedDB pro')?'logo-list-item active pro':'logo-list-item pro'}"><a data-bind="click:function(){$root.addLogoFilter('indexedDB pro');}" href="#" class="logo-big indexeddb"><span class="hidden-desktop">IndexedDb</span></a></li>
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('WebSQL pro')?'logo-list-item active pro':'logo-list-item pro'}"><a data-bind="click:function(){$root.addLogoFilter('WebSQL pro');}" href="#" class="logo-big websql"><span class="hidden-desktop">WebSQL</span></a></li>
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('MongoDB pro')?'logo-list-item active pro':'logo-list-item pro'}"><a data-bind="click:function(){$root.addLogoFilter('MongoDB pro');}" href="#" class="logo-big mongodb"><span class="hidden-desktop">MongoDB</span></a></li>
@@ -34,7 +34,7 @@
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('SQLite')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('SQLite');}" href="#" class="logo-big sqlite"><span class="hidden-desktop">SQLite</span></a></li>
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('facebook')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('facebook');}" href="#" class="logo-big facebook"><span class="hidden-desktop">Facebook</span></a></li>
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('YQL')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('YQL');}" href="#" class="logo-big yahoo"><span class="hidden-desktop">YQL</span></a></li>
-        <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('InMemory')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('InMemory');}" href="#" class="logo-big inmemory"><span class="hidden-desktop">InMemory</span></a></li>
+        @*<li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('InMemory')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('InMemory');}" href="#" class="logo-big inmemory"><span class="hidden-desktop">InMemory</span></a></li>*@
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('HTML5 localStorage')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('HTML5 localStorage');}" href="#" class="logo-big localstorage"><span class="hidden-desktop">HTML5 LocalStorage</span></a></li>
     </ul>
 
@@ -42,8 +42,8 @@
         <li class="list-header"><h3>Server side</h3></li>
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('SQLite')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('SQLite');}" href="#" class="logo-big sqlite"><span class="hidden-desktop">SQLite</span></a></li>
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('JayStorm')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('JayStorm');}" href="#" class="logo-big jayrepo"><span class="hidden-desktop">JayStorm</span></a></li>
-        <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('NodeJs')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('NodeJs');}" href="#" class="logo-big nodejs"><span class="hidden-desktop">NodeJs</span></a></li>
-        <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('tag1')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('tag1');}" href="#" class="logo-big vs"><span class="hidden-desktop">tag1</span></a></li>
+        @*<li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('NodeJs')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('NodeJs');}" href="#" class="logo-big nodejs"><span class="hidden-desktop">NodeJs</span></a></li>*@
+        @*<li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('tag1')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('tag1');}" href="#" class="logo-big vs"><span class="hidden-desktop">tag1</span></a></li>*@
         <li class="logo-list-item" data-bind="attr:{class:$root.isActiveTag('MongoDB')?'logo-list-item active':'logo-list-item'}"><a data-bind="click:function(){$root.addLogoFilter('MongoDB');}" href="#" class="logo-big mongodb"><span class="hidden-desktop">MongoDB</span></a></li>
     </ul>
 
