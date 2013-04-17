@@ -93,14 +93,14 @@
         if (q != null && q != undefined && q != "") {
             q = q.toLowerCase();
             qStr = "(it.Title.toLowerCase().contains('" + q + "')==true || it.Lead.toLowerCase().contains('" + q + "')==true)";
-            urlParam = "?q=" + q;
+            urlParam += "?q=" + q;
         }
 
         if (self.Model.SelectedTags().length > 0) {
             if (urlParam && urlParam.length>9) {
                 urlParam += "&";
             } else {
-                urlParam = "?";
+                urlParam += "?";
             }
             urlParam += "tags=" + self.Model.SelectedTags().join(',');
 
