@@ -180,7 +180,7 @@
       <Link>KendoUI/Grid_CRUD</Link>
       <Tags>KendoUI, CRUD, grid, Northwind</Tags>
       <Level>140</Level>
-      <Suggested>NEW</Suggested>
+      <Suggested></Suggested>
       <Includes>
         <group name="kendoui"></group>
         <script type="text/javascript" src="/examples/scripts/vendor/north.js"></script>
@@ -996,7 +996,7 @@
       <Link>General/NewsReader</Link>
       <Tags>OData, jQuery, CRUD, filter, query</Tags>
       <Level>200</Level>
-      <Suggested>HOT</Suggested>
+      <Suggested></Suggested>
       <Download>http://jaydata.org/examples/NewsReader/js/NewsReaderApp.js</Download>
       <Meta-KeyWords>JayData, jQuery, Crossplatform, HTML5 CRUD, OData, Javascript, HTML5, tutorial, example</Meta-KeyWords>
       <Meta-Description>How to create a Newsreader with JayData? See this simple CRUD example.</Meta-Description>
@@ -1428,7 +1428,7 @@
       <Link>Geo/GMaps</Link>
       <Tags>Geo, map</Tags>
       <Level>100</Level>
-      <Suggested>NEW</Suggested>
+      <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Google Maps! See this simple example.</Meta-Description>
       <Includes>
@@ -1458,13 +1458,13 @@
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
         oData provider also supports geo querying if the backend supports it. JayStorm 1.1+ and JayService 1.3+ with MongoDB Pro as oData backend supports
-        geo querying. The received data is of GeoJSON type so we can use it with leafletjs directly.]]>
+        geo querying. The received data is of GeoJSON type so we can use it with leafletjs directly. <br/> This example uses JayStorm as the backend as a service. JayStorm is our PaaS service built upon our Stack: JayService + MongDB Pro provider + MongoDB]]>
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/Leaflet</Link>
-      <Tags>Geo, map. leaflet.js</Tags>
+      <Tags>Geo, map, leaflet.js, MongoDB, MongoDB pro</Tags>
       <Level>100</Level>
-      <Suggested>NEW</Suggested>
+      <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, leaflet, leafletjs</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Leaflet.js! See this simple example.</Meta-Description>
       <Includes>
@@ -1494,13 +1494,13 @@
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
         oData provider also supports geo querying if the backend supports it. JayStorm 1.1+ and JayService 1.3+ with MongoDB Pro as oData backend supports
-        geo querying.]]>
+        geo querying. <br/> This example uses JayStorm as the backend as a service. JayStorm is our PaaS service built upon our Stack: JayService + MongDB Pro provider + MongoDB]]>
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/Bing</Link>
-      <Tags>Geo, map, bing</Tags>
+      <Tags>Geo, map, bing, MongoDB, MongoDB Pro</Tags>
       <Level>100</Level>
-      <Suggested>NEW</Suggested>
+      <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, Bing</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Bing! See this simple example.</Meta-Description>
       <Includes>
@@ -1529,13 +1529,13 @@
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
         oData provider also supports geo querying if the backend supports it. JayStorm 1.1+ and JayService 1.3+ with MongoDB Pro as oData backend supports
-        geo querying.]]>
+        geo querying. <br/> This example uses JayStorm as the backend as a service. JayStorm is our PaaS service built upon our Stack: JayService + MongDB Pro provider + MongoDB]]>
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/Here</Link>
       <Tags>Geo, map, Nokia Here, MongoDB, MongoDB pro, oData</Tags>
       <Level>100</Level>
-      <Suggested>NEW</Suggested>
+      <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, Nokia Here</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Nokia Here! See this simple example.</Meta-Description>
       <Includes>
@@ -1604,7 +1604,7 @@
       <Link>Geo/POI</Link>
       <Tags>local, Geo, JayStorm</Tags>
       <Level>300</Level>
-      <Suggested>HOT</Suggested>
+      <Suggested></Suggested>
       <JsFiddle>http://jsfiddle.net/JayData/xK7bY/</JsFiddle>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, geo search, GeoJSON, POI</Meta-KeyWords>
       <Meta-Description>Maintain POI database with JayData and leaflet.js! See this simple example.</Meta-Description>
