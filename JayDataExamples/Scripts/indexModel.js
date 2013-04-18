@@ -57,11 +57,14 @@
                 self.filter();
             }
         }
-        this.Model.addTags = function (tag) {
+        this.Model.addTags = function (tag, clear) {
             var tags = tag;
             var addNewTag = false;
             if (!(tag instanceof Array)) {
                 tags = [tag];
+            }
+            if (clear === true) {
+                self.Model.SelectedTags.removeAll();
             }
             tags.forEach(function (item) {
                 if (self.Model.SelectedTags().indexOf(item) < 0) {
@@ -127,7 +130,7 @@
         }
 
         if (urlParam && urlParam.length > 10 && window.isBackButton !== true) {
-            console.log("url param: ", urlParam, ' window.history length: ', window.history.length);
+            //console.log("url param: ", urlParam, ' window.history length: ', window.history.length);
             if (self.Model.addHistory) {
                 window.history.pushState(null, "filter", urlParam);
             } else {
@@ -135,7 +138,7 @@
                 window.history.pushState(null, "filter", urlParam);
             }
         }
-        console.log("q: ", qStr);
+        //console.log("q: ", qStr);
 
         var query = null;
         if (qStr != "") {

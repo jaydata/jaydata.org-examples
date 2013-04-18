@@ -66,14 +66,14 @@
             );
         }
         function initModelFromUrl() {
-            console.log("Init model from url: ",location.search, ' window.history length: ', window.history.length);
+            //console.log("Init model from url: ",location.search, ' window.history length: ', window.history.length);
             var tagListStr = getURLParameter("tags");
             var qStr = getURLParameter("q");
-            console.log("tagList: ", tagListStr, " query str: ", qStr);
+            //console.log("tagList: ", tagListStr, " query str: ", qStr);
 
             if (tagListStr !== "null") {
                 var tagList = tagListStr.split(',');
-                exampleSite.Model.addTags(tagList);
+                exampleSite.Model.addTags(tagList, true);
             } else {
                 exampleSite.Model.removeTags();
             }
