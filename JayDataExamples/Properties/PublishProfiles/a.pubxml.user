@@ -26,7 +26,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2013 15:46:35</publishTime>
     </File>
     <File Include="bin/JayDataExamples.dll">
-      <publishTime>04/09/2013 12:12:07</publishTime>
+      <publishTime>04/10/2013 17:31:41</publishTime>
     </File>
     <File Include="bin/JayDataExamples.NorthwindDB.dll">
       <publishTime>04/08/2013 16:57:07</publishTime>
@@ -104,7 +104,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2013 15:46:15</publishTime>
     </File>
     <File Include="ExampleList.xml">
-      <publishTime>04/09/2013 09:48:40</publishTime>
+      <publishTime>04/18/2013 08:20:57</publishTime>
     </File>
     <File Include="Fonts/Droid/droidsans-bold.eot">
       <publishTime>03/25/2013 13:29:05</publishTime>
@@ -395,7 +395,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2013 15:46:15</publishTime>
     </File>
     <File Include="NewsReader/css/styles.css">
-      <publishTime>03/22/2013 15:46:15</publishTime>
+      <publishTime>04/18/2013 08:20:57</publishTime>
     </File>
     <File Include="NewsReader/img/glyphicons-halflings-white.png">
       <publishTime>03/22/2013 15:46:15</publishTime>
@@ -404,7 +404,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2013 15:46:15</publishTime>
     </File>
     <File Include="NewsReader/index.html">
-      <publishTime>04/08/2013 16:53:47</publishTime>
+      <publishTime>04/18/2013 08:20:58</publishTime>
     </File>
     <File Include="NewsReader/js/bootstrap-wysihtml5.js">
       <publishTime>03/22/2013 15:46:15</publishTime>
@@ -1328,7 +1328,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/29/2013 15:37:23</publishTime>
     </File>
     <File Include="Scripts/indexModel.js">
-      <publishTime>04/09/2013 11:52:01</publishTime>
+      <publishTime>04/17/2013 15:16:14</publishTime>
     </File>
     <File Include="Scripts/ui.js">
       <publishTime>03/27/2013 12:17:24</publishTime>
@@ -2193,6 +2193,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/vendor/sencha-touch-all-compat.js">
       <publishTime>03/22/2013 15:46:35</publishTime>
+    </File>
+    <File Include="Scripts/vendor/toastr.js">
+      <publishTime>04/10/2013 15:50:54</publishTime>
+    </File>
+    <File Include="Scripts/vendor/toastr.min.js">
+      <publishTime>04/10/2013 15:50:54</publishTime>
     </File>
     <File Include="Scripts/vendor/_references.js">
       <publishTime>03/22/2013 15:46:34</publishTime>
@@ -3425,7 +3431,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/03/2013 16:23:37</publishTime>
     </File>
     <File Include="Styles/dd.css">
-      <publishTime>04/09/2013 12:10:10</publishTime>
+      <publishTime>04/18/2013 08:20:58</publishTime>
     </File>
     <File Include="Styles/examples.css">
       <publishTime>04/09/2013 12:10:10</publishTime>
@@ -3464,16 +3470,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/26/2013 13:56:41</publishTime>
     </File>
     <File Include="Styles/less/logos.less">
-      <publishTime>04/09/2013 12:10:10</publishTime>
+      <publishTime>04/18/2013 08:20:58</publishTime>
     </File>
     <File Include="Styles/less/mediaqueries.less">
-      <publishTime>04/08/2013 07:51:03</publishTime>
+      <publishTime>04/18/2013 08:20:58</publishTime>
     </File>
     <File Include="Styles/less/mixins.less">
       <publishTime>04/09/2013 12:10:10</publishTime>
     </File>
     <File Include="Styles/less/sticky-footer.less">
       <publishTime>04/02/2013 14:49:05</publishTime>
+    </File>
+    <File Include="Styles/toastr.css">
+      <publishTime>04/10/2013 15:50:54</publishTime>
+    </File>
+    <File Include="Styles/toastr.min.css">
+      <publishTime>04/10/2013 15:50:54</publishTime>
     </File>
     <File Include="UrlRewrite.xml">
       <publishTime>04/08/2013 15:26:19</publishTime>
@@ -3497,7 +3509,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/29/2013 15:36:21</publishTime>
     </File>
     <File Include="Views/Home/Geo/Bing.cshtml">
-      <publishTime>04/08/2013 14:35:25</publishTime>
+      <publishTime>04/10/2013 15:50:54</publishTime>
     </File>
     <File Include="Views/Home/Geo/GeoSearch.cshtml">
       <publishTime>04/08/2013 16:10:32</publishTime>
@@ -3505,11 +3517,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Home/Geo/GMaps.cshtml">
       <publishTime>04/08/2013 14:35:25</publishTime>
     </File>
+    <File Include="Views/Home/Geo/Here.cshtml">
+      <publishTime>04/10/2013 15:50:54</publishTime>
+    </File>
     <File Include="Views/Home/Geo/Leaflet.cshtml">
-      <publishTime>04/08/2013 14:35:25</publishTime>
+      <publishTime>04/10/2013 15:50:54</publishTime>
+    </File>
+    <File Include="Views/Home/Geo/POI.cshtml">
+      <publishTime>04/10/2013 15:50:54</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>04/09/2013 11:53:14</publishTime>
+      <publishTime>04/09/2013 12:46:15</publishTime>
     </File>
     <File Include="Views/Home/JayDataPro/ToDoList_complex.cshtml">
       <publishTime>04/05/2013 15:36:52</publishTime>
@@ -3596,7 +3614,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/04/2013 08:14:00</publishTime>
     </File>
     <File Include="Views/Home/ToDoList.cshtml">
-      <publishTime>04/02/2013 15:12:59</publishTime>
+      <publishTime>04/16/2013 09:59:32</publishTime>
     </File>
     <File Include="Views/Home/TypeScript/TypeScript.cshtml">
       <publishTime>04/02/2013 15:20:16</publishTime>
@@ -3632,7 +3650,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/03/2013 10:38:10</publishTime>
     </File>
     <File Include="Views/Shared/_IncludeFavIcon.cshtml">
-      <publishTime>03/22/2013 15:46:35</publishTime>
+      <publishTime>04/09/2013 12:49:51</publishTime>
     </File>
     <File Include="Views/Shared/_IncludeFooter.cshtml">
       <publishTime>03/27/2013 07:18:44</publishTime>
@@ -3644,7 +3662,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2013 15:46:35</publishTime>
     </File>
     <File Include="Views/Shared/_IncludeLogoFilter.cshtml">
-      <publishTime>04/08/2013 14:35:25</publishTime>
+      <publishTime>04/18/2013 08:20:58</publishTime>
     </File>
     <File Include="Views/Shared/_IncludeMeta.cshtml">
       <publishTime>03/22/2013 15:46:35</publishTime>
@@ -3677,7 +3695,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2013 15:46:16</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/09/2013 12:12:10</publishTime>
+      <publishTime>04/18/2013 08:25:33</publishTime>
     </File>
   </ItemGroup>
 </Project>

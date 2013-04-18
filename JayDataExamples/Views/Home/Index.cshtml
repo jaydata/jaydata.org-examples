@@ -65,20 +65,35 @@
                 (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1]
             );
         }
+        function initModelFromUrl() {
+            console.log("Init model from url: ",location.search, ' window.history length: ', window.history.length);
+            var tagListStr = getURLParameter("tags");
+            var qStr = getURLParameter("q");
+            console.log("tagList: ", tagListStr, " query str: ", qStr);
+
+            if (tagListStr !== "null") {
+                var tagList = tagListStr.split(',');
+                exampleSite.Model.addTags(tagList);
+            } else {
+                exampleSite.Model.removeTags();
+            }
+            
+            if (qStr !== "null") {
+                exampleSite.Model.qStr(qStr);
+            } else {
+                exampleSite.Model.qStr('');
+            }
+            exampleSite.filter();
+        }
         var exampleSite = new ExampleSite();
         exampleSite.initialize().then(function () {
             ko.applyBindings(exampleSite.Model);
-            var tagListStr = getURLParameter("tags");
-            if (tagListStr !== "null") {
-                var tagList = tagListStr.split(',');
-                tagList.forEach(function (tag) {
-                    exampleSite.Model.addTags(tag);
-                });
-            }
-            var qStr = getURLParameter("q");
-            if (qStr !== "null") {
-                exampleSite.Model.qStr(qStr);
-            }
+            initModelFromUrl();
+            window.onpopstate = function (event) {
+                window.isBackButton = true;
+                initModelFromUrl();
+                window.isBackButton = false;
+            };
         });
     </script>
 }

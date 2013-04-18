@@ -58,8 +58,18 @@
             }
         }
         this.Model.addTags = function (tag) {
-            if (self.Model.SelectedTags().indexOf(tag) < 0) {
-                self.Model.SelectedTags.push(tag);
+            var tags = tag;
+            var addNewTag = false;
+            if (!(tag instanceof Array)) {
+                tags = [tag];
+            }
+            tags.forEach(function (item) {
+                if (self.Model.SelectedTags().indexOf(item) < 0) {
+                    self.Model.SelectedTags.push(item);
+                    addNewTag = true;
+                }
+            }, this);
+            if (addNewTag) {
                 self.filter();
             }
         }
@@ -88,8 +98,8 @@
     filter: function () {
         var self = exampleSite;
         var qStr = "";
-        var q = $('#q').val();
-        var urlParam = '/examples';
+        var q = self.Model.qStr();
+        var urlParam = '/examples/';
         if (q != null && q != undefined && q != "") {
             q = q.toLowerCase();
             qStr = "(it.Title.toLowerCase().contains('" + q + "')==true || it.Lead.toLowerCase().contains('" + q + "')==true)";
@@ -97,7 +107,7 @@
         }
 
         if (self.Model.SelectedTags().length > 0) {
-            if (urlParam && urlParam.length>9) {
+            if (urlParam && urlParam.length > 10) {
                 urlParam += "&";
             } else {
                 urlParam += "?";
@@ -116,10 +126,10 @@
             qStr += ")";
         }
 
-        if (urlParam && urlParam.length>9) {
-            console.log("url param", urlParam);
+        if (urlParam && urlParam.length > 10 && window.isBackButton !== true) {
+            console.log("url param: ", urlParam, ' window.history length: ', window.history.length);
             if (self.Model.addHistory) {
-                window.history.replaceState(null, "filter", urlParam);
+                window.history.pushState(null, "filter", urlParam);
             } else {
                 self.Model.addHistory = true;
                 window.history.pushState(null, "filter", urlParam);
@@ -147,8 +157,12 @@
         });
     },
     searchInput_onkeyup: function () {
+        var self = this;
         clearTimeout(this.typingTimer);
-        this.typingTimer = setTimeout(this.filter, 500);
+        this.typingTimer = setTimeout(function () {
+            self.Model.qStr($('#q').val());
+            self.filter();
+        }, 500);
     },
     searchInput_onkeydown: function () {
         clearTimeout(this.typingTimer);
