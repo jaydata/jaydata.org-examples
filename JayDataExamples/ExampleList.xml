@@ -1417,19 +1417,20 @@
     <Example wide="false">
       <Title>Geography example with Google Maps</Title>
       <Lead>
-        <![CDATA[Show geography points on Google Maps.]]>
+        <![CDATA[Show geography points on Google Maps. JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
+        oData provider also supports geo querying if the backend supports it.]]>
       </Lead>
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
         oData provider also supports geo querying if the backend supports it. JayStorm 1.1+ and JayService 1.3+ with MongoDB Pro as oData backend supports
-        geo querying. The received data is of GeoJSON type, unfortunatelly Google Maps does not supports it natively so we have to use a converter.]]>
+        geo querying. The received data is of GeoJSON type, unfortunatelly Google Maps does not supports it natively so we have to use a converter. <br/> This example uses JayStorm as the backend as a service. JayStorm is our PaaS service built upon our Stack: JayService + MongDB Pro provider + MongoDB]]>
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/GMaps</Link>
-      <Tags>Geo, map</Tags>
+      <Tags>Geo, map, MongoDB, MongoDB pro, JayStorm</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
-      <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example</Meta-KeyWords>
+      <Meta-KeyWords>JayData, OData v3 examples, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example</Meta-KeyWords>
       <Meta-Description>Use GeoJSON compliant oData service with Google Maps! See this simple example.</Meta-Description>
       <Includes>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
@@ -1448,12 +1449,16 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm Platform overview</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-release-notes" target="_self" css="">JayStorm 1.1 beta features</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-server" target="_blank" css="">JayData OData server</ContentLink>
       </RelatedContents>
     </Example>
     <Example wide="false">
       <Title>Geography example with Leaflet.js</Title>
       <Lead>
-        <![CDATA[Show geography points using leaflet.js.]]>
+        <![CDATA[Show geography points using leaflet.js. JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
+        oData provider also supports geo querying if the backend supports it.]]>
       </Lead>
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
@@ -1466,7 +1471,7 @@
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, leaflet, leafletjs</Meta-KeyWords>
-      <Meta-Description>Use GeoJSON compliant oData service with Leaflet.js! See this simple example.</Meta-Description>
+      <Meta-Description>Use GeoJSON compliant OData service with Leaflet.js! See this simple example.</Meta-Description>
       <Includes>
         <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
         <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
@@ -1484,12 +1489,16 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm Platform overview</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-release-notes" target="_self" css="">JayStorm 1.1 beta features</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-server" target="_blank" css="">JayData OData server</ContentLink>
       </RelatedContents>
     </Example>
     <Example wide="false">
       <Title>Geography example with Bing</Title>
       <Lead>
-        <![CDATA[Show geography points using Bing.]]>
+        <![CDATA[Show geography points using Bing. JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
+        oData provider also supports geo querying if the backend supports it.]]>
       </Lead>
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
@@ -1498,7 +1507,7 @@
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/Bing</Link>
-      <Tags>Geo, map, bing, MongoDB, MongoDB Pro</Tags>
+      <Tags>Geo, map, bing, MongoDB, MongoDB pro, OData, JayStorm</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, Bing</Meta-KeyWords>
@@ -1524,7 +1533,8 @@
     <Example wide="false">
       <Title>Geography example with Nokia Here</Title>
       <Lead>
-        <![CDATA[Show geography points using Nokia Here.]]>
+        <![CDATA[Show geography points using Nokia Here. JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
+        OData provider also supports geo querying if the backend supports it.]]>
       </Lead>
       <Description>
         <![CDATA[JayData supports GeoJSON compliant geography and geometry types. On local providers and on oData store/retrieve is supported, 
@@ -1533,7 +1543,7 @@
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>Geo/Here</Link>
-      <Tags>Geo, map, Nokia Here, MongoDB, MongoDB pro, oData</Tags>
+      <Tags>Geo, map, Nokia Here, MongoDB, MongoDB pro, OData, JayStorm</Tags>
       <Level>100</Level>
       <Suggested></Suggested>
       <Meta-KeyWords>JayData, JayData providers, Crossplatform,  Javascript, HTML5, tutorial, geography, geometry, example, Nokia Here</Meta-KeyWords>
@@ -1554,15 +1564,18 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm Platform overview</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-release-notes" target="_self" css="">JayStorm 1.1 beta features</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-server" target="_blank" css="">JayData OData server</ContentLink>
       </RelatedContents>
     </Example>
     <Example wide="false">
       <Title>Geographical search over oData</Title>
       <Lead>
-        <![CDATA[Show geography points within a circle using leafletjs.]]>
+        <![CDATA[Show geography points within a circle using leafletjs. Click onto the map. POIs within the radius set in the input box in meters are shown.]]>
       </Lead>
       <Description>
-        <![CDATA[Click onto the map. POIs within the radius set in the input box in meters are shown. Watch the network to see oData geo queries,
+        <![CDATA[Click onto the map. POIs within the radius set in the input box in meters are shown. Watch the network to see OData geo queries,
          the distance is sent in radians over oData.]]>
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
@@ -1589,6 +1602,9 @@
         <Browser title="Android" name="android" minVersion="2.2"/>
       </SupportedBrowsers>
       <RelatedContents>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm Platform overview</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-release-notes" target="_self" css="">JayStorm 1.1 beta new features</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-server" target="_blank" css="">JayData OData server</ContentLink>
       </RelatedContents>
     </Example>
     <Example wide="false">
@@ -1629,6 +1645,7 @@
       <RelatedContents>
         <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_self" css="">JayStorm Platform overview</ContentLink>
         <ContentLink link="http://jaystack.com/blog/jaystorm-release-notes" target="_self" css="">JayStorm 1.1 beta features</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-server" target="_blank" css="">JayData OData server</ContentLink>
       </RelatedContents>
     </Example>
   </Examples>
