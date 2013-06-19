@@ -950,7 +950,7 @@
       <Title>Netflix movies-Sencha Touch 2</Title>
       <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. Query the Netflix OData service using JayData and use Sencha Touch 2 for the UI.]]></Lead>
       <Description>
-        <![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI. Query the <a href="http://odata.netflix.com/v2/Catalog/">Netflix OData service </a> using JayData and use Sencha Touch 2 for the UI.]]>
+        <![CDATA[<strong>UPDATE:</strong><i>Netflix stopped the OData endpoint.</i>  Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI. Query the Netflix OData service using JayData and use Sencha Touch 2 for the UI.]]>
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>SenchaUI/Netflix</Link>
