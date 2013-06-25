@@ -1,0 +1,162 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_Default.cshtml";}
+
+@section CodeSource {
+    <textarea class="code">
+<!-- Load observableArray data -->
+<script type="text/javascript">
+    function NorthwindViewModel() {
+        var self = this;
+        self.listedCategories = ko.observableArray([]);
+
+        northwind.Categories
+            .toArray(self.listedCategories);
+    };
+</script>
+
+<!-- Load products by category -->
+<script>
+
+    self.loadProducts = function (category) {
+        northwind.Products
+            .filter(function (product) { return product.Category_ID == this.Id }, { Id: category.Category_ID() })
+            .toArray(self.listedProducts);
+    };
+</script>
+    </textarea>
+}
+
+@section CodeRunning {
+    <table id="categoryTable" class="table span3 reset-m" style="margin: 0 10px 10px 0 !important;">
+        <thead>
+            <tr>
+                <th>Category name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <table id="productTable" class="table span6 reset-m hide" style="margin: 0 10px 10px 0 !important;">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>English Name</th>
+                <th>Unit Price</th>
+                <th>Units In Stock</th>
+                <th>Discontinued</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div id="editProduct" class="table span3 reset-m noborder_">
+        <div class="well-box hide">
+            <form>
+                <fieldset>
+                    <legend class="modal-header">Edit Product</legend>
+
+                    <div class="modal-body" style="max-height: 600px;">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                Product name:
+                            <br />
+                                <input type="text" name="Product_Name" />
+                            </div>
+                            <div class="span12">
+                                English Name:
+                            <br />
+                                <input type="text" name="English_Name" />
+                            </div>
+                            <div class="span12">
+                                Unit Price:
+                            <br />
+                                <input type="text" name="Unit_Price" />
+                            </div>
+                            <div class="span12">
+                                Units In Stock:
+                            <br />
+                                <input type="text" name="Units_In_Stock" />
+                            </div>
+                            <div class="span12">
+                                Discontinued:
+                                <input type="checkbox" name="Discontinued" checked />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="save" class="btn btn-success tshadow" />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div id="saveResult" class="alert alert-success hide">
+            <strong>Success!</strong>
+            <br />
+            Product has been saved successfully.
+        </div>
+    </div>
+
+    <script>
+        function renderCategories(dataList) {
+            var table = $('#categoryTable tbody');
+            table.empty();
+            dataList.forEach(function (item) {
+                table.append('<tr><td><a onClick="loadProduct(' + item.Category_ID + ')">' + item.Category_Name + '</a></td><td>' + item.Description + '</td></tr>');
+            });
+        }
+        function loadProduct(categoryId) {
+            northwind.Products
+                .filter(function (product) { return product.Category_ID == this.Id }, { Id: categoryId })
+                .toArray(renderProducts);
+        }
+        function renderProducts(dataList) {
+            $('.well-box').hide();
+            $('#productTable').show();
+            var table = $('#productTable tbody');
+            table.empty();
+            dataList.forEach(function (item) {
+                table.append('<tr><td><a onClick="editProduct(' + item.Product_ID + ')">' + item.Product_Name + '</a></td>'
+                               + '<td>' + item.English_Name + '</td>'
+                               + '<td>' + item.Unit_Price + '</td>'
+                               + '<td>' + item.Units_In_Stock + '</td>'
+                               + '<td>' + item.Discontinued + '</td></tr>');
+            });
+        }
+        function editProduct(productId) {
+            northwind.Products
+                .single(function (product) { return product.Product_ID == this.Id }, { Id: productId }, renderEditProduct);
+        }
+        function renderEditProduct(product) {
+            window.selectedProduct = product;
+            $('form').serializeArray().forEach(function (item) {
+                $('form [name="' + item.name + '"]').val(product[item.name]);
+            });
+            $('form [name="Discontinued"]').prop('checked', product['Discontinued']);
+            $('.well-box').show();
+        }
+        function saveProduct() {
+            northwind.Products.attach(selectedProduct);
+            $('form').serializeArray().forEach(function (item) {
+                selectedProduct[item.name] = $('form [name="' + item.name + '"]').val();
+            });
+            selectedProduct.Discontinued = !!$('form [name = "Discontinued"]').attr('checked');
+            northwind.saveChanges();
+            var result = $('#saveResult');
+            result.show();
+            setTimeout(function () {
+                result.fadeOut("slow");
+            }, 1500);
+            return false;
+        }
+        $(function () {
+            window['northwind'] = new JayDataExamples.NorthwindDB.NorthwindEntities({ name: 'oData', oDataServiceHost: '/examples/Northwind.svc' });
+            northwind.onReady(function () {
+                $('form').bind('submit', saveProduct);
+                northwind.Categories.toArray(renderCategories);
+            });
+        });
+    </script>
+}

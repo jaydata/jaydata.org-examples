@@ -1016,7 +1016,39 @@
         <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">JayData blogs about OData </ContentLink>
       </RelatedContents>
     </Example>
-
+    <Example wide="true">
+      <Title>jQuery data binding</Title>
+      <Lead><![CDATA[Demonstrating a simple CRUD application with JayData API and pure jQuery]]></Lead>
+      <Description>
+        <![CDATA[Demonstrating easy data binding using JayData and jQuery together. Leverage your jQuery experience and manage data with JayData API to write less and clean data manager code.]]>
+      </Description>
+      <Meta-KeyWords>JayData, OData, jQuery, HTML5, Javascript, JayData providers</Meta-KeyWords>
+      <Meta-Description>How to implement a simple CRUD-capable data manager application with JayData and jQuery! Consume OData services easily!</Meta-Description>
+      <Image>/examples/Images/indexeddb.png</Image>
+      <Link>General/Northwind</Link>
+      <Tags>jQuery, Northwind</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <Includes>
+        <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <script src="/examples/scripts/example/knokout_northwind.js"></script>
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="9+" />
+        <Browser title="Google Chrome" name="chrome" minVersion="12+"/>
+        <Browser title="Firefox" name="firefox" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Windows Phone" name="wp" minVersion="7,5+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.2+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs" target="_blank" css="">How to use JayData with Knockout.js?</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/knockout.js" target="_blank" css="">Blogs with Knockout tag</ContentLink>
+        <ContentLink link="http://jaystack.com/blog/jaystorm-services-overview" target="_blank" css="">JayStorm platform overview</ContentLink>
+      </RelatedContents>
+    </Example>
     <!--<Example>
       <Title>Advanced RSS using custom provider (bugos)</Title>
       <Lead>

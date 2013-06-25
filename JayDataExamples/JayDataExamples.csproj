@@ -1321,6 +1321,7 @@
     <Content Include="Styles\less\sticky-footer.less" />
     <Content Include="Views\Home\Geo\Here.cshtml" />
     <Content Include="Views\Home\Geo\POI.cshtml" />
+    <Content Include="Views\Home\Northwind.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\gallery\planets\thumb\" />
