@@ -1242,7 +1242,7 @@
         <Browser title="Internet Explorer" name="ie" minVersion="10" />
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application-with-visual-studio-2010U" target="_blank" css="">How to build a Simple OData-based AJAX application with Visual Studio 2010</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application-with-visual-studio-2010" target="_blank" css="">How to build a Simple OData-based AJAX application with Visual Studio 2010</ContentLink>
         <ContentLink link="http://jaydata.org/blog/windows-8-metro-app-tutorial-with-jaydata" target="_blank" css="">Windows 8 Metro app tutorial with JayData</ContentLink>
         <ContentLink link="http://jaystack.com/blog/how-can-you-access-your-javascript-data-service-from-.net-with-c" target="_blank" css="">How can you access your JavaScript Data Service from .NET with C#</ContentLink>
         <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">Blogs with OData tags</ContentLink>
