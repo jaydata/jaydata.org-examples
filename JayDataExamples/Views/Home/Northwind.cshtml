@@ -3,26 +3,26 @@
 
 @section CodeSource {
     <textarea class="code">
-<!-- Load observableArray data -->
-<script type="text/javascript">
-    function NorthwindViewModel() {
-        var self = this;
-        self.listedCategories = ko.observableArray([]);
+        <script>
+            var oProviderConfig = {
+                name: 'oData',
+                oDataServiceHost: '/examples/Northwind.svc'
+            };
 
-        northwind.Categories
-            .toArray(self.listedCategories);
-    };
-</script>
+            var northwind = new JayDataExamples.NorthwindDB.NorthwindEntities(oProviderConfig);
+            northwind.onReady(function () {    
+                northwind.Categories.toArray(renderCategories);
+            });
 
-<!-- Load products by category -->
-<script>
-
-    self.loadProducts = function (category) {
-        northwind.Products
-            .filter(function (product) { return product.Category_ID == this.Id }, { Id: category.Category_ID() })
-            .toArray(self.listedProducts);
-    };
-</script>
+            function renderCategories(dataList) {
+                var table = $('#categoryTable tbody');
+                table.empty();
+                dataList.forEach(function (item) {
+                    table.append('<tr><td><a onClick="loadProduct(' + item.Category_ID + ')">' +
+                        item.Category_Name + '</a></td><td>' + item.Description + '</td></tr>');
+                });
+            }
+        </script>
     </textarea>
 }
 
@@ -142,7 +142,7 @@
             $('form').serializeArray().forEach(function (item) {
                 selectedProduct[item.name] = $('form [name="' + item.name + '"]').val();
             });
-            selectedProduct.Discontinued = !!$('form [name = "Discontinued"]').attr('checked');
+            selectedProduct.Discontinued = !!$('form [name = "Discontinued"]').is(':checked');
             northwind.saveChanges();
             var result = $('#saveResult');
             result.show();
