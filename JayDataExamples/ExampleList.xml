@@ -950,7 +950,7 @@
       <Title>Netflix movies-Sencha Touch 2</Title>
       <Lead><![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. Query the Netflix OData service using JayData and use Sencha Touch 2 for the UI.]]></Lead>
       <Description>
-        <![CDATA[Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI. Query the <a href="http://odata.netflix.com/v2/Catalog/">Netflix OData service </a> using JayData and use Sencha Touch 2 for the UI.]]>
+        <![CDATA[<strong>UPDATE:</strong><i>Netflix stopped the OData endpoint.</i>  Netflix movies demo application using JayData and Sencha Touch 2 together. JayData is perfect for data while Sencha is great in the UI. Query the Netflix OData service using JayData and use Sencha Touch 2 for the UI.]]>
       </Description>
       <Image>/examples/Images/indexeddb.png</Image>
       <Link>SenchaUI/Netflix</Link>
@@ -1016,7 +1016,38 @@
         <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">JayData blogs about OData </ContentLink>
       </RelatedContents>
     </Example>
-
+    <Example wide="true">
+      <Title>jQuery data binding</Title>
+      <Lead><![CDATA[Demonstrating a simple CRUD application with JayData API and pure jQuery]]></Lead>
+      <Description>
+        <![CDATA[Demonstrating easy data binding using JayData and jQuery together. Leverage your jQuery experience and manage data with JayData API to write less and clean data manager code. Read a <a href="http://jaydata.org/blog/odata-cookbook-with-jaydata">complete OData walktrough with online-offline data sync</a>]]>
+      </Description>
+      <Meta-KeyWords>JayData, OData, jQuery, HTML5, Javascript, JayData providers</Meta-KeyWords>
+      <Meta-Description>How to implement a simple CRUD-capable data manager application with JayData and jQuery! Consume OData services easily! </Meta-Description>
+      <Image>/examples/Images/indexeddb.png</Image>
+      <Link>General/Northwind</Link>
+      <Tags>jQuery, Northwind</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <Includes>
+        <script src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+        <script src="/examples/scripts/example/knokout_northwind.js"></script>
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="9+" />
+        <Browser title="Google Chrome" name="chrome" minVersion="12+"/>
+        <Browser title="Firefox" name="firefox" minVersion="10+"/>
+        <Browser title="Safari" name="safari" minVersion="4+"/>
+        <Browser title="Windows Phone" name="wp" minVersion="7,5+"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7+"/>
+        <Browser title="iOS" name="ios" minVersion="4+"/>
+        <Browser title="Android" name="android" minVersion="2.2+"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/odata-cookbook-with-jaydata" target="_blank" css="">Complete OData walktrough with online-offline data sync</ContentLink>
+        <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">JayData blogs about OData </ContentLink>
+      </RelatedContents>
+    </Example>
     <!--<Example>
       <Title>Advanced RSS using custom provider (bugos)</Title>
       <Lead>
@@ -1210,7 +1241,7 @@
         <Browser title="Internet Explorer" name="ie" minVersion="10" />
       </SupportedBrowsers>
       <RelatedContents>
-        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application-with-visual-studio-2010U" target="_blank" css="">How to build a Simple OData-based AJAX application with Visual Studio 2010</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/how-to-build-a-simple-odata-based-ajax-application-with-visual-studio-2010" target="_blank" css="">How to build a Simple OData-based AJAX application with Visual Studio 2010</ContentLink>
         <ContentLink link="http://jaydata.org/blog/windows-8-metro-app-tutorial-with-jaydata" target="_blank" css="">Windows 8 Metro app tutorial with JayData</ContentLink>
         <ContentLink link="http://jaystack.com/blog/how-can-you-access-your-javascript-data-service-from-.net-with-c" target="_blank" css="">How can you access your JavaScript Data Service from .NET with C#</ContentLink>
         <ContentLink link="http://jaydata.org/categories/odata" target="_blank" css="">Blogs with OData tags</ContentLink>
