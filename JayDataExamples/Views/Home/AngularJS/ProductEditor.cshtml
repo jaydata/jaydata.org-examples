@@ -28,13 +28,6 @@ function ProductEditorController($scope, $data) {
     }
   });
 
-  $scope.newProduct = function () {
-    var Product = $data("Product", $scope.northwind);
-    $scope.selectedProduct = new Product({
-      Category_ID: $scope.selectedCategory.Category_ID
-    });
-  };
-
   $scope.save = function () {
     if ($scope.selectedProduct.Product_ID) {
       $scope.northwind.Products.attach($scope.selectedProduct, true);
@@ -82,13 +75,34 @@ function ProductEditorController($scope, $data) {
   <form ng-if="selectedProduct">
     <fieldset>
       <legend>{{selectedProduct.Product_Name}}</legend>
-      <label><span>ID:</span><span>{{selectedProduct.Product_ID}}</span></label>
-      <label><span>Product name</span><input ng-model="selectedProduct.Product_Name" /></label>
-      <label><span>English name</span><input ng-model="selectedProduct.English_Name" /></label>
-      <label><span>Unit Price</span><input ng-model="selectedProduct.Unit_Price" /></label>
-      <label><span>Quantity Per Unit</span><input ng-model="selectedProduct.Quantity_Per_Unit" /></label>
-      <label><span>Units in stock</span><input type="number" ng-model="selectedProduct.Units_In_Stock" /></label>
-      <label><span>Discontinued</span><input type="checkbox" ng-model="selectedProduct.Discontinued" /></label>
+      <label>
+          <span>ID:</span>
+          <span>{{selectedProduct.Product_ID}}</span>
+      </label>
+      <label>
+          <span>Product name</span>
+          <input ng-model="selectedProduct.Product_Name" />
+      </label>
+      <label>
+          <span>English name</span>
+          <input ng-model="selectedProduct.English_Name" />
+      </label>
+      <label>
+          <span>Unit Price</span>
+          <input ng-model="selectedProduct.Unit_Price" />
+      </label>
+      <label>
+          <span>Quantity Per Unit</span>
+          <input ng-model="selectedProduct.Quantity_Per_Unit" />
+      </label>
+      <label>
+          <span>Units in stock</span>
+          <input type="number" ng-model="selectedProduct.Units_In_Stock" />
+      </label>
+      <label>
+          <span>Discontinued</span>
+          <input type="checkbox" ng-model="selectedProduct.Discontinued" />
+      </label>
       <button ng-click="save()">Save</button>
       <button ng-click="remove()">Remove</button>
     </fieldset>
