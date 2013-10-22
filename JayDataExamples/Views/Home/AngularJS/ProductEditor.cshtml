@@ -69,14 +69,14 @@ function ProductEditorController($scope, $data) {
 @section HTMLSource {
 <div data-ng-app="app" ng-controller="ProductEditorController">
   <ul>
-    <button ng-click="newProduct()">add new</button>
     <li ng-repeat="category in categories">
       <a href="#" ng-click="$parent.selectedCategory=category">{{category.Category_Name}}</a>
     </li>
   </ul>
   <ul>
+    <button ng-if="selectedCategory" ng-click="newProduct()">add new</button>
     <li ng-repeat="product in categoryProducts">
-      <a href="#" ng-click="$parent.selectedProduct = product">{{product.Product_Name}}</a>
+        <a href="#" ng-click="$parent.selectedProduct = product">{{product.Product_Name}}</a>
     </li>
   </ul>
   <form ng-if="selectedProduct">
