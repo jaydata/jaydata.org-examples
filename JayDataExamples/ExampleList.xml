@@ -1680,7 +1680,7 @@
       </RelatedContents>
     </Example>
     <Example wide="false">
-      <Title>Northwind product editor</Title>
+      <Title>Angular Northwind product editor</Title>
       <Lead>
         <![CDATA[Edit products in a remote Northwind database over oData.]]>
       </Lead>
