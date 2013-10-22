@@ -1,0 +1,130 @@
+﻿@model JayDataExamples.App_Code.Example
+@{ Layout = "~/Views/Shared/Layout_New.cshtml";}
+
+@section JSSource {
+var app = angular.module('app', ['jaydata']);
+
+function ProductEditorController($scope, $data) {
+  $scope.categories = [];
+  $scope.selectedCategory = null;
+  $scope.categoryProducts = [];
+  $scope.selectedProduct = null;
+ 
+  $data.initService('/examples/Northwind.svc')
+  .then(function (northwind) {
+    $scope.northwind = northwind;
+    $scope.categories = northwind.Categories.toLiveArray();
+  });
+
+  Object.defineProperty($scope, "categoryProducts", {
+    get: function() {
+      if ($scope.selectedCategory)
+        return $scope.northwind
+          .Products
+          .filter('Category_ID',
+                  '==',
+                  $scope.selectedCategory.Category_ID)
+          .toLiveArray();
+    }
+  });
+
+  $scope.newProduct = function () {
+    var Product = $data("Product", $scope.northwind);
+    $scope.selectedProduct = new Product({
+      Category_ID: $scope.selectedCategory.Category_ID
+    });
+  };
+
+  $scope.save = function () {
+    if ($scope.selectedProduct.Product_ID) {
+      $scope.northwind.Products.attach($scope.selectedProduct, true);
+      $scope.selectedProduct.entityState = $data.EntityState.Modified;
+    }
+    else {
+      $scope.northwind.Products.add($scope.selectedProduct, true);
+    }
+    $scope.saveChanges();
+  };
+  $scope.saveChanges = function () {
+    $scope.northwind.saveChanges()
+    .then(function () {
+      $scope.selectedProduct = null;
+    },function() {
+      $scope.northwind.stateManager.reset();
+    });
+  };
+  $scope.remove = function () {
+    $scope.northwind.Products.remove($scope.selectedProduct);
+    $scope.saveChanges();
+  };
+  $scope.newProduct = function () {
+    var ctx = $scope.northwind;
+    $scope.selectedProduct = new ctx.Products.elementType({
+      Category_ID: $scope.selectedCategory.Category_ID
+    });
+  };
+}
+}
+
+@section HTMLSource {
+<div data-ng-app="app" ng-controller="ProductEditorController">
+  <ul>
+    <button ng-click="newProduct()">add new</button>
+    <li ng-repeat="category in categories">
+      <a href="#" ng-click="$parent.selectedCategory=category">{{category.Category_Name}}</a>
+    </li>
+  </ul>
+  <ul>
+    <li ng-repeat="product in categoryProducts">
+      <a href="#" ng-click="$parent.selectedProduct = product">{{product.Product_Name}}</a>
+    </li>
+  </ul>
+  <form ng-if="selectedProduct">
+    <fieldset>
+      <legend>{{selectedProduct.Product_Name}}</legend>
+      <label><span>ID:</span><span>{{selectedProduct.Product_ID}}</span></label>
+      <label><span>Product name</span><input ng-model="selectedProduct.Product_Name" /></label>
+      <label><span>English name</span><input ng-model="selectedProduct.English_Name" /></label>
+      <label><span>Unit Price</span><input ng-model="selectedProduct.Unit_Price" /></label>
+      <label><span>Quantity Per Unit</span><input ng-model="selectedProduct.Quantity_Per_Unit" /></label>
+      <label><span>Units in stock</span><input type="number" ng-model="selectedProduct.Units_In_Stock" /></label>
+      <label><span>Discontinued</span><input type="checkbox" ng-model="selectedProduct.Discontinued" /></label>
+      <button ng-click="save()">Save</button>
+      <button ng-click="remove()">Remove</button>
+    </fieldset>
+  </form>
+</div>
+}
+
+@section HeaderSource {
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="http://code.angularjs.org/1.2.0-rc.3/angular.js"></script>
+<script src="http://include.jaydata.org/datajs-1.0.3.js"></script>
+<script src="http://include.jaydata.org/jaydata.js"></script>
+<script src="http://include.jaydata.org/jaydatamodules/angular.js"></script>
+}
+
+@section CSSSource {
+html, body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+form {
+  width:300px;
+  float: left;
+}
+ul {
+  height:100%;
+  width:220px;
+  float: left;
+  list-style:none;
+}
+label {
+  display:block;
+}
+label span {
+  display:inline-block;
+  width:140px;
+}
+}

@@ -1679,5 +1679,40 @@
         <ContentLink link="http://jaydata.org/blog/jaydata-server" target="_blank" css="">JayData OData server</ContentLink>
       </RelatedContents>
     </Example>
+    <Example wide="false">
+      <Title>Northwind product editor</Title>
+      <Lead>
+        <![CDATA[Edit products in a remote Northwind database over oData.]]>
+      </Lead>
+      <Description>
+        <![CDATA[To create a master-detail list and an editor with JayData and AngularJS is really simple. <br /><b>You can mess with the code and see the changes!</b>]]>
+      </Description>
+      <Image>/examples/Images/indexeddb.png</Image>
+      <Link>AngularJS/ProductEditor</Link>
+      <Tags>AngularJS, oData, Northwind</Tags>
+      <Level>100</Level>
+      <Suggested></Suggested>
+      <JsFiddle></JsFiddle>
+      <Meta-KeyWords>AngularJS, JayData, oData</Meta-KeyWords>
+      <Meta-Description>Northwind product editor over oData. See this simple example.</Meta-Description>
+      <Includes>
+        <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+        <script type="text/javascript" src="http://jaydata-cdn.s3.amazonaws.com/datajs-1.0.3-patched.js"></script>
+      </Includes>
+      <SupportedBrowsers>
+        <Browser title="Internet Explorer" name="ie" minVersion="10" />
+        <Browser title="Google Chrome" name="chrome"/>
+        <Browser title="Opera" name="opera" minVersion="11"/>
+        <Browser title="Safari" name="safari" minVersion="5"/>
+        <Browser title="Blackberry" name="blackberry" minVersion="7.0"/>
+        <Browser title="Windows Phone" name="wp" minVersion="8"/>
+        <Browser title="iOS" name="ios" minVersion="4"/>
+        <Browser title="Android" name="android" minVersion="2.2"/>
+      </SupportedBrowsers>
+      <RelatedContents>
+        <ContentLink link="http://jaydata.org/blog/jaydata-and-angularjs" target="_self" css="">Jaydata and AngularJS</ContentLink>
+        <ContentLink link="http://jaydata.org/blog/jaydata-and-angularjs-continued" target="_self" css="">Jaydata and AngularJS continued</ContentLink>
+      </RelatedContents>
+    </Example>
   </Examples>
 </MainPage>
